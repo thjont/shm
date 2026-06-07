@@ -25,7 +25,7 @@ We also get together on the occasional Saturday — follow us on Instagram to st
     - name = "instagram"
       url = "https://www.instagram.com/shinyhoppymeepleni/"
     - name = "github"
-      url = https://github.com/thjont/shm
+      url = "https://github.com/thjont/shm"
 
   [markup]
     [markup.goldmark]
