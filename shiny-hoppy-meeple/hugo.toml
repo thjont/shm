@@ -38,3 +38,7 @@ We also get together on the occasional Saturday — follow us on Instagram to st
     name = "Who Are We"
     url = "/who-are-we/"
     weight = 3
+  [[menu.main]]
+    name = "About Us"
+    url = "/about-us/"
+    weight = 4
