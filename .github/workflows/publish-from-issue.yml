@@ -75,6 +75,16 @@ jobs:
                     done <<< "$URLS"
                   fi
 
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+
+                  if [[ "$EVENT_ACTION" == "labeled" ]]; then
+                    git checkout -b "$BRANCH"
+                  else
+                    git fetch origin "$BRANCH"
+                    git checkout "$BRANCH"
+                  fi
+
                   {
                     printf '+++\n'
                     printf 'date = "%s"\n' "$DATE"
@@ -84,18 +94,11 @@ jobs:
                     printf '%s\n' "$PROCESSED_BODY"
                   } > "$FILE"
 
-                  git config user.name "github-actions[bot]"
-                  git config user.email "github-actions[bot]@users.noreply.github.com"
-
+                  git add "$FILE" shiny-hoppy-meeple/static/images/
                   if [[ "$EVENT_ACTION" == "labeled" ]]; then
-                    git checkout -b "$BRANCH"
-                    git add "$FILE" shiny-hoppy-meeple/static/images/
                     git commit -m "Post: $ISSUE_TITLE (closes #$ISSUE_NUMBER)"
                     git push origin "$BRANCH"
                   else
-                    git fetch origin "$BRANCH"
-                    git checkout "$BRANCH"
-                    git add "$FILE" shiny-hoppy-meeple/static/images/
                     git commit -m "Update post: $ISSUE_TITLE"
                     git push --force-with-lease origin "$BRANCH"
                   fi
