@@ -96,7 +96,7 @@ jobs:
 
                   git add "$FILE" shiny-hoppy-meeple/static/images/
                   if [[ "$EVENT_ACTION" == "labeled" ]]; then
-                    git commit -m "Post: $ISSUE_TITLE (closes #$ISSUE_NUMBER)"
+                    git commit -m "Post: $ISSUE_TITLE (#$ISSUE_NUMBER)"
                     git push origin "$BRANCH"
                   else
                     git commit -m "Update post: $ISSUE_TITLE"
