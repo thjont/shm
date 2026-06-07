@@ -2,6 +2,7 @@
 date = '2026-06-07T00:00:00Z'
 draft = false
 title = "We're Heading to Tabletop Scotland"
+tags = ["outtings"]
 +++
 
 Ten of us from Shiny Hoppy Meeple are making the trip to [Tabletop Scotland](https://tabletopscotland.co.uk/) this year — our biggest group outing yet.
