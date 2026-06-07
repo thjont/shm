@@ -66,6 +66,7 @@ jobs:
                       FILENAME="${SLUG}-${IMG_COUNT}.${EXT}"
                       mv "$TMPFILE" "${IMG_DIR}/${FILENAME}"
                       PROCESSED_BODY="${PROCESSED_BODY//$url//images/posts/${SLUG}/${FILENAME}}"
+                      PROCESSED_BODY=$(echo "$PROCESSED_BODY" | sed 's/ width="[^"]*"//g; s/ height="[^"]*"//g')
                     done <<< "$URLS"
                   fi
 
