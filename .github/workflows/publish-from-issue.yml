@@ -11,6 +11,7 @@ jobs:
         permissions:
             contents: write
             issues: write
+            pull-requests: write
         steps:
             - name: Check publisher permission
               env:
@@ -39,6 +40,7 @@ jobs:
                   GH_TOKEN: ${{ github.token }}
               run: |
                   SLUG=$(echo "$ISSUE_TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/-\+/-/g' | sed 's/^-\|-$//g')
+                  BRANCH="post/${SLUG}"
                   DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
                   FILE="shiny-hoppy-meeple/content/posts/${SLUG}.md"
                   PROCESSED_BODY="$ISSUE_BODY"
@@ -81,6 +83,40 @@ jobs:
 
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
+                  git checkout -b "$BRANCH"
                   git add "$FILE" shiny-hoppy-meeple/static/images/
                   git commit -m "Post: $ISSUE_TITLE (closes #$ISSUE_NUMBER)"
-                  git push
+                  git push origin "$BRANCH"
+
+                  echo "BRANCH=${BRANCH}" >> "$GITHUB_ENV"
+                  echo "ISSUE_TITLE=${ISSUE_TITLE}" >> "$GITHUB_ENV"
+                  echo "ISSUE_NUMBER=${ISSUE_NUMBER}" >> "$GITHUB_ENV"
+
+            - name: Setup Hugo
+              uses: peaceiris/actions-hugo@v3
+              with:
+                  hugo-version: "latest"
+                  extended: true
+
+            - name: Build site
+              run: pushd shiny-hoppy-meeple && hugo --minify && popd
+
+            - name: Deploy preview to Cloudflare Pages
+              id: deploy
+              uses: cloudflare/wrangler-action@v3
+              with:
+                  apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                  accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+                  command: pages deploy shiny-hoppy-meeple/public --project-name=shiny-hoppy-meeple --branch=${{ env.BRANCH }} --commit-hash=${{ github.sha }}
+
+            - name: Open PR
+              env:
+                  GH_TOKEN: ${{ github.token }}
+              run: |
+                  gh pr create \
+                    --title "${{ env.ISSUE_TITLE }}" \
+                    --body "Closes #${{ env.ISSUE_NUMBER }}
+
+                  Preview: ${{ steps.deploy.outputs.deployment-url }}" \
+                    --base main \
+                    --head "${{ env.BRANCH }}"
