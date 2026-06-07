@@ -25,6 +25,11 @@ We also get together on the occasional Saturday — follow us on Instagram to st
     name = "instagram"
     url = "https://www.instagram.com/shinyhoppymeepleni/"
 
+  [markup]
+    [markup.goldmark]
+      [markup.goldmark.renderer]
+        unsafe = true
+
 [menu]
   [[menu.main]]
     name = "Home"
