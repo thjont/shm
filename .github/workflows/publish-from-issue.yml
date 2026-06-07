@@ -126,6 +126,13 @@ jobs:
                   accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
                   command: pages deploy shiny-hoppy-meeple/public --project-name=shiny-hoppy-meeple --branch=${{ env.BRANCH }} --commit-hash=${{ github.sha }}
 
+            - name: Post preview URL to issue
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  DEPLOY_URL: ${{ steps.deploy.outputs.deployment-url }}
+              run: |
+                  gh issue comment "${{ env.ISSUE_NUMBER }}" --body "Preview: ${DEPLOY_URL}"
+
             - name: Open PR
               if: github.event.action == 'labeled'
               env:
@@ -138,3 +145,12 @@ jobs:
                   Preview: ${{ steps.deploy.outputs.deployment-url }}" \
                     --base main \
                     --head "${{ env.BRANCH }}"
+
+            - name: Post preview URL to PR
+              if: github.event.action == 'edited'
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  DEPLOY_URL: ${{ steps.deploy.outputs.deployment-url }}
+              run: |
+                  PR_NUMBER=$(gh pr list --head "${{ env.BRANCH }}" --json number --jq '.[0].number')
+                  gh pr comment "$PR_NUMBER" --body "Preview updated: ${DEPLOY_URL}"
