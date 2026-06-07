@@ -21,6 +21,7 @@ jobs:
                   ISSUE_TITLE: ${{ github.event.issue.title }}
                   ISSUE_BODY: ${{ github.event.issue.body }}
                   ISSUE_NUMBER: ${{ github.event.issue.number }}
+                  GH_TOKEN: ${{ github.token }}
               run: |
                   SLUG=$(echo "$ISSUE_TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/-\+/-/g' | sed 's/^-\|-$//g')
                   DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
@@ -36,10 +37,10 @@ jobs:
                     while IFS= read -r url; do
                       [ -z "$url" ] && continue
                       IMG_COUNT=$((IMG_COUNT + 1))
-                      CONTENT_TYPE=$(curl -sIL "$url" | grep -i '^content-type:' | tail -1 | sed 's/.*image\///i; s/[;[:space:]].*//; s/jpeg/jpg/; s/svg+xml/svg/')
+                      CONTENT_TYPE=$(curl -sIL -H "Authorization: token $GH_TOKEN" "$url" | grep -i '^content-type:' | tail -1 | sed 's/.*image\///i; s/[;[:space:]].*//; s/jpeg/jpg/; s/svg+xml/svg/')
                       EXT="${CONTENT_TYPE:-jpg}"
                       FILENAME="${SLUG}-${IMG_COUNT}.${EXT}"
-                      curl -fsSL -o "${IMG_DIR}/${FILENAME}" "$url"
+                      curl -fsSL -H "Authorization: token $GH_TOKEN" -o "${IMG_DIR}/${FILENAME}" "$url"
                       PROCESSED_BODY="${PROCESSED_BODY//$url//images/posts/${SLUG}/${FILENAME}}"
                     done <<< "$URLS"
                   fi
