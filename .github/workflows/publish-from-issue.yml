@@ -52,10 +52,19 @@ jobs:
                     while IFS= read -r url; do
                       [ -z "$url" ] && continue
                       IMG_COUNT=$((IMG_COUNT + 1))
-                      CONTENT_TYPE=$(curl -sIL -H "Authorization: token $GH_TOKEN" "$url" | grep -i '^content-type:' | tail -1 | sed 's/.*image\///i; s/[;[:space:]].*//; s/jpeg/jpg/; s/svg+xml/svg/')
-                      EXT="${CONTENT_TYPE:-jpg}"
+                      TMPFILE=$(mktemp)
+                      curl -fsSL -H "Authorization: token $GH_TOKEN" -o "$TMPFILE" "$url"
+                      MIME=$(file --mime-type -b "$TMPFILE")
+                      case "$MIME" in
+                        image/jpeg) EXT="jpg" ;;
+                        image/png)  EXT="png" ;;
+                        image/gif)  EXT="gif" ;;
+                        image/webp) EXT="webp" ;;
+                        image/svg+xml) EXT="svg" ;;
+                        *) EXT="jpg" ;;
+                      esac
                       FILENAME="${SLUG}-${IMG_COUNT}.${EXT}"
-                      curl -fsSL -H "Authorization: token $GH_TOKEN" -o "${IMG_DIR}/${FILENAME}" "$url"
+                      mv "$TMPFILE" "${IMG_DIR}/${FILENAME}"
                       PROCESSED_BODY="${PROCESSED_BODY//$url//images/posts/${SLUG}/${FILENAME}}"
                     done <<< "$URLS"
                   fi

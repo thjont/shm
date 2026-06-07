@@ -8,6 +8,6 @@ title = "4th test with picture"
 
 some content before the picture.
 
-<img width="2000" height="1189" alt="Image" src="/images/posts/4th-test-with-picture/4th-test-with-picture-1.Content-Type:" />
+<img width="2000" height="1189" alt="Image" src="/images/posts/4th-test-with-picture/4th-test-with-picture-1.png" />
 
 some content after.
