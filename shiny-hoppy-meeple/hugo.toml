@@ -22,10 +22,12 @@ We also get together on the occasional Saturday — follow us on Instagram to st
 """
 
   [[params.socialIcons]]
-    - name = "instagram"
-      url = "https://www.instagram.com/shinyhoppymeepleni/"
-    - name = "github"
-      url = "https://github.com/thjont/shm"
+    name = "instagram"
+    url = "https://www.instagram.com/shinyhoppymeepleni/"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/thjont/shm"
 
   [markup]
     [markup.goldmark]
