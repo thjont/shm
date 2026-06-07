@@ -1,11 +1,29 @@
 baseURL = "https://shiny-hoppy-meeple.pages.dev/"
-languageCode = "en-us"
-title = "My Hugo Site"
+locale = "en-GB"
+title = "Shiny Hoppy Meeple"
 theme = "PaperMod"
 
 [params]
-  description = "A Hugo site on Cloudflare Pages"
-  ShowReadingTime = true
+  description = "Board game community meeting in East Belfast. New faces always welcome."
+  ShowReadingTime = false
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+
+  [params.homeInfoParams]
+    Title = "Welcome to Shiny Hoppy Meeple"
+    Content = """
+We're a friendly board game community based in East Belfast. \
+Whether you're a seasoned strategist or picking up your first game, \
+you'll find a warm welcome here.
+
+**Join us every Thursday, 7:30–11pm** at [Boundary Taproom](https://www.instagram.com/boundarytaproom/), East Belfast.
+
+We also get together on the occasional Saturday — follow us on Instagram to stay in the loop.
+"""
+
+  [[params.socialIcons]]
+    name = "instagram"
+    url = "https://www.instagram.com/shinyhoppymeepleni/"
 
 [menu]
   [[menu.main]]
