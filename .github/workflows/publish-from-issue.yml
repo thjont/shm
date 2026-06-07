@@ -88,9 +88,11 @@ jobs:
                   git commit -m "Post: $ISSUE_TITLE (closes #$ISSUE_NUMBER)"
                   git push origin "$BRANCH"
 
+                  PREVIEW_BASEURL="https://$(echo "$BRANCH" | sed 's/\//-/g').shiny-hoppy-meeple.pages.dev/"
                   echo "BRANCH=${BRANCH}" >> "$GITHUB_ENV"
                   echo "ISSUE_TITLE=${ISSUE_TITLE}" >> "$GITHUB_ENV"
                   echo "ISSUE_NUMBER=${ISSUE_NUMBER}" >> "$GITHUB_ENV"
+                  echo "PREVIEW_BASEURL=${PREVIEW_BASEURL}" >> "$GITHUB_ENV"
 
             - name: Setup Hugo
               uses: peaceiris/actions-hugo@v3
@@ -99,7 +101,7 @@ jobs:
                   extended: true
 
             - name: Build site
-              run: pushd shiny-hoppy-meeple && hugo --minify && popd
+              run: pushd shiny-hoppy-meeple && hugo --minify --baseURL "${{ env.PREVIEW_BASEURL }}" && popd
 
             - name: Deploy preview to Cloudflare Pages
               id: deploy
