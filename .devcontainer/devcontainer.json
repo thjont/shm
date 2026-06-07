@@ -1,0 +1,27 @@
+{
+  "name": "shm",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers/features/hugo:1": {
+      "extended": true,
+      "version": "latest"
+    }
+  },
+  "onCreateCommand": "npm install -g wrangler markdownlint-cli2",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "cloudflare.cloudflare-workers-bindings-extension",
+        "budparr.language-hugo-vscode",
+        "DavidAnson.vscode-markdownlint"
+      ],
+      "settings": {
+        "editor.formatOnSave": true
+      }
+    }
+  },
+  "remoteUser": "vscode"
+}

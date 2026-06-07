@@ -1,0 +1,11 @@
+# Hugo
+public/
+resources/_gen/
+.hugo_build.lock
+
+# Wrangler
+.wrangler/
+wrangler.toml.bak
+
+# Node
+node_modules/
