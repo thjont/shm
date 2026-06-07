@@ -1,3 +1,18 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
-title = 'My New Hugo Project'
+baseURL = "https://shiny-hoppy-meeple.pages.dev/"
+languageCode = "en-us"
+title = "My Hugo Site"
+theme = "PaperMod"
+
+[params]
+  description = "A Hugo site on Cloudflare Pages"
+  ShowReadingTime = true
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
