@@ -2,11 +2,13 @@ name: Publish post from issue
 
 on:
     issues:
-        types: [labeled]
+        types: [labeled, edited]
 
 jobs:
     publish:
-        if: github.event.label.name == 'publish'
+        if: |
+            (github.event.action == 'labeled' && github.event.label.name == 'publish') ||
+            (github.event.action == 'edited' && contains(github.event.issue.labels.*.name, 'publish'))
         runs-on: ubuntu-latest
         permissions:
             contents: write
@@ -32,11 +34,12 @@ jobs:
               with:
                   submodules: true
 
-            - name: Create post from issue
+            - name: Create or update post from issue
               env:
                   ISSUE_TITLE: ${{ github.event.issue.title }}
                   ISSUE_BODY: ${{ github.event.issue.body }}
                   ISSUE_NUMBER: ${{ github.event.issue.number }}
+                  EVENT_ACTION: ${{ github.event.action }}
                   GH_TOKEN: ${{ github.token }}
               run: |
                   SLUG=$(echo "$ISSUE_TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/-\+/-/g' | sed 's/^-\|-$//g')
@@ -83,10 +86,19 @@ jobs:
 
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
-                  git checkout -b "$BRANCH"
-                  git add "$FILE" shiny-hoppy-meeple/static/images/
-                  git commit -m "Post: $ISSUE_TITLE (closes #$ISSUE_NUMBER)"
-                  git push origin "$BRANCH"
+
+                  if [[ "$EVENT_ACTION" == "labeled" ]]; then
+                    git checkout -b "$BRANCH"
+                    git add "$FILE" shiny-hoppy-meeple/static/images/
+                    git commit -m "Post: $ISSUE_TITLE (closes #$ISSUE_NUMBER)"
+                    git push origin "$BRANCH"
+                  else
+                    git fetch origin "$BRANCH"
+                    git checkout "$BRANCH"
+                    git add "$FILE" shiny-hoppy-meeple/static/images/
+                    git commit -m "Update post: $ISSUE_TITLE"
+                    git push --force-with-lease origin "$BRANCH"
+                  fi
 
                   PREVIEW_BASEURL="https://$(echo "$BRANCH" | sed 's/\//-/g').shiny-hoppy-meeple.pages.dev/"
                   echo "BRANCH=${BRANCH}" >> "$GITHUB_ENV"
@@ -112,6 +124,7 @@ jobs:
                   command: pages deploy shiny-hoppy-meeple/public --project-name=shiny-hoppy-meeple --branch=${{ env.BRANCH }} --commit-hash=${{ github.sha }}
 
             - name: Open PR
+              if: github.event.action == 'labeled'
               env:
                   GH_TOKEN: ${{ github.token }}
               run: |
