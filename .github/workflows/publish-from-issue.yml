@@ -25,16 +25,36 @@ jobs:
                   SLUG=$(echo "$ISSUE_TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/-\+/-/g' | sed 's/^-\|-$//g')
                   DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
                   FILE="shiny-hoppy-meeple/content/posts/${SLUG}.md"
+                  PROCESSED_BODY="$ISSUE_BODY"
+
+                  # Download any GitHub-hosted images and rewrite URLs to local paths
+                  IMG_DIR="shiny-hoppy-meeple/static/images/posts/${SLUG}"
+                  URLS=$(echo "$ISSUE_BODY" | grep -oE 'https://github\.com/user-attachments/assets/[a-f0-9-]+' | sort -u)
+                  if [ -n "$URLS" ]; then
+                    mkdir -p "$IMG_DIR"
+                    IMG_COUNT=0
+                    while IFS= read -r url; do
+                      [ -z "$url" ] && continue
+                      IMG_COUNT=$((IMG_COUNT + 1))
+                      CONTENT_TYPE=$(curl -sIL "$url" | grep -i '^content-type:' | tail -1 | sed 's/.*image\///i; s/[;[:space:]].*//; s/jpeg/jpg/; s/svg+xml/svg/')
+                      EXT="${CONTENT_TYPE:-jpg}"
+                      FILENAME="${SLUG}-${IMG_COUNT}.${EXT}"
+                      curl -fsSL -o "${IMG_DIR}/${FILENAME}" "$url"
+                      PROCESSED_BODY="${PROCESSED_BODY//$url//images/posts/${SLUG}/${FILENAME}}"
+                    done <<< "$URLS"
+                  fi
+
                   {
                     printf '+++\n'
                     printf 'date = "%s"\n' "$DATE"
                     printf 'draft = false\n'
                     printf 'title = "%s"\n' "$ISSUE_TITLE"
                     printf '+++\n\n'
-                    printf '%s\n' "$ISSUE_BODY"
+                    printf '%s\n' "$PROCESSED_BODY"
                   } > "$FILE"
+
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
-                  git add "$FILE"
+                  git add "$FILE" shiny-hoppy-meeple/static/images/
                   git commit -m "Post: $ISSUE_TITLE (closes #$ISSUE_NUMBER)"
                   git push
