@@ -39,6 +39,7 @@ jobs:
                   ISSUE_TITLE: ${{ github.event.issue.title }}
                   ISSUE_BODY: ${{ github.event.issue.body }}
                   ISSUE_NUMBER: ${{ github.event.issue.number }}
+                  LABELS: ${{ toJSON(github.event.issue.labels) }}
                   EVENT_ACTION: ${{ github.event.action }}
                   GH_TOKEN: ${{ github.token }}
               run: |
@@ -46,6 +47,7 @@ jobs:
                   BRANCH="post/${SLUG}"
                   DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
                   FILE="shiny-hoppy-meeple/content/posts/${SLUG}.md"
+                  TAGS_TOML=$(echo "$LABELS" | jq -r '[.[] | select(.name | startswith("tag/")) | .name[4:]] | @json')
                   PROCESSED_BODY="$ISSUE_BODY"
 
                   # Download any GitHub-hosted images and rewrite URLs to local paths
@@ -90,6 +92,7 @@ jobs:
                     printf 'date = "%s"\n' "$DATE"
                     printf 'draft = false\n'
                     printf 'title = "%s"\n' "$ISSUE_TITLE"
+                    [ "$TAGS_TOML" != "[]" ] && printf 'tags = %s\n' "$TAGS_TOML"
                     printf '+++\n\n'
                     printf '%s\n' "$PROCESSED_BODY"
                   } > "$FILE"
