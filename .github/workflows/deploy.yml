@@ -3,8 +3,12 @@ name: Deploy to Cloudflare Pages
 on:
     push:
         branches: [main]
+        paths:
+            - "shiny-hoppy-meeple/**"
     pull_request:
         branches: [main]
+        paths:
+            - "shiny-hoppy-meeple/**"
 
 jobs:
     deploy:
