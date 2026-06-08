@@ -19,6 +19,7 @@
           <div class="bgg-card-meta">
             {{ with .rating }}<span>★ {{ . }}</span>{{ end }}
             {{ with .numplays }}<span>{{ . }} plays</span>{{ end }}
+            <span class="bgg-scans" data-scan-slug="{{ anchorize .name }}"></span>
           </div>
         </div>
       </a>
