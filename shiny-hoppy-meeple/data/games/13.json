@@ -2,8 +2,10 @@
   "id": 13,
   "name": "Catan",
   "year": 1995,
-  "thumbnail": "https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__thumb/img/8a9HeqFydO7UnzoERVkOBsy4tvk=/fit-in/200x150/filters:strip_icc()/pic2419375.jpg",
-  "image": "https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__original/img/ETnHBFRJhpzBwZv2SLLWOB1bEXI=/0x0/filters:format(jpeg)/pic2419375.jpg",
+  "thumbnail": "/images/games/13-thumb.jpg",
+  "thumbnail_source": "https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__thumb/img/8a9HeqFydO7UnzoERVkOBsy4tvk=/fit-in/200x150/filters:strip_icc()/pic2419375.jpg",
+  "image": "/images/games/13.jpg",
+  "image_source": "https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__original/img/ETnHBFRJhpzBwZv2SLLWOB1bEXI=/0x0/filters:format(jpeg)/pic2419375.jpg",
   "description": "In Catan, players try to be the dominant force on the island of Catan by building settlements, cities, and roads. On each turn dice are rolled to determine what resources the island produces. Players collect these resources to build up their civilizations.",
   "min_players": 3,
   "max_players": 4,
@@ -12,20 +14,60 @@
   "playing_time": 90,
   "min_age": 10,
   "expansion": false,
-  "categories": ["Negotiation", "Territory Building"],
-  "mechanics": ["Dice Rolling", "Hand Management", "Trading", "Network and Route Building", "Random Production"],
-  "families": ["Catan", "Cities & Knights"],
-  "designers": ["Klaus Teuber"],
-  "artists": ["Volkan Baga", "Tanja Donner", "Pete Fenlon"],
-  "publishers": ["KOSMOS", "Mayfair Games", "999 Games"],
-  "expansions": [
-    {"id": 14, "name": "Catan: Seafarers"},
-    {"id": 15, "name": "Catan: Cities & Knights"},
-    {"id": 16, "name": "Catan: Traders & Barbarians"}
+  "categories": [
+    "Negotiation",
+    "Territory Building"
   ],
-  "alternative_names": ["Settlers of Catan", "Die Siedler von Catan"],
+  "mechanics": [
+    "Dice Rolling",
+    "Hand Management",
+    "Trading",
+    "Network and Route Building",
+    "Random Production"
+  ],
+  "families": [
+    "Catan",
+    "Cities & Knights"
+  ],
+  "designers": [
+    "Klaus Teuber"
+  ],
+  "artists": [
+    "Volkan Baga",
+    "Tanja Donner",
+    "Pete Fenlon"
+  ],
+  "publishers": [
+    "KOSMOS",
+    "Mayfair Games",
+    "999 Games"
+  ],
+  "expansions": [
+    {
+      "id": 14,
+      "name": "Catan: Seafarers"
+    },
+    {
+      "id": 15,
+      "name": "Catan: Cities & Knights"
+    },
+    {
+      "id": 16,
+      "name": "Catan: Traders & Barbarians"
+    }
+  ],
+  "alternative_names": [
+    "Settlers of Catan",
+    "Die Siedler von Catan"
+  ],
   "bgg_rank": 342,
-  "ranks": [{"name": "boardgame", "friendlyname": "Board Game Rank", "value": 342}],
+  "ranks": [
+    {
+      "name": "boardgame",
+      "friendlyname": "Board Game Rank",
+      "value": 342
+    }
+  ],
   "users_rated": 114823,
   "rating_average": 7.13,
   "rating_bayes_average": 7.08,

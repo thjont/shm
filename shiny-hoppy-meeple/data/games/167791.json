@@ -2,8 +2,10 @@
   "id": 167791,
   "name": "Terraforming Mars",
   "year": 2016,
-  "thumbnail": "https://cf.geekdo-images.com/wg9oOLcsKvdesSUdZQ4rxw__thumb/img/BTxqxgYay5tHJfVoJ2NF5g53B6k=/fit-in/200x150/filters:strip_icc()/pic3536616.jpg",
-  "image": "https://cf.geekdo-images.com/wg9oOLcsKvdesSUdZQ4rxw__original/img/OtjC4kMNJOEKBbGFJVDOxJ2XBOA=/0x0/filters:format(jpeg)/pic3536616.jpg",
+  "thumbnail": "/images/games/167791-thumb.jpg",
+  "thumbnail_source": "https://cf.geekdo-images.com/wg9oOLcsKvdesSUdZQ4rxw__thumb/img/BTxqxgYay5tHJfVoJ2NF5g53B6k=/fit-in/200x150/filters:strip_icc()/pic3536616.jpg",
+  "image": "/images/games/167791.jpg",
+  "image_source": "https://cf.geekdo-images.com/wg9oOLcsKvdesSUdZQ4rxw__original/img/OtjC4kMNJOEKBbGFJVDOxJ2XBOA=/0x0/filters:format(jpeg)/pic3536616.jpg",
   "description": "In the 2400s, mankind begins to terraform the planet Mars. Giant corporations, sponsored by the World Government on Earth, initiate huge projects to raise the temperature, the oxygen level, and the ocean coverage until the environment is habitable.",
   "min_players": 1,
   "max_players": 5,
@@ -12,20 +14,55 @@
   "playing_time": 150,
   "min_age": 12,
   "expansion": false,
-  "categories": ["Economic", "Environmental", "Science Fiction", "Territory Building"],
-  "mechanics": ["Card Drafting", "Hand Management", "Tile Placement", "Variable Player Powers", "Engine Building"],
-  "families": ["Terraforming Mars"],
-  "designers": ["Jacob Fryxelius"],
-  "artists": ["Isaac Fryxelius"],
-  "publishers": ["FryxGames", "Stronghold Games"],
+  "categories": [
+    "Economic",
+    "Environmental",
+    "Science Fiction",
+    "Territory Building"
+  ],
+  "mechanics": [
+    "Card Drafting",
+    "Hand Management",
+    "Tile Placement",
+    "Variable Player Powers",
+    "Engine Building"
+  ],
+  "families": [
+    "Terraforming Mars"
+  ],
+  "designers": [
+    "Jacob Fryxelius"
+  ],
+  "artists": [
+    "Isaac Fryxelius"
+  ],
+  "publishers": [
+    "FryxGames",
+    "Stronghold Games"
+  ],
   "expansions": [
-    {"id": 218291, "name": "Terraforming Mars: Hellas & Elysium"},
-    {"id": 225404, "name": "Terraforming Mars: Venus Next"},
-    {"id": 247030, "name": "Terraforming Mars: Prelude"}
+    {
+      "id": 218291,
+      "name": "Terraforming Mars: Hellas & Elysium"
+    },
+    {
+      "id": 225404,
+      "name": "Terraforming Mars: Venus Next"
+    },
+    {
+      "id": 247030,
+      "name": "Terraforming Mars: Prelude"
+    }
   ],
   "alternative_names": [],
   "bgg_rank": 4,
-  "ranks": [{"name": "boardgame", "friendlyname": "Board Game Rank", "value": 4}],
+  "ranks": [
+    {
+      "name": "boardgame",
+      "friendlyname": "Board Game Rank",
+      "value": 4
+    }
+  ],
   "users_rated": 98234,
   "rating_average": 8.42,
   "rating_bayes_average": 8.37,
