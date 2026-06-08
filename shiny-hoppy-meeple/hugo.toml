@@ -4,6 +4,7 @@ title = "Shiny Hoppy Meeple"
 theme = "PaperMod"
 
 [params]
+  mainSections = ["posts"]
   description = "Board game community meeting in East Belfast. New faces always welcome."
   ShowReadingTime = false
   ShowShareButtons = false
