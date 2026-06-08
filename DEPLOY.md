@@ -106,3 +106,21 @@ wrangler pages dev public      # serves functions + assets locally
 ```
 
 Visit `/go/<slug>` to confirm the redirect and that `/api/scans` reflects the increment.
+
+### Hardening the counts (recommended follow-ups)
+
+The allowlist stops junk keys, but scan counts are still **soft metrics**: they can be inflated by
+scripted requests to valid slugs, and by link unfurlers (WhatsApp, iMessage, Slack, Discord) and
+crawlers that fetch `/go/` URLs to build previews. To reduce this, configure the following in the
+Cloudflare dashboard (all free-tier):
+
+1. **Bot Fight Mode** — *Security → Bots*. Challenges known bots and crawlers, cutting accidental
+   inflation from automated fetches.
+2. **Rate-limiting rule on `/go/*`** — *Security → WAF → Rate limiting rules*. Limit requests per
+   IP (e.g. 5 requests / 10 seconds per path) to blunt scripted inflation.
+3. **Skip counting prefetch/bot requests** — optionally, in `functions/go/[slug].js`, skip the KV
+   increment when request headers indicate a prefetch or bot (e.g. `Sec-Purpose: prefetch`, or a
+   known bot `User-Agent`) while still performing the redirect.
+
+> Treat the numbers as an indicator of interest, not precise analytics. None of these measures make
+> the counts tamper-proof — that's inherent to a no-auth QR endpoint.
