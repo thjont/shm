@@ -1,0 +1,81 @@
+{{ define "main" }}
+{{ $game := .Params.game }}
+<article class="post-single">
+  <header class="post-header">
+    <p class="bgg-breadcrumb"><a href="/our-library/">Our Library</a> &rsaquo; {{ $game.name }}</p>
+    <h1 class="post-title">{{ $game.name }}</h1>
+    <div class="post-meta">
+      <span>{{ $game.year }}</span>
+      &nbsp;·&nbsp;
+      <span>{{ $game.min_players }}–{{ $game.max_players }} players</span>
+      &nbsp;·&nbsp;
+      <span>{{ $game.playing_time }} min</span>
+      {{ with $game.min_age }}&nbsp;·&nbsp;<span>Age {{ . }}+</span>{{ end }}
+    </div>
+  </header>
+
+  <div class="post-content">
+    <div class="bgg-detail">
+
+      <div class="bgg-detail-image">
+        {{ $img := $game.image }}
+        {{ if not $img }}{{ $img = $game.thumbnail }}{{ end }}
+        {{ with $img }}<img src="{{ . }}" alt="{{ $game.name }}" />{{ end }}
+
+        <div class="bgg-detail-stats">
+          {{ with $game.bgg_rank }}
+          <div><strong>BGG Rank</strong><br>#{{ . }}</div>
+          {{ end }}
+          {{ with $game.rating_bayes_average }}
+          <div><strong>Rating</strong><br>{{ printf "%.2f" . }} / 10</div>
+          {{ end }}
+          {{ with $game.rating_average_weight }}
+          <div><strong>Complexity</strong><br>{{ printf "%.2f" . }} / 5</div>
+          {{ end }}
+          {{ with $game.users_owned }}
+          <div><strong>Owners</strong><br>{{ . }}</div>
+          {{ end }}
+        </div>
+      </div>
+
+      <div class="bgg-detail-info">
+        {{ with $game.description }}
+        <div class="bgg-description">{{ . | markdownify }}</div>
+        {{ end }}
+
+        {{ with $game.categories }}
+        <p><strong>Categories</strong><br>{{ delimit . " · " }}</p>
+        {{ end }}
+
+        {{ with $game.mechanics }}
+        <p><strong>Mechanics</strong><br>{{ delimit . " · " }}</p>
+        {{ end }}
+
+        {{ with $game.designers }}
+        <p>
+          <strong>{{ if gt (len .) 1 }}Designers{{ else }}Designer{{ end }}</strong><br>
+          {{ delimit . ", " }}
+        </p>
+        {{ end }}
+
+        {{ with $game.publishers }}
+        <p>
+          <strong>{{ if gt (len .) 1 }}Publishers{{ else }}Publisher{{ end }}</strong><br>
+          {{ delimit . ", " }}
+        </p>
+        {{ end }}
+
+        {{ with $game.expansions }}
+        <div class="bgg-expansions">
+          <strong>Expansions</strong>
+          <ul>
+            {{ range . }}<li>{{ .name }}</li>{{ end }}
+          </ul>
+        </div>
+        {{ end }}
+      </div>
+
+    </div>
+  </div>
+</article>
+{{ end }}

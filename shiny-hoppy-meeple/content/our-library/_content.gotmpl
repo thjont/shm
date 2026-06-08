@@ -1,0 +1,7 @@
+{{- range .Site.Data.games }}
+  {{- $.AddPage (dict
+    "path"   (anchorize .name)
+    "title"  .name
+    "params" (dict "game" .)
+  ) }}
+{{- end }}

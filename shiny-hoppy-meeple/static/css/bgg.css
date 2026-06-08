@@ -1,0 +1,123 @@
+/* ── Collection grid ───────────────────────────────────────────── */
+
+.bgg-collection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.bgg-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  text-decoration: none !important;
+  color: inherit;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.bgg-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.bgg-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.bgg-card-body {
+  padding: 0.6rem 0.75rem 0.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.bgg-card-body h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.bgg-year {
+  font-size: 0.8rem;
+  color: var(--secondary);
+}
+
+.bgg-card-meta {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--secondary);
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+
+/* ── Game detail page ───────────────────────────────────────────── */
+
+.bgg-breadcrumb {
+  font-size: 0.85rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.bgg-breadcrumb a {
+  color: var(--secondary);
+}
+
+.bgg-detail {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .bgg-detail {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bgg-detail-image img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+}
+
+.bgg-detail-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.bgg-detail-stats div {
+  background: var(--code-bg);
+  border-radius: 4px;
+  padding: 0.5rem 0.6rem;
+  line-height: 1.4;
+}
+
+.bgg-detail-info p {
+  margin: 0.75rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.bgg-description {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.bgg-expansions ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+}
