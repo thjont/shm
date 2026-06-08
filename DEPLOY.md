@@ -52,10 +52,24 @@ detail page. Counts are **publicly visible** (the site is public).
 ### How it works
 
 - **`functions/go/[slug].js`** — increments `SCANS[<slug>]` in KV, then 302-redirects to
-  `/our-library/<slug>/`. Only well-formed slugs (`[a-z0-9-]`) are counted.
-- **`functions/api/scans.js`** — returns `{ "<slug>": <count>, … }`, cached 60s at the edge.
+  `/our-library/<slug>/`. Only slugs in the allowlist are counted (see below).
+- **`functions/api/scans.js`** — returns `{ "<slug>": <count>, … }` (restricted to allowlisted
+  slugs), cached 60s at the edge.
 - **`static/js/scans.js`** — fetches `/api/scans` after the page renders and fills any element
   with a `data-scan-slug` attribute (so counts never block the static content).
+
+#### Slug allowlist
+
+To stop arbitrary requests writing junk keys into KV (which would burn the write quota and bloat
+`/api/scans`), only slugs that correspond to a real game are counted. Hugo emits the list of valid
+slugs at build time to **`/scan-slugs.json`** via a custom `ScanSlugs` output format
+(`layouts/index.scanslugs.json`, derived from `data/collection.json`). Both Functions fetch this
+file and reject anything not on it; if the file is unreachable they fall back to a format-only check
+(`[a-z0-9-]`). The same `[outputs]` block also enables the `JSON` output PaperMod needs for site
+search.
+
+> Because the allowlist comes from the collection data, **re-running the export and rebuilding keeps
+> it in sync automatically** — newly added games become counted, removed games stop counting.
 
 KV is eventually consistent, so two scans of the same game within a second can rarely lose one
 increment — acceptable for venue-scale traffic. Free-tier KV limits (100k reads / 1k writes per
