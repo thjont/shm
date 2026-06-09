@@ -2,10 +2,11 @@
 """Export a BGG user collection and game details to JSON, with local images.
 
 Usage:
-    BGG_USERNAME=<username> python bgg_export.py [options]
+    BGG_API_TOKEN=<token> BGG_USERNAME=<username> python bgg_export.py [options]
 
-BGG_API_TOKEN is optional — BGG's XML API2 is public for reads. Set it only if
-you have one (e.g. for higher rate limits); otherwise the script runs keyless.
+BGG's API currently returns 401 for unauthenticated collection requests, so a
+valid BGG_API_TOKEN is required in practice. The token is technically optional
+(the script will attempt keyless access if it is unset), but expect a 401.
 
 Options:
     --data-dir PATH        Where to write collection.json and games/
@@ -38,7 +39,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from boardgamegeek import BGGClient, BGGRestrictCollectionTo
-from boardgamegeek.exceptions import BGGError
+from boardgamegeek.exceptions import BGGApiUnauthorizedError, BGGError
 
 PROJECT_DIR = Path(__file__).parent / "shiny-hoppy-meeple"
 DEFAULT_DATA_DIR = PROJECT_DIR / "data"
@@ -238,23 +239,30 @@ def main() -> None:
                         help="Re-download images even if the file already exists")
     args = parser.parse_args()
 
-    # BGG's XML API2 is public for reads, so a token is optional. When unset,
-    # BGGClient("") sends no Authorization header and falls back to keyless access.
+    # The token is optional at the call site (BGGClient("") sends no auth header),
+    # but BGG currently rejects unauthenticated collection requests with a 401.
     token = os.environ.get("BGG_API_TOKEN", "")
     username = os.environ.get("BGG_USERNAME")
 
     if not username:
         sys.exit("Error: BGG_USERNAME environment variable not set")
     if not token:
-        print("No BGG_API_TOKEN set — using public keyless access.", file=sys.stderr)
+        print("No BGG_API_TOKEN set — attempting keyless access "
+              "(BGG may reject this with a 401).", file=sys.stderr)
 
     client = BGGClient(token)
     images = ImageDownloader(
         args.image_dir, args.image_url_base, enabled=not args.skip_images, force=args.force_images
     )
 
-    game_ids = export_collection(username, client, args.data_dir, images)
-    export_games(game_ids, client, args.data_dir, images)
+    try:
+        game_ids = export_collection(username, client, args.data_dir, images)
+        export_games(game_ids, client, args.data_dir, images)
+    except BGGApiUnauthorizedError:
+        sys.exit("Error: BGG returned 401 Unauthorized — a valid BGG_API_TOKEN is "
+                 "required for this request. Set it and retry.")
+    except BGGError as exc:
+        sys.exit(f"Error: BGG API request failed — {exc}")
     images.summary()
 
     print("Done.")
