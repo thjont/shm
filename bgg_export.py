@@ -2,7 +2,10 @@
 """Export a BGG user collection and game details to JSON, with local images.
 
 Usage:
-    BGG_API_TOKEN=<token> BGG_USERNAME=<username> python bgg_export.py [options]
+    BGG_USERNAME=<username> python bgg_export.py [options]
+
+BGG_API_TOKEN is optional — BGG's XML API2 is public for reads. Set it only if
+you have one (e.g. for higher rate limits); otherwise the script runs keyless.
 
 Options:
     --data-dir PATH        Where to write collection.json and games/
@@ -235,13 +238,15 @@ def main() -> None:
                         help="Re-download images even if the file already exists")
     args = parser.parse_args()
 
-    token = os.environ.get("BGG_API_TOKEN")
+    # BGG's XML API2 is public for reads, so a token is optional. When unset,
+    # BGGClient("") sends no Authorization header and falls back to keyless access.
+    token = os.environ.get("BGG_API_TOKEN", "")
     username = os.environ.get("BGG_USERNAME")
 
-    if not token:
-        sys.exit("Error: BGG_API_TOKEN environment variable not set")
     if not username:
         sys.exit("Error: BGG_USERNAME environment variable not set")
+    if not token:
+        print("No BGG_API_TOKEN set — using public keyless access.", file=sys.stderr)
 
     client = BGGClient(token)
     images = ImageDownloader(
