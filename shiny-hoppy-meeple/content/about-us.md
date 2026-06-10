@@ -1,10 +1,14 @@
 +++
 date = '2026-06-07T00:00:00Z'
 draft = false
-title = 'About Shiny Hoppy Meeple'
+title = 'About Us'
 +++
 
 Shiny Hoppy Meeple is a board game community in East Belfast. We're a friendly bunch who love games of all kinds — from quick card games to heavy strategy titles — and we always have room for new players.
+
+## How it started
+
+**Adam** and **Phil** started Shiny Hoppy Meeple with a shared love of board games and a local taproom. What began as a small gathering on a Thursday night has grown into the community it is today.
 
 ## When and where
 

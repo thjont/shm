@@ -63,10 +63,6 @@ We also get together on the occasional Saturday — follow us on Instagram to st
     url = "/posts/"
     weight = 4
   [[menu.main]]
-    name = "Who Are We"
-    url = "/who-are-we/"
-    weight = 5
-  [[menu.main]]
     name = "About Us"
     url = "/about-us/"
-    weight = 6
+    weight = 5
