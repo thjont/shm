@@ -20,6 +20,7 @@
             {{ with .rating }}<span>★ {{ . }}</span>{{ end }}
             {{ with .numplays }}<span>{{ . }} plays</span>{{ end }}
             <span class="bgg-scans" data-scan-slug="{{ anchorize .name }}"></span>
+            <span class="shm-rank" data-rank-slug="{{ anchorize .name }}"></span>
           </div>
         </div>
       </a>
