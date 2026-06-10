@@ -2,7 +2,7 @@
 {{ $game := .Params.game }}
 <article class="post-single">
   <header class="post-header">
-    <p class="bgg-breadcrumb"><a href="/g/">Our Library</a> &rsaquo; {{ $game.name }}</p>
+    <p class="bgg-breadcrumb"><a href="/our-library/">Our Library</a> &rsaquo; {{ $game.name }}</p>
     <h1 class="post-title">{{ $game.name }}</h1>
     <div class="post-meta">
       <span>{{ $game.year }}</span>
@@ -92,7 +92,7 @@
         <div class="bgg-ownership">
           <strong>In the wild</strong>
           <ul>
-            {{ if $inLibrary }}<li><a href="/g/">Our Library</a></li>{{ end }}
+            {{ if $inLibrary }}<li><a href="/our-library/">Our Library</a></li>{{ end }}
             {{ range $owners }}<li><a href="/m/{{ .slug }}/">{{ .name }}</a></li>{{ end }}
           </ul>
         </div>

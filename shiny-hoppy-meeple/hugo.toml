@@ -52,7 +52,7 @@ We also get together on the occasional Saturday — follow us on Instagram to st
     weight = 1
   [[menu.main]]
     name = "Our Library"
-    url = "/g/"
+    url = "/our-library/"
     weight = 2
   [[menu.main]]
     name = "Members"
