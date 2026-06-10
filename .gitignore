@@ -13,3 +13,6 @@ node_modules/
 # Python
 __pycache__/
 *.pyc
+
+# Windows zone files
+*Zone.Identifier

@@ -35,6 +35,16 @@ We also get together on the occasional Saturday — follow us on Instagram to st
       [markup.goldmark.renderer]
         unsafe = true
 
+[outputs]
+  home = ["HTML", "RSS", "JSON", "ScanSlugs"]
+
+[outputFormats]
+  [outputFormats.ScanSlugs]
+    mediaType = "application/json"
+    baseName = "scan-slugs"
+    isPlainText = true
+    notAlternative = true
+
 [menu]
   [[menu.main]]
     name = "Home"

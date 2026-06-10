@@ -1,0 +1,13 @@
+# Cloudflare Pages configuration for shiny-hoppy-meeple.
+# Hugo builds into ./public; the ./functions directory holds Pages Functions.
+
+name = "shiny-hoppy-meeple"
+pages_build_output_dir = "public"
+compatibility_date = "2024-09-01"
+
+# Scan-counter store. Create the namespace once with:
+#   wrangler kv namespace create SCANS
+# then paste the returned id below. Exposed to functions as env.SCANS.
+[[kv_namespaces]]
+binding = "SCANS"
+id = "0358b09f29754ddeb5c72a58ba1e13e8"

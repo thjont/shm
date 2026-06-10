@@ -35,6 +35,7 @@
           {{ with $game.users_owned }}
           <div><strong>Owners</strong><br>{{ . }}</div>
           {{ end }}
+          <div><strong>Scans</strong><br><span data-scan-slug="{{ anchorize $game.name }}" data-scan-plain>…</span></div>
         </div>
       </div>
 
