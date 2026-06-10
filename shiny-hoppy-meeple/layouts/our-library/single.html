@@ -23,20 +23,17 @@
         {{ with $img }}<img src="{{ . }}" alt="{{ $game.name }}" />{{ end }}
 
         <div class="bgg-detail-stats">
-          {{ with $game.bgg_rank }}
-          <div><strong>BGG Rank</strong><br>#{{ . }}</div>
-          {{ end }}
+          <div><strong>SHM Rank</strong><br><span data-rank-slug="{{ anchorize $game.name }}">…</span></div>
+          <div><strong>Scans</strong><br><span data-scan-slug="{{ anchorize $game.name }}" data-scan-plain>…</span></div>
           {{ with $game.rating_bayes_average }}
-          <div><strong>Rating</strong><br>{{ printf "%.2f" . }} / 10</div>
+          <div><strong>BGG Rating</strong><br>{{ printf "%.2f" . }} / 10</div>
           {{ end }}
           {{ with $game.rating_average_weight }}
           <div><strong>Complexity</strong><br>{{ printf "%.2f" . }} / 5</div>
           {{ end }}
-          {{ with $game.users_owned }}
-          <div><strong>Owners</strong><br>{{ . }}</div>
+          {{ with $game.bgg_rank }}
+          <div><strong>BGG Rank</strong><br>#{{ . }}</div>
           {{ end }}
-          <div><strong>Scans</strong><br><span data-scan-slug="{{ anchorize $game.name }}" data-scan-plain>…</span></div>
-          <div><strong>SHM Rank</strong><br><span data-rank-slug="{{ anchorize $game.name }}">…</span></div>
         </div>
       </div>
 
