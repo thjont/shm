@@ -1,5 +1,5 @@
 {{- $slugs := slice -}}
-{{- range .Site.Data.collection.items -}}
+{{- range .Site.Data.games -}}
 {{- $slugs = $slugs | append (anchorize .name) -}}
 {{- end -}}
 {{- $slugs | jsonify -}}
