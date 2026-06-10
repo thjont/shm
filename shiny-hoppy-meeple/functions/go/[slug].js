@@ -33,6 +33,7 @@ export async function onRequestGet(context) {
     await env.SCANS.put(slug, String(current + 1));
   }
 
+
   // Only build a same-origin redirect for well-formed slugs (defence against
   // path/header injection); Pages serves a 404 if the page doesn't exist.
   const safe = SLUG_RE.test(slug) ? slug : "";

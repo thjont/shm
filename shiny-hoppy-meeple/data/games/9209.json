@@ -2,8 +2,10 @@
   "id": 9209,
   "name": "Ticket to Ride",
   "year": 2004,
-  "thumbnail": "https://cf.geekdo-images.com/ZWJg0dCdrWHxVnc0eFXK8w__thumb/img/yR9DPkeB3vFCJMwDMNBBW6TKqhY=/fit-in/200x150/filters:strip_icc()/pic38668.jpg",
-  "image": "https://cf.geekdo-images.com/ZWJg0dCdrWHxVnc0eFXK8w__original/img/lVSfUA-oR9LKWZ5m_eLdBJdMJDs=/0x0/filters:format(jpeg)/pic38668.jpg",
+  "thumbnail": "/images/games/9209-thumb.jpg",
+  "thumbnail_source": "https://cf.geekdo-images.com/ZWJg0dCdrWHxVnc0eFXK8w__thumb/img/yR9DPkeB3vFCJMwDMNBBW6TKqhY=/fit-in/200x150/filters:strip_icc()/pic38668.jpg",
+  "image": "/images/games/9209.jpg",
+  "image_source": "https://cf.geekdo-images.com/ZWJg0dCdrWHxVnc0eFXK8w__original/img/lVSfUA-oR9LKWZ5m_eLdBJdMJDs=/0x0/filters:format(jpeg)/pic38668.jpg",
   "description": "With elegantly simple gameplay, Ticket to Ride can be learned in under 15 minutes. Players collect cards of various types of train cars they then use to claim railway routes in North America. The longer the routes, the more points they earn.",
   "min_players": 2,
   "max_players": 5,
@@ -12,19 +14,51 @@
   "playing_time": 75,
   "min_age": 8,
   "expansion": false,
-  "categories": ["Trains", "Transportation"],
-  "mechanics": ["Card Drafting", "Hand Management", "Network and Route Building", "Set Collection"],
-  "families": ["Ticket to Ride"],
-  "designers": ["Alan R. Moon"],
-  "artists": ["Julien Delval", "Cyrille Daujean"],
-  "publishers": ["Days of Wonder"],
-  "expansions": [
-    {"id": 14996, "name": "Ticket to Ride: Europa 1912"},
-    {"id": 37904, "name": "Ticket to Ride: USA 1910"}
+  "categories": [
+    "Trains",
+    "Transportation"
   ],
-  "alternative_names": ["Les Aventuriers du Rail", "Zug um Zug"],
+  "mechanics": [
+    "Card Drafting",
+    "Hand Management",
+    "Network and Route Building",
+    "Set Collection"
+  ],
+  "families": [
+    "Ticket to Ride"
+  ],
+  "designers": [
+    "Alan R. Moon"
+  ],
+  "artists": [
+    "Julien Delval",
+    "Cyrille Daujean"
+  ],
+  "publishers": [
+    "Days of Wonder"
+  ],
+  "expansions": [
+    {
+      "id": 14996,
+      "name": "Ticket to Ride: Europa 1912"
+    },
+    {
+      "id": 37904,
+      "name": "Ticket to Ride: USA 1910"
+    }
+  ],
+  "alternative_names": [
+    "Les Aventuriers du Rail",
+    "Zug um Zug"
+  ],
   "bgg_rank": 85,
-  "ranks": [{"name": "boardgame", "friendlyname": "Board Game Rank", "value": 85}],
+  "ranks": [
+    {
+      "name": "boardgame",
+      "friendlyname": "Board Game Rank",
+      "value": 85
+    }
+  ],
   "users_rated": 122451,
   "rating_average": 7.42,
   "rating_bayes_average": 7.37,

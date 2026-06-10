@@ -121,3 +121,29 @@
   padding-left: 1.25rem;
   font-size: 0.9rem;
 }
+
+/* ── "Powered by BGG" footer attribution ───────────────────────── */
+
+.powered-by-bgg {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 0.5rem;
+}
+
+.powered-by-bgg img {
+  height: 28px;
+  width: auto;
+}
+
+/* Show the colour logo on light theme, the reversed logo on dark theme. */
+.powered-by-bgg .bgg-logo-dark {
+  display: none;
+}
+
+[data-theme="dark"] .powered-by-bgg .bgg-logo-light {
+  display: none;
+}
+
+[data-theme="dark"] .powered-by-bgg .bgg-logo-dark {
+  display: inline;
+}

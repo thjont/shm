@@ -9,3 +9,7 @@ wrangler.toml.bak
 
 # Node
 node_modules/
+
+# Python
+__pycache__/
+*.pyc
