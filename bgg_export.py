@@ -112,10 +112,12 @@ class ImageDownloader:
 
 
 def export_collection(
-    username: str, client: BGGClient, data_dir: Path, images: ImageDownloader
+    username: str, client: BGGClient, data_dir: Path, images: ImageDownloader,
+    collection_file: Path | None = None,
 ) -> list[int]:
-    """Fetch owned board games and write <data-dir>/collection.json.
+    """Fetch owned board games and write the collection JSON file.
 
+    Writes to `collection_file` if given, otherwise `<data-dir>/collection.json`.
     Returns the list of game IDs for downstream game-detail export.
     """
     print(f"Fetching collection for '{username}' …")
@@ -149,8 +151,8 @@ def export_collection(
             "last_modified": item.last_modified,
         })
 
-    data_dir.mkdir(parents=True, exist_ok=True)
-    out_path = data_dir / "collection.json"
+    out_path = collection_file if collection_file else data_dir / "collection.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(
         json.dumps({"owner": username, "count": len(items), "items": items}, indent=2, default=_serialise)
     )
@@ -233,6 +235,10 @@ def main() -> None:
                         help="Directory to download images into (default: shiny-hoppy-meeple/static/images/games)")
     parser.add_argument("--image-url-base", default=DEFAULT_IMAGE_URL_BASE,
                         help="Public URL prefix written into the JSON (default: /images/games)")
+    parser.add_argument("--collection-file", type=Path, default=None,
+                        help="Override output path for collection JSON "
+                             "(default: <data-dir>/collection.json). "
+                             "Use data/members/<name>.json for member collections.")
     parser.add_argument("--skip-images", action="store_true",
                         help="Don't download images; keep the remote BGG URLs")
     parser.add_argument("--force-images", action="store_true",
@@ -256,7 +262,7 @@ def main() -> None:
     )
 
     try:
-        game_ids = export_collection(username, client, args.data_dir, images)
+        game_ids = export_collection(username, client, args.data_dir, images, args.collection_file)
         export_games(game_ids, client, args.data_dir, images)
     except BGGApiUnauthorizedError:
         sys.exit("Error: BGG returned 401 Unauthorized — a valid BGG_API_TOKEN is "
