@@ -91,12 +91,10 @@
         {{ end }}
 
         {{ if $owners }}
-        <div class="bgg-owners">
-          <strong>{{ if eq (len $owners) 1 }}Owner{{ else }}Owners{{ end }}</strong>
-          <ul>
-            {{ range $owners }}<li><a href="/m/{{ .slug }}/">{{ .name }}</a></li>{{ end }}
-          </ul>
-        </div>
+        <p>
+          <strong>{{ if eq (len $owners) 1 }}Owner{{ else }}Owners{{ end }}</strong><br>
+          {{ range $i, $o := $owners }}{{ if $i }}, {{ end }}<a href="/m/{{ $o.slug }}/">{{ $o.name }}</a>{{ end }}
+        </p>
         {{ end }}
 
       </div>
