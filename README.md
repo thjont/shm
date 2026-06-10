@@ -12,9 +12,9 @@ Anyone in the community can write a post for the site. You'll need a GitHub acco
 
 ### 1. Open an issue
 
-Go to the [Issues](../../issues) tab and click **New issue**. Select the **New Post** template.
+Go to the [Issues](../../issues) tab and click **New issue**.
 
-- Set the **title** — this becomes the post title and the URL slug
+- Set the **title** — this becomes the post title and part of the URL
 - Write your **content** in the body using plain text or markdown
 - You can paste images directly into the issue body
 
