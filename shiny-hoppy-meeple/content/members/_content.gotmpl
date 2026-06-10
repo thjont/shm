@@ -1,0 +1,7 @@
+{{- range $slug, $member := .Site.Data.members }}
+  {{- $.AddPage (dict
+    "path"   $slug
+    "title"  $member.owner
+    "params" (dict "member" $member)
+  ) }}
+{{- end }}
