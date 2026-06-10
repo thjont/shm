@@ -1,5 +1,21 @@
 {{ define "main" }}
 {{ $game := .Params.game }}
+
+{{/* Ownership — computed once, used in both the stats panel and info column */}}
+{{ $inLibrary := false }}
+{{ range $.Site.Data.collection.items }}
+  {{ if eq .id $game.id }}{{ $inLibrary = true }}{{ end }}
+{{ end }}
+
+{{ $owners := slice }}
+{{ range $slug, $member := $.Site.Data.members }}
+  {{ range $member.items }}
+    {{ if eq .id $game.id }}
+      {{ $owners = $owners | append (dict "name" $member.owner "slug" $slug) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
 <article class="post-single">
   <header class="post-header">
     <p class="bgg-breadcrumb"><a href="/our-library/">Our Library</a> &rsaquo; {{ $game.name }}</p>
@@ -24,6 +40,7 @@
 
         <div class="bgg-detail-stats">
           <div><strong>SHM Rank</strong><br><span data-rank-slug="{{ anchorize $game.name }}">…</span></div>
+          <div><strong>In Library</strong><br>{{ if $inLibrary }}<a href="/our-library/">Yes</a>{{ else }}No{{ end }}</div>
           <div><strong>Plays</strong><br><span data-play-slug="{{ anchorize $game.name }}" data-play-plain>…</span></div>
           {{ with $game.rating_bayes_average }}
           <div><strong>BGG Rating</strong><br>{{ printf "%.2f" . }} / 10</div>
@@ -73,26 +90,10 @@
         </div>
         {{ end }}
 
-        {{/* Ownership: shared library + members */}}
-        {{ $inLibrary := false }}
-        {{ range $.Site.Data.collection.items }}
-          {{ if eq .id $game.id }}{{ $inLibrary = true }}{{ end }}
-        {{ end }}
-
-        {{ $owners := slice }}
-        {{ range $slug, $member := $.Site.Data.members }}
-          {{ range $member.items }}
-            {{ if eq .id $game.id }}
-              {{ $owners = $owners | append (dict "name" $member.owner "slug" $slug) }}
-            {{ end }}
-          {{ end }}
-        {{ end }}
-
-        {{ if or $inLibrary $owners }}
-        <div class="bgg-ownership">
-          <strong>In the wild</strong>
+        {{ if $owners }}
+        <div class="bgg-owners">
+          <strong>{{ if eq (len $owners) 1 }}Owner{{ else }}Owners{{ end }}</strong>
           <ul>
-            {{ if $inLibrary }}<li><a href="/our-library/">Our Library</a></li>{{ end }}
             {{ range $owners }}<li><a href="/m/{{ .slug }}/">{{ .name }}</a></li>{{ end }}
           </ul>
         </div>
