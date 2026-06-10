@@ -116,7 +116,14 @@
   line-height: 1.7;
 }
 
-.bgg-expansions ul {
+.bgg-expansions,
+.bgg-owners {
+  margin: 0.75rem 0;
+  font-size: 0.95rem;
+}
+
+.bgg-expansions ul,
+.bgg-owners ul {
   margin: 0.25rem 0 0;
   padding-left: 1.25rem;
   font-size: 0.9rem;
