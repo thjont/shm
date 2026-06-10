@@ -72,6 +72,32 @@
           </ul>
         </div>
         {{ end }}
+
+        {{/* Ownership: shared library + members */}}
+        {{ $inLibrary := false }}
+        {{ range $.Site.Data.collection.items }}
+          {{ if eq .id $game.id }}{{ $inLibrary = true }}{{ end }}
+        {{ end }}
+
+        {{ $owners := slice }}
+        {{ range $slug, $member := $.Site.Data.members }}
+          {{ range $member.items }}
+            {{ if eq .id $game.id }}
+              {{ $owners = $owners | append (dict "name" $member.owner "slug" $slug) }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+
+        {{ if or $inLibrary $owners }}
+        <div class="bgg-ownership">
+          <strong>In the wild</strong>
+          <ul>
+            {{ if $inLibrary }}<li><a href="/our-library/">Our Library</a></li>{{ end }}
+            {{ range $owners }}<li><a href="/members/{{ .slug }}/">{{ .name }}</a></li>{{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
       </div>
 
     </div>
