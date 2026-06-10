@@ -1,0 +1,63 @@
+{{ define "main" }}
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title entry-hint-parent">{{ .Title }}</h1>
+  </header>
+
+  <div class="post-content">
+    <table class="stats-table" id="stats-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Game</th>
+          <th>Plays</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range .Site.Data.games }}
+        <tr data-slug="{{ anchorize .name }}" data-plays="0">
+          <td class="stats-rank">—</td>
+          <td><a href="/g/{{ anchorize .name }}/">{{ .name }}</a></td>
+          <td class="stats-plays">—</td>
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+</article>
+
+<script>
+(async () => {
+  try {
+    const res = await fetch("/api/plays");
+    if (!res.ok) return;
+    const counts = await res.json();
+
+    const tbody = document.querySelector("#stats-table tbody");
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+
+    rows.forEach(row => {
+      const n = counts[row.dataset.slug] || 0;
+      row.dataset.plays = n;
+      row.querySelector(".stats-plays").textContent = n;
+    });
+
+    rows.sort((a, b) => {
+      const diff = Number(b.dataset.plays) - Number(a.dataset.plays);
+      if (diff !== 0) return diff;
+      return a.querySelector("td:nth-child(2)").textContent
+               .localeCompare(b.querySelector("td:nth-child(2)").textContent);
+    });
+
+    let rank = 1;
+    rows.forEach((row, i) => {
+      if (i > 0 && Number(row.dataset.plays) < Number(rows[i - 1].dataset.plays)) rank = i + 1;
+      row.querySelector(".stats-rank").textContent = `#${rank}`;
+      tbody.appendChild(row);
+    });
+  } catch (e) {
+    // API unavailable — leave dashes in place.
+  }
+})();
+</script>
+{{ end }}
