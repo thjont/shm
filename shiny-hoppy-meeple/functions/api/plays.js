@@ -1,7 +1,7 @@
-// GET /api/scans
-// Returns scan counts as JSON: { "<slug>": <count>, ... }
+// GET /api/plays
+// Returns play counts as JSON: { "<slug>": <count>, ... }
 // Restricted to slugs in the build-time allowlist (/scan-slugs.json) so any stray
-// keys never surface or bloat the response. Consumed client-side by /js/scans.js.
+// keys never surface or bloat the response. Consumed client-side by /js/plays.js.
 
 // Load the set of valid slugs emitted by Hugo. Returns null if unreadable, in
 // which case all stored keys are returned (the pre-allowlist behaviour).

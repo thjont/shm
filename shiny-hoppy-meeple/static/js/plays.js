@@ -1,11 +1,11 @@
-// Fetches scan counts and fills elements with data-scan-slug or data-rank-slug attributes.
+// Fetches play counts and fills elements with data-play-slug or data-rank-slug attributes.
 // Runs after the page renders so it never blocks the static content.
-//   <span data-scan-slug="catan"></span>        → "5 scans"
-//   <span data-scan-slug="catan" data-scan-plain></span> → "5"
+//   <span data-play-slug="catan"></span>        → "5 plays"
+//   <span data-play-slug="catan" data-play-plain></span> → "5"
 //   <span data-rank-slug="catan"></span>         → "#3" (skip rank across the full library)
 
 // Build a skip-rank map from a slug→count object.
-// Games with 0 scans all receive the same last rank.
+// Games with 0 plays all receive the same last rank.
 function buildRanks(counts) {
   const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
   const ranks = {};
@@ -18,20 +18,20 @@ function buildRanks(counts) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const scanEls = document.querySelectorAll("[data-scan-slug]");
+  const playEls = document.querySelectorAll("[data-play-slug]");
   const rankEls = document.querySelectorAll("[data-rank-slug]");
-  if (!scanEls.length && !rankEls.length) return;
+  if (!playEls.length && !rankEls.length) return;
 
   try {
-    const res = await fetch("/api/scans");
+    const res = await fetch("/api/plays");
     if (!res.ok) return;
     const counts = await res.json();
 
-    scanEls.forEach((el) => {
-      const n = counts[el.dataset.scanSlug] || 0;
-      el.textContent = el.hasAttribute("data-scan-plain")
+    playEls.forEach((el) => {
+      const n = counts[el.dataset.playSlug] || 0;
+      el.textContent = el.hasAttribute("data-play-plain")
         ? String(n)
-        : `${n} scan${n === 1 ? "" : "s"}`;
+        : `${n} play${n === 1 ? "" : "s"}`;
     });
 
     if (rankEls.length) {

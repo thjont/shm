@@ -1,5 +1,5 @@
 // QR-code target: /p/<slug>
-// Increments the scan counter for <slug> in KV, then redirects to the game page.
+// Increments the play counter for <slug> in KV, then redirects to the game page.
 // Only slugs in the build-time allowlist (/scan-slugs.json) are counted, so random
 // or abusive requests can't pollute KV with junk keys or burn the write quota.
 // The KV namespace is bound as `SCANS` (see wrangler.toml).
@@ -28,7 +28,7 @@ export async function onRequestGet(context) {
 
   if (counts && env.SCANS) {
     // KV is eventually consistent, so this read-modify-write can rarely lose a
-    // simultaneous increment. Acceptable for low-volume venue scans.
+    // simultaneous increment. Acceptable for low-volume venue plays.
     const current = parseInt(await env.SCANS.get(slug), 10) || 0;
     await env.SCANS.put(slug, String(current + 1));
   }
