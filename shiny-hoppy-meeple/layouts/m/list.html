@@ -9,7 +9,7 @@
 
     <div class="bgg-collection">
       {{ range $slug, $member := .Site.Data.members }}
-      <a class="bgg-card" href="/members/{{ $slug }}/">
+      <a class="bgg-card" href="/m/{{ $slug }}/">
         <div class="bgg-card-body">
           <h3>{{ $member.owner }}</h3>
           <span class="bgg-year">{{ $member.count }} game{{ if ne $member.count 1 }}s{{ end }}</span>

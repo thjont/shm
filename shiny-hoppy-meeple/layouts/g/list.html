@@ -1,15 +1,15 @@
 {{ define "main" }}
-{{ $member := .Params.member }}
 <article class="post-single">
   <header class="post-header">
-    <p class="bgg-breadcrumb"><a href="/members/">Members</a> &rsaquo; {{ $member.owner }}</p>
-    <h1 class="post-title">{{ $member.owner }}</h1>
+    <h1 class="post-title entry-hint-parent">{{ .Title }}</h1>
   </header>
 
   <div class="post-content">
+    {{ .Content }}
+
     <div class="bgg-collection">
-      {{ range $member.items }}
-      <a class="bgg-card" href="/our-library/{{ anchorize .name }}/">
+      {{ range .Site.Data.collection.items }}
+      <a class="bgg-card" href="/g/{{ anchorize .name }}/">
         {{ with .thumbnail }}
         <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />
         {{ end }}
@@ -17,6 +17,8 @@
           <h3>{{ .name }}</h3>
           <span class="bgg-year">{{ .year }}</span>
           <div class="bgg-card-meta">
+            {{ with .rating }}<span>★ {{ . }}</span>{{ end }}
+            <span class="bgg-scans" data-scan-slug="{{ anchorize .name }}"></span>
             <span class="shm-rank" data-rank-slug="{{ anchorize .name }}"></span>
           </div>
         </div>

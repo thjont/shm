@@ -1,4 +1,4 @@
-// QR-code target: /go/<slug>
+// QR-code target: /p/<slug>
 // Increments the scan counter for <slug> in KV, then redirects to the game page.
 // Only slugs in the build-time allowlist (/scan-slugs.json) are counted, so random
 // or abusive requests can't pollute KV with junk keys or burn the write quota.
@@ -37,6 +37,6 @@ export async function onRequestGet(context) {
   // Only build a same-origin redirect for well-formed slugs (defence against
   // path/header injection); Pages serves a 404 if the page doesn't exist.
   const safe = SLUG_RE.test(slug) ? slug : "";
-  const target = new URL(`/our-library/${safe}/`, request.url);
+  const target = new URL(`/g/${safe}/`, request.url);
   return Response.redirect(target.toString(), 302);
 }
