@@ -10,4 +10,4 @@ compatibility_date = "2024-09-01"
 # then paste the returned id below. Exposed to functions as env.SCANS.
 [[kv_namespaces]]
 binding = "SCANS"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
+id = "0358b09f29754ddeb5c72a58ba1e13e8"
