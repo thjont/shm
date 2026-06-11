@@ -38,7 +38,9 @@ import argparse
 import json
 import os
 import sys
+import time
 import urllib.request
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -164,35 +166,59 @@ def export_collection(
     return [item["id"] for item in items]
 
 
+def _fetch_geeklist_xml(geeklist_id: int) -> tuple[str, list[dict]]:
+    """Fetch a BGG geeklist via the XML API v1 and return (title, items).
+
+    BGG's v2 API does not expose geeklists, so this calls the v1 endpoint
+    directly. Items are filtered to objecttype="thing" (games/expansions).
+    """
+    url = f"https://boardgamegeek.com/xmlapi/geeklist/{geeklist_id}"
+    for attempt in range(5):
+        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            root = ET.fromstring(resp.read())
+        if root.tag == "message":
+            if attempt < 4:
+                print("  BGG queued — retrying in 5s …")
+                time.sleep(5)
+                continue
+            raise RuntimeError("BGG API did not respond in time — try again later")
+        break
+
+    title_el = root.find("title")
+    title = title_el.text if title_el is not None else f"Geeklist {geeklist_id}"
+
+    items = []
+    for item in root.findall("item"):
+        if item.get("objecttype") != "thing":
+            continue
+        items.append({
+            "id": int(item.get("objectid")),
+            "name": item.get("objectname", ""),
+        })
+    return title, items
+
+
 def export_geeklist(
-    geeklist_id: int, client: BGGClient, data_dir: Path, images: ImageDownloader,
+    geeklist_id: int, _client: BGGClient, data_dir: Path, images: ImageDownloader,
     collection_file: Path | None = None,
 ) -> list[int]:
     """Fetch a BGG geeklist and write a collection JSON file.
 
     Writes to `collection_file` if given, otherwise `<data-dir>/collection.json`.
+    Thumbnails are not available from the geeklist API; they are populated at
+    build time from the game-detail files fetched by export_games().
     Returns the list of game IDs for downstream game-detail export.
     """
     print(f"Fetching geeklist {geeklist_id} …")
-    geeklist = client.geeklist(geeklist_id)
+    title, geeklist_items = _fetch_geeklist_xml(geeklist_id)
 
-    items = []
-    for item in geeklist.items:
-        if getattr(item, "object_type", None) != "thing":
-            continue
-        thumb_url = getattr(item, "thumbnail", None)
-        local_thumb = images.fetch(item.object_id, thumb_url, "-thumb") if thumb_url else None
-        items.append({
-            "id": item.object_id,
-            "name": item.object_name,
-            "thumbnail": local_thumb or thumb_url,
-            "thumbnail_source": thumb_url,
-        })
+    items = [{"id": gi["id"], "name": gi["name"], "thumbnail": None} for gi in geeklist_items]
 
     out_path = collection_file if collection_file else data_dir / "collection.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(
-        json.dumps({"owner": geeklist.name, "count": len(items), "items": items}, indent=2, default=_serialise)
+        json.dumps({"owner": title, "count": len(items), "items": items}, indent=2, default=_serialise)
     )
     print(f"  Saved {len(items)} items → {out_path}")
     return [item["id"] for item in items]
