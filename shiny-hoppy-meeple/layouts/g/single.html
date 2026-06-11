@@ -18,7 +18,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <p class="bgg-breadcrumb"><a href="/our-library/">Our Library</a> &rsaquo; {{ $game.name }}</p>
+    <p class="bgg-breadcrumb"><a href="/library/">Library</a> &rsaquo; {{ $game.name }}</p>
     <h1 class="post-title">{{ $game.name }}</h1>
     <div class="post-meta">
       <span>{{ $game.year }}</span>
@@ -40,7 +40,7 @@
 
         <div class="bgg-detail-stats">
           <div><strong>SHM Rank</strong><br><span data-rank-slug="{{ anchorize $game.name }}">…</span></div>
-          <div><strong>In Library</strong><br>{{ if $inLibrary }}<a href="/our-library/">Yes</a>{{ else }}No{{ end }}</div>
+          <div><strong>In Library</strong><br>{{ if $inLibrary }}<a href="/library/">Yes</a>{{ else }}No{{ end }}</div>
           <div><strong>Plays</strong><br><span data-play-slug="{{ anchorize $game.name }}" data-play-plain>…</span></div>
           {{ with $game.rating_bayes_average }}
           <div><strong>BGG Rating</strong><br>{{ printf "%.2f" . }} / 10</div>
