@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
-"""Export a BGG user collection and game details to JSON, with local images.
+"""Export a BGG user collection or geeklist and game details to JSON, with local images.
 
 Usage:
+    # User collection (requires auth):
     BGG_API_TOKEN=<token> BGG_USERNAME=<username> python bgg_export.py [options]
 
+    # Geeklist (public, no auth needed):
+    python bgg_export.py --geeklist <id> [options]
+
 BGG's API currently returns 401 for unauthenticated collection requests, so a
-valid BGG_API_TOKEN is required in practice. The token is technically optional
-(the script will attempt keyless access if it is unset), but expect a 401.
+valid BGG_API_TOKEN is required for collection mode. Geeklist mode is public.
 
 Options:
+    --geeklist ID          Import a BGG geeklist instead of a user collection
     --data-dir PATH        Where to write collection.json and games/
                            (default: shiny-hoppy-meeple/data)
     --image-dir PATH       Where to download images
@@ -160,6 +164,40 @@ def export_collection(
     return [item["id"] for item in items]
 
 
+def export_geeklist(
+    geeklist_id: int, client: BGGClient, data_dir: Path, images: ImageDownloader,
+    collection_file: Path | None = None,
+) -> list[int]:
+    """Fetch a BGG geeklist and write a collection JSON file.
+
+    Writes to `collection_file` if given, otherwise `<data-dir>/collection.json`.
+    Returns the list of game IDs for downstream game-detail export.
+    """
+    print(f"Fetching geeklist {geeklist_id} …")
+    geeklist = client.geeklist(geeklist_id)
+
+    items = []
+    for item in geeklist.items:
+        if getattr(item, "object_type", None) != "thing":
+            continue
+        thumb_url = getattr(item, "thumbnail", None)
+        local_thumb = images.fetch(item.object_id, thumb_url, "-thumb") if thumb_url else None
+        items.append({
+            "id": item.object_id,
+            "name": item.object_name,
+            "thumbnail": local_thumb or thumb_url,
+            "thumbnail_source": thumb_url,
+        })
+
+    out_path = collection_file if collection_file else data_dir / "collection.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(
+        json.dumps({"owner": geeklist.name, "count": len(items), "items": items}, indent=2, default=_serialise)
+    )
+    print(f"  Saved {len(items)} items → {out_path}")
+    return [item["id"] for item in items]
+
+
 def export_games(
     game_ids: list[int], client: BGGClient, data_dir: Path, images: ImageDownloader
 ) -> None:
@@ -228,7 +266,10 @@ def export_games(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Export a BGG user collection and game details to JSON.")
+    parser = argparse.ArgumentParser(description="Export a BGG user collection or geeklist and game details to JSON.")
+    source = parser.add_mutually_exclusive_group()
+    source.add_argument("--geeklist", type=int, metavar="ID",
+                        help="Import a BGG geeklist by ID instead of a user collection")
     parser.add_argument("--data-dir", type=Path, default=DEFAULT_DATA_DIR,
                         help="Directory for collection.json and games/ (default: shiny-hoppy-meeple/data)")
     parser.add_argument("--image-dir", type=Path, default=DEFAULT_IMAGE_DIR,
@@ -245,14 +286,12 @@ def main() -> None:
                         help="Re-download images even if the file already exists")
     args = parser.parse_args()
 
-    # The token is optional at the call site (BGGClient("") sends no auth header),
-    # but BGG currently rejects unauthenticated collection requests with a 401.
     token = os.environ.get("BGG_API_TOKEN", "")
     username = os.environ.get("BGG_USERNAME")
 
-    if not username:
-        sys.exit("Error: BGG_USERNAME environment variable not set")
-    if not token:
+    if not args.geeklist and not username:
+        sys.exit("Error: BGG_USERNAME environment variable not set (required for collection mode)")
+    if not args.geeklist and not token:
         print("No BGG_API_TOKEN set — attempting keyless access "
               "(BGG may reject this with a 401).", file=sys.stderr)
 
@@ -262,7 +301,10 @@ def main() -> None:
     )
 
     try:
-        game_ids = export_collection(username, client, args.data_dir, images, args.collection_file)
+        if args.geeklist:
+            game_ids = export_geeklist(args.geeklist, client, args.data_dir, images, args.collection_file)
+        else:
+            game_ids = export_collection(username, client, args.data_dir, images, args.collection_file)
         export_games(game_ids, client, args.data_dir, images)
     except BGGApiUnauthorizedError:
         sys.exit("Error: BGG returned 401 Unauthorized — a valid BGG_API_TOKEN is "
