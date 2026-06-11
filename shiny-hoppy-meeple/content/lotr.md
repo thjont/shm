@@ -2,6 +2,7 @@
 title = 'The Fellowship of the Meeple'
 date = '2026-06-10T00:00:00Z'
 draft = false
+searchHidden = true
 +++
 
 A small fellowship within Shiny Hoppy Meeple — united by a love of Tolkien and the games his world has inspired.

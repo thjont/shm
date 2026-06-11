@@ -66,3 +66,7 @@ We also get together on the occasional Saturday — follow us on Instagram to st
     name = "About Us"
     url = "/about-us/"
     weight = 5
+  [[menu.main]]
+    name = "Search"
+    url = "/search/"
+    weight = 6
