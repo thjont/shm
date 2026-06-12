@@ -1,0 +1,90 @@
+name: Delete game override from issue
+
+on:
+    issues:
+        types: [labeled]
+
+jobs:
+    delete-override:
+        if: github.event.label.name == 'publish' && contains(github.event.issue.labels.*.name, 'delete-override')
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            issues: write
+            pull-requests: write
+        steps:
+            - name: Check permission
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  SENDER: ${{ github.event.sender.login }}
+                  ISSUE_NUMBER: ${{ github.event.issue.number }}
+                  REPO: ${{ github.repository }}
+              run: |
+                  PERMISSION=$(gh api "repos/${REPO}/collaborators/${SENDER}/permission" --jq '.permission' 2>/dev/null || echo "none")
+                  if [[ "$PERMISSION" != "admin" && "$PERMISSION" != "write" ]]; then
+                    gh issue comment "$ISSUE_NUMBER" --body "@${SENDER} Only maintainers with write access can delete game overrides."
+                    gh issue close "$ISSUE_NUMBER"
+                    exit 1
+                  fi
+
+            - uses: actions/checkout@v4
+
+            - name: Validate and remove override file
+              id: override
+              env:
+                  ISSUE_BODY: ${{ github.event.issue.body }}
+                  ISSUE_NUMBER: ${{ github.event.issue.number }}
+                  GH_TOKEN: ${{ github.token }}
+              run: |
+                  python3 - <<'PYEOF'
+                  import os, re, sys
+
+                  body = os.environ['ISSUE_BODY']
+                  issue_number = os.environ['ISSUE_NUMBER']
+
+                  def extract(label):
+                      m = re.search(rf'### {re.escape(label)}\n\n(.*?)(?=\n### |\Z)', body, re.DOTALL)
+                      if not m:
+                          return ''
+                      v = m.group(1).strip()
+                      return '' if v == '_No response_' else v
+
+                  bgg_id = extract('BGG Game ID').strip()
+
+                  if not bgg_id.isdigit():
+                      print(f'::error::Invalid BGG Game ID: {bgg_id!r}')
+                      os.system(f'gh issue comment {issue_number} --body "Invalid BGG Game ID: `{bgg_id}`. Must be a number."')
+                      sys.exit(1)
+
+                  path = f'shiny-hoppy-meeple/data/games-overrides/{bgg_id}.json'
+                  if not os.path.exists(path):
+                      print(f'::error::No override found for BGG game {bgg_id}')
+                      os.system(f'gh issue comment {issue_number} --body "No override found for BGG game [{bgg_id}](https://boardgamegeek.com/boardgame/{bgg_id})."')
+                      sys.exit(1)
+
+                  os.remove(path)
+
+                  with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+                      out.write(f'bgg_id={bgg_id}\n')
+                      out.write(f'path={path}\n')
+                  PYEOF
+
+            - name: Create branch and open PR
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  BGG_ID: ${{ steps.override.outputs.bgg_id }}
+                  OVERRIDE_PATH: ${{ steps.override.outputs.path }}
+                  ISSUE_NUMBER: ${{ github.event.issue.number }}
+              run: |
+                  BRANCH="delete-override/${BGG_ID}"
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+                  git checkout -b "$BRANCH"
+                  git rm "$OVERRIDE_PATH"
+                  git commit -m "Remove game override for BGG #${BGG_ID} (#${ISSUE_NUMBER})"
+                  git push origin "$BRANCH"
+                  gh pr create \
+                    --title "Delete game override: BGG #${BGG_ID}" \
+                    --body "Closes #${ISSUE_NUMBER}" \
+                    --base main \
+                    --head "$BRANCH"

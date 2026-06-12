@@ -1,0 +1,16 @@
+name: Delete Game Override
+description: Remove a custom content override for a board game
+labels: ["delete-override"]
+body:
+    - type: markdown
+      attributes:
+          value: |
+              This removes the override and restores BGG data for the game. Apply the `publish` label when ready to create the PR.
+    - type: input
+      id: bgg_id
+      attributes:
+          label: BGG Game ID
+          description: The BoardGameGeek numeric ID of the game override to remove.
+          placeholder: "13"
+      validations:
+          required: true

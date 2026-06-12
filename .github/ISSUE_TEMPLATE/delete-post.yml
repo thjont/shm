@@ -1,0 +1,16 @@
+name: Delete Post
+description: Remove a published post from the site
+labels: ["delete-post"]
+body:
+    - type: markdown
+      attributes:
+          value: |
+              This permanently removes the post and any associated images. Apply the `publish` label when ready to create the PR.
+    - type: input
+      id: slug
+      attributes:
+          label: Post Slug
+          description: The post's URL slug (e.g. for /posts/my-post/ use my-post). Find it in the post's URL or filename under content/posts/.
+          placeholder: "my-post"
+      validations:
+          required: true

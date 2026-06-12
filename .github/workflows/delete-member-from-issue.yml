@@ -1,0 +1,106 @@
+name: Delete member from issue
+
+on:
+    issues:
+        types: [labeled]
+
+jobs:
+    delete-member:
+        if: github.event.label.name == 'publish' && contains(github.event.issue.labels.*.name, 'delete-member')
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            issues: write
+            pull-requests: write
+        steps:
+            - name: Check permission
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  SENDER: ${{ github.event.sender.login }}
+                  ISSUE_NUMBER: ${{ github.event.issue.number }}
+                  REPO: ${{ github.repository }}
+              run: |
+                  PERMISSION=$(gh api "repos/${REPO}/collaborators/${SENDER}/permission" --jq '.permission' 2>/dev/null || echo "none")
+                  if [[ "$PERMISSION" != "admin" && "$PERMISSION" != "write" ]]; then
+                    gh issue comment "$ISSUE_NUMBER" --body "@${SENDER} Only maintainers with write access can delete members."
+                    gh issue close "$ISSUE_NUMBER"
+                    exit 1
+                  fi
+
+            - uses: actions/checkout@v4
+
+            - name: Validate and remove member files
+              id: member
+              env:
+                  ISSUE_BODY: ${{ github.event.issue.body }}
+                  ISSUE_NUMBER: ${{ github.event.issue.number }}
+                  GH_TOKEN: ${{ github.token }}
+              run: |
+                  python3 - <<'PYEOF'
+                  import json, os, re, sys
+
+                  body = os.environ['ISSUE_BODY']
+                  issue_number = os.environ['ISSUE_NUMBER']
+
+                  def extract(label):
+                      m = re.search(rf'### {re.escape(label)}\n\n(.*?)(?=\n### |\Z)', body, re.DOTALL)
+                      if not m:
+                          return ''
+                      v = m.group(1).strip()
+                      return '' if v == '_No response_' else v
+
+                  slug = extract('Slug').strip()
+
+                  if not re.match(r'^[a-z0-9][a-z0-9-]*$', slug):
+                      print(f'::error::Invalid slug: {slug!r}')
+                      os.system(f'gh issue comment {issue_number} --body "Invalid slug: `{slug}`."')
+                      sys.exit(1)
+
+                  config_path = f'shiny-hoppy-meeple/data/members-config/{slug}.json'
+                  if not os.path.exists(config_path):
+                      print(f'::error::No member with slug: {slug!r}')
+                      os.system(f'gh issue comment {issue_number} --body "No member found with slug `{slug}`."')
+                      sys.exit(1)
+
+                  with open(config_path) as f:
+                      config = json.load(f)
+                  display_name = config.get('display_name', slug)
+
+                  os.remove(config_path)
+
+                  member_path = f'shiny-hoppy-meeple/data/members/{slug}.json'
+                  member_exists = os.path.exists(member_path)
+                  if member_exists:
+                      os.remove(member_path)
+
+                  with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+                      out.write(f'slug={slug}\n')
+                      out.write(f'display_name={display_name}\n')
+                      out.write(f'config_path={config_path}\n')
+                      out.write(f'member_path={member_path}\n')
+                      out.write(f'member_exists={"true" if member_exists else "false"}\n')
+                  PYEOF
+
+            - name: Create branch and open PR
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  SLUG: ${{ steps.member.outputs.slug }}
+                  DISPLAY_NAME: ${{ steps.member.outputs.display_name }}
+                  CONFIG_PATH: ${{ steps.member.outputs.config_path }}
+                  MEMBER_PATH: ${{ steps.member.outputs.member_path }}
+                  MEMBER_EXISTS: ${{ steps.member.outputs.member_exists }}
+                  ISSUE_NUMBER: ${{ github.event.issue.number }}
+              run: |
+                  BRANCH="delete-member/${SLUG}"
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+                  git checkout -b "$BRANCH"
+                  git rm "$CONFIG_PATH"
+                  [ "$MEMBER_EXISTS" = "true" ] && git rm "$MEMBER_PATH"
+                  git commit -m "Remove member ${DISPLAY_NAME} (#${ISSUE_NUMBER})"
+                  git push origin "$BRANCH"
+                  gh pr create \
+                    --title "Delete member: ${DISPLAY_NAME}" \
+                    --body "Closes #${ISSUE_NUMBER}" \
+                    --base main \
+                    --head "$BRANCH"
