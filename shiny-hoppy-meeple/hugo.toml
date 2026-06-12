@@ -35,6 +35,11 @@ We also get together on the occasional Saturday — follow us on Instagram to st
       [markup.goldmark.renderer]
         unsafe = true
 
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  mechanic = "mechanics"
+
 [outputs]
   home = ["HTML", "RSS", "JSON", "ScanSlugs"]
 

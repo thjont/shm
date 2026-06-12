@@ -74,12 +74,16 @@
         </div>
         {{ end }}
 
-        {{ with $game.categories }}
-        <p><strong>Categories</strong><br>{{ delimit . " · " }}</p>
+        {{ with .GetTerms "categories" }}
+        <p><strong>Categories</strong><br>
+          {{ range $i, $t := . }}{{ if $i }} · {{ end }}<a href="{{ $t.RelPermalink }}">{{ $t.LinkTitle }}</a>{{ end }}
+        </p>
         {{ end }}
 
-        {{ with $game.mechanics }}
-        <p><strong>Mechanics</strong><br>{{ delimit . " · " }}</p>
+        {{ with .GetTerms "mechanics" }}
+        <p><strong>Mechanics</strong><br>
+          {{ range $i, $t := . }}{{ if $i }} · {{ end }}<a href="{{ $t.RelPermalink }}">{{ $t.LinkTitle }}</a>{{ end }}
+        </p>
         {{ end }}
 
         {{ with $game.designers }}
