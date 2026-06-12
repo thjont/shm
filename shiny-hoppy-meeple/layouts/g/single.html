@@ -86,30 +86,7 @@
         </p>
         {{ end }}
 
-        {{ with $game.designers }}
-        <p>
-          <strong>{{ if gt (len .) 1 }}Designers{{ else }}Designer{{ end }}</strong><br>
-          {{ delimit . ", " }}
-        </p>
-        {{ end }}
-
-        {{ with $game.publishers }}
-        <p>
-          <strong>{{ if gt (len .) 1 }}Publishers{{ else }}Publisher{{ end }}</strong><br>
-          {{ delimit . ", " }}
-        </p>
-        {{ end }}
-
-        {{ with $game.expansions }}
-        <div class="bgg-expansions">
-          <strong>Expansions</strong>
-          <ul>
-            {{ range . }}<li>{{ .name }}</li>{{ end }}
-          </ul>
-        </div>
-        {{ end }}
-
-        {{ if $owners }}
+{{ if $owners }}
         <div class="bgg-owners">
           <strong>{{ if eq (len $owners) 1 }}Owner{{ else }}Owners{{ end }}</strong>
           <ul>
