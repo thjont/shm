@@ -70,16 +70,11 @@ jobs:
                       os.system(f'gh issue comment {issue_number} --body "Invalid GeekList ID: `{geeklist_id}`. Must be a number."')
                       sys.exit(1)
 
-                  member_dir = 'shiny-hoppy-meeple/data/members'
-                  os.makedirs(member_dir, exist_ok=True)
+                  config_dir = 'shiny-hoppy-meeple/data/members-config'
+                  os.makedirs(config_dir, exist_ok=True)
 
-                  list_path = 'shiny-hoppy-meeple/data/members.json'
-                  members = []
-                  if os.path.exists(list_path):
-                      with open(list_path) as f:
-                          members = json.load(f)
-
-                  if any(m['slug'] == slug for m in members):
+                  config_path = f'{config_dir}/{slug}.json'
+                  if os.path.exists(config_path):
                       print(f'::error::Slug already exists: {slug!r}')
                       os.system(f'gh issue comment {issue_number} --body "A member with slug `{slug}` already exists."')
                       sys.exit(1)
@@ -92,21 +87,14 @@ jobs:
                   if geeklist_id:
                       data['geeklist'] = int(geeklist_id)
 
-                  member_path = f'{member_dir}/{slug}.json'
-                  with open(member_path, 'w') as f:
+                  with open(config_path, 'w') as f:
                       json.dump(data, f, indent=2)
-                      f.write('\n')
-
-                  members.append({'slug': slug, 'display_name': display_name})
-                  with open(list_path, 'w') as f:
-                      json.dump(members, f, indent=2)
                       f.write('\n')
 
                   with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
                       out.write(f'slug={slug}\n')
                       out.write(f'display_name={display_name}\n')
-                      out.write(f'member_path={member_path}\n')
-                      out.write(f'list_path={list_path}\n')
+                      out.write(f'config_path={config_path}\n')
                   PYEOF
 
             - name: Create branch and open PR
@@ -114,15 +102,14 @@ jobs:
                   GH_TOKEN: ${{ github.token }}
                   SLUG: ${{ steps.member.outputs.slug }}
                   DISPLAY_NAME: ${{ steps.member.outputs.display_name }}
-                  MEMBER_PATH: ${{ steps.member.outputs.member_path }}
-                  LIST_PATH: ${{ steps.member.outputs.list_path }}
+                  CONFIG_PATH: ${{ steps.member.outputs.config_path }}
                   ISSUE_NUMBER: ${{ github.event.issue.number }}
               run: |
                   BRANCH="member/${SLUG}"
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
                   git checkout -b "$BRANCH"
-                  git add "$MEMBER_PATH" "$LIST_PATH"
+                  git add "$CONFIG_PATH"
                   git commit -m "Add member ${DISPLAY_NAME} (#${ISSUE_NUMBER})"
                   git push origin "$BRANCH"
                   gh pr create \
