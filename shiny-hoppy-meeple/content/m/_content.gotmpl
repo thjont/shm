@@ -1,4 +1,4 @@
-{{- range $slug, $member := .Site.Data.members }}
+{{- range $slug, $member := hugo.Data.members }}
   {{- $.AddPage (dict
     "path"   $slug
     "title"  $member.owner

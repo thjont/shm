@@ -8,7 +8,7 @@
     {{ .Content }}
 
     <div class="bgg-collection">
-      {{ range $slug, $member := .Site.Data.members }}
+      {{ range $slug, $member := hugo.Data.members }}
       <a class="bgg-card" href="/m/{{ $slug }}/">
         <div class="bgg-card-body">
           <h3>{{ $member.owner }}</h3>

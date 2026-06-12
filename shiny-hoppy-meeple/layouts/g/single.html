@@ -3,12 +3,12 @@
 
 {{/* Ownership — computed once, used in both the stats panel and info column */}}
 {{ $inLibrary := false }}
-{{ range $.Site.Data.collection.items }}
+{{ range hugo.Data.collection.items }}
   {{ if eq .id $game.id }}{{ $inLibrary = true }}{{ end }}
 {{ end }}
 
 {{ $owners := slice }}
-{{ range $slug, $member := $.Site.Data.members }}
+{{ range $slug, $member := hugo.Data.members }}
   {{ range $member.items }}
     {{ if eq .id $game.id }}
       {{ $owners = $owners | append (dict "name" $member.owner "slug" $slug) }}

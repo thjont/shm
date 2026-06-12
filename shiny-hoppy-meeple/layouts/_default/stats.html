@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        {{ range .Site.Data.games }}
+        {{ range hugo.Data.games }}
         <tr data-slug="{{ anchorize .name }}" data-plays="0">
           <td class="stats-rank">—</td>
           <td><a href="/g/{{ anchorize .name }}/">{{ .name }}</a></td>

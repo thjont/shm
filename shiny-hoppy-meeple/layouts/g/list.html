@@ -8,9 +8,9 @@
     {{ .Content }}
 
     <div class="bgg-collection">
-      {{ range .Site.Data.collection.items }}
+      {{ range hugo.Data.collection.items }}
       {{ $thumb := .thumbnail }}
-      {{ if not $thumb }}{{ with index $.Site.Data.games (print .id) }}{{ $thumb = .thumbnail }}{{ end }}{{ end }}
+      {{ if not $thumb }}{{ with index hugo.Data.games (print .id) }}{{ $thumb = .thumbnail }}{{ end }}{{ end }}
       <a class="bgg-card" href="/g/{{ anchorize .name }}/">
         {{ with $thumb }}
         <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />
