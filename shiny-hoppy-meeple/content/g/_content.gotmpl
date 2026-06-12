@@ -1,5 +1,5 @@
 {{- range $key, $game := .Site.Data.games }}
-  {{- $override := index $.Site.Data.games_overrides $key }}
+  {{- $override := index (index $.Site.Data "games-overrides") $key }}
   {{- if $override }}
     {{- $game = merge $game $override }}
   {{- end }}
