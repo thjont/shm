@@ -9,6 +9,7 @@ on:
         branches: [main]
         paths:
             - "shiny-hoppy-meeple/**"
+    workflow_dispatch:
 jobs:
     deploy:
         runs-on: ubuntu-latest
