@@ -1,14 +1,19 @@
 {{ define "main" }}
+{{ $config := .Params.config }}
 {{ $member := .Params.member }}
 <article class="post-single">
   <header class="post-header">
-    <p class="bgg-breadcrumb"><a href="/m/">Members</a> &rsaquo; {{ $member.owner }}</p>
-    <h1 class="post-title">{{ $member.owner }}</h1>
+    <p class="bgg-breadcrumb"><a href="/m/">Members</a> &rsaquo; {{ $config.display_name }}</p>
+    <h1 class="post-title">{{ $config.display_name }}</h1>
+    {{ with $config.description }}
+    <p class="post-description">{{ . }}</p>
+    {{ end }}
   </header>
 
   <div class="post-content">
+    {{ with $member }}
     <div class="bgg-collection">
-      {{ range $member.items }}
+      {{ range .items }}
       <a class="bgg-card" href="/g/{{ anchorize .name }}/">
         {{ with .thumbnail }}
         <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />
@@ -23,6 +28,7 @@
       </a>
       {{ end }}
     </div>
+    {{ end }}
   </div>
 </article>
 {{ end }}

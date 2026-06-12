@@ -1,7 +1,8 @@
-{{- range $slug, $member := hugo.Data.members }}
+{{- range $slug, $config := (index hugo.Data "members-config") }}
+  {{- $member := index hugo.Data.members $slug }}
   {{- $.AddPage (dict
     "path"   $slug
-    "title"  $member.owner
-    "params" (dict "member" $member)
+    "title"  $config.display_name
+    "params" (dict "config" $config "member" $member)
   ) }}
 {{- end }}
