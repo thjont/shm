@@ -8,11 +8,14 @@
     {{ .Content }}
 
     <div class="bgg-collection">
-      {{ range $slug, $member := hugo.Data.members }}
+      {{ range $slug, $config := (index hugo.Data "members-config") }}
+      {{ $member := index hugo.Data.members $slug }}
       <a class="bgg-card" href="/m/{{ $slug }}/">
         <div class="bgg-card-body">
-          <h3>{{ $member.owner }}</h3>
-          <span class="bgg-year">{{ $member.count }} game{{ if ne $member.count 1 }}s{{ end }}</span>
+          <h3>{{ $config.display_name }}</h3>
+          {{ with $member }}
+          <span class="bgg-year">{{ .count }} game{{ if ne .count 1 }}s{{ end }}</span>
+          {{ end }}
         </div>
       </a>
       {{ end }}
