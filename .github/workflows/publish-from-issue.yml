@@ -48,7 +48,12 @@ jobs:
                   DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
                   FILE="shiny-hoppy-meeple/content/posts/${SLUG}.md"
                   TAGS_TOML=$(echo "$LABELS" | jq -r '[.[] | select(.name | startswith("tag/")) | .name[4:]] | @json')
-                  PROCESSED_BODY="$ISSUE_BODY"
+                  PROCESSED_BODY=$(python3 -c "
+import re, os
+body = os.environ.get('ISSUE_BODY', '')
+m = re.search(r'### Content\n\n(.*?)(?:\n### |\Z)', body, re.DOTALL)
+print(m.group(1).rstrip() if m else body)
+")
 
                   # Download any GitHub-hosted images and rewrite URLs to local paths
                   IMG_DIR="shiny-hoppy-meeple/static/images/posts/${SLUG}"
