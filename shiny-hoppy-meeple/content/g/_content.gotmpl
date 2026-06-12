@@ -1,7 +1,11 @@
-{{- range .Site.Data.games }}
+{{- range $key, $game := .Site.Data.games }}
+  {{- $override := index $.Site.Data.games_overrides $key }}
+  {{- if $override }}
+    {{- $game = merge $game $override }}
+  {{- end }}
   {{- $.AddPage (dict
-    "path"   (anchorize .name)
-    "title"  .name
-    "params" (dict "game" .)
+    "path"   (anchorize $game.name)
+    "title"  $game.name
+    "params" (dict "game" $game)
   ) }}
 {{- end }}
