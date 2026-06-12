@@ -59,6 +59,21 @@
         <div class="bgg-description">{{ . | markdownify }}</div>
         {{ end }}
 
+        {{ with $game.learn_to_play_video }}
+        <div class="bgg-learn-to-play">
+          <strong>Learn to Play</strong>
+          <div class="bgg-video-embed">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/{{ . }}"
+              title="Learn to play {{ $game.name }}"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+        {{ end }}
+
         {{ with $game.categories }}
         <p><strong>Categories</strong><br>{{ delimit . " · " }}</p>
         {{ end }}
