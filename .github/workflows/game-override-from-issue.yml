@@ -2,11 +2,11 @@ name: Create game override from issue
 
 on:
     issues:
-        types: [opened]
+        types: [labeled]
 
 jobs:
     create-override:
-        if: contains(github.event.issue.labels.*.name, 'game-override')
+        if: github.event.label.name == 'publish' && contains(github.event.issue.labels.*.name, 'game-override')
         runs-on: ubuntu-latest
         permissions:
             contents: write
