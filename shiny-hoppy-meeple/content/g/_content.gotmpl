@@ -6,6 +6,6 @@
   {{- $.AddPage (dict
     "path"   (anchorize $game.name)
     "title"  $game.name
-    "params" (dict "game" $game)
+    "params" (dict "game" $game "categories" $game.categories "mechanics" $game.mechanics)
   ) }}
 {{- end }}
