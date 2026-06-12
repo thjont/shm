@@ -1,0 +1,27 @@
+name: Game Override
+description: Add or update a custom content override for a board game
+labels: ["game-override"]
+body:
+  - type: input
+    id: bgg_id
+    attributes:
+      label: BGG Game ID
+      description: The BoardGameGeek numeric ID for the game.
+      placeholder: "13"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Custom description to replace the BGG description. Leave blank to keep the existing value.
+    validations:
+      required: false
+  - type: input
+    id: learn_to_play_video
+    attributes:
+      label: Learn to Play Video ID
+      description: YouTube video ID (the part after ?v= in the URL). Leave blank to keep the existing value.
+      placeholder: "oiQ6SgBzfqY"
+    validations:
+      required: false
