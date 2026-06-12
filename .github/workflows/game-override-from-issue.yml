@@ -11,6 +11,7 @@ jobs:
         permissions:
             contents: write
             issues: write
+            pull-requests: write
         steps:
             - name: Check permission
               env:
@@ -82,23 +83,22 @@ jobs:
                       out.write(f'path={path}\n')
                   PYEOF
 
-            - name: Commit and push
+            - name: Create branch and open PR
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  BGG_ID: ${{ steps.override.outputs.bgg_id }}
+                  OVERRIDE_PATH: ${{ steps.override.outputs.path }}
+                  ISSUE_NUMBER: ${{ github.event.issue.number }}
               run: |
+                  BRANCH="game-override/${BGG_ID}"
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
-                  git add "${{ steps.override.outputs.path }}"
-                  git commit -m "Add game override for BGG #${{ steps.override.outputs.bgg_id }} (#${{ github.event.issue.number }})"
-                  git push
-
-            - name: Trigger deploy
-              env:
-                  GH_TOKEN: ${{ github.token }}
-              run: gh workflow run deploy.yml --ref main
-
-            - name: Close issue
-              env:
-                  GH_TOKEN: ${{ github.token }}
-                  ISSUE_NUMBER: ${{ github.event.issue.number }}
-                  BGG_ID: ${{ steps.override.outputs.bgg_id }}
-              run: |
-                  gh issue close "$ISSUE_NUMBER" --comment "Override created for BGG game [#${BGG_ID}](https://boardgamegeek.com/boardgame/${BGG_ID})."
+                  git checkout -b "$BRANCH"
+                  git add "$OVERRIDE_PATH"
+                  git commit -m "Add game override for BGG #${BGG_ID} (#${ISSUE_NUMBER})"
+                  git push origin "$BRANCH"
+                  gh pr create \
+                    --title "Game override: BGG #${BGG_ID}" \
+                    --body "Closes #${ISSUE_NUMBER}" \
+                    --base main \
+                    --head "$BRANCH"
