@@ -8,7 +8,7 @@
     {{ .Content }}
 
     <div class="bgg-collection">
-      {{ range $slug, $config := (index hugo.Data "members-config") }}
+      {{ range $slug, $config := hugo.Data.sources.members }}
       {{ $member := index hugo.Data.members $slug }}
       <a class="bgg-card" href="/m/{{ $slug }}/">
         <div class="bgg-card-body">

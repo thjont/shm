@@ -56,7 +56,7 @@ jobs:
                       os.system(f'gh issue comment {issue_number} --body "Invalid slug: `{slug}`."')
                       sys.exit(1)
 
-                  config_path = f'shiny-hoppy-meeple/data/members-config/{slug}.json'
+                  config_path = f'shiny-hoppy-meeple/data/sources/members/{slug}.json'
                   if not os.path.exists(config_path):
                       print(f'::error::No member with slug: {slug!r}')
                       os.system(f'gh issue comment {issue_number} --body "No member found with slug `{slug}`."')
