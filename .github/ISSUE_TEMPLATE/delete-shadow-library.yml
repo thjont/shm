@@ -1,0 +1,16 @@
+name: Delete Shadow Library
+description: Remove a shadow library from the site
+labels: ["delete-shadow-library"]
+body:
+    - type: markdown
+      attributes:
+          value: |
+              This removes the shadow library config. Existing game pages generated from it will remain until the next bgg_export run. Apply the `publish` label when ready to create the PR.
+    - type: input
+      id: slug
+      attributes:
+          label: Slug
+          description: The shadow library's slug (as used in its config file name).
+          placeholder: "boundary-taproom"
+      validations:
+          required: true
