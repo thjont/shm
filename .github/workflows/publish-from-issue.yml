@@ -70,7 +70,9 @@ print(m.group(1).rstrip() if m else body)
                       [ -z "$url" ] && continue
                       IMG_COUNT=$((IMG_COUNT + 1))
                       TMPFILE=$(mktemp)
-                      curl -fsSL -H "Authorization: token $GH_TOKEN" -o "$TMPFILE" "$url"
+                      # user-attachments are publicly fetchable by URL, so no auth
+                      # token is sent — avoids leaking it on any cross-host redirect.
+                      curl -fsSL --proto '=https' -o "$TMPFILE" "$url"
                       MIME=$(file --mime-type -b "$TMPFILE")
                       case "$MIME" in
                         image/jpeg) EXT="jpg" ;;
