@@ -13,7 +13,7 @@ valid BGG_API_TOKEN is required for collection mode. Geeklist mode is public.
 
 Options:
     --geeklist ID          Import a BGG geeklist instead of a user collection
-    --data-dir PATH        Where to write collection.json and games/
+    --data-dir PATH        Where to write main-library.json and games/
                            (default: shiny-hoppy-meeple/data)
     --image-dir PATH       Where to download images
                            (default: shiny-hoppy-meeple/static/images/games)
@@ -23,7 +23,7 @@ Options:
     --force-images         Re-download images even if the file already exists
 
 Output:
-    <data-dir>/collection.json     — collection summary with per-item data
+    <data-dir>/main-library.json   — collection summary with per-item data
     <data-dir>/games/<id>.json     — full game detail for every game
     <image-dir>/<id>.<ext>         — full image per game
     <image-dir>/<id>-thumb.<ext>   — thumbnail per game
@@ -123,7 +123,7 @@ def export_collection(
 ) -> list[int]:
     """Fetch owned board games and write the collection JSON file.
 
-    Writes to `collection_file` if given, otherwise `<data-dir>/collection.json`.
+    Writes to `collection_file` if given, otherwise `<data-dir>/main-library.json`.
     Returns the list of game IDs for downstream game-detail export.
     """
     print(f"Fetching collection for '{username}' …")
@@ -157,7 +157,7 @@ def export_collection(
             "last_modified": item.last_modified,
         })
 
-    out_path = collection_file if collection_file else data_dir / "collection.json"
+    out_path = collection_file if collection_file else data_dir / "main-library.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(
         json.dumps({"owner": username, "count": len(items), "items": items}, indent=2, default=_serialise)
@@ -205,7 +205,7 @@ def export_geeklist(
 ) -> list[int]:
     """Fetch a BGG geeklist and write a collection JSON file.
 
-    Writes to `collection_file` if given, otherwise `<data-dir>/collection.json`.
+    Writes to `collection_file` if given, otherwise `<data-dir>/main-library.json`.
     Thumbnails are not available from the geeklist API; they are populated at
     build time from the game-detail files fetched by export_games().
     Returns the list of game IDs for downstream game-detail export.
@@ -215,7 +215,7 @@ def export_geeklist(
 
     items = [{"id": gi["id"], "name": gi["name"], "thumbnail": None} for gi in geeklist_items]
 
-    out_path = collection_file if collection_file else data_dir / "collection.json"
+    out_path = collection_file if collection_file else data_dir / "main-library.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(
         json.dumps({"owner": title, "count": len(items), "items": items}, indent=2, default=_serialise)
@@ -297,14 +297,14 @@ def main() -> None:
     source.add_argument("--geeklist", type=int, metavar="ID",
                         help="Import a BGG geeklist by ID instead of a user collection")
     parser.add_argument("--data-dir", type=Path, default=DEFAULT_DATA_DIR,
-                        help="Directory for collection.json and games/ (default: shiny-hoppy-meeple/data)")
+                        help="Directory for main-library.json and games/ (default: shiny-hoppy-meeple/data)")
     parser.add_argument("--image-dir", type=Path, default=DEFAULT_IMAGE_DIR,
                         help="Directory to download images into (default: shiny-hoppy-meeple/static/images/games)")
     parser.add_argument("--image-url-base", default=DEFAULT_IMAGE_URL_BASE,
                         help="Public URL prefix written into the JSON (default: /images/games)")
     parser.add_argument("--collection-file", type=Path, default=None,
                         help="Override output path for collection JSON "
-                             "(default: <data-dir>/collection.json). "
+                             "(default: <data-dir>/main-library.json). "
                              "Use data/members/<name>.json for member collections.")
     parser.add_argument("--skip-images", action="store_true",
                         help="Don't download images; keep the remote BGG URLs")
