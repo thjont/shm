@@ -22,6 +22,7 @@
           <h3>{{ .name }}</h3>
           <span class="bgg-year">{{ .year }}</span>
           <div class="bgg-card-meta">
+            {{ with .rating }}<span>★ {{ . }}</span>{{ end }}
             <span class="shm-rank" data-rank-slug="{{ anchorize .name }}"></span>
           </div>
         </div>

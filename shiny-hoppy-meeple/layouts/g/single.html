@@ -41,8 +41,8 @@
         <div class="bgg-detail-stats">
           <div><strong>SHM Rank</strong><br><span data-rank-slug="{{ anchorize $game.name }}">…</span></div>
           <div><strong>In Library</strong><br>{{ if $inLibrary }}<a href="/library/">Yes</a>{{ else }}No{{ end }}</div>
-          <div><strong>Member Plays</strong><br><span data-member-play-slug="{{ anchorize $game.name }}" data-play-plain>…</span></div>
-          <div><strong>Boundary Plays</strong><br><span data-play-slug="{{ anchorize $game.name }}" data-play-plain>…</span></div>
+          <div><strong>Members</strong><br><span data-member-play-slug="{{ anchorize $game.name }}">…</span></div>
+          <div><strong>Public</strong><br><span data-play-slug="{{ anchorize $game.name }}">…</span></div>
           <div><strong>BGG Rating</strong><br>{{ with $game.rating_bayes_average }}{{ printf "%.2f" . }} / 10{{ else }}—{{ end }}</div>
           <div><strong>Complexity</strong><br>{{ with $game.rating_average_weight }}{{ printf "%.2f" . }} / 5{{ else }}—{{ end }}</div>
         </div>
