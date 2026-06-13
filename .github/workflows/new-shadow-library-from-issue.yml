@@ -49,7 +49,9 @@ jobs:
                       v = m.group(1).strip()
                       return '' if v == '_No response_' else v
 
-                  display_name = extract('Display Name').strip()
+                  # Collapse all whitespace (incl. newlines) so display_name cannot
+                  # inject extra lines into $GITHUB_OUTPUT or break the commit/PR title.
+                  display_name = ' '.join(extract('Display Name').split())
                   slug         = extract('Slug').strip()
                   bgg_username = extract('BGG Username').strip()
                   geeklist_id  = extract('BGG GeekList ID').strip()

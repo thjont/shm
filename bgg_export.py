@@ -56,6 +56,21 @@ GAME_BATCH_SIZE = 20  # API max per request
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".gif", ".webp"}
 USER_AGENT = "shiny-hoppy-meeple-export/1.0 (+https://shiny-hoppy-meeple.pages.dev)"
 
+# Image URLs come from BGG responses, which are externally influenced (a malicious
+# geeklist could reference arbitrary URLs). Restrict fetches to https on BGG's own
+# image CDN so a crafted URL can't turn the downloader into an SSRF / file-read
+# primitive (e.g. file:///… or http://169.254.169.254/…).
+ALLOWED_IMAGE_HOSTS = ("geekdo-images.com",)
+
+
+def _is_allowed_image_url(url: str) -> bool:
+    """True only for https URLs hosted on BGG's image CDN (geekdo-images.com)."""
+    parsed = urlparse(url)
+    if parsed.scheme != "https":
+        return False
+    host = parsed.hostname or ""
+    return any(host == h or host.endswith("." + h) for h in ALLOWED_IMAGE_HOSTS)
+
 
 def _serialise(obj):
     """Fallback serialiser for json.dumps — converts unknown types to str."""
@@ -88,6 +103,11 @@ class ImageDownloader:
         `variant` is "" for the full image or "-thumb" for the thumbnail.
         """
         if not self.enabled or not url:
+            return None
+
+        if not _is_allowed_image_url(url):
+            print(f"  Warning: refusing non-BGG image URL: {url}", file=sys.stderr)
+            self.failed += 1
             return None
 
         filename = f"{game_id}{variant}{_image_ext(url)}"
