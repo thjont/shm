@@ -1,11 +1,12 @@
-// Fetches play counts and fills elements with data-play-slug or data-rank-slug attributes.
+// Fetches play counts and fills elements with data-* attributes.
 // Runs after the page renders so it never blocks the static content.
-//   <span data-play-slug="catan"></span>        → "5 plays"
-//   <span data-play-slug="catan" data-play-plain></span> → "5"
-//   <span data-rank-slug="catan"></span>         → "#3" (skip rank across the full library)
+//
+//   data-play-slug="catan"              → boundary (QR-scan) play count, e.g. "5 plays"
+//   data-play-slug="catan" data-play-plain → plain number, e.g. "5"
+//   data-rank-slug="catan"              → SHM rank by member plays, e.g. "#3"
+//   data-member-play-slug="catan"       → member play count, e.g. "5 plays"
+//   data-member-play-slug="catan" data-play-plain → plain number
 
-// Build a skip-rank map from a slug→count object.
-// Games with 0 plays all receive the same last rank.
 function buildRanks(counts) {
   const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
   const ranks = {};
@@ -18,30 +19,44 @@ function buildRanks(counts) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const playEls = document.querySelectorAll("[data-play-slug]");
-  const rankEls = document.querySelectorAll("[data-rank-slug]");
-  if (!playEls.length && !rankEls.length) return;
+  const playEls       = document.querySelectorAll("[data-play-slug]");
+  const rankEls       = document.querySelectorAll("[data-rank-slug]");
+  const memberPlayEls = document.querySelectorAll("[data-member-play-slug]");
+
+  if (!playEls.length && !rankEls.length && !memberPlayEls.length) return;
 
   try {
-    const res = await fetch("/api/plays");
-    if (!res.ok) return;
-    const counts = await res.json();
+    const needsMember = rankEls.length || memberPlayEls.length;
+    const [playsRes, memberRes] = await Promise.all([
+      fetch("/api/plays"),
+      needsMember ? fetch("/api/member-plays") : Promise.resolve(null),
+    ]);
 
-    playEls.forEach((el) => {
+    const counts       = playsRes.ok  ? await playsRes.json()  : {};
+    const memberCounts = memberRes?.ok ? await memberRes.json() : {};
+
+    playEls.forEach(el => {
       const n = counts[el.dataset.playSlug] || 0;
       el.textContent = el.hasAttribute("data-play-plain")
         ? String(n)
         : `${n} play${n === 1 ? "" : "s"}`;
     });
 
+    memberPlayEls.forEach(el => {
+      const n = memberCounts[el.dataset.memberPlaySlug] || 0;
+      el.textContent = el.hasAttribute("data-play-plain")
+        ? String(n)
+        : `${n} play${n === 1 ? "" : "s"}`;
+    });
+
     if (rankEls.length) {
-      const ranks = buildRanks(counts);
-      rankEls.forEach((el) => {
+      const ranks = buildRanks(memberCounts);
+      rankEls.forEach(el => {
         const r = ranks[el.dataset.rankSlug];
         el.textContent = r != null ? `#${r}` : "—";
       });
     }
   } catch (e) {
-    // Network/API failure — leave placeholders as-is, no error shown to visitors.
+    // Network/API failure — leave placeholders as-is.
   }
 });
