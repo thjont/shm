@@ -5,100 +5,176 @@
   </header>
 
   <div class="post-content">
-    <table class="stats-table" id="stats-table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Game</th>
-          <th>Plays</th>
-          <th>Member Plays</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{ range hugo.Data.games }}
-        <tr data-slug="{{ anchorize .name }}" data-plays="0" data-member-plays="0">
-          <td class="stats-rank">—</td>
-          <td><a href="/g/{{ anchorize .name }}/">{{ .name }}</a></td>
-          <td class="stats-plays">—</td>
-          <td class="stats-member-plays">
-            <span class="member-count">—</span>
-            <button class="member-play-btn" data-slug="{{ anchorize .name }}" aria-label="Log a member play for {{ .name }}">+1</button>
-          </td>
-        </tr>
-        {{ end }}
-      </tbody>
-    </table>
+    <div class="stats-wrap">
+      <table class="stats-table" id="stats-table">
+        <thead>
+          <tr>
+            <th class="stats-th stats-sortable stats-num" data-col="play-rank" aria-sort="ascending">Play #</th>
+            <th class="stats-th stats-sortable stats-num" data-col="member-rank">Member #</th>
+            <th class="stats-th stats-sortable" data-col="name">Game</th>
+            <th class="stats-th stats-sortable stats-num" data-col="plays">Plays</th>
+            <th class="stats-th stats-sortable stats-num" data-col="member-plays">Member Plays</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range hugo.Data.games }}
+          <tr data-slug="{{ anchorize .name }}" data-name="{{ .name }}" data-plays="0" data-member-plays="0" data-play-rank="9999" data-member-rank="9999">
+            <td class="stats-num stats-play-rank">—</td>
+            <td class="stats-num stats-member-rank">—</td>
+            <td><a href="/g/{{ anchorize .name }}/">{{ .name }}</a></td>
+            <td class="stats-num stats-plays">—</td>
+            <td class="stats-num stats-member-plays">
+              <span class="member-count">—</span>
+              <button class="member-play-btn" data-slug="{{ anchorize .name }}" aria-label="Log a member play for {{ .name }}">+1</button>
+            </td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
   </div>
 </article>
 
 <script>
-(async () => {
-  try {
-    const [playsRes, memberRes] = await Promise.all([
-      fetch("/api/plays"),
-      fetch("/api/member-plays"),
-    ]);
+(() => {
+  const table = document.getElementById("stats-table");
+  const tbody = table.querySelector("tbody");
 
-    const counts = playsRes.ok ? await playsRes.json() : {};
-    const memberCounts = memberRes.ok ? await memberRes.json() : {};
+  // Track current sort: default plays descending (= play-rank ascending)
+  let sortCol = "play-rank";
+  let sortDir = "asc";
 
-    const tbody = document.querySelector("#stats-table tbody");
-    const rows = Array.from(tbody.querySelectorAll("tr"));
+  // ── rank computation ────────────────────────────────────────────────
 
-    rows.forEach(row => {
-      const slug = row.dataset.slug;
-      const n = counts[slug] || 0;
-      const m = memberCounts[slug] || 0;
-      row.dataset.plays = n;
-      row.dataset.memberPlays = m;
-      row.querySelector(".stats-plays").textContent = n;
-      row.querySelector(".member-count").textContent = m;
+  function computeRank(rows, dataKey, rankAttr, rankCell) {
+    const sorted = [...rows].sort((a, b) => Number(b.dataset[dataKey]) - Number(a.dataset[dataKey]));
+    let rank = 1;
+    sorted.forEach((row, i) => {
+      if (i > 0 && Number(row.dataset[dataKey]) < Number(sorted[i - 1].dataset[dataKey])) rank = i + 1;
+      row.dataset[rankAttr] = rank;
+      row.querySelector(rankCell).textContent = `#${rank}`;
     });
+  }
+
+  // ── sorting ─────────────────────────────────────────────────────────
+
+  const NUM_COLS = new Set(["play-rank", "member-rank", "plays", "member-plays"]);
+
+  // Map data-col → dataset key (camelCase)
+  function dataKey(col) {
+    return col.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+  }
+
+  function applySort() {
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+    const key = dataKey(sortCol);
+    const isNum = NUM_COLS.has(sortCol);
+    const dir = sortDir === "asc" ? 1 : -1;
 
     rows.sort((a, b) => {
-      const diff = Number(b.dataset.plays) - Number(a.dataset.plays);
-      if (diff !== 0) return diff;
-      return a.querySelector("td:nth-child(2)").textContent
-               .localeCompare(b.querySelector("td:nth-child(2)").textContent);
+      const av = isNum ? Number(a.dataset[key]) : a.dataset[key] || a.querySelector("td:nth-child(3)").textContent;
+      const bv = isNum ? Number(b.dataset[key]) : b.dataset[key] || b.querySelector("td:nth-child(3)").textContent;
+      const cmp = isNum ? (av - bv) : av.localeCompare(bv);
+      return cmp * dir;
     });
 
-    let rank = 1;
-    rows.forEach((row, i) => {
-      if (i > 0 && Number(row.dataset.plays) < Number(rows[i - 1].dataset.plays)) rank = i + 1;
-      row.querySelector(".stats-rank").textContent = `#${rank}`;
-      tbody.appendChild(row);
-    });
-  } catch (e) {
-    // API unavailable — leave dashes in place.
+    rows.forEach(row => tbody.appendChild(row));
   }
+
+  function updateHeaders() {
+    table.querySelectorAll(".stats-th[data-col]").forEach(th => {
+      const col = th.dataset.col;
+      th.removeAttribute("aria-sort");
+      th.dataset.sortDir = "";
+      if (col === sortCol) {
+        th.setAttribute("aria-sort", sortDir === "asc" ? "ascending" : "descending");
+        th.dataset.sortDir = sortDir;
+      }
+    });
+  }
+
+  // ── header click handler ────────────────────────────────────────────
+
+  table.querySelector("thead").addEventListener("click", e => {
+    const th = e.target.closest(".stats-sortable");
+    if (!th) return;
+    const col = th.dataset.col;
+    if (col === sortCol) {
+      sortDir = sortDir === "asc" ? "desc" : "asc";
+    } else {
+      sortCol = col;
+      sortDir = NUM_COLS.has(col) ? "desc" : "asc";
+    }
+    applySort();
+    updateHeaders();
+  });
+
+  // ── data load ───────────────────────────────────────────────────────
+
+  (async () => {
+    try {
+      const [playsRes, memberRes] = await Promise.all([
+        fetch("/api/plays"),
+        fetch("/api/member-plays"),
+      ]);
+      const counts       = playsRes.ok ? await playsRes.json() : {};
+      const memberCounts = memberRes.ok ? await memberRes.json() : {};
+
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+
+      rows.forEach(row => {
+        const slug = row.dataset.slug;
+        const n = counts[slug]       || 0;
+        const m = memberCounts[slug] || 0;
+        row.dataset.plays       = n;
+        row.dataset.memberPlays = m;
+        row.querySelector(".stats-plays").textContent       = n;
+        row.querySelector(".member-count").textContent      = m;
+      });
+
+      computeRank(rows, "plays",       "playRank",   ".stats-play-rank");
+      computeRank(rows, "memberPlays", "memberRank", ".stats-member-rank");
+
+      applySort();
+      updateHeaders();
+    } catch (e) {
+      // API unavailable — leave dashes in place.
+    }
+  })();
+
+  // ── +1 button handler ───────────────────────────────────────────────
+
+  tbody.addEventListener("click", async e => {
+    const btn = e.target.closest(".member-play-btn");
+    if (!btn) return;
+
+    const slug = btn.dataset.slug;
+    btn.disabled = true;
+
+    try {
+      const res = await fetch("/api/member-plays", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ slug }),
+      });
+      if (!res.ok) throw new Error(res.status);
+      const { count } = await res.json();
+
+      const row = btn.closest("tr");
+      row.dataset.memberPlays = count;
+      row.querySelector(".member-count").textContent = count;
+
+      // Recompute member ranks across all rows
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      computeRank(rows, "memberPlays", "memberRank", ".stats-member-rank");
+
+      btn.textContent = "✓";
+      setTimeout(() => { btn.textContent = "+1"; btn.disabled = false; }, 1500);
+    } catch (e) {
+      btn.textContent = "!";
+      setTimeout(() => { btn.textContent = "+1"; btn.disabled = false; }, 2000);
+    }
+  });
 })();
-
-document.querySelector("#stats-table").addEventListener("click", async (e) => {
-  const btn = e.target.closest(".member-play-btn");
-  if (!btn) return;
-
-  const slug = btn.dataset.slug;
-  btn.disabled = true;
-
-  try {
-    const res = await fetch("/api/member-plays", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ slug }),
-    });
-    if (!res.ok) throw new Error(res.status);
-    const { count } = await res.json();
-
-    const row = btn.closest("tr");
-    row.dataset.memberPlays = count;
-    row.querySelector(".member-count").textContent = count;
-
-    btn.textContent = "✓";
-    setTimeout(() => { btn.textContent = "+1"; btn.disabled = false; }, 1500);
-  } catch (e) {
-    btn.textContent = "!";
-    setTimeout(() => { btn.textContent = "+1"; btn.disabled = false; }, 2000);
-  }
-});
 </script>
 {{ end }}
