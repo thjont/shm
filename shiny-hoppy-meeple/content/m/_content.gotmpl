@@ -1,5 +1,5 @@
-{{- range $slug, $config := hugo.Data.sources.members }}
-  {{- $member := index hugo.Data.members $slug }}
+{{- range $slug, $config := hugo.Data.definitions.members }}
+  {{- $member := index hugo.Data "bgg-cache" "collections" $slug }}
   {{- $.AddPage (dict
     "path"   $slug
     "title"  $config.display_name

@@ -8,9 +8,10 @@
     {{ .Content }}
 
     <div class="bgg-collection">
-      {{ range (index hugo.Data "main-library").items }}
+      {{ $mainLibSlug := hugo.Data.definitions.libraries.main.slug }}
+      {{ range (index hugo.Data "bgg-cache" "collections" $mainLibSlug).items }}
       {{ $thumb := .thumbnail }}
-      {{ if not $thumb }}{{ with index hugo.Data.games (print .id) }}{{ $thumb = .thumbnail }}{{ end }}{{ end }}
+      {{ if not $thumb }}{{ with index hugo.Data "bgg-cache" "games" (print .id) }}{{ $thumb = .thumbnail }}{{ end }}{{ end }}
       <a class="bgg-card" href="/g/{{ anchorize .name }}/">
         {{ with $thumb }}
         <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />

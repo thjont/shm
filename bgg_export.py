@@ -13,7 +13,7 @@ valid BGG_API_TOKEN is required for collection mode. Geeklist mode is public.
 
 Options:
     --geeklist ID          Import a BGG geeklist instead of a user collection
-    --data-dir PATH        Where to write main-library.json and games/
+    --data-dir PATH        Where to write bgg-cache/ output
                            (default: shiny-hoppy-meeple/data)
     --image-dir PATH       Where to download images
                            (default: shiny-hoppy-meeple/static/images/games)
@@ -23,10 +23,15 @@ Options:
     --force-images         Re-download images even if the file already exists
 
 Output:
-    <data-dir>/main-library.json   — collection summary with per-item data
-    <data-dir>/games/<id>.json     — full game detail for every game
-    <image-dir>/<id>.<ext>         — full image per game
-    <image-dir>/<id>-thumb.<ext>   — thumbnail per game
+    <data-dir>/bgg-cache/collections/main-library.json — collection summary with per-item data
+    <data-dir>/bgg-cache/games/<id>.json               — full game detail for every game
+    <image-dir>/<id>.<ext>                             — full image per game
+    <image-dir>/<id>-thumb.<ext>                       — thumbnail per game
+
+Member and shadow-library definitions live under:
+    <data-dir>/definitions/members/<slug>.json         — { slug, display_name, description, geeklist|username }
+    <data-dir>/definitions/libraries/<slug>.json       — { slug, display_name, geeklist|username }
+    <data-dir>/definitions/libraries/main.json         — main library definition
 
 Images are served locally: the `image`/`thumbnail` fields in the JSON are
 rewritten to local paths (e.g. /images/games/13.jpg), while the original BGG
@@ -177,10 +182,10 @@ def export_collection(
             "last_modified": item.last_modified,
         })
 
-    out_path = collection_file if collection_file else data_dir / "main-library.json"
+    out_path = collection_file if collection_file else data_dir / "bgg-cache" / "collections" / "main-library.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(
-        json.dumps({"owner": username, "count": len(items), "items": items}, indent=2, default=_serialise)
+        json.dumps({"count": len(items), "items": items}, indent=2, default=_serialise)
     )
     print(f"  Saved {len(items)} items → {out_path}")
     return [item["id"] for item in items]
@@ -235,10 +240,10 @@ def export_geeklist(
 
     items = [{"id": gi["id"], "name": gi["name"], "thumbnail": None} for gi in geeklist_items]
 
-    out_path = collection_file if collection_file else data_dir / "main-library.json"
+    out_path = collection_file if collection_file else data_dir / "bgg-cache" / "collections" / "main-library.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(
-        json.dumps({"owner": title, "count": len(items), "items": items}, indent=2, default=_serialise)
+        json.dumps({"count": len(items), "items": items}, indent=2, default=_serialise)
     )
     print(f"  Saved {len(items)} items → {out_path}")
     return [item["id"] for item in items]
@@ -247,8 +252,8 @@ def export_geeklist(
 def export_games(
     game_ids: list[int], client: BGGClient, data_dir: Path, images: ImageDownloader
 ) -> None:
-    """Fetch full game details and write <data-dir>/games/<id>.json for each game."""
-    games_dir = data_dir / "games"
+    """Fetch full game details and write <data-dir>/bgg-cache/games/<id>.json for each game."""
+    games_dir = data_dir / "bgg-cache" / "games"
     games_dir.mkdir(parents=True, exist_ok=True)
     total = len(game_ids)
     saved = 0
@@ -317,15 +322,16 @@ def main() -> None:
     source.add_argument("--geeklist", type=int, metavar="ID",
                         help="Import a BGG geeklist by ID instead of a user collection")
     parser.add_argument("--data-dir", type=Path, default=DEFAULT_DATA_DIR,
-                        help="Directory for main-library.json and games/ (default: shiny-hoppy-meeple/data)")
+                        help="Root data directory (default: shiny-hoppy-meeple/data); "
+                             "bgg-cache/ is written under here")
     parser.add_argument("--image-dir", type=Path, default=DEFAULT_IMAGE_DIR,
                         help="Directory to download images into (default: shiny-hoppy-meeple/static/images/games)")
     parser.add_argument("--image-url-base", default=DEFAULT_IMAGE_URL_BASE,
                         help="Public URL prefix written into the JSON (default: /images/games)")
     parser.add_argument("--collection-file", type=Path, default=None,
                         help="Override output path for collection JSON "
-                             "(default: <data-dir>/main-library.json). "
-                             "Use data/members/<name>.json for member collections.")
+                             "(default: <data-dir>/bgg-cache/collections/main-library.json). "
+                             "Use data/bgg-cache/collections/<slug>.json for member collections.")
     parser.add_argument("--skip-images", action="store_true",
                         help="Don't download images; keep the remote BGG URLs")
     parser.add_argument("--force-images", action="store_true",

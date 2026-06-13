@@ -17,7 +17,7 @@
           </tr>
         </thead>
         <tbody>
-          {{ range hugo.Data.games }}
+          {{ range index hugo.Data "bgg-cache" "games" }}
           <tr data-slug="{{ anchorize .name }}" data-name="{{ .name }}" data-plays="0" data-member-plays="0" data-play-rank="9999" data-member-rank="9999">
             <td class="stats-num stats-play-rank">—</td>
             <td class="stats-num stats-member-rank">—</td>
