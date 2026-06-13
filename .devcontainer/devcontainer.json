@@ -7,13 +7,13 @@
     },
     "ghcr.io/devcontainers/features/hugo:1": {
       "extended": true,
-      "version": "latest"
+      "version": "0.163.1"
     },
     "ghcr.io/devcontainers/features/python:1": {
       "version": "latest"
     }
   },
-  "onCreateCommand": "npm install -g wrangler markdownlint-cli2 && pip install bgg-api",
+  "onCreateCommand": "npm install && pip install -r requirements.txt",
   "customizations": {
     "vscode": {
       "extensions": [
