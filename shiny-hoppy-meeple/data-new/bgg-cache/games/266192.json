@@ -1,0 +1,78 @@
+{
+  "id": 266192,
+  "name": "Wingspan",
+  "year": 2019,
+  "thumbnail": "/images/games/266192-thumb.jpg",
+  "thumbnail_source": "https://cf.geekdo-images.com/yLZJCVLlIx4c7eJEWUNJ7w__thumb/img/tijMpLpLPVTjyLLpBMGQ2xYF_N0=/fit-in/200x150/filters:strip_icc()/pic4458123.jpg",
+  "image": "/images/games/266192.jpg",
+  "image_source": "https://cf.geekdo-images.com/yLZJCVLlIx4c7eJEWUNJ7w__original/img/qVnYMx8lMm4H8VkYsm2fEUFj9qk=/0x0/filters:format(jpeg)/pic4458123.jpg",
+  "description": "Wingspan is a competitive, medium-weight, card-driven, engine-building board game from Stonemaier Games. You are bird enthusiasts\u2014researchers, bird watchers, ornithologists, and collectors\u2014seeking to discover and attract the best birds to your network of wildlife preserves.",
+  "min_players": 1,
+  "max_players": 5,
+  "min_playing_time": 40,
+  "max_playing_time": 70,
+  "playing_time": 60,
+  "min_age": 10,
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Card Game",
+    "Nature"
+  ],
+  "mechanics": [
+    "Card Drafting",
+    "Engine Building",
+    "Hand Management",
+    "Set Collection",
+    "Solo / Solitaire Game"
+  ],
+  "families": [
+    "Wingspan",
+    "Stonemaier Games"
+  ],
+  "designers": [
+    "Elizabeth Hargrave"
+  ],
+  "artists": [
+    "Ana Maria Martinez Jaramillo",
+    "Natalia Rojas",
+    "Beth Sobel"
+  ],
+  "publishers": [
+    "Stonemaier Games"
+  ],
+  "expansions": [
+    {
+      "id": 290448,
+      "name": "Wingspan: European Expansion"
+    },
+    {
+      "id": 300580,
+      "name": "Wingspan: Oceania Expansion"
+    },
+    {
+      "id": 348935,
+      "name": "Wingspan: Asia"
+    }
+  ],
+  "alternative_names": [],
+  "bgg_rank": 22,
+  "ranks": [
+    {
+      "name": "boardgame",
+      "friendlyname": "Board Game Rank",
+      "value": 22
+    }
+  ],
+  "users_rated": 78341,
+  "rating_average": 8.08,
+  "rating_bayes_average": 8.02,
+  "rating_stddev": 1.35,
+  "rating_average_weight": 2.46,
+  "rating_num_weights": 24832,
+  "users_owned": 142031,
+  "users_trading": 1241,
+  "users_wanting": 943,
+  "users_wishing": 21043,
+  "users_commented": 17842
+}
