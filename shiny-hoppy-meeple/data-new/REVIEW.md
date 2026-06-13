@@ -1,60 +1,112 @@
-# data-new Structure Review
+# data Structure Design
 
-## Overall: The concept is sound
+## Structure
 
-The `definitions/` vs `bgg-cache/` split is the key win — it makes the human-authored config vs
-machine-generated data distinction explicit and unambiguous. That clarity is worth the migration.
+```
+data/
+  bgg-cache/
+    collections/
+      main-library.json       # BGG collection data — keyed by slug, no owner field
+      <member-slug>.json      # one per member
+      <library-slug>.json     # one per shadow/supplementary library
+    games/
+      <bgg-id>.json           # BGG game detail data
+  definitions/
+    libraries/
+      main.json               # { slug, display_name, geeklist|username }
+      <library-slug>.json     # one per shadow/supplementary library
+    members/
+      <member-slug>.json      # { slug, display_name, description, geeklist|username }
+    games-bgg-override/
+      <bgg-id>.json           # { description?, learn_to_play_video? }
+```
 
----
+## Design Principles
 
-## What works well
+**`bgg-cache/` mirrors BGG's world.** All collections — main library, member libraries, and
+shadow/supplementary libraries — are stored uniformly here. The cache has no concept of "member"
+vs "library"; it only knows BGG items. The `owner` field is not stored: it is a website concept,
+not a BGG attribute.
 
-- **`bgg-cache/collections/`** — treating main library, members, and shadow libraries as uniform
-  collections here is clean. The old structure scattered these across `data/main-library.json`,
-  `data/members/`, and implied shadow-library data somewhere else.
-- **`definitions/games-bgg-override/`** — naming is more descriptive than `games-overrides/`; it's
-  clear these are overrides of BGG data, not overrides of something else.
-- **Member definitions are now explicit** — the old `data/sources/members/adam.json` was buried
-  under `sources/`; promoting it to `definitions/members/` makes the intent clearer.
+**`definitions/` mirrors the website's world.** Members are distinct from libraries because
+the site presents them differently — members have profile pages and descriptions; libraries do
+not. The `libraries/` folder holds the main library and any shadow/supplementary collections.
+The `games-bgg-override/` folder holds editorial overrides applied at render time.
 
----
+**Cache filename = slug.** The slug value in a definition file is the source of truth for the
+corresponding cache filename. `slug: "main-library"` → `bgg-cache/collections/main-library.json`.
 
-## Concerns
-
-**1. Members still split from other collections in `definitions/`**
-
-If main library, shadow libraries, and member collections are all the same conceptually, why does
-`definitions/` have a `members/` folder separate from `collections/`? Hidden library sits under
-`definitions/collections/` but member collections don't. A member *is* a collection. Consider either:
-
-- Merging all into `definitions/collections/` and adding a `type` field (`"main"`, `"member"`,
-  `"shadow"`), or
-- Accepting members stay separate (they have extra metadata like `description`) — but then be
-  explicit about why.
-
-**2. `main.json` schema is inconsistent**
-
-`definitions/collections/main.json` is just `{ "geeklist": ... }`, but `hidden-library.json` has
-`slug`, `display_name`, and `geeklist`. If they're the same type, `main.json` should have the same
-shape — a `slug` of `"main-library"` and a display name would make it consistent and self-describing.
-
-**3. No `username` support visible in definitions**
-
-`bgg_export.py` accepts a `BGG_USERNAME` for member collections. All the definition files only show
-`geeklist`. If any collection is fetched by BGG username (not a geeklist), the schema needs to
-handle both — e.g. a `username` field as an alternative to `geeklist`.
-
-**4. Cache file naming convention needs to be explicit**
-
-The cache filename for main is `main-library.json`; for members it's `adam.json` (matching the
-slug). For a shadow library, would it be `secret-library.json` (its slug)? That's a reasonable
-convention but it should be consistent and documented — the slug in the definition file should be
-the source of truth for the cache filename.
+**`geeklist` or `username`, not both.** Each definition file specifies exactly one BGG source.
+`geeklist` is an integer geeklist ID; `username` is a BGG username for a standard collection.
 
 ---
 
-## Bottom line
+## Implementation Plan
 
-The structure is a clear improvement. The main thing to resolve is whether members should fully
-merge into `definitions/collections/` (fully uniform) or stay separate with an accepted reason
-(extra metadata). Everything else is schema tidying.
+### 1. Data directory
+
+- Rename `data-new/` → `data/`, removing the old `data/` directory entirely.
+
+### 2. `bgg_export.py`
+
+| Change | Detail |
+|--------|--------|
+| Output path: collections | `data/members/<slug>.json` and `data/main-library.json` → `data/bgg-cache/collections/<slug>.json` |
+| Output path: games | `data/games/<id>.json` → `data/bgg-cache/games/<id>.json` |
+| Input config: members | `data/sources/members/<slug>.json` → `data/definitions/members/<slug>.json` |
+| Input config: main library | `data/sources/main-library.json` → `data/definitions/libraries/main.json` |
+| Input config: shadow libraries | `data/sources/shadow-libraries/<slug>.json` → `data/definitions/libraries/<slug>.json` |
+| Field rename | `collection` → `username` when reading BGG username from a definition |
+| Remove `owner` from output | Do not write `owner` into generated collection JSON |
+
+### 3. Hugo templates and content
+
+**`content/g/_content.gotmpl`**
+- `hugo.Data.games` → `index hugo.Data "bgg-cache" "games"`
+- `index (index hugo.Data "games-overrides") $key` → `index (index hugo.Data "definitions") "games-bgg-override" $key`
+
+**`content/m/_content.gotmpl`**
+- `hugo.Data.sources.members` → `hugo.Data.definitions.members`
+- `index hugo.Data.members $slug` → `index hugo.Data "bgg-cache" "collections" $slug`
+
+**`layouts/g/list.html`**
+- `(index hugo.Data "main-library").items` → `(index hugo.Data "bgg-cache" "collections" "main-library").items`
+- `index hugo.Data.games (print .id)` → `index hugo.Data "bgg-cache" "games" (print .id)`
+
+**`layouts/g/single.html`**
+- `(index hugo.Data "main-library").items` → `(index hugo.Data "bgg-cache" "collections" "main-library").items`
+- `range $slug, $member := hugo.Data.members` → `range $slug, $def := hugo.Data.definitions.members`, then look up collection via `index hugo.Data "bgg-cache" "collections" $slug`
+- `$member.owner` (removed from cache) → `$def.display_name` from the definition
+
+**`layouts/m/list.html`**
+- `hugo.Data.sources.members` → `hugo.Data.definitions.members`
+- `index hugo.Data.members $slug` → `index hugo.Data "bgg-cache" "collections" $slug`
+
+**`layouts/_default/stats.html`**
+- `hugo.Data.games` → `index hugo.Data "bgg-cache" "games"`
+
+**`layouts/index.scanslugs.json`**
+- `hugo.Data.games` → `index hugo.Data "bgg-cache" "games"`
+
+### 4. GitHub workflows
+
+**`new-member-from-issue.yml`**
+- `data/sources/members` → `data/definitions/members`
+- `data['collection'] = bgg_username` → `data['username'] = bgg_username`
+
+**`delete-member-from-issue.yml`**
+- `data/sources/members/<slug>.json` → `data/definitions/members/<slug>.json`
+- `data/members/<slug>.json` → `data/bgg-cache/collections/<slug>.json`
+
+**`new-shadow-library-from-issue.yml`**
+- `data/sources/shadow-libraries` → `data/definitions/libraries`
+- `data['collection'] = bgg_username` → `data['username'] = bgg_username`
+
+**`delete-shadow-library-from-issue.yml`**
+- `data/sources/shadow-libraries/<slug>.json` → `data/definitions/libraries/<slug>.json`
+
+**`new-game-override-from-issue.yml`**
+- `data/games-overrides/<bgg_id>.json` → `data/definitions/games-bgg-override/<bgg_id>.json`
+
+**`delete-game-override-from-issue.yml`**
+- `data/games-overrides/<bgg_id>.json` → `data/definitions/games-bgg-override/<bgg_id>.json`
