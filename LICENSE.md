@@ -15,7 +15,7 @@ Applies to all code in this repository, including but not limited to:
 - CSS and JavaScript (`shiny-hoppy-meeple/static/css/`, `shiny-hoppy-meeple/static/js/`)
 - Configuration files (`hugo.toml`, `wrangler.toml`, `package.json`, etc.)
 
-    Copyright (C) 2024–present Shiny Hoppy Meeple contributors
+    Copyright (C) 2026–present Shiny Hoppy Meeple contributors
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
