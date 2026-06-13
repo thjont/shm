@@ -1,166 +1,133 @@
-# Contributing
+# Contributing content
 
-Technical reference for maintainers and developers.
+**No coding required.** Everything on the [Shiny Hoppy Meeple website](https://shiny-hoppy-meeple.pages.dev)
+— posts, members, and game libraries — is added or removed by opening a **GitHub Issue** and filling
+in a short form. A maintainer reviews it, and the site updates automatically.
 
----
+This guide is for everyone in the community. If you want to change how the website *works* (its
+code, layout, or build), see the [developer guide](DEVELOPMENT.md) instead.
 
-## Stack
+## What you need
 
-| Tool | Purpose |
-|------|---------|
-| [Hugo](https://gohugo.io/) (extended) | Static site generator |
-| [PaperMod](https://github.com/adityatelange/hugo-PaperMod) | Hugo theme (Git submodule) |
-| [Cloudflare Pages](https://pages.cloudflare.com/) | Hosting |
-| [Wrangler](https://developers.cloudflare.com/workers/wrangler/) | Cloudflare deployment CLI |
-| GitHub Actions | CI/CD and post publishing automation |
-| markdownlint-cli2 | Markdown linting |
+- A free [GitHub account](https://github.com/join).
+- That's it. You never download anything or install software.
 
----
+## How it works (the short version)
 
-## Repository Structure
-
-```
-shm/
-├── .devcontainer/              # VS Code dev container (Node LTS, Hugo, Wrangler, markdownlint)
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   │   └── new-post.md         # Issue template for community posts
-│   └── workflows/
-│       ├── deploy.yml          # Production deploy on push to main
-│       └── publish-from-issue.yml  # Post creation from GitHub issues
-├── shiny-hoppy-meeple/         # Hugo project root
-│   ├── hugo.toml               # Site config (baseURL, theme, menus, params)
-│   ├── archetypes/             # Content templates
-│   ├── content/
-│   │   ├── posts/              # Blog posts
-│   │   ├── about-us.md
-│   │   └── who-are-we.md
-│   ├── static/
-│   │   └── images/posts/       # Images downloaded from issues (per post slug)
-│   └── themes/PaperMod/        # Theme submodule
-├── .gitmodules
-├── .markdownlint.yaml
-└── .gitignore
+```text
+You open an issue  →  Maintainer reviews & adds the "publish" label  →  Change goes live
 ```
 
----
+1. **You** pick a form and fill it in (this guide shows each one below).
+2. **A maintainer** checks it and applies the **`publish`** label.
+3. A robot turns your issue into the actual website change and a maintainer approves it.
+4. Your content appears on the site, usually within a few minutes of approval.
 
-## Local Development
+> [!IMPORTANT]
+> You can open and fill in an issue, but only **maintainers** can apply the `publish` label that
+> makes a change go live. That's the review step — it keeps the site tidy and safe. Just open your
+> issue and a maintainer will take it from there.
 
-Requires Hugo extended (v0.146.0+). Use the dev container or install manually.
+## Step-by-step: opening an issue
 
-```bash
-cd shiny-hoppy-meeple
-hugo server              # live reload at http://localhost:1313
-hugo --minify            # production build → public/
-```
+1. Go to the [**Issues** tab](../../issues) and click **New issue**
+   (or use [this direct link](../../issues/new/choose)).
+2. Choose the form that matches what you want to do (see the list below).
+3. Fill in the boxes. Required boxes are marked with a red asterisk.
+4. Click **Submit new issue**.
+5. Wait for a maintainer to review. If anything needs changing, just **edit your issue** and they'll
+   take another look.
 
-Clone with submodules:
-
-```bash
-git clone --recurse-submodules <repo>
-# or after a plain clone:
-git submodule update --init --recursive
-```
-
----
-
-## Workflows
-
-### `deploy.yml` — Production deploy
-
-Triggers on push to `main` where files under `shiny-hoppy-meeple/` have changed.
-
-1. Checkout with submodules
-2. Build with `hugo --minify`
-3. Deploy to Cloudflare Pages (production) via Wrangler
-
-Required secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
-
-### `publish-from-issue.yml` — Post publishing
-
-Triggers when a GitHub issue is **labeled** with `publish` or **edited** while the `publish` label is present.
-
-**Permission check**
-
-The sender's collaborator permission is checked via the GitHub API. If they do not have `write` or `admin` access, the label is removed and a comment is posted on the issue. The workflow exits.
-
-**Post creation (`labeled` event)**
-
-1. Slugify the issue title → filename and branch name (`post/<slug>`)
-2. Scan the issue body for `github.com/user-attachments` image URLs
-3. Download each image, detect mime type with `file --mime-type`, save to `static/images/posts/<slug>/`
-4. Strip `width`/`height` attributes from `<img>` tags
-5. Rewrite image URLs to local paths
-6. Write the Hugo post file with TOML front matter
-7. Create `post/<slug>` branch, commit, push
-8. Build with `hugo --minify --baseURL <preview-url>` (does not modify `hugo.toml`)
-9. Deploy preview to Cloudflare Pages with `--branch=post/<slug>`
-10. Open a PR to `main` with the preview URL in the body
-
-**Post update (`edited` event)**
-
-Steps 1–7 above, then:
-
-- Fetch and checkout the existing `post/<slug>` branch
-- Overwrite the post file and force-push with `--force-with-lease`
-- Rebuild and redeploy the preview
-
-No new PR is opened.
+That's all you ever have to do. The rest is handled for you.
 
 ---
 
-## Branching Strategy
+## The forms
 
-| Branch | Purpose |
-|--------|---------|
-| `main` | Production — deploys to `shiny-hoppy-meeple.pages.dev` |
-| `post/<slug>` | One branch per post — deploys to `post-<slug>.shiny-hoppy-meeple.pages.dev` |
+There's a form for each kind of content. Pick the one you need.
 
-Post branches are created automatically by the publish workflow. Merge the PR to publish to production.
+### 📝 Write a post
+
+Use **New Post** to publish news, event write-ups, or anything else to the site's blog.
+
+- **Title** — type your post's title in the issue title box at the top. This also becomes part of
+  the web address.
+- **Content** — write your post in the big text box. Plain text works, and so does
+  [Markdown](https://www.markdownguide.org/cheat-sheet/) if you'd like **bold**, links, headings,
+  or lists.
+- **Images** — just **drag and drop** (or paste) images straight into the text box. They'll be
+  saved with the post automatically.
+
+> [!TIP]
+> **Previewing and editing a post.** Once a maintainer adds the `publish` label, a private preview
+> of your post is built and the link is posted back to your issue. Want to change something? Simply
+> **edit the issue body** — the preview updates itself. No need to open a new issue.
+
+### 👤 Add a member
+
+Use **New Member** to give someone a profile page and show their board-game collection.
+
+- **Display Name** — the name shown on the site (e.g. `Alice`).
+- **Slug** — a short version used in the web address, e.g. `alice` gives `/m/alice/`. Use lowercase
+  letters, numbers, and hyphens only — no spaces.
+- **Description** — an optional short bio.
+- **BGG Username** *or* **GeekList ID** — fill in **one** of these so we can import their games
+  from [BoardGameGeek](https://boardgamegeek.com/):
+  - **BGG Username** — their BoardGameGeek account name, to pull in their whole collection.
+  - **GeekList ID** — the number in a BGG GeekList's web address, if you'd rather use a curated list.
+
+### 📚 Add a "shadow library"
+
+Use **New Shadow Library** to add a collection of games to the site's game pages **without** giving
+it its own browsable list page. Handy for, say, a venue's house collection.
+
+- **Display Name** — a short name for the collection (used behind the scenes).
+- **Slug** — a unique short identifier (lowercase letters, numbers, hyphens).
+- **BGG Username** *or* **GeekList ID** — same as above: fill in just one.
+
+### 🎲 Customise a game's page (game override)
+
+Use **New Game Override** to replace the default BoardGameGeek text for a game, or to add a
+"learn to play" video.
+
+- **BGG Game ID** — the number for the game on BoardGameGeek. You'll find it in the game's web
+  address, e.g. `13` in `boardgamegeek.com/boardgame/13/catan`.
+- **Description** — your own description to show instead of the BGG one. Leave blank to keep
+  what's there.
+- **Learn to Play Video ID** — a YouTube video ID — the part after `?v=` in a YouTube link
+  (e.g. `oiQ6SgBzfqY`). Leave blank to keep what's there.
 
 ---
 
-## Cloudflare Pages URLs
+## Removing content
 
-| Type | URL |
-|------|-----|
-| Production | `https://shiny-hoppy-meeple.pages.dev` |
-| Branch preview | `https://post-<slug>.shiny-hoppy-meeple.pages.dev` |
-| Unique deployment | `https://<hash>.shiny-hoppy-meeple.pages.dev` |
+Each "add" form has a matching "remove" form. Open the relevant one, give the slug or ID, and a
+maintainer will publish the removal the same way.
 
-The unique deployment URL is posted in the PR body.
+| To remove… | Use the form | You'll need |
+| --- | --- | --- |
+| A post | **Delete Post** | The post's slug (the last part of its web address, e.g. `my-post`) |
+| A member | **Delete Member** | The member's slug (e.g. `alice` from `/m/alice/`) |
+| A shadow library | **Delete Shadow Library** | The library's slug |
+| A game override | **Delete Game Override** | The game's BGG ID number |
 
----
-
-## Required GitHub Secrets
-
-| Secret | Used by | Purpose |
-|--------|---------|---------|
-| `CLOUDFLARE_API_TOKEN` | Both workflows | Wrangler authentication |
-| `CLOUDFLARE_ACCOUNT_ID` | Both workflows | Cloudflare account target |
+> [!NOTE]
+> Deleting a post also removes its images. Deleting a shadow library removes its configuration, but
+> any game pages it created stay until the game data is next refreshed.
 
 ---
 
-## Adding Content
+## Finding a slug or ID
 
-**New post via issue** — use the New Post issue template (recommended for community members).
+Some forms ask for a **slug** or an **ID**. Here's where to find them:
 
-**New post manually:**
-```bash
-cd shiny-hoppy-meeple
-hugo new posts/my-post.md   # creates from archetype with draft: true
-```
-Set `draft = false` to publish.
+- **Post / member slug** — the last part of the page's web address. For `…/m/alice/`, the slug is
+  `alice`. For `…/posts/my-post/`, it's `my-post`.
+- **BGG Game ID** — the number in a BoardGameGeek game's address. For
+  `boardgamegeek.com/boardgame/13/catan`, the ID is `13`.
+- **GeekList ID** — the number in a BGG GeekList's address.
 
-**New page** — create a markdown file directly under `content/` and add a menu entry in `hugo.toml` if needed.
+## Questions?
 
----
-
-## Linting
-
-```bash
-markdownlint-cli2 "**/*.md"
-```
-
-Config: `.markdownlint.yaml` — 120 character line limit, inline HTML allowed.
+If you're unsure which form to use or something doesn't look right, open a plain issue describing
+what you'd like to do, or ask a maintainer. We're happy to help.

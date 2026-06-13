@@ -1,41 +1,30 @@
 # Shiny Hoppy Meeple
 
-Board game community based in East Belfast. We meet every **Thursday 7:30–11pm** at Boundary Taproom. New faces always welcome.
+A friendly board-game community based in **East Belfast**. We meet every **Thursday, 7:30–11pm**
+at [Boundary Taproom](https://www.instagram.com/boundarytaproom/), with the occasional Saturday
+get-together too. New faces always welcome.
 
-Follow us on Instagram: [@shinyhoppymeepleni](https://www.instagram.com/shinyhoppymeepleni/)
+🌐 **Website:** [shiny-hoppy-meeple.pages.dev](https://shiny-hoppy-meeple.pages.dev)
+📸 **Instagram:** [@shinyhoppymeepleni](https://www.instagram.com/shinyhoppymeepleni/)
 
----
+This repository holds the website's source. The site is a [Hugo](https://gohugo.io/) static site
+deployed to Cloudflare Pages. Almost all content — posts, members, game libraries — is created and
+edited through **GitHub Issues**, so you don't need to touch the code to contribute.
 
-## Submitting a Post
+## Which guide do I need?
 
-Anyone in the community can write a post for the site. You'll need a GitHub account.
+| You want to… | Read |
+| --- | --- |
+| **Add or remove content** — write a post, add a member, list a game collection. No coding needed. | **[CONTRIBUTING.md](CONTRIBUTING.md)** |
+| **Work on the website itself** — run it locally, change layouts, edit the data pipeline, deploy. | **[DEVELOPMENT.md](DEVELOPMENT.md)** |
 
-### 1. Open an issue
+> [!TIP]
+> If you just want to publish a post or add a member, you only need a GitHub account and the
+> **[contributor guide](CONTRIBUTING.md)**. Everything happens through the
+> [Issues](../../issues) tab.
 
-Go to the [Issues](../../issues) tab and click **New issue**.
+## Quick links
 
-- Set the **title** — this becomes the post title and part of the URL
-- Write your **content** in the body using plain text or markdown
-- You can paste images directly into the issue body
-
-### 2. Apply the publish label
-
-When you're happy with the content, apply the **`publish`** label to the issue. This kicks off the review process.
-
-> Only maintainers with write access can apply the publish label.
-
-### 3. Review and publish
-
-A maintainer will review the post in a pull request. Once approved and merged, the post goes live on the site automatically.
-
----
-
-## Editing a draft post
-
-If your issue has the `publish` label applied and you need to make changes, simply **edit the issue body**. The site preview will update automatically.
-
----
-
-## Site
-
-[shiny-hoppy-meeple.pages.dev](https://shiny-hoppy-meeple.pages.dev)
+- 📝 [Open a new issue](../../issues/new/choose) to submit content
+- 📖 [Contributor guide (no code needed)](CONTRIBUTING.md)
+- 🛠️ [Developer guide](DEVELOPMENT.md)
