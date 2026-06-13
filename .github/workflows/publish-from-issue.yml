@@ -44,6 +44,11 @@ jobs:
                   GH_TOKEN: ${{ github.token }}
               run: |
                   SLUG=$(echo "$ISSUE_TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/-\+/-/g' | sed 's/^-\|-$//g')
+                  if ! [[ "$SLUG" =~ ^[a-z0-9][a-z0-9-]*$ ]]; then
+                    gh issue comment "$ISSUE_NUMBER" --body "Could not derive a valid post slug from the title \`${ISSUE_TITLE}\`. Use a title with at least one letter or number."
+                    echo "::error::Invalid title-derived slug: '${SLUG}'"
+                    exit 1
+                  fi
                   BRANCH="post/${SLUG}"
                   DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
                   FILE="shiny-hoppy-meeple/content/posts/${SLUG}.md"
