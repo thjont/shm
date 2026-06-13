@@ -11,14 +11,19 @@
           <th>#</th>
           <th>Game</th>
           <th>Plays</th>
+          <th>Member Plays</th>
         </tr>
       </thead>
       <tbody>
         {{ range hugo.Data.games }}
-        <tr data-slug="{{ anchorize .name }}" data-plays="0">
+        <tr data-slug="{{ anchorize .name }}" data-plays="0" data-member-plays="0">
           <td class="stats-rank">—</td>
           <td><a href="/g/{{ anchorize .name }}/">{{ .name }}</a></td>
           <td class="stats-plays">—</td>
+          <td class="stats-member-plays">
+            <span class="member-count">—</span>
+            <button class="member-play-btn" data-slug="{{ anchorize .name }}" aria-label="Log a member play for {{ .name }}">+1</button>
+          </td>
         </tr>
         {{ end }}
       </tbody>
@@ -29,17 +34,25 @@
 <script>
 (async () => {
   try {
-    const res = await fetch("/api/plays");
-    if (!res.ok) return;
-    const counts = await res.json();
+    const [playsRes, memberRes] = await Promise.all([
+      fetch("/api/plays"),
+      fetch("/api/member-plays"),
+    ]);
+
+    const counts = playsRes.ok ? await playsRes.json() : {};
+    const memberCounts = memberRes.ok ? await memberRes.json() : {};
 
     const tbody = document.querySelector("#stats-table tbody");
     const rows = Array.from(tbody.querySelectorAll("tr"));
 
     rows.forEach(row => {
-      const n = counts[row.dataset.slug] || 0;
+      const slug = row.dataset.slug;
+      const n = counts[slug] || 0;
+      const m = memberCounts[slug] || 0;
       row.dataset.plays = n;
+      row.dataset.memberPlays = m;
       row.querySelector(".stats-plays").textContent = n;
+      row.querySelector(".member-count").textContent = m;
     });
 
     rows.sort((a, b) => {
@@ -59,5 +72,33 @@
     // API unavailable — leave dashes in place.
   }
 })();
+
+document.querySelector("#stats-table").addEventListener("click", async (e) => {
+  const btn = e.target.closest(".member-play-btn");
+  if (!btn) return;
+
+  const slug = btn.dataset.slug;
+  btn.disabled = true;
+
+  try {
+    const res = await fetch("/api/member-plays", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ slug }),
+    });
+    if (!res.ok) throw new Error(res.status);
+    const { count } = await res.json();
+
+    const row = btn.closest("tr");
+    row.dataset.memberPlays = count;
+    row.querySelector(".member-count").textContent = count;
+
+    btn.textContent = "✓";
+    setTimeout(() => { btn.textContent = "+1"; btn.disabled = false; }, 1500);
+  } catch (e) {
+    btn.textContent = "!";
+    setTimeout(() => { btn.textContent = "+1"; btn.disabled = false; }, 2000);
+  }
+});
 </script>
 {{ end }}

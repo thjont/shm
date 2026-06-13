@@ -151,6 +151,33 @@
   font-size: 0.9rem;
 }
 
+/* ── Stats page member-play button ─────────────────────────────── */
+
+.stats-member-plays {
+  white-space: nowrap;
+}
+
+.member-play-btn {
+  margin-left: 0.4rem;
+  padding: 0.15rem 0.45rem;
+  font-size: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--code-bg);
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.member-play-btn:hover:not(:disabled) {
+  background: var(--border);
+}
+
+.member-play-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
 /* ── "Powered by BGG" footer attribution ───────────────────────── */
 
 .powered-by-bgg {
