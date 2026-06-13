@@ -5,5 +5,8 @@
   },
   "scripts": {
     "lint": "markdownlint-cli2 \"**/*.md\""
+  },
+  "overrides": {
+    "esbuild": "0.28.1"
   }
 }
