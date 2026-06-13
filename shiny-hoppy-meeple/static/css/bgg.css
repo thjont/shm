@@ -247,6 +247,14 @@
 
 /* ── "Powered by BGG" footer attribution ───────────────────────── */
 
+/* The attribution div sits outside PaperMod's <footer> element, so the
+   theme's min-height calc for .main doesn't account for it (28px image +
+   1rem top + 0.5rem bottom = 52px). Subtract it here to prevent the logo
+   from being pushed below the fold on sparse pages. */
+.main {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height) - 52px);
+}
+
 .powered-by-bgg {
   display: flex;
   justify-content: center;
