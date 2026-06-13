@@ -22,12 +22,12 @@ npm run lint                 # markdownlint-cli2 "**/*.md"
 pip install -r requirements.txt   # boardgamegeek2 + pinned deps for bgg_export.py
 ```
 
-Regenerate game/collection data from BGG (writes into `shiny-hoppy-meeple/data/`):
+Regenerate game/collection data from BGG (writes into `shiny-hoppy-meeple/data/bgg-cache/`):
 
 ```bash
 BGG_API_TOKEN=<token> BGG_USERNAME=<user> python bgg_export.py        # a user collection
 python bgg_export.py --geeklist <id>                                  # a public geeklist
-python bgg_export.py --geeklist <id> --collection-file data/members/<slug>.json   # a member
+python bgg_export.py --geeklist <id> --collection-file data/bgg-cache/collections/<slug>.json   # a member
 ```
 
 Clone requires submodules (PaperMod theme): `git submodule update --init --recursive`.
@@ -61,15 +61,16 @@ Workflows: `new-/delete-member`, `new-/delete-shadow-library`, `new-/delete-game
 `bgg_export.py` is the generator that turns BoardGameGeek collections/geeklists into the JSON
 Hugo renders. The data directory has two tiers:
 
-- `data/sources/` — small **input** configs keyed by slug (`members/<slug>.json`,
-  `shadow-libraries/<slug>.json`, `main-library.json`). These are what the issue workflows
-  create/delete. Each names a BGG `collection` (username) or `geeklist` id.
-- `data/main-library.json`, `data/members/<slug>.json`, `data/games/<id>.json` — the large
-  **generated** outputs (collection summaries + full per-game detail), produced by running
-  `bgg_export.py` against a source. Images are downloaded to `static/images/games/` and the JSON
-  is rewritten to local paths (originals kept in `*_source` fields).
-- `data/games-overrides/<bgg_id>.json` — per-game editorial overrides (`description`,
-  `learn_to_play_video`) merged into the game detail page at render time.
+- `data/definitions/` — small **input** configs that drive page creation:
+  - `members/<slug>.json` — `{ slug, display_name, description?, geeklist|username }`
+  - `libraries/main.json` — main library definition
+  - `libraries/<slug>.json` — shadow/supplementary library definitions
+  - `games-bgg-override/<id>.json` — editorial overrides (`description`, `learn_to_play_video`)
+  - Member/library definitions use `username` (BGG username) or `geeklist` (integer ID), never both.
+- `data/bgg-cache/` — large **generated** outputs from running `bgg_export.py`:
+  - `collections/<slug>.json` — collection summary (main library and per-member/library)
+  - `games/<id>.json` — full game detail for every game in any collection
+  - Images are downloaded to `static/images/games/`; JSON is rewritten to local paths (originals kept in `*_source` fields).
 
 ### Custom layouts (`shiny-hoppy-meeple/layouts/`)
 
@@ -79,9 +80,10 @@ owners/in-library across members), `m/` = member pages, `_default/stats.html`, a
 game slugs consumed by the Functions below.
 
 **Thumbnail fallback pattern:** both `g/list.html` and `m/single.html` fall back to
-`hugo.Data.games[id].thumbnail` when the collection item has no thumbnail. This is necessary for
-geeklist-sourced collections, where the geeklist XML API provides no thumbnail and the field is
-`null` in the collection JSON. Keep this fallback in place when editing either template.
+`(index hugo.Data "bgg-cache" "games" id).thumbnail` when the collection item has no thumbnail.
+This is necessary for geeklist-sourced collections, where the geeklist XML API provides no
+thumbnail and the field is `null` in the collection JSON. Keep this fallback in place when editing
+either template.
 
 ### Cloudflare Pages Functions + KV
 

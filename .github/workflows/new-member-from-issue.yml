@@ -72,7 +72,7 @@ jobs:
                       subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'Invalid GeekList ID: `{geeklist_id}`. Must be a number.'], check=True)
                       sys.exit(1)
 
-                  config_dir = 'shiny-hoppy-meeple/data/sources/members'
+                  config_dir = 'shiny-hoppy-meeple/data/definitions/members'
                   os.makedirs(config_dir, exist_ok=True)
 
                   config_path = f'{config_dir}/{slug}.json'
@@ -85,7 +85,7 @@ jobs:
                   if description:
                       data['description'] = description
                   if bgg_username:
-                      data['collection'] = bgg_username
+                      data['username'] = bgg_username
                   if geeklist_id:
                       data['geeklist'] = int(geeklist_id)
 

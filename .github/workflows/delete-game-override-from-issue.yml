@@ -56,7 +56,7 @@ jobs:
                       subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'Invalid BGG Game ID: `{bgg_id}`. Must be a number.'], check=True)
                       sys.exit(1)
 
-                  path = f'shiny-hoppy-meeple/data/games-overrides/{bgg_id}.json'
+                  path = f'shiny-hoppy-meeple/data/definitions/games-bgg-override/{bgg_id}.json'
                   if not os.path.exists(path):
                       print(f'::error::No override found for BGG game {bgg_id}')
                       subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'No override found for BGG game [{bgg_id}](https://boardgamegeek.com/boardgame/{bgg_id}).'], check=True)

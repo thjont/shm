@@ -56,7 +56,7 @@ jobs:
                       subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'Invalid slug: `{slug}`.'], check=True)
                       sys.exit(1)
 
-                  config_path = f'shiny-hoppy-meeple/data/sources/members/{slug}.json'
+                  config_path = f'shiny-hoppy-meeple/data/definitions/members/{slug}.json'
                   if not os.path.exists(config_path):
                       print(f'::error::No member with slug: {slug!r}')
                       subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'No member found with slug `{slug}`.'], check=True)
@@ -68,7 +68,7 @@ jobs:
 
                   os.remove(config_path)
 
-                  member_path = f'shiny-hoppy-meeple/data/members/{slug}.json'
+                  member_path = f'shiny-hoppy-meeple/data/bgg-cache/collections/{slug}.json'
                   member_exists = os.path.exists(member_path)
                   if member_exists:
                       os.remove(member_path)

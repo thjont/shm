@@ -63,7 +63,7 @@ jobs:
                       subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', 'No fields were provided. Please supply a Description, a Learn to Play Video ID, or both.'], check=True)
                       sys.exit(1)
 
-                  path = f'shiny-hoppy-meeple/data/games-overrides/{bgg_id}.json'
+                  path = f'shiny-hoppy-meeple/data/definitions/games-bgg-override/{bgg_id}.json'
                   data = {}
                   if os.path.exists(path):
                       with open(path) as f:
