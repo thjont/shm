@@ -1,5 +1,5 @@
-{{- range $key, $game := hugo.Data.games }}
-  {{- $override := index (index hugo.Data "games-overrides") $key }}
+{{- range $key, $game := index hugo.Data "bgg-cache" "games" }}
+  {{- $override := index hugo.Data "definitions" "games-bgg-override" $key }}
   {{- if $override }}
     {{- $game = merge $game $override }}
   {{- end }}

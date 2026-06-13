@@ -8,8 +8,8 @@
     {{ .Content }}
 
     <div class="bgg-collection">
-      {{ range $slug, $config := hugo.Data.sources.members }}
-      {{ $member := index hugo.Data.members $slug }}
+      {{ range $slug, $config := hugo.Data.definitions.members }}
+      {{ $member := index hugo.Data "bgg-cache" "collections" $slug }}
       <a class="bgg-card" href="/m/{{ $slug }}/">
         <div class="bgg-card-body">
           <h3>{{ $config.display_name }}</h3>

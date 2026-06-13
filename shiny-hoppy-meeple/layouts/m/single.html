@@ -16,7 +16,7 @@
       {{ range .items }}
       <a class="bgg-card" href="/g/{{ anchorize .name }}/">
         {{ $thumb := .thumbnail }}
-        {{ if not $thumb }}{{ with index hugo.Data.games (print .id) }}{{ $thumb = .thumbnail }}{{ end }}{{ end }}
+        {{ if not $thumb }}{{ with index hugo.Data "bgg-cache" "games" (print .id) }}{{ $thumb = .thumbnail }}{{ end }}{{ end }}
         {{ with $thumb }}
         <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />
         {{ end }}

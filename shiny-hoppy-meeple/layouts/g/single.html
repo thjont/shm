@@ -3,15 +3,18 @@
 
 {{/* Ownership — computed once, used in both the stats panel and info column */}}
 {{ $inLibrary := false }}
-{{ range (index hugo.Data "main-library").items }}
+{{ range (index hugo.Data "bgg-cache" "collections" "main-library").items }}
   {{ if eq .id $game.id }}{{ $inLibrary = true }}{{ end }}
 {{ end }}
 
 {{ $owners := slice }}
-{{ range $slug, $member := hugo.Data.members }}
-  {{ range $member.items }}
-    {{ if eq .id $game.id }}
-      {{ $owners = $owners | append (dict "name" $member.owner "slug" $slug) }}
+{{ range $slug, $def := hugo.Data.definitions.members }}
+  {{ $collection := index hugo.Data "bgg-cache" "collections" $slug }}
+  {{ with $collection }}
+    {{ range .items }}
+      {{ if eq .id $game.id }}
+        {{ $owners = $owners | append (dict "name" $def.display_name "slug" $slug) }}
+      {{ end }}
     {{ end }}
   {{ end }}
 {{ end }}
