@@ -3,7 +3,7 @@
 
 {{/* Ownership — computed once, used in both the stats panel and info column */}}
 {{ $inLibrary := false }}
-{{ range hugo.Data.collection.items }}
+{{ range (index hugo.Data "main-library").items }}
   {{ if eq .id $game.id }}{{ $inLibrary = true }}{{ end }}
 {{ end }}
 

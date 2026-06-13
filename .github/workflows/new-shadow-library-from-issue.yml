@@ -69,7 +69,7 @@ jobs:
                       os.system(f'gh issue comment {issue_number} --body "Invalid GeekList ID: `{geeklist_id}`. Must be a number."')
                       sys.exit(1)
 
-                  config_dir = 'shiny-hoppy-meeple/data/shadow-libraries'
+                  config_dir = 'shiny-hoppy-meeple/data/sources/shadow-libraries'
                   os.makedirs(config_dir, exist_ok=True)
 
                   config_path = f'{config_dir}/{slug}.json'

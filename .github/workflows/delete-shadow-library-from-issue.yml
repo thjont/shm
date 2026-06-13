@@ -56,7 +56,7 @@ jobs:
                       os.system(f'gh issue comment {issue_number} --body "Invalid slug: `{slug}`."')
                       sys.exit(1)
 
-                  config_path = f'shiny-hoppy-meeple/data/shadow-libraries/{slug}.json'
+                  config_path = f'shiny-hoppy-meeple/data/sources/shadow-libraries/{slug}.json'
                   if not os.path.exists(config_path):
                       print(f'::error::No shadow library with slug: {slug!r}')
                       os.system(f'gh issue comment {issue_number} --body "No shadow library found with slug `{slug}`."')

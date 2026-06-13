@@ -8,7 +8,7 @@
     {{ .Content }}
 
     <div class="bgg-collection">
-      {{ range hugo.Data.collection.items }}
+      {{ range (index hugo.Data "main-library").items }}
       {{ $thumb := .thumbnail }}
       {{ if not $thumb }}{{ with index hugo.Data.games (print .id) }}{{ $thumb = .thumbnail }}{{ end }}{{ end }}
       <a class="bgg-card" href="/g/{{ anchorize .name }}/">
