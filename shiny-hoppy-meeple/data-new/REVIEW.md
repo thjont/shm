@@ -39,6 +39,36 @@ corresponding cache filename. `slug: "main-library"` → `bgg-cache/collections/
 **`geeklist` or `username`, not both.** Each definition file specifies exactly one BGG source.
 `geeklist` is an integer geeklist ID; `username` is a BGG username for a standard collection.
 
+## Page Generation Data Flow
+
+### Member and library pages — definition first
+
+The definition is the spine. A member or library page exists because a definition file exists.
+The corresponding cache file enriches it with game items. If the cache file is absent (e.g. BGG
+data not yet fetched), the page still generates with an empty collection. A cache file with no
+matching definition does not produce a page.
+
+```
+definitions/members/<slug>.json       ← drives page creation, provides display_name/description
+  + bgg-cache/collections/<slug>.json ← provides .items for the collection grid
+```
+
+```
+definitions/libraries/main.json            ← drives the main library page, provides display_name
+  + bgg-cache/collections/main-library.json ← provides .items for the library grid
+```
+
+### Game pages — cache first, override on top
+
+The BGG cache is the spine. A game page exists because a cache file exists (written there because
+the game appears in at least one active collection). The override file patches specific fields;
+all other fields remain as BGG returned them.
+
+```
+bgg-cache/games/<id>.json               ← base game data from BGG
+  + definitions/games-bgg-override/<id>.json ← description and/or learn_to_play_video replace BGG values
+```
+
 ---
 
 ## Implementation Plan
@@ -61,26 +91,27 @@ corresponding cache filename. `slug: "main-library"` → `bgg-cache/collections/
 
 ### 3. Hugo templates and content
 
-**`content/g/_content.gotmpl`**
-- `hugo.Data.games` → `index hugo.Data "bgg-cache" "games"`
-- `index (index hugo.Data "games-overrides") $key` → `index (index hugo.Data "definitions") "games-bgg-override" $key`
+**`content/g/_content.gotmpl`** _(cache first, override on top)_
+- Iterate `index hugo.Data "bgg-cache" "games"` as the base
+- Merge `index hugo.Data "definitions" "games-bgg-override" $key` on top (was `games-overrides`)
 
-**`content/m/_content.gotmpl`**
-- `hugo.Data.sources.members` → `hugo.Data.definitions.members`
-- `index hugo.Data.members $slug` → `index hugo.Data "bgg-cache" "collections" $slug`
+**`content/m/_content.gotmpl`** _(definition first, cache enriches)_
+- Iterate `hugo.Data.definitions.members` to drive page creation (was `sources.members`)
+- Look up `index hugo.Data "bgg-cache" "collections" $slug` for items; pass as `member` param even if nil so the page renders with an empty collection when cache is absent
 
-**`layouts/g/list.html`**
-- `(index hugo.Data "main-library").items` → `(index hugo.Data "bgg-cache" "collections" "main-library").items`
-- `index hugo.Data.games (print .id)` → `index hugo.Data "bgg-cache" "games" (print .id)`
+**`layouts/g/list.html`** _(definition first, cache provides items)_
+- Resolve main library slug from `hugo.Data.definitions.libraries.main.slug`
+- Get items from `index hugo.Data "bgg-cache" "collections" "main-library"`
+- Thumbnail fallback: `index hugo.Data "bgg-cache" "games" (print .id)`
 
-**`layouts/g/single.html`**
-- `(index hugo.Data "main-library").items` → `(index hugo.Data "bgg-cache" "collections" "main-library").items`
-- `range $slug, $member := hugo.Data.members` → `range $slug, $def := hugo.Data.definitions.members`, then look up collection via `index hugo.Data "bgg-cache" "collections" $slug`
-- `$member.owner` (removed from cache) → `$def.display_name` from the definition
+**`layouts/g/single.html`** _(definition first for ownership check)_
+- In-library check: `(index hugo.Data "bgg-cache" "collections" "main-library").items`
+- Owner loop: iterate `hugo.Data.definitions.members` (definition is authoritative for who is a member), look up collection via `index hugo.Data "bgg-cache" "collections" $slug`
+- `$member.owner` (removed from cache) → `$def.display_name` from the member definition
 
-**`layouts/m/list.html`**
-- `hugo.Data.sources.members` → `hugo.Data.definitions.members`
-- `index hugo.Data.members $slug` → `index hugo.Data "bgg-cache" "collections" $slug`
+**`layouts/m/list.html`** _(definition first, cache provides count)_
+- Iterate `hugo.Data.definitions.members` (was `sources.members`)
+- Look up `index hugo.Data "bgg-cache" "collections" $slug` for game count
 
 **`layouts/_default/stats.html`**
 - `hugo.Data.games` → `index hugo.Data "bgg-cache" "games"`
