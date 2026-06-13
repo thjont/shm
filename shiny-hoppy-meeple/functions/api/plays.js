@@ -4,7 +4,7 @@
 // keys never surface or bloat the response. Consumed client-side by /js/plays.js.
 
 // Load the set of valid slugs emitted by Hugo. Returns null if unreadable, in
-// which case all stored keys are returned (the pre-allowlist behaviour).
+// which case we fail closed and return no counts rather than every stored key.
 async function knownSlugs(request) {
   try {
     const res = await fetch(new URL("/scan-slugs.json", request.url));
@@ -19,11 +19,13 @@ export async function onRequestGet(context) {
   const { env, request } = context;
   const counts = {};
 
-  if (env.SCANS) {
-    const allow = await knownSlugs(request);
+  // Fail closed: without the allowlist, return no counts rather than leaking
+  // every stored key (consistent with the play-handler's write gate).
+  const allow = env.SCANS ? await knownSlugs(request) : null;
+  if (allow) {
     const list = await env.SCANS.list();
     for (const key of list.keys) {
-      if (allow && !allow.has(key.name)) continue;
+      if (!allow.has(key.name)) continue;
       counts[key.name] = parseInt(await env.SCANS.get(key.name), 10) || 0;
     }
   }

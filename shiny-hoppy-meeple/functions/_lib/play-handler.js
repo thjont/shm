@@ -8,7 +8,8 @@ const SLUG_RE = /^[a-z0-9-]{1,64}$/;
 
 // Load the set of valid slugs emitted by Hugo. The file is a small, edge-cached
 // static asset, so this subrequest is cheap. Returns null if it can't be read,
-// in which case we fall back to a format-only check.
+// in which case we fail closed (skip the KV write) rather than counting on a
+// format-only check, so an allowlist outage can't be used to pollute KV.
 async function knownSlugs(request) {
   try {
     const res = await fetch(new URL("/scan-slugs.json", request.url));
@@ -23,8 +24,10 @@ export async function onRequestGet(context) {
   const { params, env, request } = context;
   const slug = params.slug;
 
+  // Fail closed: only count when the slug is on the allowlist. If the allowlist
+  // is unavailable (null), don't write to KV at all.
   const allow = await knownSlugs(request);
-  const counts = allow ? allow.has(slug) : SLUG_RE.test(slug);
+  const counts = allow ? allow.has(slug) : false;
 
   if (counts && env.SCANS) {
     // KV is eventually consistent, so this read-modify-write can rarely lose a
