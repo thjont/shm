@@ -1,6 +1,6 @@
-name: Game Override
+name: New Game Override
 description: Add or update a custom content override for a board game
-labels: ["game-override"]
+labels: ["new-game-override"]
 body:
     - type: input
       id: bgg_id

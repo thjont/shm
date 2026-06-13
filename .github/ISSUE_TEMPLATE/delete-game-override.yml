@@ -1,6 +1,6 @@
 name: Delete Game Override
 description: Remove a custom content override for a board game
-labels: ["delete-override"]
+labels: ["delete-game-override"]
 body:
     - type: markdown
       attributes:

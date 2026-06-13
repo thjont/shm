@@ -1,6 +1,6 @@
 name: New Post
 description: Publish a new post to the Shiny Hoppy Meeple site
-labels: ["post"]
+labels: ["new-post"]
 body:
     - type: markdown
       attributes:
