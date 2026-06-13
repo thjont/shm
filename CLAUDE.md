@@ -78,6 +78,11 @@ owners/in-library across members), `m/` = member pages, `_default/stats.html`, a
 `index.scanslugs.json` — a custom output format emitting `/scan-slugs.json`, the allowlist of valid
 game slugs consumed by the Functions below.
 
+**Thumbnail fallback pattern:** both `g/list.html` and `m/single.html` fall back to
+`hugo.Data.games[id].thumbnail` when the collection item has no thumbnail. This is necessary for
+geeklist-sourced collections, where the geeklist XML API provides no thumbnail and the field is
+`null` in the collection JSON. Keep this fallback in place when editing either template.
+
 ### Cloudflare Pages Functions + KV
 
 `shiny-hoppy-meeple/functions/` adds server-side logic on top of the static site, backed by a
