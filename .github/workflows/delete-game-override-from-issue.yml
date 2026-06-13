@@ -37,7 +37,7 @@ jobs:
                   GH_TOKEN: ${{ github.token }}
               run: |
                   python3 - <<'PYEOF'
-                  import os, re, sys
+                  import os, re, subprocess, sys
 
                   body = os.environ['ISSUE_BODY']
                   issue_number = os.environ['ISSUE_NUMBER']
@@ -53,13 +53,13 @@ jobs:
 
                   if not bgg_id.isdigit():
                       print(f'::error::Invalid BGG Game ID: {bgg_id!r}')
-                      os.system(f'gh issue comment {issue_number} --body "Invalid BGG Game ID: `{bgg_id}`. Must be a number."')
+                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'Invalid BGG Game ID: `{bgg_id}`. Must be a number.'], check=True)
                       sys.exit(1)
 
                   path = f'shiny-hoppy-meeple/data/games-overrides/{bgg_id}.json'
                   if not os.path.exists(path):
                       print(f'::error::No override found for BGG game {bgg_id}')
-                      os.system(f'gh issue comment {issue_number} --body "No override found for BGG game [{bgg_id}](https://boardgamegeek.com/boardgame/{bgg_id})."')
+                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'No override found for BGG game [{bgg_id}](https://boardgamegeek.com/boardgame/{bgg_id}).'], check=True)
                       sys.exit(1)
 
                   os.remove(path)

@@ -37,7 +37,7 @@ jobs:
                   GH_TOKEN: ${{ github.token }}
               run: |
                   python3 - <<'PYEOF'
-                  import json, os, re, sys
+                  import json, os, re, subprocess, sys
 
                   body = os.environ['ISSUE_BODY']
                   issue_number = os.environ['ISSUE_NUMBER']
@@ -53,13 +53,13 @@ jobs:
 
                   if not re.match(r'^[a-z0-9][a-z0-9-]*$', slug):
                       print(f'::error::Invalid slug: {slug!r}')
-                      os.system(f'gh issue comment {issue_number} --body "Invalid slug: `{slug}`."')
+                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'Invalid slug: `{slug}`.'], check=True)
                       sys.exit(1)
 
                   config_path = f'shiny-hoppy-meeple/data/sources/shadow-libraries/{slug}.json'
                   if not os.path.exists(config_path):
                       print(f'::error::No shadow library with slug: {slug!r}')
-                      os.system(f'gh issue comment {issue_number} --body "No shadow library found with slug `{slug}`."')
+                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'No shadow library found with slug `{slug}`.'], check=True)
                       sys.exit(1)
 
                   with open(config_path) as f:

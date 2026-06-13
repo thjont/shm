@@ -37,7 +37,7 @@ jobs:
                   GH_TOKEN: ${{ github.token }}
               run: |
                   python3 - <<'PYEOF'
-                  import json, os, re, sys
+                  import json, os, re, subprocess, sys
 
                   body = os.environ['ISSUE_BODY']
                   issue_number = os.environ['ISSUE_NUMBER']
@@ -57,17 +57,17 @@ jobs:
 
                   if not re.match(r'^[a-z0-9][a-z0-9-]*$', slug):
                       print(f'::error::Invalid slug: {slug!r}')
-                      os.system(f'gh issue comment {issue_number} --body "Invalid slug: `{slug}`. Use lowercase letters, numbers, and hyphens only."')
+                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'Invalid slug: `{slug}`. Use lowercase letters, numbers, and hyphens only.'], check=True)
                       sys.exit(1)
 
                   if not bgg_username and not geeklist_id:
                       print('::error::No BGG source provided.')
-                      os.system(f'gh issue comment {issue_number} --body "Please provide either a BGG Username or a BGG GeekList ID."')
+                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', 'Please provide either a BGG Username or a BGG GeekList ID.'], check=True)
                       sys.exit(1)
 
                   if geeklist_id and not geeklist_id.isdigit():
                       print(f'::error::Invalid GeekList ID: {geeklist_id!r}')
-                      os.system(f'gh issue comment {issue_number} --body "Invalid GeekList ID: `{geeklist_id}`. Must be a number."')
+                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'Invalid GeekList ID: `{geeklist_id}`. Must be a number.'], check=True)
                       sys.exit(1)
 
                   config_dir = 'shiny-hoppy-meeple/data/sources/members'
@@ -76,7 +76,7 @@ jobs:
                   config_path = f'{config_dir}/{slug}.json'
                   if os.path.exists(config_path):
                       print(f'::error::Slug already exists: {slug!r}')
-                      os.system(f'gh issue comment {issue_number} --body "A member with slug `{slug}` already exists."')
+                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'A member with slug `{slug}` already exists.'], check=True)
                       sys.exit(1)
 
                   data = {'slug': slug, 'display_name': display_name}

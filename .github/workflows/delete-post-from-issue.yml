@@ -37,7 +37,7 @@ jobs:
                   GH_TOKEN: ${{ github.token }}
               run: |
                   python3 - <<'PYEOF'
-                  import os, re, sys
+                  import os, re, subprocess, sys
 
                   body = os.environ['ISSUE_BODY']
                   issue_number = os.environ['ISSUE_NUMBER']
@@ -53,13 +53,13 @@ jobs:
 
                   if not re.match(r'^[a-z0-9][a-z0-9-]*$', slug):
                       print(f'::error::Invalid slug: {slug!r}')
-                      os.system(f'gh issue comment {issue_number} --body "Invalid slug: `{slug}`."')
+                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'Invalid slug: `{slug}`.'], check=True)
                       sys.exit(1)
 
                   post_path = f'shiny-hoppy-meeple/content/posts/{slug}.md'
                   if not os.path.exists(post_path):
                       print(f'::error::No post found with slug: {slug!r}')
-                      os.system(f'gh issue comment {issue_number} --body "No post found with slug `{slug}`."')
+                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'No post found with slug `{slug}`.'], check=True)
                       sys.exit(1)
 
                   os.remove(post_path)
