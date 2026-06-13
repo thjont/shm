@@ -5,8 +5,8 @@ on:
         types: [labeled]
 
 jobs:
-    delete-override:
-        if: github.event.label.name == 'publish' && contains(github.event.issue.labels.*.name, 'delete-override')
+    delete-game-override:
+        if: github.event.label.name == 'publish' && contains(github.event.issue.labels.*.name, 'delete-game-override')
         runs-on: ubuntu-latest
         permissions:
             contents: write

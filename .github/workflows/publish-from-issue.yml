@@ -7,8 +7,8 @@ on:
 jobs:
     publish:
         if: |
-            (github.event.action == 'labeled' && github.event.label.name == 'publish' && contains(github.event.issue.labels.*.name, 'post')) ||
-            (github.event.action == 'edited' && contains(github.event.issue.labels.*.name, 'publish') && contains(github.event.issue.labels.*.name, 'post'))
+            (github.event.action == 'labeled' && github.event.label.name == 'publish' && contains(github.event.issue.labels.*.name, 'new-post')) ||
+            (github.event.action == 'edited' && contains(github.event.issue.labels.*.name, 'publish') && contains(github.event.issue.labels.*.name, 'new-post'))
         runs-on: ubuntu-latest
         permissions:
             contents: write
