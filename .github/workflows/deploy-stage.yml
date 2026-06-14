@@ -2,7 +2,7 @@ name: Deploy to dev (Cloudflare Pages)
 
 on:
     push:
-        branches: [dev]
+        branches: [main]
         paths:
             - "shiny-hoppy-meeple/**"
     workflow_dispatch:
