@@ -9,6 +9,8 @@ on:
         branches: [main]
         paths:
             - "shiny-hoppy-meeple/**"
+    schedule:
+        - cron: "*/15 * * * *"
     workflow_dispatch:
 jobs:
     deploy:

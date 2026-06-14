@@ -13,3 +13,19 @@ body:
           description: "Markdown supported: links, **bold**, headings, lists, and images all work."
       validations:
           required: true
+
+    - type: input
+      id: publish_date
+      attributes:
+          label: Publish date (optional)
+          description: "Leave blank to publish immediately. Format: YYYY-MM-DD HH:MM (UTC)"
+          placeholder: "2026-06-20 09:00"
+      validations:
+          required: false
+
+    - type: checkboxes
+      id: unlisted
+      attributes:
+          label: Visibility
+          options:
+              - label: Unlisted — accessible via URL but hidden from listings, RSS, and search engines
