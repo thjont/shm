@@ -1,0 +1,123 @@
+name: Publish post now from issue
+
+on:
+    issues:
+        types: [labeled]
+
+jobs:
+    publish-now:
+        if: github.event.label.name == 'publish' && contains(github.event.issue.labels.*.name, 'publish-post-now')
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            issues: write
+            pull-requests: write
+        steps:
+            - name: Check permission
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  SENDER: ${{ github.event.sender.login }}
+                  ISSUE_NUMBER: ${{ github.event.issue.number }}
+                  REPO: ${{ github.repository }}
+              run: |
+                  PERMISSION=$(gh api "repos/${REPO}/collaborators/${SENDER}/permission" --jq '.permission' 2>/dev/null || echo "none")
+                  if [[ "$PERMISSION" != "admin" && "$PERMISSION" != "write" ]]; then
+                    gh issue comment "$ISSUE_NUMBER" --body "@${SENDER} Only maintainers with write access can publish posts."
+                    gh issue edit "$ISSUE_NUMBER" --remove-label "publish"
+                    exit 1
+                  fi
+
+            - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+            - name: Remove scheduling and visibility constraints
+              id: post
+              env:
+                  ISSUE_BODY: ${{ github.event.issue.body }}
+                  ISSUE_NUMBER: ${{ github.event.issue.number }}
+                  GH_TOKEN: ${{ github.token }}
+              run: |
+                  python3 - <<'PYEOF'
+                  import os, re, subprocess, sys
+
+                  body = os.environ['ISSUE_BODY']
+                  issue_number = os.environ['ISSUE_NUMBER']
+
+                  def extract(label):
+                      m = re.search(rf'### {re.escape(label)}\n\n(.*?)(?=\n### |\Z)', body, re.DOTALL)
+                      if not m:
+                          return ''
+                      v = m.group(1).strip()
+                      return '' if v == '_No response_' else v
+
+                  def comment(msg):
+                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', msg], check=True)
+
+                  slug = extract('Post Slug').strip()
+
+                  if not re.match(r'^[a-z0-9][a-z0-9-]*$', slug):
+                      comment(f'Invalid slug: `{slug}`. Use the slug from the post URL (e.g. `my-post`).')
+                      print(f'::error::Invalid slug: {slug!r}')
+                      sys.exit(1)
+
+                  post_path = f'shiny-hoppy-meeple/content/posts/{slug}.md'
+                  if not os.path.exists(post_path):
+                      comment(f'No post found with slug `{slug}`.')
+                      print(f'::error::Post not found: {post_path}')
+                      sys.exit(1)
+
+                  with open(post_path) as f:
+                      lines = f.readlines()
+
+                  if not lines or lines[0].strip() != '+++':
+                      print('::error::Post has no TOML front matter')
+                      sys.exit(1)
+
+                  try:
+                      fm_end = next(i for i, l in enumerate(lines[1:], 1) if l.strip() == '+++')
+                  except StopIteration:
+                      print('::error::Malformed front matter')
+                      sys.exit(1)
+
+                  fm_lines = lines[1:fm_end]
+                  body_lines = lines[fm_end + 1:]
+
+                  has_publish_date = any(l.startswith('publishDate =') for l in fm_lines)
+                  has_unlisted = any(l.startswith('unlisted =') for l in fm_lines)
+
+                  if not has_publish_date and not has_unlisted:
+                      comment(f'Post `{slug}` is already fully public — no scheduled date or unlisted flag found.')
+                      sys.exit(1)
+
+                  new_fm = [l for l in fm_lines
+                            if not l.startswith('publishDate =') and not l.startswith('unlisted =')]
+
+                  with open(post_path, 'w') as f:
+                      f.write('+++\n')
+                      f.writelines(new_fm)
+                      f.write('+++\n')
+                      f.writelines(body_lines)
+
+                  with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+                      out.write(f'slug={slug}\n')
+                      out.write(f'post_path={post_path}\n')
+                  PYEOF
+
+            - name: Create branch and open PR
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  SLUG: ${{ steps.post.outputs.slug }}
+                  POST_PATH: ${{ steps.post.outputs.post_path }}
+                  ISSUE_NUMBER: ${{ github.event.issue.number }}
+              run: |
+                  BRANCH="publish-now/${SLUG}"
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+                  git checkout -b "$BRANCH"
+                  git add "$POST_PATH"
+                  git commit -m "Publish now: ${SLUG} (#${ISSUE_NUMBER})"
+                  git push origin "$BRANCH"
+                  gh pr create \
+                    --title "Publish now: ${SLUG}" \
+                    --body "Closes #${ISSUE_NUMBER}" \
+                    --base main \
+                    --head "$BRANCH"
