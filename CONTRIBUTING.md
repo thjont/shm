@@ -14,8 +14,12 @@ code, layout, or build), see the [developer guide](DEVELOPMENT.md) instead.
 
 ## How it works (the short version)
 
-```text
-You open an issue  →  Maintainer reviews & adds the "publish" label  →  Change goes live
+```mermaid
+flowchart LR
+    A([Open an issue]) --> B([Fill in the form])
+    B --> C([Submit])
+    C --> D([Maintainer adds\npublish label])
+    D --> E([Change goes live])
 ```
 
 1. **You** pick a form and fill it in (this guide shows each one below).
@@ -114,6 +118,23 @@ maintainer will publish the removal the same way.
 > [!NOTE]
 > Deleting a post also removes its images. Deleting a shadow library removes its configuration, but
 > any game pages it created stay until the game data is next refreshed.
+
+---
+
+## Emergency: rolling back a mistake
+
+If the wrong thing was just published and you need to undo it quickly, use the **Rollback Main**
+form. It reverts the single most recent change to the site.
+
+1. Open a **Rollback Main** issue and describe what went wrong in the **Reason** box.
+2. A maintainer applies the `publish` label.
+3. A pull request is automatically opened that undoes the last change. A maintainer reviews and
+   merges it, and the site reverts.
+
+> [!IMPORTANT]
+> This undoes **the last commit on `main`** — whatever was most recently merged. If more than one
+> thing needs reverting, or you need to undo a specific earlier change, contact a maintainer
+> directly rather than opening multiple rollback issues.
 
 ---
 

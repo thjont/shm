@@ -28,10 +28,13 @@ jobs:
             - name: Build site
               run: pushd shiny-hoppy-meeple && hugo --minify --buildFuture --baseURL "https://stage-shiny-hoppy-meeple.pages.dev/" && popd
 
+            - name: Use stage wrangler config
+              run: cp shiny-hoppy-meeple/wrangler-stage.toml shiny-hoppy-meeple/wrangler.toml
+
             - name: Deploy to Cloudflare Pages
               uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3.15.0
               with:
                   apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
                   accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
                   workingDirectory: shiny-hoppy-meeple
-                  command: pages deploy --project-name=stage-shiny-hoppy-meeple --commit-hash=${{ github.sha }}
+                  command: pages deploy --commit-hash=${{ github.sha }}

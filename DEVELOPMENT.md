@@ -87,6 +87,19 @@ This is the heart of the project. Community members never edit files directly:
 3. The matching workflow in `.github/workflows/*-from-issue.yml` converts the issue into committed
    files via a **branch + pull request** to `main`.
 
+```mermaid
+flowchart TD
+    A[Issue opened\nfrom template] --> B[Content-type label\nautomatically applied]
+    B --> C[Maintainer applies\npublish label]
+    C --> D{Labeller has\nwrite/admin access?}
+    D -- No --> E[Issue closed\nwith error comment]
+    D -- Yes --> F[Workflow parses\nissue body]
+    F --> G[Branch + PR opened\nagainst main]
+    G --> H[Maintainer merges PR]
+    H --> I[deploy.yml triggers]
+    I --> J[Site updated]
+```
+
 Every workflow shares the same shape:
 
 - **Permission gate** — checks the *labeller's* collaborator permission (`write`/`admin`) via the
@@ -107,11 +120,17 @@ Each workflow fires when its **content-type label** (which matches the workflow'
 | `new-game-override` / `delete-game-override` | Per-game editorial override |
 | `delete-post` | Removes a post and its images |
 | `publish-from-issue` (label `new-post`; also runs on issue **edit**) | Posts — see below |
+| `rollback-from-issue` (label `rollback`) | Reverts the most recent commit on `main` — see below |
 
 **Posts are special** (`publish-from-issue.yml`): it downloads pasted images into
 `static/images/posts/<slug>/`, builds a per-branch Cloudflare **preview** deploy at
 `post-<slug>.shiny-hoppy-meeple.pages.dev`, supports issue **edits** to update the draft, and posts
 the preview URL back to the issue/PR. It triggers on both `labeled` and `edited` events.
+
+**Rollback** (`rollback-from-issue.yml`): runs `git revert HEAD --no-edit` against `main` and opens
+a PR on a `rollback/issue-<N>` branch. No file parsing — the only user input is a free-text reason
+included in the PR description. Reverts exactly one commit; for multi-commit or targeted rollbacks a
+maintainer should use `git revert` manually.
 
 > [!WARNING]
 > **Security invariant:** user-controlled issue fields must never be interpolated into a shell.
@@ -123,6 +142,41 @@ the preview URL back to the issue/PR. It triggers on both `labeled` and `edited`
 
 `bgg_export.py` turns BoardGameGeek collections / geeklists into the JSON that Hugo renders. The
 `data/` directory has a clean two-tier split:
+
+```mermaid
+erDiagram
+    MEMBER {
+        string slug
+        string display_name
+        string username "BGG account (optional)"
+        int geeklist "BGG GeekList ID (optional)"
+    }
+    LIBRARY {
+        string slug
+        string display_name
+        string username "BGG account (optional)"
+        int geeklist "BGG GeekList ID (optional)"
+    }
+    COLLECTION {
+        string slug
+    }
+    GAME {
+        int id
+        string title
+        string description
+        string thumbnail
+    }
+    GAME_OVERRIDE {
+        int bgg_id
+        string description "replaces BGG text"
+        string learn_to_play_video "YouTube ID"
+    }
+
+    MEMBER ||--|| COLLECTION : "bgg_export generates"
+    LIBRARY ||--|| COLLECTION : "bgg_export generates"
+    COLLECTION }o--o{ GAME : contains
+    GAME ||--o| GAME_OVERRIDE : "may have"
+```
 
 **Definitions — `data/definitions/`** — small editorial configs that drive page creation. These are
 what the issue workflows create and delete.
