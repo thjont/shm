@@ -87,6 +87,19 @@ This is the heart of the project. Community members never edit files directly:
 3. The matching workflow in `.github/workflows/*-from-issue.yml` converts the issue into committed
    files via a **branch + pull request** to `main`.
 
+```mermaid
+flowchart TD
+    A[Issue opened\nfrom template] --> B[Content-type label\nautomatically applied]
+    B --> C[Maintainer applies\npublish label]
+    C --> D{Labeller has\nwrite/admin access?}
+    D -- No --> E[Issue closed\nwith error comment]
+    D -- Yes --> F[Workflow parses\nissue body]
+    F --> G[Branch + PR opened\nagainst main]
+    G --> H[Maintainer merges PR]
+    H --> I[deploy.yml triggers]
+    I --> J[Site updated]
+```
+
 Every workflow shares the same shape:
 
 - **Permission gate** — checks the *labeller's* collaborator permission (`write`/`admin`) via the
@@ -129,6 +142,41 @@ maintainer should use `git revert` manually.
 
 `bgg_export.py` turns BoardGameGeek collections / geeklists into the JSON that Hugo renders. The
 `data/` directory has a clean two-tier split:
+
+```mermaid
+erDiagram
+    MEMBER {
+        string slug
+        string display_name
+        string username "BGG account (optional)"
+        int geeklist "BGG GeekList ID (optional)"
+    }
+    LIBRARY {
+        string slug
+        string display_name
+        string username "BGG account (optional)"
+        int geeklist "BGG GeekList ID (optional)"
+    }
+    COLLECTION {
+        string slug
+    }
+    GAME {
+        int id
+        string title
+        string description
+        string thumbnail
+    }
+    GAME_OVERRIDE {
+        int bgg_id
+        string description "replaces BGG text"
+        string learn_to_play_video "YouTube ID"
+    }
+
+    MEMBER ||--|| COLLECTION : "bgg_export generates"
+    LIBRARY ||--|| COLLECTION : "bgg_export generates"
+    COLLECTION }o--o{ GAME : contains
+    GAME ||--o| GAME_OVERRIDE : "may have"
+```
 
 **Definitions — `data/definitions/`** — small editorial configs that drive page creation. These are
 what the issue workflows create and delete.

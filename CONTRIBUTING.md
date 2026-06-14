@@ -14,8 +14,12 @@ code, layout, or build), see the [developer guide](DEVELOPMENT.md) instead.
 
 ## How it works (the short version)
 
-```text
-You open an issue  →  Maintainer reviews & adds the "publish" label  →  Change goes live
+```mermaid
+flowchart LR
+    A([Open an issue]) --> B([Fill in the form])
+    B --> C([Submit])
+    C --> D([Maintainer adds\npublish label])
+    D --> E([Change goes live])
 ```
 
 1. **You** pick a form and fill it in (this guide shows each one below).
