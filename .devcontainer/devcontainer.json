@@ -14,6 +14,14 @@
     }
   },
   "onCreateCommand": "npm install && pip install -r requirements.txt",
+  "postStartCommand": "hugo server --bind 0.0.0.0 --source shiny-hoppy-meeple",
+  "forwardPorts": [1313],
+  "portsAttributes": {
+    "1313": {
+      "label": "Hugo server",
+      "onAutoForward": "openPreview"
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
