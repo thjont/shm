@@ -35,6 +35,7 @@ jobs:
                   submodules: true
 
             - name: Create or update post from issue
+              id: create-post
               env:
                   ISSUE_TITLE: ${{ github.event.issue.title }}
                   ISSUE_BODY: ${{ github.event.issue.body }}
@@ -128,10 +129,10 @@ jobs:
                   fi
 
                   PREVIEW_BASEURL="https://dev-shiny-hoppy-meeple.pages.dev/"
-                  echo "BRANCH=${BRANCH}" >> "$GITHUB_ENV"
-                  echo "ISSUE_TITLE=$(echo "$ISSUE_TITLE" | tr -d '\n\r')" >> "$GITHUB_ENV"
-                  echo "ISSUE_NUMBER=${ISSUE_NUMBER}" >> "$GITHUB_ENV"
-                  echo "PREVIEW_BASEURL=${PREVIEW_BASEURL}" >> "$GITHUB_ENV"
+                  echo "BRANCH=${BRANCH}" >> "$GITHUB_OUTPUT"
+                  echo "ISSUE_TITLE=$(echo "$ISSUE_TITLE" | tr -d '\n\r')" >> "$GITHUB_OUTPUT"
+                  echo "ISSUE_NUMBER=${ISSUE_NUMBER}" >> "$GITHUB_OUTPUT"
+                  echo "PREVIEW_BASEURL=${PREVIEW_BASEURL}" >> "$GITHUB_OUTPUT"
 
             - name: Setup Hugo
               uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1
@@ -140,6 +141,8 @@ jobs:
                   extended: true
 
             - name: Build site
+              env:
+                  PREVIEW_BASEURL: ${{ steps.create-post.outputs.PREVIEW_BASEURL }}
               run: pushd shiny-hoppy-meeple && hugo --minify --buildFuture --baseURL "$PREVIEW_BASEURL" && popd
 
             - name: Deploy preview to Cloudflare Pages
@@ -154,6 +157,7 @@ jobs:
               env:
                   GH_TOKEN: ${{ github.token }}
                   DEPLOY_URL: ${{ steps.deploy.outputs.deployment-url }}
+                  ISSUE_NUMBER: ${{ steps.create-post.outputs.ISSUE_NUMBER }}
               run: |
                   gh issue comment "$ISSUE_NUMBER" --body "Preview: ${DEPLOY_URL}"
 
@@ -162,6 +166,9 @@ jobs:
               env:
                   GH_TOKEN: ${{ github.token }}
                   DEPLOY_URL: ${{ steps.deploy.outputs.deployment-url }}
+                  ISSUE_TITLE: ${{ steps.create-post.outputs.ISSUE_TITLE }}
+                  ISSUE_NUMBER: ${{ steps.create-post.outputs.ISSUE_NUMBER }}
+                  BRANCH: ${{ steps.create-post.outputs.BRANCH }}
               run: |
                   gh pr create \
                     --title "$ISSUE_TITLE" \
@@ -176,6 +183,7 @@ jobs:
               env:
                   GH_TOKEN: ${{ github.token }}
                   DEPLOY_URL: ${{ steps.deploy.outputs.deployment-url }}
+                  BRANCH: ${{ steps.create-post.outputs.BRANCH }}
               run: |
                   PR_NUMBER=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number')
                   gh pr comment "$PR_NUMBER" --body "Preview updated: ${DEPLOY_URL}"
