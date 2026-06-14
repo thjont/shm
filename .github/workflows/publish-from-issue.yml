@@ -54,6 +54,23 @@ jobs:
                   FILE="shiny-hoppy-meeple/content/posts/${SLUG}.md"
                   TAGS_TOML=$(echo "$LABELS" | jq -r '[.[] | select(.name | startswith("tag/")) | .name[4:]] | @json')
                   PROCESSED_BODY=$(python3 -c "import re, os; body = os.environ.get('ISSUE_BODY', ''); m = re.search(r'### Content\n\n(.*?)(?:\n### |\Z)', body, re.DOTALL); print(m.group(1).rstrip() if m else body)")
+                  PUBLISH_DATE=$(python3 -c "
+import re, os, datetime
+body = os.environ.get('ISSUE_BODY', '').replace('\r\n', '\n')
+m = re.search(r'### Publish date[^\n]*\n\n(.+?)(?:\n### |\Z)', body, re.DOTALL)
+val = m.group(1).strip() if m else ''
+if val and val != '_No response_':
+    try:
+        dt = datetime.datetime.strptime(val, '%Y-%m-%d %H:%M').replace(tzinfo=datetime.timezone.utc)
+        print(dt.strftime('%Y-%m-%dT%H:%M:%SZ'))
+    except Exception:
+        pass
+")
+                  UNLISTED=$(python3 -c "
+import re, os
+body = os.environ.get('ISSUE_BODY', '')
+print('true' if re.search(r'\[x\] Unlisted', body, re.IGNORECASE) else 'false')
+")
 
                   # Download any GitHub-hosted images and rewrite URLs to local paths
                   IMG_DIR="shiny-hoppy-meeple/static/images/posts/${SLUG}"
@@ -97,9 +114,11 @@ jobs:
                   {
                     printf '+++\n'
                     printf 'date = "%s"\n' "$DATE"
+                    [ -n "$PUBLISH_DATE" ] && printf 'publishDate = "%s"\n' "$PUBLISH_DATE"
                     printf 'draft = false\n'
                     printf 'title = "%s"\n' "$ISSUE_TITLE"
                     [ "$TAGS_TOML" != "[]" ] && printf 'tags = %s\n' "$TAGS_TOML"
+                    [ "$UNLISTED" = "true" ] && printf 'unlisted = true\n'
                     printf '+++\n\n'
                     printf '%s\n' "$PROCESSED_BODY"
                   } > "$FILE"
@@ -126,7 +145,7 @@ jobs:
                   extended: true
 
             - name: Build site
-              run: pushd shiny-hoppy-meeple && hugo --minify --baseURL "$PREVIEW_BASEURL" && popd
+              run: pushd shiny-hoppy-meeple && hugo --minify --buildFuture --baseURL "$PREVIEW_BASEURL" && popd
 
             - name: Deploy preview to Cloudflare Pages
               id: deploy
