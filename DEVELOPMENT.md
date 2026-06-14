@@ -107,11 +107,17 @@ Each workflow fires when its **content-type label** (which matches the workflow'
 | `new-game-override` / `delete-game-override` | Per-game editorial override |
 | `delete-post` | Removes a post and its images |
 | `publish-from-issue` (label `new-post`; also runs on issue **edit**) | Posts — see below |
+| `rollback-from-issue` (label `rollback`) | Reverts the most recent commit on `main` — see below |
 
 **Posts are special** (`publish-from-issue.yml`): it downloads pasted images into
 `static/images/posts/<slug>/`, builds a per-branch Cloudflare **preview** deploy at
 `post-<slug>.shiny-hoppy-meeple.pages.dev`, supports issue **edits** to update the draft, and posts
 the preview URL back to the issue/PR. It triggers on both `labeled` and `edited` events.
+
+**Rollback** (`rollback-from-issue.yml`): runs `git revert HEAD --no-edit` against `main` and opens
+a PR on a `rollback/issue-<N>` branch. No file parsing — the only user input is a free-text reason
+included in the PR description. Reverts exactly one commit; for multi-commit or targeted rollbacks a
+maintainer should use `git revert` manually.
 
 > [!WARNING]
 > **Security invariant:** user-controlled issue fields must never be interpolated into a shell.
