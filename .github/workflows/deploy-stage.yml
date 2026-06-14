@@ -34,4 +34,4 @@ jobs:
                   apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
                   accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
                   workingDirectory: shiny-hoppy-meeple
-                  command: pages deploy --project-name=stage-shiny-hoppy-meeple --commit-hash=${{ github.sha }}
+                  command: pages deploy --config wrangler-stage.toml --commit-hash=${{ github.sha }}
