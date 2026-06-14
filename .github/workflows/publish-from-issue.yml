@@ -127,7 +127,7 @@ jobs:
                     git push --force-with-lease origin "$BRANCH"
                   fi
 
-                  PREVIEW_BASEURL="https://$(echo "$BRANCH" | sed 's/\//-/g').shiny-hoppy-meeple.pages.dev/"
+                  PREVIEW_BASEURL="https://dev-shiny-hoppy-meeple.pages.dev/"
                   echo "BRANCH=${BRANCH}" >> "$GITHUB_ENV"
                   echo "ISSUE_TITLE=$(echo "$ISSUE_TITLE" | tr -d '\n\r')" >> "$GITHUB_ENV"
                   echo "ISSUE_NUMBER=${ISSUE_NUMBER}" >> "$GITHUB_ENV"
@@ -148,7 +148,7 @@ jobs:
               with:
                   apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
                   accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-                  command: pages deploy shiny-hoppy-meeple/public --project-name=shiny-hoppy-meeple --branch=${{ env.BRANCH }} --commit-hash=${{ github.sha }}
+                  command: pages deploy shiny-hoppy-meeple/public --project-name=dev-shiny-hoppy-meeple --commit-hash=${{ github.sha }}
 
             - name: Post preview URL to issue
               env:
