@@ -102,8 +102,8 @@ Each workflow fires when its **content-type label** (which matches the workflow'
 
 | Workflow | Effect |
 | --- | --- |
-| `new-member` / `delete-member` | Member source config + page |
-| `new-shadow-library` / `delete-shadow-library` | Shadow-library source config |
+| `new-member` / `delete-member` | Member definition + page |
+| `new-shadow-library` / `delete-shadow-library` | Shadow-library definition |
 | `new-game-override` / `delete-game-override` | Per-game editorial override |
 | `delete-post` | Removes a post and its images |
 | `publish-from-issue` (label `new-post`; also runs on issue **edit**) | Posts — see below |
@@ -122,28 +122,40 @@ the preview URL back to the issue/PR. It triggers on both `labeled` and `edited`
 ### 2. BGG data pipeline (`bgg_export.py`)
 
 `bgg_export.py` turns BoardGameGeek collections / geeklists into the JSON that Hugo renders. The
-`data/` directory has two tiers:
+`data/` directory has a clean two-tier split:
 
-- **Inputs — `data/sources/`** — small configs keyed by slug
-  (`members/<slug>.json`, `shadow-libraries/<slug>.json`, `main-library.json`). These are what the
-  issue workflows create and delete. Each names a BGG `collection` (username) or `geeklist` id.
-- **Generated outputs** — `data/main-library.json`, `data/members/<slug>.json`,
-  `data/games/<id>.json` — collection summaries plus full per-game detail, produced by running
-  `bgg_export.py` against a source. Images are downloaded to `static/images/games/` and the JSON is
-  rewritten to local paths (originals kept in `*_source` fields).
-- **Overrides — `data/games-overrides/<bgg_id>.json`** — per-game editorial overrides
-  (`description`, `learn_to_play_video`) merged into the game page at render time.
+**Definitions — `data/definitions/`** — small editorial configs that drive page creation. These are
+what the issue workflows create and delete.
 
-Regenerating data (writes into `shiny-hoppy-meeple/data/`):
+| File | Purpose |
+| --- | --- |
+| `members/<slug>.json` | `slug`, `display_name`, optional `description`, `username` (BGG account) or `geeklist` (ID) |
+| `libraries/main.json` | Main library definition |
+| `libraries/<slug>.json` | Shadow / supplementary library definition (same fields as members) |
+| `games-bgg-override/<id>.json` | Override `description` and/or `learn_to_play_video` for a game |
+
+Each definition specifies exactly one BGG source — `username` *or* `geeklist`, never both.
+
+**Cache — `data/bgg-cache/`** — large generated outputs produced by running `bgg_export.py`.
+
+| File | Purpose |
+| --- | --- |
+| `collections/<slug>.json` | Collection summary: count + items (main library, members, shadow libraries) |
+| `games/<id>.json` | Full game detail for every game that appears in any collection |
+
+Images are downloaded to `static/images/games/`; the JSON is rewritten to local paths while
+originals are kept in `*_source` fields.
+
+Regenerating data (writes into `shiny-hoppy-meeple/data/bgg-cache/`):
 
 ```bash
 BGG_API_TOKEN=<token> BGG_USERNAME=<user> python bgg_export.py        # a user collection
 python bgg_export.py --geeklist <id>                                  # a public geeklist
-python bgg_export.py --geeklist <id> --collection-file data/members/<slug>.json   # a member
+python bgg_export.py --geeklist <id> --collection-file data/bgg-cache/collections/<slug>.json   # a member
 ```
 
 > [!NOTE]
-> The issue workflows write the **source** configs; running `bgg_export.py` produces the large
+> The issue workflows write the **definition** files; running `bgg_export.py` produces the large
 > generated JSON and images. New members/libraries don't fully appear until the export runs.
 
 ### 3. Custom layouts (`shiny-hoppy-meeple/layouts/`)
