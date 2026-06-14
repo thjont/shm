@@ -67,12 +67,6 @@ jobs:
                           pass
                   PYEOF
                   )
-                  UNLISTED=$(python3 - <<'PYEOF'
-                  import re, os
-                  body = os.environ.get('ISSUE_BODY', '')
-                  print('true' if re.search(r'\[x\] Unlisted', body, re.IGNORECASE) else 'false')
-                  PYEOF
-                  )
 
                   # Download any GitHub-hosted images and rewrite URLs to local paths
                   IMG_DIR="shiny-hoppy-meeple/static/images/posts/${SLUG}"
@@ -120,7 +114,6 @@ jobs:
                     printf 'draft = false\n'
                     printf 'title = "%s"\n' "$ISSUE_TITLE"
                     [ "$TAGS_TOML" != "[]" ] && printf 'tags = %s\n' "$TAGS_TOML"
-                    [ "$UNLISTED" = "true" ] && printf 'unlisted = true\n'
                     printf '+++\n\n'
                     printf '%s\n' "$PROCESSED_BODY"
                   } > "$FILE"

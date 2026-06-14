@@ -22,10 +22,3 @@ body:
           placeholder: "2026-06-20 09:00"
       validations:
           required: false
-
-    - type: checkboxes
-      id: unlisted
-      attributes:
-          label: Visibility
-          options:
-              - label: Unlisted — accessible via URL but hidden from listings, RSS, and search engines
