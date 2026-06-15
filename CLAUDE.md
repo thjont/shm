@@ -26,7 +26,7 @@ Regenerate game/collection data from BGG (writes into `shiny-hoppy-meeple/data/b
 
 ```bash
 BGG_API_TOKEN=<token> BGG_USERNAME=<user> python bgg_export.py        # a user collection
-python bgg_export.py --geeklist <id>                                  # a public geeklist
+BGG_API_TOKEN=<token> python bgg_export.py --geeklist <id>            # a geeklist (BGG now requires auth)
 python bgg_export.py --geeklist <id> --collection-file data/bgg-cache/collections/<slug>.json   # a member
 ```
 

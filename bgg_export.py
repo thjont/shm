@@ -5,11 +5,11 @@ Usage:
     # User collection (requires auth):
     BGG_API_TOKEN=<token> BGG_USERNAME=<username> python bgg_export.py [options]
 
-    # Geeklist (public, no auth needed):
-    python bgg_export.py --geeklist <id> [options]
+    # Geeklist (BGG_API_TOKEN recommended — BGG now returns 401 without auth):
+    BGG_API_TOKEN=<token> python bgg_export.py --geeklist <id> [options]
 
-BGG's API currently returns 401 for unauthenticated collection requests, so a
-valid BGG_API_TOKEN is required for collection mode. Geeklist mode is public.
+BGG's API currently returns 401 for unauthenticated requests, so a valid
+BGG_API_TOKEN is required for both collection mode and geeklist mode.
 
 Options:
     --geeklist ID          Import a BGG geeklist instead of a user collection
@@ -191,24 +191,34 @@ def export_collection(
     return [item["id"] for item in items]
 
 
-def _fetch_geeklist_xml(geeklist_id: int) -> tuple[str, list[dict]]:
+def _fetch_geeklist_xml(geeklist_id: int, client: BGGClient) -> tuple[str, list[dict]]:
     """Fetch a BGG geeklist via the XML API v1 and return (title, items).
 
     BGG's v2 API does not expose geeklists, so this calls the v1 endpoint
     directly. Items are filtered to objecttype="thing" (games/expansions).
+    Uses the library's requests session for Bearer auth. Handles both the
+    202 HTTP status and the XML <message> queued-response that v1 returns.
     """
     url = f"https://boardgamegeek.com/xmlapi/geeklist/{geeklist_id}"
-    for attempt in range(5):
-        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            root = ET.fromstring(resp.read())
+    auth_headers = client._get_auth_headers() or {}
+
+    for attempt in range(10):
+        r = client.requests_session.get(url, timeout=30, headers=auth_headers)
+        if r.status_code == 401:
+            raise BGGApiUnauthorizedError("invalid access token")
+        if r.status_code == 202:
+            print(f"  BGG queued (202) — retrying in 10s … (attempt {attempt + 1}/10)")
+            time.sleep(10)
+            continue
+        r.raise_for_status()
+        root = ET.fromstring(r.text)
         if root.tag == "message":
-            if attempt < 4:
-                print("  BGG queued — retrying in 5s …")
-                time.sleep(5)
-                continue
-            raise RuntimeError("BGG API did not respond in time — try again later")
+            print(f"  BGG queued (message) — retrying in 10s … (attempt {attempt + 1}/10)")
+            time.sleep(10)
+            continue
         break
+    else:
+        raise RuntimeError("BGG API did not respond in time — try again later")
 
     title_el = root.find("title")
     title = title_el.text if title_el is not None else f"Geeklist {geeklist_id}"
@@ -236,7 +246,7 @@ def export_geeklist(
     Returns the list of game IDs for downstream game-detail export.
     """
     print(f"Fetching geeklist {geeklist_id} …")
-    title, geeklist_items = _fetch_geeklist_xml(geeklist_id)
+    title, geeklist_items = _fetch_geeklist_xml(geeklist_id, _client)
 
     items = [{"id": gi["id"], "name": gi["name"], "thumbnail": None} for gi in geeklist_items]
 
