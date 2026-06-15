@@ -12,10 +12,7 @@ const SLUG_RE = /^[a-z0-9-]{1,64}$/;
 // format-only check, so an allowlist outage can't be used to pollute KV.
 async function knownSlugs(request) {
   try {
-    const headers = {};
-    const auth = request.headers.get("Authorization");
-    if (auth) headers["Authorization"] = auth;
-    const res = await fetch(new URL("/scan-slugs.json", request.url), { headers });
+    const res = await fetch(new URL("/scan-slugs.json", request.url));
     if (res.ok) return new Set(await res.json());
   } catch (e) {
     // allowlist unavailable — caller falls back to SLUG_RE
