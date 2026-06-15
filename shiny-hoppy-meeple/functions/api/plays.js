@@ -7,10 +7,7 @@
 // which case we fail closed and return no counts rather than every stored key.
 async function knownSlugs(request) {
   try {
-    const headers = {};
-    const auth = request.headers.get("Authorization");
-    if (auth) headers["Authorization"] = auth;
-    const res = await fetch(new URL("/scan-slugs.json", request.url), { headers });
+    const res = await fetch(new URL("/scan-slugs.json", request.url));
     if (res.ok) return new Set(await res.json());
   } catch (e) {
     // allowlist unavailable — fall back to returning every key
