@@ -1,0 +1,56 @@
+{
+  "id": 360264,
+  "name": "Psychobabble",
+  "year": 2022,
+  "thumbnail": "/images/games/360264-thumb.jpg",
+  "thumbnail_source": "https://cf.geekdo-images.com/IxqANuGvq-CsbuweNyfXWg__small/img/Y582wTpERmwtQlU2l6EY2VQbZGM=/fit-in/200x150/filters:strip_icc()/pic8968954.jpg",
+  "image": "/images/games/360264.jpg",
+  "image_source": "https://cf.geekdo-images.com/IxqANuGvq-CsbuweNyfXWg__original/img/WrKFnmy_3Y8iZcyOobVuoKISwt4=/0x0/filters:format(jpeg)/pic8968954.jpg",
+  "description": "A social deduction game in which one player is a psychotherapist trying to discover what shared dreams their patients suffering from mass hysteria have been having. The game uses large cards with surreal dreamlike images set out in a grid. The Patients all know which card they\u2019re discussing but the psychotherapist does not. The problem is that one of the patients is genuinely insane and has been give the wrong card to talk about. This patient needs to remain anonymous to win the game.\n\nThe beauty of this game is that nobody knows who that one insane patient is, not even themselves. This means that everyone has to be really cagey about their communication until they work out (if they work out) who it is. But with all this vague and obtuse communication going on how can you be sure that it\u2019s not you who is insane?\n\nA game of real suspense and paranoia it will have you questioning who you can trust, and even if you can trust yourself.\n\n\u2014description from the designer\n\n",
+  "min_players": 4,
+  "max_players": 11,
+  "min_playing_time": 15,
+  "max_playing_time": 25,
+  "playing_time": 25,
+  "min_age": 10,
+  "expansion": false,
+  "categories": [
+    "Party Game"
+  ],
+  "mechanics": [
+    "Betting and Bluffing",
+    "Deduction",
+    "Hidden Roles",
+    "Semi-Cooperative Game",
+    "Voting"
+  ],
+  "families": [
+    "Game: Werewolf / Mafia"
+  ],
+  "designers": [
+    "Kedric Winks"
+  ],
+  "artists": [
+    "Eric York"
+  ],
+  "publishers": [
+    "Cheatwell Games"
+  ],
+  "expansions": [],
+  "alternative_names": [],
+  "bgg_rank": 20184,
+  "ranks": [
+    "BoardGameRank (id: 1)"
+  ],
+  "users_rated": 78,
+  "rating_average": 6.11667,
+  "rating_bayes_average": 5.51763,
+  "rating_stddev": 1.90387,
+  "rating_average_weight": 2.0,
+  "rating_num_weights": 4,
+  "users_owned": 226,
+  "users_trading": 6,
+  "users_wanting": 7,
+  "users_wishing": 47,
+  "users_commented": 21
+}

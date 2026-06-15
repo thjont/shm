@@ -1,0 +1,184 @@
+{
+  "id": 224037,
+  "name": "Codenames: Duet",
+  "year": 2017,
+  "thumbnail": "/images/games/224037-thumb.png",
+  "thumbnail_source": "https://cf.geekdo-images.com/VG31TvBpKngZ8ztV-N4Dcg__small/img/FW3sD3Ci-5t07QceD_q1r6Wnrzw=/fit-in/200x150/filters:strip_icc()/pic8911183.png",
+  "image": "/images/games/224037.png",
+  "image_source": "https://cf.geekdo-images.com/VG31TvBpKngZ8ztV-N4Dcg__original/img/w-FZ84fzPZSNCI1HtrsTOfLT2B4=/0x0/filters:format(png)/pic8911183.png",
+  "description": "Codenames Duet keeps the basic elements of Codenames \u2014 give one-word clues to try to get someone to identify your agents among those on the table \u2014 but now you're working together as a team to find all of your agents. (Why you don't already know who your agents are is a question that Congressional investigators will get on your back about later!)\n\nTo set up play, lay out 25 word cards in a 5\u00d75 grid. Place a key card in the holder so that each player sees one side of the card. Each player sees a 5\u00d75 grid on the card, with nine of the squares colored green (representing your agents) and three squares colored black (representing assassins). Three of the nine squares on each side are also green on the other side, one assassin is black on both sides, one is green on the other side and the other is an innocent bystander on the other side.\n\nCollectively, you need to reveal all fifteen agents \u2014 without revealing an assassin \u2014 before time runs out in order to win the game. Either player can decide to give the first one-word clue to the other player, along with a number. Whoever receives the clue places a finger on a card to identify that agent. If correct, they can attempt to identify another one. If they identify a bystander, then their guessing time ends. If they identify an assassin, you both lose! Unlike regular Codenames, they can keep guessing as long as they keep identifying an agent each time; this is useful for going back to previous clues and finding ones they missed earlier. After the first clue is given, players alternate giving clues.\n\n",
+  "min_players": 2,
+  "max_players": 2,
+  "min_playing_time": 15,
+  "max_playing_time": 30,
+  "playing_time": 30,
+  "min_age": 11,
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Deduction",
+    "Spies / Secret Agents",
+    "Word Game"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Cooperative Game",
+    "Memory"
+  ],
+  "families": [
+    "Components: 5 x 5 Grids",
+    "Game: Codenames",
+    "Mechanism: Give a Clue / Get a Clue",
+    "Players: Two-Player Only Games",
+    "Versions & Editions: Two-Player Versions of More-Player Games",
+    "Word Games: Guess the Word"
+  ],
+  "designers": [
+    "Vlaada Chv\u00e1til",
+    "Scot Eaton"
+  ],
+  "artists": [
+    "\u0160t\u011bp\u00e1n Dra\u0161\u0165\u00e1k",
+    "D\u00e1vid Jablonovsk\u00fd",
+    "Tom\u00e1\u0161 Ku\u010derovsk\u00fd"
+  ],
+  "publishers": [
+    "Czech Games Edition (CGE)",
+    "asmodee",
+    "Brain Games",
+    "Cranio Creations",
+    "Devir",
+    "DiceTree Games",
+    "Enigma (Bergsala Enigma)",
+    "Fantasmagoria",
+    "Feelindigo",
+    "GaGa Games",
+    "G\u00e9mklub",
+    "Goblin Gaming",
+    "Golden Egg Games",
+    "HeidelB\u00c4R Games",
+    "Heidelberger Spieleverlag",
+    "Hobby Japan",
+    "IELLO",
+    "Kaissa Chess & Games",
+    "Lautapelit.fi",
+    "Lex Games",
+    "MINDOK",
+    "MIPL",
+    "One Moment Games",
+    "Rebel Sp. z o.o.",
+    "White Goblin Games"
+  ],
+  "expansions": [
+    {
+      "id": 213294,
+      "name": "Codenames: Authors & Games"
+    },
+    {
+      "id": 224198,
+      "name": "Codenames: Bonus Pack \u2013 Board Gaming (English)"
+    },
+    {
+      "id": 215603,
+      "name": "Codenames: Bonus Pack \u2013 CGE Games"
+    },
+    {
+      "id": 387517,
+      "name": "Codenames: Bonus Pack \u2013 Schweiz"
+    },
+    {
+      "id": 293928,
+      "name": "Codenames: Bonus Pack \u2013 Through the Ages"
+    },
+    {
+      "id": 234198,
+      "name": "Codenames: Cartes promo \u2013 Personnalit\u00e9s"
+    },
+    {
+      "id": 264856,
+      "name": "Codenames: Cartes promo \u2013 Univers Geek"
+    },
+    {
+      "id": 464602,
+      "name": "Codenames: Fairy Tales Expansion Pack"
+    },
+    {
+      "id": 464604,
+      "name": "Codenames: Sci-Fi Expansion Pack"
+    },
+    {
+      "id": 363088,
+      "name": "C\u00f3digo Secreto: Expans\u00e3o promocional Brasil"
+    },
+    {
+      "id": 363092,
+      "name": "C\u00f3digo Secreto: Expans\u00e3o promocional Portugal"
+    },
+    {
+      "id": 350213,
+      "name": "C\u00f3digo Secreto: Expansi\u00f3n promocional Am\u00e9ricas"
+    },
+    {
+      "id": 342140,
+      "name": "C\u00f3digo Secreto: Expansi\u00f3n promocional Argentina"
+    },
+    {
+      "id": 347651,
+      "name": "Tajniacy: Agenci na kwarantannie"
+    },
+    {
+      "id": 307032,
+      "name": "Tajniacy: Fantastyczne \u015awiaty"
+    },
+    {
+      "id": 234643,
+      "name": "Tajniacy: Nowi Agenci"
+    },
+    {
+      "id": 253443,
+      "name": "Tajniacy: Obcy Agenci"
+    },
+    {
+      "id": 234644,
+      "name": "Tajniacy: Sami Nieswoi"
+    }
+  ],
+  "alternative_names": [
+    "Codenames: Duet XXL",
+    "Codenames: Duett",
+    "Codenames: Duo",
+    "C\u00f3digo Secreto: Dueto",
+    "C\u00f3digo Secreto: D\u00fao",
+    "Fed\u0151nevek: N\u00e9gyszemk\u00f6zt",
+    "Kryc\u00ed jm\u00e9na: Duet",
+    "Krycie men\u00e1: Duet",
+    "Nome in Codice Duetto",
+    "Nume de cod Duet",
+    "Nume de Cod: Duet XXL",
+    "Tajniacy: Duet",
+    "\u041a\u043e\u0434\u043e\u0432\u0438 \u0438\u043c\u0435\u043d\u0430: \u0422\u0430\u043d\u0434\u0435\u043c",
+    "\u041a\u043e\u0434\u043e\u0432\u0456 \u0456\u043c\u0435\u043d\u0430: \u0414\u0443\u0435\u0442",
+    "\u041a\u043e\u0434\u043e\u0432\u044b\u0435 \u0438\u043c\u0435\u043d\u0430. \u0414\u0443\u044d\u0442",
+    "\u05e9\u05dd-\u05e7\u05d5\u05d3 \u05d3\u05d5\u05d0\u05d8",
+    "\u30b3\u30fc\u30c9\u30cd\u30fc\u30e0\uff1a\u30c7\u30e5\u30a8\u30c3\u30c8",
+    "\u884c\u52a8\u4ee3\u53f7\uff1a\u4e8c\u91cd\u594f",
+    "\ucf54\ub4dc\ub124\uc784: \ub4c0\uc5e3"
+  ],
+  "bgg_rank": 275,
+  "ranks": [
+    "BoardGameRank (id: 1)",
+    "BoardGameRank (id: 5498)",
+    "BoardGameRank (id: 5499)"
+  ],
+  "users_rated": 26761,
+  "rating_average": 7.40693,
+  "rating_bayes_average": 7.23246,
+  "rating_stddev": 1.25166,
+  "rating_average_weight": 1.3594,
+  "rating_num_weights": 512,
+  "users_owned": 56346,
+  "users_trading": 662,
+  "users_wanting": 238,
+  "users_wishing": 3747,
+  "users_commented": 3911
+}

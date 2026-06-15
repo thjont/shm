@@ -3,72 +3,191 @@
   "name": "Pandemic",
   "year": 2008,
   "thumbnail": "/images/games/30549-thumb.jpg",
-  "thumbnail_source": "https://cf.geekdo-images.com/S3qdnSMbEfNLBd9HXVjFEA__thumb/img/kIBu8tGxd02SuCEYb0MFSBpR-bI=/fit-in/200x150/filters:strip_icc()/pic1534148.jpg",
+  "thumbnail_source": "https://cf.geekdo-images.com/S3ybV1LAp-8SnHIXLLjVqA__small/img/oqViRj6nVxK3m36NluTxU1PZkrk=/fit-in/200x150/filters:strip_icc()/pic1534148.jpg",
   "image": "/images/games/30549.jpg",
-  "image_source": "https://cf.geekdo-images.com/S3qdnSMbEfNLBd9HXVjFEA__original/img/0oFGMdAlNEJFiUP_9FnVsKlD5Hk=/0x0/filters:format(jpeg)/pic1534148.jpg",
-  "description": "In Pandemic, several virulent diseases have broken out simultaneously all over the world! The players are disease-fighting specialists whose mission is to treat disease hotspots while researching cures for each of four plagues before they get out of hand.",
+  "image_source": "https://cf.geekdo-images.com/S3ybV1LAp-8SnHIXLLjVqA__original/img/IsrvRLpUV1TEyZsO5rC-btXaPz0=/0x0/filters:format(jpeg)/pic1534148.jpg",
+  "description": "In Pandemic, several virulent diseases have broken out simultaneously all over the world! The players are disease-fighting specialists whose mission is to treat disease hotspots while researching cures for each of four plagues before they get out of hand.\n\nThe game board depicts several major population centers on Earth. On each turn, a player can use up to four actions to travel between cities, treat infected populaces, discover a cure, or build a research station. A deck of cards provides the players with these abilities, but sprinkled throughout this deck are Epidemic! cards that accelerate and intensify the diseases' activity. A second, separate deck of cards controls the \"normal\" spread of the infections.\n\nTaking a unique role within the team, players must plan their strategy to mesh with their specialists' strengths in order to conquer the diseases. For example, the Operations Expert can build research stations which are needed to find cures for the diseases and which allow for greater mobility between cities; the Scientist needs only four cards of a particular disease to cure it instead of the normal five\u2014but the diseases are spreading quickly and time is running out. If one or more diseases spreads beyond recovery or if too much time elapses, the players all lose. If they cure the four diseases, they all win!\n\nThe 2013 edition of Pandemic includes two new characters\u2014the Contingency Planner and the Quarantine Specialist\u2014not available in earlier editions of the game.\n\nPandemic is the first game in the Pandemic series.\n\n",
   "min_players": 2,
   "max_players": 4,
   "min_playing_time": 45,
-  "max_playing_time": 75,
-  "playing_time": 60,
+  "max_playing_time": 45,
+  "playing_time": 45,
   "min_age": 8,
   "expansion": false,
   "categories": [
     "Medical",
-    "Cooperative"
+    "Travel"
   ],
   "mechanics": [
     "Action Points",
+    "Chaining",
+    "Contracts",
     "Cooperative Game",
+    "Events",
     "Hand Management",
+    "Multi-Use Cards",
     "Point to Point Movement",
-    "Role Playing"
+    "Set Collection",
+    "Simulation",
+    "Solo / Solitaire Game",
+    "Tags",
+    "Trading",
+    "Variable Player Powers",
+    "Variable Set-up"
   ],
   "families": [
-    "Pandemic"
+    "Components: Map (Global Scale)",
+    "Components: Multi-Use Cards",
+    "Containers: Unique Shape",
+    "Digital Implementations: Apple App Store",
+    "Digital Implementations: Board Game Arena",
+    "Digital Implementations: Google Play",
+    "Digital Implementations: Steam",
+    "Game: Pandemic",
+    "Medical: Diseases",
+    "Misc: BGG Hall of Fame",
+    "Misc: Dice Tower Hall of Fame",
+    "Misc: Made by Panda",
+    "Misc: Watch It Played How To Videos",
+    "Occupation: Dispatcher",
+    "Occupation: Medic / Doctor / Nurses",
+    "Occupation: Researcher / Scientist",
+    "Players: Games with expansions that add solo play",
+    "Players: Games with expansions that change player count",
+    "Region: The World",
+    "Theme: Science"
   ],
   "designers": [
     "Matt Leacock"
   ],
   "artists": [
     "Josh Cappel",
+    "Christian Hanisch",
     "R\u00e9gis Moulun",
-    "Christian Hanisch"
+    "Chris Quilliams",
+    "Tom Thiel"
   ],
   "publishers": [
-    "Z-Man Games"
+    "Z-Man Games",
+    "(Unknown)",
+    "ADC Blackfire Entertainment",
+    "Albi",
+    "Asterion Press",
+    "Boardgame Space",
+    "Brain Games",
+    "CoolPlay",
+    "Devir",
+    "Enigma (Bergsala Enigma)",
+    "Filosofia \u00c9ditions",
+    "Gal\u00e1pagos Jogos",
+    "Game Harbor",
+    "G\u00e9mklub",
+    "HaKubia",
+    "Hobby Japan",
+    "HomoLudicus",
+    "Jolly Thinkers",
+    "Kaissa Chess & Games",
+    "Korea Boardgames",
+    "Lacerta",
+    "Lautapelit.fi",
+    "Lifestyle Boardgames Ltd",
+    "MINDOK",
+    "NeoTroy Games",
+    "Nordic Games ehf",
+    "Paladium Games",
+    "Pegasus Spiele",
+    "Quined White Goblin Games",
+    "Rebel Sp. z o.o.",
+    "Siam Board Games",
+    "Stratelibri",
+    "Wargames Club Publishing",
+    "Zhiyanjia",
+    "\u0412\u0437\u0440\u043e\u0441\u043b\u044b\u0435 \u0434\u0435\u0442\u0438",
+    "\u0406\u0433\u0440\u043e\u043c\u0430\u0433"
   ],
   "expansions": [
     {
-      "id": 40671,
+      "id": 205666,
+      "name": "Pandemic: Gen Con 2016 Promos \u2013 Z-Force Team Member/Game Convention"
+    },
+    {
+      "id": 446028,
+      "name": "Pandemic: Government Shutdown"
+    },
+    {
+      "id": 137136,
+      "name": "Pandemic: In the Lab"
+    },
+    {
+      "id": 446025,
+      "name": "Pandemic: Isolation"
+    },
+    {
+      "id": 40849,
       "name": "Pandemic: On the Brink"
     },
     {
-      "id": 161936,
-      "name": "Pandemic: In the Lab"
+      "id": 185403,
+      "name": "Pandemic: Promo Roles"
+    },
+    {
+      "id": 168703,
+      "name": "Pandemic: State of Emergency"
+    },
+    {
+      "id": 221935,
+      "name": "Pandemic: Survival Promos \u2013 Crisis Mitigator/Relocation Specialist"
+    },
+    {
+      "id": 382181,
+      "name": "Pandemic: Teacher Promo Card"
+    },
+    {
+      "id": 48791,
+      "name": "Pandemie: Uitbreiding \"De Generalist\""
     }
   ],
   "alternative_names": [
-    "Pand\u00e9mie"
+    "EPIZOotic",
+    "Pandemia",
+    "Pandemia 10 Aniversario",
+    "Pandemia: Una Nuova Sfida",
+    "Pandemic, 10 Jahre Jubil\u00e4umsedition",
+    "Pandemic, Edici\u00f3n 10\u00ba Aniversario",
+    "Pandemic: 10\u00b0 Anniversario",
+    "Pandemic: 10th Anniversary Edition",
+    "Pandemic: Edition 10\u00e8me anniversaire",
+    "Pandemic: Una nuova sfida",
+    "Pand\u00e9mie",
+    "Pandemie",
+    "\u03a0\u03b1\u03bd\u03b4\u03b7\u03bc\u03af\u03b1",
+    "\u041f\u0430\u043d\u0434\u0435\u043c\u0438\u044f",
+    "\u041f\u0430\u043d\u0434\u0435\u043c\u0456\u044f",
+    "\u05e4\u05e0\u05d3\u05de\u05d9\u05e7",
+    "\u062c\u0627\u0626\u062d\u0629",
+    "\u0e40\u0e01\u0e21\u0e42\u0e23\u0e04\u0e23\u0e30\u0e1a\u0e32\u0e14",
+    "\u30d1\u30f3\u30c7\u30df\u30c3\u30af",
+    "\u30d1\u30f3\u30c7\u30df\u30c3\u30af\uff1a10\u5468\u5e74\u8a18\u5ff5\u7248",
+    "\u30d1\u30f3\u30c7\u30df\u30c3\u30af\uff1a\u65b0\u305f\u306a\u308b\u8a66\u7df4",
+    "\u761f\u75ab\u5371\u673a",
+    "\u761f\u75ab\u5371\u6a5f",
+    "\ud32c\ub370\ubbf9"
   ],
-  "bgg_rank": 68,
+  "bgg_rank": 172,
   "ranks": [
-    {
-      "name": "boardgame",
-      "friendlyname": "Board Game Rank",
-      "value": 68
-    }
+    "BoardGameRank (id: 1)",
+    "BoardGameRank (id: 5497)",
+    "BoardGameRank (id: 5499)"
   ],
-  "users_rated": 109832,
-  "rating_average": 7.59,
-  "rating_bayes_average": 7.54,
-  "rating_stddev": 1.44,
-  "rating_average_weight": 2.39,
-  "rating_num_weights": 35674,
-  "users_owned": 261983,
-  "users_trading": 5412,
-  "users_wanting": 621,
-  "users_wishing": 14302,
-  "users_commented": 27641
+  "users_rated": 135332,
+  "rating_average": 7.51307,
+  "rating_bayes_average": 7.40349,
+  "rating_stddev": 1.3391,
+  "rating_average_weight": 2.3941,
+  "rating_num_weights": 6301,
+  "users_owned": 226590,
+  "users_trading": 3377,
+  "users_wanting": 612,
+  "users_wishing": 11883,
+  "users_commented": 20755
 }

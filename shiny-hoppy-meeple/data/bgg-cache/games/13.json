@@ -1,63 +1,631 @@
 {
-    "id": 13,
-    "name": "Catan",
-    "year": 1995,
-    "thumbnail": "/images/games/13-thumb.jpg",
-    "thumbnail_source": "https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__thumb/img/8a9HeqFydO7UnzoERVkOBsy4tvk=/fit-in/200x150/filters:strip_icc()/pic2419375.jpg",
-    "image": "/images/games/13-thumb.webp",
-    "image_source": "https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__original/img/ETnHBFRJhpzBwZv2SLLWOB1bEXI=/0x0/filters:format(jpeg)/pic2419375.jpg",
-    "description": "In Catan, players try to be the dominant force on the island of Catan by building settlements, cities, and roads. On each turn dice are rolled to determine what resources the island produces. Players collect these resources to build up their civilizations.",
-    "min_players": 3,
-    "max_players": 4,
-    "min_playing_time": 60,
-    "max_playing_time": 120,
-    "playing_time": 90,
-    "min_age": 10,
-    "expansion": false,
-    "categories": ["Negotiation", "Territory Building"],
-    "mechanics": [
-        "Dice Rolling",
-        "Hand Management",
-        "Trading",
-        "Network and Route Building",
-        "Random Production"
-    ],
-    "families": ["Catan", "Cities & Knights"],
-    "designers": ["Klaus Teuber"],
-    "artists": ["Volkan Baga", "Tanja Donner", "Pete Fenlon"],
-    "publishers": ["KOSMOS", "Mayfair Games", "999 Games"],
-    "expansions": [
-        {
-            "id": 14,
-            "name": "Catan: Seafarers"
-        },
-        {
-            "id": 15,
-            "name": "Catan: Cities & Knights"
-        },
-        {
-            "id": 16,
-            "name": "Catan: Traders & Barbarians"
-        }
-    ],
-    "alternative_names": ["Settlers of Catan", "Die Siedler von Catan"],
-    "bgg_rank": 342,
-    "ranks": [
-        {
-            "name": "boardgame",
-            "friendlyname": "Board Game Rank",
-            "value": 342
-        }
-    ],
-    "users_rated": 114823,
-    "rating_average": 7.13,
-    "rating_bayes_average": 7.08,
-    "rating_stddev": 1.56,
-    "rating_average_weight": 2.33,
-    "rating_num_weights": 38241,
-    "users_owned": 281456,
-    "users_trading": 4821,
-    "users_wanting": 412,
-    "users_wishing": 9834,
-    "users_commented": 28371
+  "id": 13,
+  "name": "Catan",
+  "year": 1995,
+  "thumbnail": "/images/games/13-thumb.png",
+  "thumbnail_source": "https://cf.geekdo-images.com/0XODRpReiZBFUffEcqT5-Q__small/img/SNVfF23OQafv3u8xdFolJnMkBoM=/fit-in/200x150/filters:strip_icc()/pic9156909.png",
+  "image": "/images/games/13.png",
+  "image_source": "https://cf.geekdo-images.com/0XODRpReiZBFUffEcqT5-Q__original/img/oRc0AomWA9ZtFqQDZiZbIyKE1j0=/0x0/filters:format(png)/pic9156909.png",
+  "description": "In CATAN (formerly The Settlers of Catan), players try to be the dominant force on the island of Catan by building settlements, cities and roads. On each turn dice are rolled to determine which resources the island produces. Players build structures by 'spending' resources (sheep, wheat, wood, brick and ore) which are represented by the relevant resource cards; each land type, with the exception of the unproductive desert, produces a specific resource: hills produce brick, forests produce wood, mountains produce ore, fields produce wheat, and pastures produce sheep.\n\nSet-up includes randomly placing large hexagonal tiles (each depicting one of the five resource-producing terrain types--or the desert) in a honeycomb shape and surrounding them with water tiles, some of which contain ports of exchange. A number disk, the value of which will correspond to the roll of two 6-sided dice, are placed on each terrain tile. Each player is given two settlements (think: houses) and roads (sticks) which are placed on intersections and borders of the terrain tiles. Players collect a hand of resource cards based on which terrain tiles their last-placed settlement is adjacent to. A robber pawn is placed on the desert tile.\n\nA turn consists of rolling the dice, collecting resource cards based on this dice roll and the position of settlements (or upgraded cities\u2014think: hotels), turning in resource cards (if possible and desired) for improvements, trading cards at a port, possibly playing a development card, or trading resource cards with other players. If the dice roll is a 7, the active player moves the robber to a new terrain tile and steals a resource card from another player who has a settlement adjacent to that tile.\n\nPoints are accumulated by building settlements and cities, having the longest road or the largest army (from some of the development cards), and gathering certain development cards that simply award victory points. When a player has gathered 10 points (some of which may be held in secret), s/he announces this and claims the win.\n\n",
+  "min_players": 3,
+  "max_players": 4,
+  "min_playing_time": 60,
+  "max_playing_time": 120,
+  "playing_time": 120,
+  "min_age": 10,
+  "expansion": false,
+  "categories": [
+    "Economic",
+    "Negotiation"
+  ],
+  "mechanics": [
+    "Chaining",
+    "Dice Rolling",
+    "Hand Management",
+    "Hexagon Grid",
+    "Hidden Victory Points",
+    "Income",
+    "Market",
+    "Modular Board",
+    "Network and Route Building",
+    "Race",
+    "Random Production",
+    "Take That",
+    "Trading",
+    "Variable Set-up"
+  ],
+  "families": [
+    "Animals: Sheep",
+    "Components: Hexagonal Tiles",
+    "Components: HexHex3 Grids",
+    "Components: Wooden pieces & boards",
+    "Digital Implementations: Apple App Store",
+    "Digital Implementations: Board Game Arena",
+    "Digital Implementations: BrettspielWelt",
+    "Digital Implementations: Screentop.gg",
+    "Digital Implementations: Steam",
+    "Game: Catan",
+    "Islands: Fictional",
+    "Misc: BGG Hall of Fame",
+    "Misc: Dice Tower Hall of Fame",
+    "Misc: Watch It Played How To Videos",
+    "Players: Games with expansions that change player count",
+    "Promotional: Board Games",
+    "Series: World's Smallest (Super Impulse)",
+    "Theme: Colonial"
+  ],
+  "designers": [
+    "Klaus Teuber"
+  ],
+  "artists": [
+    "Volkan Baga",
+    "Tanja Donner",
+    "Pete Fenlon",
+    "Jason Hawkins",
+    "Eric Hibbeler",
+    "Michaela Kienle",
+    "Andreas Klober",
+    "Harald Lieske",
+    "Michael Menzel",
+    "Marion Pott",
+    "Quentin Regnes",
+    "Andreas Resch",
+    "Matt Schwabel",
+    "Franz Vohwinkel",
+    "Stephen Graham Walsh"
+  ],
+  "publishers": [
+    "KOSMOS",
+    "64 Ounce Games",
+    "999 Games",
+    "Albi",
+    "Astrel Games",
+    "BGA Plus",
+    "Br\u00e4dspel.se",
+    "Brain Games",
+    "Broadway Toys LTD",
+    "Capcom Co., Ltd.",
+    "Catan Studio",
+    "Competo / Marektoy",
+    "danspil",
+    "Descartes Editeur",
+    "Devir",
+    "Dexy Co",
+    "Enigma (Bergsala Enigma)",
+    "Eurogames",
+    "Filosofia \u00c9ditions",
+    "Galakta",
+    "Giochi Uniti",
+    "GP Games",
+    "Grow Jogos e Brinquedos",
+    "HaKubia",
+    "Hanayama",
+    "Hobby World",
+    "Ideal Board Games",
+    "Igroljub",
+    "IntelliGames.BG",
+    "\u00cds\u00f6ld ehf.",
+    "Kaissa Chess & Games",
+    "Korea Boardgames",
+    "L&M Games",
+    "Laser plus",
+    "Lautapelit.fi",
+    "Logojogos",
+    "Mayfair Games",
+    "MIPL",
+    "NeoTroy Games",
+    "Ninive Games",
+    "Paper Iyagi",
+    "Piatnik Distribution",
+    "Rozum",
+    "Smart Ltd",
+    "Spilbr\u00e6t.dk",
+    "Stupor Mundi",
+    "Super Impulse",
+    "Swan Panasia Co., Ltd.",
+    "Tilsit",
+    "Top Toys",
+    "TRY SOFT",
+    "Venner\u00f8d Forlag AS"
+  ],
+  "expansions": [
+    {
+      "id": 447533,
+      "name": "The Dragon & Wizards of Catan"
+    },
+    {
+      "id": 452137,
+      "name": "18CTN"
+    },
+    {
+      "id": 167903,
+      "name": "20 Jahre Darmstadt Spielt"
+    },
+    {
+      "id": 178656,
+      "name": "Brettspiel Adventskalender 2015"
+    },
+    {
+      "id": 26352,
+      "name": "Catan Austria / Wien meets Catan"
+    },
+    {
+      "id": 432107,
+      "name": "Catan Cen\u00e1rios: Portugal"
+    },
+    {
+      "id": 86008,
+      "name": "Catan Geographies: Austria"
+    },
+    {
+      "id": 60134,
+      "name": "Catan Geographies: Bayern Edition"
+    },
+    {
+      "id": 149857,
+      "name": "Catan Geographies: Corsica"
+    },
+    {
+      "id": 173651,
+      "name": "Catan Geographies: Georgia"
+    },
+    {
+      "id": 202788,
+      "name": "Catan Geographies: Kennessee"
+    },
+    {
+      "id": 131362,
+      "name": "Catan Geographies: Mallorca"
+    },
+    {
+      "id": 39093,
+      "name": "Catan Geographies: North Rhine \u2013 Westphalia"
+    },
+    {
+      "id": 187366,
+      "name": "Catan Geographies: Rickshaw Run"
+    },
+    {
+      "id": 32270,
+      "name": "Catan Geographies: Settlers of Hesse"
+    },
+    {
+      "id": 169486,
+      "name": "Catan Geographies: The Carolinas"
+    },
+    {
+      "id": 292851,
+      "name": "Catan Rhein-Main-Neckar"
+    },
+    {
+      "id": 259397,
+      "name": "Catan Scenario: Crop Trust"
+    },
+    {
+      "id": 222582,
+      "name": "Catan Scenario: Durango"
+    },
+    {
+      "id": 374983,
+      "name": "Catan Scenario: Malta"
+    },
+    {
+      "id": 189097,
+      "name": "Catan Scenarios:  Easter Bunny"
+    },
+    {
+      "id": 307518,
+      "name": "Catan Scenarios: #WeStayHome"
+    },
+    {
+      "id": 186395,
+      "name": "Catan Scenarios: Big Game Big Honor"
+    },
+    {
+      "id": 196928,
+      "name": "Catan Scenarios: Catanimals"
+    },
+    {
+      "id": 131958,
+      "name": "Catan Scenarios: Frenemies"
+    },
+    {
+      "id": 305516,
+      "name": "Catan Scenarios: Global Warming"
+    },
+    {
+      "id": 86669,
+      "name": "Catan Scenarios: Helpers of Catan"
+    },
+    {
+      "id": 110794,
+      "name": "Catan Scenarios: Oil Springs"
+    },
+    {
+      "id": 211081,
+      "name": "Catan scenariusze: Mapy \u2013 Polska"
+    },
+    {
+      "id": 2807,
+      "name": "Catan: 5-6 Player Expansion"
+    },
+    {
+      "id": 104774,
+      "name": "Catan: Catakatoa"
+    },
+    {
+      "id": 176966,
+      "name": "Catan: Catan Day 2015 Exclusive Expansion"
+    },
+    {
+      "id": 926,
+      "name": "Catan: Cities & Knights"
+    },
+    {
+      "id": 4101,
+      "name": "Catan: Cities & Knights \u2013 5-6 Player Extension"
+    },
+    {
+      "id": 265141,
+      "name": "Catan: Cities & Knights \u2013 Legend of the Conquerors"
+    },
+    {
+      "id": 73809,
+      "name": "Catan: Delmarva"
+    },
+    {
+      "id": 352073,
+      "name": "Catan: Die Stoffr\u00e4uber"
+    },
+    {
+      "id": 456397,
+      "name": "Catan: Ein Herz f\u00fcr den R\u00e4uber!"
+    },
+    {
+      "id": 20038,
+      "name": "Catan: Event Cards"
+    },
+    {
+      "id": 135378,
+      "name": "Catan: Explorers & Pirates"
+    },
+    {
+      "id": 144419,
+      "name": "Catan: Explorers & Pirates \u2013 5-6 Player Extension"
+    },
+    {
+      "id": 238135,
+      "name": "Catan: Hawai'i Scenario"
+    },
+    {
+      "id": 263939,
+      "name": "Catan: High Priests of the Inkas"
+    },
+    {
+      "id": 54528,
+      "name": "Catan: Indiana & Ohio"
+    },
+    {
+      "id": 456857,
+      "name": "Catan: Mowlin, the Benevolent Ram"
+    },
+    {
+      "id": 143249,
+      "name": "Catan: New England"
+    },
+    {
+      "id": 132481,
+      "name": "Catan: New York"
+    },
+    {
+      "id": 101942,
+      "name": "Catan: Penn-Jersey"
+    },
+    {
+      "id": 222396,
+      "name": "Catan: Playmat Atoll"
+    },
+    {
+      "id": 222394,
+      "name": "Catan: Playmat Desert"
+    },
+    {
+      "id": 222393,
+      "name": "Catan: Playmat Gold"
+    },
+    {
+      "id": 222395,
+      "name": "Catan: Playmat Island"
+    },
+    {
+      "id": 325,
+      "name": "Catan: Seafarers"
+    },
+    {
+      "id": 4103,
+      "name": "Catan: Seafarers \u2013 5-6 Player Extension"
+    },
+    {
+      "id": 223171,
+      "name": "Catan: Seafarers Scenario \u2013 Legend of the Sea Robbers"
+    },
+    {
+      "id": 217947,
+      "name": "Catan: Seefahrer \u2013 20 Jahre Jubil\u00e4ums-Edition"
+    },
+    {
+      "id": 381626,
+      "name": "Catan: Soccer Fever Scenario"
+    },
+    {
+      "id": 271159,
+      "name": "Catan: Szenario Der K\u00f6lner Dom"
+    },
+    {
+      "id": 367791,
+      "name": "Catan: The Helpers"
+    },
+    {
+      "id": 416257,
+      "name": "Catan: The Helpers \u2013 Leader of the Flock"
+    },
+    {
+      "id": 27760,
+      "name": "Catan: Traders & Barbarians"
+    },
+    {
+      "id": 34691,
+      "name": "Catan: Traders & Barbarians \u2013 5-6 Player Expansion"
+    },
+    {
+      "id": 56157,
+      "name": "Catan: Treasures, Dragons & Adventurers"
+    },
+    {
+      "id": 447535,
+      "name": "Combat & Politics"
+    },
+    {
+      "id": 447532,
+      "name": "The Explorers of Catan"
+    },
+    {
+      "id": 42147,
+      "name": "Der Hafenmeister"
+    },
+    {
+      "id": 128751,
+      "name": "Heroes & Capitols (fan expansion for Settlers of Catan)"
+    },
+    {
+      "id": 91061,
+      "name": "Hexen, Zauberer & Drachen (fan expansion for Catan: Cities and Knights)"
+    },
+    {
+      "id": 95940,
+      "name": "Katani  pankur"
+    },
+    {
+      "id": 89606,
+      "name": "Kirche, Glaube & Reformation (fan expansion for Catan: Cities and Knights)"
+    },
+    {
+      "id": 21101,
+      "name": "De Kolonisten van Catan: De Diamanten"
+    },
+    {
+      "id": 41161,
+      "name": "De Kolonisten van Catan: De drie Handelsteden van Noord-Nederland"
+    },
+    {
+      "id": 21097,
+      "name": "De Kolonisten van Catan: De Koloni\u00ebn"
+    },
+    {
+      "id": 21443,
+      "name": "De Kolonisten van Catan: De Specialisten"
+    },
+    {
+      "id": 21100,
+      "name": "De Kolonisten van Catan: De Wereldwonderen"
+    },
+    {
+      "id": 21098,
+      "name": "De Kolonisten van Catan: De Woestijnruiters"
+    },
+    {
+      "id": 21099,
+      "name": "De Kolonisten van Catan: Het Grote Kanaal"
+    },
+    {
+      "id": 399807,
+      "name": "Settlers of Crypto: The Siege"
+    },
+    {
+      "id": 144851,
+      "name": "Mayfair Game Variants & Mini-Expansions Set #1"
+    },
+    {
+      "id": 167573,
+      "name": "Mayfair Games' Limited Edition Promo Expansion Set #17"
+    },
+    {
+      "id": 446909,
+      "name": "Pax Romana"
+    },
+    {
+      "id": 90100,
+      "name": "Die Pioniere (fan expansion for The Settlers of Catan)"
+    },
+    {
+      "id": 447534,
+      "name": "Random Events & Treachery"
+    },
+    {
+      "id": 446911,
+      "name": "Rise of Civilizations"
+    },
+    {
+      "id": 22598,
+      "name": "Saggsen-Gadan: De s\u00e4ggs'schn Siedler / Catan-OFFENSIVE in Chemnitz"
+    },
+    {
+      "id": 293222,
+      "name": "Settlers of Catan Scenario: The Jungle"
+    },
+    {
+      "id": 293224,
+      "name": "Settlers of Catan Scenario: The Volcano"
+    },
+    {
+      "id": 19343,
+      "name": "The Settlers of Catan: The Fishermen of Catan"
+    },
+    {
+      "id": 20247,
+      "name": "The Settlers of Catan: The Great River"
+    },
+    {
+      "id": 10817,
+      "name": "Settlers of New Catan (and extra modules)"
+    },
+    {
+      "id": 21046,
+      "name": "Die Siedler von Catan: Atlantis \u2013 Szenarien & Varianten"
+    },
+    {
+      "id": 436417,
+      "name": "Die Siedler von Catan: Cheops"
+    },
+    {
+      "id": 1137,
+      "name": "Die Siedler von Catan: Das Buch zum Spielen"
+    },
+    {
+      "id": 84977,
+      "name": "Die Siedler von Catan: Der Schokoladenmarkt"
+    },
+    {
+      "id": 26079,
+      "name": "Die Siedler von Catan: Die gro\u00dfe Karawane"
+    },
+    {
+      "id": 167836,
+      "name": "Die Siedler von Catan: Hispania Edition"
+    },
+    {
+      "id": 306,
+      "name": "Die Siedler von Catan: Historische Szenarien"
+    },
+    {
+      "id": 1361,
+      "name": "Die Siedler von Catan: Historische Szenarien II"
+    },
+    {
+      "id": 167841,
+      "name": "Die Siedler von Catan: Hochzeitsturm"
+    },
+    {
+      "id": 31933,
+      "name": "Die Siedler von Catan: Renaissance in der Steiermark & Burgbau auf Chaffenberch"
+    },
+    {
+      "id": 37690,
+      "name": "Die Siedler von Catan: Rincewind und der Tourist  /  Die Gilden von Ankh-Morpork"
+    },
+    {
+      "id": 111377,
+      "name": "Die Siedler von Catan: Th\u00fcringen Edition"
+    },
+    {
+      "id": 37969,
+      "name": "Die Siedler von Luxemburg"
+    },
+    {
+      "id": 134277,
+      "name": "World Wonders (fan expansion for Catan)"
+    }
+  ],
+  "alternative_names": [
+    "Catan (\u041a\u043e\u043b\u043e\u043d\u0438\u0437\u0430\u0442\u043e\u0440\u044b)",
+    "Catan telepesei",
+    "Catan: Das Spiel",
+    "Catan: Die Bordspel",
+    "Catan: El Juego",
+    "Catan: Gra planszowa",
+    "Catan: Il Gioco",
+    "Catan: Landnemarnir",
+    "Catan: O Jogo",
+    "Catan: Osnovna igra",
+    "Catan: Z\u00e1kladn\u00ed hra",
+    "Catane",
+    "Catanin Uudisasukkaat",
+    "I Coloni di Catan",
+    "I Coloni di Catan: Il Gioco",
+    "I Coloni di Katan",
+    "Coloni\u0219tii din Catan",
+    "Colonizadores de Catan",
+    "Los Colonos de Cat\u00e1n",
+    "Les Colons de Catane",
+    "Les Colons de Kat\u00e4ne",
+    "Os Descobridores de Catan",
+    "Los Descubridores de Cat\u00e1n",
+    "Els Colons de Catan",
+    "Katan",
+    "Katan no Kaitakusya",
+    "Katanas iece\u00efot\u00e2ji",
+    "Katanas Iece\u013cot\u0101ji",
+    "Katani Asustajad",
+    "Katano salos naujakuriai",
+    "Katano Salos Naujakuriai",
+    "De Kolonisten van Catan",
+    "Naseljenci otoka Catan",
+    "Naseljenici ostrva Katan",
+    "Naseljenici ostrva Katan / \u041d\u0430\u0441\u0435\u0459\u0435\u043d\u0438\u0446\u0438 \u043e\u0441\u0442\u0440\u0432\u0430 \u041a\u0430\u0442\u0430\u043d",
+    "Naseljenici Otoka Catan",
+    "Die Ontdekkers van Catan",
+    "Osadn\u00edci z Katanu",
+    "Osadnicy z Catanu",
+    "The Settlers",
+    "Settlers fra Catan",
+    "The Settlers fra Catan",
+    "Settlers fr\u00e5n Catan",
+    "The Settlers fr\u00e5n Catan",
+    "The Settlers of Catan",
+    "Die Siedler von Catan",
+    "World's Smallest Catan",
+    "\u039f\u03b9 \u0386\u03c0\u03bf\u03b9\u03ba\u03bf\u03b9 \u03c4\u03bf\u03c5 \u039a\u03b1\u03c4\u03ac\u03bd",
+    "\u0417\u0430\u0441\u0435\u043b\u043d\u0438\u0446\u0438\u0442\u0435 \u043d\u0430 \u041a\u0430\u0442\u0430\u043d",
+    "\u041a\u0430\u0442\u0430\u043d",
+    "\u041a\u043e\u043b\u043e\u043d\u0438\u0437\u0430\u0442\u043e\u0440\u044b",
+    "\u05d4\u05de\u05ea\u05d9\u05d9\u05e9\u05d1\u05d9\u05dd \u05e9\u05dc \u05e7\u05d8\u05d0\u05df",
+    "\u05e7\u05d8\u05d0\u05df",
+    "\u0e19\u0e31\u0e01\u0e1a\u0e38\u0e01\u0e40\u0e1a\u0e34\u0e01\u0e41\u0e2b\u0e48\u0e07 Catan",
+    "\u30ab\u30bf\u30f3\u306e\u958b\u62d3\u8005",
+    "\u30ab\u30bf\u30f3\u306e\u958b\u62d3\u8005\u305f\u3061",
+    "\u30ab\u30bf\u30f3\u306e\u958b\u62d3\u8005\u305f\u3061 \u30b9\u30bf\u30f3\u30c0\u30fc\u30c9\u7248",
+    "\u5361\u5766 : \u57fa\u790e",
+    "\u5361\u5766\u5c9b",
+    "\u5361\u5766\u5cf6",
+    "\uce74\ud0c4",
+    "\uce74\ud0c4: \ubcf4\ub4dc\uac8c\uc784\uc758 \uc81c\uc655",
+    "\uce74\ud0c4\uc758 \uac1c\ucc99\uc790"
+  ],
+  "bgg_rank": 620,
+  "ranks": [
+    "BoardGameRank (id: 1)",
+    "BoardGameRank (id: 5497)",
+    "BoardGameRank (id: 5499)"
+  ],
+  "users_rated": 142685,
+  "rating_average": 7.09043,
+  "rating_bayes_average": 6.90258,
+  "rating_stddev": 1.50653,
+  "rating_average_weight": 2.2817,
+  "rating_num_weights": 8574,
+  "users_owned": 241195,
+  "users_trading": 2372,
+  "users_wanting": 524,
+  "users_wishing": 8240,
+  "users_commented": 23966
 }

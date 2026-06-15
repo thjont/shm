@@ -1,126 +1,215 @@
 {
-    "owner": "sampleuser",
-    "count": 6,
-    "items": [
-        {
-            "id": 13,
-            "name": "Catan",
-            "year": 1995,
-            "thumbnail": "/images/games/13-thumb.webp",
-            "thumbnail_source": "https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__thumb/img/8a9HeqFydO7UnzoERVkOBsy4tvk=/fit-in/200x150/filters:strip_icc()/pic2419375.jpg",
-            "owned": true,
-            "prev_owned": false,
-            "for_trade": false,
-            "want": false,
-            "want_to_play": false,
-            "want_to_buy": false,
-            "wishlist": false,
-            "wishlist_priority": null,
-            "preordered": false,
-            "rating": 7.0,
-            "numplays": 14,
-            "comment": "Family favourite",
-            "last_modified": "2024-11-03 12:00:00"
-        },
-        {
-            "id": 9209,
-            "name": "Ticket to Ride",
-            "year": 2004,
-            "thumbnail": "/images/games/9209-thumb.jpg",
-            "thumbnail_source": "https://cf.geekdo-images.com/ZWJg0dCdrWHxVnc0eFXK8w__thumb/img/yR9DPkeB3vFCJMwDMNBBW6TKqhY=/fit-in/200x150/filters:strip_icc()/pic38668.jpg",
-            "owned": true,
-            "prev_owned": false,
-            "for_trade": false,
-            "want": false,
-            "want_to_play": false,
-            "want_to_buy": false,
-            "wishlist": false,
-            "wishlist_priority": null,
-            "preordered": false,
-            "rating": 7.5,
-            "numplays": 22,
-            "comment": null,
-            "last_modified": "2025-01-15 09:30:00"
-        },
-        {
-            "id": 30549,
-            "name": "Pandemic",
-            "year": 2008,
-            "thumbnail": "/images/games/30549-thumb.jpg",
-            "thumbnail_source": "https://cf.geekdo-images.com/S3qdnSMbEfNLBd9HXVjFEA__thumb/img/kIBu8tGxd02SuCEYb0MFSBpR-bI=/fit-in/200x150/filters:strip_icc()/pic1534148.jpg",
-            "owned": true,
-            "prev_owned": false,
-            "for_trade": false,
-            "want": false,
-            "want_to_play": false,
-            "want_to_buy": false,
-            "wishlist": false,
-            "wishlist_priority": null,
-            "preordered": false,
-            "rating": 8.0,
-            "numplays": 9,
-            "comment": null,
-            "last_modified": "2024-08-20 18:45:00"
-        },
-        {
-            "id": 167791,
-            "name": "Terraforming Mars",
-            "year": 2016,
-            "thumbnail": "/images/games/167791-thumb.jpg",
-            "thumbnail_source": "https://cf.geekdo-images.com/wg9oOLcsKvdesSUdZQ4rxw__thumb/img/BTxqxgYay5tHJfVoJ2NF5g53B6k=/fit-in/200x150/filters:strip_icc()/pic3536616.jpg",
-            "owned": true,
-            "prev_owned": false,
-            "for_trade": false,
-            "want": false,
-            "want_to_play": false,
-            "want_to_buy": false,
-            "wishlist": false,
-            "wishlist_priority": null,
-            "preordered": false,
-            "rating": 9.0,
-            "numplays": 31,
-            "comment": "Best game in the collection",
-            "last_modified": "2025-03-02 20:10:00"
-        },
-        {
-            "id": 266192,
-            "name": "Wingspan",
-            "year": 2019,
-            "thumbnail": "/images/games/266192-thumb.jpg",
-            "thumbnail_source": "https://cf.geekdo-images.com/yLZJCVLlIx4c7eJEWUNJ7w__thumb/img/tijMpLpLPVTjyLLpBMGQ2xYF_N0=/fit-in/200x150/filters:strip_icc()/pic4458123.jpg",
-            "owned": true,
-            "prev_owned": false,
-            "for_trade": false,
-            "want": false,
-            "want_to_play": false,
-            "want_to_buy": false,
-            "wishlist": false,
-            "wishlist_priority": null,
-            "preordered": false,
-            "rating": 8.5,
-            "numplays": 17,
-            "comment": null,
-            "last_modified": "2025-02-11 14:20:00"
-        },
-        {
-            "id": 230802,
-            "name": "Azul",
-            "year": 2017,
-            "thumbnail": "/images/games/230802-thumb.jpg",
-            "thumbnail_source": "https://cf.geekdo-images.com/tz06LBSSMkZRkSYNdTjMww__thumb/img/bGBYBCHfYWhISCpzmBxS-SIcNAc=/fit-in/200x150/filters:strip_icc()/pic3718275.jpg",
-            "owned": true,
-            "prev_owned": false,
-            "for_trade": false,
-            "want": false,
-            "want_to_play": false,
-            "want_to_buy": false,
-            "wishlist": false,
-            "wishlist_priority": null,
-            "preordered": false,
-            "rating": 8.0,
-            "numplays": 25,
-            "comment": null,
-            "last_modified": "2025-04-05 11:00:00"
-        }
-    ]
+  "count": 42,
+  "items": [
+    {
+      "id": 204583,
+      "name": "Kingdomino",
+      "thumbnail": null
+    },
+    {
+      "id": 178900,
+      "name": "Codenames",
+      "thumbnail": null
+    },
+    {
+      "id": 295947,
+      "name": "Cascadia",
+      "thumbnail": null
+    },
+    {
+      "id": 274960,
+      "name": "Point Salad",
+      "thumbnail": null
+    },
+    {
+      "id": 92415,
+      "name": "Skull",
+      "thumbnail": null
+    },
+    {
+      "id": 13,
+      "name": "Catan",
+      "thumbnail": null
+    },
+    {
+      "id": 822,
+      "name": "Carcassonne",
+      "thumbnail": null
+    },
+    {
+      "id": 70323,
+      "name": "King of Tokyo",
+      "thumbnail": null
+    },
+    {
+      "id": 14996,
+      "name": "Ticket to Ride: Europe",
+      "thumbnail": null
+    },
+    {
+      "id": 131357,
+      "name": "Coup",
+      "thumbnail": null
+    },
+    {
+      "id": 39856,
+      "name": "Dixit",
+      "thumbnail": null
+    },
+    {
+      "id": 148228,
+      "name": "Splendor",
+      "thumbnail": null
+    },
+    {
+      "id": 27225,
+      "name": "Bananagrams",
+      "thumbnail": null
+    },
+    {
+      "id": 11971,
+      "name": "Cockroach Poker",
+      "thumbnail": null
+    },
+    {
+      "id": 12942,
+      "name": "No Thanks!",
+      "thumbnail": null
+    },
+    {
+      "id": 30549,
+      "name": "Pandemic",
+      "thumbnail": null
+    },
+    {
+      "id": 209685,
+      "name": "Century: Spice Road",
+      "thumbnail": null
+    },
+    {
+      "id": 173346,
+      "name": "7 Wonders Duel",
+      "thumbnail": null
+    },
+    {
+      "id": 65244,
+      "name": "Forbidden Island",
+      "thumbnail": null
+    },
+    {
+      "id": 153938,
+      "name": "Camel Up",
+      "thumbnail": null
+    },
+    {
+      "id": 46213,
+      "name": "Telestrations",
+      "thumbnail": null
+    },
+    {
+      "id": 50,
+      "name": "Lost Cities",
+      "thumbnail": null
+    },
+    {
+      "id": 230802,
+      "name": "Azul",
+      "thumbnail": null
+    },
+    {
+      "id": 291453,
+      "name": "SCOUT",
+      "thumbnail": null
+    },
+    {
+      "id": 205322,
+      "name": "The Oregon Trail Card Game",
+      "thumbnail": null
+    },
+    {
+      "id": 368017,
+      "name": "Point City",
+      "thumbnail": null
+    },
+    {
+      "id": 420087,
+      "name": "Flip 7",
+      "thumbnail": null
+    },
+    {
+      "id": 168679,
+      "name": "Flip City",
+      "thumbnail": null
+    },
+    {
+      "id": 376747,
+      "name": "Deep Dive",
+      "thumbnail": null
+    },
+    {
+      "id": 317312,
+      "name": "Kombo Klash!",
+      "thumbnail": null
+    },
+    {
+      "id": 131835,
+      "name": "Boss Monster: The Dungeon Building Card Game",
+      "thumbnail": null
+    },
+    {
+      "id": 1927,
+      "name": "Munchkin",
+      "thumbnail": null
+    },
+    {
+      "id": 267009,
+      "name": "Rome & Roll",
+      "thumbnail": null
+    },
+    {
+      "id": 143884,
+      "name": "Machi Koro",
+      "thumbnail": null
+    },
+    {
+      "id": 275467,
+      "name": "Letter Jam",
+      "thumbnail": null
+    },
+    {
+      "id": 258,
+      "name": "Fluxx",
+      "thumbnail": null
+    },
+    {
+      "id": 360264,
+      "name": "Psychobabble",
+      "thumbnail": null
+    },
+    {
+      "id": 312535,
+      "name": "Gullible",
+      "thumbnail": null
+    },
+    {
+      "id": 69789,
+      "name": "Ascension: Deckbuilding Game",
+      "thumbnail": null
+    },
+    {
+      "id": 224037,
+      "name": "Codenames: Duet",
+      "thumbnail": null
+    },
+    {
+      "id": 172225,
+      "name": "Exploding Kittens",
+      "thumbnail": null
+    },
+    {
+      "id": 99975,
+      "name": "Timeline: Science & Discoveries",
+      "thumbnail": null
+    }
+  ]
 }

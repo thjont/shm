@@ -1,0 +1,111 @@
+{
+  "id": 274960,
+  "name": "Point Salad",
+  "year": 2019,
+  "thumbnail": "/images/games/274960-thumb.png",
+  "thumbnail_source": "https://cf.geekdo-images.com/Xy0W9NtEpX0EVjwgxO3IEA__small/img/1gKeE2_50dXcL03gH3cEU-Ixj6c=/fit-in/200x150/filters:strip_icc()/pic4621571.png",
+  "image": "/images/games/274960.png",
+  "image_source": "https://cf.geekdo-images.com/Xy0W9NtEpX0EVjwgxO3IEA__original/img/WdLBZcryNqysYsyC3PNF9FeaPWQ=/0x0/filters:format(png)/pic4621571.png",
+  "description": "Point Salad is a fast and fun card drafting game for the whole family. There are over 100 ways to score points. Players may use a variety of strategies and every game of Point Salad is unique!\n\nCards come in six different types of veggies, and the back of each card has a different scoring method. So for instance, one scoring method may award 2 points for every carrot you have, but deduct a point for every onion.  By drafting combinations of veggies and point cards that work for your strategy, you can amass the most points and win.\n\n\u2014description from the publisher\n\n",
+  "min_players": 2,
+  "max_players": 6,
+  "min_playing_time": 15,
+  "max_playing_time": 30,
+  "playing_time": 30,
+  "min_age": 10,
+  "expansion": false,
+  "categories": [
+    "Card Game"
+  ],
+  "mechanics": [
+    "Contracts",
+    "End Game Bonuses",
+    "Open Drafting",
+    "Set Collection"
+  ],
+  "families": [
+    "Components: Multi-Use Cards",
+    "Digital Implementations: Board Game Arena",
+    "Digital Implementations: Google Play",
+    "Digital Implementations: Sovranti",
+    "Digital Implementations: Steam",
+    "Digital Implementations: Tabletopia",
+    "Food & Drink: Vegetables",
+    "Misc: LongPack Games",
+    "Misc: Self-Referential Games",
+    "Series: Point \u2026 (Flatout Games)"
+  ],
+  "designers": [
+    "Molly Johnson",
+    "Robert Melvin",
+    "Shawn Stankewich"
+  ],
+  "artists": [
+    "Dylan Mangini"
+  ],
+  "publishers": [
+    "Alderac Entertainment Group",
+    "Arclight Games",
+    "Bard Centrum Gier",
+    "Black Sea Games",
+    "Broadway Toys LTD",
+    "Devir",
+    "Gigamic",
+    "HaKubia",
+    "Hobby World",
+    "IGAMES",
+    "Kaissa Chess & Games",
+    "Lautapelit.fi",
+    "Mandoo Games",
+    "Meanbook Games",
+    "MINDOK",
+    "MIPL",
+    "Pegasus Spiele",
+    "Reflexshop",
+    "Siam Board Games",
+    "White Goblin Games",
+    "Yes Papa Games"
+  ],
+  "expansions": [
+    {
+      "id": 452724,
+      "name": "Point Salad: Garnishes"
+    }
+  ],
+  "alternative_names": [
+    "Ensalada de puntos",
+    "Insalata di Punti",
+    "Poen Salata",
+    "Pontsal\u00e1ta",
+    "Punktesalat",
+    "Salada de Pontos",
+    "Salade 2 points",
+    "Zbodni sal\u00e1t",
+    "\u039b\u0391\u03a7\u0391\u039d\u039f\u039a\u0397\u03a0\u039f\u03a3",
+    "\u0421\u0430\u043b\u0430\u0442 \u0443\u0434\u0430\u0447\u0438",
+    "\u0421\u0430\u043b\u0430\u0442: \u0420\u0435\u0446\u0435\u043f\u0442 \u0443\u0441\u043f\u0456\u0445\u0443",
+    "\u0422\u043e\u0447\u043a\u0438 \u043d\u0430 \u0441\u0430\u043b\u0430\u0442\u0430",
+    "\u05e1\u05dc\u05d8 \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea",
+    "\u0e2a\u0e19\u0e38\u0e01\u0e2a\u0e25\u0e31\u0e14",
+    "\u30dd\u30a4\u30f3\u30c8\u30b5\u30e9\u30c0",
+    "\u5f97\u5206\u6c99\u62c9",
+    "\ud3ec\uc778\ud2b8 \uc0d0\ub7ec\ub4dc",
+    "\ud3ec\uc778\ud2b8 \uc0d0\ub7ec\ub4dc: \uc774\ube0c\uc774\uc5d0\ub514\uc158"
+  ],
+  "bgg_rank": 603,
+  "ranks": [
+    "BoardGameRank (id: 1)",
+    "BoardGameRank (id: 5499)"
+  ],
+  "users_rated": 23361,
+  "rating_average": 7.08819,
+  "rating_bayes_average": 6.91371,
+  "rating_stddev": 1.13897,
+  "rating_average_weight": 1.1523,
+  "rating_num_weights": 512,
+  "users_owned": 39781,
+  "users_trading": 458,
+  "users_wanting": 289,
+  "users_wishing": 2999,
+  "users_commented": 3361
+}

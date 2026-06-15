@@ -1,0 +1,245 @@
+{
+  "id": 70323,
+  "name": "King of Tokyo",
+  "year": 2011,
+  "thumbnail": "/images/games/70323-thumb.jpg",
+  "thumbnail_source": "https://cf.geekdo-images.com/m_RzXpHURC0_xLkvRSR_sw__small/img/OfgWmkGJj5BgOO0zFHEtP5CHfbU=/fit-in/200x150/filters:strip_icc()/pic3043734.jpg",
+  "image": "/images/games/70323.jpg",
+  "image_source": "https://cf.geekdo-images.com/m_RzXpHURC0_xLkvRSR_sw__original/img/hSvWgiRYJCTTuoLOWTW3c8sYtl8=/0x0/filters:format(jpeg)/pic3043734.jpg",
+  "description": "In King of Tokyo, you play mutant monsters, gigantic robots, and strange aliens\u2014all of whom are destroying Tokyo and whacking each other in order to become the one and only King of Tokyo.\n\nAt the start of each turn, you roll six dice, which show the following six symbols: 1, 2, or 3 Victory Points, Energy, Heal, and Attack. Over three successive throws, choose whether to keep or discard each die in order to win victory points, gain energy, restore health, or attack other players into understanding that Tokyo is YOUR territory.\n\nThe fiercest player will occupy Tokyo, and earn extra victory points, but that player can't heal and must face all the other monsters alone!\n\nTop this off with special cards purchased with energy that have a permanent or temporary effect, such as the growing of a second head which grants you an additional die, body armor, nova death ray, and more.... and it's one of the most explosive games of the year!\n\nIn order to win the game, one must either destroy Tokyo by accumulating 20 victory points, or be the only surviving monster once the fighting has ended.\n\nFirst Game in the King of Tokyo series\n\n",
+  "min_players": 2,
+  "max_players": 6,
+  "min_playing_time": 30,
+  "max_playing_time": 30,
+  "playing_time": 30,
+  "min_age": 8,
+  "expansion": false,
+  "categories": [
+    "Dice",
+    "Fighting",
+    "Movies / TV / Radio theme",
+    "Science Fiction"
+  ],
+  "mechanics": [
+    "Dice Rolling",
+    "Die Icon Resolution",
+    "King of the Hill",
+    "Open Drafting",
+    "Player Elimination",
+    "Push Your Luck",
+    "Re-rolling and Locking",
+    "Take That"
+  ],
+  "families": [
+    "Category: DIZED Tutorial",
+    "Cities: Tokyo (Japan)",
+    "Components: Dice with Icons",
+    "Components: Standees",
+    "Country: Japan",
+    "Creatures: Aliens / Extraterrestrials",
+    "Creatures: Monsters",
+    "Digital Implementations: Board Game Arena",
+    "Game: King of Tokyo",
+    "Misc: Dice Tower Hall of Fame",
+    "Theme: Kaiju",
+    "Theme: Villainy"
+  ],
+  "designers": [
+    "Richard Garfield"
+  ],
+  "artists": [
+    "Gabriel Butik",
+    "Romain Gaschet",
+    "Paul Mafayon",
+    "Igor Polouchine",
+    "Benjamin Raynal",
+    "Jean-Baptiste Reynaud",
+    "Jonathan Silvestre",
+    "R\u00e9gis Torres",
+    "Anthony Wolff"
+  ],
+  "publishers": [
+    "IELLO",
+    "Boardgame Space",
+    "Br\u00e4dspel.se",
+    "Brain Games",
+    "Bureau de Juegos",
+    "Delta Vision Publishing",
+    "Devir",
+    "Egmont Polska",
+    "Enigma (Bergsala Enigma)",
+    "Fantasmagoria",
+    "GaGa Games",
+    "Gal\u00e1pagos Jogos",
+    "GeGe Co. Ltd.",
+    "GoKids \u73a9\u6a02\u5c0f\u5b50",
+    "HaKubia",
+    "Heidelberger Spieleverlag",
+    "Hobby Japan",
+    "Hobby World",
+    "HomoLudicus",
+    "Kaissa Chess & Games",
+    "Korea Boardgames",
+    "Lautapelit.fi",
+    "Lex Games",
+    "Mancalamaro",
+    "MESAboardgames",
+    "MIPL",
+    "Nordic Games ehf",
+    "Origames",
+    "Portal Games",
+    "Reflexshop",
+    "Rexhry",
+    "Siam Board Games",
+    "Smart Ltd",
+    "uplay.it edizioni",
+    "Venner\u00f8d Forlag AS",
+    "\u0406\u0433\u0440\u043e\u043c\u0430\u0433"
+  ],
+  "expansions": [
+    {
+      "id": 193320,
+      "name": "King of New York: Power Up!"
+    },
+    {
+      "id": 424917,
+      "name": "King of Tokyo: Alligators in the Sewers Promo Card"
+    },
+    {
+      "id": 399010,
+      "name": "King of Tokyo: Baby Gigazaur"
+    },
+    {
+      "id": 234725,
+      "name": "King of Tokyo: Champion of the Gods Promo Card"
+    },
+    {
+      "id": 343030,
+      "name": "King of Tokyo: Dark Edition \u2013 Promo Cards for 2nd Edition"
+    },
+    {
+      "id": 318580,
+      "name": "King of Tokyo: Dark Edition \u2013 Super Jump Goodie Card"
+    },
+    {
+      "id": 364182,
+      "name": "King of Tokyo: Even More Wicked!"
+    },
+    {
+      "id": 211103,
+      "name": "King of Tokyo: Fish Market promo card"
+    },
+    {
+      "id": 292108,
+      "name": "King of Tokyo: Frantic Mutations Promo Card"
+    },
+    {
+      "id": 132530,
+      "name": "King of Tokyo: Garfield's Gift Promo Card"
+    },
+    {
+      "id": 365645,
+      "name": "King of Tokyo: Gift Promo Cards"
+    },
+    {
+      "id": 430696,
+      "name": "King of Tokyo: Gift Promo Cards \u2013 Worldwide Season"
+    },
+    {
+      "id": 147183,
+      "name": "King of Tokyo: Halloween"
+    },
+    {
+      "id": 438686,
+      "name": "King of Tokyo: Mindbug"
+    },
+    {
+      "id": 471203,
+      "name": "King of Tokyo: Monster Pack \u2013 Blockbuster Bro"
+    },
+    {
+      "id": 127067,
+      "name": "King of Tokyo: Power Up!"
+    },
+    {
+      "id": 98833,
+      "name": "King of Tokyo: Promo Cards"
+    },
+    {
+      "id": 287306,
+      "name": "King of Tokyo: Teamwork Promo Card"
+    },
+    {
+      "id": 154945,
+      "name": "King of Tokyo: The Horde Promo Card"
+    },
+    {
+      "id": 430564,
+      "name": "King of Tokyo: Tournament Kit"
+    },
+    {
+      "id": 249752,
+      "name": "King of Tokyo: Zombify promo card"
+    },
+    {
+      "id": 250532,
+      "name": "King of Tokyo/New York: Monster Pack \u2013 Anubis"
+    },
+    {
+      "id": 207292,
+      "name": "King of Tokyo/New York: Monster Pack \u2013 Cthulhu"
+    },
+    {
+      "id": 282788,
+      "name": "King of Tokyo/New York: Monster Pack \u2013 Cybertooth"
+    },
+    {
+      "id": 233076,
+      "name": "King of Tokyo/New York: Monster Pack \u2013 King Kong"
+    },
+    {
+      "id": 430575,
+      "name": "King of Tokyo/New York: Monster Pack \u2013 Luchador"
+    },
+    {
+      "id": 429996,
+      "name": "Portwory w Tokio: Specjalna Mapa (Katowice / Gliwice)"
+    }
+  ],
+  "alternative_names": [
+    "King of Tokyo \u0645\u0644\u0643 \u062a\u0648\u0643\u064a\u0648",
+    "King of Tokyo: La Furia dei Mostri",
+    "Kralj Tokija",
+    "Potwory w Tokio",
+    "Regele din Tokyo",
+    "O Rei de T\u00f3quio",
+    "Toki\u00f3 Kir\u00e1lya",
+    "Vl\u00e1dce Tokia",
+    "\u039f \u0392\u03b1\u03c3\u03b9\u03bb\u03b9\u03ac\u03c2 \u03a4\u03bf\u03c5 \u03a4\u03cc\u03ba\u03c5\u03bf",
+    "\u0412\u043e\u043b\u043e\u0434\u0430\u0440 \u0422\u043e\u043a\u0456\u043e",
+    "\u041a\u0440\u0430\u043b\u044f\u0442 \u043d\u0430 \u0422\u043e\u043a\u0438\u043e",
+    "\u041f\u043e\u0432\u0435\u043b\u0438\u0442\u0435\u043b\u044c \u0422\u043e\u043a\u0438\u043e",
+    "\u05de\u05dc\u05da \u05d8\u05d5\u05e7\u05d9\u05d5",
+    "\u0e23\u0e32\u0e0a\u0e31\u0e19\u0e41\u0e2b\u0e48\u0e07\u0e42\u0e15\u0e40\u0e01\u0e35\u0e22\u0e27",
+    "\u30ad\u30f3\u30b0\u30fb\u30aa\u30d6\u30fb\u30c8\u30fc\u30ad\u30e7\u30fc",
+    "\u65b0\u30fb\u30ad\u30f3\u30b0\u30fb\u30aa\u30d6\u30fb\u30c8\u30fc\u30ad\u30e7\u30fc",
+    "\u6771\u4eac\u4e4b\u738b",
+    "\ud0b9 \uc624\ube0c \ub3c4\ucfc4"
+  ],
+  "bgg_rank": 497,
+  "ranks": [
+    "BoardGameRank (id: 1)",
+    "BoardGameRank (id: 5499)"
+  ],
+  "users_rated": 76053,
+  "rating_average": 7.1131,
+  "rating_bayes_average": 7.00785,
+  "rating_stddev": 1.33043,
+  "rating_average_weight": 1.484,
+  "rating_num_weights": 2944,
+  "users_owned": 112292,
+  "users_trading": 1617,
+  "users_wanting": 651,
+  "users_wishing": 8569,
+  "users_commented": 12139
+}
