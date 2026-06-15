@@ -2,40 +2,304 @@
   "id": 178900,
   "name": "Codenames",
   "year": 2015,
-  "thumbnail": null,
-  "thumbnail_source": null,
-  "image": null,
-  "image_source": null,
-  "description": "Two rival spymasters know the secret identities of 25 agents. Their teammates know the agents only by their codenames. The spymasters take turns giving one-word clues that can point to multiple words on the board. Their teammates try to guess words of the right color while avoiding those that belong to the opposing team.",
+  "thumbnail": "/images/games/178900-thumb.jpg",
+  "thumbnail_source": "https://cf.geekdo-images.com/nC6ifPCDnAItwoKSKXVrnw__small/img/1iZav_8ZqurrDbvkZA9GcFhB5x0=/fit-in/200x150/filters:strip_icc()/pic8907965.jpg",
+  "image": "/images/games/178900.jpg",
+  "image_source": "https://cf.geekdo-images.com/nC6ifPCDnAItwoKSKXVrnw__original/img/Id-jjIer_61ZbvI2_RVRCeBZFY4=/0x0/filters:format(jpeg)/pic8907965.jpg",
+  "description": "Two rival spymasters know the secret identities of 25 agents. Their teammates know the agents only by their codenames \u2014 single-word labels like \"disease\", \"Germany\", and \"carrot\". Yes, carrot. It's a legitimate codename. Each spymaster wants their team to identify their agents first...without uncovering the assassin by mistake.\n\nIn Codenames, two teams compete to see who can make contact with all of their agents first. Lay out 25 cards, each bearing a single word. The spymasters look at a card showing the identity of each card, then take turns clueing their teammates. A clue consists of a single word and a number, with the number suggesting how many cards in play have some association to the given clue word. The teammates then identify one agent they think is on their team; if they're correct, they can keep guessing up to one more than the stated number of times; if the agent belongs to the opposing team or is an innocent bystander, the team's turn ends; and if they fingered the assassin, they lose the game.\n\nSpymasters continue giving clues until one team has identified all of their agents or the assassin has removed one team from play.\n\n",
   "min_players": 2,
   "max_players": 8,
   "min_playing_time": 15,
   "max_playing_time": 15,
   "playing_time": 15,
-  "min_age": 14,
+  "min_age": 10,
   "expansion": false,
-  "categories": ["Card Game", "Party Game", "Word Game"],
-  "mechanics": ["Cooperative Game", "Team-Based Game", "Voting"],
-  "families": ["Codenames"],
-  "designers": ["Vlaada Chvátil"],
-  "artists": ["Stéphane Gantiez", "Filip Murmak"],
-  "publishers": ["Czech Games Edition"],
-  "expansions": [
-    {"id": 200396, "name": "Codenames: Pictures"},
-    {"id": 224037, "name": "Codenames: Duet"}
+  "categories": [
+    "Card Game",
+    "Deduction",
+    "Party Game",
+    "Spies / Secret Agents",
+    "Word Game"
   ],
-  "alternative_names": ["Кодовые имена"],
-  "bgg_rank": 98,
-  "ranks": [{"name": "boardgame", "friendlyname": "Board Game Rank", "value": 98}],
-  "users_rated": 91043,
-  "rating_average": 7.73,
-  "rating_bayes_average": 7.66,
-  "rating_stddev": 1.42,
-  "rating_average_weight": 1.32,
-  "rating_num_weights": 22031,
-  "users_owned": 198231,
-  "users_trading": 4102,
-  "users_wanting": 523,
-  "users_wishing": 9812,
-  "users_commented": 20341
+  "mechanics": [
+    "Communication Limits",
+    "Deduction",
+    "Memory",
+    "Race",
+    "Team-Based Game"
+  ],
+  "families": [
+    "Components: 5 x 5 Grids",
+    "Components: Sand Timers",
+    "Digital Implementations: Apple App Store",
+    "Digital Implementations: Google Play",
+    "Digital Implementations: VASSAL",
+    "Game: Codenames",
+    "Mechanism: Give a Clue / Get a Clue",
+    "Misc: Watch It Played How To Videos",
+    "Word Games: Guess the Word"
+  ],
+  "designers": [
+    "Vlaada Chv\u00e1til"
+  ],
+  "artists": [
+    "Vlaada Chv\u00e1til",
+    "St\u00e9phane Gantiez",
+    "D\u00e1vid Jablonovsk\u00fd",
+    "Tom\u00e1\u0161 Ku\u010derovsk\u00fd",
+    "Filip Murmak",
+    "Franti\u0161ek Sedl\u00e1\u010dek"
+  ],
+  "publishers": [
+    "Czech Games Edition (CGE)",
+    "asmodee",
+    "Boardgame Space",
+    "Br\u00e4dspel.se",
+    "Brain Games",
+    "Broadway Toys LTD",
+    "Cranio Creations",
+    "Cuaca Cerah Games",
+    "Devir",
+    "DiceTree Games",
+    "Enigma (Bergsala Enigma)",
+    "Fantasmagoria",
+    "Feelindigo",
+    "GaGa Games",
+    "Gaming Library",
+    "G\u00e9mklub",
+    "Goblin Gaming",
+    "Golden Egg Games",
+    "HeidelB\u00c4R Games",
+    "Heidelberger Spieleverlag",
+    "Hobby Japan",
+    "IELLO",
+    "Kaissa Chess & Games",
+    "Land of Beautiful Mind (\u0633\u0631\u0632\u0645\u06cc\u0646 \u0630\u0647\u0646 \u0632\u06cc\u0628\u0627)",
+    "Lautapelit.fi",
+    "Lex Games",
+    "Liam Games",
+    "MINDOK",
+    "MIPL",
+    "More Fun Co., Ltd.",
+    "Nordic Games ehf",
+    "One Moment Games",
+    "Ponva d.o.o.",
+    "Pridemage Games",
+    "Rebel Sp. z o.o.",
+    "TWOPLUS Games",
+    "White Goblin Games"
+  ],
+  "expansions": [
+    {
+      "id": 256951,
+      "name": "Brettspiel Adventskalender 2018"
+    },
+    {
+      "id": 421137,
+      "name": "Codenames: 10 jarig Jubileum bonus set 2020 NL"
+    },
+    {
+      "id": 213294,
+      "name": "Codenames: Authors & Games"
+    },
+    {
+      "id": 224198,
+      "name": "Codenames: Bonus Pack \u2013 Board Gaming (English)"
+    },
+    {
+      "id": 221824,
+      "name": "Codenames: Bonus Pack \u2013 Board Gaming (German)"
+    },
+    {
+      "id": 215603,
+      "name": "Codenames: Bonus Pack \u2013 CGE Games"
+    },
+    {
+      "id": 295466,
+      "name": "Codenames: Bonus Pack \u2013 Literatur"
+    },
+    {
+      "id": 387517,
+      "name": "Codenames: Bonus Pack \u2013 Schweiz"
+    },
+    {
+      "id": 293928,
+      "name": "Codenames: Bonus Pack \u2013 Through the Ages"
+    },
+    {
+      "id": 367802,
+      "name": "Codenames: Bonus Pack \u2013 Webhallen"
+    },
+    {
+      "id": 225039,
+      "name": "Codenames: Bonuskaarten 2016"
+    },
+    {
+      "id": 262581,
+      "name": "Codenames: Bonuskaarten 2018"
+    },
+    {
+      "id": 319890,
+      "name": "Codenames: Bonuskaarten 2019"
+    },
+    {
+      "id": 319891,
+      "name": "Codenames: Bonuskaarten 2020"
+    },
+    {
+      "id": 448679,
+      "name": "Codenames: Brazil Promotional Expansion"
+    },
+    {
+      "id": 234198,
+      "name": "Codenames: Cartes promo \u2013 Personnalit\u00e9s"
+    },
+    {
+      "id": 264856,
+      "name": "Codenames: Cartes promo \u2013 Univers Geek"
+    },
+    {
+      "id": 464602,
+      "name": "Codenames: Fairy Tales Expansion Pack"
+    },
+    {
+      "id": 227990,
+      "name": "Codenames: Mini-Erweiterung \u2013 Weihnachten"
+    },
+    {
+      "id": 464604,
+      "name": "Codenames: Sci-Fi Expansion Pack"
+    },
+    {
+      "id": 363088,
+      "name": "C\u00f3digo Secreto: Expans\u00e3o promocional Brasil"
+    },
+    {
+      "id": 363092,
+      "name": "C\u00f3digo Secreto: Expans\u00e3o promocional Portugal"
+    },
+    {
+      "id": 350213,
+      "name": "C\u00f3digo Secreto: Expansi\u00f3n promocional Am\u00e9ricas"
+    },
+    {
+      "id": 292037,
+      "name": "C\u00f3digo secreto: Expansi\u00f3n promocional Andaluc\u00eda"
+    },
+    {
+      "id": 342140,
+      "name": "C\u00f3digo Secreto: Expansi\u00f3n promocional Argentina"
+    },
+    {
+      "id": 318899,
+      "name": "C\u00f3digo Secreto: Expansi\u00f3n promocional Chile"
+    },
+    {
+      "id": 316876,
+      "name": "C\u00f3digo Secreto: Expansi\u00f3n Promocional M\u00e9xico"
+    },
+    {
+      "id": 205611,
+      "name": "Deutscher Spielepreis 2016 Goodie Box"
+    },
+    {
+      "id": 240994,
+      "name": "Fed\u0151nevek: Magyar b\u00f3nusz csomag"
+    },
+    {
+      "id": 428507,
+      "name": "Kryc\u00ed jm\u00e9na: Bonusov\u00e9 karty \u2013 10 let MINDOK"
+    },
+    {
+      "id": 353668,
+      "name": "Nome in Codice: Carte Bonus Comics and Games 2016"
+    },
+    {
+      "id": 310511,
+      "name": "Nome in Codice: Carte Bonus da Torneo"
+    },
+    {
+      "id": 347651,
+      "name": "Tajniacy: Agenci na kwarantannie"
+    },
+    {
+      "id": 307032,
+      "name": "Tajniacy: Fantastyczne \u015awiaty"
+    },
+    {
+      "id": 234643,
+      "name": "Tajniacy: Nowi Agenci"
+    },
+    {
+      "id": 253443,
+      "name": "Tajniacy: Obcy Agenci"
+    },
+    {
+      "id": 234644,
+      "name": "Tajniacy: Sami Nieswoi"
+    },
+    {
+      "id": 377424,
+      "name": "\u30b3\u30fc\u30c9\u30cd\u30fc\u30e0\u3000\u30dc\u30fc\u30ca\u30b9\u30d1\u30c3\u30af\u3000COOL JAPAN (Codenames: Bonus Pack \u2013 COOL JAPAN)"
+    },
+    {
+      "id": 377425,
+      "name": "\u30b3\u30fc\u30c9\u30cd\u30fc\u30e0\u3000\u30dc\u30fc\u30ca\u30b9\u30d1\u30c3\u30af\u3000JAPAN2020 (Codenames: Bonus Pack 2 \u2013 Japan 2020)"
+    },
+    {
+      "id": 461847,
+      "name": "\ucf54\ub4dc\ub124\uc784: \ubbf8\ub2c8\ud68d\uc7a51 \u2013 \ud569\uc131\uc5b4 \ub3d9\ubb3c (Codenames: Mini-Expansion 1 \u2013 Compound Animals"
+    }
+  ],
+  "alternative_names": [
+    "Codenames (\u06a9\u062f\u0646\u06cc\u0645\u0632)",
+    "Codenames Afrikaans",
+    "Codenames Arabic: \u0631\u0633\u0627\u0626\u0644 \u0633\u0631\u064a\u0629",
+    "Codenames Edisi Indonesia",
+    "Codenames Qu\u00e9bec",
+    "Codenames XXL",
+    "Codenames: \u041a\u043e\u0434\u043e\u0432\u044b\u0435 \u0418\u043c\u0435\u043d\u0430 XXL",
+    "Codi secret",
+    "C\u00f3digo secreto",
+    "Codinomes",
+    "Fed\u0151nevek",
+    "Fed\u0151nevek",
+    "Kryc\u00ed jm\u00e9na",
+    "Kryc\u00ed jm\u00e9na XXL",
+    "Krycie men\u00e1",
+    "Nome in Codice",
+    "Nome in Codice XXL",
+    "Nume de Cod",
+    "Nume de Cod XXL",
+    "Tajniacy",
+    "\u039a\u03c9\u03b4\u03b9\u03ba\u03ae \u039f\u03bd\u03bf\u03bc\u03b1\u03c3\u03af\u03b1",
+    "\u041a\u043e\u0434\u043e\u0432\u0438 \u0438\u043c\u0435\u043d\u0430",
+    "\u041a\u043e\u0434\u043e\u0432\u0456 \u0456\u043c\u0435\u043d\u0430",
+    "\u041a\u043e\u0434\u043e\u0432\u0456 \u0456\u043c\u0435\u043d\u0430: \u0433\u0440\u0430 \u0441\u043b\u0456\u0432",
+    "\u041a\u043e\u0434\u043e\u0432\u044b\u0435 \u0418\u043c\u0435\u043d\u0430",
+    "\u05e9\u05dd-\u05e7\u05d5\u05d3",
+    "\u0627\u0644\u0623\u0633\u0645\u0627\u0621 \u0627\u0644\u062d\u0631\u0643\u064a\u0629",
+    "\u30b3\u30fc\u30c9\u30cd\u30fc\u30e0",
+    "\u30b3\u30fc\u30c9\u30cd\u30fc\u30e0 XXL",
+    "\u6a5f\u5bc6\u4ee3\u865f",
+    "\u6a5f\u5bc6\u4ee3\u865f: \u5ee3\u6771\u8a71\u7248",
+    "\u884c\u52a8\u4ee3\u53f7",
+    "\ucf54\ub4dc\ub124\uc784"
+  ],
+  "bgg_rank": 161,
+  "ranks": [
+    "BoardGameRank (id: 1)",
+    "BoardGameRank (id: 5498)"
+  ],
+  "users_rated": 104318,
+  "rating_average": 7.52447,
+  "rating_bayes_average": 7.42806,
+  "rating_stddev": 1.30154,
+  "rating_average_weight": 1.2547,
+  "rating_num_weights": 2591,
+  "users_owned": 180941,
+  "users_trading": 1479,
+  "users_wanting": 361,
+  "users_wishing": 7981,
+  "users_commented": 13598
 }

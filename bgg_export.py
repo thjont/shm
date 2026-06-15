@@ -2,17 +2,23 @@
 """Export a BGG user collection or geeklist and game details to JSON, with local images.
 
 Usage:
+    # Main library or shadow library from definition file (recommended):
+    BGG_API_TOKEN=<token> python bgg_export.py --library main-library
+    BGG_API_TOKEN=<token> python bgg_export.py --library <slug>
+
     # User collection (requires auth):
     BGG_API_TOKEN=<token> BGG_USERNAME=<username> python bgg_export.py [options]
 
-    # Geeklist (public, no auth needed):
-    python bgg_export.py --geeklist <id> [options]
+    # Geeklist by ID (BGG_API_TOKEN required — BGG returns 401 without auth):
+    BGG_API_TOKEN=<token> python bgg_export.py --geeklist <id> [options]
 
-BGG's API currently returns 401 for unauthenticated collection requests, so a
-valid BGG_API_TOKEN is required for collection mode. Geeklist mode is public.
+BGG's API currently returns 401 for unauthenticated requests, so a valid
+BGG_API_TOKEN is required for both collection mode and geeklist mode.
 
 Options:
-    --geeklist ID          Import a BGG geeklist instead of a user collection
+    --library SLUG         Read geeklist/username from definitions/libraries/<slug>.json
+                           and write to bgg-cache/collections/<slug>.json
+    --geeklist ID          Import a BGG geeklist by ID instead of a user collection
     --data-dir PATH        Where to write bgg-cache/ output
                            (default: shiny-hoppy-meeple/data)
     --image-dir PATH       Where to download images
@@ -191,24 +197,34 @@ def export_collection(
     return [item["id"] for item in items]
 
 
-def _fetch_geeklist_xml(geeklist_id: int) -> tuple[str, list[dict]]:
+def _fetch_geeklist_xml(geeklist_id: int, client: BGGClient) -> tuple[str, list[dict]]:
     """Fetch a BGG geeklist via the XML API v1 and return (title, items).
 
     BGG's v2 API does not expose geeklists, so this calls the v1 endpoint
     directly. Items are filtered to objecttype="thing" (games/expansions).
+    Uses the library's requests session for Bearer auth. Handles both the
+    202 HTTP status and the XML <message> queued-response that v1 returns.
     """
     url = f"https://boardgamegeek.com/xmlapi/geeklist/{geeklist_id}"
-    for attempt in range(5):
-        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            root = ET.fromstring(resp.read())
+    auth_headers = client._get_auth_headers() or {}
+
+    for attempt in range(10):
+        r = client.requests_session.get(url, timeout=30, headers=auth_headers)
+        if r.status_code == 401:
+            raise BGGApiUnauthorizedError("invalid access token")
+        if r.status_code == 202:
+            print(f"  BGG queued (202) — retrying in 10s … (attempt {attempt + 1}/10)")
+            time.sleep(10)
+            continue
+        r.raise_for_status()
+        root = ET.fromstring(r.text)
         if root.tag == "message":
-            if attempt < 4:
-                print("  BGG queued — retrying in 5s …")
-                time.sleep(5)
-                continue
-            raise RuntimeError("BGG API did not respond in time — try again later")
+            print(f"  BGG queued (message) — retrying in 10s … (attempt {attempt + 1}/10)")
+            time.sleep(10)
+            continue
         break
+    else:
+        raise RuntimeError("BGG API did not respond in time — try again later")
 
     title_el = root.find("title")
     title = title_el.text if title_el is not None else f"Geeklist {geeklist_id}"
@@ -236,7 +252,7 @@ def export_geeklist(
     Returns the list of game IDs for downstream game-detail export.
     """
     print(f"Fetching geeklist {geeklist_id} …")
-    title, geeklist_items = _fetch_geeklist_xml(geeklist_id)
+    title, geeklist_items = _fetch_geeklist_xml(geeklist_id, _client)
 
     items = [{"id": gi["id"], "name": gi["name"], "thumbnail": None} for gi in geeklist_items]
 
@@ -319,6 +335,9 @@ def export_games(
 def main() -> None:
     parser = argparse.ArgumentParser(description="Export a BGG user collection or geeklist and game details to JSON.")
     source = parser.add_mutually_exclusive_group()
+    source.add_argument("--library", metavar="SLUG",
+                        help="Read source (geeklist/username) from definitions/libraries/<slug>.json "
+                             "and write to bgg-cache/collections/<slug>.json")
     source.add_argument("--geeklist", type=int, metavar="ID",
                         help="Import a BGG geeklist by ID instead of a user collection")
     parser.add_argument("--data-dir", type=Path, default=DEFAULT_DATA_DIR,
@@ -341,9 +360,26 @@ def main() -> None:
     token = os.environ.get("BGG_API_TOKEN", "")
     username = os.environ.get("BGG_USERNAME")
 
+    # Resolve --library: read definition file and derive geeklist/username + collection path.
+    if args.library:
+        def_path = args.data_dir / "definitions" / "libraries" / f"{args.library}.json"
+        if not def_path.exists():
+            sys.exit(f"Error: library definition not found: {def_path}")
+        defn = json.loads(def_path.read_text())
+        if "geeklist" in defn:
+            args.geeklist = int(defn["geeklist"])
+        elif "username" in defn:
+            username = defn["username"]
+        else:
+            sys.exit(f"Error: {def_path} must have a 'geeklist' or 'username' field")
+        if args.collection_file is None:
+            args.collection_file = (
+                args.data_dir / "bgg-cache" / "collections" / f"{args.library}.json"
+            )
+
     if not args.geeklist and not username:
         sys.exit("Error: BGG_USERNAME environment variable not set (required for collection mode)")
-    if not args.geeklist and not token:
+    if not token:
         print("No BGG_API_TOKEN set — attempting keyless access "
               "(BGG may reject this with a 401).", file=sys.stderr)
 

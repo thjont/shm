@@ -2,11 +2,11 @@
   "id": 148228,
   "name": "Splendor",
   "year": 2014,
-  "thumbnail": null,
-  "thumbnail_source": null,
-  "image": null,
-  "image_source": null,
-  "description": "Splendor is a chip-collecting and card development game. Players are merchants of the Renaissance trying to buy gem mines, means of transportation, shops; all in order to acquire the most prestige points. If you're wealthy enough, you might even receive a visit from a noble at some point, which of course will further increase your prestige.",
+  "thumbnail": "/images/games/148228-thumb.png",
+  "thumbnail_source": "https://cf.geekdo-images.com/vNFe4JkhKAERzi4T0Ntwpw__small/img/KKU_42Uswt4tKCpf1zY5kTzgr-g=/fit-in/200x150/filters:strip_icc()/pic8234167.png",
+  "image": "/images/games/148228.png",
+  "image_source": "https://cf.geekdo-images.com/vNFe4JkhKAERzi4T0Ntwpw__original/img/rqcUdtu_N4v-SpI96XVmpYHnJww=/0x0/filters:format(png)/pic8234167.png",
+  "description": "Splendor is a game of chip-collecting and card development. Players are merchants of the Renaissance trying to buy gem mines, means of transportation, shops\u2014all in order to acquire the most prestige points. If you're wealthy enough, you might even receive a visit from a noble at some point, which of course will further increase your prestige.\n\nOn your turn, you may (1) collect chips (gems), or (2) buy and build a card, or (3) reserve one card. If you collect chips, you take either three different kinds of chips or two chips of the same kind. If you buy a card, you pay its price in chips and add it to your playing area. To reserve a card\u2014in order to make sure you get it, or, why not, your opponents don't get it\u2014you place it in front of you face down for later building; this costs you a round, but you also get gold in the form of a joker chip, which you can use as any gem.\n\nAll of the cards you buy increase your wealth as they give you a permanent gem bonus for later buys; some of the cards also give you prestige points. In order to win the game, you must reach 15 prestige points before your opponents do.\n\n",
   "min_players": 2,
   "max_players": 4,
   "min_playing_time": 30,
@@ -14,27 +14,163 @@
   "playing_time": 30,
   "min_age": 10,
   "expansion": false,
-  "categories": ["Card Game", "Economic", "Renaissance"],
-  "mechanics": ["Card Drafting", "Hand Management", "Set Collection", "Take That"],
-  "families": ["Splendor"],
-  "designers": ["Marc André"],
-  "artists": ["Pascal Quidault"],
-  "publishers": ["Space Cowboys", "Asmodee"],
-  "expansions": [
-    {"id": 351913, "name": "Splendor: Cities of Splendor"}
+  "categories": [
+    "Card Game",
+    "Economic",
+    "Renaissance"
   ],
-  "alternative_names": [],
-  "bgg_rank": 182,
-  "ranks": [{"name": "boardgame", "friendlyname": "Board Game Rank", "value": 182}],
-  "users_rated": 83421,
-  "rating_average": 7.43,
-  "rating_bayes_average": 7.36,
-  "rating_stddev": 1.38,
-  "rating_average_weight": 1.82,
-  "rating_num_weights": 26231,
-  "users_owned": 198043,
-  "users_trading": 4321,
-  "users_wanting": 634,
-  "users_wishing": 12043,
-  "users_commented": 18932
+  "mechanics": [
+    "Contracts",
+    "Open Drafting",
+    "Race",
+    "Set Collection"
+  ],
+  "families": [
+    "Category: DIZED Tutorial",
+    "Digital Implementations: Board Game Arena",
+    "Digital Implementations: Google Play",
+    "Digital Implementations: Steam",
+    "Game: Splendor",
+    "Mechanism: Tableau Building",
+    "Misc: Dice Tower Hall of Fame",
+    "Misc: Watch It Played How To Videos",
+    "Theme: Jewelry",
+    "Theme: Jewels"
+  ],
+  "designers": [
+    "Marc Andr\u00e9"
+  ],
+  "artists": [
+    "Pascal Quidault",
+    "Marc Andr\u00e9",
+    "Paul V\u00e9rit\u00e9"
+  ],
+  "publishers": [
+    "Space Cowboys",
+    "Asterion Press",
+    "Belleville (\u0411\u0435\u043b\u044c\u0432\u0456\u043b\u044c)",
+    "Board Game VN",
+    "Boardgame Space",
+    "Brain Games",
+    "Broadway Toys LTD",
+    "CoolPlay",
+    "Enigma (Bergsala Enigma)",
+    "Filosofia \u00c9ditions",
+    "Gal\u00e1pagos Jogos",
+    "G\u00e9mklub",
+    "GoKids \u73a9\u6a02\u5c0f\u5b50",
+    "Gutenberg ehf.",
+    "HaKubia",
+    "Hobby Japan",
+    "JD \u00c9ditions",
+    "Kaissa Chess & Games",
+    "Korea Boardgames",
+    "Lautapelit.fi",
+    "Lex Games",
+    "Lifestyle Boardgames Ltd",
+    "Mald\u00f3n",
+    "Morapiaf",
+    "NeoTroy Games",
+    "Rebel Sp. z o.o.",
+    "Siam Board Games",
+    "Z-Man Games"
+  ],
+  "expansions": [
+    {
+      "id": 178656,
+      "name": "Brettspiel Adventskalender 2015"
+    },
+    {
+      "id": 231506,
+      "name": "Brettspiel Adventskalender 2017"
+    },
+    {
+      "id": 301333,
+      "name": "Splendor: 2019 Promo \u2013 Shen Wansan and Zhou Ying"
+    },
+    {
+      "id": 220653,
+      "name": "Splendor: Cities of Splendor"
+    },
+    {
+      "id": 233847,
+      "name": "Splendor: Cities of Splendor Promotional Tile"
+    },
+    {
+      "id": 279798,
+      "name": "Splendor: Diane de Poitiers Promo Noble"
+    },
+    {
+      "id": 289795,
+      "name": "Splendor: Dice Con 2019 Promo Tiles \u2013 Zhang Qian and Xiang Fei"
+    },
+    {
+      "id": 234005,
+      "name": "Splendor: Dice Tower Promo Noble"
+    },
+    {
+      "id": 190036,
+      "name": "Splendor: Ferdinand I"
+    },
+    {
+      "id": 234162,
+      "name": "Splendor: Guillaume Bud\u00e9 Promo Noble"
+    },
+    {
+      "id": 256783,
+      "name": "Splendor: Jacques Cartier Promo Noble"
+    },
+    {
+      "id": 369554,
+      "name": "Splendor: Nobles and Cities Promo"
+    },
+    {
+      "id": 178742,
+      "name": "Splendor: Nobles Promo Tiles"
+    },
+    {
+      "id": 280452,
+      "name": "Splendor: Nobles Promo Tiles"
+    },
+    {
+      "id": 428581,
+      "name": "Splendor: The Silk Road"
+    },
+    {
+      "id": 433146,
+      "name": "Splendor: The Sun Never Sets"
+    },
+    {
+      "id": 261074,
+      "name": "Splendor: Thomas More Promo Noble"
+    }
+  ],
+  "alternative_names": [
+    "\u0420\u043e\u0437\u043a\u0456\u0448",
+    "\u0420\u043e\u0441\u043a\u043e\u0448\u044c",
+    "\u0428\u043b\u044f\u0445\u0442\u0430",
+    "\u05e1\u05e4\u05dc\u05e0\u05d3\u05d5\u05e8",
+    "\u062c\u0648\u0627\u0647\u0631\u064a",
+    "\u0e40\u0e01\u0e21\u0e04\u0e49\u0e32\u0e40\u0e1e\u0e0a\u0e23",
+    "\u5b9d\u77f3\u306e\u714c\u304d",
+    "\u7480\u74a8\u5b9d\u77f3",
+    "\u7480\u74a8\u5bf6\u77f3",
+    "\uc2a4\ud50c\ub80c\ub354"
+  ],
+  "bgg_rank": 244,
+  "ranks": [
+    "BoardGameRank (id: 1)",
+    "BoardGameRank (id: 5499)"
+  ],
+  "users_rated": 90473,
+  "rating_average": 7.42057,
+  "rating_bayes_average": 7.29259,
+  "rating_stddev": 1.28897,
+  "rating_average_weight": 1.7745,
+  "rating_num_weights": 2945,
+  "users_owned": 139109,
+  "users_trading": 1165,
+  "users_wanting": 793,
+  "users_wishing": 11223,
+  "users_commented": 12751
 }

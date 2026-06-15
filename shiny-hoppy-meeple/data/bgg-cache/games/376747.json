@@ -1,0 +1,72 @@
+{
+  "id": 376747,
+  "name": "Deep Dive",
+  "year": 2023,
+  "thumbnail": "/images/games/376747-thumb.png",
+  "thumbnail_source": "https://cf.geekdo-images.com/ikn4yPI7GUsrgHRvOkNHkg__small/img/TYG05PzOf03MfjZmoShlr7qsG30=/fit-in/200x150/filters:strip_icc()/pic7235026.png",
+  "image": "/images/games/376747.png",
+  "image_source": "https://cf.geekdo-images.com/ikn4yPI7GUsrgHRvOkNHkg__original/img/wpy2zN0Ev_d30u1k-0xXj74QsRM=/0x0/filters:format(png)/pic7235026.png",
+  "description": "Deep Dive is a press-your-luck set-collection game in which you use your waddle of penguins to dive deep into the ocean to amass the most bountiful collection of food!\n\nTurns are simple: Flip over an ocean tile, and see what you reveal. You can take what you reveal in the shallows or dive deeper, hoping for a larger catch \u2014 but the deeper you go, the more plentiful the predators become. As you surface with food, you build sets of three colors. Target the colors you need to complete sets and score the maximum number of points.\n\nWhen one of the depths of the ocean has been fully explored, the game ends and the penguin waddle with the best sets of food wins!\n\n\u2014description from publisher\n\n",
+  "min_players": 1,
+  "max_players": 6,
+  "min_playing_time": 15,
+  "max_playing_time": 20,
+  "playing_time": 20,
+  "min_age": 10,
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Memory"
+  ],
+  "mechanics": [
+    "Memory",
+    "Push Your Luck",
+    "Set Collection"
+  ],
+  "families": [
+    "Animals: Penguins",
+    "Crowdfunding: Kickstarter",
+    "Digital Implementations: Tabletopia",
+    "Theme: Fishing / Angling",
+    "Theme: Food / Cooking",
+    "Theme: Nature"
+  ],
+  "designers": [
+    "Molly Johnson",
+    "Robert Melvin",
+    "Shawn Stankewich"
+  ],
+  "artists": [
+    "Dylan Mangini"
+  ],
+  "publishers": [
+    "Flatout Games",
+    "Alderac Entertainment Group",
+    "MINDOK"
+  ],
+  "expansions": [
+    {
+      "id": 399879,
+      "name": "Deep Dive: Wild Food"
+    }
+  ],
+  "alternative_names": [
+    "Klofni rybku"
+  ],
+  "bgg_rank": 3464,
+  "ranks": [
+    "BoardGameRank (id: 1)",
+    "BoardGameRank (id: 5499)"
+  ],
+  "users_rated": 1715,
+  "rating_average": 6.61739,
+  "rating_bayes_average": 5.95568,
+  "rating_stddev": 1.2462,
+  "rating_average_weight": 1.1087,
+  "rating_num_weights": 46,
+  "users_owned": 4568,
+  "users_trading": 98,
+  "users_wanting": 22,
+  "users_wishing": 396,
+  "users_commented": 357
+}

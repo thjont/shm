@@ -1,0 +1,84 @@
+{
+  "id": 168679,
+  "name": "Flip City",
+  "year": 2014,
+  "thumbnail": "/images/games/168679-thumb.png",
+  "thumbnail_source": "https://cf.geekdo-images.com/JmRLUZzu8RSra-ifZybRXA__small/img/r-48b61eRGu-4mNe_76spqEP1cc=/fit-in/200x150/filters:strip_icc()/pic2499620.png",
+  "image": "/images/games/168679.png",
+  "image_source": "https://cf.geekdo-images.com/JmRLUZzu8RSra-ifZybRXA__original/img/lgcQbRRoBzc3azoGQNVznXu6cJc=/0x0/filters:format(png)/pic2499620.png",
+  "description": "Build your own town in Flip City! In this micro-deckbuilding game, you have no hand at all; instead, you play cards directly from the top of your deck. Each card is double-sided, with each side granting different special bonuses. Winning the game requires delicate strategies... and some luck as well!!\n\nOn a player's turn, they play cards directly from the top of their deck to acquire cash and victory points. They may continue playing cards as long as they have fewer than three \"unhappiness\" icons in play. If they do get three icons, their turn ends immediately, but if they stop before then, they can use their cash to either buy a new card or flip over a card they already own, transforming it into a new, upgraded card. Upgraded cards typically grant more cash and VP as well as the option to flip them back to their non-upgraded side in exchange for an extra one-time bonus.\n\nIf a player gains eight or more VP in a single turn, the player wins immediately!\n\n",
+  "min_players": 1,
+  "max_players": 4,
+  "min_playing_time": 30,
+  "max_playing_time": 50,
+  "playing_time": 50,
+  "min_age": 8,
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "City Building"
+  ],
+  "mechanics": [
+    "Deck, Bag, and Pool Building",
+    "Push Your Luck",
+    "Sudden Death Ending"
+  ],
+  "families": [
+    "Game: Flip City",
+    "Players: Games with Solitaire Rules",
+    "Series: Madison Game Design Cabal",
+    "Theme: City"
+  ],
+  "designers": [
+    "Chih-Fan Chen"
+  ],
+  "artists": [
+    "Ralf Berszuck",
+    "Chih-Fan Chen",
+    "Adam P. McIver"
+  ],
+  "publishers": [
+    "Homosapiens Lab",
+    "Moaideas Game Design",
+    "Gen-X Games (GenX)",
+    "Muduko",
+    "PaperGames (III)",
+    "Pegasus Spiele",
+    "SD Games",
+    "Tasty Minstrel Games",
+    "Trefl Joker Line"
+  ],
+  "expansions": [
+    {
+      "id": 176575,
+      "name": "\u30c7\u30b6\u30a4\u30f3\u30bf\u30a6\u30f3: \u518d\u5229\u7528 (Design Town: Reuse)"
+    },
+    {
+      "id": 193495,
+      "name": "Flip City: Reuse"
+    }
+  ],
+  "alternative_names": [
+    "Design Town",
+    "Projekt: Miasteczko",
+    "\u30c7\u30b6\u30a4\u30f3\u30bf\u30a6\u30f3",
+    "\u7b2c\u4e09\u5c0f\u93ae"
+  ],
+  "bgg_rank": 3275,
+  "ranks": [
+    "BoardGameRank (id: 1)",
+    "BoardGameRank (id: 5497)",
+    "BoardGameRank (id: 5499)"
+  ],
+  "users_rated": 4163,
+  "rating_average": 6.28498,
+  "rating_bayes_average": 5.9865,
+  "rating_stddev": 1.337,
+  "rating_average_weight": 1.7411,
+  "rating_num_weights": 112,
+  "users_owned": 7304,
+  "users_trading": 371,
+  "users_wanting": 85,
+  "users_wishing": 618,
+  "users_commented": 989
+}

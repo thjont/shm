@@ -1,0 +1,907 @@
+{
+  "id": 1927,
+  "name": "Munchkin",
+  "year": 2001,
+  "thumbnail": "/images/games/1927-thumb.jpg",
+  "thumbnail_source": "https://cf.geekdo-images.com/J-ts3MW0UhDzs621TR6cog__small/img/8hVkpMC5pDLr6ARI_4gI4N3aF5M=/fit-in/200x150/filters:strip_icc()/pic1871016.jpg",
+  "image": "/images/games/1927.jpg",
+  "image_source": "https://cf.geekdo-images.com/J-ts3MW0UhDzs621TR6cog__original/img/FbqPPCilgZKND2xmhWJgkfjZiYE=/0x0/filters:format(jpeg)/pic1871016.jpg",
+  "description": "\t\t\t\t\n\t\t\t\t\n\t\t\t\t\tPublisher's DescriptionGo down in the dungeon. Kill everything you meet. Backstab your friends and steal their stuff. Grab the treasure and run.\n\nAdmit it. You love it.\n\nThis award-winning card game, designed by Steve Jackson, captures the essence of the dungeon experience... with none of that stupid roleplaying stuff. You and your friends compete to kill monsters and grab magic items. And what magic items! Don the Horny Helmet and the Boots of Butt-Kicking. Wield the Staff of Napalm... or maybe the Chainsaw of Bloody Dismemberment. Start by slaughtering the Potted Plant and the Drooling Slime, and work your way up to the Plutonium Dragon...\n\nAnd it's illustrated by John Kovalic! Fast-playing and silly, Munchkin can reduce any roleplaying group to hysteria. And, while they're laughing, you can steal their stuff.\n\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\tOtherPart of the Munchkin series.\n\nMunchkin is a satirical card game based on the clich\u00e9s and oddities of Dungeons and Dragons and other role-playing games. Each player starts at level 1 and the winner is the first player to reach level 10. Players can acquire familiar D&D style character classes during the game which determine to some extent the cards they can play.\n\nThere are two types of cards - treasure and encounters. Each turn the current players 'kicks down the door' - drawing an encounter card from the deck. Usually this will involve battling a monster. Monsters have their own levels and players must try and overcome it using the levels, weapons and powers they have acquired during the game or run away. Other players can chose to help the player or hinder by adding extra monsters to the encounter. Defeating a monster will usually result in drawing treasure cards and acquiring levels.  Being defeated by a monster results in \"bad stuff\" which usually involves losing levels and treasure.\n\nIn May 2010, Steve Jackson Games made the \"big announcement.\" Many rules and cards were changed. See The Great 2010 Munchkin Changeover for details. Of note to Munchkin fans, the Kneepads of Allure card, which had been removed in the 14th printing, was added back to the game but modified to be less powerful.\n\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\tSequels:\n    The Good, the Bad, and the Munchkin\n    Munchkin Apocalypse\n    Munchkin Axe Cop\n    Munchkin Bites!\n    Munchkin Booty\n    Munchkin Conan\n    Munchkin Cthulhu\n    Munchkin Fu\n    Munchkin Impossible\n    Munchkin Legends\n    Munchkin Pathfinder\n    Munchkin Zombies\n    Star Munchkin\n    Super Munchkin\n\n\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\tRelated Board Games\n    Munchkin Quest\n\n\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\tOnline play\n     Vassal does not support Munchkin anymore. Former link: Vassal Module\n\n\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\tPegasus Expansions\n    Munchkin Sammlerbox\n    Munchkin Sammlerkoffer\n    Munchkin Promotional Bookmarks\n    Munchkin Weihnachtsedition - The same as Munchkin, but with a promotional button that grants the wearer extra treasure (when worn in December). \n\n\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\tOnline PlaythroughThere's a great YouTube playthrough with Will Wheaton and Steve Jackson (yes, the Steve Jackson) found here LINK\n\n",
+  "min_players": 3,
+  "max_players": 6,
+  "min_playing_time": 60,
+  "max_playing_time": 120,
+  "playing_time": 120,
+  "min_age": 10,
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Fantasy",
+    "Fighting",
+    "Humor"
+  ],
+  "mechanics": [
+    "Hand Management",
+    "Race",
+    "Take That",
+    "Variable Player Powers"
+  ],
+  "families": [
+    "Category: DIZED Tutorial",
+    "Digital Implementations: Dire Wolf Game Room",
+    "Digital Implementations: Google Play",
+    "Digital Implementations: Steam",
+    "Game: Munchkin",
+    "Misc: Dice Tower Hall of Fame"
+  ],
+  "designers": [
+    "Steve Jackson (I)"
+  ],
+  "artists": [
+    "Alex Fernandez (I)",
+    "Edwin Huang",
+    "Steve Jackson (I)",
+    "John Kovalic",
+    "Ian McGinty",
+    "Heather Oliver",
+    "Philip Reed",
+    "Gabby Ruenes"
+  ],
+  "publishers": [
+    "Steve Jackson Games",
+    "(Unknown)",
+    "ADC Blackfire Entertainment",
+    "Arclight Games",
+    "Black Monk",
+    "BoardM Factory",
+    "Broadway Toys LTD",
+    "Bureau de Juegos",
+    "Bur\u00f3",
+    "Delta Vision Publishing",
+    "Devir",
+    "Edge Entertainment",
+    "Enigma (Bergsala Enigma)",
+    "Fantasiapelit",
+    "Gal\u00e1pagos Jogos",
+    "Hobby World",
+    "Kaissa Chess & Games",
+    "Ku\u017ania Gier",
+    "NeoTroy Games",
+    "Outland",
+    "Pegasus Spiele",
+    "PS-Games",
+    "Q-Workshop",
+    "Raven Distribution",
+    "Silver Stars Publishing",
+    "Smart Ltd",
+    "Ubik",
+    "Wargames Club Publishing",
+    "\u0422\u0420\u0415\u0422\u042f \u041f\u041b\u0410\u041d\u0415\u0422\u0410"
+  ],
+  "expansions": [
+    {
+      "id": 106498,
+      "name": "+10 Bag o' Munchkin d6"
+    },
+    {
+      "id": 206821,
+      "name": "12 Days of Munchkin Christmas Coloring Book"
+    },
+    {
+      "id": 54435,
+      "name": "+6 Bag O' Munchkin Babes"
+    },
+    {
+      "id": 162543,
+      "name": "+6 Bag O' Munchkin Legends"
+    },
+    {
+      "id": 98956,
+      "name": "+6 Bag o' Munchkin Level Counters"
+    },
+    {
+      "id": 151989,
+      "name": "+6 Bag O' Munchkin Zombies"
+    },
+    {
+      "id": 38891,
+      "name": "+6 Bag o' Munchkins"
+    },
+    {
+      "id": 136857,
+      "name": "+8 Bag O' Munchkin Babes & Pawns"
+    },
+    {
+      "id": 449337,
+      "name": "Colossal Munchkin Level Die"
+    },
+    {
+      "id": 44805,
+      "name": "Epic Munchkin"
+    },
+    {
+      "id": 27767,
+      "name": "Episches Munchkin"
+    },
+    {
+      "id": 88665,
+      "name": "Exclusive Warehouse 23 Munchkin Booster"
+    },
+    {
+      "id": 39391,
+      "name": "Mask of the Munchkin"
+    },
+    {
+      "id": 40479,
+      "name": "Munchkin 1.5: Ko\u015bci zosta\u0142y rzucone"
+    },
+    {
+      "id": 377232,
+      "name": "Munchkin 10: Time Warp"
+    },
+    {
+      "id": 100422,
+      "name": "Munchkin 10th Anniversary Shot Glass"
+    },
+    {
+      "id": 440169,
+      "name": "Munchkin 2, 3 & 4"
+    },
+    {
+      "id": 3943,
+      "name": "Munchkin 2: Unnatural Axe"
+    },
+    {
+      "id": 14337,
+      "name": "Munchkin 2/3: L'Ascia o Raddoppia"
+    },
+    {
+      "id": 6606,
+      "name": "Munchkin 3: Clerical Errors"
+    },
+    {
+      "id": 18225,
+      "name": "Munchkin 3.5: Clerical Errata"
+    },
+    {
+      "id": 134356,
+      "name": "Munchkin 3.5: Pi\u0119tno \u015amierci"
+    },
+    {
+      "id": 193282,
+      "name": "Munchkin 3+4"
+    },
+    {
+      "id": 20660,
+      "name": "Munchkin 4: The Need for Steed"
+    },
+    {
+      "id": 100377,
+      "name": "Munchkin 4.5"
+    },
+    {
+      "id": 139051,
+      "name": "Munchkin 5, 6 e 7: Tutti i Mostri Fatti a Fette"
+    },
+    {
+      "id": 28327,
+      "name": "Munchkin 5: De-Ranged"
+    },
+    {
+      "id": 193283,
+      "name": "Munchkin 5+6"
+    },
+    {
+      "id": 33493,
+      "name": "Munchkin 6: Demented Dungeons"
+    },
+    {
+      "id": 297107,
+      "name": "Munchkin 6: Double Dungeons"
+    },
+    {
+      "id": 193528,
+      "name": "Munchkin 6.5: Terrible Tombs"
+    },
+    {
+      "id": 90567,
+      "name": "Munchkin 7: Cheat With Both Hands"
+    },
+    {
+      "id": 37501,
+      "name": "Munchkin 7: More Good Cards"
+    },
+    {
+      "id": 193285,
+      "name": "Munchkin 7+8"
+    },
+    {
+      "id": 104232,
+      "name": "Munchkin 8: Half Horse, Will Travel"
+    },
+    {
+      "id": 449531,
+      "name": "Munchkin 9 + 10"
+    },
+    {
+      "id": 247497,
+      "name": "Munchkin 9: Jurassic Snark"
+    },
+    {
+      "id": 164685,
+      "name": "Munchkin Adventure Time 2: It's a Dungeon Crawl!"
+    },
+    {
+      "id": 201918,
+      "name": "The Munchkin Alphabet Coloring Book"
+    },
+    {
+      "id": 164682,
+      "name": "Munchkin Apocalypse: Judge Dredd"
+    },
+    {
+      "id": 332805,
+      "name": "Munchkin Apocalypse: Kaiju"
+    },
+    {
+      "id": 399679,
+      "name": "Munchkin Bibliophile's Booklet of Bookmarks"
+    },
+    {
+      "id": 11058,
+      "name": "Munchkin Blender"
+    },
+    {
+      "id": 39264,
+      "name": "Munchkin Bobblehead"
+    },
+    {
+      "id": 300071,
+      "name": "The Munchkin Book"
+    },
+    {
+      "id": 136914,
+      "name": "Munchkin Bookmark Collection"
+    },
+    {
+      "id": 342978,
+      "name": "Munchkin Bosses"
+    },
+    {
+      "id": 78674,
+      "name": "Munchkin Boxes of Holding"
+    },
+    {
+      "id": 126425,
+      "name": "Munchkin Bracelet of Slapping"
+    },
+    {
+      "id": 247846,
+      "name": "Munchkin Cheats"
+    },
+    {
+      "id": 238172,
+      "name": "Munchkin Clowns"
+    },
+    {
+      "id": 39392,
+      "name": "Munchkin Coins"
+    },
+    {
+      "id": 389464,
+      "name": "Munchkin Cows"
+    },
+    {
+      "id": 216306,
+      "name": "Munchkin Curses"
+    },
+    {
+      "id": 390878,
+      "name": "Munchkin Deathly Pail"
+    },
+    {
+      "id": 14580,
+      "name": "Munchkin Dice"
+    },
+    {
+      "id": 103289,
+      "name": "Munchkin Dice Bag"
+    },
+    {
+      "id": 78580,
+      "name": "Munchkin Dice Of Protection"
+    },
+    {
+      "id": 161796,
+      "name": "Munchkin Draghetto o Scherzetto"
+    },
+    {
+      "id": 141823,
+      "name": "Munchkin Dragons"
+    },
+    {
+      "id": 388608,
+      "name": "Munchkin Druids"
+    },
+    {
+      "id": 126531,
+      "name": "Munchkin Duck of Doom"
+    },
+    {
+      "id": 126532,
+      "name": "Munchkin Duck of Gloom"
+    },
+    {
+      "id": 136239,
+      "name": "Munchkin Easter Eggs"
+    },
+    {
+      "id": 325310,
+      "name": "Munchkin Enhancers"
+    },
+    {
+      "id": 105060,
+      "name": "Munchkin Fairy Dust Dice"
+    },
+    {
+      "id": 161805,
+      "name": "Munchkin Fatine e Folletti"
+    },
+    {
+      "id": 254528,
+      "name": "Munchkin Fowl Play"
+    },
+    {
+      "id": 138960,
+      "name": "Munchkin Game Changers"
+    },
+    {
+      "id": 134690,
+      "name": "Munchkin Gazebo Shot Glass"
+    },
+    {
+      "id": 130194,
+      "name": "Munchkin Get More Loot! Promotional Postcard"
+    },
+    {
+      "id": 147475,
+      "name": "Munchkin Gets Promoted"
+    },
+    {
+      "id": 225442,
+      "name": "Munchkin Gets Promoted 2"
+    },
+    {
+      "id": 42428,
+      "name": "Munchkin Greeting Cards"
+    },
+    {
+      "id": 224034,
+      "name": "Munchkin Halloween Monster Box"
+    },
+    {
+      "id": 159514,
+      "name": "Munchkin Halloween Pack"
+    },
+    {
+      "id": 187049,
+      "name": "Munchkin Hidden Treasures"
+    },
+    {
+      "id": 181196,
+      "name": "Munchkin Hipsters"
+    },
+    {
+      "id": 133572,
+      "name": "Munchkin Holiday Surprise"
+    },
+    {
+      "id": 162078,
+      "name": "Munchkin Holidazed"
+    },
+    {
+      "id": 179253,
+      "name": "Munchkin Imaginary Frenemies"
+    },
+    {
+      "id": 226173,
+      "name": "Munchkin Imaginary Friend"
+    },
+    {
+      "id": 105061,
+      "name": "Munchkin Jolly Jumbo D6"
+    },
+    {
+      "id": 155170,
+      "name": "Munchkin Journal Pack 1"
+    },
+    {
+      "id": 155171,
+      "name": "Munchkin Journal Pack 2"
+    },
+    {
+      "id": 162539,
+      "name": "Munchkin Journal Pack 3"
+    },
+    {
+      "id": 98969,
+      "name": "Munchkin Jumbo D6"
+    },
+    {
+      "id": 54434,
+      "name": "Munchkin Kill-O-Meter"
+    },
+    {
+      "id": 381387,
+      "name": "Munchkin Kitten Adventurers"
+    },
+    {
+      "id": 181273,
+      "name": "Munchkin Kittens"
+    },
+    {
+      "id": 194488,
+      "name": "Munchkin Knights"
+    },
+    {
+      "id": 141830,
+      "name": "Munchkin Kobolds Ate My Baby!"
+    },
+    {
+      "id": 161802,
+      "name": "Munchkin La Rivincita del Babbo"
+    },
+    {
+      "id": 141460,
+      "name": "Munchkin Level Playing Field"
+    },
+    {
+      "id": 164689,
+      "name": "Munchkin Love Shark Baby"
+    },
+    {
+      "id": 194489,
+      "name": "Munchkin Meeples"
+    },
+    {
+      "id": 162547,
+      "name": "Munchkin Messenger Bag"
+    },
+    {
+      "id": 226171,
+      "name": "Munchkin Metal Pin"
+    },
+    {
+      "id": 198277,
+      "name": "Munchkin Monster Box"
+    },
+    {
+      "id": 90566,
+      "name": "Munchkin Monster Enhancers"
+    },
+    {
+      "id": 128034,
+      "name": "Munchkin Naughty & Nice"
+    },
+    {
+      "id": 39393,
+      "name": "Munchkin Official Shirts"
+    },
+    {
+      "id": 134725,
+      "name": "Munchkin Patch"
+    },
+    {
+      "id": 145497,
+      "name": "Munchkin Pathfinder: Gobsmacked!"
+    },
+    {
+      "id": 207756,
+      "name": "Munchkin Pathfinder: Truly Gobnoxious"
+    },
+    {
+      "id": 125386,
+      "name": "Munchkin Penny Arcade"
+    },
+    {
+      "id": 346967,
+      "name": "Munchkin Petting Zoo"
+    },
+    {
+      "id": 130826,
+      "name": "Munchkin Pins"
+    },
+    {
+      "id": 216183,
+      "name": "Munchkin Playmat: Presents Unaccounted For"
+    },
+    {
+      "id": 134691,
+      "name": "Munchkin Plutonium Dragon Shot Glass"
+    },
+    {
+      "id": 158233,
+      "name": "Munchkin Princesses"
+    },
+    {
+      "id": 41034,
+      "name": "Munchkin Promo Cards"
+    },
+    {
+      "id": 24733,
+      "name": "Munchkin Promotional Bookmarks"
+    },
+    {
+      "id": 382654,
+      "name": "Munchkin Promulgation of Promo Proxies"
+    },
+    {
+      "id": 194831,
+      "name": "Munchkin Puppies"
+    },
+    {
+      "id": 413709,
+      "name": "Munchkin Rats"
+    },
+    {
+      "id": 103291,
+      "name": "Munchkin Reindeer Games"
+    },
+    {
+      "id": 80571,
+      "name": "Munchkin Reloaded!"
+    },
+    {
+      "id": 161794,
+      "name": "Munchkin Rompi le Uova"
+    },
+    {
+      "id": 22263,
+      "name": "Munchkin Sammlerbox"
+    },
+    {
+      "id": 84870,
+      "name": "Munchkin Sammlerkoffer"
+    },
+    {
+      "id": 76466,
+      "name": "Munchkin Santa's Revenge"
+    },
+    {
+      "id": 62387,
+      "name": "Munchkin Sherpa"
+    },
+    {
+      "id": 251602,
+      "name": "Munchkin Side Quests"
+    },
+    {
+      "id": 388607,
+      "name": "Munchkin Side Quests 2"
+    },
+    {
+      "id": 413710,
+      "name": "Munchkin Snakes"
+    },
+    {
+      "id": 323211,
+      "name": "Munchkin Something Fishy"
+    },
+    {
+      "id": 153943,
+      "name": "Munchkin Sparkly Good Fairy Shot Glass"
+    },
+    {
+      "id": 338243,
+      "name": "Munchkin Special Delivery"
+    },
+    {
+      "id": 170513,
+      "name": "Munchkin Stocking Stuffers"
+    },
+    {
+      "id": 146658,
+      "name": "Munchkin Tavern Pint Glass"
+    },
+    {
+      "id": 146657,
+      "name": "Munchkin Tavern Reusable Tote"
+    },
+    {
+      "id": 146659,
+      "name": "Munchkin Tavern Shot Glass"
+    },
+    {
+      "id": 39394,
+      "name": "Munchkin Temporary Tattoos"
+    },
+    {
+      "id": 423936,
+      "name": "Munchkin The Floor is Larva"
+    },
+    {
+      "id": 106618,
+      "name": "Munchkin The Guild"
+    },
+    {
+      "id": 69436,
+      "name": "Munchkin Thumb Drive"
+    },
+    {
+      "id": 144088,
+      "name": "Munchkin Tricky Treats"
+    },
+    {
+      "id": 153283,
+      "name": "Munchkin Triple Play: Set 1"
+    },
+    {
+      "id": 153284,
+      "name": "Munchkin Triple Play: Set 2"
+    },
+    {
+      "id": 165684,
+      "name": "Munchkin Turbobooster 1"
+    },
+    {
+      "id": 165685,
+      "name": "Munchkin Turbobooster 2"
+    },
+    {
+      "id": 179252,
+      "name": "Munchkin Undead"
+    },
+    {
+      "id": 211830,
+      "name": "Munchkin Valentines"
+    },
+    {
+      "id": 183650,
+      "name": "Munchkin Vinyl Figure: Dopple Spyke"
+    },
+    {
+      "id": 314581,
+      "name": "Munchkin Warhammer Age of Sigmar: Lightning Dice"
+    },
+    {
+      "id": 40857,
+      "name": "Munchkin Water"
+    },
+    {
+      "id": 39261,
+      "name": "Munchkin Wicked Dice & Bag"
+    },
+    {
+      "id": 389462,
+      "name": "Munchkin Witches"
+    },
+    {
+      "id": 389463,
+      "name": "Munchkin Witches: Promo Pack"
+    },
+    {
+      "id": 176441,
+      "name": "Munchkin Zipper Pull"
+    },
+    {
+      "id": 151982,
+      "name": "Munchkin Zombies 4: Spare Parts"
+    },
+    {
+      "id": 303882,
+      "name": "Munchkin: Black Friday Pack"
+    },
+    {
+      "id": 204819,
+      "name": "Munchkin: Christmas Monster Box"
+    },
+    {
+      "id": 42521,
+      "name": "Munchkin: Christmas Ornament"
+    },
+    {
+      "id": 327273,
+      "name": "Munchkin: Coasters"
+    },
+    {
+      "id": 99609,
+      "name": "Munchkin: Conan the Barbarian"
+    },
+    {
+      "id": 430742,
+      "name": "Munchkin: Dead & Deader"
+    },
+    {
+      "id": 327389,
+      "name": "Munchkin: Destruye la Navidad"
+    },
+    {
+      "id": 385435,
+      "name": "Munchkin: Dodatek Obfito\u015bci"
+    },
+    {
+      "id": 178048,
+      "name": "Munchkin: Dragon's Trike"
+    },
+    {
+      "id": 326728,
+      "name": "Munchkin: Dragones Molones"
+    },
+    {
+      "id": 42436,
+      "name": "Munchkin: Fairy Dust"
+    },
+    {
+      "id": 86356,
+      "name": "Munchkin: Go Up a Level"
+    },
+    {
+      "id": 369833,
+      "name": "Munchkin: Goats"
+    },
+    {
+      "id": 338242,
+      "name": "Munchkin: Holiday Grab Box"
+    },
+    {
+      "id": 369872,
+      "name": "Munchkin: La Pupa e il Dragone"
+    },
+    {
+      "id": 68942,
+      "name": "Munchkin: Marked For Death"
+    },
+    {
+      "id": 282861,
+      "name": "Munchkin: Mat of Mayhem"
+    },
+    {
+      "id": 330394,
+      "name": "Munchkin: Misch oder stirb!"
+    },
+    {
+      "id": 454659,
+      "name": "Munchkin: Not My Monkeys"
+    },
+    {
+      "id": 259557,
+      "name": "Munchkin: Party Pack"
+    },
+    {
+      "id": 194958,
+      "name": "Munchkin: Playmat \u2013 Flower Cashes In"
+    },
+    {
+      "id": 317016,
+      "name": "Munchkin: Playmat \u2013 Flower's Kitten Caboodle"
+    },
+    {
+      "id": 194957,
+      "name": "Munchkin: Playmat \u2013 Spyke Gets Suckered"
+    },
+    {
+      "id": 204816,
+      "name": "Munchkin: Playmat \u2013 Spyke's Christmas Wish"
+    },
+    {
+      "id": 217888,
+      "name": "Munchkin: Playmat \u2013 The Flower of Love"
+    },
+    {
+      "id": 400754,
+      "name": "Munchkin: Polyhedral Dice Set"
+    },
+    {
+      "id": 425265,
+      "name": "Munchkin: Pony Excess"
+    },
+    {
+      "id": 338241,
+      "name": "Munchkin: Santa-Sized Holiday Grab Box"
+    },
+    {
+      "id": 110583,
+      "name": "Munchkin: Skullkickers"
+    },
+    {
+      "id": 390305,
+      "name": "Munchkin: Squids"
+    },
+    {
+      "id": 430749,
+      "name": "Munchkin: Taken For Granite"
+    },
+    {
+      "id": 249710,
+      "name": "Munchkin: The Red Dragon Inn"
+    },
+    {
+      "id": 373298,
+      "name": "Munchkin: Turtle Carnage"
+    },
+    {
+      "id": 331802,
+      "name": "Munchkin: Unicorns"
+    },
+    {
+      "id": 257696,
+      "name": "Munchkin: Unicorns and Friends"
+    },
+    {
+      "id": 246717,
+      "name": "Munchkin: Valentine's Day Monster Box"
+    },
+    {
+      "id": 43894,
+      "name": "Munchkin: Waiting For Santa"
+    },
+    {
+      "id": 440532,
+      "name": "Munchkin: Warm Fuzzies"
+    },
+    {
+      "id": 190223,
+      "name": "Munchkin: Yule Log"
+    },
+    {
+      "id": 87658,
+      "name": "Munchkinomicon"
+    },
+    {
+      "id": 312905,
+      "name": "Munchkinomicon"
+    },
+    {
+      "id": 136836,
+      "name": "Schwarze G\u00fcrtel des Munchkintums"
+    },
+    {
+      "id": 181274,
+      "name": "Star Munchkin Cosmic Demo"
+    },
+    {
+      "id": 134692,
+      "name": "Zombie Shot Glass"
+    },
+    {
+      "id": 470565,
+      "name": "\u041c\u0430\u043d\u0447\u043a\u0456\u043d \u0414\u0440\u0430\u043a\u043e\u043d\u0438: \u041a\u043e\u043b\u0435\u043a\u0446\u0456\u044f (Munchkin Dragons: Collection)"
+    }
+  ],
+  "alternative_names": [
+    "Munchkin 1+2",
+    "Munchkin Das Kartenspiel",
+    "Munchkin Deluxe",
+    "Munchkin Edycja 2012",
+    "Munchkin Foil Edition",
+    "Munchkin Holiday Edition",
+    "Munchkin Special Holiday Edition",
+    "Munchkin Target Edition",
+    "Munchkin: Edycja Jubileuszowa",
+    "Munchkin: Guest Artist Edition",
+    "\u041c\u0430\u043d\u0447\u043a\u0438\u043d",
+    "\u041c\u0430\u043d\u0447\u043a\u0438\u043d \u0414\u0435\u043b\u044e\u043a\u0441",
+    "\u041c\u0430\u043d\u0447\u043a\u0456\u043d",
+    "\u05de\u05e0\u05e6`\u05e7\u05d9\u05df",
+    "\u30de\u30f3\u30c1\u30ad\u30f3",
+    "\u5c0f\u767d\u4e16\u7d00",
+    "\uba3c\uce58\ud0a8"
+  ],
+  "bgg_rank": 6469,
+  "ranks": [
+    "BoardGameRank (id: 1)",
+    "BoardGameRank (id: 5496)",
+    "BoardGameRank (id: 5498)"
+  ],
+  "users_rated": 53431,
+  "rating_average": 5.87422,
+  "rating_bayes_average": 5.69296,
+  "rating_stddev": 1.84187,
+  "rating_average_weight": 1.8179,
+  "rating_num_weights": 2603,
+  "users_owned": 103226,
+  "users_trading": 2680,
+  "users_wanting": 152,
+  "users_wishing": 2367,
+  "users_commented": 9787
+}

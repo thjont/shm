@@ -1,0 +1,331 @@
+{
+  "id": 39856,
+  "name": "Dixit",
+  "year": 2008,
+  "thumbnail": "/images/games/39856-thumb.jpg",
+  "thumbnail_source": "https://cf.geekdo-images.com/J0PlHArkZDJ57H-brXW2Fw__small/img/QVwPXskFikQwBQlrdLJBAiRGgdg=/fit-in/200x150/filters:strip_icc()/pic6738336.jpg",
+  "image": "/images/games/39856.jpg",
+  "image_source": "https://cf.geekdo-images.com/J0PlHArkZDJ57H-brXW2Fw__original/img/jt3kFCHJ3HJ2079dMLwipFZqdQg=/0x0/filters:format(jpeg)/pic6738336.jpg",
+  "description": "Each turn in Dixit, one player is the storyteller who chooses one of the six cards in their hand, then expresses an idea, with sounds or words, that is reflected on that card's image, and places the card face down on the playing surface. Each other player then selects the card that best matches that expression, and passes the selected card to the storyteller, face down.\n\nThe storyteller shuffles all the cards together, then turns them over to reveal them. Each player other than the storyteller then secretly guesses which card belongs to the storyteller. If nobody or everybody guesses the correct card, the storyteller scores 0 points, and each other player scores 2 points. Otherwise, the storyteller and whoever found the correct answer score 3 points. Additionally, the non-storyteller players score 1 point for every vote received by their card.\n\nThe game ends when the deck is empty or if a player has scored at least 30 points. In either case, the player with the most points wins.\n\nThe Dixit base game and each expansion contain 84 cards, and the cards can be mixed together as desired.\n\n",
+  "min_players": 3,
+  "max_players": 6,
+  "min_playing_time": 30,
+  "max_playing_time": 30,
+  "playing_time": 30,
+  "min_age": 8,
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Humor",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Race",
+    "Singing",
+    "Storytelling",
+    "Targeted Clues",
+    "Voting"
+  ],
+  "families": [
+    "Components: Meeples (Animal) / Animeeples",
+    "Digital Implementations: Boiteajeux",
+    "Digital Implementations: VASSAL",
+    "Game: Dixit",
+    "Mechanism: Give a Clue / Get a Clue",
+    "Mechanism: Image Interpretation",
+    "Mechanism: Judging Games",
+    "Misc: Dice Tower Hall of Fame"
+  ],
+  "designers": [
+    "Jean-Louis Roubira"
+  ],
+  "artists": [
+    "Marie Cardouat"
+  ],
+  "publishers": [
+    "Libellud",
+    "ADC Blackfire Entertainment",
+    "Anne",
+    "asmodee",
+    "Asterion Press",
+    "Boardgame Space",
+    "Gal\u00e1pagos Jogos",
+    "G\u00e9mklub",
+    "hobbity.eu",
+    "Hobby Japan",
+    "KADABRA",
+    "Kaissa Chess & Games",
+    "Korea Boardgames",
+    "Lautapelit.fi",
+    "Mald\u00f3n",
+    "Morapiaf",
+    "Nordic Games ehf",
+    "Paladium Games",
+    "Rebel Sp. z o.o.",
+    "Swan Panasia Co., Ltd.",
+    "\u0406\u0433\u0440\u043e\u043c\u0430\u0433"
+  ],
+  "expansions": [
+    {
+      "id": 256951,
+      "name": "Brettspiel Adventskalender 2018"
+    },
+    {
+      "id": 309231,
+      "name": "Dixit 2: \"Dice Tower\" Promo Card"
+    },
+    {
+      "id": 78773,
+      "name": "Dixit 2: \"Gift\" Promo Card"
+    },
+    {
+      "id": 75313,
+      "name": "Dixit 2: \"The American\" Promo Card"
+    },
+    {
+      "id": 119657,
+      "name": "Dixit 3: Journey"
+    },
+    {
+      "id": 237502,
+      "name": "Dixit 8: \"Cocktail\" Promo Card"
+    },
+    {
+      "id": 303677,
+      "name": "Dixit AsmoPlay Ingenuity Promos"
+    },
+    {
+      "id": 415362,
+      "name": "Dixit Cards with Original Pocket Vinyl Paintings"
+    },
+    {
+      "id": 212802,
+      "name": "Dixit: \"Magic Bunny\" Promo Card"
+    },
+    {
+      "id": 261027,
+      "name": "Dixit: \"Merry Christmas\" Promo Card"
+    },
+    {
+      "id": 263998,
+      "name": "Dixit: \"Pink Bunny\" Promo Card"
+    },
+    {
+      "id": 169639,
+      "name": "Dixit: \"Pumpkinhead\" and \"Santa\" Promo Cards"
+    },
+    {
+      "id": 126164,
+      "name": "Dixit: \"The Dragon\" Promo Card"
+    },
+    {
+      "id": 261025,
+      "name": "Dixit: \"The Elephants\" Promo Card"
+    },
+    {
+      "id": 299797,
+      "name": "Dixit: \"The Princess and the Pea\" Promo Card"
+    },
+    {
+      "id": 209291,
+      "name": "Dixit: \"The Werewolves of Miller's Hollow: The Pact\" Promo Card Pack"
+    },
+    {
+      "id": 170169,
+      "name": "Dixit: \"Werewolves\" Promo Card Pack"
+    },
+    {
+      "id": 132022,
+      "name": "Dixit: 2012 Asmodee Special Cards"
+    },
+    {
+      "id": 374404,
+      "name": "Dixit: Adventure Puzzle Promo Card"
+    },
+    {
+      "id": 256237,
+      "name": "Dixit: Anniversary"
+    },
+    {
+      "id": 174089,
+      "name": "Dixit: Anniversary Pack"
+    },
+    {
+      "id": 374403,
+      "name": "Dixit: Blue Mishmash Puzzle Promo Card"
+    },
+    {
+      "id": 261026,
+      "name": "Dixit: Candide Promo Card"
+    },
+    {
+      "id": 374401,
+      "name": "Dixit: Chameleon Night Puzzle Promo Card"
+    },
+    {
+      "id": 287250,
+      "name": "Dixit: Chilean Way"
+    },
+    {
+      "id": 333835,
+      "name": "Dixit: Chilean Way"
+    },
+    {
+      "id": 156189,
+      "name": "Dixit: Daydreams"
+    },
+    {
+      "id": 374399,
+      "name": "Dixit: Deliveries Puzzle Promo Card"
+    },
+    {
+      "id": 374397,
+      "name": "Dixit: Detours Puzzle Promo Card"
+    },
+    {
+      "id": 404832,
+      "name": "Dixit: Disney Edition \u2013 Chip 'n Dale Promo Card"
+    },
+    {
+      "id": 404835,
+      "name": "Dixit: Disney Edition \u2013 Olaf Promo Card"
+    },
+    {
+      "id": 404833,
+      "name": "Dixit: Disney Edition \u2013 Princess Dress Promo Card"
+    },
+    {
+      "id": 401498,
+      "name": "Dixit: Disney Edition \u2013 Standard Characters 100 Years Promo Card"
+    },
+    {
+      "id": 404834,
+      "name": "Dixit: Disney Edition \u2013 Villain Promo Card"
+    },
+    {
+      "id": 374388,
+      "name": "Dixit: Escape Puzzle Promo Card"
+    },
+    {
+      "id": 374387,
+      "name": "Dixit: Family Puzzle Promo Card"
+    },
+    {
+      "id": 234553,
+      "name": "Dixit: Harmonies"
+    },
+    {
+      "id": 174090,
+      "name": "Dixit: Memories"
+    },
+    {
+      "id": 243310,
+      "name": "Dixit: Memories \u2013 Promo card"
+    },
+    {
+      "id": 374386,
+      "name": "Dixit: Mermaid in Love Puzzle Promo Card"
+    },
+    {
+      "id": 301112,
+      "name": "Dixit: Mirrors"
+    },
+    {
+      "id": 395883,
+      "name": "Dixit: MNK"
+    },
+    {
+      "id": 332087,
+      "name": "Dixit: Obscurio's Library Promo Card"
+    },
+    {
+      "id": 99134,
+      "name": "Dixit: Odyssey \u2013 \"Bunny\" Promo Card"
+    },
+    {
+      "id": 138547,
+      "name": "Dixit: Odyssey (expansion)"
+    },
+    {
+      "id": 145325,
+      "name": "Dixit: Origins"
+    },
+    {
+      "id": 150795,
+      "name": "Dixit: Origins \u2013 \"La Machine \u00e0 r\u00eaves\" Promo Card"
+    },
+    {
+      "id": 374385,
+      "name": "Dixit: Point of View Puzzle Promo Card"
+    },
+    {
+      "id": 374384,
+      "name": "Dixit: Queen of Owls Puzzle Promo Card"
+    },
+    {
+      "id": 55660,
+      "name": "Dixit: Quest"
+    },
+    {
+      "id": 374383,
+      "name": "Dixit: Red Mishmash Puzzle Promo Card"
+    },
+    {
+      "id": 374381,
+      "name": "Dixit: Resonance Puzzle Promo Card"
+    },
+    {
+      "id": 205761,
+      "name": "Dixit: Revelations"
+    },
+    {
+      "id": 374379,
+      "name": "Dixit: Richness Puzzle Promo Card"
+    },
+    {
+      "id": 179060,
+      "name": "Dixit: Spielbox 03/15 Promo Card"
+    },
+    {
+      "id": 176329,
+      "name": "Dixit: Tabletop Day 2015 Promo Pack"
+    },
+    {
+      "id": 374378,
+      "name": "Dixit: Telekenesis Puzzle Promo Card"
+    },
+    {
+      "id": 151552,
+      "name": "\ub515\uc2ef \ud655\uc7a5: \uc0c1\uc18d\uc790\ub4e4 \ud504\ub85c\ubaa8 \uce74\ub4dc (Dixit: \"The Inheritors\" Promo Card Pack)"
+    }
+  ],
+  "alternative_names": [
+    "Dixit \u062f\u064a\u0643\u0633\u062a",
+    "\u0414\u0438\u043a\u0441\u0438\u0442",
+    "\u0414\u0456\u043a\u0441\u0456\u0442",
+    "\u30c7\u30a3\u30af\u30b7\u30c3\u30c8",
+    "\u5999\u4e0d\u53ef\u8a00",
+    "\u5999\u8a9e\u8aaa\u66f8\u4eba",
+    "\u753b\u7269\u8bed",
+    "\u8a00\u4e0d\u9054\u610f",
+    "\u96bb\u5b57\u7247\u8a9e",
+    "\u96bb\u8a00\u7247\u8a9e",
+    "\ub515\uc2ef"
+  ],
+  "bgg_rank": 429,
+  "ranks": [
+    "BoardGameRank (id: 1)",
+    "BoardGameRank (id: 5498)"
+  ],
+  "users_rated": 71458,
+  "rating_average": 7.1804,
+  "rating_bayes_average": 7.06469,
+  "rating_stddev": 1.39237,
+  "rating_average_weight": 1.1919,
+  "rating_num_weights": 2522,
+  "users_owned": 108752,
+  "users_trading": 1167,
+  "users_wanting": 465,
+  "users_wishing": 7384,
+  "users_commented": 10718
+}

@@ -1,0 +1,122 @@
+{
+  "id": 153938,
+  "name": "Camel Up",
+  "year": 2014,
+  "thumbnail": "/images/games/153938-thumb.jpg",
+  "thumbnail_source": "https://cf.geekdo-images.com/jVr1bGBQpshqVPcwvZ7CPg__small/img/oJPoB_Juxf6xLjORYBHvlc3xma8=/fit-in/200x150/filters:strip_icc()/pic1918028.jpg",
+  "image": "/images/games/153938.jpg",
+  "image_source": "https://cf.geekdo-images.com/jVr1bGBQpshqVPcwvZ7CPg__original/img/GlPdJsTvSho-vqwOOYfC4zyvOa0=/0x0/filters:format(jpeg)/pic1918028.jpg",
+  "description": "In Camel Up, up to eight players bet on five racing camels, trying to suss out which will place first and second in a quick race around a pyramid. The earlier you place your bet, the more you can win \u2014 should you guess correctly, of course. Camels don't run neatly, however, sometimes landing on top of another one and being carried toward the finish line. Who's going to run when? That all depends on how the dice come out of the pyramid dice shaker, which releases one die at a time when players pause from their bets long enough to see who's actually moving!\n\nPlayers roll all 5 dice to setup the start positions of the camels.  On each leg, players pick one betting card for each color camel, showing how many coins they will win/lose, depending on the camel's position after the leg.  The dice are then rolled in the pyramid dice roller, which allows one die to come out at a time and moves the matching color camel.  Players can also place oasis cards to earn extra coins.  After all 5 camels are moved, bets are resolved and a new leg start.  Play continues until a camel passes the finish line.\n\nOnce a camel crossess the finish line, all end of race bets are resolved and the player with the most coins wins.\n\n",
+  "min_players": 2,
+  "max_players": 8,
+  "min_playing_time": 20,
+  "max_playing_time": 30,
+  "playing_time": 30,
+  "min_age": 8,
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Arabian",
+    "Dice",
+    "Racing"
+  ],
+  "mechanics": [
+    "Betting and Bluffing",
+    "End Game Bonuses",
+    "Roll / Spin and Move",
+    "Track Movement",
+    "Variable Set-up"
+  ],
+  "families": [
+    "Animals: Camels",
+    "Components: 3-Dimensional (3D)",
+    "Components: Drop Tower",
+    "Components: Meeples (Animal) / Animeeples",
+    "Country: Egypt",
+    "Game: Camel Up",
+    "Misc: LongPack Games",
+    "Players: Games with expansions that change player count",
+    "Theme: Deserts"
+  ],
+  "designers": [
+    "Steffen Bogen"
+  ],
+  "artists": [
+    "Dennis Lohausen"
+  ],
+  "publishers": [
+    "eggertspiele",
+    "999 Games",
+    "Albi",
+    "Br\u00e4dspel.se",
+    "Ediciones MasQueOca",
+    "Fantasmagoria",
+    "Filosofia \u00c9ditions",
+    "Hobby Japan",
+    "Hobby World",
+    "Ideal Board Games",
+    "KADABRA",
+    "Kaissa Chess & Games",
+    "Korea Boardgames",
+    "Lautapelit.fi",
+    "Lucrum Games",
+    "Ninive Games",
+    "Pegasus Spiele",
+    "Piatnik Distribution",
+    "Swan Panasia Co., Ltd.",
+    "uplay.it edizioni",
+    "Venner\u00f8d Forlag AS",
+    "Z-Man Games"
+  ],
+  "expansions": [
+    {
+      "id": 211966,
+      "name": "Camel Up: Grand Prix of the Sahara"
+    },
+    {
+      "id": 172380,
+      "name": "Camel Up: Supercup"
+    },
+    {
+      "id": 186370,
+      "name": "Camel Up: The Referee Camel"
+    },
+    {
+      "id": 234191,
+      "name": "Camel Up: The Referee Camel & Istanbul \u2013 Caravan Leader Mini Expansion"
+    },
+    {
+      "id": 293240,
+      "name": "Super Power"
+    }
+  ],
+  "alternative_names": [
+    "Camel Up: \u039c\u03b9\u03b1 \u03a4\u03c1\u03b5\u03bb\u03ae \u039a\u03bf\u03cd\u03c1\u03c3\u03b1 \u03c3\u03c4\u03b7\u03bd \u0388\u03c1\u03b7\u03bc\u03bf",
+    "Camel Up!",
+    "Kamiel\u0173 Sacikstes",
+    "Kihutavad kaamelid",
+    "Kupranugari\u0173 lenktyn\u0117s",
+    "Przebieg\u0142e Wielb\u0142\u0105dy",
+    "Velbloud\u00ed dostihy",
+    "\u041f\u0440\u0435\u0441\u043a\u043e\u0447\u0438 \u043a\u0430\u043c\u0438\u043b\u0430",
+    "\u30ad\u30e3\u30e1\u30eb\u30a2\u30c3\u30d7",
+    "\u99f1\u99dd\u5927\u8cfd",
+    "\uce74\uba5c \uc5c5"
+  ],
+  "bgg_rank": 645,
+  "ranks": [
+    "BoardGameRank (id: 1)",
+    "BoardGameRank (id: 5499)"
+  ],
+  "users_rated": 29264,
+  "rating_average": 7.02995,
+  "rating_bayes_average": 6.87591,
+  "rating_stddev": 1.24287,
+  "rating_average_weight": 1.502,
+  "rating_num_weights": 998,
+  "users_owned": 37972,
+  "users_trading": 466,
+  "users_wanting": 407,
+  "users_wishing": 3357,
+  "users_commented": 4480
+}

@@ -1,0 +1,82 @@
+{
+  "id": 368017,
+  "name": "Point City",
+  "year": 2023,
+  "thumbnail": "/images/games/368017-thumb.jpg",
+  "thumbnail_source": "https://cf.geekdo-images.com/-wcx_m4j86mTFAJ_kWz8eA__small/img/wXCt7sv58rjfgCEeg_wX9NIiMpc=/fit-in/200x150/filters:strip_icc()/pic6998174.jpg",
+  "image": "/images/games/368017.jpg",
+  "image_source": "https://cf.geekdo-images.com/-wcx_m4j86mTFAJ_kWz8eA__original/img/xqzKVJi-qRQAYHIUgpIz3kveNfQ=/0x0/filters:format(jpeg)/pic6998174.jpg",
+  "description": "From the team that brought you the smash hit Point Salad, Point City is a card-drafting, engine-building game with more than 150 unique building cards, giving you the opportunity to create a completely different city each time you play!\n\nThe rules are simple: Take two adjacent cards from the dynamic city grid and add them to your expanding city. Use your resource cards and bonuses to construct building cards that require specific combinations. Build special civic structures to multiply your city's points and be the top urban planner!\n\nPoint City takes the same simple concept of drafting cards and building the best combinations, then adds new layers of resource management and engine building to the mix \u2014 making the game easy to learn, but challenging for everyone!\n\n\u2014description from designer\n\n",
+  "min_players": 1,
+  "max_players": 4,
+  "min_playing_time": 15,
+  "max_playing_time": 30,
+  "playing_time": 30,
+  "min_age": 10,
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "City Building"
+  ],
+  "mechanics": [
+    "Open Drafting",
+    "Set Collection"
+  ],
+  "families": [
+    "Crowdfunding: Kickstarter",
+    "Digital Implementations: Tabletopia",
+    "Series: Point \u2026 (Flatout Games)",
+    "Theme: City"
+  ],
+  "designers": [
+    "Molly Johnson",
+    "Robert Melvin",
+    "Shawn Stankewich"
+  ],
+  "artists": [
+    "Dylan Mangini"
+  ],
+  "publishers": [
+    "Flatout Games",
+    "Alderac Entertainment Group",
+    "CMON Global Limited",
+    "Devir",
+    "Games7Days",
+    "Gigamic",
+    "Hobby World",
+    "Lucky Duck Games",
+    "MINDOK",
+    "Skellig Games",
+    "White Goblin Games"
+  ],
+  "expansions": [
+    {
+      "id": 399920,
+      "name": "Point City: Kickstarter Promo Civic Tokens"
+    }
+  ],
+  "alternative_names": [
+    "Ciudad de Puntos",
+    "Punktestadt",
+    "Zboduj m\u011bsto",
+    "\u0413\u043e\u0440\u043e\u0434 \u0443\u0434\u0430\u0447\u0438",
+    "\u041a\u0430\u0440\u0442\u043a\u043e\u0432\u0435 \u043c\u0456\u0441\u0442\u043e",
+    "\u5c0f\u57ce\u84dd\u56fe"
+  ],
+  "bgg_rank": 1145,
+  "ranks": [
+    "BoardGameRank (id: 1)",
+    "BoardGameRank (id: 5499)"
+  ],
+  "users_rated": 4846,
+  "rating_average": 7.13238,
+  "rating_bayes_average": 6.58048,
+  "rating_stddev": 1.11269,
+  "rating_average_weight": 1.6852,
+  "rating_num_weights": 108,
+  "users_owned": 11055,
+  "users_trading": 163,
+  "users_wanting": 100,
+  "users_wishing": 1200,
+  "users_commented": 827
+}
