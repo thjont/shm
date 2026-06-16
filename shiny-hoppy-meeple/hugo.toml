@@ -80,14 +80,17 @@ or picking up your first game, you'll find a warm welcome here.
 [menu]
   [[menu.main]]
     name = "Library"
+    identifier = "library"
     url = "/library/"
     weight = 2
   [[menu.main]]
     name = "Categories"
+    parent = "library"
     url = "/categories/"
-    weight = 3
+    weight = 1
   [[menu.main]]
     name = "Mechanics"
+    parent = "library"
     url = "/mechanics/"
     weight = 4
   [[menu.main]]
