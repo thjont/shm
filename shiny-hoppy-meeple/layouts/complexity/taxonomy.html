@@ -6,10 +6,7 @@
       {{- $levels := slice "Light" "Medium Light" "Medium" "Medium Heavy" "Heavy" }}
       {{- range $levels }}
         {{- $slug := anchorize . }}
-        {{- $count := 0 }}
-        {{- range $.Data.Terms }}
-          {{- if eq (anchorize .Name) $slug }}{{- $count = .Count }}{{- end }}
-        {{- end }}
+        {{- $count := len (index $.Data.Terms $slug) }}
         {{- if gt $count 0 }}
           {{- with site.GetPage (printf "/complexity/%s" $slug) }}
           <a class="bgg-card" href="{{ .Permalink }}">
