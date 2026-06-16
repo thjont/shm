@@ -53,7 +53,7 @@
 
       <div class="bgg-detail-info">
         {{ with $game.description }}
-        <div class="bgg-description">{{ . | markdownify }}</div>
+        <div class="bgg-description">{{ replaceRE `(?m)^ +` "" . | markdownify }}</div>
         {{ end }}
 
         {{ with $game.learn_to_play_video }}
