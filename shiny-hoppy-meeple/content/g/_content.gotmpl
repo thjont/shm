@@ -3,9 +3,23 @@
   {{- if $override }}
     {{- $game = merge $game $override }}
   {{- end }}
+  {{- $complexity := "" }}
+  {{- $weight := $game.rating_average_weight }}
+  {{- if $weight }}
+    {{- if lt $weight 2.0 }}{{- $complexity = "Light" }}
+    {{- else if lt $weight 3.0 }}{{- $complexity = "Medium Light" }}
+    {{- else if lt $weight 4.0 }}{{- $complexity = "Medium" }}
+    {{- else if lt $weight 5.0 }}{{- $complexity = "Medium Heavy" }}
+    {{- else }}{{- $complexity = "Heavy" }}
+    {{- end }}
+  {{- end }}
+  {{- $params := dict "game" $game "categories" $game.categories "mechanics" $game.mechanics }}
+  {{- if $complexity }}
+    {{- $params = merge $params (dict "complexity" (slice $complexity)) }}
+  {{- end }}
   {{- $.AddPage (dict
     "path"   (anchorize $game.name)
     "title"  $game.name
-    "params" (dict "game" $game "categories" $game.categories "mechanics" $game.mechanics)
+    "params" $params
   ) }}
 {{- end }}

@@ -66,6 +66,7 @@ or picking up your first game, you'll find a warm welcome here.
   tag = "tags"
   category = "categories"
   mechanic = "mechanics"
+  complexity = "complexity"
 
 [outputs]
   home = ["HTML", "RSS", "JSON", "ScanSlugs"]
@@ -88,6 +89,11 @@ or picking up your first game, you'll find a warm welcome here.
     parent = "library"
     url = "/categories/"
     weight = 1
+  [[menu.main]]
+    name = "Complexity"
+    parent = "library"
+    url = "/complexity/"
+    weight = 2
   [[menu.main]]
     name = "Mechanics"
     parent = "library"

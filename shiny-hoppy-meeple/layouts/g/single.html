@@ -69,6 +69,12 @@
         </div>
         {{ end }}
 
+        {{ with .GetTerms "complexity" }}
+        <p><strong>Complexity</strong><br>
+          {{ range . }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+        </p>
+        {{ end }}
+
         {{ with .GetTerms "categories" }}
         <p><strong>Categories</strong><br>
           {{ range $i, $t := . }}{{ if $i }} · {{ end }}<a href="{{ $t.RelPermalink }}">{{ $t.LinkTitle }}</a>{{ end }}
