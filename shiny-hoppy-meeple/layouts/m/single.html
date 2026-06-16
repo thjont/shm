@@ -1,16 +1,14 @@
 {{ define "main" }}
 {{ $config := .Params.config }}
 {{ $member := .Params.member }}
-<article class="post-single">
-  <header class="post-header">
-    <p class="bgg-breadcrumb"><a href="/m/">Members</a> &rsaquo; {{ $config.display_name }}</p>
-    <h1 class="post-title">{{ $config.display_name }}</h1>
-    {{ with $config.description }}
-    <p class="post-description">{{ . }}</p>
-    {{ end }}
-  </header>
+<div class="bgg-page">
+  <p class="bgg-breadcrumb"><a href="/m/">Members</a> &rsaquo; {{ $config.display_name }}</p>
+  <h1 class="bgg-page-title">{{ $config.display_name }}</h1>
+  {{ with $config.description }}
+  <p class="bgg-page-description">{{ . }}</p>
+  {{ end }}
 
-  <div class="post-content">
+  <div class="bgg-page-content">
     {{ with $member }}
     <div class="bgg-collection">
       {{ range .items }}
@@ -37,5 +35,5 @@
     </div>
     {{ end }}
   </div>
-</article>
+</div>
 {{ end }}

@@ -1,3 +1,48 @@
+/* ── SHM CSS variable bridge ────────────────────────────────────── */
+/* Map Blowfish colour-scheme variables to theme-agnostic names.    */
+/* Blowfish exposes raw RGB triples; wrap in rgb() to use them.     */
+
+:root {
+  --shm-border:     rgb(var(--color-neutral-200));
+  --shm-muted:      rgb(var(--color-neutral-500));
+  --shm-subtle-bg:  rgb(var(--color-neutral-100));
+}
+
+.dark {
+  --shm-border:     rgb(var(--color-neutral-700));
+  --shm-muted:      rgb(var(--color-neutral-400));
+  --shm-subtle-bg:  rgb(var(--color-neutral-800));
+}
+
+/* ── Page wrapper ───────────────────────────────────────────────── */
+
+.bgg-page {
+  padding: 1.5rem 0 3rem;
+}
+
+.bgg-page-title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.bgg-page-description {
+  font-size: 1rem;
+  color: var(--shm-muted);
+  margin-bottom: 1.5rem;
+}
+
+.bgg-page-meta {
+  font-size: 0.875rem;
+  color: var(--shm-muted);
+  margin-bottom: 1rem;
+}
+
+.bgg-page-content {
+  margin-top: 0.5rem;
+}
+
 /* ── Collection grid ───────────────────────────────────────────── */
 
 .bgg-collection {
@@ -10,7 +55,7 @@
 .bgg-card {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--border);
+  border: 1px solid var(--shm-border);
   border-radius: 6px;
   overflow: hidden;
   text-decoration: none !important;
@@ -46,14 +91,14 @@
 
 .bgg-year {
   font-size: 0.8rem;
-  color: var(--secondary);
+  color: var(--shm-muted);
 }
 
 .bgg-card-meta {
   display: flex;
   gap: 0.6rem;
   font-size: 0.8rem;
-  color: var(--secondary);
+  color: var(--shm-muted);
   margin-top: auto;
   padding-top: 0.4rem;
 }
@@ -62,12 +107,12 @@
 
 .bgg-breadcrumb {
   font-size: 0.85rem;
-  color: var(--secondary);
+  color: var(--shm-muted);
   margin-bottom: 0.5rem;
 }
 
 .bgg-breadcrumb a {
-  color: var(--secondary);
+  color: var(--shm-muted);
 }
 
 .bgg-detail {
@@ -98,7 +143,7 @@
 }
 
 .bgg-detail-stats div {
-  background: var(--code-bg);
+  background: var(--shm-subtle-bg);
   border-radius: 4px;
   padding: 0.5rem 0.6rem;
   line-height: 1.4;
@@ -169,7 +214,7 @@
   padding: 0.55rem 0.75rem;
   text-align: left;
   font-weight: 600;
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--shm-border);
   white-space: nowrap;
   user-select: none;
 }
@@ -199,12 +244,12 @@
 }
 
 .stats-table tbody tr {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--shm-border);
   transition: background 0.1s;
 }
 
 .stats-table tbody tr:hover {
-  background: var(--code-bg);
+  background: var(--shm-subtle-bg);
 }
 
 .stats-table td {
@@ -214,7 +259,7 @@
 
 .stats-table td:first-child,
 .stats-table td:nth-child(2) {
-  color: var(--secondary);
+  color: var(--shm-muted);
   font-variant-numeric: tabular-nums;
   min-width: 3.5rem;
 }
@@ -227,9 +272,9 @@
   margin-left: 0.5rem;
   padding: 0.1rem 0.4rem;
   font-size: 0.78rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--shm-border);
   border-radius: 4px;
-  background: var(--code-bg);
+  background: var(--shm-subtle-bg);
   color: inherit;
   cursor: pointer;
   transition: background 0.1s;
@@ -237,7 +282,7 @@
 }
 
 .member-play-btn:hover:not(:disabled) {
-  background: var(--border);
+  background: var(--shm-border);
 }
 
 .member-play-btn:disabled {
@@ -246,14 +291,6 @@
 }
 
 /* ── "Powered by BGG" footer attribution ───────────────────────── */
-
-/* The attribution div sits outside PaperMod's <footer> element, so the
-   theme's min-height calc for .main doesn't account for it (28px image +
-   1rem top + 0.5rem bottom = 52px). Subtract it here to prevent the logo
-   from being pushed below the fold on sparse pages. */
-.main {
-  min-height: calc(100vh - var(--header-height) - var(--footer-height) - 52px);
-}
 
 .powered-by-bgg {
   display: flex;
@@ -271,10 +308,10 @@
   display: none;
 }
 
-[data-theme="dark"] .powered-by-bgg .bgg-logo-light {
+.dark .powered-by-bgg .bgg-logo-light {
   display: none;
 }
 
-[data-theme="dark"] .powered-by-bgg .bgg-logo-dark {
+.dark .powered-by-bgg .bgg-logo-dark {
   display: inline;
 }
