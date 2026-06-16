@@ -41,7 +41,7 @@
 
         <div class="bgg-detail-stats">
           <div><strong>SHM Rank</strong><br><span data-rank-slug="{{ anchorize $game.name }}">…</span></div>
-          <div><strong>In Library</strong><br>{{ if $inLibrary }}<a href="/library/">Yes</a>{{ else }}No{{ end }}</div>
+          {{ if $inLibrary }}<a href="/library/"><strong>In Library</strong><br>Yes</a>{{ else }}<div><strong>In Library</strong><br>No</div>{{ end }}
           <div><strong>Members</strong><br><span data-member-play-slug="{{ anchorize $game.name }}">…</span></div>
           <div><strong>Public</strong><br><span data-play-slug="{{ anchorize $game.name }}">…</span></div>
           <div><strong>BGG Rating</strong><br>{{ with $game.rating_bayes_average }}{{ printf "%.2f" . }} / 10{{ else }}—{{ end }}</div>
