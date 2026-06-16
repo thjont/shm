@@ -8,8 +8,9 @@
   {{- if $override }}
     {{- $game = merge $game $override }}
   {{- end }}
-  {{- $params := dict "game" $game "categories" $game.categories "mechanics" $game.mechanics }}
+  {{- $params := dict "game" $game }}
   {{- if index $mainLibIds (string $game.id) }}
+    {{- $params = merge $params (dict "categories" $game.categories "mechanics" $game.mechanics) }}
     {{- $complexity := "" }}
     {{- $weight := $game.rating_average_weight }}
     {{- if $weight }}
