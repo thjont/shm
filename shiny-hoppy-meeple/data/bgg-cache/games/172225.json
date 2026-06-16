@@ -118,20 +118,20 @@
     "\uc775\uc2a4\ud50c\ub85c\ub529 \ud0a4\ud2bc",
     "\uc775\uc2a4\ud50c\ub85c\ub529 \ud0a4\ud2bc: \ud63c\ub3c8\uc758 10\ub144"
   ],
-  "bgg_rank": 3996,
+  "bgg_rank": 3997,
   "ranks": [
     "BoardGameRank (id: 1)",
     "BoardGameRank (id: 5498)"
   ],
-  "users_rated": 41791,
-  "rating_average": 6.06949,
-  "rating_bayes_average": 5.88645,
-  "rating_stddev": 1.74195,
+  "users_rated": 41797,
+  "rating_average": 6.06954,
+  "rating_bayes_average": 5.88648,
+  "rating_stddev": 1.74188,
   "rating_average_weight": 1.08,
   "rating_num_weights": 1025,
-  "users_owned": 93810,
-  "users_trading": 1238,
+  "users_owned": 93830,
+  "users_trading": 1237,
   "users_wanting": 80,
-  "users_wishing": 1755,
-  "users_commented": 6327
+  "users_wishing": 1754,
+  "users_commented": 6330
 }

@@ -102,20 +102,20 @@
     "\u7981\u65ad\u306e\u5cf6",
     "\ud3ec\ube44\ub4e0 \uc544\uc77c\ub79c\ub4dc"
   ],
-  "bgg_rank": 1030,
+  "bgg_rank": 1031,
   "ranks": [
     "BoardGameRank (id: 1)",
     "BoardGameRank (id: 5499)"
   ],
-  "users_rated": 54530,
-  "rating_average": 6.74916,
-  "rating_bayes_average": 6.63997,
-  "rating_stddev": 1.22171,
+  "users_rated": 54535,
+  "rating_average": 6.74912,
+  "rating_bayes_average": 6.6399,
+  "rating_stddev": 1.22173,
   "rating_average_weight": 1.7399,
   "rating_num_weights": 2295,
-  "users_owned": 101333,
-  "users_trading": 2377,
+  "users_owned": 101342,
+  "users_trading": 2378,
   "users_wanting": 253,
   "users_wishing": 5277,
-  "users_commented": 10146
+  "users_commented": 10147
 }

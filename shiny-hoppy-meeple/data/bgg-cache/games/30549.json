@@ -173,21 +173,21 @@
     "\u761f\u75ab\u5371\u6a5f",
     "\ud32c\ub370\ubbf9"
   ],
-  "bgg_rank": 172,
+  "bgg_rank": 173,
   "ranks": [
     "BoardGameRank (id: 1)",
     "BoardGameRank (id: 5497)",
     "BoardGameRank (id: 5499)"
   ],
-  "users_rated": 135332,
+  "users_rated": 135336,
   "rating_average": 7.51307,
-  "rating_bayes_average": 7.40349,
+  "rating_bayes_average": 7.40348,
   "rating_stddev": 1.3391,
   "rating_average_weight": 2.3941,
   "rating_num_weights": 6301,
-  "users_owned": 226590,
-  "users_trading": 3377,
+  "users_owned": 226606,
+  "users_trading": 3373,
   "users_wanting": 612,
-  "users_wishing": 11883,
-  "users_commented": 20755
+  "users_wishing": 11885,
+  "users_commented": 20759
 }
