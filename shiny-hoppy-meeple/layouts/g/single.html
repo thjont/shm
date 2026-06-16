@@ -19,21 +19,19 @@
   {{ end }}
 {{ end }}
 
-<article class="post-single">
-  <header class="post-header">
-    <p class="bgg-breadcrumb"><a href="/library/">Library</a> &rsaquo; {{ $game.name }}</p>
-    <h1 class="post-title">{{ $game.name }}</h1>
-    <div class="post-meta">
-      <span>{{ $game.year }}</span>
-      &nbsp;·&nbsp;
-      <span>{{ $game.min_players }}–{{ $game.max_players }} players</span>
-      &nbsp;·&nbsp;
-      <span>{{ $game.playing_time }} min</span>
-      {{ with $game.min_age }}&nbsp;·&nbsp;<span>Age {{ . }}+</span>{{ end }}
-    </div>
-  </header>
+<div class="bgg-page">
+  <p class="bgg-breadcrumb"><a href="/library/">Library</a> &rsaquo; {{ $game.name }}</p>
+  <h1 class="bgg-page-title">{{ $game.name }}</h1>
+  <div class="bgg-page-meta">
+    <span>{{ $game.year }}</span>
+    &nbsp;·&nbsp;
+    <span>{{ $game.min_players }}–{{ $game.max_players }} players</span>
+    &nbsp;·&nbsp;
+    <span>{{ $game.playing_time }} min</span>
+    {{ with $game.min_age }}&nbsp;·&nbsp;<span>Age {{ . }}+</span>{{ end }}
+  </div>
 
-  <div class="post-content">
+  <div class="bgg-page-content">
     <div class="bgg-detail">
 
       <div class="bgg-detail-image">
@@ -96,5 +94,5 @@
 
     </div>
   </div>
-</article>
+</div>
 {{ end }}
