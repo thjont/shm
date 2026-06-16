@@ -5,7 +5,7 @@
     {{ .Content }}
 
     <div class="bgg-collection">
-      {{ $mainLibSlug := hugo.Data.definitions.libraries.main.slug }}
+      {{ $mainLibSlug := (index hugo.Data.definitions.libraries "main-library").slug }}
       {{ range (index hugo.Data "bgg-cache" "collections" $mainLibSlug).items }}
       {{ $thumb := .thumbnail }}
       {{ $year := .year }}
