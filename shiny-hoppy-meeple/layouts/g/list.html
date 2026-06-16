@@ -12,9 +12,11 @@
       {{ range (index hugo.Data "bgg-cache" "collections" $mainLibSlug).items }}
       {{ $thumb := .thumbnail }}
       {{ $year := .year }}
+      {{ $rating := .rating }}
       {{ with index hugo.Data "bgg-cache" "games" (print .id) }}
         {{ if not $thumb }}{{ $thumb = .thumbnail }}{{ end }}
         {{ if not $year }}{{ $year = .year }}{{ end }}
+        {{ if not $rating }}{{ $rating = .rating_bayes_average }}{{ end }}
       {{ end }}
       <a class="bgg-card" href="/g/{{ anchorize .name }}/">
         {{ with $thumb }}
@@ -24,7 +26,7 @@
           <h3>{{ .name }}</h3>
           <span class="bgg-year">{{ $year }}</span>
           <div class="bgg-card-meta">
-            {{ with .rating }}<span>★ {{ . }}</span>{{ end }}
+            {{ with $rating }}<span>★ {{ printf "%.1f" . }}</span>{{ end }}
             <span class="shm-rank" data-rank-slug="{{ anchorize .name }}"></span>
           </div>
         </div>
