@@ -60,6 +60,14 @@ We also get together on the occasional Saturday — follow us on Instagram to st
     url = "/library/"
     weight = 2
   [[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 2
+  [[menu.main]]
+    name = "Mechanics"
+    url = "/mechanics/"
+    weight = 2
+  [[menu.main]]
     name = "Members"
     url = "/m/"
     weight = 3

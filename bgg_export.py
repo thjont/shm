@@ -373,8 +373,9 @@ def main() -> None:
         else:
             sys.exit(f"Error: {def_path} must have a 'geeklist' or 'username' field")
         if args.collection_file is None:
+            slug = defn.get("slug", args.library)
             args.collection_file = (
-                args.data_dir / "bgg-cache" / "collections" / f"{args.library}.json"
+                args.data_dir / "bgg-cache" / "collections" / f"{slug}.json"
             )
 
     if not args.geeklist and not username:
