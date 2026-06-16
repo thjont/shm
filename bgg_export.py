@@ -37,7 +37,7 @@ Output:
 Member and shadow-library definitions live under:
     <data-dir>/definitions/members/<slug>.json         — { slug, display_name, description, geeklist|username }
     <data-dir>/definitions/libraries/<slug>.json       — { slug, display_name, geeklist|username }
-    <data-dir>/definitions/libraries/main.json         — main library definition
+    <data-dir>/definitions/libraries/main-library.json — main library definition
 
 Images are served locally: the `image`/`thumbnail` fields in the JSON are
 rewritten to local paths (e.g. /images/games/13.jpg), while the original BGG
