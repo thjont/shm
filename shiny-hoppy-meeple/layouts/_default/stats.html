@@ -1,10 +1,8 @@
 {{ define "main" }}
-<article class="post-single">
-  <header class="post-header">
-    <h1 class="post-title entry-hint-parent">{{ .Title }}</h1>
-  </header>
+<div class="bgg-page">
+  <h1 class="bgg-page-title">{{ .Title }}</h1>
 
-  <div class="post-content">
+  <div class="bgg-page-content">
     <div class="stats-wrap">
       <table class="stats-table" id="stats-table">
         <thead>
@@ -33,7 +31,6 @@
       </table>
     </div>
   </div>
-</article>
 
 <script>
 (() => {
@@ -177,4 +174,5 @@
   });
 })();
 </script>
+</div>
 {{ end }}
