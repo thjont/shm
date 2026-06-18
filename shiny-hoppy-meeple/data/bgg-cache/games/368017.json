@@ -9,8 +9,6 @@
   "description": "From the team that brought you the smash hit Point Salad, Point City is a card-drafting, engine-building game with more than 150 unique building cards, giving you the opportunity to create a completely different city each time you play!\n\nThe rules are simple: Take two adjacent cards from the dynamic city grid and add them to your expanding city. Use your resource cards and bonuses to construct building cards that require specific combinations. Build special civic structures to multiply your city's points and be the top urban planner!\n\nPoint City takes the same simple concept of drafting cards and building the best combinations, then adds new layers of resource management and engine building to the mix \u2014 making the game easy to learn, but challenging for everyone!\n\n\u2014description from designer\n\n",
   "min_players": 1,
   "max_players": 4,
-  "min_playing_time": 15,
-  "max_playing_time": 30,
   "playing_time": 30,
   "min_age": 10,
   "expansion": false,
@@ -22,61 +20,6 @@
     "Open Drafting",
     "Set Collection"
   ],
-  "families": [
-    "Crowdfunding: Kickstarter",
-    "Digital Implementations: Tabletopia",
-    "Series: Point \u2026 (Flatout Games)",
-    "Theme: City"
-  ],
-  "designers": [
-    "Molly Johnson",
-    "Robert Melvin",
-    "Shawn Stankewich"
-  ],
-  "artists": [
-    "Dylan Mangini"
-  ],
-  "publishers": [
-    "Flatout Games",
-    "Alderac Entertainment Group",
-    "CMON Global Limited",
-    "Devir",
-    "Games7Days",
-    "Gigamic",
-    "Hobby World",
-    "Lucky Duck Games",
-    "MINDOK",
-    "Skellig Games",
-    "White Goblin Games"
-  ],
-  "expansions": [
-    {
-      "id": 399920,
-      "name": "Point City: Kickstarter Promo Civic Tokens"
-    }
-  ],
-  "alternative_names": [
-    "Ciudad de Puntos",
-    "Punktestadt",
-    "Zboduj m\u011bsto",
-    "\u0413\u043e\u0440\u043e\u0434 \u0443\u0434\u0430\u0447\u0438",
-    "\u041a\u0430\u0440\u0442\u043a\u043e\u0432\u0435 \u043c\u0456\u0441\u0442\u043e",
-    "\u5c0f\u57ce\u84dd\u56fe"
-  ],
-  "bgg_rank": 1145,
-  "ranks": [
-    "BoardGameRank (id: 1)",
-    "BoardGameRank (id: 5499)"
-  ],
-  "users_rated": 4847,
-  "rating_average": 7.1325,
-  "rating_bayes_average": 6.58052,
-  "rating_stddev": 1.11275,
-  "rating_average_weight": 1.6852,
-  "rating_num_weights": 108,
-  "users_owned": 11062,
-  "users_trading": 163,
-  "users_wanting": 100,
-  "users_wishing": 1200,
-  "users_commented": 827
+  "rating_bayes_average": 6.58066,
+  "rating_average_weight": 1.6852
 }

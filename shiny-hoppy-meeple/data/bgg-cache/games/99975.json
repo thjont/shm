@@ -9,8 +9,6 @@
   "description": "Timeline: Discoveries is a card game played using 110 cards. Each card depicts an discovery on both sides, with the year in which that discovery occurred on only one side. Players take turns placing a card from their hand in a row on the table. After placing the card, the player reveals the date on it. If the card was placed correctly with the date in chronological order with all other cards on the table, the card stays in place; otherwise the card is removed from play and the player takes another card from the deck.\n\nThe first player to get rid of all his cards by placing them correctly wins. If multiple players go out in the same round, then everyone else is eliminated from play and each of those players are dealt one more card for another round of play. If only one player has no cards after a bonus round, he wins; otherwise play continues until a single player goes out.\n\nTimeline: Discoveries can be combined with any other title in the Timeline series.\n\nIntegratable with:\n\n\n    Timeline: General Interest\n    Timeline: Events\n    Timeline: Inventions\n    Timeline: Music & Cinema\n    Timeline: American History\n    Timeline: Americana\n\n\n",
   "min_players": 2,
   "max_players": 8,
-  "min_playing_time": 15,
-  "max_playing_time": 15,
   "playing_time": 15,
   "min_age": 8,
   "expansion": false,
@@ -22,58 +20,6 @@
   "mechanics": [
     "Ordering"
   ],
-  "families": [
-    "Containers: Tin/Metal Box",
-    "Game: Timeline",
-    "Mechanism: Card Line",
-    "Theme: Science"
-  ],
-  "designers": [
-    "Fr\u00e9d\u00e9ric Henry"
-  ],
-  "artists": [
-    "Xavier Collette",
-    "Nicolas Fructus"
-  ],
-  "publishers": [
-    "asmodee",
-    "Asterion Press",
-    "G\u00e9mklub",
-    "Hazgaard Editions",
-    "Korea Boardgames",
-    "Lifestyle Boardgames Ltd",
-    "Rebel Sp. z o.o.",
-    "Rexhry"
-  ],
-  "expansions": [],
-  "alternative_names": [
-    "Timeline: Ciencia y Descubrimientos",
-    "Timeline: D\u00e9couvertes",
-    "Timeline: Discoveries",
-    "Timeline: Nauka i odkrycia",
-    "Timeline: Objevy",
-    "Timeline: Science and Discoveries",
-    "Timeline: Sciences et Explorations",
-    "Timeline: Scienza e scoperte",
-    "Timeline: Tudom\u00e1ny \u00e9s felfedez\u00e9sek",
-    "\u0422\u0430\u0439\u043c\u043b\u0430\u0439\u043d: \u041d\u0430\u0443\u043a\u0430 \u0438 \u043e\u0442\u043a\u0440\u044b\u0442\u0438\u044f",
-    "\ud0c0\uc784\ub77c\uc778: \uacfc\ud559\uacfc \ubc1c\uacac"
-  ],
-  "bgg_rank": 2063,
-  "ranks": [
-    "BoardGameRank (id: 1)",
-    "BoardGameRank (id: 5498)",
-    "BoardGameRank (id: 5499)"
-  ],
-  "users_rated": 4123,
-  "rating_average": 6.70387,
   "rating_bayes_average": 6.24445,
-  "rating_stddev": 1.18219,
-  "rating_average_weight": 1.1575,
-  "rating_num_weights": 127,
-  "users_owned": 8093,
-  "users_trading": 82,
-  "users_wanting": 101,
-  "users_wishing": 451,
-  "users_commented": 639
+  "rating_average_weight": 1.1575
 }

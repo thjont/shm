@@ -9,8 +9,6 @@
   "description": "\"Codes are a puzzle. A game, just like any other game.\"\n\n- Alan Turing in The Imitation Game.\n\nTuring Machine is a fascinating and competitive deduction game. It offers a unique experience of questioning a proto-computer that works without electricity or any sort of technology, paving the way for a new generation of deduction games.\n\nThe Goal? Find the secret code before the other players, by cleverly questioning the machine. With Turing Machine, you\u2019ll use an analog computer with unique components made of never-before-seen perforated cards.\nThe game offers more than seven million problems from simple to mind-staggeringly complex combinations, making the gameplay practically endless!\n\nIncluding the original competitive mode, you can combine your brain power as a team or try to beat the game itself while playing solo.\n\nAre you ready for an intense cerebral gaming experience?\n\n",
   "min_players": 1,
   "max_players": 4,
-  "min_playing_time": 20,
-  "max_playing_time": 20,
   "playing_time": 20,
   "min_age": 14,
   "expansion": false,
@@ -24,61 +22,6 @@
     "Paper-and-Pencil",
     "Solo / Solitaire Game"
   ],
-  "families": [
-    "Digital Implementations: Board Game Arena",
-    "Misc: Watch It Played How To Videos",
-    "Players: Games with Solitaire Rules",
-    "Theme: Computer / Information Technology Industry",
-    "Theme: Teaching Programming"
-  ],
-  "designers": [
-    "Fabien Gridel",
-    "Yoann Levet"
-  ],
-  "artists": [
-    "S\u00e9bastien Bizos"
-  ],
-  "publishers": [
-    "Scorpion Masqu\u00e9",
-    "CMON Global Limited",
-    "Gal\u00e1pagos Jogos",
-    "Geekach LLC",
-    "GoKids \u73a9\u6a02\u5c0f\u5b50",
-    "HUCH!",
-    "Kaissa Chess & Games",
-    "Lucky Duck Games",
-    "Midnight Jungle",
-    "MINDOK",
-    "Reflexshop",
-    "Sugorokuya",
-    "Tabletop KZ",
-    "Tranjis Games",
-    "Well Designed Game"
-  ],
-  "expansions": [],
-  "alternative_names": [
-    "\u041c\u0430\u0448\u0438\u043d\u0430 \u0422\u044c\u044e\u0440\u0438\u043d\u0433\u0430",
-    "\u041c\u0430\u0448\u0438\u043d\u0430 \u0422\u044e\u0440\u0456\u043d\u0433\u0430",
-    "\u0e16\u0e2d\u0e14\u0e23\u0e2b\u0e31\u0e2a\u0e08\u0e31\u0e01\u0e23\u0e01\u0e25\u0e2d\u0e31\u0e08\u0e09\u0e23\u0e34\u0e22\u0e30",
-    "\u30c1\u30e5\u30fc\u30ea\u30f3\u30b0\u30de\u30b7\u30f3",
-    "\u56fe\u7075\u673a",
-    "\u5716\u9748\u89e3\u5bc6",
-    "\ud29c\ub9c1 \uba38\uc2e0"
-  ],
-  "bgg_rank": 322,
-  "ranks": [
-    "BoardGameRank (id: 1)",
-    "BoardGameRank (id: 5497)"
-  ],
-  "users_rated": 10628,
-  "rating_average": 7.60366,
-  "rating_bayes_average": 7.17771,
-  "rating_stddev": 1.40775,
-  "rating_average_weight": 2.5362,
-  "rating_num_weights": 235,
-  "users_owned": 19829,
-  "users_trading": 230,
-  "users_wanting": 379,
-  "users_wishing": 4670,
-  "users_commented": 1543
+  "rating_bayes_average": 7.17753,
+  "rating_average_weight": 2.5339
 }

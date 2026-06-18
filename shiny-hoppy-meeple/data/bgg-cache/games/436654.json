@@ -9,8 +9,6 @@
   "description": "Compete with your other librarians to get rid of your hand of book cards. You'll need to shelve them in order by publication date - but if you place your card incorrectly, it'll come straight back into your hand. Never fear, though, as you can use your single use-library card to help, or to hinder your opponents.\n\n",
   "min_players": 1,
   "max_players": 6,
-  "min_playing_time": 0,
-  "max_playing_time": 0,
   "playing_time": 0,
   "min_age": 12,
   "expansion": false,
@@ -18,31 +16,6 @@
     "Card Game"
   ],
   "mechanics": [],
-  "families": [
-    "Card Games: Shedding / Stops",
-    "Theme: Books / Libraries",
-    "Theme: Shelving"
-  ],
-  "designers": [],
-  "artists": [],
-  "publishers": [
-    "(Self-Published)"
-  ],
-  "expansions": [],
-  "alternative_names": [],
-  "bgg_rank": null,
-  "ranks": [
-    "BoardGameRank (id: 1)"
-  ],
-  "users_rated": 11,
-  "rating_average": 6.76364,
   "rating_bayes_average": 0.0,
-  "rating_stddev": 1.33979,
-  "rating_average_weight": 0.0,
-  "rating_num_weights": 0,
-  "users_owned": 55,
-  "users_trading": 0,
-  "users_wanting": 0,
-  "users_wishing": 3,
-  "users_commented": 2
+  "rating_average_weight": 0.0
 }

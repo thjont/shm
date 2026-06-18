@@ -9,8 +9,6 @@
   "description": "Wavelength is a social guessing game in which two teams compete to read each other's minds. Teams take turns rotating a dial to where they think a hidden bullseye is located on a spectrum. One of the players on your team \u2014 the Psychic \u2014 knows exactly where the bullseye is, and draws a card with a pair of binaries on it (such as: Job - Career, Rough - Smooth, Fantasy - Sci-Fi, Sad Song - Happy Song, etc). The Psychic must then provide a clue that is *conceptually* where the bullseye is located between those two binaries.\n\nFor example, if the card this round is HOT-COLD and the bullseye is slightly to the \"cold\" side of the centre, the Psychic needs to give a clue somewhere in that region. Perhaps \"salad\"?\n\nAfter the Psychic gives their clue, their team discusses where they think the bullseye is located and turns the dial to that location on that spectrum. The closer to the center of the bullseye the team guess, the more points they score!\n\n",
   "min_players": 2,
   "max_players": 12,
-  "min_playing_time": 30,
-  "max_playing_time": 45,
   "playing_time": 45,
   "min_age": 14,
   "expansion": false,
@@ -22,75 +20,6 @@
     "Targeted Clues",
     "Team-Based Game"
   ],
-  "families": [
-    "Components: 3-Dimensional (3D)",
-    "Components: Game Box Used In Play",
-    "Crowdfunding: Kickstarter",
-    "Digital Implementations: Apple App Store",
-    "Digital Implementations: Google Play"
-  ],
-  "designers": [
-    "Alex Hague",
-    "Justin Vickers",
-    "Wolfgang Warsch"
-  ],
-  "artists": [
-    "Sofie Hannibal",
-    "Nan Na Hvass"
-  ],
-  "publishers": [
-    "Palm Court",
-    "Arrakis Games",
-    "Brain Games",
-    "Bur\u00f3",
-    "CMYK",
-    "GaGa Games",
-    "Gal\u00e1pagos Jogos",
-    "Geekach LLC",
-    "G\u00e9mklub",
-    "GoKids \u73a9\u6a02\u5c0f\u5b50",
-    "Hid Konem (\u0425\u0456\u0434 \u041a\u043e\u043d\u0435\u043c)",
-    "Hobby Japan",
-    "Korea Boardgames",
-    "Lord of Boards",
-    "Rebel Sp. z o.o.",
-    "Schmidt Spiele",
-    "Zito! \u038f\u03c1\u03b1 \u03b3\u03b9\u03b1 \u03c0\u03b1\u03b9\u03c7\u03bd\u03af\u03b4\u03b9"
-  ],
-  "expansions": [
-    {
-      "id": 355609,
-      "name": "Wavelength: Dice Tower 2021 Promo Pack"
-    }
-  ],
-  "alternative_names": [
-    "Hull\u00e1mhossz",
-    "Longueur d'Onde",
-    "Pe aceeasi lungime de unda",
-    "Perfect Match",
-    "Sintonia",
-    "Spektrum",
-    "\u0414\u043b\u0438\u043d\u0430 \u0412\u043e\u043b\u043d\u044b",
-    "\u0414\u043e\u0432\u0436\u0438\u043d\u0430 \u0425\u0432\u0438\u043b\u0456",
-    "\u30a6\u30a7\u30fc\u30d6\u30ec\u30f3\u30b0\u30b9",
-    "\u5fc3\u9748\u5171\u611f",
-    "\u7535\u6ce2\u540c\u6b65",
-    "\ub0b4 \ub9c8\uc74c\uc758 \uc8fc\ud30c\uc218"
-  ],
-  "bgg_rank": 531,
-  "ranks": [
-    "BoardGameRank (id: 1)",
-    "BoardGameRank (id: 5498)"
-  ],
-  "users_rated": 18540,
-  "rating_average": 7.19481,
-  "rating_bayes_average": 6.97224,
-  "rating_stddev": 1.29184,
-  "rating_average_weight": 1.1065,
-  "rating_num_weights": 291,
-  "users_owned": 33316,
-  "users_trading": 412,
-  "users_wanting": 314,
-  "users_wishing": 4969,
-  "users_commented": 2504
+  "rating_bayes_average": 6.97211,
+  "rating_average_weight": 1.1065
 }

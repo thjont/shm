@@ -9,8 +9,6 @@
   "description": "Cockroach Poker is a reverse set collection game that has nothing to do with poker \u2013 except that the game is all about bluffing, with cards that show cockroaches, rats and stink bugs. The goal is to force another player to collect 4 of any one type of critter.\n\nThe deck includes 64 cards, with eight copies of eight types of critters. To set up the game, shuffle the deck and deal the cards out to players.\n\nOn a turn, a player takes one card from their hand, lays it face down on the table, slides it to a player of their choice, and declares a type of critter, e.g., \"Stink bug\". The player receiving the card either\n\n\n     Accepts the card, says either \"true\" or \"false\", then reveals the card. If this player is wrong in their claim, they keep the card on the table in front of them face up; if they are right, the player who gave them the card places it face up before them.\n\n\n\n     Peeks at the card, then passes it face down to another player, either saying the original type of critter or saying a new type. This new player again has the choice of accepting the card or passing it, unless the card has already been seen by all other players in which case the player must take the first option.\n\n\nWhoever lost a challenge and had to place the card before them on the table begins the next round.\n\nThe game ends when a player has no cards to pass on their turn or when a player has four cards of the same critter on the table in front of them. In either case, this player loses and everyone else wins.\n\n",
   "min_players": 2,
   "max_players": 6,
-  "min_playing_time": 20,
-  "max_playing_time": 20,
   "playing_time": 20,
   "min_age": 8,
   "expansion": false,
@@ -24,80 +22,6 @@
     "Set Collection",
     "Single Loser Game"
   ],
-  "families": [
-    "Animals: Bats",
-    "Animals: Cockroaches",
-    "Animals: Frogs / Toads",
-    "Animals: Insects",
-    "Animals: Rats",
-    "Animals: Spiders",
-    "Series: Ugly Animals (Drei Magier)"
-  ],
-  "designers": [
-    "Jacques Zeimet"
-  ],
-  "artists": [
-    "Rolf Vogt"
-  ],
-  "publishers": [
-    "Drei Magier Spiele",
-    "999 Games",
-    "ADC Blackfire Entertainment",
-    "Coiledspring Games",
-    "Competo / Marektoy",
-    "Corfix",
-    "Devir",
-    "G3",
-    "G\u00e9mklub",
-    "Gigamic",
-    "Kod Kod",
-    "Korea Boardgames",
-    "Lanlalen",
-    "Lion Rampant Imports",
-    "M\u00f6bius Games",
-    "Oya",
-    "Rebel Sp. z o.o.",
-    "Swan Panasia Co., Ltd."
-  ],
-  "expansions": [],
-  "alternative_names": [
-    "Blafuj",
-    "Blefuj",
-    "Bug Bluff",
-    "Cs\u00f3t\u00e1nyp\u00f3ker",
-    "Kakerlaken Poker",
-    "Kakerlaken-Poker",
-    "Kakerlakenpoker",
-    "Kakkalakkap\u00f3ker",
-    "Kakkerlakkenpoker",
-    "Karaluszek k\u0142amczuszek",
-    "Il Poker degli scarafaggi",
-    "Le Poker des Cafards",
-    "P\u00f3quer de bichos",
-    "Torakkapokeri",
-    "\u05d7\u05d9\u05e4\u05d5\u05e9\u05d9\u05d5\u05ea",
-    "\u0e41\u0e21\u0e25\u0e07\u0e2a\u0e32\u0e1a\u0e2b\u0e19\u0e49\u0e32\u0e15\u0e32\u0e22",
-    "\u3054\u304d\u3076\u308a\u30dd\u30fc\u30ab\u30fc",
-    "\u5fb7\u570b\u5c0f\u5f37",
-    "\u5fb7\u570b\u87d1\u8782",
-    "\u5fb7\u570b\u87d1\u8782\u724c",
-    "\u760b\u72c2\u7684\u5c0f\u5f37",
-    "\ubc14\ud034\ubc8c\ub808 \ud3ec\ucee4"
-  ],
-  "bgg_rank": 1093,
-  "ranks": [
-    "BoardGameRank (id: 1)",
-    "BoardGameRank (id: 5498)"
-  ],
-  "users_rated": 16488,
-  "rating_average": 6.80074,
-  "rating_bayes_average": 6.60404,
-  "rating_stddev": 1.46779,
-  "rating_average_weight": 1.0967,
-  "rating_num_weights": 579,
-  "users_owned": 29493,
-  "users_trading": 308,
-  "users_wanting": 216,
-  "users_wishing": 2249,
-  "users_commented": 3144
+  "rating_bayes_average": 6.60399,
+  "rating_average_weight": 1.0967
 }

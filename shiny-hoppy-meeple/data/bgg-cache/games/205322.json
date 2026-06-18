@@ -9,8 +9,6 @@
   "description": "Description from the publisher:\n\n\"Based on the classic computer game\"\n\nAccording to the box:\n\n\"You may:\n1. Travel the trail\n2. Work together to overcome calamities\n3. Get at least one member of your party to Oregon\n4. Stop and rest\n5. Decide which of your friends will  die of dysentery\n6. Write your name on a tombstone\nWhat is your choice?\"\n\nAll sorts of gruesome deaths await you and the rest of your wagon party in this official multi-player card game version of the classic computer game. To win you\u2019ll need to keep one player alive all the way from Independence, MO to the Willamette Valley. But between rattlesnakes, starvation, dead oxen, broken bones, dysentery, and a host of other calamities the odds are long . . . almost as long as the Oregon Trail itself.\n\nPlayers work together to move along the trail, fording rivers and playing Supply Cards to overcome calamities. But be warned\u2013there will be times when it makes sense to let one of your wagon mates succumb to a calamity rather than expend precious supplies. And every time players go the way of all flesh, you\u2019ll flip over the roster card and write their names on tombstones (don\u2019t forget to include a quick epitaph). It\u2019s a great way to relive your fond memories of one of the world\u2019s most beloved computer games, and to kill off your family and friends at the same time.\n\n",
   "min_players": 2,
   "max_players": 6,
-  "min_playing_time": 30,
-  "max_playing_time": 45,
   "playing_time": 45,
   "min_age": 12,
   "expansion": false,
@@ -32,38 +30,6 @@
     "Simulation",
     "Solo / Solitaire Game"
   ],
-  "families": [
-    "Admin: Better Description Needed!",
-    "History: Oregon Trail",
-    "States: Oregon",
-    "Theme: Survival",
-    "Video Game Theme: The Oregon Trail"
-  ],
-  "designers": [
-    "(Uncredited)"
-  ],
-  "artists": [
-    "(Uncredited)"
-  ],
-  "publishers": [
-    "Pressman Toy Corp."
-  ],
-  "expansions": [],
-  "alternative_names": [],
-  "bgg_rank": 30776,
-  "ranks": [
-    "BoardGameRank (id: 1)",
-    "BoardGameRank (id: 5499)"
-  ],
-  "users_rated": 4018,
-  "rating_average": 4.21034,
-  "rating_bayes_average": 4.63686,
-  "rating_stddev": 1.93541,
-  "rating_average_weight": 1.1852,
-  "rating_num_weights": 54,
-  "users_owned": 11696,
-  "users_trading": 442,
-  "users_wanting": 9,
-  "users_wishing": 191,
-  "users_commented": 1026
+  "rating_bayes_average": 4.63684,
+  "rating_average_weight": 1.1852
 }

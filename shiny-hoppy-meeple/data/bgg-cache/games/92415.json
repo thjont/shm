@@ -9,8 +9,6 @@
   "description": "Edited description from Bruno Faidutti's write-up of the game in his Ideal Game Library:\n\nSkull & Roses is the quintessence of bluffing, a game in which everything is played in the players' heads. Each player plays a face-down card, then each player in turn adds one more card \u2013 until someone feels safe enough to state that they can turn a number of cards face up and get only roses. Other players can then overbid them, saying they can turn even more cards face up. The highest bidder must then turn that number of cards face up, starting with their own. If they show only roses, they win; if they reveal a skull, they lose, placing one of their cards out of play. Two successful challenges wins the game. Skull & Roses is not a game of luck; it's a game of poker face and meeting eyes.\n\nSkull & Roses Red features the same gameplay as Skull & Roses, with the only change being alternate rules that allow each player to control two biker gangs. Both Skull & Roses Red and Skull are playable on their own, with each game containing six different biker gangs. Each Skull or Skull & Roses set can be combined with another to allow for games with more than six players.\n\n",
   "min_players": 3,
   "max_players": 6,
-  "min_playing_time": 15,
-  "max_playing_time": 45,
   "playing_time": 45,
   "min_age": 10,
   "expansion": false,
@@ -27,72 +25,6 @@
     "Player Elimination",
     "Predictive Bid"
   ],
-  "families": [
-    "Components: Drink Coasters",
-    "Digital Implementations: Board Game Arena",
-    "Holidays: Day of the Dead"
-  ],
-  "designers": [
-    "Herv\u00e9 Marly"
-  ],
-  "artists": [
-    "Rose Kipik",
-    "Thomas Vuarchex"
-  ],
-  "publishers": [
-    "Lui-m\u00eame",
-    "Boardgame Space",
-    "Brain Games",
-    "DiceTree Games",
-    "Gal\u00e1pagos Jogos",
-    "Geekach LLC",
-    "G\u00e9mklub",
-    "Granna",
-    "Hobby Japan",
-    "Korea Boardgames",
-    "Nordic Games ehf",
-    "Rebel Sp. z o.o.",
-    "Reflexshop",
-    "Siam Board Games",
-    "Space Cowboys"
-  ],
-  "expansions": [
-    {
-      "id": 148615,
-      "name": "Gringo: Polar Bear"
-    },
-    {
-      "id": 346093,
-      "name": "Skull: Aztec"
-    }
-  ],
-  "alternative_names": [
-    "Gringo",
-    "Skull & Roses",
-    "Skull & Roses Black",
-    "Skull & Roses Red",
-    "Skull: Kopony\u00e1k j\u00e1t\u00e9ka",
-    "\u0427\u0435\u0440\u0435\u043f",
-    "\u062c\u0645\u062c\u0645\u0629",
-    "\u0e2a\u0e01\u0e31\u0e25",
-    "\u30b9\u30ab\u30eb",
-    "\u9ab7\u9ac5\u724c",
-    "\uc2a4\uceec"
-  ],
-  "bgg_rank": 495,
-  "ranks": [
-    "BoardGameRank (id: 1)",
-    "BoardGameRank (id: 5498)"
-  ],
-  "users_rated": 28669,
-  "rating_average": 7.17088,
-  "rating_bayes_average": 7.00928,
-  "rating_stddev": 1.40031,
-  "rating_average_weight": 1.1132,
-  "rating_num_weights": 689,
-  "users_owned": 47398,
-  "users_trading": 348,
-  "users_wanting": 427,
-  "users_wishing": 5154,
-  "users_commented": 4384
+  "rating_bayes_average": 7.00932,
+  "rating_average_weight": 1.1132
 }
