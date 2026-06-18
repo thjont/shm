@@ -6,7 +6,7 @@ on:
         paths:
             - "shiny-hoppy-meeple/**"
     schedule:
-        - cron: "*/15 * * * *"
+        - cron: "0 8-23 * * *"
     workflow_dispatch:
 jobs:
     deploy:
