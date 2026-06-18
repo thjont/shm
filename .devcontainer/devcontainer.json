@@ -13,7 +13,7 @@
       "version": "latest"
     }
   },
-  "onCreateCommand": "npm install && pip install -r requirements.txt",
+  "onCreateCommand": "npm install && pip install -r requirements.txt && pip install -r qr-pdf/requirements.txt",
   "postStartCommand": "hugo server --bind 0.0.0.0 --source shiny-hoppy-meeple",
   "forwardPorts": [1313],
   "portsAttributes": {

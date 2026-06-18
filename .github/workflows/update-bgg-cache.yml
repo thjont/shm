@@ -68,11 +68,21 @@ jobs:
                           print(f'::warning::Export failed for member {slug!r}', file=sys.stderr)
                   PYEOF
 
+            - name: Regenerate QR-code PDF if main library changed
+              run: |
+                  if git diff --quiet -- shiny-hoppy-meeple/data/bgg-cache/collections/main-library.json; then
+                    echo "main-library.json unchanged — skipping QR-code PDF."
+                  else
+                    echo "main-library.json changed — regenerating QR-code PDF."
+                    pip install -r qr-pdf/requirements.txt
+                    python3 qr-pdf/generate_qr_pdf.py
+                  fi
+
             - name: Commit and push changes
               run: |
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
-                  git add shiny-hoppy-meeple/data/bgg-cache/ shiny-hoppy-meeple/static/images/games/
+                  git add shiny-hoppy-meeple/data/bgg-cache/ shiny-hoppy-meeple/static/images/games/ shiny-hoppy-meeple/static/qr-codes.pdf
                   if git diff --cached --quiet; then
                     echo "No BGG cache changes to commit."
                   else
