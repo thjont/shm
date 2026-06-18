@@ -48,21 +48,21 @@
     "Cores com Dicas",
     "Farby Bavia"
   ],
-  "bgg_rank": 2410,
+  "bgg_rank": 2409,
   "ranks": [
     "BoardGameRank (id: 1)",
     "BoardGameRank (id: 5498)",
     "BoardGameRank (id: 5499)"
   ],
-  "users_rated": 7673,
-  "rating_average": 6.43399,
-  "rating_bayes_average": 6.15494,
-  "rating_stddev": 1.43814,
+  "users_rated": 7679,
+  "rating_average": 6.43437,
+  "rating_bayes_average": 6.15502,
+  "rating_stddev": 1.43833,
   "rating_average_weight": 1.0588,
   "rating_num_weights": 119,
-  "users_owned": 17700,
-  "users_trading": 155,
+  "users_owned": 17712,
+  "users_trading": 154,
   "users_wanting": 90,
-  "users_wishing": 1750,
-  "users_commented": 1203
+  "users_wishing": 1751,
+  "users_commented": 1204
 }

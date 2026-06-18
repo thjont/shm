@@ -142,21 +142,21 @@
     "\u30d5\u30e9\u30c3\u30af\u30b9 v5.0",
     "\u6d6e\u8a00\u6d6a\u8a9e"
   ],
-  "bgg_rank": 12257,
+  "bgg_rank": 12264,
   "ranks": [
     "BoardGameRank (id: 1)",
     "BoardGameRank (id: 5498)",
     "BoardGameRank (id: 5499)"
   ],
-  "users_rated": 18831,
-  "rating_average": 5.67643,
-  "rating_bayes_average": 5.55949,
-  "rating_stddev": 1.81564,
+  "users_rated": 18832,
+  "rating_average": 5.67631,
+  "rating_bayes_average": 5.55938,
+  "rating_stddev": 1.81581,
   "rating_average_weight": 1.3881,
   "rating_num_weights": 1126,
-  "users_owned": 33231,
+  "users_owned": 33232,
   "users_trading": 777,
   "users_wanting": 44,
-  "users_wishing": 982,
-  "users_commented": 4624
+  "users_wishing": 983,
+  "users_commented": 4625
 }

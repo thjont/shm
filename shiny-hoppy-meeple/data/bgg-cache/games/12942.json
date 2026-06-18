@@ -122,20 +122,20 @@
     "\u79ae\u7269",
     "\ub178 \ub561\uc2a4!"
   ],
-  "bgg_rank": 553,
+  "bgg_rank": 554,
   "ranks": [
     "BoardGameRank (id: 1)",
     "BoardGameRank (id: 5499)"
   ],
-  "users_rated": 30714,
-  "rating_average": 7.08032,
-  "rating_bayes_average": 6.95359,
-  "rating_stddev": 1.20525,
+  "users_rated": 30718,
+  "rating_average": 7.08023,
+  "rating_bayes_average": 6.95348,
+  "rating_stddev": 1.20527,
   "rating_average_weight": 1.1297,
   "rating_num_weights": 1542,
-  "users_owned": 46730,
+  "users_owned": 46741,
   "users_trading": 480,
-  "users_wanting": 392,
-  "users_wishing": 3870,
-  "users_commented": 6531
+  "users_wanting": 391,
+  "users_wishing": 3874,
+  "users_commented": 6533
 }

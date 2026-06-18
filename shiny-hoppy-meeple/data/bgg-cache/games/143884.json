@@ -121,20 +121,20 @@
     "\u9ab0\u5b50\u8857",
     "\ubbf8\ub2c8\ube4c"
   ],
-  "bgg_rank": 1390,
+  "bgg_rank": 1391,
   "ranks": [
     "BoardGameRank (id: 1)",
     "BoardGameRank (id: 5499)"
   ],
-  "users_rated": 35975,
-  "rating_average": 6.59201,
-  "rating_bayes_average": 6.47333,
-  "rating_stddev": 1.36583,
+  "users_rated": 35980,
+  "rating_average": 6.59181,
+  "rating_bayes_average": 6.47316,
+  "rating_stddev": 1.36588,
   "rating_average_weight": 1.5195,
   "rating_num_weights": 1182,
-  "users_owned": 59963,
+  "users_owned": 59972,
   "users_trading": 1471,
   "users_wanting": 250,
-  "users_wishing": 3542,
+  "users_wishing": 3544,
   "users_commented": 6093
 }

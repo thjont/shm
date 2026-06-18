@@ -887,21 +887,21 @@
     "\u5c0f\u767d\u4e16\u7d00",
     "\uba3c\uce58\ud0a8"
   ],
-  "bgg_rank": 6477,
+  "bgg_rank": 6479,
   "ranks": [
     "BoardGameRank (id: 1)",
     "BoardGameRank (id: 5496)",
     "BoardGameRank (id: 5498)"
   ],
-  "users_rated": 53436,
-  "rating_average": 5.87412,
-  "rating_bayes_average": 5.69287,
-  "rating_stddev": 1.84184,
+  "users_rated": 53435,
+  "rating_average": 5.87408,
+  "rating_bayes_average": 5.69282,
+  "rating_stddev": 1.8419,
   "rating_average_weight": 1.8179,
   "rating_num_weights": 2603,
-  "users_owned": 103238,
-  "users_trading": 2680,
+  "users_owned": 103246,
+  "users_trading": 2679,
   "users_wanting": 152,
   "users_wishing": 2367,
-  "users_commented": 9789
+  "users_commented": 9788
 }

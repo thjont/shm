@@ -59,21 +59,21 @@
     "\u0422\u0430\u0439\u043c\u043b\u0430\u0439\u043d: \u041d\u0430\u0443\u043a\u0430 \u0438 \u043e\u0442\u043a\u0440\u044b\u0442\u0438\u044f",
     "\ud0c0\uc784\ub77c\uc778: \uacfc\ud559\uacfc \ubc1c\uacac"
   ],
-  "bgg_rank": 2062,
+  "bgg_rank": 2063,
   "ranks": [
     "BoardGameRank (id: 1)",
     "BoardGameRank (id: 5498)",
     "BoardGameRank (id: 5499)"
   ],
-  "users_rated": 4122,
-  "rating_average": 6.70392,
+  "users_rated": 4123,
+  "rating_average": 6.70387,
   "rating_bayes_average": 6.24445,
-  "rating_stddev": 1.18233,
+  "rating_stddev": 1.18219,
   "rating_average_weight": 1.1575,
   "rating_num_weights": 127,
-  "users_owned": 8092,
+  "users_owned": 8093,
   "users_trading": 82,
   "users_wanting": 101,
   "users_wishing": 451,
-  "users_commented": 638
+  "users_commented": 639
 }

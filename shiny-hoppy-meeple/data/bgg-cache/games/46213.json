@@ -98,15 +98,15 @@
     "BoardGameRank (id: 1)",
     "BoardGameRank (id: 5498)"
   ],
-  "users_rated": 20790,
-  "rating_average": 7.37712,
-  "rating_bayes_average": 7.1454,
-  "rating_stddev": 1.39201,
+  "users_rated": 20791,
+  "rating_average": 7.37736,
+  "rating_bayes_average": 7.14557,
+  "rating_stddev": 1.39186,
   "rating_average_weight": 1.0697,
   "rating_num_weights": 502,
-  "users_owned": 32461,
-  "users_trading": 351,
+  "users_owned": 32464,
+  "users_trading": 352,
   "users_wanting": 192,
-  "users_wishing": 2664,
+  "users_wishing": 2662,
   "users_commented": 3326
 }
