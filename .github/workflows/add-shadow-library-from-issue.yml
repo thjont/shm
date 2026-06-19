@@ -14,18 +14,13 @@ jobs:
             pull-requests: write
         steps:
             - name: Check permission
-              env:
-                  GH_TOKEN: ${{ github.token }}
-                  SENDER: ${{ github.event.sender.login }}
-                  ISSUE_NUMBER: ${{ github.event.issue.number }}
-                  REPO: ${{ github.repository }}
-              run: |
-                  PERMISSION=$(gh api "repos/${REPO}/collaborators/${SENDER}/permission" --jq '.permission' 2>/dev/null || echo "none")
-                  if [[ "$PERMISSION" != "admin" && "$PERMISSION" != "write" ]]; then
-                    gh issue comment "$ISSUE_NUMBER" --body "@${SENDER} Only maintainers with write access can add shadow libraries."
-                    gh issue close "$ISSUE_NUMBER"
-                    exit 1
-                  fi
+              uses: ./.github/actions/check-permission
+              with:
+                  token: ${{ github.token }}
+                  sender: ${{ github.event.sender.login }}
+                  issue-number: ${{ github.event.issue.number }}
+                  repo: ${{ github.repository }}
+                  error-message: Only maintainers with write access can add shadow libraries.
 
             - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
 
@@ -37,17 +32,11 @@ jobs:
                   GH_TOKEN: ${{ github.token }}
               run: |
                   python3 - <<'PYEOF'
-                  import json, os, re, subprocess, sys
+                  import json, os, sys
+                  sys.path.insert(0, '.github/scripts')
+                  from issue_helpers import extract, comment, set_output, validate_slug
 
-                  body = os.environ['ISSUE_BODY']
                   issue_number = os.environ['ISSUE_NUMBER']
-
-                  def extract(label):
-                      m = re.search(rf'### {re.escape(label)}\n\n(.*?)(?=\n### |\Z)', body, re.DOTALL)
-                      if not m:
-                          return ''
-                      v = m.group(1).strip()
-                      return '' if v == '_No response_' else v
 
                   # Collapse all whitespace (incl. newlines) so display_name cannot
                   # inject extra lines into $GITHUB_OUTPUT or break the commit/PR title.
@@ -56,19 +45,16 @@ jobs:
                   bgg_username = extract('BGG Username').strip()
                   geeklist_id  = extract('BGG GeekList ID').strip()
 
-                  if not re.match(r'^[a-z0-9][a-z0-9-]*$', slug):
-                      print(f'::error::Invalid slug: {slug!r}')
-                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'Invalid slug: `{slug}`. Use lowercase letters, numbers, and hyphens only.'], check=True)
-                      sys.exit(1)
+                  validate_slug(issue_number, slug)
 
                   if not bgg_username and not geeklist_id:
                       print('::error::No BGG source provided.')
-                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', 'Please provide either a BGG Username or a BGG GeekList ID.'], check=True)
+                      comment(issue_number, 'Please provide either a BGG Username or a BGG GeekList ID.')
                       sys.exit(1)
 
                   if geeklist_id and not geeklist_id.isdigit():
                       print(f'::error::Invalid GeekList ID: {geeklist_id!r}')
-                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'Invalid GeekList ID: `{geeklist_id}`. Must be a number.'], check=True)
+                      comment(issue_number, f'Invalid GeekList ID: `{geeklist_id}`. Must be a number.')
                       sys.exit(1)
 
                   config_dir = 'shiny-hoppy-meeple/data/definitions/libraries'
@@ -77,7 +63,7 @@ jobs:
                   config_path = f'{config_dir}/{slug}.json'
                   if os.path.exists(config_path):
                       print(f'::error::Slug already exists: {slug!r}')
-                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'A shadow library with slug `{slug}` already exists.'], check=True)
+                      comment(issue_number, f'A shadow library with slug `{slug}` already exists.')
                       sys.exit(1)
 
                   data = {'slug': slug, 'display_name': display_name}
@@ -90,10 +76,9 @@ jobs:
                       json.dump(data, f, indent=2)
                       f.write('\n')
 
-                  with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
-                      out.write(f'slug={slug}\n')
-                      out.write(f'display_name={display_name}\n')
-                      out.write(f'config_path={config_path}\n')
+                  set_output('slug', slug)
+                  set_output('display_name', display_name)
+                  set_output('config_path', config_path)
                   PYEOF
 
             - name: Create branch and open PR

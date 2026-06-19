@@ -14,18 +14,14 @@ jobs:
             pull-requests: write
         steps:
             - name: Check permission
-              env:
-                  GH_TOKEN: ${{ github.token }}
-                  SENDER: ${{ github.event.sender.login }}
-                  ISSUE_NUMBER: ${{ github.event.issue.number }}
-                  REPO: ${{ github.repository }}
-              run: |
-                  PERMISSION=$(gh api "repos/${REPO}/collaborators/${SENDER}/permission" --jq '.permission' 2>/dev/null || echo "none")
-                  if [[ "$PERMISSION" != "admin" && "$PERMISSION" != "write" ]]; then
-                    gh issue comment "$ISSUE_NUMBER" --body "@${SENDER} Only maintainers with write access can publish posts."
-                    gh issue edit "$ISSUE_NUMBER" --remove-label "publish"
-                    exit 1
-                  fi
+              uses: ./.github/actions/check-permission
+              with:
+                  token: ${{ github.token }}
+                  sender: ${{ github.event.sender.login }}
+                  issue-number: ${{ github.event.issue.number }}
+                  repo: ${{ github.repository }}
+                  error-message: Only maintainers with write access can publish posts.
+                  failure-action: remove-label
 
             - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
 
@@ -37,31 +33,20 @@ jobs:
                   GH_TOKEN: ${{ github.token }}
               run: |
                   python3 - <<'PYEOF'
-                  import os, re, subprocess, sys
+                  import os, sys
+                  sys.path.insert(0, '.github/scripts')
+                  from issue_helpers import extract, comment, set_output, validate_slug
 
-                  body = os.environ['ISSUE_BODY']
                   issue_number = os.environ['ISSUE_NUMBER']
-
-                  def extract(label):
-                      m = re.search(rf'### {re.escape(label)}\n\n(.*?)(?=\n### |\Z)', body, re.DOTALL)
-                      if not m:
-                          return ''
-                      v = m.group(1).strip()
-                      return '' if v == '_No response_' else v
-
-                  def comment(msg):
-                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', msg], check=True)
 
                   slug = extract('Post Slug').strip()
 
-                  if not re.match(r'^[a-z0-9][a-z0-9-]*$', slug):
-                      comment(f'Invalid slug: `{slug}`. Use the slug from the post URL (e.g. `my-post`).')
-                      print(f'::error::Invalid slug: {slug!r}')
-                      sys.exit(1)
+                  validate_slug(issue_number, slug,
+                                hint='Use the slug from the post URL (e.g. `my-post`).')
 
                   post_path = f'shiny-hoppy-meeple/content/posts/{slug}.md'
                   if not os.path.exists(post_path):
-                      comment(f'No post found with slug `{slug}`.')
+                      comment(issue_number, f'No post found with slug `{slug}`.')
                       print(f'::error::Post not found: {post_path}')
                       sys.exit(1)
 
@@ -85,7 +70,7 @@ jobs:
                   has_unlisted = any(l.startswith('unlisted =') for l in fm_lines)
 
                   if not has_publish_date and not has_unlisted:
-                      comment(f'Post `{slug}` is already fully public — no scheduled date or unlisted flag found.')
+                      comment(issue_number, f'Post `{slug}` is already fully public — no scheduled date or unlisted flag found.')
                       sys.exit(1)
 
                   new_fm = [l for l in fm_lines
@@ -97,9 +82,8 @@ jobs:
                       f.write('+++\n')
                       f.writelines(body_lines)
 
-                  with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
-                      out.write(f'slug={slug}\n')
-                      out.write(f'post_path={post_path}\n')
+                  set_output('slug', slug)
+                  set_output('post_path', post_path)
                   PYEOF
 
             - name: Create branch and open PR

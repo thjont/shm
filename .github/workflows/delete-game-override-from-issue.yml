@@ -14,18 +14,13 @@ jobs:
             pull-requests: write
         steps:
             - name: Check permission
-              env:
-                  GH_TOKEN: ${{ github.token }}
-                  SENDER: ${{ github.event.sender.login }}
-                  ISSUE_NUMBER: ${{ github.event.issue.number }}
-                  REPO: ${{ github.repository }}
-              run: |
-                  PERMISSION=$(gh api "repos/${REPO}/collaborators/${SENDER}/permission" --jq '.permission' 2>/dev/null || echo "none")
-                  if [[ "$PERMISSION" != "admin" && "$PERMISSION" != "write" ]]; then
-                    gh issue comment "$ISSUE_NUMBER" --body "@${SENDER} Only maintainers with write access can delete game overrides."
-                    gh issue close "$ISSUE_NUMBER"
-                    exit 1
-                  fi
+              uses: ./.github/actions/check-permission
+              with:
+                  token: ${{ github.token }}
+                  sender: ${{ github.event.sender.login }}
+                  issue-number: ${{ github.event.issue.number }}
+                  repo: ${{ github.repository }}
+                  error-message: Only maintainers with write access can delete game overrides.
 
             - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
 
@@ -37,36 +32,29 @@ jobs:
                   GH_TOKEN: ${{ github.token }}
               run: |
                   python3 - <<'PYEOF'
-                  import os, re, subprocess, sys
+                  import os, sys
+                  sys.path.insert(0, '.github/scripts')
+                  from issue_helpers import extract, comment, set_output
 
-                  body = os.environ['ISSUE_BODY']
                   issue_number = os.environ['ISSUE_NUMBER']
-
-                  def extract(label):
-                      m = re.search(rf'### {re.escape(label)}\n\n(.*?)(?=\n### |\Z)', body, re.DOTALL)
-                      if not m:
-                          return ''
-                      v = m.group(1).strip()
-                      return '' if v == '_No response_' else v
 
                   bgg_id = extract('BGG Game ID').strip()
 
                   if not bgg_id.isdigit():
                       print(f'::error::Invalid BGG Game ID: {bgg_id!r}')
-                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'Invalid BGG Game ID: `{bgg_id}`. Must be a number.'], check=True)
+                      comment(issue_number, f'Invalid BGG Game ID: `{bgg_id}`. Must be a number.')
                       sys.exit(1)
 
                   path = f'shiny-hoppy-meeple/data/definitions/games-bgg-override/{bgg_id}.json'
                   if not os.path.exists(path):
                       print(f'::error::No override found for BGG game {bgg_id}')
-                      subprocess.run(['gh', 'issue', 'comment', issue_number, '--body', f'No override found for BGG game [{bgg_id}](https://boardgamegeek.com/boardgame/{bgg_id}).'], check=True)
+                      comment(issue_number, f'No override found for BGG game [{bgg_id}](https://boardgamegeek.com/boardgame/{bgg_id}).')
                       sys.exit(1)
 
                   os.remove(path)
 
-                  with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
-                      out.write(f'bgg_id={bgg_id}\n')
-                      out.write(f'path={path}\n')
+                  set_output('bgg_id', bgg_id)
+                  set_output('path', path)
                   PYEOF
 
             - name: Create branch and open PR

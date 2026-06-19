@@ -15,20 +15,15 @@ jobs:
             issues: write
             pull-requests: write
         steps:
-            - name: Check publisher permission
-              env:
-                  GH_TOKEN: ${{ github.token }}
-                  SENDER: ${{ github.event.sender.login }}
-                  ISSUE_NUMBER: ${{ github.event.issue.number }}
-                  REPO: ${{ github.repository }}
-              run: |
-                  PERMISSION=$(gh api "repos/${REPO}/collaborators/${SENDER}/permission" --jq '.permission' 2>/dev/null || echo "none")
-                  if [[ "$PERMISSION" != "admin" && "$PERMISSION" != "write" ]]; then
-                    gh issue comment "$ISSUE_NUMBER" --body "@${SENDER} Only maintainers with write access can publish posts. The publish label has been removed."
-                    gh issue edit "$ISSUE_NUMBER" --remove-label "publish"
-                    echo "Blocked: ${SENDER} has permission '${PERMISSION}'"
-                    exit 1
-                  fi
+            - name: Check permission
+              uses: ./.github/actions/check-permission
+              with:
+                  token: ${{ github.token }}
+                  sender: ${{ github.event.sender.login }}
+                  issue-number: ${{ github.event.issue.number }}
+                  repo: ${{ github.repository }}
+                  error-message: Only maintainers with write access can publish posts. The publish label has been removed.
+                  failure-action: remove-label
 
             - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
               with:

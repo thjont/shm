@@ -1,0 +1,49 @@
+name: Check issue permission
+description: >
+    Verify the labeller has write or admin access.
+    On failure, posts a comment and either closes the issue or removes the publish label.
+
+inputs:
+    token:
+        description: GitHub token
+        required: true
+    sender:
+        description: Login of the user who applied the label
+        required: true
+    issue-number:
+        description: Issue number
+        required: true
+    repo:
+        description: Repository in owner/name form
+        required: true
+    error-message:
+        description: Message to post as a comment on failure
+        required: true
+    failure-action:
+        description: "'close' (default) or 'remove-label'"
+        default: close
+
+runs:
+    using: composite
+    steps:
+        - name: Verify collaborator permission
+          shell: bash
+          env:
+              GH_TOKEN: ${{ inputs.token }}
+              SENDER: ${{ inputs.sender }}
+              ISSUE_NUMBER: ${{ inputs.issue-number }}
+              REPO: ${{ inputs.repo }}
+              ERROR_MESSAGE: ${{ inputs.error-message }}
+              FAILURE_ACTION: ${{ inputs.failure-action }}
+          run: |
+              PERMISSION=$(gh api "repos/${REPO}/collaborators/${SENDER}/permission" --jq '.permission' 2>/dev/null || echo "none")
+              if [[ "$PERMISSION" != "admin" && "$PERMISSION" != "write" ]]; then
+                gh issue comment "$ISSUE_NUMBER" --body "@${SENDER} ${ERROR_MESSAGE}"
+                if [[ "$FAILURE_ACTION" == "remove-label" ]]; then
+                  gh issue edit "$ISSUE_NUMBER" --remove-label "publish"
+                else
+                  gh issue close "$ISSUE_NUMBER"
+                fi
+                echo "Blocked: ${SENDER} has permission '${PERMISSION}'"
+                exit 1
+              fi
