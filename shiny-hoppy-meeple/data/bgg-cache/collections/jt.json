@@ -1,5 +1,5 @@
 {
-  "count": 8,
+  "count": 9,
   "items": [
     {
       "id": 205637,
@@ -80,6 +80,26 @@
       "numplays": 0,
       "comment": "",
       "last_modified": "2026-06-16 07:05:48"
+    },
+    {
+      "id": 70323,
+      "name": "King of Tokyo",
+      "year": 2011,
+      "thumbnail": "/images/games/70323-thumb.jpg",
+      "thumbnail_source": "https://cf.geekdo-images.com/m_RzXpHURC0_xLkvRSR_sw__small/img/OfgWmkGJj5BgOO0zFHEtP5CHfbU=/fit-in/200x150/filters:strip_icc()/pic3043734.jpg",
+      "owned": true,
+      "prev_owned": false,
+      "for_trade": false,
+      "want": false,
+      "want_to_play": false,
+      "want_to_buy": false,
+      "wishlist": false,
+      "wishlist_priority": null,
+      "preordered": false,
+      "rating": null,
+      "numplays": 0,
+      "comment": "",
+      "last_modified": "2026-06-19 12:34:55"
     },
     {
       "id": 276894,
