@@ -1,4 +1,4 @@
-name: Add new member from issue
+name: Add member from issue
 
 on:
     issues:

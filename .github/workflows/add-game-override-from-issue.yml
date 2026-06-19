@@ -1,4 +1,4 @@
-name: New game override from issue
+name: Add game override from issue
 
 on:
     issues:
