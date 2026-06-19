@@ -101,13 +101,11 @@ jobs:
                   hugo-version: "0.163.1"
                   extended: true
 
-            - name: Build for stage
+            - name: Build for prod
               if: steps.commit.outputs.changed == 'true'
-              run: |
-                  cp shiny-hoppy-meeple/wrangler-stage.toml shiny-hoppy-meeple/wrangler.toml
-                  pushd shiny-hoppy-meeple && hugo --minify --buildFuture --baseURL "https://stage-shiny-hoppy-meeple.pages.dev/" && popd
+              run: pushd shiny-hoppy-meeple && hugo --minify && popd
 
-            - name: Deploy to stage
+            - name: Deploy to prod
               if: steps.commit.outputs.changed == 'true'
               uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3.15.0
               with:
@@ -116,11 +114,13 @@ jobs:
                   workingDirectory: shiny-hoppy-meeple
                   command: pages deploy --commit-hash=${{ github.sha }}
 
-            - name: Build for prod
+            - name: Build for stage
               if: steps.commit.outputs.changed == 'true'
-              run: pushd shiny-hoppy-meeple && hugo --minify && popd
+              run: |
+                  cp shiny-hoppy-meeple/wrangler-stage.toml shiny-hoppy-meeple/wrangler.toml
+                  pushd shiny-hoppy-meeple && hugo --minify --buildFuture --baseURL "https://stage-shiny-hoppy-meeple.pages.dev/" && popd
 
-            - name: Deploy to prod
+            - name: Deploy to stage
               if: steps.commit.outputs.changed == 'true'
               uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3.15.0
               with:
