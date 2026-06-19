@@ -10,6 +10,7 @@ jobs:
         runs-on: ubuntu-latest
         permissions:
             contents: write
+            deployments: write
         steps:
             - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
 
@@ -79,13 +80,51 @@ jobs:
                   fi
 
             - name: Commit and push changes
+              id: commit
               run: |
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
                   git add shiny-hoppy-meeple/data/bgg-cache/ shiny-hoppy-meeple/static/images/games/ shiny-hoppy-meeple/static/qr-codes.pdf
                   if git diff --cached --quiet; then
                     echo "No BGG cache changes to commit."
+                    echo "changed=false" >> "$GITHUB_OUTPUT"
                   else
                     git commit -m "chore: update BGG cache"
                     git push
+                    echo "changed=true" >> "$GITHUB_OUTPUT"
                   fi
+
+            - name: Setup Hugo
+              if: steps.commit.outputs.changed == 'true'
+              uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1
+              with:
+                  hugo-version: "0.163.1"
+                  extended: true
+
+            - name: Build for stage
+              if: steps.commit.outputs.changed == 'true'
+              run: |
+                  cp shiny-hoppy-meeple/wrangler-stage.toml shiny-hoppy-meeple/wrangler.toml
+                  pushd shiny-hoppy-meeple && hugo --minify --buildFuture --baseURL "https://stage-shiny-hoppy-meeple.pages.dev/" && popd
+
+            - name: Deploy to stage
+              if: steps.commit.outputs.changed == 'true'
+              uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3.15.0
+              with:
+                  apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                  accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+                  workingDirectory: shiny-hoppy-meeple
+                  command: pages deploy --commit-hash=${{ github.sha }}
+
+            - name: Build for prod
+              if: steps.commit.outputs.changed == 'true'
+              run: pushd shiny-hoppy-meeple && hugo --minify && popd
+
+            - name: Deploy to prod
+              if: steps.commit.outputs.changed == 'true'
+              uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3.15.0
+              with:
+                  apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                  accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+                  workingDirectory: shiny-hoppy-meeple
+                  command: pages deploy --commit-hash=${{ github.sha }}

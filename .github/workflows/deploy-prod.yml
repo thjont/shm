@@ -5,15 +5,11 @@ on:
         branches: [main]
         paths:
             - "shiny-hoppy-meeple/**"
-    workflow_run:
-        workflows: ["Update BGG cache"]
-        types: [completed]
     schedule:
         - cron: "0 8-23 * * *"
     workflow_dispatch:
 jobs:
     deploy:
-        if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
         runs-on: ubuntu-latest
         permissions:
             contents: read
