@@ -1,3 +1,14 @@
+/* ── Meeple background pattern ─────────────────────────────────── */
+
+body {
+  background-image: url('/images/bg-meeple.svg');
+  background-size: 30px 34px;
+}
+
+.dark body {
+  background-image: url('/images/bg-meeple-dark.svg');
+}
+
 /* ── SHM CSS variable bridge ────────────────────────────────────── */
 /* Map Blowfish colour-scheme variables to theme-agnostic names.    */
 /* Blowfish exposes raw RGB triples; wrap in rgb() to use them.     */
