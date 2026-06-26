@@ -1,12 +1,14 @@
-/* ── Meeple background pattern ─────────────────────────────────── */
+/* ── Wave background ────────────────────────────────────────────── */
 
 body {
-  background-image: url('/images/bg-meeple.svg');
-  background-size: 30px 34px;
+  background-image: url('/images/bg-waves.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
 }
 
 .dark body {
-  background-image: url('/images/bg-meeple-dark.svg');
+  background-image: url('/images/bg-waves-dark.svg');
 }
 
 /* ── SHM CSS variable bridge ────────────────────────────────────── */
