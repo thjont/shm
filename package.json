@@ -8,6 +8,7 @@
   },
   "overrides": {
     "esbuild": "0.28.1",
-    "markdown-it": "14.2.0"
+    "markdown-it": "14.2.0",
+    "js-yaml": "4.2.0"
   }
 }
