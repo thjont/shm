@@ -1,0 +1,52 @@
+{{ if .Site.Params.homepage.showRecent | default false }}
+
+{{ $today := now | dateFormat "2006-01-02" }}
+{{ $showN := .Site.Params.homepage.showRecentItems | default 5 }}
+
+{{ $upcoming := slice }}
+{{ with site.Data.calendar }}
+  {{ range . }}
+    {{ if ge .startDate $today }}
+      {{ $upcoming = $upcoming | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ with $upcoming }}
+<h2 class="mt-8 text-2xl font-extrabold mb-10">Upcoming Events</h2>
+<section class="space-y-10 w-full">
+  {{ range first $showN . }}
+  {{ $evPage := site.GetPage (print "events/" .slug) }}
+  <article class="flex flex-col relative">
+    <header class="items-center text-start text-xl font-semibold">
+      {{ if $evPage }}
+        <a href="{{ $evPage.Permalink }}"
+           class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+          <h2>{{ .summary }}</h2>
+        </a>
+      {{ else }}
+        <h2 class="text-xl font-bold text-neutral-800 dark:text-neutral">{{ .summary }}</h2>
+      {{ end }}
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
+      {{ time.AsTime .startDate | dateFormat "Monday 2 January 2006" }}
+      {{ $startTime := .startTime }}{{ $endTime := .endTime }}
+      {{ with $startTime }} · {{ . }}{{ with $endTime }} – {{ . }}{{ end }}{{ end }}
+      {{ with .location }} · {{ . }}{{ end }}
+    </div>
+  </article>
+  {{ end }}
+</section>
+
+{{ if $.Site.Params.homepage.showMoreLink | default false }}
+<div class="mt-10 flex justify-center">
+  <a href="{{ $.Site.Params.homepage.showMoreLinkDest | default "/events/" | relLangURL }}">
+    <button class="bg-transparent hover:text-primary-500 prose dark:prose-invert font-semibold py-2 px-4 border border-primary-500 hover:border-transparent rounded">
+      {{ i18n "recent.show_more" | markdownify }}
+    </button>
+  </a>
+</div>
+{{ end }}
+
+{{ end }}
+{{ end }}

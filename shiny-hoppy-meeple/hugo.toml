@@ -37,7 +37,7 @@ or picking up your first game, you'll find a warm welcome here.
     showRecent = true
     showRecentItems = 3
     showMoreLink = true
-    showMoreLinkDest = "/posts/"
+    showMoreLinkDest = "/events/"
 
   [params.header]
     layout = "basic"
