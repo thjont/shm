@@ -1,0 +1,29 @@
+{{ define "main" }}
+{{ $slug := anchorize .Title }}
+<div class="bgg-page">
+  <p class="bgg-breadcrumb"><a href="/events/">Events</a> &rsaquo; {{ .Title }}</p>
+  <h1 class="bgg-page-title">{{ .Title }}</h1>
+  <div class="bgg-page-content">
+    {{ .Content }}
+
+    {{ $upcomingDates := slice }}
+    {{ with site.Data.calendar }}
+      {{ range . }}
+        {{ if eq (anchorize .summary) $slug }}
+          {{ $upcomingDates = $upcomingDates | append .startDate }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    {{ with $upcomingDates }}
+    <div class="cal-upcoming">
+      <h3>Upcoming dates</h3>
+      <ul>
+        {{ range . }}
+        <li>{{ time.AsTime . | dateFormat "Monday 2 January 2006" }}</li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

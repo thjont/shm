@@ -68,7 +68,12 @@
               {{ $evStart := time.AsTime .startDate }}
               {{ $evEnd := time.AsTime .endDate }}
               {{ if and (ge $currentDate $evStart) (lt $currentDate $evEnd) }}
-                <div class="cal-event">{{ .summary }}</div>
+                {{ $evPage := site.GetPage (print "events/" (anchorize .summary)) }}
+                {{ if $evPage }}
+                  <a class="cal-event" href="{{ $evPage.Permalink }}">{{ .summary }}</a>
+                {{ else }}
+                  <div class="cal-event">{{ .summary }}</div>
+                {{ end }}
               {{ end }}
             {{ end }}
           {{ end }}
