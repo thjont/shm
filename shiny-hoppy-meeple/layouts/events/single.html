@@ -34,7 +34,8 @@
   <div class="bgg-page-content prose dark:prose-invert">
     {{ .Content }}
 
-    {{ with $upcomingDates }}
+    {{ $remainingDates := after 1 $upcomingDates }}
+    {{ with $remainingDates }}
     <div class="cal-upcoming not-prose">
       <h3>Upcoming dates</h3>
       <ul>
