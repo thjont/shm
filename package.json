@@ -1,4 +1,7 @@
 {
+  "dependencies": {
+    "googleapis": "173.0.0"
+  },
   "devDependencies": {
     "markdownlint-cli2": "0.22.1",
     "wrangler": "4.103.0"

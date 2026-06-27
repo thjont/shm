@@ -100,6 +100,10 @@ or picking up your first game, you'll find a warm welcome here.
     url = "/mechanics/"
     weight = 4
   [[menu.main]]
+    name = "Events"
+    url = "/events/"
+    weight = 3
+  [[menu.main]]
     name = "Members"
     url = "/m/"
     weight = 5
