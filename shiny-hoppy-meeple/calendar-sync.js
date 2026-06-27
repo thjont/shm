@@ -65,16 +65,6 @@ function generateStub(ev) {
     lines.push(ev.description, '');
   }
 
-  const meta = [];
-  if (ev.startTime) {
-    const when = ev.endTime ? `${ev.startTime} – ${ev.endTime}` : ev.startTime;
-    meta.push(`**When:** ${when}`);
-  }
-  if (ev.location) {
-    meta.push(`**Where:** ${ev.location}`);
-  }
-  if (meta.length) lines.push(...meta, '');
-
   return lines.join('\n');
 }
 

@@ -1,21 +1,41 @@
 {{ define "main" }}
 {{ $slug := .File.ContentBaseName }}
+
+{{/* Find first calendar entry (earliest upcoming) and all dates for this event */}}
+{{ $firstEntry := dict }}
+{{ $upcomingDates := slice }}
+{{ with site.Data.calendar }}
+  {{ range . }}
+    {{ if eq .slug $slug }}
+      {{ if not $firstEntry.startDate }}
+        {{ $firstEntry = . }}
+      {{ end }}
+      {{ $upcomingDates = $upcomingDates | append .startDate }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
 <div class="bgg-page">
   <p class="bgg-breadcrumb"><a href="/events/">Events</a> &rsaquo; {{ .Title }}</p>
   <h1 class="bgg-page-title">{{ .Title }}</h1>
+  {{ with $firstEntry.startDate }}
+  <div class="bgg-page-meta">
+    <span>{{ time.AsTime . | dateFormat "Monday 2 January 2006" }}</span>
+    {{ with $firstEntry.startTime }}
+    &nbsp;·&nbsp;
+    <span>{{ . }}{{ with $firstEntry.endTime }} – {{ . }}{{ end }}</span>
+    {{ end }}
+    {{ with $firstEntry.location }}
+    &nbsp;·&nbsp;
+    <span>{{ . }}</span>
+    {{ end }}
+  </div>
+  {{ end }}
   <div class="bgg-page-content prose dark:prose-invert">
     {{ .Content }}
 
-    {{ $upcomingDates := slice }}
-    {{ with site.Data.calendar }}
-      {{ range . }}
-        {{ if eq .slug $slug }}
-          {{ $upcomingDates = $upcomingDates | append .startDate }}
-        {{ end }}
-      {{ end }}
-    {{ end }}
     {{ with $upcomingDates }}
-    <div class="cal-upcoming">
+    <div class="cal-upcoming not-prose">
       <h3>Upcoming dates</h3>
       <ul>
         {{ range . }}
