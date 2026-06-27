@@ -113,10 +113,6 @@ or picking up your first game, you'll find a warm welcome here.
     url = "/m/"
     weight = 5
   [[menu.main]]
-    name = "Posts"
-    url = "/posts/"
-    weight = 6
-  [[menu.main]]
     name = "About Us"
     url = "/about-us/"
-    weight = 7
+    weight = 6
