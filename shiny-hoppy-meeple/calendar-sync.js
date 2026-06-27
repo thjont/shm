@@ -44,6 +44,8 @@ function stripHtml(html) {
   if (!html) return '';
   return html
     .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/p>/gi, '\n\n')
+    .replace(/<\/div>/gi, '\n\n')
     .replace(/<[^>]+>/g, '')
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
@@ -51,6 +53,7 @@ function stripHtml(html) {
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
     .replace(/&nbsp;/g, ' ')
+    .replace(/\n{3,}/g, '\n\n')
     .trim();
 }
 
