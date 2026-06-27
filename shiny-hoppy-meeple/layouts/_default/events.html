@@ -9,6 +9,19 @@
 {{ $lastMonth := 0 }}
 {{ $refSunday := time.AsTime "2024-12-01" }}
 
+{{/* Pre-compute which months have at least one event */}}
+{{ $monthsWithEvents := slice }}
+{{ with site.Data.calendar }}
+  {{ range . }}
+    {{ $evMonth := time.AsTime .startDate | dateFormat "2006-01" }}
+    {{ if not (in $monthsWithEvents $evMonth) }}
+      {{ $monthsWithEvents = $monthsWithEvents | append $evMonth }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $skipMonth := false }}
+
 <div class="cal-page">
   <h1 class="cal-page-title">{{ .Title }}</h1>
   <div class="cal-page-content">
@@ -20,46 +33,53 @@
       {{ $isSaturday := eq $currentDate.Weekday.String "Saturday" }}
 
       {{ if ne $currentDate.Month $lastMonth }}
-        {{ if gt $lastMonth 0 }}</table></div>{{ end }}
+        {{ if gt $lastMonth 0 }}{{ if not $skipMonth }}</table></div>{{ end }}{{ end }}
         {{ $lastMonth = $currentDate.Month }}
 
-        <h2 class="cal-month">{{ $currentDate | dateFormat "January 2006" }}</h2>
-        <div class="cal-grid-wrap">
-        <table class="cal-grid">
-          <tr class="cal-header">
-            <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
-          </tr>
-          <tr>
-            {{ $refSunday = time.AsTime "2024-12-01" }}
-            {{ $monthStart := time.AsTime (print ($currentDate | dateFormat "2006-01") "-01") }}
-            {{ range seq 0 6 }}
-              {{ if eq $refSunday.Weekday $monthStart.Weekday }}{{ break }}{{ end }}
-              <td class="cal-empty"></td>
-              {{ $refSunday = $refSunday.Add $oneDay }}
-            {{ end }}
-      {{ else }}
+        {{ $currentMonthStr := $currentDate | dateFormat "2006-01" }}
+        {{ if in $monthsWithEvents $currentMonthStr }}
+          {{ $skipMonth = false }}
+          <h2 class="cal-month">{{ $currentDate | dateFormat "January 2006" }}</h2>
+          <div class="cal-grid-wrap">
+          <table class="cal-grid">
+            <tr class="cal-header">
+              <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+            </tr>
+            <tr>
+              {{ $refSunday = time.AsTime "2024-12-01" }}
+              {{ $monthStart := time.AsTime (print ($currentDate | dateFormat "2006-01") "-01") }}
+              {{ range seq 0 6 }}
+                {{ if eq $refSunday.Weekday $monthStart.Weekday }}{{ break }}{{ end }}
+                <td class="cal-empty"></td>
+                {{ $refSunday = $refSunday.Add $oneDay }}
+              {{ end }}
+        {{ else }}
+          {{ $skipMonth = true }}
+        {{ end }}
+      {{ else if not $skipMonth }}
         {{ if $isSunday }}<tr>{{ end }}
       {{ end }}
 
-      <td class="cal-day{{ if eq ($currentDate | dateFormat "2006-01-02") (now | dateFormat "2006-01-02") }} cal-today{{ end }}">
-        <span class="cal-day-num">{{ $currentDate.Day }}</span>
-        {{ with site.Data.calendar }}
-          {{ range . }}
-            {{ $evStart := time.AsTime .startDate }}
-            {{ $evEnd := time.AsTime .endDate }}
-            {{ if and (ge $currentDate $evStart) (lt $currentDate $evEnd) }}
-              <div class="cal-event">{{ .summary }}</div>
+      {{ if not $skipMonth }}
+        <td class="cal-day{{ if eq ($currentDate | dateFormat "2006-01-02") (now | dateFormat "2006-01-02") }} cal-today{{ end }}">
+          <span class="cal-day-num">{{ $currentDate.Day }}</span>
+          {{ with site.Data.calendar }}
+            {{ range . }}
+              {{ $evStart := time.AsTime .startDate }}
+              {{ $evEnd := time.AsTime .endDate }}
+              {{ if and (ge $currentDate $evStart) (lt $currentDate $evEnd) }}
+                <div class="cal-event">{{ .summary }}</div>
+              {{ end }}
             {{ end }}
           {{ end }}
-        {{ end }}
-      </td>
-
-      {{ if $isSaturday }}</tr>{{ end }}
+        </td>
+        {{ if $isSaturday }}</tr>{{ end }}
+      {{ end }}
 
       {{ $currentDate = $currentDate.Add $oneDay }}
 
     {{ end }}
-    {{ if gt $lastMonth 0 }}</table></div>{{ end }}
+    {{ if gt $lastMonth 0 }}{{ if not $skipMonth }}</table></div>{{ end }}{{ end }}
 
   </div>
 </div>
