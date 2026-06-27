@@ -7,6 +7,7 @@ const { google } = require('googleapis');
 const CALENDAR_ID = process.env.GOOGLE_CALENDAR_ID;
 const KEY_JSON = process.env.GOOGLE_SERVICE_ACCOUNT_KEY;
 const OUT_PATH = path.join(__dirname, 'data', 'calendar.json');
+const CONTENT_DIR = path.join(__dirname, 'content', 'events');
 
 if (!CALENDAR_ID || !KEY_JSON) {
   console.warn('GOOGLE_CALENDAR_ID or GOOGLE_SERVICE_ACCOUNT_KEY not set — writing empty calendar.json');
@@ -14,9 +15,64 @@ if (!CALENDAR_ID || !KEY_JSON) {
   process.exit(0);
 }
 
+function slugify(str) {
+  return str
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 function toDateString(dt) {
   if (!dt) return null;
   return dt.date || dt.dateTime.slice(0, 10);
+}
+
+function formatTime(dateTimeStr) {
+  if (!dateTimeStr) return null;
+  const match = dateTimeStr.match(/T(\d{2}):(\d{2})/);
+  if (!match) return null;
+  let h = parseInt(match[1], 10);
+  const m = match[2];
+  const ampm = h >= 12 ? 'pm' : 'am';
+  h = h % 12 || 12;
+  return m === '00' ? `${h}${ampm}` : `${h}:${m}${ampm}`;
+}
+
+function stripHtml(html) {
+  if (!html) return '';
+  return html
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, ' ')
+    .trim();
+}
+
+function generateStub(ev) {
+  const title = ev.summary.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+  const lines = [`+++`, `title = "${title}"`, `+++`, ''];
+
+  if (ev.description) {
+    lines.push(ev.description, '');
+  }
+
+  const meta = [];
+  if (ev.startTime) {
+    const when = ev.endTime ? `${ev.startTime} – ${ev.endTime}` : ev.startTime;
+    meta.push(`**When:** ${when}`);
+  }
+  if (ev.location) {
+    meta.push(`**Where:** ${ev.location}`);
+  }
+  if (meta.length) lines.push(...meta, '');
+
+  return lines.join('\n');
 }
 
 async function main() {
@@ -42,7 +98,6 @@ async function main() {
   const events = (res.data.items || []).map(e => {
     const startDate = toDateString(e.start);
     let endDate = toDateString(e.end);
-    // Timed same-day events: advance end to next day so the event renders on its day
     if (endDate === startDate) {
       const d = new Date(endDate + 'T00:00:00');
       d.setDate(d.getDate() + 1);
@@ -50,14 +105,32 @@ async function main() {
     }
     return {
       summary: e.summary || '',
+      slug: slugify(e.summary || ''),
       startDate,
       endDate,
+      startTime: formatTime(e.start.dateTime),
+      endTime: formatTime(e.end.dateTime),
       location: e.location || null,
+      description: stripHtml(e.description),
     };
   });
 
   fs.writeFileSync(OUT_PATH, JSON.stringify(events, null, 2));
   console.log(`calendar.json written (${events.length} events).`);
+
+  // Generate stub content pages for events that don't have one yet
+  fs.mkdirSync(CONTENT_DIR, { recursive: true });
+  const seen = new Set();
+  for (const ev of events) {
+    if (seen.has(ev.slug)) continue;
+    seen.add(ev.slug);
+
+    const filePath = path.join(CONTENT_DIR, `${ev.slug}.md`);
+    if (fs.existsSync(filePath)) continue;
+
+    fs.writeFileSync(filePath, generateStub(ev));
+    console.log(`Created content/events/${ev.slug}.md`);
+  }
 }
 
 main().catch(err => {

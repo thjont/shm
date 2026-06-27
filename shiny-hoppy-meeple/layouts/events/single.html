@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $slug := anchorize .Title }}
+{{ $slug := .File.ContentBaseName }}
 <div class="bgg-page">
   <p class="bgg-breadcrumb"><a href="/events/">Events</a> &rsaquo; {{ .Title }}</p>
   <h1 class="bgg-page-title">{{ .Title }}</h1>
@@ -9,7 +9,7 @@
     {{ $upcomingDates := slice }}
     {{ with site.Data.calendar }}
       {{ range . }}
-        {{ if eq (anchorize .summary) $slug }}
+        {{ if eq .slug $slug }}
           {{ $upcomingDates = $upcomingDates | append .startDate }}
         {{ end }}
       {{ end }}
