@@ -1,5 +1,5 @@
 {
-  "count": 11,
+  "count": 12,
   "items": [
     {
       "id": 205637,
@@ -120,6 +120,26 @@
       "numplays": 0,
       "comment": "",
       "last_modified": "2026-06-16 07:05:48"
+    },
+    {
+      "id": 272738,
+      "name": "Jaws",
+      "year": 2019,
+      "thumbnail": "/images/games/272738-thumb.jpg",
+      "thumbnail_source": "https://cf.geekdo-images.com/UDv2zsY1rdWVOXyUl8faYg__small/img/gOOR7Q9EdwxdjB9t2kgS1HFBs-0=/fit-in/200x150/filters:strip_icc()/pic4581181.jpg",
+      "owned": true,
+      "prev_owned": false,
+      "for_trade": false,
+      "want": false,
+      "want_to_play": false,
+      "want_to_buy": false,
+      "wishlist": false,
+      "wishlist_priority": null,
+      "preordered": false,
+      "rating": null,
+      "numplays": 0,
+      "comment": "",
+      "last_modified": "2026-06-27 08:55:43"
     },
     {
       "id": 70323,
