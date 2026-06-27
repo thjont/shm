@@ -80,6 +80,11 @@ or picking up your first game, you'll find a warm welcome here.
 
 [menu]
   [[menu.main]]
+    name = "Home"
+    identifier = "home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
     name = "Library"
     identifier = "library"
     url = "/library/"
@@ -95,14 +100,14 @@ or picking up your first game, you'll find a warm welcome here.
     url = "/complexity/"
     weight = 2
   [[menu.main]]
+    name = "Events"
+    url = "/events/"
+    weight = 3
+  [[menu.main]]
     name = "Mechanics"
     parent = "library"
     url = "/mechanics/"
     weight = 4
-  [[menu.main]]
-    name = "Events"
-    url = "/events/"
-    weight = 3
   [[menu.main]]
     name = "Members"
     url = "/m/"
