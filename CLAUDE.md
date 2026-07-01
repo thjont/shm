@@ -34,36 +34,30 @@ Clone requires submodules (PaperMod theme): `git submodule update --init --recur
 
 ## Architecture
 
-### Issue-driven content (the core pattern)
+### Content management
 
-Community members open a GitHub Issue from a template in `.github/ISSUE_TEMPLATE/`; a maintainer
-applies the **`publish`** label; a matching workflow in `.github/workflows/*-from-issue.yml`
-turns the issue into committed files via a **branch + PR**. Each workflow shares the same shape:
+Content comes from three sources:
 
-1. **Permission gate** — checks the *labeller's* collaborator permission (`write`/`admin`) via the
-   GitHub API. Anyone can open an issue; only maintainers can trigger the action by labelling.
-2. **Inline `python3` heredoc** — parses the issue body with an `extract(label)` regex helper,
-   validates fields (slugs against `^[a-z0-9][a-z0-9-]*$`, IDs via `.isdigit()`), and writes or
-   removes a file under `shiny-hoppy-meeple/data/` or `content/`.
-3. **Branch + PR** to `main`.
+- **Google Sheets** — members, shadow libraries, and game overrides. `sheets-sync.js` reads the
+  spreadsheet at the start of every build and writes definition JSON files into `data/definitions/`.
+  Removing a row from the sheet removes the definition on the next build.
+- **BGG data pipeline** — `bgg_export.py` reads those definitions and fetches game data from
+  BoardGameGeek. Runs daily via `update-bgg-cache.yml`.
+- **Direct commits** — blog posts are Markdown files under `content/posts/`, committed by
+  maintainers.
 
-Workflows: `new-/delete-member`, `new-/delete-shadow-library`, `new-/delete-game-override`,
-`delete-post`, and `publish-from-issue` (posts — special: it downloads pasted images into
-`static/images/posts/<slug>/`, builds a per-branch Cloudflare **preview** deploy, supports issue
-*edits* to update the draft, and posts the preview URL back to the issue/PR).
-
-> Security note: user-controlled issue fields must never be interpolated into a shell. These
-> workflows use `subprocess.run([...], check=True)` (argument lists, no shell) for the `gh`
-> calls — keep that pattern; do not switch to `os.system` / f-string shell commands.
+Workflows: `deploy-prod.yml`, `deploy-stage.yml`, `deploy-dev.yml`, `update-bgg-cache.yml`.
 
 ### BGG data pipeline
 
 `bgg_export.py` is the generator that turns BoardGameGeek collections/geeklists into the JSON
 Hugo renders. The data directory has two tiers:
 
-- `data/definitions/` — small **input** configs that drive page creation:
+- `data/definitions/` — small **input** configs that drive page creation. Generated at build time
+  by `sheets-sync.js` from the Google Sheets spreadsheet (not committed to repo, except
+  `libraries/main-library.json`):
   - `members/<slug>.json` — `{ slug, display_name, description?, geeklist|username }`
-  - `libraries/main.json` — main library definition
+  - `libraries/main-library.json` — main library definition (static, committed)
   - `libraries/<slug>.json` — shadow/supplementary library definitions
   - `games-bgg-override/<id>.json` — editorial overrides (`description`, `learn_to_play_video`)
   - Member/library definitions use `username` (BGG username) or `geeklist` (integer ID), never both.
