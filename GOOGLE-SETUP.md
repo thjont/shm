@@ -95,7 +95,7 @@ On the same settings page, scroll to **Integrate calendar**. Copy the **Calendar
 
 1. Go to [sheets.google.com](https://sheets.google.com) and create a new spreadsheet
 2. Name it (e.g. `Shiny Hoppy Meeple — Site Data`)
-3. Rename the first sheet tab to **Members** and add a second tab named **Shadow Libraries**
+3. Rename the first sheet tab to **Members** and add tabs named **Shadow Libraries** and **Game Overrides**
 
 **Members** tab — add these headers in row 1:
 
@@ -107,11 +107,18 @@ On the same settings page, scroll to **Integrate calendar**. Copy the **Calendar
 | slug | display_name | username | geeklist |
 |------|--------------|----------|----------|
 
+**Game Overrides** tab — add these headers in row 1:
+
+| game_id | learn_to_play_video | description |
+|---------|---------------------|-------------|
+
 Column rules:
 - `slug` — lowercase letters, numbers, and hyphens only (e.g. `jt`, `main-shadow-library`)
 - `username` and `geeklist` are mutually exclusive — fill one, leave the other blank
-- `description` is optional (members only)
+- `description` is optional for members and game overrides; not used for shadow libraries
 - `geeklist` must be a numeric ID (find it in the BGG GeekList URL)
+- `game_id` must be a numeric BGG game ID; at least one of `learn_to_play_video` or `description` must be filled
+- `learn_to_play_video` — YouTube video ID only (the part after `v=` in the URL, e.g. `dQw4w9WgXcQ`)
 
 ---
 
@@ -189,3 +196,4 @@ The next deployment will automatically sync from Google Calendar and Google Shee
 - **Events** — add or edit in Google Calendar; appear on `/events/` after the next deploy
 - **Members** — add or edit rows in the Members sheet tab; picked up on the next BGG cache update
 - **Shadow libraries** — add or edit rows in the Shadow Libraries sheet tab; picked up on the next BGG cache update
+- **Game overrides** — add or edit rows in the Game Overrides sheet tab; picked up on the next deploy

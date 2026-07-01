@@ -15,7 +15,7 @@ if (!SPREADSHEET_ID || !KEY_JSON) {
   process.exit(0);
 }
 
-function parseRows(values) {
+function parseRows(values, key = 'slug') {
   if (!values || values.length < 2) return [];
   const [headers, ...rows] = values;
   return rows
@@ -24,7 +24,7 @@ function parseRows(values) {
       headers.forEach((h, i) => { obj[h] = (row[i] || '').trim(); });
       return obj;
     })
-    .filter(row => row.slug);
+    .filter(row => row[key]);
 }
 
 function validateRow(row, context) {
@@ -51,13 +51,15 @@ async function main() {
 
   const sheets = google.sheets({ version: 'v4', auth });
 
-  const [membersRes, librariesRes] = await Promise.all([
+  const [membersRes, librariesRes, overridesRes] = await Promise.all([
     sheets.spreadsheets.values.get({ spreadsheetId: SPREADSHEET_ID, range: 'Members' }),
     sheets.spreadsheets.values.get({ spreadsheetId: SPREADSHEET_ID, range: 'Shadow Libraries' }),
+    sheets.spreadsheets.values.get({ spreadsheetId: SPREADSHEET_ID, range: 'Game Overrides' }),
   ]);
 
   const members = parseRows(membersRes.data.values);
   const libraries = parseRows(librariesRes.data.values);
+  const overrides = parseRows(overridesRes.data.values, 'game_id');
 
   const membersDir = path.join(DEFINITIONS_DIR, 'members');
   fs.mkdirSync(membersDir, { recursive: true });
@@ -104,7 +106,34 @@ async function main() {
     libraryCount++;
   }
 
-  console.log(`sheets-sync done: ${memberCount} members, ${libraryCount} shadow libraries.`);
+  const overridesDir = path.join(DEFINITIONS_DIR, 'games-bgg-override');
+  fs.mkdirSync(overridesDir, { recursive: true });
+  for (const f of fs.readdirSync(overridesDir).filter(n => n.endsWith('.json'))) {
+    fs.rmSync(path.join(overridesDir, f));
+  }
+
+  let overrideCount = 0;
+  for (const row of overrides) {
+    if (!/^\d+$/.test(row.game_id)) {
+      console.warn(`game override: skipping row — game_id must be numeric, got ${JSON.stringify(row.game_id)}`);
+      continue;
+    }
+    if (!row.learn_to_play_video && !row.description) {
+      console.warn(`game override ${row.game_id}: skipping row — must have learn_to_play_video or description`);
+      continue;
+    }
+    const data = {};
+    if (row.learn_to_play_video) data.learn_to_play_video = row.learn_to_play_video;
+    if (row.description) data.description = row.description;
+    fs.writeFileSync(
+      path.join(overridesDir, `${row.game_id}.json`),
+      JSON.stringify(data, null, 4) + '\n'
+    );
+    console.log(`game override: ${row.game_id}`);
+    overrideCount++;
+  }
+
+  console.log(`sheets-sync done: ${memberCount} members, ${libraryCount} shadow libraries, ${overrideCount} game overrides.`);
 }
 
 main().catch(err => {

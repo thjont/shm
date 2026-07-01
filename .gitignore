@@ -18,6 +18,7 @@ __pycache__/
 shiny-hoppy-meeple/data/definitions/members/
 shiny-hoppy-meeple/data/definitions/libraries/*.json
 !shiny-hoppy-meeple/data/definitions/libraries/main-library.json
+shiny-hoppy-meeple/data/definitions/games-bgg-override/
 
 # Windows zone files
 *Zone.Identifier
