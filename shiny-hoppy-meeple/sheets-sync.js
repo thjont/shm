@@ -61,6 +61,9 @@ async function main() {
 
   const membersDir = path.join(DEFINITIONS_DIR, 'members');
   fs.mkdirSync(membersDir, { recursive: true });
+  for (const f of fs.readdirSync(membersDir).filter(n => n.endsWith('.json'))) {
+    fs.rmSync(path.join(membersDir, f));
+  }
 
   let memberCount = 0;
   for (const row of members) {
@@ -79,10 +82,11 @@ async function main() {
 
   const librariesDir = path.join(DEFINITIONS_DIR, 'libraries');
   fs.mkdirSync(librariesDir, { recursive: true });
+  for (const f of fs.readdirSync(librariesDir).filter(n => n.endsWith('.json') && n !== 'main-library.json')) {
+    fs.rmSync(path.join(librariesDir, f));
+  }
 
-  // Copy the static main-library.json if it exists in the repo
-  const mainLibSrc = path.join(librariesDir, 'main-library.json');
-  if (!fs.existsSync(mainLibSrc)) {
+  if (!fs.existsSync(path.join(librariesDir, 'main-library.json'))) {
     console.warn('main-library.json not found — it must be committed to the repo');
   }
 

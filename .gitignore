@@ -14,5 +14,10 @@ node_modules/
 __pycache__/
 *.pyc
 
+# Generated from Google Sheets at build time
+shiny-hoppy-meeple/data/definitions/members/
+shiny-hoppy-meeple/data/definitions/libraries/*.json
+!shiny-hoppy-meeple/data/definitions/libraries/main-library.json
+
 # Windows zone files
 *Zone.Identifier
