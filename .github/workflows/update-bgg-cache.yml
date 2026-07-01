@@ -49,7 +49,7 @@ jobs:
 
                   data_dir = Path('shiny-hoppy-meeple/data')
                   for def_file in sorted((data_dir / 'definitions' / 'libraries').glob('*.json')):
-                      slug = json.loads(def_file.read_text()).get('slug') or def_file.stem
+                      slug = def_file.stem
                       print(f'--- library: {slug}', flush=True)
                       r = subprocess.run([sys.executable, 'bgg_export.py', '--library', slug], check=False)
                       if r.returncode:

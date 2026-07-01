@@ -47,6 +47,10 @@ jobs:
 
                   validate_slug(issue_number, slug)
 
+                  if slug == 'main-library':
+                      comment(issue_number, 'The slug `main-library` is reserved. Choose a different slug for your shadow library.')
+                      sys.exit(1)
+
                   if not bgg_username and not geeklist_id:
                       print('::error::No BGG source provided.')
                       comment(issue_number, 'Please provide either a BGG Username or a BGG GeekList ID.')
