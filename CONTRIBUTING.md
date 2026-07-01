@@ -1,15 +1,16 @@
 # Contributing content
 
-This guide explains how three types of content are managed on the
+This guide explains how four types of content are managed on the
 [Shiny Hoppy Meeple website](https://shiny-hoppy-meeple.pages.dev): **member collections**,
-**shadow libraries**, and **game overrides**.
+**shadow libraries**, **game overrides**, and **events**.
 
-All three are stored in the **site data Google Sheet**. Community members can request changes from
-a maintainer, or ask to be granted edit access to the sheet directly.
+Member collections, shadow libraries, and game overrides are stored in the **site data Google
+Sheet**. Events are managed in **Google Calendar**. Community members can request changes from a
+maintainer, or ask to be granted edit access directly.
 
 ---
 
-## The three content types
+## The four content types
 
 ### 👤 Member collections
 
@@ -30,11 +31,17 @@ A game override lets you replace the default BoardGameGeek description for a spe
 a "learn to play" video to its page. Use this to improve a game's page where the BGG text is poor,
 or to link a good tutorial video.
 
+### 📅 Events
+
+Events appear on the `/events/` calendar page. They are pulled directly from the club's Google
+Calendar, so anything added or changed there shows up on the site automatically after the next
+deploy.
+
 ---
 
 ## Requesting a change (community members)
 
-You don't need access to the sheet to make changes — just ask a maintainer.
+You don't need access to the sheet or calendar to make changes — just ask a maintainer.
 
 | You want to… | What to provide |
 | --- | --- |
@@ -42,9 +49,10 @@ You don't need access to the sheet to make changes — just ask a maintainer.
 | Add a shadow library | A display name, a slug, and either a BGG username or a BGG GeekList ID |
 | Add or update a game override | The BGG game ID and the new description and/or YouTube video ID |
 | Remove any of the above | The slug or game ID |
+| Add, change, or cancel an event | The event details — title, date, time, location, and an optional description |
 
-Changes take effect on the next scheduled BGG data update (runs daily at 4 am). Game overrides
-appear on the next site deploy (runs hourly).
+Member and library changes take effect on the next BGG data update (daily at 4 am). Game overrides
+and events appear on the next site deploy (hourly, 8 am – 11 pm).
 
 ---
 
@@ -124,6 +132,52 @@ next deploy.
 
 ---
 
+## Maintainer guide: managing events in Google Calendar
+
+Events are fetched from the club's Google Calendar at every site deploy. The site displays events
+falling within a **three-month rolling window** — the current month and the next two — so events
+further in the future don't appear yet.
+
+### What fields appear on the site
+
+| Calendar field | Where it appears |
+| --- | --- |
+| Event title | Page heading, calendar badge, and browser tab title. Also becomes the URL slug (e.g. `Thursday Night Meetup` → `/events/thursday-night-meetup/`). |
+| Date and time | Shown on the event detail page and calendar grid. All-day events are supported. |
+| Location | Shown on the event detail page. |
+| Description | Shown as the body of the event detail page. Plain text and basic line breaks are supported; HTML is stripped. |
+
+### Adding an event
+
+Create a new event in Google Calendar as normal. Set the title, date, time, location, and
+description. The event will appear on the site after the next deploy (hourly).
+
+> [!TIP]
+> The event title becomes the URL slug, so keep titles consistent for recurring events. For example,
+> always using `Thursday Night Meetup` means the event always lands at the same URL, and any content
+> added to that page persists between occurrences.
+
+### Editing an event
+
+Edit the event in Google Calendar. The changes appear on the site after the next deploy.
+
+> [!NOTE]
+> If you change an event's **title**, its URL slug changes too. Any content added to the old event
+> page in the repo will no longer be linked from the calendar — it becomes an orphaned page. Avoid
+> renaming recurring events unless necessary.
+
+### Cancelling or deleting an event
+
+Delete the event from Google Calendar. It will disappear from the site's calendar grid on the next
+deploy.
+
+> [!NOTE]
+> Deleting an event from Google Calendar does **not** automatically remove its content page from
+> the repo (under `content/events/`). If you want the page gone entirely, a maintainer will need
+> to delete that file from the repo manually.
+
+---
+
 ## When do changes go live?
 
 | Content type | When it appears |
@@ -131,6 +185,7 @@ next deploy.
 | Member collections | Next BGG cache update (daily, 4 am) |
 | Shadow libraries | Next BGG cache update (daily, 4 am) |
 | Game overrides | Next site deploy (hourly, 8 am – 11 pm) |
+| Events | Next site deploy (hourly, 8 am – 11 pm) |
 
 You can also trigger the BGG cache update manually from the **Actions** tab in GitHub if you need
-changes to appear sooner.
+member or library changes to appear sooner.
