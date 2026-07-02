@@ -39,6 +39,28 @@ jobs:
                   GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
               run: node shiny-hoppy-meeple/sheets-sync.js
 
+            - name: Remove stale collection caches
+              run: |
+                  python3 - <<'PYEOF'
+                  import json
+                  from pathlib import Path
+
+                  data_dir = Path('shiny-hoppy-meeple/data')
+                  collections_dir = data_dir / 'bgg-cache' / 'collections'
+
+                  valid_slugs = {'main-library'}
+                  for f in (data_dir / 'definitions' / 'members').glob('*.json'):
+                      valid_slugs.add(f.stem)
+                  for f in (data_dir / 'definitions' / 'libraries').glob('*.json'):
+                      valid_slugs.add(f.stem)
+
+                  if collections_dir.exists():
+                      for cache_file in sorted(collections_dir.glob('*.json')):
+                          if cache_file.stem not in valid_slugs:
+                              print(f'Removing stale collection: {cache_file.name}', flush=True)
+                              cache_file.unlink()
+                  PYEOF
+
             - name: Export libraries
               env:
                   BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
@@ -84,6 +106,42 @@ jobs:
                       r = subprocess.run(cmd, env=env, check=False)
                       if r.returncode:
                           print(f'::warning::Export failed for member {slug!r}', file=sys.stderr)
+                  PYEOF
+
+            - name: Remove stale game caches
+              run: |
+                  python3 - <<'PYEOF'
+                  import json
+                  from pathlib import Path
+
+                  data_dir = Path('shiny-hoppy-meeple/data')
+                  games_dir = data_dir / 'bgg-cache' / 'games'
+                  images_dir = Path('shiny-hoppy-meeple/static/images/games')
+
+                  referenced_ids = set()
+                  collections_dir = data_dir / 'bgg-cache' / 'collections'
+                  if collections_dir.exists():
+                      for col_file in collections_dir.glob('*.json'):
+                          try:
+                              data = json.loads(col_file.read_text())
+                              for item in data.get('items', []):
+                                  if 'id' in item:
+                                      referenced_ids.add(str(item['id']))
+                          except Exception as e:
+                              print(f'::warning::Could not parse {col_file.name}: {e}', flush=True)
+
+                  if games_dir.exists():
+                      for game_file in sorted(games_dir.glob('*.json')):
+                          if game_file.stem not in referenced_ids:
+                              print(f'Removing stale game: {game_file.name}', flush=True)
+                              game_file.unlink()
+
+                  if images_dir.exists():
+                      for img_file in sorted(images_dir.iterdir()):
+                          game_id = img_file.stem.split('-')[0]
+                          if game_id not in referenced_ids:
+                              print(f'Removing stale image: {img_file.name}', flush=True)
+                              img_file.unlink()
                   PYEOF
 
             - name: Regenerate QR-code PDF if main library changed
