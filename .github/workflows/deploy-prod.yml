@@ -12,7 +12,7 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         permissions:
-            contents: read
+            contents: write
             deployments: write
         steps:
             - name: Checkout code
@@ -29,6 +29,14 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
+            - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+              with:
+                  python-version: "3.12"
+                  cache: pip
+
+            - name: Install Python dependencies
+              run: pip install -r requirements.txt
+
             - name: Sync Google Calendar
               env:
                   GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
@@ -40,6 +48,70 @@ jobs:
                   GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
                   GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
               run: node shiny-hoppy-meeple/sheets-sync.js
+
+            - name: Export libraries
+              env:
+                  BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
+              run: |
+                  python3 - <<'PYEOF'
+                  import json, os, subprocess, sys
+                  from pathlib import Path
+
+                  data_dir = Path('shiny-hoppy-meeple/data')
+                  for def_file in sorted((data_dir / 'definitions' / 'libraries').glob('*.json')):
+                      slug = def_file.stem
+                      print(f'--- library: {slug}', flush=True)
+                      r = subprocess.run(
+                          [sys.executable, 'bgg_export.py', '--library', slug, '--skip-existing-games'],
+                          check=False)
+                      if r.returncode:
+                          print(f'::warning::Export failed for library {slug!r}', file=sys.stderr)
+                  PYEOF
+
+            - name: Export members
+              env:
+                  BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
+              run: |
+                  python3 - <<'PYEOF'
+                  import json, os, subprocess, sys
+                  from pathlib import Path
+
+                  data_dir = Path('shiny-hoppy-meeple/data')
+                  for def_file in sorted((data_dir / 'definitions' / 'members').glob('*.json')):
+                      defn = json.loads(def_file.read_text())
+                      slug = defn.get('slug') or def_file.stem
+                      out = str(data_dir / 'bgg-cache' / 'collections' / f'{slug}.json')
+                      env = dict(os.environ)
+                      if 'geeklist' in defn:
+                          cmd = [sys.executable, 'bgg_export.py',
+                                 '--geeklist', str(defn['geeklist']),
+                                 '--collection-file', out,
+                                 '--skip-existing-games']
+                      elif 'username' in defn:
+                          env['BGG_USERNAME'] = defn['username']
+                          cmd = [sys.executable, 'bgg_export.py',
+                                 '--collection-file', out,
+                                 '--skip-existing-games']
+                      else:
+                          print(f'::warning::No geeklist or username in {def_file}', file=sys.stderr)
+                          continue
+                      print(f'--- member: {slug}', flush=True)
+                      r = subprocess.run(cmd, env=env, check=False)
+                      if r.returncode:
+                          print(f'::warning::Export failed for member {slug!r}', file=sys.stderr)
+                  PYEOF
+
+            - name: Commit new cache files
+              run: |
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+                  git add shiny-hoppy-meeple/data/bgg-cache/ shiny-hoppy-meeple/static/images/games/
+                  if git diff --cached --quiet; then
+                    echo "No new cache files."
+                  else
+                    git commit -m "chore: cache new BGG data"
+                    git push
+                  fi
 
             - name: Setup Hugo
               uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1

@@ -266,11 +266,20 @@ def export_geeklist(
 
 
 def export_games(
-    game_ids: list[int], client: BGGClient, data_dir: Path, images: ImageDownloader
+    game_ids: list[int], client: BGGClient, data_dir: Path, images: ImageDownloader,
+    skip_existing: bool = False,
 ) -> None:
     """Fetch full game details and write <data-dir>/bgg-cache/games/<id>.json for each game."""
     games_dir = data_dir / "bgg-cache" / "games"
     games_dir.mkdir(parents=True, exist_ok=True)
+
+    if skip_existing:
+        game_ids = [gid for gid in game_ids if not (games_dir / f"{gid}.json").exists()]
+        if not game_ids:
+            print("  All games already cached — skipping game detail fetch.")
+            return
+        print(f"  {len(game_ids)} new game(s) to fetch.")
+
     total = len(game_ids)
     saved = 0
 
@@ -332,6 +341,8 @@ def main() -> None:
                         help="Override output path for collection JSON "
                              "(default: <data-dir>/bgg-cache/collections/main-library.json). "
                              "Use data/bgg-cache/collections/<slug>.json for member collections.")
+    parser.add_argument("--skip-existing-games", action="store_true",
+                        help="Skip fetching game details for games already in the cache")
     parser.add_argument("--skip-images", action="store_true",
                         help="Don't download images; keep the remote BGG URLs")
     parser.add_argument("--force-images", action="store_true",
@@ -374,7 +385,7 @@ def main() -> None:
             game_ids = export_geeklist(args.geeklist, client, args.data_dir, images, args.collection_file)
         else:
             game_ids = export_collection(username, client, args.data_dir, images, args.collection_file)
-        export_games(game_ids, client, args.data_dir, images)
+        export_games(game_ids, client, args.data_dir, images, skip_existing=args.skip_existing_games)
     except BGGApiUnauthorizedError:
         sys.exit("Error: BGG returned 401 Unauthorized — a valid BGG_API_TOKEN is "
                  "required for this request. Set it and retry.")
