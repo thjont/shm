@@ -1,10 +1,6 @@
 name: Deploy to stage environment
 
 on:
-    push:
-        branches: [main]
-        paths:
-            - "shiny-hoppy-meeple/**"
     workflow_dispatch:
 
 jobs:
