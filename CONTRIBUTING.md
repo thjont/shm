@@ -189,3 +189,11 @@ deploy.
 
 You can also trigger the BGG cache update manually from the **Actions** tab in GitHub if you need
 member or library changes to appear sooner.
+
+> [!WARNING]
+> **Linking to a game page from an event, game override, or any other content will cause the site
+> to fail to build if that game does not appear in at least one collection or library.** It may
+> also break any external links pointing to that game. Games are removed from the site during the
+> daily BGG update at 4 am, so a game dropped from all collections overnight will cause the next
+> deploy to fail. Before linking to a game page, confirm the game currently appears in at least
+> one active collection or library.
