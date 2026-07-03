@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bgg-xml-api-client": "0.3.3",
     "googleapis": "173.0.0"
   },
   "devDependencies": {
