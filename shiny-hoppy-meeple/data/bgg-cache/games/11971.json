@@ -3,10 +3,8 @@
   "name": "Cockroach Poker",
   "year": 2004,
   "thumbnail": "/images/games/11971-thumb.jpg",
-  "thumbnail_source": "https://cf.geekdo-images.com/lHadyVLPUQfNz_qV6MMp_Q__small/img/zWiETTyIp4Xo1o0l2mtOdt3G-ls=/fit-in/200x150/filters:strip_icc()/pic3218988.jpg",
   "image": "/images/games/11971.jpg",
-  "image_source": "https://cf.geekdo-images.com/lHadyVLPUQfNz_qV6MMp_Q__original/img/qN8xusrxWyTJfgq1gTUWrdE4B2I=/0x0/filters:format(jpeg)/pic3218988.jpg",
-  "description": "Cockroach Poker is a reverse set collection game that has nothing to do with poker \u2013 except that the game is all about bluffing, with cards that show cockroaches, rats and stink bugs. The goal is to force another player to collect 4 of any one type of critter.\n\nThe deck includes 64 cards, with eight copies of eight types of critters. To set up the game, shuffle the deck and deal the cards out to players.\n\nOn a turn, a player takes one card from their hand, lays it face down on the table, slides it to a player of their choice, and declares a type of critter, e.g., \"Stink bug\". The player receiving the card either\n\n\n     Accepts the card, says either \"true\" or \"false\", then reveals the card. If this player is wrong in their claim, they keep the card on the table in front of them face up; if they are right, the player who gave them the card places it face up before them.\n\n\n\n     Peeks at the card, then passes it face down to another player, either saying the original type of critter or saying a new type. This new player again has the choice of accepting the card or passing it, unless the card has already been seen by all other players in which case the player must take the first option.\n\n\nWhoever lost a challenge and had to place the card before them on the table begins the next round.\n\nThe game ends when a player has no cards to pass on their turn or when a player has four cards of the same critter on the table in front of them. In either case, this player loses and everyone else wins.\n\n",
+  "description": "Cockroach Poker is a reverse set collection game that has nothing to do with poker &ndash; except that the game is all about bluffing, with cards that show cockroaches, rats and stink bugs. The goal is to force another player to collect 4 of any one type of critter.\n\nThe deck includes 64 cards, with eight copies of eight types of critters. To set up the game, shuffle the deck and deal the cards out to players.\n\nOn a turn, a player takes one card from their hand, lays it face down on the table, slides it to a player of their choice, and declares a type of critter, e.g., \"Stink bug\". The player receiving the card either\n\n\n     Accepts the card, says either \"true\" or \"false\", then reveals the card. If this player is wrong in their claim, they keep the card on the table in front of them face up; if they are right, the player who gave them the card places it face up before them.\n\n\n\n     Peeks at the card, then passes it face down to another player, either saying the original type of critter or saying a new type. This new player again has the choice of accepting the card or passing it, unless the card has already been seen by all other players in which case the player must take the first option.\n\n\nWhoever lost a challenge and had to place the card before them on the table begins the next round.\n\nThe game ends when a player has no cards to pass on their turn or when a player has four cards of the same critter on the table in front of them. In either case, this player loses and everyone else wins.",
   "min_players": 2,
   "max_players": 6,
   "playing_time": 20,
@@ -23,5 +21,7 @@
     "Single Loser Game"
   ],
   "rating_bayes_average": 6.60336,
-  "rating_average_weight": 1.0967
+  "rating_average_weight": 1.0967,
+  "thumbnail_source": "https://cf.geekdo-images.com/lHadyVLPUQfNz_qV6MMp_Q__small/img/zWiETTyIp4Xo1o0l2mtOdt3G-ls=/fit-in/200x150/filters:strip_icc()/pic3218988.jpg",
+  "image_source": "https://cf.geekdo-images.com/lHadyVLPUQfNz_qV6MMp_Q__original/img/qN8xusrxWyTJfgq1gTUWrdE4B2I=/0x0/filters:format(jpeg)/pic3218988.jpg"
 }

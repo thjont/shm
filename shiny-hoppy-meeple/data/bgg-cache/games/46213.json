@@ -3,10 +3,8 @@
   "name": "Telestrations",
   "year": 2009,
   "thumbnail": "/images/games/46213-thumb.jpg",
-  "thumbnail_source": "https://cf.geekdo-images.com/Dd94J37Oi1tgL7HAAaOfAQ__small/img/CcgassIExgVh2dwANVY_Srp6be0=/fit-in/200x150/filters:strip_icc()/pic8855812.jpg",
   "image": "/images/games/46213.jpg",
-  "image_source": "https://cf.geekdo-images.com/Dd94J37Oi1tgL7HAAaOfAQ__original/img/SAMxnv21q2rwvViEOu2nti4H0Is=/0x0/filters:format(jpeg)/pic8855812.jpg",
-  "description": "The award-winning party game Telestrations will get your family and friends laughing as they draw what they see, then guess what they saw for hours of hilarious miscommunication. All players simultaneously sketch, pass, and guess while revealing laugh-out-loud and unpredictable outcomes!\n\n",
+  "description": "The award-winning party game Telestrations will get your family and friends laughing as they draw what they see, then guess what they saw for hours of hilarious miscommunication. All players simultaneously sketch, pass, and guess while revealing laugh-out-loud and unpredictable outcomes!",
   "min_players": 4,
   "max_players": 8,
   "playing_time": 30,
@@ -22,5 +20,7 @@
     "Paper-and-Pencil"
   ],
   "rating_bayes_average": 7.14542,
-  "rating_average_weight": 1.0696
+  "rating_average_weight": 1.0696,
+  "thumbnail_source": "https://cf.geekdo-images.com/Dd94J37Oi1tgL7HAAaOfAQ__small/img/CcgassIExgVh2dwANVY_Srp6be0=/fit-in/200x150/filters:strip_icc()/pic8855812.jpg",
+  "image_source": "https://cf.geekdo-images.com/Dd94J37Oi1tgL7HAAaOfAQ__original/img/SAMxnv21q2rwvViEOu2nti4H0Is=/0x0/filters:format(jpeg)/pic8855812.jpg"
 }

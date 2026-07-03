@@ -3,10 +3,8 @@
   "name": "Rome & Roll",
   "year": 2020,
   "thumbnail": "/images/games/267009-thumb.jpg",
-  "thumbnail_source": "https://cf.geekdo-images.com/wti2d1eQ7Wm5OSCZqS272Q__small/img/QWzBU02ljmxieo1meFmc7sduRBA=/fit-in/200x150/filters:strip_icc()/pic7006610.jpg",
   "image": "/images/games/267009.jpg",
-  "image_source": "https://cf.geekdo-images.com/wti2d1eQ7Wm5OSCZqS272Q__original/img/9QNvPqDfvQvZ8Q5KvKkVB70gd7A=/0x0/filters:format(jpeg)/pic7006610.jpg",
-  "description": "Rome & Roll is a heavy roll-and-write board game by D\u00e1vid Turczi and Nick Shaw in which 1-4 players compete to craft an empire. Draft from a pool of custom dice to collect resources, construct the town, and organize armies. Political alliances, the colonies, and even the Gods all have a part to play. Imperii Gloria!\n\n\u2022 Draft the dice to match your needs: roll, draw, and win!\n\u2022 Play one of seven unique character classes, ranging from merchants to military leaders, with a wealth of different strategies to deploy.\n\u2022 Take advantage of four possible scoring avenues: construct buildings, trade resources, conquer unruly colonies, and renovate the Roman road network.\n\u2022 Make political alliances and call on the Gods.\n\u2022 Raise armies and invade settlements as far afield as Egypt and Spain.\n\u2022 Build roads and manage unruly provinces.\n\n",
+  "description": "Rome & Roll is a heavy roll-and-write board game by D&aacute;vid Turczi and Nick Shaw in which 1-4 players compete to craft an empire. Draft from a pool of custom dice to collect resources, construct the town, and organize armies. Political alliances, the colonies, and even the Gods all have a part to play. Imperii Gloria!\n\n&bull; Draft the dice to match your needs: roll, draw, and win!\n&bull; Play one of seven unique character classes, ranging from merchants to military leaders, with a wealth of different strategies to deploy.\n&bull; Take advantage of four possible scoring avenues: construct buildings, trade resources, conquer unruly colonies, and renovate the Roman road network.\n&bull; Make political alliances and call on the Gods.\n&bull; Raise armies and invade settlements as far afield as Egypt and Spain.\n&bull; Build roads and manage unruly provinces.",
   "min_players": 1,
   "max_players": 4,
   "playing_time": 90,
@@ -28,5 +26,7 @@
     "Variable Player Powers"
   ],
   "rating_bayes_average": 5.90991,
-  "rating_average_weight": 3.2745
+  "rating_average_weight": 3.2745,
+  "thumbnail_source": "https://cf.geekdo-images.com/wti2d1eQ7Wm5OSCZqS272Q__small/img/QWzBU02ljmxieo1meFmc7sduRBA=/fit-in/200x150/filters:strip_icc()/pic7006610.jpg",
+  "image_source": "https://cf.geekdo-images.com/wti2d1eQ7Wm5OSCZqS272Q__original/img/9QNvPqDfvQvZ8Q5KvKkVB70gd7A=/0x0/filters:format(jpeg)/pic7006610.jpg"
 }
