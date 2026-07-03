@@ -58,12 +58,34 @@ function imageExt(url) {
   }
 }
 
+// --- HTML entity decoding ---
+
+const HTML_ENTITIES = {
+  amp: '&', lt: '<', gt: '>', quot: '"', apos: "'",
+  nbsp: ' ', copy: '©', reg: '®',
+  ndash: '–', mdash: '—', hellip: '…',
+  lsquo: '‘', rsquo: '’', ldquo: '“', rdquo: '”',
+  laquo: '«', raquo: '»',
+  times: '×', divide: '÷',
+  bull: '•', middot: '·',
+};
+
+function decodeHtmlEntities(str) {
+  if (typeof str !== 'string') return str;
+  return str.replace(/&(?:#(\d+)|#x([0-9a-fA-F]+)|([a-zA-Z]+));/g, (match, dec, hex, name) => {
+    if (dec) return String.fromCodePoint(Number(dec));
+    if (hex) return String.fromCodePoint(parseInt(hex, 16));
+    return HTML_ENTITIES[name] ?? match;
+  });
+}
+
 // --- Field mapping ---
 
 function mapCollectionItem(item) {
+  const ratingValue = item.stats?.rating?.value;
   return {
     id: Number(item.objectid),
-    name: item.name?.text ?? item.name,
+    name: decodeHtmlEntities(item.name?.text ?? item.name),
     year: item.yearpublished ?? null,
     thumbnail: item.thumbnail ?? null,
     owned:        Number(item.status?.own ?? 0) === 1,
@@ -75,9 +97,9 @@ function mapCollectionItem(item) {
     wishlist:     Number(item.status?.wishlist ?? 0) === 1,
     wishlist_priority: item.status?.wishlistpriority ?? null,
     preordered:   Number(item.status?.preordered ?? 0) === 1,
-    rating:    item.stats?.rating?.value ?? null,
+    rating:    (ratingValue && ratingValue !== 'N/A') ? Number(ratingValue) : null,
     numplays:  Number(item.numplays ?? 0),
-    comment:   item.comment ?? null,
+    comment:   decodeHtmlEntities(item.comment) ?? null,
     last_modified: item.status?.lastmodified ?? null,
   };
 }
@@ -87,18 +109,18 @@ function mapGame(thing) {
   const links = [].concat(thing.link ?? []);
   return {
     id:   Number(thing.id),
-    name: names.find(n => n.type === 'primary')?.value ?? names[0]?.value ?? '',
+    name: decodeHtmlEntities(names.find(n => n.type === 'primary')?.value ?? names[0]?.value ?? ''),
     year: thing.yearpublished?.value ?? null,
     thumbnail: thing.thumbnail ?? null,
     image:     thing.image ?? null,
-    description: thing.description ?? null,
+    description: decodeHtmlEntities(thing.description ?? null),
     min_players: Number(thing.minplayers?.value ?? 0),
     max_players: Number(thing.maxplayers?.value ?? 0),
     playing_time: Number(thing.playingtime?.value ?? 0),
     min_age: Number(thing.minage?.value ?? 0),
     expansion: thing.type === 'boardgameexpansion',
-    categories: links.filter(l => l.type === 'boardgamecategory').map(l => l.value),
-    mechanics:  links.filter(l => l.type === 'boardgamemechanic').map(l => l.value),
+    categories: links.filter(l => l.type === 'boardgamecategory').map(l => decodeHtmlEntities(l.value)),
+    mechanics:  links.filter(l => l.type === 'boardgamemechanic').map(l => decodeHtmlEntities(l.value)),
     rating_bayes_average: Number(thing.statistics?.ratings?.bayesaverage?.value ?? 0),
     rating_average_weight: Number(thing.statistics?.ratings?.averageweight?.value ?? 0),
   };

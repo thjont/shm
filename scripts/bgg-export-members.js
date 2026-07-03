@@ -14,9 +14,9 @@ for (const file of readdirSync(membersDir).filter(f => f.endsWith('.json')).sort
 
   let cmd, env;
   if ('geeklist' in defn) {
-    cmd = ['node', 'bgg_export.js', '--geeklist', String(defn.geeklist), '--collection-file', out];
+    cmd = ['node', 'scripts/bgg-export.js', '--geeklist', String(defn.geeklist), '--collection-file', out];
   } else if ('username' in defn) {
-    cmd = ['node', 'bgg_export.js', '--collection-file', out];
+    cmd = ['node', 'scripts/bgg-export.js', '--collection-file', out];
     env = { ...process.env, BGG_USERNAME: defn.username };
   } else {
     console.error(`::warning::No geeklist or username in ${file}`);
