@@ -198,7 +198,7 @@ class ImageDownloader {
 // --- Export functions ---
 
 async function exportCollection(username, client, dataDir, images, collectionFile) {
-  console.log(`Fetching collection for '${username}' …`);
+  console.log('Fetching BGG collection …');
   const response = await client.getBggCollection({
     username,
     subtype: 'boardgame',
