@@ -188,7 +188,7 @@ Workers KV namespace bound as `SCANS` (see `wrangler.toml`):
 
 - QR stickers on physical games hit `/p/<slug>` or `/lets-play/<slug>` →
   `functions/_lib/play-handler.js` increments the play count in KV (**only** for slugs present in
-  `/scan-slugs.json`, to keep junk out of KV) and 302-redirects to `/g/<slug>/`.
+  `/scan-slugs.json`, to keep junk out of KV) and 302-redirects to `/games/<slug>/`.
 - `api/plays.js` serves the counts.
 - `static/js/` fetches counts client-side via `data-*-slug` attributes, so counts never block static
   rendering.

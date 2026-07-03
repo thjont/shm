@@ -1,30 +1,27 @@
 {{ define "main" }}
-{{ $config := .Params.config }}
-{{ $member := .Params.member }}
 <div class="bgg-page">
-  <p class="bgg-breadcrumb"><a href="/m/">Members</a> &rsaquo; {{ $config.display_name }}</p>
-  <h1 class="bgg-page-title">{{ $config.display_name }}</h1>
-  {{ with $config.description }}
-  <p class="bgg-page-description">{{ . }}</p>
-  {{ end }}
-
+  <h1 class="bgg-page-title">{{ .Title }}</h1>
   <div class="bgg-page-content">
-    {{ with $member }}
+    {{ .Content }}
+
     <div class="bgg-collection">
-      {{ range .items }}
+      {{ $mainLibSlug := (index hugo.Data.definitions.libraries "main-library").slug }}
+      {{ range (index hugo.Data "bgg-cache" "collections" $mainLibSlug).items }}
       {{ $thumb := .thumbnail }}
+      {{ $year := .year }}
       {{ $rating := .rating }}
       {{ with index hugo.Data "bgg-cache" "games" (print .id) }}
         {{ if not $thumb }}{{ $thumb = .thumbnail }}{{ end }}
+        {{ if not $year }}{{ $year = .year }}{{ end }}
         {{ if not $rating }}{{ $rating = .rating_bayes_average }}{{ end }}
       {{ end }}
-      <a class="bgg-card" href="/g/{{ anchorize .name }}/">
+      <a class="bgg-card" href="/games/{{ anchorize .name }}/">
         {{ with $thumb }}
         <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />
         {{ end }}
         <div class="bgg-card-body">
           <h3>{{ .name }}</h3>
-          <span class="bgg-year">{{ .year }}</span>
+          <span class="bgg-year">{{ $year }}</span>
           <div class="bgg-card-meta">
             {{ with $rating }}<span>★ {{ printf "%.1f" . }}</span>{{ end }}
             <span class="shm-rank" data-rank-slug="{{ anchorize .name }}"></span>
@@ -33,7 +30,6 @@
       </a>
       {{ end }}
     </div>
-    {{ end }}
   </div>
 </div>
 {{ end }}

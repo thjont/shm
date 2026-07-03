@@ -110,7 +110,7 @@ or picking up your first game, you'll find a warm welcome here.
     weight = 4
   [[menu.main]]
     name = "Members"
-    url = "/m/"
+    url = "/members/"
     weight = 5
   [[menu.main]]
     name = "About Us"

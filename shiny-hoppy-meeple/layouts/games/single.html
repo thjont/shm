@@ -91,7 +91,7 @@
         <div class="bgg-owners">
           <strong>{{ if eq (len $owners) 1 }}Owner{{ else }}Owners{{ end }}</strong>
           <ul>
-            {{ range $owners }}<li><a href="/m/{{ .slug }}/">{{ .name }}</a></li>{{ end }}
+            {{ range $owners }}<li><a href="/members/{{ .slug }}/">{{ .name }}</a></li>{{ end }}
           </ul>
         </div>
         {{ end }}

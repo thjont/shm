@@ -39,6 +39,6 @@ export async function onRequestGet(context) {
   // Only build a same-origin redirect for well-formed slugs (defence against
   // path/header injection); Pages serves a 404 if the page doesn't exist.
   const safe = SLUG_RE.test(slug) ? slug : "";
-  const target = new URL(`/g/${safe}/`, request.url);
+  const target = new URL(`/games/${safe}/`, request.url);
   return Response.redirect(target.toString(), 302);
 }

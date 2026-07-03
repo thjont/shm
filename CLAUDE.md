@@ -85,7 +85,7 @@ either template.
 `shiny-hoppy-meeple/functions/` adds server-side logic on top of the static site, backed by a
 Workers KV namespace bound as `SCANS` (see `wrangler.toml`). QR stickers on physical games hit
 `/p/<slug>` or `/lets-play/<slug>` → `functions/_lib/play-handler.js` increments the play count in
-KV (only for slugs in `/scan-slugs.json`, to keep junk out of KV) and 302-redirects to `/g/<slug>/`.
+KV (only for slugs in `/scan-slugs.json`, to keep junk out of KV) and 302-redirects to `/games/<slug>/`.
 `api/plays.js` serves the counts; `static/js/` fetches them client-side via `data-*-slug` attributes
 so counts never block static rendering.
 
@@ -110,6 +110,6 @@ version, and the devcontainer Hugo feature. When bumping a tool, update it in **
 
 - `DEPLOY.md` and `CONTRIBUTING.md` are partly stale: they reference the old `collection.json`
   (now `main-library.json`), `/go/` + `/api/scans` (now `/p/`, `/lets-play/`, `/api/plays`), and
-  `/our-library/` (now `/g/`). Trust the code over those docs.
+  `/our-library/` (now `/games/`). Trust the code over those docs.
 - Play-count slug = the anchorized game **name**. Renaming a game changes its slug and orphans the
   printed-sticker count — finalise names before generating QR codes.

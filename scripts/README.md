@@ -13,7 +13,7 @@ generated collection JSON — it never modifies the site.
 
 1. Reads games from `shiny-hoppy-meeple/data/bgg-cache/collections/main-library.json`.
 2. Slugifies each game name with the same algorithm Hugo's `anchorize` uses (GitHub
-   heading-ID rules), so the links match the site's `/g/<slug>/` URLs.
+   heading-ID rules), so the links match the site's `/games/<slug>/` URLs.
 3. Builds `<base>/<path-prefix>/<slug>/` for each game (default prefix `learn-to-play`).
 4. Renders the QR codes as crisp vector squares laid out in a grid on A4 pages.
 

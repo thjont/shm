@@ -14,7 +14,7 @@ maintainer, or ask to be granted edit access directly.
 
 ### 👤 Member collections
 
-A member collection gives a community member their own profile page at `/m/<slug>/` and pulls in
+A member collection gives a community member their own profile page at `/members/<slug>/` and pulls in
 their board-game collection from BoardGameGeek. The site shows which games they own alongside the
 main library, and their games appear on the relevant game detail pages.
 
@@ -69,7 +69,7 @@ time; there is no manual sync step required.
 
 | Column | Required | Description |
 | --- | --- | --- |
-| `slug` | Yes | Short unique identifier used in the URL (`/m/<slug>/`). Lowercase letters, numbers, and hyphens only. Must start with a letter or number. |
+| `slug` | Yes | Short unique identifier used in the URL (`/members/<slug>/`). Lowercase letters, numbers, and hyphens only. Must start with a letter or number. |
 | `display_name` | Yes | The name shown on the site, e.g. `Alice`. |
 | `description` | No | A short bio shown on their profile page. |
 | `username` | One of these | The member's BoardGameGeek account name. Pulls in their full BGG collection. |
