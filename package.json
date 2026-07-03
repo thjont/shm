@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "bgg-xml-api-client": "0.3.3",
-    "googleapis": "173.0.0"
+    "googleapis": "173.0.0",
+    "pdfkit": "^0.19.1",
+    "qrcode": "^1.5.4"
   },
   "devDependencies": {
     "markdownlint-cli2": "0.22.1",
