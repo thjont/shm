@@ -9,7 +9,6 @@ export default [
       'shiny-hoppy-meeple/public/**',
       'shiny-hoppy-meeple/resources/**',
       'shiny-hoppy-meeple/data/**',
-      'qr-pdf/**',
     ],
   },
   js.configs.recommended,
