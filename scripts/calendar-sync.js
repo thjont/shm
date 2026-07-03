@@ -47,11 +47,11 @@ function stripHtml(html) {
     .replace(/<\/p>/gi, '\n\n')
     .replace(/<\/div>/gi, '\n\n')
     .replace(/<[^>]+>/g, '')
-    .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, '&')
     .replace(/&nbsp;/g, ' ')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
