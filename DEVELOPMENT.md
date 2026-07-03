@@ -68,7 +68,9 @@ wrangler pages dev public   # serve the build + Functions + KV locally (test /p/
 From the repo root:
 
 ```bash
-npm run lint                # markdownlint-cli2 "**/*.md"
+npm run lint                # lint:md + lint:js
+npm run lint:md             # markdownlint-cli2 "**/*.md"
+npm run lint:js             # eslint .
 ```
 
 > [!IMPORTANT]
@@ -195,6 +197,13 @@ Workers KV namespace bound as `SCANS` (see `wrangler.toml`):
 > **Deploy and `wrangler pages dev` must run from `shiny-hoppy-meeple/`** so wrangler discovers
 > `functions/` and reads `wrangler.toml` (project name, output dir, KV binding). `functions/` and
 > `wrangler.toml` sit at the Hugo root, but Hugo ignores them.
+
+## Continuous integration
+
+`ci.yml` runs on every pull request (and pushes to `main`/`dev`): `lint:js` is a blocking check —
+a failure fails the workflow. `lint:md` runs with `continue-on-error`, so Markdown issues are
+visible in the workflow log but never block a PR or deploy (the vendored `blowfish` theme content
+fails several Markdown rules and isn't ours to fix).
 
 ## Deployment
 

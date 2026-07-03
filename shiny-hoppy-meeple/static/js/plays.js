@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         el.textContent = r != null ? `#${r}` : "—";
       });
     }
-  } catch (e) {
+  } catch {
     // Network/API failure — leave placeholders as-is.
   }
 });

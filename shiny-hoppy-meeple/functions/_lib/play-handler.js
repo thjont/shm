@@ -14,7 +14,7 @@ async function knownSlugs(request) {
   try {
     const res = await fetch(new URL("/scan-slugs.json", request.url));
     if (res.ok) return new Set(await res.json());
-  } catch (e) {
+  } catch {
     // allowlist unavailable — caller falls back to SLUG_RE
   }
   return null;

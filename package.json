@@ -6,11 +6,16 @@
     "qrcode": "^1.5.4"
   },
   "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint": "10.6.0",
+    "globals": "17.7.0",
     "markdownlint-cli2": "0.23.0",
     "wrangler": "4.107.0"
   },
   "scripts": {
-    "lint": "markdownlint-cli2 \"**/*.md\""
+    "lint": "npm run lint:md && npm run lint:js",
+    "lint:md": "markdownlint-cli2 \"**/*.md\"",
+    "lint:js": "eslint ."
   },
   "overrides": {
     "esbuild": "0.28.1",

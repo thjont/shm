@@ -17,8 +17,9 @@ hugo --minify                # production build → public/
 wrangler pages dev public    # serve build + Functions + KV locally (test /p/, /api/plays)
 
 # from repo root:
-npm install                  # dev tooling (markdownlint-cli2, wrangler) — pinned in package.json
-npm run lint                 # markdownlint-cli2 "**/*.md"
+npm install                  # dev tooling (eslint, markdownlint-cli2, wrangler) — pinned in package.json
+npm run lint:js              # eslint . — blocking in CI
+npm run lint:md              # markdownlint-cli2 "**/*.md" — non-blocking in CI (vendored theme content)
 ```
 
 Regenerate game/collection data from BGG (writes into `shiny-hoppy-meeple/data/bgg-cache/`):
@@ -45,7 +46,8 @@ Content comes from three sources:
 - **Direct commits** — blog posts are Markdown files under `content/posts/`, committed by
   maintainers.
 
-Workflows: `deploy-prod.yml`, `deploy-stage.yml`, `deploy-dev.yml`, `update-bgg-cache.yml`.
+Workflows: `deploy-prod.yml`, `deploy-stage.yml`, `deploy-dev.yml`, `update-bgg-cache.yml`,
+`ci.yml` (lint on PRs — `lint:js` blocking, `lint:md` non-blocking).
 
 ### BGG data pipeline
 

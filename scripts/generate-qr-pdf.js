@@ -124,7 +124,7 @@ function drawCell(doc, game, x, y, width, height) {
 
   // Game name (bold), shrunk to fit inner width
   doc.font('Helvetica-Bold').fontSize(nameSize);
-  const ns = fitFontSize(doc, game.name, innerW, nameSize);
+  fitFontSize(doc, game.name, innerW, nameSize);
   const nameY = y + height - CELL_PADDING - urlH - nameSize;
   doc.fillColor('#000000').text(game.name, x, nameY, {
     align: 'center',
@@ -134,7 +134,7 @@ function drawCell(doc, game, x, y, width, height) {
 
   // Full URL (smaller), shrunk to fit; minimum 4pt
   doc.font('Helvetica').fontSize(urlSize);
-  const us = fitFontSize(doc, game.url, innerW, urlSize, 4.0);
+  fitFontSize(doc, game.url, innerW, urlSize, 4.0);
   const urlY = y + height - CELL_PADDING - urlSize;
   doc.fillColor('#4d4d4d').text(game.url, x, urlY, {
     align: 'center',
