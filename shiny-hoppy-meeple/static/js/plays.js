@@ -18,15 +18,16 @@ function buildRanks(counts) {
   return ranks;
 }
 
-// Chromium/WebKit sometimes restore a bfcache page (e.g. via the back button) with
-// off-screen `loading="lazy"` images still blank. Re-assigning `src` forces a repaint
-// without a network refetch, since the image is already cached.
+// The theme sets `scroll-smooth` on <html> globally. When a bfcache page is restored
+// (e.g. via the back button), the browser's automatic scroll-position restore then
+// animates instead of snapping — and can visibly stall partway (an element left
+// floating mid-scroll) until another interaction nudges it. Suspend smooth scrolling
+// for the instant of the restore so it snaps back like a normal page load.
 window.addEventListener("pageshow", (event) => {
   if (!event.persisted) return;
-  document.querySelectorAll('img[loading="lazy"]').forEach((img) => {
-    const src = img.src;
-    img.src = "";
-    img.src = src;
+  document.documentElement.classList.remove("scroll-smooth");
+  requestAnimationFrame(() => {
+    document.documentElement.classList.add("scroll-smooth");
   });
 });
 
