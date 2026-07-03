@@ -29,7 +29,7 @@ BGG_API_TOKEN=<token> node scripts/bgg-export.js --geeklist <id>              # 
 node scripts/bgg-export.js --geeklist <id> --collection-file data/bgg-cache/collections/<slug>.json
 ```
 
-Clone requires submodules (PaperMod theme): `git submodule update --init --recursive`.
+Clone requires submodules (blowfish theme): `git submodule update --init --recursive`.
 
 ## Architecture
 
