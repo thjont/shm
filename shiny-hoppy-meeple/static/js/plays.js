@@ -18,6 +18,18 @@ function buildRanks(counts) {
   return ranks;
 }
 
+// Chromium/WebKit sometimes restore a bfcache page (e.g. via the back button) with
+// off-screen `loading="lazy"` images still blank. Re-assigning `src` forces a repaint
+// without a network refetch, since the image is already cached.
+window.addEventListener("pageshow", (event) => {
+  if (!event.persisted) return;
+  document.querySelectorAll('img[loading="lazy"]').forEach((img) => {
+    const src = img.src;
+    img.src = "";
+    img.src = src;
+  });
+});
+
 document.addEventListener("DOMContentLoaded", async () => {
   const playEls       = document.querySelectorAll("[data-play-slug]");
   const rankEls       = document.querySelectorAll("[data-rank-slug]");
