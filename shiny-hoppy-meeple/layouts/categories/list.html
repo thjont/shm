@@ -8,7 +8,7 @@
         {{ $game := .Params.game }}
         <a class="bgg-card" href="{{ .RelPermalink }}">
           {{ with $game.thumbnail }}
-          <img src="{{ . }}" alt="{{ $game.name }}" loading="lazy" />
+          <img class="nozoom" src="{{ . }}" alt="{{ $game.name }}" loading="lazy" />
           {{ end }}
           <div class="bgg-card-body">
             <h3>{{ $game.name }}</h3>

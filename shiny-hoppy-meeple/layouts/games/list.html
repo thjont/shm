@@ -17,7 +17,7 @@
       {{ end }}
       <a class="bgg-card" href="/games/{{ anchorize .name }}/">
         {{ with $thumb }}
-        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />
+        <img class="nozoom" src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />
         {{ end }}
         <div class="bgg-card-body">
           <h3>{{ .name }}</h3>
