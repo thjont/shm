@@ -6,8 +6,8 @@ const { google } = require('googleapis');
 
 const CALENDAR_ID = process.env.GOOGLE_CALENDAR_ID;
 const KEY_JSON = process.env.GOOGLE_SERVICE_ACCOUNT_KEY;
-const OUT_PATH = path.join(__dirname, 'data', 'calendar.json');
-const CONTENT_DIR = path.join(__dirname, 'content', 'events');
+const OUT_PATH = path.join(__dirname, '..', 'shiny-hoppy-meeple', 'data', 'calendar.json');
+const CONTENT_DIR = path.join(__dirname, '..', 'shiny-hoppy-meeple', 'content', 'events');
 
 if (!CALENDAR_ID || !KEY_JSON) {
   console.warn('GOOGLE_CALENDAR_ID or GOOGLE_SERVICE_ACCOUNT_KEY not set — writing empty calendar.json');

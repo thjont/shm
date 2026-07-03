@@ -24,9 +24,9 @@ npm run lint                 # markdownlint-cli2 "**/*.md"
 Regenerate game/collection data from BGG (writes into `shiny-hoppy-meeple/data/bgg-cache/`):
 
 ```bash
-BGG_API_TOKEN=<token> BGG_USERNAME=<user> node bgg_export.js          # a user collection
-BGG_API_TOKEN=<token> node bgg_export.js --geeklist <id>              # a geeklist
-node bgg_export.js --geeklist <id> --collection-file data/bgg-cache/collections/<slug>.json
+BGG_API_TOKEN=<token> BGG_USERNAME=<user> node scripts/bgg-export.js          # a user collection
+BGG_API_TOKEN=<token> node scripts/bgg-export.js --geeklist <id>              # a geeklist
+node scripts/bgg-export.js --geeklist <id> --collection-file data/bgg-cache/collections/<slug>.json
 ```
 
 Clone requires submodules (PaperMod theme): `git submodule update --init --recursive`.
@@ -37,10 +37,10 @@ Clone requires submodules (PaperMod theme): `git submodule update --init --recur
 
 Content comes from three sources:
 
-- **Google Sheets** — members, shadow libraries, and game overrides. `sheets-sync.js` reads the
+- **Google Sheets** — members, shadow libraries, and game overrides. `scripts/sheets-sync.js` reads the
   spreadsheet at the start of every build and writes definition JSON files into `data/definitions/`.
   Removing a row from the sheet removes the definition on the next build.
-- **BGG data pipeline** — `bgg_export.js` reads those definitions and fetches game data from
+- **BGG data pipeline** — `scripts/bgg-export.js` reads those definitions and fetches game data from
   BoardGameGeek via `bgg-xml-api-client`. Runs daily via `update-bgg-cache.yml`.
 - **Direct commits** — blog posts are Markdown files under `content/posts/`, committed by
   maintainers.
@@ -49,18 +49,18 @@ Workflows: `deploy-prod.yml`, `deploy-stage.yml`, `deploy-dev.yml`, `update-bgg-
 
 ### BGG data pipeline
 
-`bgg_export.js` is the generator that turns BoardGameGeek collections/geeklists into the JSON
+`scripts/bgg-export.js` is the generator that turns BoardGameGeek collections/geeklists into the JSON
 Hugo renders. The data directory has two tiers:
 
 - `data/definitions/` — small **input** configs that drive page creation. Generated at build time
-  by `sheets-sync.js` from the Google Sheets spreadsheet (not committed to repo, except
+  by `scripts/sheets-sync.js` from the Google Sheets spreadsheet (not committed to repo, except
   `libraries/main-library.json`):
   - `members/<slug>.json` — `{ slug, display_name, description?, geeklist|username }`
   - `libraries/main-library.json` — main library definition (static, committed)
   - `libraries/<slug>.json` — shadow/supplementary library definitions
   - `games-bgg-override/<id>.json` — editorial overrides (`description`, `learn_to_play_video`)
   - Member/library definitions use `username` (BGG username) or `geeklist` (integer ID), never both.
-- `data/bgg-cache/` — large **generated** outputs from running `bgg_export.js`:
+- `data/bgg-cache/` — large **generated** outputs from running `scripts/bgg-export.js`:
   - `collections/<slug>.json` — collection summary (main library and per-member/library)
   - `games/<id>.json` — full game detail for every game in any collection
   - Images are downloaded to `static/images/games/`; JSON is rewritten to local paths (originals kept in `*_source` fields).

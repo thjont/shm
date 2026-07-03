@@ -6,7 +6,7 @@ const { google } = require('googleapis');
 
 const SPREADSHEET_ID = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
 const KEY_JSON = process.env.GOOGLE_SERVICE_ACCOUNT_KEY;
-const DEFINITIONS_DIR = path.join(__dirname, 'data', 'definitions');
+const DEFINITIONS_DIR = path.join(__dirname, '..', 'shiny-hoppy-meeple', 'data', 'definitions');
 
 const SLUG_RE = /^[a-z0-9][a-z0-9-]*$/;
 

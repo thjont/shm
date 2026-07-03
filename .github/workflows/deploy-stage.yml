@@ -28,7 +28,7 @@ jobs:
               env:
                   GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
                   GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
-              run: node shiny-hoppy-meeple/sheets-sync.js
+              run: node scripts/sheets-sync.js
 
             - name: Export libraries
               env:
@@ -37,14 +37,14 @@ jobs:
                   for f in shiny-hoppy-meeple/data/definitions/libraries/*.json; do
                     slug=$(basename "$f" .json)
                     echo "--- library: $slug"
-                    node bgg_export.js --library "$slug" --skip-existing-games \
+                    node scripts/bgg-export.js --library "$slug" --skip-existing-games \
                       || echo "::warning::Export failed for library '$slug'"
                   done
 
             - name: Export members
               env:
                   BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
-              run: node .github/scripts/bgg-export-members.js --skip-existing-games
+              run: node scripts/bgg-export-members.js --skip-existing-games
 
             - name: Setup Hugo
               uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1

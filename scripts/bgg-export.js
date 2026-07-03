@@ -7,7 +7,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { URL } = require('node:url');
 
-const PROJECT_DIR = path.join(__dirname, 'shiny-hoppy-meeple');
+const PROJECT_DIR = path.join(__dirname, '..', 'shiny-hoppy-meeple');
 const DEFAULT_DATA_DIR = path.join(PROJECT_DIR, 'data');
 const DEFAULT_IMAGE_DIR = path.join(PROJECT_DIR, 'static', 'images', 'games');
 const DEFAULT_IMAGE_URL_BASE = '/images/games';
