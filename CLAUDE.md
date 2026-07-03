@@ -19,15 +19,14 @@ wrangler pages dev public    # serve build + Functions + KV locally (test /p/, /
 # from repo root:
 npm install                  # dev tooling (markdownlint-cli2, wrangler) — pinned in package.json
 npm run lint                 # markdownlint-cli2 "**/*.md"
-pip install -r requirements.txt   # boardgamegeek2 + pinned deps for bgg_export.py
 ```
 
 Regenerate game/collection data from BGG (writes into `shiny-hoppy-meeple/data/bgg-cache/`):
 
 ```bash
-BGG_API_TOKEN=<token> BGG_USERNAME=<user> python bgg_export.py        # a user collection
-BGG_API_TOKEN=<token> python bgg_export.py --geeklist <id>            # a geeklist (BGG now requires auth)
-python bgg_export.py --geeklist <id> --collection-file data/bgg-cache/collections/<slug>.json   # a member
+BGG_API_TOKEN=<token> BGG_USERNAME=<user> node bgg_export.js          # a user collection
+BGG_API_TOKEN=<token> node bgg_export.js --geeklist <id>              # a geeklist
+node bgg_export.js --geeklist <id> --collection-file data/bgg-cache/collections/<slug>.json
 ```
 
 Clone requires submodules (PaperMod theme): `git submodule update --init --recursive`.
@@ -41,8 +40,8 @@ Content comes from three sources:
 - **Google Sheets** — members, shadow libraries, and game overrides. `sheets-sync.js` reads the
   spreadsheet at the start of every build and writes definition JSON files into `data/definitions/`.
   Removing a row from the sheet removes the definition on the next build.
-- **BGG data pipeline** — `bgg_export.py` reads those definitions and fetches game data from
-  BoardGameGeek. Runs daily via `update-bgg-cache.yml`.
+- **BGG data pipeline** — `bgg_export.js` reads those definitions and fetches game data from
+  BoardGameGeek via `bgg-xml-api-client`. Runs daily via `update-bgg-cache.yml`.
 - **Direct commits** — blog posts are Markdown files under `content/posts/`, committed by
   maintainers.
 
@@ -50,7 +49,7 @@ Workflows: `deploy-prod.yml`, `deploy-stage.yml`, `deploy-dev.yml`, `update-bgg-
 
 ### BGG data pipeline
 
-`bgg_export.py` is the generator that turns BoardGameGeek collections/geeklists into the JSON
+`bgg_export.js` is the generator that turns BoardGameGeek collections/geeklists into the JSON
 Hugo renders. The data directory has two tiers:
 
 - `data/definitions/` — small **input** configs that drive page creation. Generated at build time
@@ -61,7 +60,7 @@ Hugo renders. The data directory has two tiers:
   - `libraries/<slug>.json` — shadow/supplementary library definitions
   - `games-bgg-override/<id>.json` — editorial overrides (`description`, `learn_to_play_video`)
   - Member/library definitions use `username` (BGG username) or `geeklist` (integer ID), never both.
-- `data/bgg-cache/` — large **generated** outputs from running `bgg_export.py`:
+- `data/bgg-cache/` — large **generated** outputs from running `bgg_export.js`:
   - `collections/<slug>.json` — collection summary (main library and per-member/library)
   - `games/<id>.json` — full game detail for every game in any collection
   - Images are downloaded to `static/images/games/`; JSON is rewritten to local paths (originals kept in `*_source` fields).
@@ -100,10 +99,10 @@ Hugo root but Hugo ignores them.
 
 ## Dependency pinning
 
-Everything is version-pinned for reproducible builds: `requirements.txt` (full pip tree),
-`package.json` + `package-lock.json`, all GitHub Actions pinned to commit SHAs, Hugo to a fixed
+Everything is version-pinned for reproducible builds: `package.json` + `package-lock.json`
+(including `bgg-xml-api-client`), all GitHub Actions pinned to commit SHAs, Hugo to a fixed
 version, and the devcontainer Hugo feature. When bumping a tool, update it in **all** of these
-(workflows, `.devcontainer/devcontainer.json`, and the relevant lock/requirements file).
+(workflows, `.devcontainer/devcontainer.json`, and `package-lock.json`).
 
 ## Caveats
 

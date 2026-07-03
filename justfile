@@ -6,10 +6,9 @@ default:
 
 # ── Onboarding ─────────────────────────────────────────────────────────────────
 
-# Install Node.js and Python dependencies
+# Install Node.js dependencies
 setup:
     npm install
-    pip install -r requirements.txt
 
 # Update the PaperMod theme submodule
 update-theme:
