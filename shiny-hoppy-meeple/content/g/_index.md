@@ -5,4 +5,5 @@ draft = false
 url = '/library/'
 +++
 
-We keep a library of board games at Boundary Taproom, free for anyone to play during opening hours — no membership required. Just ask at the bar.
+We keep a library of board games at Boundary Taproom, free for anyone to play during opening hours — no membership
+required. Just ask at the bar.

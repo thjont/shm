@@ -29,7 +29,7 @@ Separately from QR scans, members can log their own plays through the website. T
 independently and show up as **member plays** on the game's page.
 
 The site uses member plays — not QR scans — to calculate each game's **SHM Rank**. A game ranked
-#1 is the one members have collectively logged the most plays of.
+\#1 is the one members have collectively logged the most plays of.
 
 ---
 
@@ -68,7 +68,7 @@ URL slug `cosmic-encounter`, and its QR stickers encode a URL containing that sl
 
 To get a QR sticker for a game, you need its scan URL. The format is:
 
-```
+```text
 https://shiny-hoppy-meeple.pages.dev/p/<game-slug>
 ```
 

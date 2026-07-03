@@ -1,6 +1,7 @@
 # Google Services Setup
 
-This guide sets up the Google Calendar integration (events page) and Google Sheets integration (member collections and shadow libraries).
+This guide sets up the Google Calendar integration (events page) and Google Sheets integration (member collections and
+shadow libraries).
 
 Both integrations share the same Google Cloud project and service account.
 
@@ -113,6 +114,7 @@ On the same settings page, scroll to **Integrate calendar**. Copy the **Calendar
 |---------|---------------------|-------------|
 
 Column rules:
+
 - `slug` — lowercase letters, numbers, and hyphens only (e.g. `jt`, `main-shadow-library`)
 - `username` and `geeklist` are mutually exclusive — fill one, leave the other blank
 - `description` is optional for members and game overrides; not used for shadow libraries
@@ -134,7 +136,7 @@ Column rules:
 
 Copy the spreadsheet ID from the URL:
 
-```
+```text
 https://docs.google.com/spreadsheets/d/SPREADSHEET_ID/edit
 ```
 
@@ -149,7 +151,7 @@ Go to your GitHub repository → **Settings → Secrets and variables → Action
 Add these secrets:
 
 | Name | Value |
-|------|-------|
+| ------ | ------- |
 | `GOOGLE_SERVICE_ACCOUNT_KEY` | The full contents of the JSON key file downloaded in step 4 |
 | `GOOGLE_CALENDAR_ID` | The Calendar ID copied in step 7 |
 | `GOOGLE_SHEETS_SPREADSHEET_ID` | The spreadsheet ID copied in step 10 |
