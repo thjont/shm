@@ -3,10 +3,8 @@
   "name": "Azul: Stained Glass of Sintra",
   "year": 2018,
   "thumbnail": "/images/games/256226-thumb.jpg",
-  "thumbnail_source": "https://cf.geekdo-images.com/RrYR1xB8H7D1B5GwNV8jgQ__small/img/vUGmS3mniayuyVOG-1ulrVGnjSg=/fit-in/200x150/filters:strip_icc()/pic4212417.jpg",
   "image": "/images/games/256226.jpg",
-  "image_source": "https://cf.geekdo-images.com/RrYR1xB8H7D1B5GwNV8jgQ__original/img/unI8OEWp9Fdv3D_dLahPPdLG1qc=/0x0/filters:format(jpeg)/pic4212417.jpg",
-  "description": "Azul: Stained Glass of Sintra challenges players to carefully select glass panes to complete their windows while being careful not to damage or waste supplies in the process. The window panels are double-sided, providing players with a dynamic player board that affords nearly infinite variability!\n\nGameplay is similar to Azul.  Players draft colored glass tiles to their player board. Later in the round, players score points based on how they've placed their window pane pieces pieces. Extra points are scored for specific patterns and completing sets.  There's also a new Colour Bonus mechanic at the end of every round for additional scoring strategy. The game will come to an end after 6 rounds. The player with the most points at the end of the game wins.\n\nAzul: Stained Glass of Sintra has new components including translucent window pane pieces, a tower to hold discarded glass panes, and double-sided player boards and window pane panels.\n\n\u2014description from the publisher\n\n",
+  "description": "Azul: Stained Glass of Sintra challenges players to carefully select glass panes to complete their windows while being careful not to damage or waste supplies in the process. The window panels are double-sided, providing players with a dynamic player board that affords nearly infinite variability!\n\nGameplay is similar to Azul.  Players draft colored glass tiles to their player board. Later in the round, players score points based on how they've placed their window pane pieces pieces. Extra points are scored for specific patterns and completing sets.  There's also a new Colour Bonus mechanic at the end of every round for additional scoring strategy. The game will come to an end after 6 rounds. The player with the most points at the end of the game wins.\n\nAzul: Stained Glass of Sintra has new components including translucent window pane pieces, a tower to hold discarded glass panes, and double-sided player boards and window pane panels.\n\n&mdash;description from the publisher",
   "min_players": 2,
   "max_players": 4,
   "playing_time": 45,
@@ -27,5 +25,7 @@
     "Turn Order: Claim Action"
   ],
   "rating_bayes_average": 6.99222,
-  "rating_average_weight": 2.0129
+  "rating_average_weight": 2.0129,
+  "thumbnail_source": "https://cf.geekdo-images.com/RrYR1xB8H7D1B5GwNV8jgQ__small/img/vUGmS3mniayuyVOG-1ulrVGnjSg=/fit-in/200x150/filters:strip_icc()/pic4212417.jpg",
+  "image_source": "https://cf.geekdo-images.com/RrYR1xB8H7D1B5GwNV8jgQ__original/img/unI8OEWp9Fdv3D_dLahPPdLG1qc=/0x0/filters:format(jpeg)/pic4212417.jpg"
 }

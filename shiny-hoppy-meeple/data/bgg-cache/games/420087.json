@@ -3,10 +3,8 @@
   "name": "Flip 7",
   "year": 2024,
   "thumbnail": "/images/games/420087-thumb.jpg",
-  "thumbnail_source": "https://cf.geekdo-images.com/YrQxEB9Ef0kQorRApzG5vQ__small/img/_dNNsSelyw9qUEOIXBRt6PE_1us=/fit-in/200x150/filters:strip_icc()/pic8780246.jpg",
   "image": "/images/games/420087.jpg",
-  "image_source": "https://cf.geekdo-images.com/YrQxEB9Ef0kQorRApzG5vQ__original/img/hK6k-x_GYfooemrkkRuF0bTvKxE=/0x0/filters:format(jpeg)/pic8780246.jpg",
-  "description": "Flip over cards one by one without flipping the same number twice.\n\nSound easy? Think again! This isn't just any deck of cards\u2026 In Flip 7 there's only one 1 card, two 2's, three 3\u2019s, etc plus a bunch of special cards that can score you extra points, give you a second chance, or freeze you or your opponents in your tracks.\n\nAre you the type of player to play it safe and bank points before you bust, or are you going to risk it all and go for the bonus points by flipping over seven in a row? Press your luck meets strategy in this addictive card game that's sure to be the greatest card game you\u2019ve ever played!\n\n\u2014description from the publisher\n\n",
+  "description": "Flip over cards one by one without flipping the same number twice.\n\nSound easy? Think again! This isn't just any deck of cards&hellip; In Flip 7 there's only one 1 card, two 2's, three 3&rsquo;s, etc plus a bunch of special cards that can score you extra points, give you a second chance, or freeze you or your opponents in your tracks.\n\nAre you the type of player to play it safe and bank points before you bust, or are you going to risk it all and go for the bonus points by flipping over seven in a row? Press your luck meets strategy in this addictive card game that's sure to be the greatest card game you&rsquo;ve ever played!\n\n&mdash;description from the publisher",
   "min_players": 3,
   "max_players": 18,
   "playing_time": 20,
@@ -14,7 +12,7 @@
   "expansion": false,
   "categories": [
     "Card Game",
-    "Children's Game",
+    "Children&#039;s Game",
     "Novel-based",
     "Number",
     "Party Game"
@@ -26,5 +24,7 @@
     "Take That"
   ],
   "rating_bayes_average": 6.99269,
-  "rating_average_weight": 1.0316
+  "rating_average_weight": 1.0316,
+  "thumbnail_source": "https://cf.geekdo-images.com/YrQxEB9Ef0kQorRApzG5vQ__small/img/_dNNsSelyw9qUEOIXBRt6PE_1us=/fit-in/200x150/filters:strip_icc()/pic8780246.jpg",
+  "image_source": "https://cf.geekdo-images.com/YrQxEB9Ef0kQorRApzG5vQ__original/img/hK6k-x_GYfooemrkkRuF0bTvKxE=/0x0/filters:format(jpeg)/pic8780246.jpg"
 }

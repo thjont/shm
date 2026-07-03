@@ -3,10 +3,8 @@
   "name": "Hues and Cues",
   "year": 2020,
   "thumbnail": "/images/games/302520-thumb.jpg",
-  "thumbnail_source": "https://cf.geekdo-images.com/jdR8WW75HkaoHGMTCIx9lA__small/img/EJ5gcczwsYvSavYuO4UoNPS45vo=/fit-in/200x150/filters:strip_icc()/pic5390676.jpg",
   "image": "/images/games/302520.jpg",
-  "image_source": "https://cf.geekdo-images.com/jdR8WW75HkaoHGMTCIx9lA__original/img/i8nlw_c9CYgJMzixadYVh7GTTPc=/0x0/filters:format(jpeg)/pic5390676.jpg",
-  "description": "What hue do you think of when we say \u201capple\u201d? Hues and Cues is a vibrant game of colorful communication where players are challenged to make connections to colors with words. Using only one and two-word cues, players try to get others to guess a specific hue from the 480 colors on the game board. The closer the guesses are to the target, the more points you earn. Since everyone imagines colors differently, connecting colors and clues has never been this much fun!\n\nGather around with three to ten people to play a quick and simple game with a prism of possibilities! First, a \u201ccue giver\u201d hides a specific color they\u2019ve chosen out of a deck of cards. There are 480 shades on the board in front of you! After getting one- and two-word cues, everyone places their marker on which color they think is being described. \u201cCoffee.\u201d Is it dark brown, as in freshly brewed? \u201cAu lait.\u201d With milk. That means I should pick a lighter shade!\n\nUse examples from everyday life, from nature to pop culture, or materials and moods. Everyone around the table gets a turn to give cues and guess. The better your hints or guesses, the more points you earn. Play off others' experiences to narrow down what they have in mind!\n\n\u2014description from the publisher\n\n",
+  "description": "What hue do you think of when we say &ldquo;apple&rdquo;? Hues and Cues is a vibrant game of colorful communication where players are challenged to make connections to colors with words. Using only one and two-word cues, players try to get others to guess a specific hue from the 480 colors on the game board. The closer the guesses are to the target, the more points you earn. Since everyone imagines colors differently, connecting colors and clues has never been this much fun!\n\nGather around with three to ten people to play a quick and simple game with a prism of possibilities! First, a &ldquo;cue giver&rdquo; hides a specific color they&rsquo;ve chosen out of a deck of cards. There are 480 shades on the board in front of you! After getting one- and two-word cues, everyone places their marker on which color they think is being described. &ldquo;Coffee.&rdquo; Is it dark brown, as in freshly brewed? &ldquo;Au lait.&rdquo; With milk. That means I should pick a lighter shade!\n\nUse examples from everyday life, from nature to pop culture, or materials and moods. Everyone around the table gets a turn to give cues and guess. The better your hints or guesses, the more points you earn. Play off others' experiences to narrow down what they have in mind!\n\n&mdash;description from the publisher",
   "min_players": 3,
   "max_players": 10,
   "playing_time": 30,
@@ -24,5 +22,7 @@
     "Turn Order: Progressive"
   ],
   "rating_bayes_average": 6.15176,
-  "rating_average_weight": 1.0583
+  "rating_average_weight": 1.0583,
+  "thumbnail_source": "https://cf.geekdo-images.com/jdR8WW75HkaoHGMTCIx9lA__small/img/EJ5gcczwsYvSavYuO4UoNPS45vo=/fit-in/200x150/filters:strip_icc()/pic5390676.jpg",
+  "image_source": "https://cf.geekdo-images.com/jdR8WW75HkaoHGMTCIx9lA__original/img/i8nlw_c9CYgJMzixadYVh7GTTPc=/0x0/filters:format(jpeg)/pic5390676.jpg"
 }

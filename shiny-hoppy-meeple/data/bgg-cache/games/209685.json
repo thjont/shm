@@ -3,10 +3,8 @@
   "name": "Century: Spice Road",
   "year": 2017,
   "thumbnail": "/images/games/209685-thumb.jpg",
-  "thumbnail_source": "https://cf.geekdo-images.com/0_KEDk4lCvryf1Ju3YQJxA__small/img/FticvQmaT_qfdrX-hpSSK1ttRb0=/fit-in/200x150/filters:strip_icc()/pic3339551.jpg",
   "image": "/images/games/209685.jpg",
-  "image_source": "https://cf.geekdo-images.com/0_KEDk4lCvryf1Ju3YQJxA__original/img/zv58Iylm_N8nfVFgRkMVM0Q9Fh8=/0x0/filters:format(jpeg)/pic3339551.jpg",
-  "description": "Century: Spice Road is the first in a series of games that explores the history of each century with spice-trading as the theme for the first installment.  In Century: Spice Road, players are caravan leaders who travel the famed silk road to deliver spices to the far reaches of the continent for fame and glory. Each turn, players perform one of four actions:\n\n\n     Establish a trade route (by taking a market card)\n     Make a trade or harvest spices (by playing a card from hand)\n     Fulfill a demand (by meeting a victory point card's requirements and claiming it)\n     Rest (by taking back into your hand all of the cards you've played)\n\n\nThe last round is triggered once a player has claimed their fifth victory point card, then whoever has the most victory points wins.\n\n",
+  "description": "Century: Spice Road is the first in a series of games that explores the history of each century with spice-trading as the theme for the first installment.  In Century: Spice Road, players are caravan leaders who travel the famed silk road to deliver spices to the far reaches of the continent for fame and glory. Each turn, players perform one of four actions:\n\n\n     Establish a trade route (by taking a market card)\n     Make a trade or harvest spices (by playing a card from hand)\n     Fulfill a demand (by meeting a victory point card's requirements and claiming it)\n     Rest (by taking back into your hand all of the cards you've played)\n\n\nThe last round is triggered once a player has claimed their fifth victory point card, then whoever has the most victory points wins.",
   "min_players": 2,
   "max_players": 5,
   "playing_time": 45,
@@ -30,5 +28,7 @@
     "Variable Set-up"
   ],
   "rating_bayes_average": 7.10286,
-  "rating_average_weight": 1.7994
+  "rating_average_weight": 1.7994,
+  "thumbnail_source": "https://cf.geekdo-images.com/0_KEDk4lCvryf1Ju3YQJxA__small/img/FticvQmaT_qfdrX-hpSSK1ttRb0=/fit-in/200x150/filters:strip_icc()/pic3339551.jpg",
+  "image_source": "https://cf.geekdo-images.com/0_KEDk4lCvryf1Ju3YQJxA__original/img/zv58Iylm_N8nfVFgRkMVM0Q9Fh8=/0x0/filters:format(jpeg)/pic3339551.jpg"
 }
