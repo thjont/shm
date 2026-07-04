@@ -1,0 +1,31 @@
+{
+  "id": 131357,
+  "name": "Coup",
+  "year": 2012,
+  "thumbnail": "/images/games/131357-thumb.jpg",
+  "image": "/images/games/131357.jpg",
+  "description": "You are head of a family in an Italian city-state, a city run by a weak and corrupt court. You need to manipulate, bluff and bribe your way to power. Your object is to destroy the influence of all the other families, forcing them into exile. Only one family will survive...\n\nIn Coup, you want to be the last player with influence in the game, with influence being represented by face-down character cards in your playing area.\n\nEach player starts the game with two coins and two influence – i.e., two face-down character cards; the fifteen card deck consists of three copies of five different characters, each with a unique set of powers:\n\n\n     Duke: Take three coins from the treasury. Block someone from taking foreign aid.\n     Assassin: Pay three coins and try to assassinate another player's character.\n     Contessa: Block an assassination attempt against yourself.\n     Captain: Take two coins from another player, or block someone from stealing coins from you.\n     Ambassador: Draw two character cards from the Court (the deck), choose which (if any) to exchange with your face-down characters, then return two. Block someone from stealing coins from you.\n\n\nOn your turn, you can take any of the actions listed above, regardless of which characters you actually have in front of you, or you can take one of three other actions:\n\n\n     Income: Take one coin from the treasury.\n     Foreign aid: Take two coins from the treasury.\n     Coup: Pay seven coins and launch a coup against an opponent, forcing that player to lose an influence. (If you have ten coins or more, you must take this action.)\n\n\nWhen you take one of the character actions – whether actively on your turn, or defensively in response to someone else's action – that character's action automatically succeeds unless an opponent challenges you. In this case, if you can't (or don't) reveal the appropriate character, you lose an influence, turning one of your characters face-up. Face-up characters cannot be used, and if both of your characters are face-up, you're out of the game.\n\nIf you do have the character in question and choose to reveal it, the opponent loses an influence, then you shuffle that character into the deck and draw a new one, perhaps getting the same character again and perhaps not.\n\nThe last player to still have influence – that is, a face-down character – wins the game!\n\nA new & optional character called the Inquisitor has been added (currently, the only English edition with the Inquisitor included is the Kickstarter Version from Indie Boards & Cards. Copies in stores may not be the Kickstarter versions and may only be the base game). The Inquisitor character cards may be used to replace the Ambassador cards.\n\n\n     Inquisitor: Draw one character card from the Court deck and choose whether or not to exchange it with one of your face-down characters. OR Force an opponent to show you one of their character cards (their choice which). If you wish it, you may then force them to draw a new card from the Court deck. They then shuffle the old card into the Court deck. Block someone from stealing coins from you.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 15,
+  "min_age": 13,
+  "expansion": false,
+  "categories": [
+    "Bluffing",
+    "Card Game",
+    "Deduction",
+    "Party Game",
+    "Political"
+  ],
+  "mechanics": [
+    "Hidden Roles",
+    "Memory",
+    "Player Elimination",
+    "Take That",
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 6.83134,
+  "rating_average_weight": 1.4148,
+  "thumbnail_source": "https://cf.geekdo-images.com/MWhSY_GOe2-bmlQ2rntSVg__small/img/vuR_0PCX1w2EkjO_LbchOHZPOwU=/fit-in/200x150/filters:strip_icc()/pic2016054.jpg",
+  "image_source": "https://cf.geekdo-images.com/MWhSY_GOe2-bmlQ2rntSVg__original/img/ayAAWBK1rAEumARNmROsOtvqW-4=/0x0/filters:format(jpeg)/pic2016054.jpg"
+}
