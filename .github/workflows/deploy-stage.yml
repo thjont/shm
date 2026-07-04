@@ -27,10 +27,16 @@ jobs:
             - name: Restore BGG cache
               run: scripts/cache-pull.sh stage
 
+            - name: Sync Google Calendar
+              env:
+                  GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+                  GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID_STAGE }}
+              run: node scripts/calendar-sync.js
+
             - name: Sync definitions from Google Sheets
               env:
                   GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
-                  GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
+                  GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID_STAGE }}
               run: node scripts/sheets-sync.js
 
             - name: Export libraries

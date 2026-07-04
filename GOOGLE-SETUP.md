@@ -199,3 +199,20 @@ The next deployment will automatically sync from Google Calendar and Google Shee
 - **Members** — add or edit rows in the Members sheet tab; picked up on the next BGG cache update
 - **Shadow libraries** — add or edit rows in the Shadow Libraries sheet tab; picked up on the next BGG cache update
 - **Game overrides** — add or edit rows in the Game Overrides sheet tab; picked up on the next deploy
+
+---
+
+## Stage environment (optional)
+
+The stage environment can use its own calendar and spreadsheet, so content can be tested there without
+touching production data. The main library (`data/definitions/libraries/main-library.json`) is committed
+to the repo and shared by every environment regardless — only members, shadow libraries, and game
+overrides differ per environment.
+
+1. Repeat steps 5–10 above to create a second calendar and spreadsheet (spreadsheet: **File → Make a
+   copy** of the prod one is fastest — it keeps the tabs/headers, but sharing does not carry over, so
+   re-share the copy).
+2. Reuse the **same service account** — just share both new resources with its `client_email` too.
+3. Add two more GitHub Actions secrets instead of the ones in step 11:
+   - `GOOGLE_CALENDAR_ID_STAGE`
+   - `GOOGLE_SHEETS_SPREADSHEET_ID_STAGE`

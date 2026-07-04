@@ -47,7 +47,10 @@ Content comes from three sources:
 
 - **Google Sheets** — members, shadow libraries, and game overrides. `scripts/sheets-sync.js` reads the
   spreadsheet at the start of every build and writes definition JSON files into `data/definitions/`.
-  Removing a row from the sheet removes the definition on the next build.
+  Removing a row from the sheet removes the definition on the next build. Stage has its own spreadsheet
+  and calendar (`GOOGLE_SHEETS_SPREADSHEET_ID_STAGE`, `GOOGLE_CALENDAR_ID_STAGE`), sharing the same
+  service account as prod — see `GOOGLE-SETUP.md`. `data/definitions/libraries/main-library.json` is
+  committed and shared by every environment, so only members/shadow-libraries/overrides differ by stage.
 - **BGG data pipeline** — `scripts/bgg-export.js` reads those definitions and fetches game data from
   BoardGameGeek via `bgg-xml-api-client`. Runs daily via `update-bgg-cache.yml`.
 - **Direct commits** — blog posts are Markdown files under `content/posts/`, committed by
