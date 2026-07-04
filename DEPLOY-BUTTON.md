@@ -2,7 +2,8 @@
 
 A small standalone Google Apps Script Web App with two buttons — **Deploy Prod** and **Deploy
 Stage** — for maintainers who edit the Google Sheet or Calendar but don't have GitHub accounts.
-Clicking a button calls GitHub's API to dispatch `update-bgg-cache.yml` for that environment only.
+Clicking a button calls GitHub's API to dispatch `deploy-prod.yml` or `deploy-stage.yml` for that
+environment only.
 
 Source: `google-apps-script/deploy-button/Code.gs` and `index.html`.
 
@@ -48,11 +49,13 @@ permission and nothing else. Set an expiration and rotate it periodically — up
 
 ## How it works
 
-Each button calls the GitHub API's `workflow_dispatch` endpoint for `update-bgg-cache.yml` with an
-`inputs.target` of `prod` or `stage`, so it only runs (and deploys) that environment's leg. A
-30-second per-target cooldown (stored in Script Properties) guards against accidental double-clicks
-— it's not a debounce for rapid edits, just a shield against submitting the same click twice.
+Each button calls the GitHub API's `workflow_dispatch` endpoint for that environment's own
+workflow — `deploy-prod.yml` or `deploy-stage.yml` — so it only builds and deploys that
+environment. A 30-second per-target cooldown (stored in Script Properties) guards against
+accidental double-clicks — it's not a debounce for rapid edits, just a shield against submitting
+the same click twice.
 
-Because the workflow runs unconditionally on manual dispatch (it only skips the build/deploy step
-on the unattended nightly cron when nothing changed), clicking the button always redeploys — even
-for a sheet-only edit that doesn't touch the BGG cache.
+Both workflows sync Google Calendar/Sheets and rebuild unconditionally on every run, so clicking
+the button always redeploys — even for a sheet-only edit that doesn't touch the BGG cache. Neither
+workflow refreshes the BGG cache itself; that's still `update-bgg-cache.yml`'s job on its own
+nightly schedule (or manual dispatch from GitHub).
