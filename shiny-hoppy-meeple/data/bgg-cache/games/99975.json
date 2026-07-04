@@ -1,0 +1,25 @@
+{
+  "id": 99975,
+  "name": "Timeline: Science & Discoveries",
+  "year": 2011,
+  "thumbnail": "/images/games/99975-thumb.png",
+  "image": "/images/games/99975.png",
+  "description": "Timeline: Discoveries is a card game played using 110 cards. Each card depicts an discovery on both sides, with the year in which that discovery occurred on only one side. Players take turns placing a card from their hand in a row on the table. After placing the card, the player reveals the date on it. If the card was placed correctly with the date in chronological order with all other cards on the table, the card stays in place; otherwise the card is removed from play and the player takes another card from the deck.\n\nThe first player to get rid of all his cards by placing them correctly wins. If multiple players go out in the same round, then everyone else is eliminated from play and each of those players are dealt one more card for another round of play. If only one player has no cards after a bonus round, he wins; otherwise play continues until a single player goes out.\n\nTimeline: Discoveries can be combined with any other title in the Timeline series.\n\nIntegratable with:\n\n\n    Timeline: General Interest\n    Timeline: Events\n    Timeline: Inventions\n    Timeline: Music & Cinema\n    Timeline: American History\n    Timeline: Americana",
+  "min_players": 2,
+  "max_players": 8,
+  "playing_time": 15,
+  "min_age": 8,
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Educational",
+    "Trivia"
+  ],
+  "mechanics": [
+    "Ordering"
+  ],
+  "rating_bayes_average": 6.2441,
+  "rating_average_weight": 1.1575,
+  "thumbnail_source": "https://cf.geekdo-images.com/W4k1xY12JeQ1iKyBKAF4_A__small/img/A0nlIGEdSsUMVD-op_AbOaEgxKg=/fit-in/200x150/filters:strip_icc()/pic8286833.png",
+  "image_source": "https://cf.geekdo-images.com/W4k1xY12JeQ1iKyBKAF4_A__original/img/PKDXm8p9AMpqYhb_QhKPc288-GY=/0x0/filters:format(png)/pic8286833.png"
+}

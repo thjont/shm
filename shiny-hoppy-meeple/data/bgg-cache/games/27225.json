@@ -1,0 +1,27 @@
+{
+  "id": 27225,
+  "name": "Bananagrams",
+  "year": 2006,
+  "thumbnail": "/images/games/27225-thumb.jpg",
+  "image": "/images/games/27225.jpg",
+  "description": "Bananagrams is a fast and fun word game that requires no pencil, paper or board, and the tiles come in a fabric banana-shaped carrying pouch. One hand can be played in as little as five minutes. Much like Pick Two!, but without the letter values.\n\nUsing a selection of 144 plastic letter tiles in the English edition, each player works independently to create their own 'crossword' faster than one's opponents. When a player uses up all their letters, all players take a new tile from the pool. The object of the game is to be the first to complete a word grid after the \"bunch\" of tiles has been depleted.\n\nThere are variants included in the instructions, such as Banana Smoothie and Banana Cafe for limited set skills or space-deprived places, and the game is suitable for solo play.",
+  "min_players": 1,
+  "max_players": 8,
+  "playing_time": 15,
+  "min_age": 7,
+  "expansion": false,
+  "categories": [
+    "Real-time",
+    "Word Game"
+  ],
+  "mechanics": [
+    "Race",
+    "Real-Time",
+    "Spelling",
+    "Tile Placement"
+  ],
+  "rating_bayes_average": 6.22568,
+  "rating_average_weight": 1.2872,
+  "thumbnail_source": "https://cf.geekdo-images.com/1QjYPI4bXx4OUMJPlrsNBA__small/img/nC_gG-4CYy7VBfYez2qSfTkU2ik=/fit-in/200x150/filters:strip_icc()/pic2463443.jpg",
+  "image_source": "https://cf.geekdo-images.com/1QjYPI4bXx4OUMJPlrsNBA__original/img/WA2NRNJx83xq81H2dnnwEDV2Ork=/0x0/filters:format(jpeg)/pic2463443.jpg"
+}

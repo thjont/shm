@@ -1,0 +1,30 @@
+{
+  "id": 14996,
+  "name": "Ticket to Ride: Europe",
+  "year": 2005,
+  "thumbnail": "/images/games/14996-thumb.jpg",
+  "image": "/images/games/14996.jpg",
+  "description": "Ticket to Ride: Europe takes you on a new train adventure across Europe. From Edinburgh to Constantinople and from Lisbon to Moscow, you'll visit great cities of turn-of-the-century Europe. Like the original Ticket to Ride, the game remains elegantly simple, can be learned in 5 minutes, and appeals to both families and experienced gamers. Ticket to Ride: Europe is a complete, new game and does not require the original version.\n\nMore than just a new map, Ticket to Ride: Europe features brand new gameplay elements. Tunnels may require you to pay extra cards to build on them, Ferries require locomotive cards in order to claim them, and Stations allow you to sacrifice a few points in order to use an opponent's route to connect yours. The game also includes larger format cards and Train Station game pieces.\n\nThe overall goal remains the same: collect and play train cards in order to place your pieces on the board, attempting to connect cities on your ticket cards. Points are earned both from placing trains and completing tickets but uncompleted tickets lose you points. The player who has the most points at the end of the game wins.\n\nCopyright 2002-2014 Days of Wonder, inc.\n\nPart of the Ticket to Ride series.",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 60,
+  "min_age": 8,
+  "expansion": false,
+  "categories": [
+    "Trains"
+  ],
+  "mechanics": [
+    "Connections",
+    "Contracts",
+    "End Game Bonuses",
+    "Hand Management",
+    "Network and Route Building",
+    "Open Drafting",
+    "Push Your Luck",
+    "Set Collection"
+  ],
+  "rating_bayes_average": 7.39393,
+  "rating_average_weight": 1.9149,
+  "thumbnail_source": "https://cf.geekdo-images.com/EQJZDO1Jq8KL-HxmWLwL-Q__small/img/XE-BFNwHZ0NZVko1pCj3gdFaGxY=/fit-in/200x150/filters:strip_icc()/pic9580918.jpg",
+  "image_source": "https://cf.geekdo-images.com/EQJZDO1Jq8KL-HxmWLwL-Q__original/img/LOC8D0q01ZRvZ6v1n7l8Zueos-E=/0x0/filters:format(jpeg)/pic9580918.jpg"
+}
