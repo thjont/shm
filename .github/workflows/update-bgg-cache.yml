@@ -25,6 +25,13 @@ jobs:
             - name: Install Node dependencies
               run: npm ci
 
+            - name: Restore BGG cache
+              run: scripts/cache-pull.sh prod
+
+            - name: Snapshot main-library checksum
+              id: before
+              run: echo "hash=$(sha256sum shiny-hoppy-meeple/data/bgg-cache/collections/main-library.json 2>/dev/null | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+
             - name: Sync definitions from Google Sheets
               env:
                   GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
@@ -52,48 +59,41 @@ jobs:
 
             - name: Regenerate QR-code PDF if main library changed
               run: |
-                  if git diff --quiet -- shiny-hoppy-meeple/data/bgg-cache/collections/main-library.json; then
+                  after=$(sha256sum shiny-hoppy-meeple/data/bgg-cache/collections/main-library.json 2>/dev/null | cut -d' ' -f1)
+                  if [ "$after" = "${{ steps.before.outputs.hash }}" ]; then
                     echo "main-library.json unchanged — skipping QR-code PDF."
                   else
                     echo "main-library.json changed — regenerating QR-code PDF."
                     node scripts/generate-qr-pdf.js
                   fi
 
-            - name: Commit and push changes
+            - name: Push BGG cache
               id: commit
               run: |
-                  git config user.name "github-actions[bot]"
-                  git config user.email "github-actions[bot]@users.noreply.github.com"
-                  git add shiny-hoppy-meeple/data/bgg-cache/ shiny-hoppy-meeple/static/images/games/ shiny-hoppy-meeple/static/qr-codes.pdf
-                  if git diff --cached --quiet; then
-                    echo "No BGG cache changes to commit."
-                    echo "changed=false" >> "$GITHUB_OUTPUT"
-                  else
-                    git commit -m "chore: update BGG cache"
-                    git push
-                    echo "changed=true" >> "$GITHUB_OUTPUT"
-                  fi
+                  scripts/cache-push.sh prod
+                  scripts/cache-push.sh stage
+                  scripts/cache-push.sh dev
 
             - name: Sync Google Calendar
-              if: steps.commit.outputs.changed == 'true'
+              if: steps.commit.outputs.changed_prod == 'true' || steps.commit.outputs.changed_stage == 'true'
               env:
                   GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
                   GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID }}
               run: node scripts/calendar-sync.js
 
             - name: Setup Hugo
-              if: steps.commit.outputs.changed == 'true'
+              if: steps.commit.outputs.changed_prod == 'true' || steps.commit.outputs.changed_stage == 'true'
               uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1
               with:
                   hugo-version: "0.163.1"
                   extended: true
 
             - name: Build for prod
-              if: steps.commit.outputs.changed == 'true'
+              if: steps.commit.outputs.changed_prod == 'true' || steps.commit.outputs.changed_stage == 'true'
               run: pushd shiny-hoppy-meeple && hugo --minify && popd
 
             - name: Deploy to prod
-              if: steps.commit.outputs.changed == 'true'
+              if: steps.commit.outputs.changed_prod == 'true' || steps.commit.outputs.changed_stage == 'true'
               uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
               with:
                   apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -102,13 +102,13 @@ jobs:
                   command: pages deploy --commit-hash=${{ github.sha }}
 
             - name: Build for stage
-              if: steps.commit.outputs.changed == 'true'
+              if: steps.commit.outputs.changed_prod == 'true' || steps.commit.outputs.changed_stage == 'true'
               run: |
                   cp shiny-hoppy-meeple/wrangler-stage.toml shiny-hoppy-meeple/wrangler.toml
                   pushd shiny-hoppy-meeple && hugo --minify --buildFuture --baseURL "https://stage-shiny-hoppy-meeple.pages.dev/" && popd
 
             - name: Deploy to stage
-              if: steps.commit.outputs.changed == 'true'
+              if: steps.commit.outputs.changed_prod == 'true' || steps.commit.outputs.changed_stage == 'true'
               uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
               with:
                   apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}

@@ -29,6 +29,9 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
+            - name: Restore BGG cache
+              run: scripts/cache-pull.sh prod
+
             - name: Sync Google Calendar
               env:
                   GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
@@ -57,17 +60,8 @@ jobs:
                   BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
               run: node scripts/bgg-export-members.js --skip-existing-games
 
-            - name: Commit new cache files
-              run: |
-                  git config user.name "github-actions[bot]"
-                  git config user.email "github-actions[bot]@users.noreply.github.com"
-                  git add shiny-hoppy-meeple/data/bgg-cache/ shiny-hoppy-meeple/static/images/games/
-                  if git diff --cached --quiet; then
-                    echo "No new cache files."
-                  else
-                    git commit -m "chore: cache new BGG data"
-                    git push
-                  fi
+            - name: Push BGG cache
+              run: scripts/cache-push.sh prod
 
             - name: Setup Hugo
               uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1
