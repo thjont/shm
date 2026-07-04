@@ -1,3 +1,17 @@
+/* ── Wave background ────────────────────────────────────────────── */
+
+body {
+  background-image: url('/images/bg-waves.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  background-attachment: fixed;
+}
+
+.dark body {
+  background-image: url('/images/bg-waves-dark.svg');
+}
+
 /* ── SHM CSS variable bridge ────────────────────────────────────── */
 /* Map Blowfish colour-scheme variables to theme-agnostic names.    */
 /* Blowfish exposes raw RGB triples; wrap in rgb() to use them.     */

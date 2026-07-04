@@ -1,0 +1,158 @@
+name: Update BGG cache
+
+on:
+    schedule:
+        - cron: "0 4 * * *"
+    workflow_dispatch:
+
+jobs:
+    update-cache:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            deployments: write
+        steps:
+            - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+              with:
+                  submodules: true
+
+            - name: Set up Node.js
+              uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+              with:
+                  node-version: "20"
+                  cache: "npm"
+
+            - name: Install Node dependencies
+              run: npm ci
+
+            - name: Setup Hugo
+              uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1
+              with:
+                  hugo-version: "0.163.1"
+                  extended: true
+
+            # ---------- prod ----------
+
+            - name: Restore BGG cache (prod)
+              run: scripts/cache-pull.sh prod
+
+            - name: Snapshot main-library checksum
+              id: before
+              run: echo "hash=$(sha256sum shiny-hoppy-meeple/data/bgg-cache/collections/main-library.json 2>/dev/null | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+
+            - name: Sync definitions from Google Sheets (prod)
+              env:
+                  GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+                  GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
+              run: node scripts/sheets-sync.js
+
+            - name: Remove stale caches (prod)
+              run: node scripts/cleanup-stale-cache.js
+
+            - name: Export libraries (prod)
+              env:
+                  BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
+              run: |
+                  for f in shiny-hoppy-meeple/data/definitions/libraries/*.json; do
+                    slug=$(basename "$f" .json)
+                    echo "--- library: $slug"
+                    node scripts/bgg-export.js --library "$slug" \
+                      || echo "::warning::Export failed for library '$slug'"
+                  done
+
+            - name: Export members (prod)
+              env:
+                  BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
+              run: node scripts/bgg-export-members.js
+
+            - name: Regenerate QR-code PDF if main library changed
+              run: |
+                  after=$(sha256sum shiny-hoppy-meeple/data/bgg-cache/collections/main-library.json 2>/dev/null | cut -d' ' -f1)
+                  if [ "$after" = "${{ steps.before.outputs.hash }}" ]; then
+                    echo "main-library.json unchanged — skipping QR-code PDF."
+                  else
+                    echo "main-library.json changed — regenerating QR-code PDF."
+                    node scripts/generate-qr-pdf.js
+                  fi
+
+            - name: Push BGG cache (prod + dev)
+              id: commit-prod
+              run: |
+                  scripts/cache-push.sh prod
+                  scripts/cache-push.sh dev
+
+            - name: Sync Google Calendar (prod)
+              if: steps.commit-prod.outputs.changed_prod == 'true'
+              env:
+                  GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+                  GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID }}
+              run: node scripts/calendar-sync.js
+
+            - name: Build for prod
+              if: steps.commit-prod.outputs.changed_prod == 'true'
+              run: pushd shiny-hoppy-meeple && hugo --minify && popd
+
+            - name: Deploy to prod
+              if: steps.commit-prod.outputs.changed_prod == 'true'
+              uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
+              with:
+                  apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                  accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+                  workingDirectory: shiny-hoppy-meeple
+                  command: pages deploy --commit-hash=${{ github.sha }}
+
+            # ---------- stage (own sheet + calendar, own cache) ----------
+
+            - name: Restore BGG cache (stage)
+              run: scripts/cache-pull.sh stage
+
+            - name: Sync definitions from Google Sheets (stage)
+              env:
+                  GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+                  GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID_STAGE }}
+              run: node scripts/sheets-sync.js
+
+            - name: Remove stale caches (stage)
+              run: node scripts/cleanup-stale-cache.js
+
+            - name: Export libraries (stage)
+              env:
+                  BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
+              run: |
+                  for f in shiny-hoppy-meeple/data/definitions/libraries/*.json; do
+                    slug=$(basename "$f" .json)
+                    echo "--- library: $slug"
+                    node scripts/bgg-export.js --library "$slug" \
+                      || echo "::warning::Export failed for library '$slug'"
+                  done
+
+            - name: Export members (stage)
+              env:
+                  BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
+              run: node scripts/bgg-export-members.js
+
+            - name: Push BGG cache (stage)
+              id: commit-stage
+              run: scripts/cache-push.sh stage
+
+            - name: Sync Google Calendar (stage)
+              if: steps.commit-stage.outputs.changed_stage == 'true'
+              env:
+                  GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+                  GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID_STAGE }}
+              run: node scripts/calendar-sync.js
+
+            - name: Build for stage
+              if: steps.commit-stage.outputs.changed_stage == 'true'
+              run: |
+                  cp shiny-hoppy-meeple/wrangler-stage.toml shiny-hoppy-meeple/wrangler.toml
+                  pushd shiny-hoppy-meeple && hugo --minify --buildFuture --baseURL "https://stage-shiny-hoppy-meeple.pages.dev/" && popd
+
+            - name: Deploy to stage
+              if: steps.commit-stage.outputs.changed_stage == 'true'
+              uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
+              with:
+                  apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                  accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+                  workingDirectory: shiny-hoppy-meeple
+                  command: pages deploy --commit-hash=${{ github.sha }}

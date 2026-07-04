@@ -1,0 +1,61 @@
+{{ define "main" }}
+{{ $slug := .File.ContentBaseName }}
+
+{{/* Find first calendar entry (earliest upcoming) and all dates for this event */}}
+{{ $firstEntry := dict }}
+{{ $upcomingDates := slice }}
+{{ with site.Data.calendar }}
+  {{ range . }}
+    {{ if eq .slug $slug }}
+      {{ if not $firstEntry.startDate }}
+        {{ $firstEntry = . }}
+      {{ end }}
+      {{ $upcomingDates = $upcomingDates | append .startDate }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<div class="bgg-page">
+  <p class="bgg-breadcrumb"><a href="/events/">Events</a> &rsaquo; {{ .Title }}</p>
+  <h1 class="bgg-page-title">{{ .Title }}</h1>
+  {{ with $firstEntry.startDate }}
+  {{ $startT   := time.AsTime $firstEntry.startDate }}
+  {{ $endInclT := (time.AsTime $firstEntry.endDate).Add (time.ParseDuration "-24h") }}
+  {{ $multiDay := not (eq ($startT | dateFormat "2006-01-02") ($endInclT | dateFormat "2006-01-02")) }}
+  <div class="bgg-page-meta">
+    {{ if $multiDay }}
+      {{ if eq ($startT | dateFormat "2006-01") ($endInclT | dateFormat "2006-01") }}
+        <span>{{ $startT | dateFormat "Monday 2" }} – {{ $endInclT | dateFormat "Monday 2 January 2006" }}</span>
+      {{ else }}
+        <span>{{ $startT | dateFormat "Monday 2 January" }} – {{ $endInclT | dateFormat "Monday 2 January 2006" }}</span>
+      {{ end }}
+    {{ else }}
+      <span>{{ $startT | dateFormat "Monday 2 January 2006" }}</span>
+      {{ with $firstEntry.startTime }}
+      &nbsp;·&nbsp;
+      <span>{{ . }}{{ with $firstEntry.endTime }} – {{ . }}{{ end }}</span>
+      {{ end }}
+    {{ end }}
+    {{ with $firstEntry.location }}
+    &nbsp;·&nbsp;
+    <span>{{ . }}</span>
+    {{ end }}
+  </div>
+  {{ end }}
+  <div class="bgg-page-content prose dark:prose-invert">
+    {{ .Content }}
+
+    {{ $remainingDates := after 1 $upcomingDates }}
+    {{ with $remainingDates }}
+    <div class="cal-upcoming not-prose">
+      <h3>Upcoming dates</h3>
+      <ul>
+        {{ range . }}
+        <li>{{ time.AsTime . | dateFormat "Monday 2 January 2006" }}</li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

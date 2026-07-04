@@ -1,0 +1,104 @@
+{{ define "main" }}
+{{ $game := .Params.game }}
+
+{{/* Ownership — computed once, used in both the stats panel and info column */}}
+{{ $inLibrary := false }}
+{{ range (index hugo.Data "bgg-cache" "collections" "main-library").items }}
+  {{ if eq .id $game.id }}{{ $inLibrary = true }}{{ end }}
+{{ end }}
+
+{{ $owners := slice }}
+{{ range $slug, $def := hugo.Data.definitions.members }}
+  {{ $collection := index hugo.Data "bgg-cache" "collections" $slug }}
+  {{ with $collection }}
+    {{ range .items }}
+      {{ if eq .id $game.id }}
+        {{ $owners = $owners | append (dict "name" $def.display_name "slug" $slug) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<div class="bgg-page">
+  <p class="bgg-breadcrumb"><a href="/library/">Library</a> &rsaquo; {{ $game.name }}</p>
+  <h1 class="bgg-page-title">{{ $game.name }}</h1>
+  <div class="bgg-page-meta">
+    <span>{{ $game.year }}</span>
+    &nbsp;·&nbsp;
+    <span>{{ $game.min_players }}–{{ $game.max_players }} players</span>
+    &nbsp;·&nbsp;
+    <span>{{ $game.playing_time }} min</span>
+    {{ with $game.min_age }}&nbsp;·&nbsp;<span>Age {{ . }}+</span>{{ end }}
+  </div>
+
+  <div class="bgg-page-content">
+    <div class="bgg-detail">
+
+      <div class="bgg-detail-image">
+        {{ $img := $game.image }}
+        {{ if not $img }}{{ $img = $game.thumbnail }}{{ end }}
+        {{ with $img }}<img src="{{ . }}" alt="{{ $game.name }}" />{{ end }}
+
+        <div class="bgg-detail-stats">
+          <div><strong>SHM Rank</strong><br><span data-rank-slug="{{ anchorize $game.name }}">…</span></div>
+          {{ if $inLibrary }}<a href="/library/"><strong>In Library</strong><br>Yes</a>{{ else }}<div><strong>In Library</strong><br>No</div>{{ end }}
+          <div><strong>Members</strong><br><span data-member-play-slug="{{ anchorize $game.name }}">…</span></div>
+          <div><strong>Public</strong><br><span data-play-slug="{{ anchorize $game.name }}">…</span></div>
+          <div><strong>BGG Rating</strong><br>{{ with $game.rating_bayes_average }}{{ printf "%.2f" . }} / 10{{ else }}—{{ end }}</div>
+          <div><strong>Complexity</strong><br>{{ with $game.rating_average_weight }}{{ printf "%.2f" . }} / 5{{ else }}—{{ end }}</div>
+        </div>
+      </div>
+
+      <div class="bgg-detail-info">
+        {{ with $game.description }}
+        <div class="bgg-description">{{ replaceRE `(?m)^ +` "" . | markdownify }}</div>
+        {{ end }}
+
+        {{ with $game.learn_to_play_video }}
+        <div class="bgg-learn-to-play">
+          <strong>Learn to Play</strong>
+          <div class="bgg-video-embed">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/{{ . }}"
+              title="Learn to play {{ $game.name }}"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+        {{ end }}
+
+        {{ with .GetTerms "complexity" }}
+        <p><strong>Complexity</strong><br>
+          {{ range . }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+        </p>
+        {{ end }}
+
+        {{ with .GetTerms "categories" }}
+        <p><strong>Categories</strong><br>
+          {{ range $i, $t := . }}{{ if $i }} · {{ end }}<a href="{{ $t.RelPermalink }}">{{ $t.LinkTitle }}</a>{{ end }}
+        </p>
+        {{ end }}
+
+        {{ with .GetTerms "mechanics" }}
+        <p><strong>Mechanics</strong><br>
+          {{ range $i, $t := . }}{{ if $i }} · {{ end }}<a href="{{ $t.RelPermalink }}">{{ $t.LinkTitle }}</a>{{ end }}
+        </p>
+        {{ end }}
+
+{{ if $owners }}
+        <div class="bgg-owners">
+          <strong>{{ if eq (len $owners) 1 }}Owner{{ else }}Owners{{ end }}</strong>
+          <ul>
+            {{ range $owners }}<li><a href="/members/{{ .slug }}/">{{ .name }}</a></li>{{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+      </div>
+
+    </div>
+  </div>
+</div>
+{{ end }}

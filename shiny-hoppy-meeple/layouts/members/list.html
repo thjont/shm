@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="bgg-page">
+  <h1 class="bgg-page-title">{{ .Title }}</h1>
+  <div class="bgg-page-content">
+    {{ .Content }}
+
+    <div class="bgg-collection">
+      {{ range $slug, $config := hugo.Data.definitions.members }}
+      {{ $member := index hugo.Data "bgg-cache" "collections" $slug }}
+      <a class="bgg-card" href="/members/{{ $slug }}/">
+        <div class="bgg-card-body">
+          <h3>{{ $config.display_name }}</h3>
+          {{ with $member }}
+          <span class="bgg-year">{{ .count }} game{{ if ne .count 1 }}s{{ end }}</span>
+          {{ end }}
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

@@ -18,10 +18,11 @@ members, libraries), you don't need any of this — see the [contributor guide](
 ├── requirements.txt           # pinned Python deps for bgg_export.py
 ├── package.json               # pinned dev tooling (markdownlint-cli2, wrangler)
 ├── .github/
-│   ├── ISSUE_TEMPLATE/*.yml   # the forms contributors fill in
-│   └── workflows/*.yml        # issue → file commit pipelines + deploy
+│   └── workflows/*.yml        # deploy + BGG cache update
 └── shiny-hoppy-meeple/        # the Hugo site (all Hugo/wrangler commands run from here)
     ├── hugo.toml              # site config
+    ├── calendar-sync.js       # Google Calendar → data/calendar.json
+    ├── sheets-sync.js         # Google Sheets → data/definitions/ (members, libraries, overrides)
     ├── content/               # pages & posts (Markdown)
     ├── layouts/               # PaperMod overrides (game/member pages, custom outputs)
     ├── data/                  # generated + source JSON (see "BGG data pipeline")
@@ -67,7 +68,9 @@ wrangler pages dev public   # serve the build + Functions + KV locally (test /p/
 From the repo root:
 
 ```bash
-npm run lint                # markdownlint-cli2 "**/*.md"
+npm run lint                # lint:md + lint:js
+npm run lint:md             # markdownlint-cli2 "**/*.md"
+npm run lint:js             # eslint .
 ```
 
 > [!IMPORTANT]
@@ -77,66 +80,21 @@ npm run lint                # markdownlint-cli2 "**/*.md"
 
 ## Architecture
 
-### 1. Issue-driven content (the core pattern)
+### 1. Content management
 
-This is the heart of the project. Community members never edit files directly:
+Content on the site comes from three sources:
 
-1. A member opens a GitHub Issue from a template in `.github/ISSUE_TEMPLATE/`. The template stamps
-   a content-type label on the issue (e.g. `new-member`, `new-post`).
-2. A **maintainer** applies the **`publish`** label.
-3. The matching workflow in `.github/workflows/*-from-issue.yml` converts the issue into committed
-   files via a **branch + pull request** to `main`.
+**Google Sheets** — members, shadow libraries, and game overrides are rows in the
+[site data spreadsheet](GOOGLE-SETUP.md). `sheets-sync.js` reads the sheet at the start of every
+build and writes the definition JSON files into `data/definitions/`. Deleting a row from the sheet
+removes the corresponding definition on the next build. See [GOOGLE-SETUP.md](GOOGLE-SETUP.md) for
+spreadsheet setup and column reference.
 
-```mermaid
-flowchart TD
-    A[Issue opened\nfrom template] --> B[Content-type label\nautomatically applied]
-    B --> C[Maintainer applies\npublish label]
-    C --> D{Labeller has\nwrite/admin access?}
-    D -- No --> E[Issue closed\nwith error comment]
-    D -- Yes --> F[Workflow parses\nissue body]
-    F --> G[Branch + PR opened\nagainst main]
-    G --> H[Maintainer merges PR]
-    H --> I[deploy.yml triggers]
-    I --> J[Site updated]
-```
+**BGG data pipeline** — `bgg_export.py` reads those definition files and fetches the actual game
+data from BoardGameGeek. This runs on a daily schedule (see Deployment below).
 
-Every workflow shares the same shape:
-
-- **Permission gate** — checks the *labeller's* collaborator permission (`write`/`admin`) via the
-  GitHub API. Anyone can open an issue; only maintainers can trigger an action by labelling. The
-  gate fires on `github.event.label.name == 'publish'` combined with the content-type label.
-- **Inline `python3` heredoc** — parses the issue body with an `extract(label)` regex helper,
-  validates fields (slugs against `^[a-z0-9][a-z0-9-]*$`, IDs via `.isdigit()`), and writes or
-  removes a file under `shiny-hoppy-meeple/data/` or `content/`.
-- **Branch + PR** to `main`.
-
-Each workflow fires when its **content-type label** (which matches the workflow's base name, e.g.
-`new-member`) and the **`publish`** label are both present on the issue:
-
-| Workflow | Effect |
-| --- | --- |
-| `new-member` / `delete-member` | Member definition + page |
-| `new-shadow-library` / `delete-shadow-library` | Shadow-library definition |
-| `new-game-override` / `delete-game-override` | Per-game editorial override |
-| `delete-post` | Removes a post and its images |
-| `publish-from-issue` (label `new-post`; also runs on issue **edit**) | Posts — see below |
-| `rollback-from-issue` (label `rollback`) | Reverts the most recent commit on `main` — see below |
-
-**Posts are special** (`publish-from-issue.yml`): it downloads pasted images into
-`static/images/posts/<slug>/`, builds a per-branch Cloudflare **preview** deploy at
-`post-<slug>.shiny-hoppy-meeple.pages.dev`, supports issue **edits** to update the draft, and posts
-the preview URL back to the issue/PR. It triggers on both `labeled` and `edited` events.
-
-**Rollback** (`rollback-from-issue.yml`): runs `git revert HEAD --no-edit` against `main` and opens
-a PR on a `rollback/issue-<N>` branch. No file parsing — the only user input is a free-text reason
-included in the PR description. Reverts exactly one commit; for multi-commit or targeted rollbacks a
-maintainer should use `git revert` manually.
-
-> [!WARNING]
-> **Security invariant:** user-controlled issue fields must never be interpolated into a shell.
-> These workflows call `gh` via `subprocess.run([...], check=True)` (argument lists, no shell).
-> Keep that pattern — do **not** switch to `os.system` or f-string shell commands. The workflows
-> have also been hardened against SSRF and `GITHUB_OUTPUT` injection; preserve that when editing.
+**Direct commits** — blog posts are Markdown files under `content/posts/`, committed directly to
+the repo by maintainers.
 
 ### 2. BGG data pipeline (`bgg_export.py`)
 
@@ -178,14 +136,15 @@ erDiagram
     GAME ||--o| GAME_OVERRIDE : "may have"
 ```
 
-**Definitions — `data/definitions/`** — small editorial configs that drive page creation. These are
-what the issue workflows create and delete.
+**Definitions — `data/definitions/`** — small editorial configs that drive page creation.
+Generated at build time by `sheets-sync.js` from the site data spreadsheet; not committed to the
+repo (except `libraries/main-library.json`, which is static).
 
 | File | Purpose |
 | --- | --- |
 | `members/<slug>.json` | `slug`, `display_name`, optional `description`, `username` (BGG account) or `geeklist` (ID) |
-| `libraries/main.json` | Main library definition |
-| `libraries/<slug>.json` | Shadow / supplementary library definition (same fields as members) |
+| `libraries/main-library.json` | Main library definition (static, committed) |
+| `libraries/<slug>.json` | Shadow / supplementary library definition (generated from sheet) |
 | `games-bgg-override/<id>.json` | Override `description` and/or `learn_to_play_video` for a game |
 
 Each definition specifies exactly one BGG source — `username` *or* `geeklist`, never both.
@@ -209,7 +168,7 @@ python bgg_export.py --geeklist <id> --collection-file data/bgg-cache/collection
 ```
 
 > [!NOTE]
-> The issue workflows write the **definition** files; running `bgg_export.py` produces the large
+> `sheets-sync.js` writes the **definition** files; running `bgg_export.py` produces the large
 > generated JSON and images. New members/libraries don't fully appear until the export runs.
 
 ### 3. Custom layouts (`shiny-hoppy-meeple/layouts/`)
@@ -229,7 +188,7 @@ Workers KV namespace bound as `SCANS` (see `wrangler.toml`):
 
 - QR stickers on physical games hit `/p/<slug>` or `/lets-play/<slug>` →
   `functions/_lib/play-handler.js` increments the play count in KV (**only** for slugs present in
-  `/scan-slugs.json`, to keep junk out of KV) and 302-redirects to `/g/<slug>/`.
+  `/scan-slugs.json`, to keep junk out of KV) and 302-redirects to `/games/<slug>/`.
 - `api/plays.js` serves the counts.
 - `static/js/` fetches counts client-side via `data-*-slug` attributes, so counts never block static
   rendering.
@@ -239,14 +198,25 @@ Workers KV namespace bound as `SCANS` (see `wrangler.toml`):
 > `functions/` and reads `wrangler.toml` (project name, output dir, KV binding). `functions/` and
 > `wrangler.toml` sit at the Hugo root, but Hugo ignores them.
 
+## Continuous integration
+
+`ci.yml` runs on every pull request (and pushes to `main`/`dev`): `lint:js` is a blocking check —
+a failure fails the workflow. `lint:md` runs with `continue-on-error`, so Markdown issues are
+visible in the workflow log but never block a PR or deploy (the vendored `blowfish` theme content
+fails several Markdown rules and isn't ours to fix).
+
 ## Deployment
 
 | Workflow | Trigger | Action |
 | --- | --- | --- |
-| `deploy.yml` | Push to `main` touching `shiny-hoppy-meeple/**` | `hugo --minify` → **production** deploy |
-| `publish-from-issue.yml` | Post issue labelled/edited | Per-post **preview** at `post-<slug>.…pages.dev` |
+| `deploy-prod.yml` | Push to `main` touching `shiny-hoppy-meeple/**`, or hourly schedule | Sheets sync → calendar sync → `hugo --minify` → **production** deploy |
+| `deploy-stage.yml` | Push to `main` touching `shiny-hoppy-meeple/**` | Sheets sync → `hugo --minify --buildFuture` → **stage** deploy |
+| `deploy-dev.yml` | Push to `dev` touching `shiny-hoppy-meeple/**` | Sheets sync → calendar sync → `hugo --minify --buildFuture` → **dev** deploy |
+| `update-bgg-cache.yml` | Daily at 4 am, or manual | Sheets sync → `bgg_export.py` for all members/libraries → commit cache → prod + stage deploy |
 
-Required repository secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
+Required repository secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`,
+`GOOGLE_SERVICE_ACCOUNT_KEY`, `GOOGLE_CALENDAR_ID`, `GOOGLE_SHEETS_SPREADSHEET_ID`,
+`BGG_API_TOKEN`.
 
 ## Dependency pinning
 

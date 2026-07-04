@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 480" preserveAspectRatio="xMidYMax slice">
+  <defs>
+    <!-- Secondary-400 (cyan): back wave -->
+    <linearGradient id="g1" gradientUnits="userSpaceOnUse" x1="0" y1="140" x2="0" y2="480">
+      <stop offset="0%" stop-color="rgb(34,211,238)" stop-opacity="0"/>
+      <stop offset="100%" stop-color="rgb(34,211,238)" stop-opacity="0.10"/>
+    </linearGradient>
+    <!-- Secondary-300 (light cyan): middle wave -->
+    <linearGradient id="g2" gradientUnits="userSpaceOnUse" x1="0" y1="220" x2="0" y2="480">
+      <stop offset="0%" stop-color="rgb(103,232,249)" stop-opacity="0"/>
+      <stop offset="100%" stop-color="rgb(103,232,249)" stop-opacity="0.14"/>
+    </linearGradient>
+    <!-- Secondary-500 (deep cyan): front wave -->
+    <linearGradient id="g3" gradientUnits="userSpaceOnUse" x1="0" y1="300" x2="0" y2="480">
+      <stop offset="0%" stop-color="rgb(6,182,212)" stop-opacity="0"/>
+      <stop offset="100%" stop-color="rgb(6,182,212)" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Wave 1: furthest back, gentlest -->
+  <path fill="url(#g1)"
+        d="M0,200 C120,170 240,230 400,190
+           C540,155 680,215 860,185
+           C1020,155 1160,210 1280,180
+           C1360,165 1400,185 1440,175
+           L1440,480 L0,480 Z"/>
+
+  <!-- Wave 2: mid -->
+  <path fill="url(#g2)"
+        d="M0,290 C160,250 320,330 520,275
+           C700,225 880,320 1060,270
+           C1200,234 1320,285 1440,260
+           L1440,480 L0,480 Z"/>
+
+  <!-- Wave 3: foreground, most prominent -->
+  <path fill="url(#g3)"
+        d="M0,375 C200,325 420,410 660,355
+           C880,305 1100,395 1300,345
+           C1380,322 1420,360 1440,345
+           L1440,480 L0,480 Z"/>
+</svg>

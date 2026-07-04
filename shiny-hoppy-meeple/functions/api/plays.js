@@ -9,7 +9,7 @@ async function knownSlugs(request) {
   try {
     const res = await fetch(new URL("/scan-slugs.json", request.url));
     if (res.ok) return new Set(await res.json());
-  } catch (e) {
+  } catch {
     // allowlist unavailable — fall back to returning every key
   }
   return null;

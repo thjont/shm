@@ -8,23 +8,11 @@ get-together too. New faces always welcome.
 📸 **Instagram:** [@shinyhoppymeepleni](https://www.instagram.com/shinyhoppymeepleni/)
 
 This repository holds the website's source. The site is a [Hugo](https://gohugo.io/) static site
-deployed to Cloudflare Pages. Almost all content — posts, members, game libraries — is created and
-edited through **GitHub Issues**, so you don't need to touch the code to contribute.
+deployed to Cloudflare Pages.
 
-## Which guide do I need?
+## Guides
 
 | You want to… | Read |
 | --- | --- |
-| **Add or remove content** — write a post, add a member, list a game collection. No coding needed. | **[CONTRIBUTING.md](CONTRIBUTING.md)** |
+| **Add or remove content** — join as a member, list a game collection, publish a post. | **[CONTRIBUTING.md](CONTRIBUTING.md)** |
 | **Work on the website itself** — run it locally, change layouts, edit the data pipeline, deploy. | **[DEVELOPMENT.md](DEVELOPMENT.md)** |
-
-> [!TIP]
-> If you just want to publish a post or add a member, you only need a GitHub account and the
-> **[contributor guide](CONTRIBUTING.md)**. Everything happens through the
-> [Issues](../../issues) tab.
-
-## Quick links
-
-- 📝 [Open a new issue](../../issues/new/choose) to submit content
-- 📖 [Contributor guide (no code needed)](CONTRIBUTING.md)
-- 🛠️ [Developer guide](DEVELOPMENT.md)

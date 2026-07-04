@@ -18,6 +18,19 @@ function buildRanks(counts) {
   return ranks;
 }
 
+// The theme sets `scroll-smooth` on <html> globally. When a bfcache page is restored
+// (e.g. via the back button), the browser's automatic scroll-position restore then
+// animates instead of snapping — and can visibly stall partway. Suspend smooth
+// scrolling for the instant of the restore so it snaps back like a normal page load.
+window.addEventListener("pageshow", (event) => {
+  if (!event.persisted) return;
+
+  document.documentElement.classList.remove("scroll-smooth");
+  requestAnimationFrame(() => {
+    document.documentElement.classList.add("scroll-smooth");
+  });
+});
+
 document.addEventListener("DOMContentLoaded", async () => {
   const playEls       = document.querySelectorAll("[data-play-slug]");
   const rankEls       = document.querySelectorAll("[data-rank-slug]");
@@ -56,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         el.textContent = r != null ? `#${r}` : "—";
       });
     }
-  } catch (e) {
+  } catch {
     // Network/API failure — leave placeholders as-is.
   }
 });

@@ -17,60 +17,70 @@ hugo --minify                # production build → public/
 wrangler pages dev public    # serve build + Functions + KV locally (test /p/, /api/plays)
 
 # from repo root:
-npm install                  # dev tooling (markdownlint-cli2, wrangler) — pinned in package.json
-npm run lint                 # markdownlint-cli2 "**/*.md"
-pip install -r requirements.txt   # boardgamegeek2 + pinned deps for bgg_export.py
+npm install                  # dev tooling (eslint, markdownlint-cli2, wrangler) — pinned in package.json
+npm run lint:js              # eslint . — blocking in CI
+npm run lint:md              # markdownlint-cli2 "**/*.md" — non-blocking in CI (vendored theme content)
+```
+
+The BGG cache is gitignored — pull it before local dev (defaults to an empty cache if this is a
+fresh clone with no network access, which is fine for testing template changes):
+
+```bash
+scripts/cache-pull.sh prod    # or stage / dev
 ```
 
 Regenerate game/collection data from BGG (writes into `shiny-hoppy-meeple/data/bgg-cache/`):
 
 ```bash
-BGG_API_TOKEN=<token> BGG_USERNAME=<user> python bgg_export.py        # a user collection
-BGG_API_TOKEN=<token> python bgg_export.py --geeklist <id>            # a geeklist (BGG now requires auth)
-python bgg_export.py --geeklist <id> --collection-file data/bgg-cache/collections/<slug>.json   # a member
+BGG_API_TOKEN=<token> BGG_USERNAME=<user> node scripts/bgg-export.js          # a user collection
+BGG_API_TOKEN=<token> node scripts/bgg-export.js --geeklist <id>              # a geeklist
+node scripts/bgg-export.js --geeklist <id> --collection-file data/bgg-cache/collections/<slug>.json
 ```
 
-Clone requires submodules (PaperMod theme): `git submodule update --init --recursive`.
+Clone requires submodules (blowfish theme): `git submodule update --init --recursive`.
 
 ## Architecture
 
-### Issue-driven content (the core pattern)
+### Content management
 
-Community members open a GitHub Issue from a template in `.github/ISSUE_TEMPLATE/`; a maintainer
-applies the **`publish`** label; a matching workflow in `.github/workflows/*-from-issue.yml`
-turns the issue into committed files via a **branch + PR**. Each workflow shares the same shape:
+Content comes from three sources:
 
-1. **Permission gate** — checks the *labeller's* collaborator permission (`write`/`admin`) via the
-   GitHub API. Anyone can open an issue; only maintainers can trigger the action by labelling.
-2. **Inline `python3` heredoc** — parses the issue body with an `extract(label)` regex helper,
-   validates fields (slugs against `^[a-z0-9][a-z0-9-]*$`, IDs via `.isdigit()`), and writes or
-   removes a file under `shiny-hoppy-meeple/data/` or `content/`.
-3. **Branch + PR** to `main`.
+- **Google Sheets** — members, shadow libraries, and game overrides. `scripts/sheets-sync.js` reads the
+  spreadsheet at the start of every build and writes definition JSON files into `data/definitions/`.
+  Removing a row from the sheet removes the definition on the next build. Stage has its own spreadsheet
+  and calendar (`GOOGLE_SHEETS_SPREADSHEET_ID_STAGE`, `GOOGLE_CALENDAR_ID_STAGE`), sharing the same
+  service account as prod — see `GOOGLE-SETUP.md`. `data/definitions/libraries/main-library.json` is
+  committed and shared by every environment, so only members/shadow-libraries/overrides differ by stage.
+- **BGG data pipeline** — `scripts/bgg-export.js` reads those definitions and fetches game data from
+  BoardGameGeek via `bgg-xml-api-client`. Runs daily via `update-bgg-cache.yml`.
+- **Direct commits** — blog posts are Markdown files under `content/posts/`, committed by
+  maintainers.
 
-Workflows: `new-/delete-member`, `new-/delete-shadow-library`, `new-/delete-game-override`,
-`delete-post`, and `publish-from-issue` (posts — special: it downloads pasted images into
-`static/images/posts/<slug>/`, builds a per-branch Cloudflare **preview** deploy, supports issue
-*edits* to update the draft, and posts the preview URL back to the issue/PR).
-
-> Security note: user-controlled issue fields must never be interpolated into a shell. These
-> workflows use `subprocess.run([...], check=True)` (argument lists, no shell) for the `gh`
-> calls — keep that pattern; do not switch to `os.system` / f-string shell commands.
+Workflows: `deploy-prod.yml`, `deploy-stage.yml`, `deploy-dev.yml`, `update-bgg-cache.yml`,
+`ci.yml` (lint on PRs — `lint:js` blocking, `lint:md` non-blocking).
 
 ### BGG data pipeline
 
-`bgg_export.py` is the generator that turns BoardGameGeek collections/geeklists into the JSON
+`scripts/bgg-export.js` is the generator that turns BoardGameGeek collections/geeklists into the JSON
 Hugo renders. The data directory has two tiers:
 
-- `data/definitions/` — small **input** configs that drive page creation:
+- `data/definitions/` — small **input** configs that drive page creation. Generated at build time
+  by `scripts/sheets-sync.js` from the Google Sheets spreadsheet (not committed to repo, except
+  `libraries/main-library.json`):
   - `members/<slug>.json` — `{ slug, display_name, description?, geeklist|username }`
-  - `libraries/main.json` — main library definition
+  - `libraries/main-library.json` — main library definition (static, committed)
   - `libraries/<slug>.json` — shadow/supplementary library definitions
   - `games-bgg-override/<id>.json` — editorial overrides (`description`, `learn_to_play_video`)
   - Member/library definitions use `username` (BGG username) or `geeklist` (integer ID), never both.
-- `data/bgg-cache/` — large **generated** outputs from running `bgg_export.py`:
+- `data/bgg-cache/` — large **generated** outputs from running `scripts/bgg-export.js`:
   - `collections/<slug>.json` — collection summary (main library and per-member/library)
   - `games/<id>.json` — full game detail for every game in any collection
   - Images are downloaded to `static/images/games/`; JSON is rewritten to local paths (originals kept in `*_source` fields).
+  - Both directories are gitignored. Each environment has its own cache, held on an orphan branch
+    (`bgg-cache-prod`, `bgg-cache-stage`, `bgg-cache-dev`) so BGG data updates never touch `main`'s
+    history. `scripts/cache-pull.sh <stage>` restores a branch's cache into the working tree before
+    export/build; `scripts/cache-push.sh <stage>` commits local changes back to that branch. Both
+    operate via a throwaway git worktree and don't disturb the current checkout.
 
 ### Custom layouts (`shiny-hoppy-meeple/layouts/`)
 
@@ -90,7 +100,7 @@ either template.
 `shiny-hoppy-meeple/functions/` adds server-side logic on top of the static site, backed by a
 Workers KV namespace bound as `SCANS` (see `wrangler.toml`). QR stickers on physical games hit
 `/p/<slug>` or `/lets-play/<slug>` → `functions/_lib/play-handler.js` increments the play count in
-KV (only for slugs in `/scan-slugs.json`, to keep junk out of KV) and 302-redirects to `/g/<slug>/`.
+KV (only for slugs in `/scan-slugs.json`, to keep junk out of KV) and 302-redirects to `/games/<slug>/`.
 `api/plays.js` serves the counts; `static/js/` fetches them client-side via `data-*-slug` attributes
 so counts never block static rendering.
 
@@ -106,15 +116,15 @@ Hugo root but Hugo ignores them.
 
 ## Dependency pinning
 
-Everything is version-pinned for reproducible builds: `requirements.txt` (full pip tree),
-`package.json` + `package-lock.json`, all GitHub Actions pinned to commit SHAs, Hugo to a fixed
+Everything is version-pinned for reproducible builds: `package.json` + `package-lock.json`
+(including `bgg-xml-api-client`), all GitHub Actions pinned to commit SHAs, Hugo to a fixed
 version, and the devcontainer Hugo feature. When bumping a tool, update it in **all** of these
-(workflows, `.devcontainer/devcontainer.json`, and the relevant lock/requirements file).
+(workflows, `.devcontainer/devcontainer.json`, and `package-lock.json`).
 
 ## Caveats
 
 - `DEPLOY.md` and `CONTRIBUTING.md` are partly stale: they reference the old `collection.json`
   (now `main-library.json`), `/go/` + `/api/scans` (now `/p/`, `/lets-play/`, `/api/plays`), and
-  `/our-library/` (now `/g/`). Trust the code over those docs.
+  `/our-library/` (now `/games/`). Trust the code over those docs.
 - Play-count slug = the anchorized game **name**. Renaming a game changes its slug and orphans the
   printed-sticker count — finalise names before generating QR codes.

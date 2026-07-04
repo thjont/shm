@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="bgg-page">
+  <p class="bgg-breadcrumb"><a href="/complexity/">Complexity</a> &rsaquo; {{ .Title }}</p>
+  <h1 class="bgg-page-title">{{ .Title }}</h1>
+  <div class="bgg-page-content">
+    <div class="bgg-collection">
+      {{ range .Pages.ByTitle }}
+        {{ $game := .Params.game }}
+        <a class="bgg-card" href="{{ .RelPermalink }}">
+          {{ with $game.thumbnail }}
+          <img class="nozoom" src="{{ . }}" alt="{{ $game.name }}" loading="lazy" />
+          {{ end }}
+          <div class="bgg-card-body">
+            <h3>{{ $game.name }}</h3>
+            <span class="bgg-year">{{ $game.year }}</span>
+            <div class="bgg-card-meta">
+              {{ with $game.rating_bayes_average }}<span>★ {{ printf "%.1f" . }}</span>{{ end }}
+              <span class="shm-rank" data-rank-slug="{{ anchorize $game.name }}"></span>
+            </div>
+          </div>
+        </a>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

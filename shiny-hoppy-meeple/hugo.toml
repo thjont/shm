@@ -37,7 +37,7 @@ or picking up your first game, you'll find a warm welcome here.
     showRecent = true
     showRecentItems = 3
     showMoreLink = true
-    showMoreLinkDest = "/posts/"
+    showMoreLinkDest = "/events/"
 
   [params.header]
     layout = "basic"
@@ -66,6 +66,7 @@ or picking up your first game, you'll find a warm welcome here.
   tag = "tags"
   category = "categories"
   mechanic = "mechanics"
+  complexity = "complexity"
 
 [outputs]
   home = ["HTML", "RSS", "JSON", "ScanSlugs"]
@@ -79,6 +80,11 @@ or picking up your first game, you'll find a warm welcome here.
 
 [menu]
   [[menu.main]]
+    name = "Home"
+    identifier = "home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
     name = "Library"
     identifier = "library"
     url = "/library/"
@@ -89,19 +95,24 @@ or picking up your first game, you'll find a warm welcome here.
     url = "/categories/"
     weight = 1
   [[menu.main]]
+    name = "Complexity"
+    parent = "library"
+    url = "/complexity/"
+    weight = 2
+  [[menu.main]]
+    name = "Events"
+    url = "/events/"
+    weight = 3
+  [[menu.main]]
     name = "Mechanics"
     parent = "library"
     url = "/mechanics/"
     weight = 4
   [[menu.main]]
     name = "Members"
-    url = "/m/"
+    url = "/members/"
     weight = 5
-  [[menu.main]]
-    name = "Posts"
-    url = "/posts/"
-    weight = 6
   [[menu.main]]
     name = "About Us"
     url = "/about-us/"
-    weight = 7
+    weight = 6

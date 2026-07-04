@@ -1,0 +1,33 @@
+{{- $mainLibIds := dict }}
+{{- range (index hugo.Data "bgg-cache" "collections" "main-library").items }}
+  {{- $mainLibIds = merge $mainLibIds (dict (string .id) true) }}
+{{- end }}
+
+{{- range $key, $game := index hugo.Data "bgg-cache" "games" }}
+  {{- $override := index hugo.Data "definitions" "games-bgg-override" $key }}
+  {{- if $override }}
+    {{- $game = merge $game $override }}
+  {{- end }}
+  {{- $params := dict "game" $game }}
+  {{- if index $mainLibIds (string $game.id) }}
+    {{- $params = merge $params (dict "categories" $game.categories "mechanics" $game.mechanics) }}
+    {{- $complexity := "" }}
+    {{- $weight := $game.rating_average_weight }}
+    {{- if $weight }}
+      {{- if lt $weight 2.0 }}{{- $complexity = "Light" }}
+      {{- else if lt $weight 3.0 }}{{- $complexity = "Medium Light" }}
+      {{- else if lt $weight 4.0 }}{{- $complexity = "Medium" }}
+      {{- else if lt $weight 5.0 }}{{- $complexity = "Medium Heavy" }}
+      {{- else }}{{- $complexity = "Heavy" }}
+      {{- end }}
+    {{- end }}
+    {{- if $complexity }}
+      {{- $params = merge $params (dict "complexity" (slice $complexity)) }}
+    {{- end }}
+  {{- end }}
+  {{- $.AddPage (dict
+    "path"   (anchorize $game.name)
+    "title"  $game.name
+    "params" $params
+  ) }}
+{{- end }}

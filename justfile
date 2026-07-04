@@ -6,12 +6,11 @@ default:
 
 # ── Onboarding ─────────────────────────────────────────────────────────────────
 
-# Install Node.js and Python dependencies
+# Install Node.js dependencies
 setup:
     npm install
-    pip install -r requirements.txt
 
-# Update the PaperMod theme submodule
+# Update the blowfish theme submodule
 update-theme:
     git submodule update --init --recursive
 
@@ -29,7 +28,7 @@ build:
 dev:
     cd shiny-hoppy-meeple && wrangler pages dev public
 
-# Run markdownlint on all Markdown files
+# Run Markdown and JS lint
 lint:
     npm run lint
 

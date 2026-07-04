@@ -9,7 +9,7 @@ async function knownSlugs(request) {
   try {
     const res = await fetch(new URL("/scan-slugs.json", request.url));
     if (res.ok) return new Set(await res.json());
-  } catch (e) {
+  } catch {
     // allowlist unavailable
   }
   return null;
@@ -44,7 +44,7 @@ export async function onRequestPost(context) {
   try {
     const body = await request.json();
     slug = body?.slug;
-  } catch (e) {
+  } catch {
     return new Response(JSON.stringify({ error: "invalid body" }), {
       status: 400,
       headers: { "content-type": "application/json" },
