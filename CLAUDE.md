@@ -22,6 +22,13 @@ npm run lint:js              # eslint . — blocking in CI
 npm run lint:md              # markdownlint-cli2 "**/*.md" — non-blocking in CI (vendored theme content)
 ```
 
+The BGG cache is gitignored — pull it before local dev (defaults to an empty cache if this is a
+fresh clone with no network access, which is fine for testing template changes):
+
+```bash
+scripts/cache-pull.sh prod    # or stage / dev
+```
+
 Regenerate game/collection data from BGG (writes into `shiny-hoppy-meeple/data/bgg-cache/`):
 
 ```bash
@@ -66,6 +73,11 @@ Hugo renders. The data directory has two tiers:
   - `collections/<slug>.json` — collection summary (main library and per-member/library)
   - `games/<id>.json` — full game detail for every game in any collection
   - Images are downloaded to `static/images/games/`; JSON is rewritten to local paths (originals kept in `*_source` fields).
+  - Both directories are gitignored. Each environment has its own cache, held on an orphan branch
+    (`bgg-cache-prod`, `bgg-cache-stage`, `bgg-cache-dev`) so BGG data updates never touch `main`'s
+    history. `scripts/cache-pull.sh <stage>` restores a branch's cache into the working tree before
+    export/build; `scripts/cache-push.sh <stage>` commits local changes back to that branch. Both
+    operate via a throwaway git worktree and don't disturb the current checkout.
 
 ### Custom layouts (`shiny-hoppy-meeple/layouts/`)
 

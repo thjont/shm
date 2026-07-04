@@ -25,5 +25,12 @@ shiny-hoppy-meeple/data/definitions/libraries/*.json
 !shiny-hoppy-meeple/data/definitions/libraries/main-library.json
 shiny-hoppy-meeple/data/definitions/games-bgg-override/
 
+# BGG cache — lives on the bgg-cache-{prod,stage,dev} branches, see scripts/cache-pull.sh
+shiny-hoppy-meeple/data/bgg-cache/
+shiny-hoppy-meeple/static/images/games/
+
+# Worktrees used by scripts/cache-push.sh
+.cache-wt-*/
+
 # Windows zone files
 *Zone.Identifier

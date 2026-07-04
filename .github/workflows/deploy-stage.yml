@@ -24,6 +24,9 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
+            - name: Restore BGG cache
+              run: scripts/cache-pull.sh stage
+
             - name: Sync definitions from Google Sheets
               env:
                   GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
