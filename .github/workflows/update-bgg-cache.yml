@@ -4,6 +4,16 @@ on:
     schedule:
         - cron: "0 4 * * *"
     workflow_dispatch:
+        inputs:
+            target:
+                description: Which environment(s) to deploy
+                required: false
+                type: choice
+                default: both
+                options:
+                    - both
+                    - prod
+                    - stage
 
 jobs:
     update-cache:
@@ -34,22 +44,27 @@ jobs:
             # ---------- prod ----------
 
             - name: Restore BGG cache (prod)
+              if: inputs.target != 'stage'
               run: scripts/cache-pull.sh prod
 
             - name: Snapshot main-library checksum
+              if: inputs.target != 'stage'
               id: before
               run: echo "hash=$(sha256sum shiny-hoppy-meeple/data/bgg-cache/collections/main-library.json 2>/dev/null | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
 
             - name: Sync definitions from Google Sheets (prod)
+              if: inputs.target != 'stage'
               env:
                   GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
                   GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
               run: node scripts/sheets-sync.js
 
             - name: Remove stale caches (prod)
+              if: inputs.target != 'stage'
               run: node scripts/cleanup-stale-cache.js
 
             - name: Export libraries (prod)
+              if: inputs.target != 'stage'
               env:
                   BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
               run: |
@@ -61,11 +76,13 @@ jobs:
                   done
 
             - name: Export members (prod)
+              if: inputs.target != 'stage'
               env:
                   BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
               run: node scripts/bgg-export-members.js
 
             - name: Regenerate QR-code PDF if main library changed
+              if: inputs.target != 'stage'
               run: |
                   after=$(sha256sum shiny-hoppy-meeple/data/bgg-cache/collections/main-library.json 2>/dev/null | cut -d' ' -f1)
                   if [ "$after" = "${{ steps.before.outputs.hash }}" ]; then
@@ -76,24 +93,25 @@ jobs:
                   fi
 
             - name: Push BGG cache (prod + dev)
+              if: inputs.target != 'stage'
               id: commit-prod
               run: |
                   scripts/cache-push.sh prod
                   scripts/cache-push.sh dev
 
             - name: Sync Google Calendar (prod)
-              if: steps.commit-prod.outputs.changed_prod == 'true'
+              if: inputs.target != 'stage' && (github.event_name == 'workflow_dispatch' || steps.commit-prod.outputs.changed_prod == 'true')
               env:
                   GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
                   GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID }}
               run: node scripts/calendar-sync.js
 
             - name: Build for prod
-              if: steps.commit-prod.outputs.changed_prod == 'true'
+              if: inputs.target != 'stage' && (github.event_name == 'workflow_dispatch' || steps.commit-prod.outputs.changed_prod == 'true')
               run: pushd shiny-hoppy-meeple && hugo --minify && popd
 
             - name: Deploy to prod
-              if: steps.commit-prod.outputs.changed_prod == 'true'
+              if: inputs.target != 'stage' && (github.event_name == 'workflow_dispatch' || steps.commit-prod.outputs.changed_prod == 'true')
               uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
               with:
                   apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -104,18 +122,22 @@ jobs:
             # ---------- stage (own sheet + calendar, own cache) ----------
 
             - name: Restore BGG cache (stage)
+              if: inputs.target != 'prod'
               run: scripts/cache-pull.sh stage
 
             - name: Sync definitions from Google Sheets (stage)
+              if: inputs.target != 'prod'
               env:
                   GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
                   GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID_STAGE }}
               run: node scripts/sheets-sync.js
 
             - name: Remove stale caches (stage)
+              if: inputs.target != 'prod'
               run: node scripts/cleanup-stale-cache.js
 
             - name: Export libraries (stage)
+              if: inputs.target != 'prod'
               env:
                   BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
               run: |
@@ -127,29 +149,31 @@ jobs:
                   done
 
             - name: Export members (stage)
+              if: inputs.target != 'prod'
               env:
                   BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
               run: node scripts/bgg-export-members.js
 
             - name: Push BGG cache (stage)
+              if: inputs.target != 'prod'
               id: commit-stage
               run: scripts/cache-push.sh stage
 
             - name: Sync Google Calendar (stage)
-              if: steps.commit-stage.outputs.changed_stage == 'true'
+              if: inputs.target != 'prod' && (github.event_name == 'workflow_dispatch' || steps.commit-stage.outputs.changed_stage == 'true')
               env:
                   GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
                   GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID_STAGE }}
               run: node scripts/calendar-sync.js
 
             - name: Build for stage
-              if: steps.commit-stage.outputs.changed_stage == 'true'
+              if: inputs.target != 'prod' && (github.event_name == 'workflow_dispatch' || steps.commit-stage.outputs.changed_stage == 'true')
               run: |
                   cp shiny-hoppy-meeple/wrangler-stage.toml shiny-hoppy-meeple/wrangler.toml
                   pushd shiny-hoppy-meeple && hugo --minify --buildFuture --baseURL "https://stage-shiny-hoppy-meeple.pages.dev/" && popd
 
             - name: Deploy to stage
-              if: steps.commit-stage.outputs.changed_stage == 'true'
+              if: inputs.target != 'prod' && (github.event_name == 'workflow_dispatch' || steps.commit-stage.outputs.changed_stage == 'true')
               uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
               with:
                   apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
