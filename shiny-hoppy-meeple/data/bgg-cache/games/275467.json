@@ -1,0 +1,28 @@
+{
+  "id": 275467,
+  "name": "Letter Jam",
+  "year": 2019,
+  "thumbnail": "/images/games/275467-thumb.jpg",
+  "image": "/images/games/275467.jpg",
+  "description": "Letter Jam is a 2-6 player cooperative word game where players assist each other in composing meaningful words from letters around the table. The trick is holding the letter card so that it’s only visible to other players and not to you.\n\nAt the start of the game, each player receives a set of face-down letter cards that can be arranged to form an existing word. The setup can be prepared by using a special card scanning app, or by players selecting words for each other. Each player then puts their first card in their stand facing the other players without looking at it, and the game begins.\n\nThe game is played in turns. Each turn, players simultaneously search other players’ letters to see what words they can spell out (telling the others the length of the word they can make up). The player who offers the longest word can then be chosen as the clue giver.\n\nThe clue giver spells out their clue by putting numbered tokens in front of the other players. Number one goes to the player whose letter comes first in the clue, number two to the second letter etc. They can always use a wild card which can be any letter, but they cannot tell others which letter it represents.\n\nEach player with a numbered token (or tokens) in front of them then tries to figure out what their letter is. If they do, they place the card face down before revealing the next letter.  At the end of the game, players can then rearrange the cards to try to form an existing word. All players then reveal their cards to see if they were successful or not. The more players who have an existing word in front of them, the bigger their collective success.\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 45,
+  "min_age": 10,
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Deduction",
+    "Party Game",
+    "Word Game"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Cooperative Game",
+    "Spelling"
+  ],
+  "rating_bayes_average": 6.6514,
+  "rating_average_weight": 1.9717,
+  "thumbnail_source": "https://cf.geekdo-images.com/kBZGJlIqir1I_EVCr2nDbg__small/img/mSl669ndQnGcsmKfe0Yppc1XvbI=/fit-in/200x150/filters:strip_icc()/pic4853794.jpg",
+  "image_source": "https://cf.geekdo-images.com/kBZGJlIqir1I_EVCr2nDbg__original/img/lJRGF7RDvRfo3azopO3tryB6IcI=/0x0/filters:format(jpeg)/pic4853794.jpg"
+}

@@ -1,0 +1,31 @@
+{
+  "id": 324856,
+  "name": "The Crew: Mission Deep Sea",
+  "year": 2021,
+  "thumbnail": "/images/games/324856-thumb.jpg",
+  "image": "/images/games/324856.jpg",
+  "description": "The Crew: Mission Deep Sea plunges players into a cooperative card game unlike any other. As members of a deep-sea expedition, you and your fellow crew are on a quest to locate the lost continent of Mu—but your success depends on precision, teamwork, and a shared sense of timing.\n\nEach mission presents a new puzzle made up of unique tasks: perhaps one player must win a specific card, while another must avoid it entirely. The trick? You’ll have to complete these challenges through standard trick-taking rules—like in traditional card games—but with extremely limited communication. Each round becomes a tightrope walk of strategic cardplay and silent coordination.\n\nBuilding on the acclaimed system of The Crew: The Quest for Planet Nine, this sequel introduces a more dynamic mission system with variable difficulty levels, a fresh deck of task cards, and improved scalability for different player counts. Whether you’re playing as a duo or a full five-person team, every game unfolds as a tightly wound tactical dance through the depths.\n\nWith 32 increasingly challenging missions and countless combinations of tasks, The Crew: Mission Deep Sea offers a replayable and rewarding dive into the unknown—perfect for those who love trick-taking games with a twist of cooperation and pressure.",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 20,
+  "min_age": 10,
+  "expansion": false,
+  "categories": [
+    "Adventure",
+    "Card Game",
+    "Mythology",
+    "Nautical"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Cooperative Game",
+    "Deduction",
+    "Hand Management",
+    "Scenario / Mission / Campaign Game",
+    "Trick-taking"
+  ],
+  "rating_bayes_average": 7.80467,
+  "rating_average_weight": 2.0494,
+  "thumbnail_source": "https://cf.geekdo-images.com/VuBqZ1sMaDAVVHF_OEJP4g__small/img/EdacXlcFZ06YK0-ZKa0oKwL4VCw=/fit-in/200x150/filters:strip_icc()/pic5988903.jpg",
+  "image_source": "https://cf.geekdo-images.com/VuBqZ1sMaDAVVHF_OEJP4g__original/img/jGWxczXC_VWZofeAmlO_DkB0hCI=/0x0/filters:format(jpeg)/pic5988903.jpg"
+}
