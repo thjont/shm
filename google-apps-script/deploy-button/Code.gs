@@ -1,5 +1,10 @@
 // Standalone Apps Script Web App — see DEPLOY-BUTTON.md for setup.
-// Deployed with "Execute as: Me", so visitors never see this source or the
+//
+// Deployed as "Execute as: User accessing the web app" + "Anyone with a
+// Google account" (no Workspace domain to restrict to), so a Google login is
+// required. That alone still allows any Google account on Earth, so
+// isAuthorized_() additionally checks the visiting user's email against the
+// ALLOWED_EMAILS script property. Visitors never see this source or the
 // GITHUB_TOKEN script property; they only see the page index.html renders.
 
 const OWNER = 'REPLACE_WITH_GITHUB_OWNER';
@@ -8,7 +13,21 @@ const WORKFLOW_FILE = 'update-bgg-cache.yml';
 const REF = 'main';
 const COOLDOWN_MS = 30 * 1000;
 
+function isAuthorized_() {
+  const email = (Session.getActiveUser().getEmail() || '').toLowerCase();
+  if (!email) return false;
+  const allowed = (PropertiesService.getScriptProperties().getProperty('ALLOWED_EMAILS') || '')
+    .split(',')
+    .map(e => e.trim().toLowerCase())
+    .filter(Boolean);
+  return allowed.includes(email);
+}
+
 function doGet() {
+  if (!isAuthorized_()) {
+    return HtmlService.createHtmlOutput('<p>Access denied. Contact the site admin if you should have access.</p>')
+      .setTitle('Shiny Hoppy Meeple — Deploy');
+  }
   return HtmlService.createHtmlOutputFromFile('index')
     .setTitle('Shiny Hoppy Meeple — Deploy')
     .addMetaTag('viewport', 'width=device-width, initial-scale=1');
@@ -23,6 +42,10 @@ function deployStage() {
 }
 
 function triggerDeploy_(target) {
+  if (!isAuthorized_()) {
+    return { ok: false, message: 'Not authorized.' };
+  }
+
   const lock = LockService.getScriptLock();
   lock.waitLock(10000);
   try {
