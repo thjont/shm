@@ -9,7 +9,10 @@
 
 const OWNER = 'REPLACE_WITH_GITHUB_OWNER';
 const REPO = 'REPLACE_WITH_GITHUB_REPO';
-const WORKFLOW_FILE = 'update-bgg-cache.yml';
+const WORKFLOW_FILES = {
+  prod: 'deploy-prod.yml',
+  stage: 'deploy-stage.yml',
+};
 const REF = 'main';
 const COOLDOWN_MS = 30 * 1000;
 
@@ -63,7 +66,7 @@ function triggerDeploy_(target) {
       return { ok: false, message: 'GITHUB_TOKEN script property is not set. Contact the site admin.' };
     }
 
-    const url = `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/${WORKFLOW_FILE}/dispatches`;
+    const url = `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/${WORKFLOW_FILES[target]}/dispatches`;
     const response = UrlFetchApp.fetch(url, {
       method: 'post',
       contentType: 'application/json',
@@ -72,7 +75,7 @@ function triggerDeploy_(target) {
         Accept: 'application/vnd.github+json',
         'X-GitHub-Api-Version': '2022-11-28',
       },
-      payload: JSON.stringify({ ref: REF, inputs: { target } }),
+      payload: JSON.stringify({ ref: REF }),
       muteHttpExceptions: true,
     });
 
