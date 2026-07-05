@@ -5,6 +5,7 @@
 {{ $duration := $endDate.Sub $startDate }}
 {{ $days := div $duration.Hours 24 }}
 
+{{ $today := time.AsTime (now | dateFormat "2006-01-02") }}
 {{ $currentDate := $startDate }}
 {{ $lastMonth := 0 }}
 {{ $refSunday := time.AsTime "2024-12-01" }}
@@ -69,10 +70,12 @@
               {{ $evEnd := time.AsTime .endDate }}
               {{ if and (ge $currentDate $evStart) (lt $currentDate $evEnd) }}
                 {{ $evPage := site.GetPage (print "events/" .slug) }}
+                {{ $pastClass := "" }}
+                {{ if le $evEnd $today }}{{ $pastClass = " cal-event-past" }}{{ end }}
                 {{ if $evPage }}
-                  <a class="cal-event" href="{{ $evPage.Permalink }}">{{ .summary }}</a>
+                  <a class="cal-event{{ $pastClass }}" href="{{ $evPage.Permalink }}">{{ .summary }}</a>
                 {{ else }}
-                  <div class="cal-event">{{ .summary }}</div>
+                  <div class="cal-event{{ $pastClass }}">{{ .summary }}</div>
                 {{ end }}
               {{ end }}
             {{ end }}
