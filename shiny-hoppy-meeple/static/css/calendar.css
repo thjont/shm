@@ -111,6 +111,12 @@ a.cal-event:hover {
   opacity: 0.7;
 }
 
+.dark .cal-event-past {
+  background: rgb(var(--color-neutral-700));
+  color: rgb(var(--color-neutral-300));
+  opacity: 1;
+}
+
 /* ── Event detail page ──────────────────────────────────────────── */
 
 .cal-upcoming h3 {
