@@ -6,6 +6,7 @@
 //   data-name          game name (substring match, case-insensitive)
 //   data-min-players / data-max-players
 //   data-time          playing time in minutes (0 = unknown)
+//   data-min-age       publisher minimum age (0 = unknown)
 //   data-complexity    library-relative bucket, computed at build time
 //                      ("light" | "medium" | "heavy", empty = unknown)
 //   data-play-style    derived from BGG mechanics at build time
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     maxTime: control("max-time"),
     complexity: control("complexity"),
     playStyle: control("play-style"),
+    age: control("age"),
     name: control("name"),
   };
   const multis = Array.from(finder.querySelectorAll("[data-finder-multi]"));
@@ -88,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const maxTime = Number(controls.maxTime.value) || 0;
     const complexity = controls.complexity.value;
     const playStyle = controls.playStyle.value;
+    const age = Number(controls.age.value) || 0;
     const name = controls.name.value.trim().toLowerCase();
     // Selected terms per card dataset key (params are singular, data attributes plural).
     const terms = {
@@ -117,6 +120,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if (ok && playStyle) {
         ok = d.playStyle === playStyle;
+      }
+      if (ok && age) {
+        const a = Number(d.minAge);
+        ok = a > 0 && a <= age;
       }
       // AND semantics: the card must carry every selected term.
       Object.entries(terms).forEach(([key, selected]) => {
