@@ -33,18 +33,26 @@
           <option value="heavy">Heavy</option>
         </select>
       </label>
-      <label>Category
-        <select data-finder="category">
-          <option value="">Any</option>
-          {{ range site.Taxonomies.categories.Alphabetical }}<option value="{{ anchorize .Page.LinkTitle }}">{{ .Page.LinkTitle }}</option>{{ end }}
-        </select>
-      </label>
-      <label>Mechanic
-        <select data-finder="mechanic">
-          <option value="">Any</option>
-          {{ range site.Taxonomies.mechanics.Alphabetical }}<option value="{{ anchorize .Page.LinkTitle }}">{{ .Page.LinkTitle }}</option>{{ end }}
-        </select>
-      </label>
+      <div class="bgg-finder-field">Categories
+        <details class="bgg-finder-multi" data-finder-multi="category">
+          <summary>Any</summary>
+          <div class="bgg-finder-multi-menu">
+            {{ range site.Taxonomies.categories.Alphabetical }}
+            <label><input type="checkbox" value="{{ anchorize .Page.LinkTitle }}">{{ .Page.LinkTitle }}</label>
+            {{ end }}
+          </div>
+        </details>
+      </div>
+      <div class="bgg-finder-field">Mechanics
+        <details class="bgg-finder-multi" data-finder-multi="mechanic">
+          <summary>Any</summary>
+          <div class="bgg-finder-multi-menu">
+            {{ range site.Taxonomies.mechanics.Alphabetical }}
+            <label><input type="checkbox" value="{{ anchorize .Page.LinkTitle }}">{{ .Page.LinkTitle }}</label>
+            {{ end }}
+          </div>
+        </details>
+      </div>
       <label>Name
         <input type="search" data-finder="name" placeholder="Search&hellip;" />
       </label>
