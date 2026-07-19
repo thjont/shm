@@ -1,2 +1,6 @@
-/g/           /library/     302
-/our-library/ /library/     302
+# Legacy URLs. Exact rules first (the old list pages), then splats so old
+# deep links to individual games land on their current /games/ page.
+/g/            /library/      302
+/g/*           /games/:splat  302
+/our-library/  /library/      302
+/our-library/* /games/:splat  302
