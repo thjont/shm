@@ -24,10 +24,11 @@ export async function onRequestGet(context) {
   const allow = env.SCANS ? await knownSlugs(request) : null;
   if (allow) {
     const list = await env.SCANS.list();
-    for (const key of list.keys) {
-      if (!allow.has(key.name)) continue;
-      counts[key.name] = parseInt(await env.SCANS.get(key.name), 10) || 0;
-    }
+    const keys = list.keys.map(k => k.name).filter(name => allow.has(name));
+    const values = await Promise.all(keys.map(name => env.SCANS.get(name)));
+    keys.forEach((name, i) => {
+      counts[name] = parseInt(values[i], 10) || 0;
+    });
   }
 
   return new Response(JSON.stringify(counts), {

@@ -22,21 +22,28 @@ export async function onRequestGet(context) {
   const allow = env.SCANS ? await knownSlugs(request) : null;
   if (allow) {
     const list = await env.SCANS.list({ prefix: PREFIX });
-    for (const key of list.keys) {
-      const slug = key.name.slice(PREFIX.length);
-      if (!allow.has(slug)) continue;
-      counts[slug] = parseInt(await env.SCANS.get(key.name), 10) || 0;
-    }
+    const keys = list.keys
+      .map(k => k.name)
+      .filter(name => allow.has(name.slice(PREFIX.length)));
+    const values = await Promise.all(keys.map(name => env.SCANS.get(name)));
+    keys.forEach((name, i) => {
+      counts[name.slice(PREFIX.length)] = parseInt(values[i], 10) || 0;
+    });
   }
 
   return new Response(JSON.stringify(counts), {
     headers: {
       "content-type": "application/json",
-      "cache-control": "no-store",
+      // Short edge cache to cut KV reads. The +1 UI updates from the POST
+      // response, so it never depends on this being fresh.
+      "cache-control": "public, max-age=30",
     },
   });
 }
 
+// Deliberately unauthenticated: anyone can increment, which can inflate the
+// member counts and SHM Rank. Accepted risk for a small community site —
+// revisit (rate limit or auth) if it's ever abused.
 export async function onRequestPost(context) {
   const { env, request } = context;
 
