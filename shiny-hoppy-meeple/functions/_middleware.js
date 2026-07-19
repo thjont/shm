@@ -19,8 +19,13 @@ export async function onRequest(context) {
 
     const auth = context.request.headers.get("Authorization");
     if (auth && auth.startsWith("Basic ")) {
-        const decoded = atob(auth.slice(6));
-        const colon = decoded.indexOf(":");
+        let decoded = null;
+        try {
+            decoded = atob(auth.slice(6));
+        } catch {
+            // malformed base64 — treat as bad credentials, not a 500
+        }
+        const colon = decoded ? decoded.indexOf(":") : -1;
         if (colon !== -1 && decoded.slice(colon + 1) === password) {
             return context.next();
         }

@@ -15,7 +15,7 @@ async function knownSlugs(request) {
     const res = await fetch(new URL("/scan-slugs.json", request.url));
     if (res.ok) return new Set(await res.json());
   } catch {
-    // allowlist unavailable — caller falls back to SLUG_RE
+    // allowlist unavailable — caller fails closed and skips the KV write
   }
   return null;
 }
