@@ -31,14 +31,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const control = name => finder.querySelector(`[data-finder="${name}"]`);
   const controls = {
     players: control("players"),
-    time: control("time"),
+    minTime: control("min-time"),
+    maxTime: control("max-time"),
     weight: control("weight"),
     name: control("name"),
   };
 
   function apply() {
     const players = Number(controls.players.value) || 0;
-    const maxTime = Number(controls.time.value) || 0;
+    const minTime = Number(controls.minTime.value) || 0;
+    const maxTime = Number(controls.maxTime.value) || 0;
     const weight = controls.weight.value;
     const name = controls.name.value.trim().toLowerCase();
 
@@ -52,9 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const max = Number(d.maxPlayers);
         ok = min > 0 && max > 0 && min <= players && players <= max;
       }
-      if (ok && maxTime) {
+      // Strict comparisons: the labels say "longer/shorter than", so mean it.
+      if (ok && (minTime || maxTime)) {
         const t = Number(d.time);
-        ok = t > 0 && t <= maxTime;
+        ok = t > 0
+          && (!minTime || t > minTime)
+          && (!maxTime || t < maxTime);
       }
       if (ok && weight) {
         ok = complexityBucket(Number(d.weight)) === weight;

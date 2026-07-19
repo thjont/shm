@@ -13,13 +13,16 @@
           <option value="8">8+</option>
         </select>
       </label>
-      <label>Time
-        <select data-finder="time">
+      <label>Longer than
+        <select data-finder="min-time">
           <option value="">Any</option>
-          <option value="30">&le; 30 min</option>
-          <option value="60">&le; 60 min</option>
-          <option value="90">&le; 90 min</option>
-          <option value="120">&le; 120 min</option>
+          {{ range seq 15 15 120 }}<option value="{{ . }}">{{ . }} min</option>{{ end }}
+        </select>
+      </label>
+      <label>Shorter than
+        <select data-finder="max-time">
+          <option value="">Any</option>
+          {{ range seq 15 15 120 }}<option value="{{ . }}">{{ . }} min</option>{{ end }}
         </select>
       </label>
       <label>Complexity
