@@ -4,18 +4,66 @@
   <div class="bgg-page-content">
     {{ .Content }}
 
+    {{/* Hidden until game-finder.js takes over — without JS the full grid still renders. */}}
+    <form class="bgg-finder" id="game-finder" hidden>
+      <label>Players
+        <select data-finder="players">
+          <option value="">Any</option>
+          {{ range seq 1 7 }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+          <option value="8">8+</option>
+        </select>
+      </label>
+      <label>Time
+        <select data-finder="time">
+          <option value="">Any</option>
+          <option value="30">&le; 30 min</option>
+          <option value="60">&le; 60 min</option>
+          <option value="90">&le; 90 min</option>
+          <option value="120">&le; 120 min</option>
+        </select>
+      </label>
+      <label>Complexity
+        <select data-finder="weight">
+          <option value="">Any</option>
+          <option value="light">Light</option>
+          <option value="medium-light">Medium Light</option>
+          <option value="medium">Medium</option>
+          <option value="medium-heavy">Medium Heavy</option>
+          <option value="heavy">Heavy</option>
+        </select>
+      </label>
+      <label>Name
+        <input type="search" data-finder="name" placeholder="Search&hellip;" />
+      </label>
+      <button type="reset">Reset</button>
+      <span class="bgg-finder-count" data-finder-count></span>
+    </form>
+
     <div class="bgg-collection">
       {{ $mainLibSlug := (index hugo.Data.definitions.libraries "main-library").slug }}
       {{ range (index hugo.Data "bgg-cache" "collections" $mainLibSlug).items }}
       {{ $thumb := .thumbnail }}
       {{ $year := .year }}
       {{ $rating := .rating }}
+      {{ $minPlayers := 0 }}
+      {{ $maxPlayers := 0 }}
+      {{ $time := 0 }}
+      {{ $weight := 0.0 }}
       {{ with index hugo.Data "bgg-cache" "games" (print .id) }}
         {{ if not $thumb }}{{ $thumb = .thumbnail }}{{ end }}
         {{ if not $year }}{{ $year = .year }}{{ end }}
         {{ if not $rating }}{{ $rating = .rating_bayes_average }}{{ end }}
+        {{ $minPlayers = .min_players }}
+        {{ $maxPlayers = .max_players }}
+        {{ $time = .playing_time }}
+        {{ $weight = .rating_average_weight }}
       {{ end }}
-      <a class="bgg-card" href="/games/{{ anchorize .name }}/">
+      <a class="bgg-card" href="/games/{{ anchorize .name }}/"
+         data-name="{{ .name }}"
+         data-min-players="{{ $minPlayers }}"
+         data-max-players="{{ $maxPlayers }}"
+         data-time="{{ $time }}"
+         data-weight="{{ $weight }}">
         {{ with $thumb }}
         <img class="nozoom" src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />
         {{ end }}
@@ -30,6 +78,9 @@
       </a>
       {{ end }}
     </div>
+
+    <p class="bgg-finder-empty" data-finder-empty hidden>No games match those filters &mdash; try loosening one.</p>
   </div>
 </div>
+<script src="/js/game-finder.js" defer></script>
 {{ end }}

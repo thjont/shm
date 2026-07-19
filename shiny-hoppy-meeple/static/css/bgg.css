@@ -20,12 +20,14 @@ body {
   --shm-border:     rgb(var(--color-neutral-200));
   --shm-muted:      rgb(var(--color-neutral-500));
   --shm-subtle-bg:  rgb(var(--color-neutral-100));
+  --shm-input-bg:   rgb(var(--color-neutral));
 }
 
 .dark {
   --shm-border:     rgb(var(--color-neutral-700));
   --shm-muted:      rgb(var(--color-neutral-400));
   --shm-subtle-bg:  rgb(var(--color-neutral-800));
+  --shm-input-bg:   rgb(var(--color-neutral-900));
 }
 
 /* ── Page wrapper ───────────────────────────────────────────────── */
@@ -115,6 +117,72 @@ body {
   color: var(--shm-muted);
   margin-top: auto;
   padding-top: 0.4rem;
+}
+
+/* ── Library game finder ────────────────────────────────────────── */
+
+.bgg-finder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem 1rem;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--shm-border);
+  border-radius: 6px;
+  background: var(--shm-subtle-bg);
+}
+
+.bgg-finder label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--shm-muted);
+}
+
+.bgg-finder select,
+.bgg-finder input {
+  font-size: 0.9rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--shm-border);
+  border-radius: 4px;
+  background: var(--shm-input-bg);
+  color: inherit;
+}
+
+.bgg-finder input {
+  width: 11rem;
+  max-width: 100%;
+}
+
+.bgg-finder button[type="reset"] {
+  font-size: 0.85rem;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--shm-border);
+  border-radius: 4px;
+  color: var(--shm-muted);
+}
+
+.bgg-finder button[type="reset"]:hover {
+  color: inherit;
+}
+
+.bgg-finder-count {
+  margin-left: auto;
+  align-self: center;
+  font-size: 0.85rem;
+  color: var(--shm-muted);
+  white-space: nowrap;
+}
+
+.bgg-card-hidden {
+  display: none;
+}
+
+.bgg-finder-empty {
+  margin-top: 2rem;
+  color: var(--shm-muted);
 }
 
 /* ── Game detail page ───────────────────────────────────────────── */
