@@ -1,0 +1,11 @@
+{{- /* Maps a game's BGG mechanics to its play style: "Co-op",
+      "Team vs Team", "Semi co-op", or "Competitive" (BGG models play
+      style as mechanics; no tag means straight competitive). Single
+      source of truth for the game finder's data-play-style attribute. */}}
+{{- $mechanics := . | default slice }}
+{{- $style := "Competitive" }}
+{{- if in $mechanics "Cooperative Game" }}{{ $style = "Co-op" }}
+{{- else if in $mechanics "Team-Based Game" }}{{ $style = "Team vs Team" }}
+{{- else if in $mechanics "Semi-Cooperative Game" }}{{ $style = "Semi co-op" }}
+{{- end }}
+{{- return $style }}

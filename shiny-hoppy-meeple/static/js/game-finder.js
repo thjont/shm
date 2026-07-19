@@ -8,6 +8,9 @@
 //   data-time          playing time in minutes (0 = unknown)
 //   data-complexity    library-relative bucket, computed at build time
 //                      ("light" | "medium" | "heavy", empty = unknown)
+//   data-play-style    derived from BGG mechanics at build time
+//                      ("competitive" | "co-op" | "team-vs-team" |
+//                      "semi-co-op", empty = unknown)
 //   data-categories / data-mechanics
 //                      space-separated anchorized BGG terms (card must carry
 //                      every selected term, empty = unknown)
@@ -34,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     minTime: control("min-time"),
     maxTime: control("max-time"),
     complexity: control("complexity"),
+    playStyle: control("play-style"),
     name: control("name"),
   };
   const multis = Array.from(finder.querySelectorAll("[data-finder-multi]"));
@@ -83,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const minTime = Number(controls.minTime.value) || 0;
     const maxTime = Number(controls.maxTime.value) || 0;
     const complexity = controls.complexity.value;
+    const playStyle = controls.playStyle.value;
     const name = controls.name.value.trim().toLowerCase();
     // Selected terms per card dataset key (params are singular, data attributes plural).
     const terms = {
@@ -109,6 +114,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if (ok && complexity) {
         ok = d.complexity === complexity;
+      }
+      if (ok && playStyle) {
+        ok = d.playStyle === playStyle;
       }
       // AND semantics: the card must carry every selected term.
       Object.entries(terms).forEach(([key, selected]) => {
