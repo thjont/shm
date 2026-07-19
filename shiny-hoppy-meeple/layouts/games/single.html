@@ -45,7 +45,7 @@
           <div><strong>Members</strong><br><span data-member-play-slug="{{ anchorize $game.name }}">…</span></div>
           <div><strong>Public</strong><br><span data-play-slug="{{ anchorize $game.name }}">…</span></div>
           <div><strong>BGG Rating</strong><br>{{ with $game.rating_bayes_average }}{{ printf "%.2f" . }} / 10{{ else }}—{{ end }}</div>
-          <div><strong>Complexity</strong><br>{{ with $game.rating_average_weight }}{{ printf "%.2f" . }} / 5{{ else }}—{{ end }}</div>
+          <div><strong>BGG Weight</strong><br>{{ with $game.rating_average_weight }}{{ printf "%.2f" . }} / 5{{ else }}—{{ end }}</div>
         </div>
       </div>
 

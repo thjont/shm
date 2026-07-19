@@ -13,22 +13,23 @@
           <option value="8">8+</option>
         </select>
       </label>
-      <label>Time
-        <select data-finder="time">
+      <label>Longer than
+        <select data-finder="min-time">
           <option value="">Any</option>
-          <option value="30">&le; 30 min</option>
-          <option value="60">&le; 60 min</option>
-          <option value="90">&le; 90 min</option>
-          <option value="120">&le; 120 min</option>
+          {{ range seq 15 15 120 }}<option value="{{ . }}">{{ . }} min</option>{{ end }}
+        </select>
+      </label>
+      <label>Shorter than
+        <select data-finder="max-time">
+          <option value="">Any</option>
+          {{ range seq 15 15 120 }}<option value="{{ . }}">{{ . }} min</option>{{ end }}
         </select>
       </label>
       <label>Complexity
-        <select data-finder="weight">
+        <select data-finder="complexity">
           <option value="">Any</option>
           <option value="light">Light</option>
-          <option value="medium-light">Medium Light</option>
           <option value="medium">Medium</option>
-          <option value="medium-heavy">Medium Heavy</option>
           <option value="heavy">Heavy</option>
         </select>
       </label>
@@ -63,7 +64,7 @@
          data-min-players="{{ $minPlayers }}"
          data-max-players="{{ $maxPlayers }}"
          data-time="{{ $time }}"
-         data-weight="{{ $weight }}">
+         data-complexity="{{ anchorize (partial "shm/complexity-bucket.html" $weight) }}">
         {{ with $thumb }}
         <img class="nozoom" src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />
         {{ end }}

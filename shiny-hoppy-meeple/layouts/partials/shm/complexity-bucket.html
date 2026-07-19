@@ -1,0 +1,14 @@
+{{- /* Maps a BGG average weight to this library's relative complexity
+      bucket: "Light", "Medium", or "Heavy" ("" when the weight is
+      missing or the cuts are unavailable). */}}
+{{- $w := . }}
+{{- $bucket := "" }}
+{{- if $w }}
+  {{- $cuts := partialCached "shm/complexity-cuts.html" (dict) }}
+  {{- if $cuts.light }}
+    {{- if lt $w $cuts.light }}{{ $bucket = "Light" }}
+    {{- else if lt $w $cuts.heavy }}{{ $bucket = "Medium" }}
+    {{- else }}{{ $bucket = "Heavy" }}{{ end }}
+  {{- end }}
+{{- end }}
+{{- return $bucket }}

@@ -6,20 +6,11 @@
 //   data-name          game name (substring match, case-insensitive)
 //   data-min-players / data-max-players
 //   data-time          playing time in minutes (0 = unknown)
-//   data-weight        BGG average weight (0 = unknown)
+//   data-complexity    library-relative bucket, computed at build time
+//                      ("light" | "medium" | "heavy", empty = unknown)
 //
-// A card with unknown data (0) is excluded once the corresponding filter is
+// A card with unknown data is excluded once the corresponding filter is
 // active — better to under-promise than suggest an unplayable game.
-
-// Weight buckets mirror content/games/_content.gotmpl — keep in sync.
-function complexityBucket(weight) {
-  if (!weight) return "";
-  if (weight < 2) return "light";
-  if (weight < 3) return "medium-light";
-  if (weight < 4) return "medium";
-  if (weight < 5) return "medium-heavy";
-  return "heavy";
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   const finder = document.getElementById("game-finder");
@@ -31,15 +22,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const control = name => finder.querySelector(`[data-finder="${name}"]`);
   const controls = {
     players: control("players"),
-    time: control("time"),
-    weight: control("weight"),
+    minTime: control("min-time"),
+    maxTime: control("max-time"),
+    complexity: control("complexity"),
     name: control("name"),
   };
 
   function apply() {
     const players = Number(controls.players.value) || 0;
-    const maxTime = Number(controls.time.value) || 0;
-    const weight = controls.weight.value;
+    const minTime = Number(controls.minTime.value) || 0;
+    const maxTime = Number(controls.maxTime.value) || 0;
+    const complexity = controls.complexity.value;
     const name = controls.name.value.trim().toLowerCase();
 
     let shown = 0;
@@ -52,12 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const max = Number(d.maxPlayers);
         ok = min > 0 && max > 0 && min <= players && players <= max;
       }
-      if (ok && maxTime) {
+      // Strict comparisons: the labels say "longer/shorter than", so mean it.
+      if (ok && (minTime || maxTime)) {
         const t = Number(d.time);
-        ok = t > 0 && t <= maxTime;
+        ok = t > 0
+          && (!minTime || t > minTime)
+          && (!maxTime || t < maxTime);
       }
-      if (ok && weight) {
-        ok = complexityBucket(Number(d.weight)) === weight;
+      if (ok && complexity) {
+        ok = d.complexity === complexity;
       }
       if (ok && name) {
         ok = d.name.toLowerCase().includes(name);
