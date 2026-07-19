@@ -79,6 +79,21 @@ function decodeHtmlEntities(str) {
   });
 }
 
+// Descriptions are rendered by Hugo with goldmark's unsafe HTML enabled, and the
+// entity decode above can turn e.g. &lt;script&gt; into a live tag — so no markup
+// may survive the export. BGG descriptions are plain text with entities, so
+// dropping tags loses nothing. Iterate because stripping can splice new tags
+// together (e.g. "<sc<x>ript>").
+function stripHtmlTags(str) {
+  if (typeof str !== 'string') return str;
+  let prev;
+  do {
+    prev = str;
+    str = str.replace(/<[^>]*>/g, '');
+  } while (str !== prev);
+  return str;
+}
+
 // --- Field mapping ---
 
 function mapCollectionItem(item) {
@@ -113,7 +128,7 @@ function mapGame(thing) {
     year: thing.yearpublished?.value ?? null,
     thumbnail: thing.thumbnail ?? null,
     image:     thing.image ?? null,
-    description: decodeHtmlEntities(thing.description ?? null),
+    description: stripHtmlTags(decodeHtmlEntities(thing.description ?? null)),
     min_players: Number(thing.minplayers?.value ?? 0),
     max_players: Number(thing.maxplayers?.value ?? 0),
     playing_time: Number(thing.playingtime?.value ?? 0),
