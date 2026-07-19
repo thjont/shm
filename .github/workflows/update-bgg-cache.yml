@@ -85,10 +85,10 @@ jobs:
               if: inputs.target != 'stage'
               run: |
                   after=$(sha256sum shiny-hoppy-meeple/data/bgg-cache/collections/main-library.json 2>/dev/null | cut -d' ' -f1)
-                  if [ "$after" = "${{ steps.before.outputs.hash }}" ]; then
+                  if [ -f shiny-hoppy-meeple/static/qr-codes.pdf ] && [ "$after" = "${{ steps.before.outputs.hash }}" ]; then
                     echo "main-library.json unchanged — skipping QR-code PDF."
                   else
-                    echo "main-library.json changed — regenerating QR-code PDF."
+                    echo "main-library.json changed or PDF missing — regenerating QR-code PDF."
                     node scripts/generate-qr-pdf.js
                   fi
 

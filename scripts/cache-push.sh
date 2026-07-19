@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Commit the local shiny-hoppy-meeple/data/bgg-cache and static/images/games
-# directories to the bgg-cache-<stage> branch, without disturbing the current
-# checkout. Writes changed=true|false to $GITHUB_OUTPUT if it's set.
+# directories (plus the derived static/qr-codes.pdf) to the bgg-cache-<stage>
+# branch, without disturbing the current checkout. Writes changed=true|false
+# to $GITHUB_OUTPUT if it's set.
 set -euo pipefail
 
 STAGE="${1:?usage: cache-push.sh <prod|stage|dev>}"
@@ -23,6 +24,13 @@ mkdir -p "$WT/shiny-hoppy-meeple/data" "$WT/shiny-hoppy-meeple/static/images"
 rm -rf "$WT/shiny-hoppy-meeple/data/bgg-cache" "$WT/shiny-hoppy-meeple/static/images/games"
 cp -r shiny-hoppy-meeple/data/bgg-cache "$WT/shiny-hoppy-meeple/data/"
 cp -r shiny-hoppy-meeple/static/images/games "$WT/shiny-hoppy-meeple/static/images/"
+
+# qr-codes.pdf is derived from the main-library collection (update-bgg-cache.yml
+# regenerates it), so it travels with the cache rather than living on main.
+rm -f "$WT/shiny-hoppy-meeple/static/qr-codes.pdf"
+if [ -f shiny-hoppy-meeple/static/qr-codes.pdf ]; then
+  cp shiny-hoppy-meeple/static/qr-codes.pdf "$WT/shiny-hoppy-meeple/static/"
+fi
 
 git -C "$WT" add -A
 if git -C "$WT" diff --cached --quiet; then
