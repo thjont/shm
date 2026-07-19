@@ -68,6 +68,16 @@ or picking up your first game, you'll find a warm welcome here.
   mechanic = "mechanics"
   complexity = "complexity"
 
+# The game taxonomies exist only to power the game finder (site.Taxonomies
+# dropdowns) and the term labels on game pages (.GetTerms) — the finder's
+# query-param deep links replaced the static /categories/, /mechanics/ and
+# /complexity/ pages, so don't render them. tags (blog posts) still renders.
+[[cascade]]
+  [cascade.build]
+    render = "never"
+  [cascade.target]
+    path = "{/categories,/categories/**,/mechanics,/mechanics/**,/complexity,/complexity/**}"
+
 [outputs]
   home = ["HTML", "RSS", "JSON", "ScanSlugs"]
 

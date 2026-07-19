@@ -211,6 +211,10 @@ Game and member pages are created by **content adapters**, not Markdown files:
   `anchorize`d game name), merging any `games-bgg-override` data and assigning
   `categories`/`mechanics`/`complexity` taxonomy terms for games in the main library. The games
   section lists at `/library/` (set by `url` in `content/games/_index.md`).
+  These taxonomies are **data-only**: a cascade in `hugo.toml` stops their pages rendering
+  (`/categories/`, `/mechanics/`, `/complexity/` deep-link into the filtered library instead),
+  but the terms still power the game finder's dropdowns (`site.Taxonomies`) and the term labels
+  on game pages (`.GetTerms`). The `tags` taxonomy (blog posts) still renders.
   Complexity (`Light`/`Medium`/`Heavy`) is **relative to the main library**, not BGG's absolute
   scale: `partials/shm/complexity-cuts.html` splits the library's BGG weights into terciles at
   build time, so buckets stay evenly filled but a game near a cut can change bucket when the
@@ -223,7 +227,6 @@ Blowfish theme with overrides:
 
 - `games/single.html` — game pages; merges override data and computes owners / in-library across members.
 - `games/list.html`, `members/` — the library list and member pages.
-- `categories/`, `mechanics/`, `complexity/` — taxonomy list pages.
 - `_default/stats.html` — the stats page (play counts, ranks, the members' +1 button).
 - `_default/events.html` — the calendar page rendered from `data/calendar.json`.
 - `index.scanslugs.json` — a custom Hugo output format emitting `/scan-slugs.json`, the **allowlist
