@@ -11,16 +11,7 @@
   {{- $params := dict "game" $game }}
   {{- if index $mainLibIds (string $game.id) }}
     {{- $params = merge $params (dict "categories" $game.categories "mechanics" $game.mechanics) }}
-    {{- $complexity := "" }}
-    {{- $weight := $game.rating_average_weight }}
-    {{- if $weight }}
-      {{- if lt $weight 2.0 }}{{- $complexity = "Light" }}
-      {{- else if lt $weight 3.0 }}{{- $complexity = "Medium Light" }}
-      {{- else if lt $weight 4.0 }}{{- $complexity = "Medium" }}
-      {{- else if lt $weight 5.0 }}{{- $complexity = "Medium Heavy" }}
-      {{- else }}{{- $complexity = "Heavy" }}
-      {{- end }}
-    {{- end }}
+    {{- $complexity := partial "shm/complexity-bucket.html" $game.rating_average_weight }}
     {{- if $complexity }}
       {{- $params = merge $params (dict "complexity" (slice $complexity)) }}
     {{- end }}

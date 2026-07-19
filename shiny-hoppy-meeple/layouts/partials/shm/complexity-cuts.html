@@ -1,0 +1,18 @@
+{{- /* Tercile cut weights across the main library's BGG average weights,
+      so complexity buckets are relative to our shelf rather than BGG's
+      absolute scale. Returns a dict: games with weight below "light" are
+      Light, below "heavy" Medium, the rest Heavy. Both zero when the
+      cache is empty or too small to split. Call via partialCached. */}}
+{{- $weights := slice }}
+{{- range (index hugo.Data "bgg-cache" "collections" "main-library").items }}
+  {{- with index hugo.Data "bgg-cache" "games" (print .id) }}
+    {{- with .rating_average_weight }}{{ $weights = $weights | append . }}{{ end }}
+  {{- end }}
+{{- end }}
+{{- $cuts := dict "light" 0 "heavy" 0 }}
+{{- if ge (len $weights) 3 }}
+  {{- $weights = sort $weights }}
+  {{- $n := len $weights }}
+  {{- $cuts = dict "light" (index $weights (div $n 3)) "heavy" (index $weights (div (mul $n 2) 3)) }}
+{{- end }}
+{{- return $cuts }}

@@ -6,20 +6,11 @@
 //   data-name          game name (substring match, case-insensitive)
 //   data-min-players / data-max-players
 //   data-time          playing time in minutes (0 = unknown)
-//   data-weight        BGG average weight (0 = unknown)
+//   data-complexity    library-relative bucket, computed at build time
+//                      ("light" | "medium" | "heavy", empty = unknown)
 //
-// A card with unknown data (0) is excluded once the corresponding filter is
+// A card with unknown data is excluded once the corresponding filter is
 // active — better to under-promise than suggest an unplayable game.
-
-// Weight buckets mirror content/games/_content.gotmpl — keep in sync.
-function complexityBucket(weight) {
-  if (!weight) return "";
-  if (weight < 2) return "light";
-  if (weight < 3) return "medium-light";
-  if (weight < 4) return "medium";
-  if (weight < 5) return "medium-heavy";
-  return "heavy";
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   const finder = document.getElementById("game-finder");
@@ -33,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     players: control("players"),
     minTime: control("min-time"),
     maxTime: control("max-time"),
-    weight: control("weight"),
+    complexity: control("complexity"),
     name: control("name"),
   };
 
@@ -41,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const players = Number(controls.players.value) || 0;
     const minTime = Number(controls.minTime.value) || 0;
     const maxTime = Number(controls.maxTime.value) || 0;
-    const weight = controls.weight.value;
+    const complexity = controls.complexity.value;
     const name = controls.name.value.trim().toLowerCase();
 
     let shown = 0;
@@ -61,8 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
           && (!minTime || t > minTime)
           && (!maxTime || t < maxTime);
       }
-      if (ok && weight) {
-        ok = complexityBucket(Number(d.weight)) === weight;
+      if (ok && complexity) {
+        ok = d.complexity === complexity;
       }
       if (ok && name) {
         ok = d.name.toLowerCase().includes(name);

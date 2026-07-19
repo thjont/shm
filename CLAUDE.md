@@ -103,7 +103,10 @@ Game and member pages are created by **content adapters**, not Markdown files:
 `/games/<slug>/`), merging any `games-bgg-override` data and assigning `categories`/`mechanics`/
 `complexity` taxonomy terms only for games in the main library; `content/members/_content.gotmpl`
 builds `/members/<slug>/` pages from the member definitions. The games section lists at `/library/`
-(set by `url` in `content/games/_index.md`).
+(set by `url` in `content/games/_index.md`). Complexity buckets (`Light`/`Medium`/`Heavy`) are
+**terciles of the main library's BGG weights**, computed at build time by
+`partials/shm/complexity-cuts.html`; `partials/shm/complexity-bucket.html` maps weight → bucket and
+is the single source of truth (also feeds the game finder's `data-complexity` attributes).
 
 Blowfish theme with overrides: `games/` (game list + detail, which computes owners/in-library
 across member collections), `members/`, taxonomy layouts for `categories`/`mechanics`/`complexity`,
