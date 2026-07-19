@@ -47,8 +47,12 @@ members, libraries, events), you don't need any of this — see the
   `.devcontainer` (currently 0.163.1).
 - **Node.js** + npm (scripts and dev tooling).
 - [`just`](https://just.systems/) (optional) — wraps the common commands; run `just` to list them.
-- A devcontainer is provided (`.devcontainer/`) with Hugo preinstalled — the simplest way to get a
-  matching environment.
+- A devcontainer is provided (`.devcontainer/`) with Hugo, Node, and Claude Code preinstalled —
+  the simplest way to get a matching environment. On start it raises a **default-deny egress
+  firewall** (`init-firewall.sh`) allowing only GitHub, npm, Anthropic, VS Code, and the pipeline's
+  hosts (BGG, Google APIs, Cloudflare), so agents can run sandboxed inside it. Host IPs are
+  resolved once at start; if a CDN-fronted host stops resolving in a long-lived container, re-run
+  `sudo bash .devcontainer/init-firewall.sh`.
 
 ## Setup
 
