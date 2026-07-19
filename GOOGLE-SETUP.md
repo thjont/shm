@@ -162,31 +162,29 @@ For `GOOGLE_SERVICE_ACCOUNT_KEY`, paste the entire JSON content including the ou
 
 ## 12. Test locally (optional)
 
+Run both from the **repo root**:
+
 **Calendar sync:**
 
 ```bash
-cd shiny-hoppy-meeple
-
 export GOOGLE_CALENDAR_ID="your-calendar-id-here"
 export GOOGLE_SERVICE_ACCOUNT_KEY='{ "type": "service_account", ... }'
 
-node calendar-sync.js
+node scripts/calendar-sync.js
 # → calendar.json written (N events).
 
-hugo server
+cd shiny-hoppy-meeple && hugo server
 # → visit http://localhost:1313/events/
 ```
 
 **Sheets sync:**
 
 ```bash
-cd shiny-hoppy-meeple
-
 export GOOGLE_SHEETS_SPREADSHEET_ID="your-spreadsheet-id-here"
 export GOOGLE_SERVICE_ACCOUNT_KEY='{ "type": "service_account", ... }'
 
-node sheets-sync.js
-# → members and shadow library definitions written to data/definitions/
+node scripts/sheets-sync.js
+# → members and shadow library definitions written to shiny-hoppy-meeple/data/definitions/
 ```
 
 ---

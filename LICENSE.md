@@ -8,7 +8,7 @@ This repository contains two categories of material covered by different licence
 
 Applies to all code in this repository, including but not limited to:
 
-- Python scripts (`bgg_export.py`, etc.)
+- Node.js scripts (`scripts/`)
 - Hugo templates (`shiny-hoppy-meeple/layouts/`)
 - Cloudflare Pages Functions (`shiny-hoppy-meeple/functions/`)
 - GitHub Actions workflows (`.github/workflows/`)
@@ -37,7 +37,7 @@ Applies to all code in this repository, including but not limited to:
 Applies to all content in this repository, including but not limited to:
 
 - Blog posts and pages (`shiny-hoppy-meeple/content/`)
-- Member data (`shiny-hoppy-meeple/data/members/`, `shiny-hoppy-meeple/data/sources/`)
+- Member and library definitions (`shiny-hoppy-meeple/data/definitions/`)
 - Images created by contributors (`shiny-hoppy-meeple/static/images/posts/`)
 
 This content is licensed under the
@@ -51,7 +51,7 @@ contributions under the same licence.
 
 ## Third-party data
 
-BoardGameGeek data (`shiny-hoppy-meeple/data/games/`, `shiny-hoppy-meeple/data/main-library.json`,
+BoardGameGeek data (`shiny-hoppy-meeple/data/bgg-cache/` and the `bgg-cache-*` branches,
 `shiny-hoppy-meeple/static/images/games/`) is sourced from the
 [BGG XML API](https://boardgamegeek.com/wiki/page/XML_API_Terms_of_Use) and is subject to
 BoardGameGeek's own Terms of Service. It is not covered by the licences above.

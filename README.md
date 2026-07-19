@@ -15,4 +15,6 @@ deployed to Cloudflare Pages.
 | You want to… | Read |
 | --- | --- |
 | **Add or remove content** — join as a member, list a game collection, publish a post. | **[CONTRIBUTING.md](CONTRIBUTING.md)** |
+| **Understand play counts and QR stickers** — how scans are tracked, how to get stickers printed. | **[PLAYS.md](PLAYS.md)** |
 | **Work on the website itself** — run it locally, change layouts, edit the data pipeline, deploy. | **[DEVELOPMENT.md](DEVELOPMENT.md)** |
+| **Set up or deploy as a maintainer** — Google integrations, the no-GitHub deploy button. | **[GOOGLE-SETUP.md](GOOGLE-SETUP.md)**, **[DEPLOY-BUTTON.md](DEPLOY-BUTTON.md)** |

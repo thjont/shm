@@ -154,8 +154,7 @@ version, and the devcontainer Hugo feature. When bumping a tool, update it in **
 
 ## Caveats
 
-- `DEVELOPMENT.md` and `CONTRIBUTING.md` are partly stale: they reference the PaperMod theme (now
-  Blowfish), a Python `bgg_export.py` + `requirements.txt` (now `scripts/bgg-export.js`), and
-  content generated "from GitHub Issues" (now Sheets/Calendar). Trust the code over those docs.
 - Play-count slug = the anchorized game **name**. Renaming a game changes its slug and orphans the
   printed-sticker count — finalise names before generating QR codes.
+- When changing architecture or workflows, update `DEVELOPMENT.md` (developer guide) alongside this
+  file; content-workflow changes belong in `CONTRIBUTING.md` and play-count changes in `PLAYS.md`.

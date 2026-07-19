@@ -59,7 +59,8 @@ and events appear on the next site deploy (hourly, 8 am – 11 pm).
 ## Maintainer guide: editing the Google Sheet
 
 The sheet has three tabs — one for each content type. Changes are picked up automatically at build
-time; there is no manual sync step required.
+time; there is no manual sync step required. (Setting up the sheet, calendar, and service account
+from scratch is covered in [GOOGLE-SETUP.md](GOOGLE-SETUP.md).)
 
 > [!IMPORTANT]
 > Leave the header row (row 1) of each tab untouched. The sync script reads the column names from
@@ -188,7 +189,11 @@ deploy.
 | Events | Next site deploy (hourly, 8 am – 11 pm) |
 
 You can also trigger the BGG cache update manually from the **Actions** tab in GitHub if you need
-member or library changes to appear sooner.
+member or library changes to appear sooner. Maintainers without a GitHub account can trigger a
+deploy through the web deploy button instead — see [DEPLOY-BUTTON.md](DEPLOY-BUTTON.md).
+
+For how game plays are counted (QR sticker scans and member-logged plays), see
+[PLAYS.md](PLAYS.md).
 
 > [!WARNING]
 > **Linking to a game page from an event, game override, or any other content will cause the site
