@@ -33,6 +33,18 @@
           <option value="heavy">Heavy</option>
         </select>
       </label>
+      <label>Category
+        <select data-finder="category">
+          <option value="">Any</option>
+          {{ range site.Taxonomies.categories.Alphabetical }}<option value="{{ anchorize .Page.LinkTitle }}">{{ .Page.LinkTitle }}</option>{{ end }}
+        </select>
+      </label>
+      <label>Mechanic
+        <select data-finder="mechanic">
+          <option value="">Any</option>
+          {{ range site.Taxonomies.mechanics.Alphabetical }}<option value="{{ anchorize .Page.LinkTitle }}">{{ .Page.LinkTitle }}</option>{{ end }}
+        </select>
+      </label>
       <label>Name
         <input type="search" data-finder="name" placeholder="Search&hellip;" />
       </label>
@@ -50,6 +62,8 @@
       {{ $maxPlayers := 0 }}
       {{ $time := 0 }}
       {{ $weight := 0.0 }}
+      {{ $categories := slice }}
+      {{ $mechanics := slice }}
       {{ with index hugo.Data "bgg-cache" "games" (print .id) }}
         {{ if not $thumb }}{{ $thumb = .thumbnail }}{{ end }}
         {{ if not $year }}{{ $year = .year }}{{ end }}
@@ -58,13 +72,17 @@
         {{ $maxPlayers = .max_players }}
         {{ $time = .playing_time }}
         {{ $weight = .rating_average_weight }}
+        {{ range .categories }}{{ $categories = $categories | append (anchorize .) }}{{ end }}
+        {{ range .mechanics }}{{ $mechanics = $mechanics | append (anchorize .) }}{{ end }}
       {{ end }}
       <a class="bgg-card" href="/games/{{ anchorize .name }}/"
          data-name="{{ .name }}"
          data-min-players="{{ $minPlayers }}"
          data-max-players="{{ $maxPlayers }}"
          data-time="{{ $time }}"
-         data-complexity="{{ anchorize (partial "shm/complexity-bucket.html" $weight) }}">
+         data-complexity="{{ anchorize (partial "shm/complexity-bucket.html" $weight) }}"
+         data-categories="{{ delimit $categories " " }}"
+         data-mechanics="{{ delimit $mechanics " " }}">
         {{ with $thumb }}
         <img class="nozoom" src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />
         {{ end }}

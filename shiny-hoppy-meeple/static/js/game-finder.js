@@ -8,6 +8,9 @@
 //   data-time          playing time in minutes (0 = unknown)
 //   data-complexity    library-relative bucket, computed at build time
 //                      ("light" | "medium" | "heavy", empty = unknown)
+//   data-categories / data-mechanics
+//                      space-separated anchorized BGG terms (exact match
+//                      against one term, empty = unknown)
 //
 // A card with unknown data is excluded once the corresponding filter is
 // active — better to under-promise than suggest an unplayable game.
@@ -29,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
     minTime: control("min-time"),
     maxTime: control("max-time"),
     complexity: control("complexity"),
+    category: control("category"),
+    mechanic: control("mechanic"),
     name: control("name"),
   };
 
@@ -58,6 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const minTime = Number(controls.minTime.value) || 0;
     const maxTime = Number(controls.maxTime.value) || 0;
     const complexity = controls.complexity.value;
+    const category = controls.category.value;
+    const mechanic = controls.mechanic.value;
     const name = controls.name.value.trim().toLowerCase();
 
     let shown = 0;
@@ -79,6 +86,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if (ok && complexity) {
         ok = d.complexity === complexity;
+      }
+      if (ok && category) {
+        ok = d.categories.split(" ").includes(category);
+      }
+      if (ok && mechanic) {
+        ok = d.mechanics.split(" ").includes(mechanic);
       }
       if (ok && name) {
         ok = d.name.toLowerCase().includes(name);
