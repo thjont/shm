@@ -90,24 +90,9 @@ or picking up your first game, you'll find a warm welcome here.
     url = "/library/"
     weight = 2
   [[menu.main]]
-    name = "Categories"
-    parent = "library"
-    url = "/categories/"
-    weight = 1
-  [[menu.main]]
-    name = "Complexity"
-    parent = "library"
-    url = "/complexity/"
-    weight = 2
-  [[menu.main]]
     name = "Events"
     url = "/events/"
     weight = 3
-  [[menu.main]]
-    name = "Mechanics"
-    parent = "library"
-    url = "/mechanics/"
-    weight = 4
   [[menu.main]]
     name = "Members"
     url = "/members/"
