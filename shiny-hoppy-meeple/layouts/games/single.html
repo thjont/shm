@@ -71,7 +71,8 @@
 
         {{ with .GetTerms "complexity" }}
         <p><strong>Complexity</strong><br>
-          {{ range . }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+          {{/* Deep-link into the library filtered to this bucket, not the static taxonomy page. */}}
+          {{ range . }}<a href="{{ $.CurrentSection.RelPermalink }}?complexity={{ anchorize .LinkTitle }}">{{ .LinkTitle }}</a>{{ end }}
         </p>
         {{ end }}
 

@@ -11,6 +11,10 @@
 //
 // A card with unknown data is excluded once the corresponding filter is
 // active — better to under-promise than suggest an unplayable game.
+//
+// Filter state mirrors into the URL query string (?players=4&complexity=heavy
+// &min-time=30&max-time=90&name=pan), so any filtered view is linkable and
+// pages elsewhere on the site can deep-link into it.
 
 document.addEventListener("DOMContentLoaded", () => {
   const finder = document.getElementById("game-finder");
@@ -27,6 +31,27 @@ document.addEventListener("DOMContentLoaded", () => {
     complexity: control("complexity"),
     name: control("name"),
   };
+
+  // Seed controls from the query string. Select values are validated against
+  // the rendered options, so junk params fall back to "Any".
+  const params = new URLSearchParams(location.search);
+  Object.entries(controls).forEach(([, el]) => {
+    const value = params.get(el.dataset.finder);
+    if (value === null) return;
+    if (el.tagName !== "SELECT" || el.querySelector(`option[value="${CSS.escape(value)}"]`)) {
+      el.value = value;
+    }
+  });
+
+  function syncUrl() {
+    const query = new URLSearchParams();
+    Object.values(controls).forEach(el => {
+      const value = el.value.trim();
+      if (value) query.set(el.dataset.finder, value);
+    });
+    const search = query.toString();
+    history.replaceState(null, "", search ? `?${search}` : location.pathname);
+  }
 
   function apply() {
     const players = Number(controls.players.value) || 0;
@@ -67,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ? `${cards.length} game${cards.length === 1 ? "" : "s"}`
       : `${shown} of ${cards.length} games`;
     if (emptyEl) emptyEl.hidden = shown > 0;
+    syncUrl();
   }
 
   finder.addEventListener("input", apply);
