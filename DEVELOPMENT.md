@@ -228,8 +228,9 @@ Blowfish theme with overrides:
 - `games/single.html` — game pages; merges override data and computes owners / in-library across members.
 - `games/list.html` — the library grid: one card per game across the main library and every
   member collection (deduped by id, `data-owners` slugs; shadow libraries excluded). The game
-  finder's "Owned by" select defaults to the main library; member-only cards render pre-hidden
-  so the no-JS view equals the main library. `?owner=<slug>` deep-links a member's shelf.
+  finder's "Owned by" checkbox dropdown unions the checked shelves, defaulting to the main
+  library when none are checked; member-only cards render pre-hidden so the no-JS view equals
+  the main library. `?owner=<slug>` deep-links a member's shelf.
 - `members/` — the member index and per-member **bio pages** (name, description, and a
   "Browse their N games" link into `/library/?owner=<slug>` — no game grid of their own).
 - `_default/stats.html` — the stats page (play counts, ranks, the members' +1 button).

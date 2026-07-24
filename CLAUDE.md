@@ -108,8 +108,9 @@ library); `content/members/_content.gotmpl` builds `/members/<slug>/` pages from
 definitions. The games section lists at `/library/`
 (set by `url` in `content/games/_index.md`): one card per game across the **main library and every
 member collection** (deduped by game id, `data-owners` carrying the owning slugs; shadow libraries
-excluded). The finder's "Owned by" select defaults to the main library — member-only cards render
-pre-hidden (`bgg-card-hidden`) so the no-JS view equals the main library — and member pages are
+excluded). The finder's "Owned by" checkbox dropdown unions the checked shelves and defaults to
+the main library when none are checked — member-only cards render pre-hidden (`bgg-card-hidden`)
+so the no-JS view equals the main library — and member pages are
 **bio pages** that deep-link into the finder via `/library/?owner=<slug>` instead of rendering
 their own grid. Complexity buckets (`Light`/`Medium`/`Heavy`) are
 **terciles of the main library's BGG weights**, computed at build time by

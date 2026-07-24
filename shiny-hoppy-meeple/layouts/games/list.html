@@ -13,17 +13,22 @@
         <span class="bgg-finder-active" data-finder-active hidden></span>
       </summary>
       <form class="bgg-finder" id="game-finder">
-      <label>Owned by
-        <select data-finder="owner">
-          <option value="">Main library</option>
-          <option value="any">Anyone</option>
-          {{ range $slug, $config := hugo.Data.definitions.members }}
-          {{ with index hugo.Data "bgg-cache" "collections" $slug }}{{ if gt (len .items) 0 }}
-          <option value="{{ $slug }}">{{ $config.display_name }}</option>
-          {{ end }}{{ end }}
-          {{ end }}
-        </select>
-      </label>
+      {{/* Union semantics: checked owners' shelves combine; nothing checked
+           defaults to the main library. Members only — shadow libraries stay
+           out of the grid entirely. */}}
+      <div class="bgg-finder-field">Owned by
+        <details class="bgg-finder-multi" data-finder-multi="owner" data-summary-empty="Main library">
+          <summary>Main library</summary>
+          <div class="bgg-finder-multi-menu">
+            <label><input type="checkbox" value="main-library">Main library</label>
+            {{ range $slug, $config := hugo.Data.definitions.members }}
+            {{ with index hugo.Data "bgg-cache" "collections" $slug }}{{ if gt (len .items) 0 }}
+            <label><input type="checkbox" value="{{ $slug }}">{{ $config.display_name }}</label>
+            {{ end }}{{ end }}
+            {{ end }}
+          </div>
+        </details>
+      </div>
       {{/* Single-select radio dropdowns — same details/summary pattern (and
            look) as the category/mechanic multi-selects, so they behave well
            on mobile and join the dead-option grey-out. The empty-value "Any"

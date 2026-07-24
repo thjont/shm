@@ -26,10 +26,12 @@
 //                      member slugs (the grid holds one card per game across
 //                      all shelves; member-only cards render pre-hidden)
 //
-// The "Owned by" select scopes the grid: "" = main library (the default; no
-// URL param written), "any" = every shelf, "<slug>" = one member's games
-// (?owner=jt — member pages deep-link here). The card count denominator is
-// the owner-scoped pool, so the default still reads "42 games".
+// The "Owned by" checkbox dropdown scopes the grid with UNION semantics:
+// checked owners' shelves combine (?owner=main-library&owner=jt — member
+// pages deep-link with a single ?owner=<slug>); nothing checked = the main
+// library, no param written. An owner box greys out when its shelf would
+// contribute no cards under the other filters. The card count denominator
+// is the owner-scoped pool, so the default still reads "42 games".
 //
 // A card with unknown data is excluded once the corresponding filter is
 // active — better to under-promise than suggest an unplayable game.
@@ -70,11 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const emptyEl = document.querySelector("[data-finder-empty]");
   const control = name => finder.querySelector(`[data-finder="${name}"]`);
   const controls = {
-    owner: control("owner"),
     name: control("name"),
     sort: control("sort"),
   };
   const multis = Array.from(finder.querySelectorAll("[data-finder-multi]"));
+  const ownerMulti = finder.querySelector('[data-finder-multi="owner"]');
   const singles = Array.from(finder.querySelectorAll("[data-finder-single]"));
   const single = {};
   singles.forEach(s => { single[s.dataset.finderSingle] = s; });
@@ -164,9 +166,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Grey out any unchecked term that would produce zero results if added to
   // the current filters (AND semantics: adding a term can only narrow the
   // shown set, so "some shown card carries it" is the exact liveness test).
+  // The owner facet is union-semantics and swept separately in apply().
   function updateDeadTerms(shownCards) {
     multis.forEach(multi => {
       const key = facetKeys[multi.dataset.finderMulti];
+      if (!key) return;
       multi.querySelectorAll("input").forEach(box => {
         const dead = !box.checked
           && !shownCards.some(card => termSets.get(card)[key].has(box.value));
@@ -199,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateMultiSummary(multi) {
     const checked = multi.querySelectorAll("input:checked");
     multi.querySelector("summary").textContent =
-      checked.length === 0 ? "Any"
+      checked.length === 0 ? (multi.dataset.summaryEmpty || "Any")
       : checked.length === 1 ? checked[0].parentElement.textContent.trim()
       : `${checked.length} selected`;
   }
@@ -213,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function apply() {
-    const owner = controls.owner.value || "main-library";
+    const owners = checkedValues(ownerMulti);
     const name = controls.name.value.trim().toLowerCase();
     const values = {};
     singles.forEach(s => { values[s.dataset.finderSingle] = singleValue(s); });
@@ -231,8 +235,11 @@ document.addEventListener("DOMContentLoaded", () => {
     cards.forEach(card => {
       const sets = termSets.get(card);
       const pass = {
-        // The owner scope defines the population the other filters narrow.
-        owner: owner === "any" || sets.owners.has(owner),
+        // The owner scope defines the population the other filters narrow:
+        // the union of checked shelves, or the main library by default.
+        owner: owners.length
+          ? owners.some(owner => sets.owners.has(owner))
+          : sets.owners.has("main-library"),
         name: !name || card.dataset.name.toLowerCase().includes(name),
       };
       Object.keys(matches).forEach(key => {
@@ -267,13 +274,28 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
+    // Owner boxes: union semantics, so checking one never narrows — but a
+    // box is useless (greyed) when its shelf contributes no cards under the
+    // other filters. Checked boxes stay enabled so they can be un-checked.
+    {
+      const others = cards.filter(card => {
+        const pass = passes.get(card);
+        return Object.keys(pass).every(k => k === "owner" || pass[k]);
+      });
+      ownerMulti.querySelectorAll("input").forEach(box => {
+        const dead = !box.checked
+          && !others.some(card => termSets.get(card).owners.has(box.value));
+        box.disabled = dead;
+        box.parentElement.classList.toggle("bgg-finder-dead", dead);
+      });
+    }
+
     const shown = shownCards.length;
     countEl.textContent = shown === pool
       ? `${pool} game${pool === 1 ? "" : "s"}`
       : `${shown} of ${pool} games`;
     // Everything narrowing the grid counts as a filter; sort only reorders.
-    const active = (controls.owner.value ? 1 : 0)
-      + (name ? 1 : 0)
+    const active = (name ? 1 : 0)
       + singles.filter(s => singleValue(s) !== "").length
       + multis.reduce((n, multi) => n + checkedValues(multi).length, 0);
     activeEl.hidden = active === 0;
