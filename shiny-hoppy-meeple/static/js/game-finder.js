@@ -18,6 +18,14 @@
 //   data-year / data-rating / data-weight
 //                      sort keys only (year published, BGG bayes-average
 //                      rating, BGG weight; empty = unknown)
+//   data-owners        space-separated owner slugs: "main-library" and/or
+//                      member slugs (the grid holds one card per game across
+//                      all shelves; member-only cards render pre-hidden)
+//
+// The "Owned by" select scopes the grid: "" = main library (the default; no
+// URL param written), "any" = every shelf, "<slug>" = one member's games
+// (?owner=jt — member pages deep-link here). The card count denominator is
+// the owner-scoped pool, so the default still reads "42 games".
 //
 // A card with unknown data is excluded once the corresponding filter is
 // active — better to under-promise than suggest an unplayable game.
@@ -44,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const emptyEl = document.querySelector("[data-finder-empty]");
   const control = name => finder.querySelector(`[data-finder="${name}"]`);
   const controls = {
+    owner: control("owner"),
     players: control("players"),
     minTime: control("min-time"),
     maxTime: control("max-time"),
@@ -63,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const termSets = new Map(cards.map(card => [card, {
     categories: new Set(card.dataset.categories.split(" ")),
     mechanics: new Set(card.dataset.mechanics.split(" ")),
+    owners: new Set(card.dataset.owners.split(" ")),
   }]));
 
   // Seed controls from the query string. Values are validated against the
@@ -139,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function apply() {
+    const owner = controls.owner.value || "main-library";
     const players = Number(controls.players.value) || 0;
     const minTime = Number(controls.minTime.value) || 0;
     const maxTime = Number(controls.maxTime.value) || 0;
@@ -153,11 +164,14 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const shownCards = [];
+    let pool = 0;
     cards.forEach(card => {
       const d = card.dataset;
-      let ok = true;
+      // The owner scope defines the population the other filters narrow.
+      let ok = owner === "any" || termSets.get(card).owners.has(owner);
+      if (ok) pool++;
 
-      if (players) {
+      if (ok && players) {
         const min = Number(d.minPlayers);
         const max = Number(d.maxPlayers);
         ok = min > 0 && max > 0 && min <= players && players <= max;
@@ -196,9 +210,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const shown = shownCards.length;
-    countEl.textContent = shown === cards.length
-      ? `${cards.length} game${cards.length === 1 ? "" : "s"}`
-      : `${shown} of ${cards.length} games`;
+    countEl.textContent = shown === pool
+      ? `${pool} game${pool === 1 ? "" : "s"}`
+      : `${shown} of ${pool} games`;
     if (emptyEl) emptyEl.hidden = shown > 0;
     updateDeadTerms(shownCards);
     sortCards();

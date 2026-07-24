@@ -226,16 +226,21 @@ Game and member pages are created by **content adapters**, not Markdown files:
 Blowfish theme with overrides:
 
 - `games/single.html` — game pages; merges override data and computes owners / in-library across members.
-- `games/list.html`, `members/` — the library list and member pages.
+- `games/list.html` — the library grid: one card per game across the main library and every
+  member collection (deduped by id, `data-owners` slugs; shadow libraries excluded). The game
+  finder's "Owned by" select defaults to the main library; member-only cards render pre-hidden
+  so the no-JS view equals the main library. `?owner=<slug>` deep-links a member's shelf.
+- `members/` — the member index and per-member **bio pages** (name, description, and a
+  "Browse their N games" link into `/library/?owner=<slug>` — no game grid of their own).
 - `_default/stats.html` — the stats page (play counts, ranks, the members' +1 button).
 - `_default/events.html` — the calendar page rendered from `data/calendar.json`.
 - `index.scanslugs.json` — a custom Hugo output format emitting `/scan-slugs.json`, the **allowlist
   of valid game slugs** consumed by the Functions below.
 
 > [!NOTE]
-> **Thumbnail fallback:** `games/list.html` and `members/single.html` fall back to the game-detail
+> **Thumbnail fallback:** `games/list.html` falls back to the game-detail
 > thumbnail when a collection item has none — geeklist-sourced collections never have one. Keep
-> that fallback when editing either template.
+> that fallback when editing the template.
 
 ### 4. Cloudflare Pages Functions + KV
 

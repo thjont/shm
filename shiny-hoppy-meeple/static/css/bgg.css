@@ -228,6 +228,20 @@ body {
   background: none;
 }
 
+/* Member bio pages: deep link into the game finder scoped to that member. */
+.bgg-member-games {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--shm-border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.bgg-member-games:hover {
+  background: var(--shm-subtle-bg);
+}
+
 .bgg-finder button[type="reset"] {
   font-size: 0.85rem;
   padding: 0.3rem 0.75rem;

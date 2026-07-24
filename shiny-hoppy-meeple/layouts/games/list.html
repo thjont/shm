@@ -6,6 +6,17 @@
 
     {{/* Hidden until game-finder.js takes over — without JS the full grid still renders. */}}
     <form class="bgg-finder" id="game-finder" hidden>
+      <label>Owned by
+        <select data-finder="owner">
+          <option value="">Main library</option>
+          <option value="any">Anyone</option>
+          {{ range $slug, $config := hugo.Data.definitions.members }}
+          {{ with index hugo.Data "bgg-cache" "collections" $slug }}{{ if gt (len .items) 0 }}
+          <option value="{{ $slug }}">{{ $config.display_name }}</option>
+          {{ end }}{{ end }}
+          {{ end }}
+        </select>
+      </label>
       <label>Players
         <select data-finder="players">
           <option value="">Any</option>
@@ -92,12 +103,51 @@
       <span class="bgg-finder-count" data-finder-count></span>
     </form>
 
+    {{/* One card per game across the main library and every member shelf
+         (shadow libraries stay out). ownersByGame: "id" → member slugs. */}}
+    {{ $ownersByGame := dict }}
+    {{ range $slug, $config := hugo.Data.definitions.members }}
+      {{ with index hugo.Data "bgg-cache" "collections" $slug }}
+        {{ range .items }}
+          {{ $key := print .id }}
+          {{ $prev := index $ownersByGame $key | default slice }}
+          {{ if not (in $prev $slug) }}
+            {{ $ownersByGame = merge $ownersByGame (dict $key ($prev | append $slug)) }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Main library first in export order, then member-only games (deduped by
+         id — a shared game gets one card attributed to every owner). */}}
+    {{ $mainLibSlug := (index hugo.Data.definitions.libraries "main-library").slug }}
+    {{ $entries := slice }}
+    {{ $seen := dict }}
+    {{ range (index hugo.Data "bgg-cache" "collections" $mainLibSlug).items }}
+      {{ $owners := slice "main-library" }}
+      {{ range index $ownersByGame (print .id) | default slice }}{{ $owners = $owners | append . }}{{ end }}
+      {{ $entries = $entries | append (dict "item" . "owners" $owners "memberOnly" false) }}
+      {{ $seen = merge $seen (dict (print .id) true) }}
+    {{ end }}
+    {{ range $slug, $config := hugo.Data.definitions.members }}
+      {{ with index hugo.Data "bgg-cache" "collections" $slug }}
+        {{ range .items }}
+          {{ if not (index $seen (print .id)) }}
+            {{ $entries = $entries | append (dict "item" . "owners" (index $ownersByGame (print .id)) "memberOnly" true) }}
+            {{ $seen = merge $seen (dict (print .id) true) }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
     <div class="bgg-collection">
-      {{ $mainLibSlug := (index hugo.Data.definitions.libraries "main-library").slug }}
-      {{ range (index hugo.Data "bgg-cache" "collections" $mainLibSlug).items }}
-      {{ $thumb := .thumbnail }}
-      {{ $year := .year }}
-      {{ $rating := .rating }}
+      {{ range $entries }}
+      {{ $it := .item }}
+      {{ $thumb := $it.thumbnail }}
+      {{ $year := $it.year }}
+      {{/* Always the BGG bayes average — member items carry a personal rating
+           that must not leak into the star display or the sort key. */}}
+      {{ $rating := 0.0 }}
       {{ $minPlayers := 0 }}
       {{ $maxPlayers := 0 }}
       {{ $time := 0 }}
@@ -106,10 +156,10 @@
       {{ $categories := slice }}
       {{ $mechanics := slice }}
       {{ $playStyle := "" }}
-      {{ with index hugo.Data "bgg-cache" "games" (print .id) }}
+      {{ with index hugo.Data "bgg-cache" "games" (print $it.id) }}
         {{ if not $thumb }}{{ $thumb = .thumbnail }}{{ end }}
         {{ if not $year }}{{ $year = .year }}{{ end }}
-        {{ if not $rating }}{{ $rating = .rating_bayes_average }}{{ end }}
+        {{ $rating = .rating_bayes_average }}
         {{ $minPlayers = .min_players }}
         {{ $maxPlayers = .max_players }}
         {{ $time = .playing_time }}
@@ -119,8 +169,11 @@
         {{ range .mechanics }}{{ $mechanics = $mechanics | append (anchorize .) }}{{ end }}
         {{ $playStyle = partial "shm/play-style.html" .mechanics }}
       {{ end }}
-      <a class="bgg-card" href="/games/{{ anchorize .name }}/"
-         data-name="{{ .name }}"
+      {{/* Member-only cards render pre-hidden so the no-JS view stays the main
+           library, matching the finder's default "Owned by" state. */}}
+      <a class="bgg-card{{ if .memberOnly }} bgg-card-hidden{{ end }}" href="/games/{{ anchorize $it.name }}/"
+         data-name="{{ $it.name }}"
+         data-owners="{{ delimit .owners " " }}"
          data-min-players="{{ $minPlayers }}"
          data-max-players="{{ $maxPlayers }}"
          data-time="{{ $time }}"
@@ -136,11 +189,11 @@
         <img class="nozoom" src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />
         {{ end }}
         <div class="bgg-card-body">
-          <h3>{{ .name }}</h3>
+          <h3>{{ $it.name }}</h3>
           <span class="bgg-year">{{ $year }}</span>
           <div class="bgg-card-meta">
             {{ with $rating }}<span>★ {{ printf "%.1f" . }}</span>{{ end }}
-            <span class="shm-rank" data-rank-slug="{{ anchorize .name }}"></span>
+            <span class="shm-rank" data-rank-slug="{{ anchorize $it.name }}"></span>
           </div>
         </div>
       </a>

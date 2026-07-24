@@ -106,7 +106,12 @@ Game and member pages are created by **content adapters**, not Markdown files:
 game finder's dropdowns and the term labels on game pages, which deep-link into the filtered
 library); `content/members/_content.gotmpl` builds `/members/<slug>/` pages from the member
 definitions. The games section lists at `/library/`
-(set by `url` in `content/games/_index.md`). Complexity buckets (`Light`/`Medium`/`Heavy`) are
+(set by `url` in `content/games/_index.md`): one card per game across the **main library and every
+member collection** (deduped by game id, `data-owners` carrying the owning slugs; shadow libraries
+excluded). The finder's "Owned by" select defaults to the main library — member-only cards render
+pre-hidden (`bgg-card-hidden`) so the no-JS view equals the main library — and member pages are
+**bio pages** that deep-link into the finder via `/library/?owner=<slug>` instead of rendering
+their own grid. Complexity buckets (`Light`/`Medium`/`Heavy`) are
 **terciles of the main library's BGG weights**, computed at build time by
 `partials/shm/complexity-cuts.html`; `partials/shm/complexity-bucket.html` maps weight → bucket and
 is the single source of truth (also feeds the game finder's `data-complexity` attributes).
@@ -116,11 +121,11 @@ across member collections), `members/`, `_default/stats.html`, `_default/events.
 and `index.scanslugs.json` — a custom output format emitting `/scan-slugs.json`, the allowlist of
 valid game slugs consumed by the Functions below.
 
-**Thumbnail fallback pattern:** both `games/list.html` and `members/single.html` fall back to
+**Thumbnail fallback pattern:** `games/list.html` falls back to
 `(index hugo.Data "bgg-cache" "games" id).thumbnail` when the collection item has no thumbnail.
-This is necessary for geeklist-sourced collections, where the geeklist XML API provides no
-thumbnail and the field is `null` in the collection JSON. Keep this fallback in place when editing
-either template.
+This is necessary for geeklist-sourced collections (the main library and any geeklist-backed
+member shelf merged into the grid), where the geeklist XML API provides no thumbnail and the
+field is `null` in the collection JSON. Keep this fallback in place when editing the template.
 
 ### Cloudflare Pages Functions + KV
 
