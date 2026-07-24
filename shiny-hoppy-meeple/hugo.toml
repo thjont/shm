@@ -18,6 +18,12 @@ enableEmoji = true
   description = "Board game community meeting in East Belfast. New faces always welcome."
   fingerprintAlgorithm = "sha512"
 
+  [params.shm]
+    # Category/mechanic terms need at least this many library games before the
+    # game finder lists them or game pages link them (rarer terms filter the
+    # small library down to near-empty results).
+    finderTermMinGames = 3
+
   [params.author]
     name = "Shiny Hoppy Meeple"
     headline = "Board games in East Belfast"

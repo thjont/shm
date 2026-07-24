@@ -70,7 +70,10 @@
         {{ end }}
 
         {{/* Complexity/category/mechanic terms deep-link into the library filtered
-             to that term, not the static taxonomy pages. */}}
+             to that term, not the static taxonomy pages. Category/mechanic terms
+             below the finder threshold stay plain text — the finder prunes their
+             checkboxes, so a deep link would land on an unfiltered library. */}}
+        {{ $minGames := site.Params.shm.finderTermMinGames }}
         {{ with .GetTerms "complexity" }}
         <p><strong>Complexity</strong><br>
           {{ range . }}<a href="{{ $.CurrentSection.RelPermalink }}?complexity={{ anchorize .LinkTitle }}">{{ .LinkTitle }}</a>{{ end }}
@@ -79,13 +82,13 @@
 
         {{ with .GetTerms "categories" }}
         <p><strong>Categories</strong><br>
-          {{ range $i, $t := . }}{{ if $i }} · {{ end }}<a href="{{ $.CurrentSection.RelPermalink }}?category={{ anchorize $t.LinkTitle }}">{{ $t.LinkTitle }}</a>{{ end }}
+          {{ range $i, $t := . }}{{ if $i }} · {{ end }}{{ if ge (len $t.Pages) $minGames }}<a href="{{ $.CurrentSection.RelPermalink }}?category={{ anchorize $t.LinkTitle }}">{{ $t.LinkTitle }}</a>{{ else }}{{ $t.LinkTitle }}{{ end }}{{ end }}
         </p>
         {{ end }}
 
         {{ with .GetTerms "mechanics" }}
         <p><strong>Mechanics</strong><br>
-          {{ range $i, $t := . }}{{ if $i }} · {{ end }}<a href="{{ $.CurrentSection.RelPermalink }}?mechanic={{ anchorize $t.LinkTitle }}">{{ $t.LinkTitle }}</a>{{ end }}
+          {{ range $i, $t := . }}{{ if $i }} · {{ end }}{{ if ge (len $t.Pages) $minGames }}<a href="{{ $.CurrentSection.RelPermalink }}?mechanic={{ anchorize $t.LinkTitle }}">{{ $t.LinkTitle }}</a>{{ else }}{{ $t.LinkTitle }}{{ end }}{{ end }}
         </p>
         {{ end }}
 
