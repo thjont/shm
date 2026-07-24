@@ -133,6 +133,7 @@ function mapGame(thing) {
     max_players: Number(thing.maxplayers?.value ?? 0),
     playing_time: Number(thing.playingtime?.value ?? 0),
     min_age: Number(thing.minage?.value ?? 0),
+    type: thing.type ?? null,
     expansion: thing.type === 'boardgameexpansion',
     categories: links.filter(l => l.type === 'boardgamecategory').map(l => decodeHtmlEntities(l.value)),
     mechanics:  links.filter(l => l.type === 'boardgamemechanic').map(l => decodeHtmlEntities(l.value)),
