@@ -22,14 +22,16 @@
 <div class="bgg-page">
   <p class="bgg-breadcrumb"><a href="/library/">Library</a> &rsaquo; {{ $game.name }}</p>
   <h1 class="bgg-page-title">{{ $game.name }}</h1>
-  <div class="bgg-page-meta">
-    <span>{{ $game.year }}</span>
-    &nbsp;·&nbsp;
-    <span>{{ $game.min_players }}–{{ $game.max_players }} players</span>
-    &nbsp;·&nbsp;
-    <span>{{ $game.playing_time }} min</span>
-    {{ with $game.min_age }}&nbsp;·&nbsp;<span>Age {{ . }}+</span>{{ end }}
-  </div>
+  {{/* Same guards and formatting as the list view's bgg-card-stats: skip
+       missing values (year/time of 0) and collapse "2–2 players" to "2 players". */}}
+  {{ $meta := slice }}
+  {{ with $game.year }}{{ $meta = $meta | append . }}{{ end }}
+  {{ if and $game.min_players $game.max_players }}
+    {{ $meta = $meta | append (cond (eq $game.min_players $game.max_players) (print $game.min_players " players") (print $game.min_players "–" $game.max_players " players")) }}
+  {{ end }}
+  {{ with $game.playing_time }}{{ $meta = $meta | append (print . " min") }}{{ end }}
+  {{ with $game.min_age }}{{ $meta = $meta | append (print "Age " . "+") }}{{ end }}
+  {{ with $meta }}<div class="bgg-page-meta">{{ delimit . " · " }}</div>{{ end }}
 
   <div class="bgg-page-content">
     <div class="bgg-detail">
@@ -76,7 +78,7 @@
         {{ $minGames := site.Params.shm.finderTermMinGames }}
         {{ with .GetTerms "complexity" }}
         <p><strong>Complexity</strong><br>
-          {{ range . }}<a href="{{ $.CurrentSection.RelPermalink }}?complexity={{ anchorize .LinkTitle }}">{{ .LinkTitle }}</a>{{ end }}
+          {{ range $i, $t := . }}{{ if $i }} · {{ end }}<a href="{{ $.CurrentSection.RelPermalink }}?complexity={{ anchorize $t.LinkTitle }}">{{ $t.LinkTitle }}</a>{{ end }}
         </p>
         {{ end }}
 
@@ -92,7 +94,7 @@
         </p>
         {{ end }}
 
-{{ if $owners }}
+        {{ if $owners }}
         <div class="bgg-owners">
           <strong>{{ if eq (len $owners) 1 }}Owner{{ else }}Owners{{ end }}</strong>
           <ul>

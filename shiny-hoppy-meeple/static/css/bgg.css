@@ -448,11 +448,23 @@ body {
   font-size: 0.85rem;
 }
 
-.bgg-detail-stats div {
+.bgg-detail-stats div,
+.bgg-detail-stats a {
   background: var(--shm-subtle-bg);
   border-radius: 4px;
   padding: 0.5rem 0.6rem;
   line-height: 1.4;
+}
+
+/* Linked tiles (e.g. "In Library") must look like the plain ones. */
+.bgg-detail-stats a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.bgg-detail-stats a:hover {
+  background: var(--shm-border);
 }
 
 .bgg-detail-info p {
