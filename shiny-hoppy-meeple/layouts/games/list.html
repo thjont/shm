@@ -132,6 +132,14 @@
       </form>
     </details>
 
+    {{/* Display-mode toggle — revealed by game-finder.js, persisted in
+         localStorage ("libraryView"; grid is the default, stored as no key). */}}
+    <div class="bgg-view-toggle" data-view-toggle hidden>
+      <button type="button" data-view="grid" aria-pressed="true">Grid</button>
+      <button type="button" data-view="compact" aria-pressed="false">Compact</button>
+      <button type="button" data-view="list" aria-pressed="false">List</button>
+    </div>
+
     {{/* One card per game across the main library and every member shelf
          (shadow libraries stay out). ownersByGame: "id" → member slugs. */}}
     {{ $ownersByGame := dict }}
@@ -224,6 +232,14 @@
             {{ with $rating }}<span>★ {{ printf "%.1f" . }}</span>{{ end }}
             <span class="shm-rank" data-rank-slug="{{ anchorize $it.name }}"></span>
           </div>
+          {{/* Extra stats, shown only by the list view's CSS. */}}
+          {{ $stats := slice }}
+          {{ if and $minPlayers $maxPlayers }}
+            {{ $stats = $stats | append (cond (eq $minPlayers $maxPlayers) (print $minPlayers " players") (print $minPlayers "–" $maxPlayers " players")) }}
+          {{ end }}
+          {{ if $time }}{{ $stats = $stats | append (print $time " min") }}{{ end }}
+          {{ with partial "shm/complexity-bucket.html" $weight }}{{ $stats = $stats | append . }}{{ end }}
+          {{ with $stats }}<span class="bgg-card-stats">{{ delimit . " · " }}</span>{{ end }}
         </div>
       </a>
       {{ end }}

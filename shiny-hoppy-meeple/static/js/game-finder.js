@@ -48,6 +48,13 @@
 // The "Sort by" control reorders the cards in the grid ("" = the order the
 // collection was exported in); cards with an unknown sort key go last.
 //
+// The [data-view-toggle] buttons switch the grid between grid/compact/list
+// display modes by toggling bgg-collection-compact / bgg-collection-list on
+// the container (all modes restyle the same cards, so filtering and sorting
+// are unaffected). The choice persists in localStorage ("libraryView"),
+// following the Blowfish appearance.js convention: the default (grid)
+// clears the key instead of storing it.
+//
 // Filter state mirrors into the URL query string (?players=4&complexity=heavy
 // &min-time=30&max-time=90&name=pan&sort=rating), so any filtered view is
 // linkable and pages elsewhere on the site can deep-link into it.
@@ -298,6 +305,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // ── Display-mode toggle (grid / compact / list) ──
+  const viewToggle = document.querySelector("[data-view-toggle]");
+  const collection = document.querySelector(".bgg-collection");
+  const VIEW_KEY = "libraryView";
+  const VIEWS = ["grid", "compact", "list"];
+
+  function setView(view) {
+    collection.classList.toggle("bgg-collection-compact", view === "compact");
+    collection.classList.toggle("bgg-collection-list", view === "list");
+    viewToggle.querySelectorAll("[data-view]").forEach(button => {
+      button.setAttribute("aria-pressed", String(button.dataset.view === view));
+    });
+    if (view === "grid") localStorage.removeItem(VIEW_KEY);
+    else localStorage.setItem(VIEW_KEY, view);
+  }
+
+  const savedView = localStorage.getItem(VIEW_KEY);
+  if (VIEWS.includes(savedView)) setView(savedView);
+  viewToggle.addEventListener("click", e => {
+    const button = e.target.closest("[data-view]");
+    if (button) setView(button.dataset.view);
+  });
+
   wrap.hidden = false;
+  viewToggle.hidden = false;
   apply();
 });

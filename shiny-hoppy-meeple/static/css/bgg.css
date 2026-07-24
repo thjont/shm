@@ -119,6 +119,104 @@ body {
   padding-top: 0.4rem;
 }
 
+/* ── Library display-mode toggle (grid / compact / list) ───────── */
+
+.bgg-view-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+}
+
+.bgg-view-toggle button {
+  font-size: 0.85rem;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--shm-border);
+  border-left-width: 0;
+  color: var(--shm-muted);
+  cursor: pointer;
+}
+
+.bgg-view-toggle button:first-child {
+  border-left-width: 1px;
+  border-radius: 4px 0 0 4px;
+}
+
+.bgg-view-toggle button:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.bgg-view-toggle button[aria-pressed="true"] {
+  background: var(--shm-subtle-bg);
+  color: inherit;
+}
+
+/* Compact: smaller name-only tiles, ~2x the games per screen. */
+.bgg-collection-compact {
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.75rem;
+}
+
+.bgg-collection-compact .bgg-card-body {
+  padding: 0.4rem 0.5rem;
+}
+
+.bgg-collection-compact .bgg-card-body h3 {
+  font-size: 0.8rem;
+}
+
+.bgg-collection-compact .bgg-year,
+.bgg-collection-compact .bgg-card-meta {
+  display: none;
+}
+
+/* List: one row per game with the stats line the tiles hide. */
+.bgg-collection-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bgg-collection-list .bgg-card {
+  flex-direction: row;
+  align-items: center;
+}
+
+.bgg-collection-list .bgg-card:hover {
+  transform: none;
+}
+
+.bgg-collection-list .bgg-card img {
+  width: 72px;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+}
+
+.bgg-collection-list .bgg-card-body {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.5rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.bgg-collection-list .bgg-card-meta {
+  margin-left: auto;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.bgg-card-stats {
+  display: none;
+}
+
+.bgg-collection-list .bgg-card-stats {
+  display: block;
+  flex-basis: 100%;
+  font-size: 0.8rem;
+  color: var(--shm-muted);
+}
+
 /* ── Library game finder ────────────────────────────────────────── */
 
 /* Collapsed-by-default disclosure; the summary is the always-visible bar. */
