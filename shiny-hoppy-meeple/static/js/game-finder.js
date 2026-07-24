@@ -15,15 +15,21 @@
 //   data-categories / data-mechanics
 //                      space-separated anchorized BGG terms (card must carry
 //                      every selected term, empty = unknown)
+//   data-year / data-rating / data-weight
+//                      sort keys only (year published, BGG bayes-average
+//                      rating, BGG weight; empty = unknown)
 //
 // A card with unknown data is excluded once the corresponding filter is
 // active — better to under-promise than suggest an unplayable game.
 //
+// The "Sort by" control reorders the cards in the grid ("" = the order the
+// collection was exported in); cards with an unknown sort key go last.
+//
 // Filter state mirrors into the URL query string (?players=4&complexity=heavy
-// &min-time=30&max-time=90&name=pan), so any filtered view is linkable and
-// pages elsewhere on the site can deep-link into it. Categories and mechanics
-// are multi-select checkbox dropdowns; their params repeat, one per selected
-// term (?mechanic=deduction&mechanic=memory).
+// &min-time=30&max-time=90&name=pan&sort=rating), so any filtered view is
+// linkable and pages elsewhere on the site can deep-link into it. Categories
+// and mechanics are multi-select checkbox dropdowns; their params repeat, one
+// per selected term (?mechanic=deduction&mechanic=memory).
 
 document.addEventListener("DOMContentLoaded", () => {
   const finder = document.getElementById("game-finder");
@@ -41,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     playStyle: control("play-style"),
     age: control("age"),
     name: control("name"),
+    sort: control("sort"),
   };
   const multis = Array.from(finder.querySelectorAll("[data-finder-multi]"));
   const checkedValues = multi =>
@@ -74,6 +81,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     const search = query.toString();
     history.replaceState(null, "", search ? `?${search}` : location.pathname);
+  }
+
+  // Descending for "bigger is better" keys, ascending for the rest. Unknown
+  // (empty/zero) keys sort last either way; ties fall back to name order.
+  const sortDirection = { rating: -1, year: -1, time: 1, weight: 1 };
+
+  function sortCards() {
+    const key = controls.sort.value;
+    const byName = (a, b) => a.dataset.name.localeCompare(b.dataset.name);
+    const ordered = !key ? cards
+      : key === "name" ? cards.slice().sort(byName)
+      : cards.slice().sort((a, b) => {
+          const av = Number(a.dataset[key]) || 0;
+          const bv = Number(b.dataset[key]) || 0;
+          if (av === bv) return byName(a, b);
+          if (!av) return 1;
+          if (!bv) return -1;
+          return (av - bv) * sortDirection[key];
+        });
+    ordered.forEach(card => card.parentElement.appendChild(card));
   }
 
   function updateSummary(multi) {
@@ -145,6 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ? `${cards.length} game${cards.length === 1 ? "" : "s"}`
       : `${shown} of ${cards.length} games`;
     if (emptyEl) emptyEl.hidden = shown > 0;
+    sortCards();
     multis.forEach(updateSummary);
     syncUrl();
   }

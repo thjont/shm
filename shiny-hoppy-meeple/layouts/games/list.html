@@ -71,6 +71,16 @@
       <label>Search
         <input type="search" data-finder="name" placeholder="Game name&hellip;" />
       </label>
+      <label>Sort by
+        <select data-finder="sort">
+          <option value="">Default</option>
+          <option value="name">Name (A&ndash;Z)</option>
+          <option value="rating">Rating (best first)</option>
+          <option value="year">Year (newest first)</option>
+          <option value="time">Play time (shortest first)</option>
+          <option value="weight">Complexity (lightest first)</option>
+        </select>
+      </label>
       <button type="reset">Reset</button>
       <span class="bgg-finder-count" data-finder-count></span>
     </form>
@@ -108,6 +118,9 @@
          data-max-players="{{ $maxPlayers }}"
          data-time="{{ $time }}"
          data-min-age="{{ $minAge }}"
+         data-year="{{ with $year }}{{ . }}{{ end }}"
+         data-rating="{{ with $rating }}{{ . }}{{ end }}"
+         data-weight="{{ with $weight }}{{ . }}{{ end }}"
          data-complexity="{{ anchorize (partial "shm/complexity-bucket.html" $weight) }}"
          data-play-style="{{ anchorize $playStyle }}"
          data-categories="{{ delimit $categories " " }}"
