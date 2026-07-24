@@ -34,18 +34,23 @@
 // A card with unknown data is excluded once the corresponding filter is
 // active — better to under-promise than suggest an unplayable game.
 //
-// Category/mechanic checkboxes that would yield zero results under the
-// current filters are disabled and greyed out (checked ones never are, so
-// they can always be un-checked).
+// Two dropdown flavours share the same details/summary look:
+//   [data-finder-multi]  category/mechanic checkboxes (AND semantics; params
+//                        repeat, ?mechanic=deduction&mechanic=memory)
+//   [data-finder-single] radio dropdowns for players/min-time/max-time/
+//                        complexity/play-style/age (one value; the "" radio
+//                        is "Any")
+// Options that would yield zero results are disabled and greyed out. Multis
+// test against the shown set (adding a term only narrows it); singles test
+// against the cards passing every *other* filter, since picking a new value
+// replaces the old one. "Any" and the current selection never grey out.
 //
 // The "Sort by" control reorders the cards in the grid ("" = the order the
 // collection was exported in); cards with an unknown sort key go last.
 //
 // Filter state mirrors into the URL query string (?players=4&complexity=heavy
 // &min-time=30&max-time=90&name=pan&sort=rating), so any filtered view is
-// linkable and pages elsewhere on the site can deep-link into it. Categories
-// and mechanics are multi-select checkbox dropdowns; their params repeat, one
-// per selected term (?mechanic=deduction&mechanic=memory).
+// linkable and pages elsewhere on the site can deep-link into it.
 
 document.addEventListener("DOMContentLoaded", () => {
   const finder = document.getElementById("game-finder");
@@ -59,21 +64,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const control = name => finder.querySelector(`[data-finder="${name}"]`);
   const controls = {
     owner: control("owner"),
-    players: control("players"),
-    minTime: control("min-time"),
-    maxTime: control("max-time"),
-    complexity: control("complexity"),
-    playStyle: control("play-style"),
-    age: control("age"),
     name: control("name"),
     sort: control("sort"),
   };
   const multis = Array.from(finder.querySelectorAll("[data-finder-multi]"));
+  const singles = Array.from(finder.querySelectorAll("[data-finder-single]"));
+  const single = {};
+  singles.forEach(s => { single[s.dataset.finderSingle] = s; });
   const checkedValues = multi =>
     Array.from(multi.querySelectorAll("input:checked"), box => box.value);
+  const singleValue = s => {
+    const checked = s.querySelector("input:checked");
+    return checked ? checked.value : "";
+  };
 
-  // Per-card term sets, precomputed once so the dead-option sweep in apply()
-  // is just set lookups on every input event.
+  // Per-card term sets, precomputed once so the dead-option sweeps in apply()
+  // are just set lookups on every input event.
   const facetKeys = { category: "categories", mechanic: "mechanics" };
   const termSets = new Map(cards.map(card => [card, {
     categories: new Set(card.dataset.categories.split(" ")),
@@ -81,15 +87,48 @@ document.addEventListener("DOMContentLoaded", () => {
     owners: new Set(card.dataset.owners.split(" ")),
   }]));
 
+  // Whether a card matches value v of a single-select group. Shared between
+  // filtering (current value) and the dead-option sweep (candidate values).
+  // Unknown data (0/empty) never matches.
+  const matches = {
+    "players": (card, v) => {
+      const p = Number(v);
+      const min = Number(card.dataset.minPlayers);
+      const max = Number(card.dataset.maxPlayers);
+      return min > 0 && max > 0 && min <= p && p <= max;
+    },
+    // Inclusive: a 30-minute game matches both "min 30" and "max 30".
+    "min-time": (card, v) => {
+      const t = Number(card.dataset.time);
+      return t > 0 && t >= Number(v);
+    },
+    "max-time": (card, v) => {
+      const t = Number(card.dataset.time);
+      return t > 0 && t <= Number(v);
+    },
+    "complexity": (card, v) => card.dataset.complexity === v,
+    "play-style": (card, v) => card.dataset.playStyle === v,
+    "age": (card, v) => {
+      const a = Number(card.dataset.minAge);
+      return a > 0 && a <= Number(v);
+    },
+  };
+
   // Seed controls from the query string. Values are validated against the
-  // rendered options/checkboxes, so junk params fall back to "Any".
+  // rendered options/radios/checkboxes, so junk params fall back to "Any".
   const params = new URLSearchParams(location.search);
-  Object.entries(controls).forEach(([, el]) => {
+  Object.values(controls).forEach(el => {
     const value = params.get(el.dataset.finder);
     if (value === null) return;
     if (el.tagName !== "SELECT" || el.querySelector(`option[value="${CSS.escape(value)}"]`)) {
       el.value = value;
     }
+  });
+  singles.forEach(s => {
+    const value = params.get(s.dataset.finderSingle);
+    if (value === null) return;
+    const box = s.querySelector(`input[value="${CSS.escape(value)}"]`);
+    if (box) box.checked = true;
   });
   multis.forEach(multi => {
     params.getAll(multi.dataset.finderMulti).forEach(value => {
@@ -103,6 +142,10 @@ document.addEventListener("DOMContentLoaded", () => {
     Object.values(controls).forEach(el => {
       const value = el.value.trim();
       if (value) query.set(el.dataset.finder, value);
+    });
+    singles.forEach(s => {
+      const value = singleValue(s);
+      if (value) query.set(s.dataset.finderSingle, value);
     });
     multis.forEach(multi => {
       checkedValues(multi).forEach(value => query.append(multi.dataset.finderMulti, value));
@@ -146,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ordered.forEach(card => card.parentElement.appendChild(card));
   }
 
-  function updateSummary(multi) {
+  function updateMultiSummary(multi) {
     const checked = multi.querySelectorAll("input:checked");
     multi.querySelector("summary").textContent =
       checked.length === 0 ? "Any"
@@ -154,65 +197,67 @@ document.addEventListener("DOMContentLoaded", () => {
       : `${checked.length} selected`;
   }
 
+  function updateSingleSummary(s) {
+    const checked = s.querySelector("input:checked");
+    s.querySelector("summary").textContent =
+      checked && checked.value !== ""
+        ? checked.parentElement.textContent.trim()
+        : "Any";
+  }
+
   function apply() {
     const owner = controls.owner.value || "main-library";
-    const players = Number(controls.players.value) || 0;
-    const minTime = Number(controls.minTime.value) || 0;
-    const maxTime = Number(controls.maxTime.value) || 0;
-    const complexity = controls.complexity.value;
-    const playStyle = controls.playStyle.value;
-    const age = Number(controls.age.value) || 0;
     const name = controls.name.value.trim().toLowerCase();
+    const values = {};
+    singles.forEach(s => { values[s.dataset.finderSingle] = singleValue(s); });
     // Selected terms per card dataset key (params are singular, data attributes plural).
     const terms = {
       categories: checkedValues(finder.querySelector('[data-finder-multi="category"]')),
       mechanics: checkedValues(finder.querySelector('[data-finder-multi="mechanic"]')),
     };
 
+    // Each card's pass/fail per filter group, kept so the single-select sweep
+    // can ask "would this card survive every group except mine?".
+    const passes = new Map();
     const shownCards = [];
     let pool = 0;
     cards.forEach(card => {
-      const d = card.dataset;
-      // The owner scope defines the population the other filters narrow.
-      let ok = owner === "any" || termSets.get(card).owners.has(owner);
-      if (ok) pool++;
-
-      if (ok && players) {
-        const min = Number(d.minPlayers);
-        const max = Number(d.maxPlayers);
-        ok = min > 0 && max > 0 && min <= players && players <= max;
-      }
-      // Inclusive comparisons: the labels say "min/max play time", so a
-      // 30-minute game matches both "min 30" and "max 30".
-      if (ok && (minTime || maxTime)) {
-        const t = Number(d.time);
-        ok = t > 0
-          && (!minTime || t >= minTime)
-          && (!maxTime || t <= maxTime);
-      }
-      if (ok && complexity) {
-        ok = d.complexity === complexity;
-      }
-      if (ok && playStyle) {
-        ok = d.playStyle === playStyle;
-      }
-      if (ok && age) {
-        const a = Number(d.minAge);
-        ok = a > 0 && a <= age;
-      }
+      const sets = termSets.get(card);
+      const pass = {
+        // The owner scope defines the population the other filters narrow.
+        owner: owner === "any" || sets.owners.has(owner),
+        name: !name || card.dataset.name.toLowerCase().includes(name),
+      };
+      Object.keys(matches).forEach(key => {
+        pass[key] = !values[key] || matches[key](card, values[key]);
+      });
       // AND semantics: the card must carry every selected term.
       Object.entries(terms).forEach(([key, selected]) => {
-        if (ok && selected.length) {
-          const carried = d[key].split(" ");
-          ok = selected.every(term => carried.includes(term));
-        }
+        pass[key] = !selected.length || selected.every(term => sets[key].has(term));
       });
-      if (ok && name) {
-        ok = d.name.toLowerCase().includes(name);
-      }
-
+      passes.set(card, pass);
+      if (pass.owner) pool++;
+      const ok = Object.values(pass).every(Boolean);
       card.classList.toggle("bgg-card-hidden", !ok);
       if (ok) shownCards.push(card);
+    });
+
+    // Grey out single-select values that would produce zero results. Unlike
+    // the term sweep this tests against the cards passing every *other*
+    // group, because choosing a value replaces the current one rather than
+    // adding to it. "Any" and the checked value stay enabled as escapes.
+    singles.forEach(s => {
+      const key = s.dataset.finderSingle;
+      const others = cards.filter(card => {
+        const pass = passes.get(card);
+        return Object.keys(pass).every(k => k === key || pass[k]);
+      });
+      s.querySelectorAll("input").forEach(box => {
+        const dead = box.value !== "" && !box.checked
+          && !others.some(card => matches[key](card, box.value));
+        box.disabled = dead;
+        box.parentElement.classList.toggle("bgg-finder-dead", dead);
+      });
     });
 
     const shown = shownCards.length;
@@ -220,28 +265,36 @@ document.addEventListener("DOMContentLoaded", () => {
       ? `${pool} game${pool === 1 ? "" : "s"}`
       : `${shown} of ${pool} games`;
     // Everything narrowing the grid counts as a filter; sort only reorders.
-    const active = Object.values(controls)
-      .filter(el => el !== controls.sort && el.value.trim() !== "").length
+    const active = (controls.owner.value ? 1 : 0)
+      + (name ? 1 : 0)
+      + singles.filter(s => singleValue(s) !== "").length
       + multis.reduce((n, multi) => n + checkedValues(multi).length, 0);
     activeEl.hidden = active === 0;
     activeEl.textContent = active ? `· ${active} filter${active === 1 ? "" : "s"}` : "";
     if (emptyEl) emptyEl.hidden = shown > 0;
     updateDeadTerms(shownCards);
     sortCards();
-    multis.forEach(updateSummary);
+    multis.forEach(updateMultiSummary);
+    singles.forEach(updateSingleSummary);
     syncUrl();
   }
 
-  finder.addEventListener("input", apply);
+  finder.addEventListener("input", e => {
+    // Picking a value closes a single-select dropdown, like a native select.
+    const s = e.target.closest("[data-finder-single]");
+    if (s) s.open = false;
+    apply();
+  });
   // "reset" fires before the controls revert, so reapply on the next frame.
   finder.addEventListener("reset", () => requestAnimationFrame(apply));
   finder.addEventListener("submit", e => e.preventDefault());
 
   // Close an open dropdown on any click outside it (also swaps dropdowns
   // cleanly: opening one closes the other).
+  const dropdowns = multis.concat(singles);
   document.addEventListener("click", e => {
-    multis.forEach(multi => {
-      if (multi.open && !multi.contains(e.target)) multi.open = false;
+    dropdowns.forEach(d => {
+      if (d.open && !d.contains(e.target)) d.open = false;
     });
   });
 

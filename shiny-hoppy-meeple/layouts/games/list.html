@@ -24,48 +24,70 @@
           {{ end }}
         </select>
       </label>
-      <label>Players
-        <select data-finder="players">
-          <option value="">Any</option>
-          {{ range seq 1 7 }}<option value="{{ . }}">{{ . }}</option>{{ end }}
-          <option value="8">8+</option>
-        </select>
-      </label>
-      <label>Min play time
-        <select data-finder="min-time">
-          <option value="">Any</option>
-          {{ range seq 15 15 120 }}<option value="{{ . }}">{{ . }} min</option>{{ end }}
-        </select>
-      </label>
-      <label>Max play time
-        <select data-finder="max-time">
-          <option value="">Any</option>
-          {{ range seq 15 15 120 }}<option value="{{ . }}">{{ . }} min</option>{{ end }}
-        </select>
-      </label>
-      <label>Complexity
-        <select data-finder="complexity">
-          <option value="">Any</option>
-          <option value="light">Light</option>
-          <option value="medium">Medium</option>
-          <option value="heavy">Heavy</option>
-        </select>
-      </label>
-      <label>Play style
-        <select data-finder="play-style">
-          <option value="">Any</option>
-          <option value="competitive">Competitive</option>
-          <option value="co-op">Co-op</option>
-          <option value="team-vs-team">Team vs Team</option>
-          <option value="semi-co-op">Semi co-op</option>
-        </select>
-      </label>
-      <label>Youngest player
-        <select data-finder="age">
-          <option value="">Any</option>
-          {{ range seq 6 14 }}<option value="{{ . }}">{{ . }}</option>{{ end }}
-        </select>
-      </label>
+      {{/* Single-select radio dropdowns — same details/summary pattern (and
+           look) as the category/mechanic multi-selects, so they behave well
+           on mobile and join the dead-option grey-out. The empty-value "Any"
+           radio is the default the Reset button reverts to. */}}
+      <div class="bgg-finder-field">Players
+        <details class="bgg-finder-multi" data-finder-single="players">
+          <summary>Any</summary>
+          <div class="bgg-finder-multi-menu">
+            <label><input type="radio" name="players" value="" checked>Any</label>
+            {{ range seq 1 7 }}<label><input type="radio" name="players" value="{{ . }}">{{ . }}</label>{{ end }}
+            <label><input type="radio" name="players" value="8">8+</label>
+          </div>
+        </details>
+      </div>
+      <div class="bgg-finder-field">Min play time
+        <details class="bgg-finder-multi" data-finder-single="min-time">
+          <summary>Any</summary>
+          <div class="bgg-finder-multi-menu">
+            <label><input type="radio" name="min-time" value="" checked>Any</label>
+            {{ range seq 15 15 120 }}<label><input type="radio" name="min-time" value="{{ . }}">{{ . }} min</label>{{ end }}
+          </div>
+        </details>
+      </div>
+      <div class="bgg-finder-field">Max play time
+        <details class="bgg-finder-multi" data-finder-single="max-time">
+          <summary>Any</summary>
+          <div class="bgg-finder-multi-menu">
+            <label><input type="radio" name="max-time" value="" checked>Any</label>
+            {{ range seq 15 15 120 }}<label><input type="radio" name="max-time" value="{{ . }}">{{ . }} min</label>{{ end }}
+          </div>
+        </details>
+      </div>
+      <div class="bgg-finder-field">Complexity
+        <details class="bgg-finder-multi" data-finder-single="complexity">
+          <summary>Any</summary>
+          <div class="bgg-finder-multi-menu">
+            <label><input type="radio" name="complexity" value="" checked>Any</label>
+            <label><input type="radio" name="complexity" value="light">Light</label>
+            <label><input type="radio" name="complexity" value="medium">Medium</label>
+            <label><input type="radio" name="complexity" value="heavy">Heavy</label>
+          </div>
+        </details>
+      </div>
+      <div class="bgg-finder-field">Play style
+        <details class="bgg-finder-multi" data-finder-single="play-style">
+          <summary>Any</summary>
+          <div class="bgg-finder-multi-menu">
+            <label><input type="radio" name="play-style" value="" checked>Any</label>
+            <label><input type="radio" name="play-style" value="competitive">Competitive</label>
+            <label><input type="radio" name="play-style" value="co-op">Co-op</label>
+            <label><input type="radio" name="play-style" value="team-vs-team">Team vs Team</label>
+            <label><input type="radio" name="play-style" value="semi-co-op">Semi co-op</label>
+          </div>
+        </details>
+      </div>
+      <div class="bgg-finder-field">Youngest player
+        <details class="bgg-finder-multi" data-finder-single="age">
+          <summary>Any</summary>
+          <div class="bgg-finder-multi-menu">
+            <label><input type="radio" name="age" value="" checked>Any</label>
+            {{ range seq 6 14 }}<label><input type="radio" name="age" value="{{ . }}">{{ . }}</label>{{ end }}
+          </div>
+        </details>
+      </div>
       {{/* Terms below the threshold are pruned; deep links to them are
            ignored by game-finder.js (no matching checkbox to seed). */}}
       {{ $minGames := site.Params.shm.finderTermMinGames }}
