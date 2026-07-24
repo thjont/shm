@@ -121,12 +121,46 @@ body {
 
 /* ── Library game finder ────────────────────────────────────────── */
 
+/* Collapsed-by-default disclosure; the summary is the always-visible bar. */
+.bgg-finder-wrap {
+  margin-top: 1.5rem;
+}
+
+.bgg-finder-wrap > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  padding: 0.5rem 1.8rem 0.5rem 1rem;
+  border: 1px solid var(--shm-border);
+  border-radius: 6px;
+  background: var(--shm-subtle-bg);
+  font-size: 0.9rem;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.bgg-finder-wrap > summary::-webkit-details-marker {
+  display: none;
+}
+
+.bgg-finder-wrap > summary::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0.8rem;
+  border: 4px solid transparent;
+  border-top-color: var(--shm-muted);
+  transform: translateY(-25%);
+}
+
 .bgg-finder {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
   gap: 0.75rem 1rem;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   padding: 0.75rem 1rem;
   border: 1px solid var(--shm-border);
   border-radius: 6px;
@@ -252,6 +286,12 @@ body {
 
 .bgg-finder button[type="reset"]:hover {
   color: inherit;
+}
+
+.bgg-finder-active {
+  font-size: 0.85rem;
+  color: var(--shm-muted);
+  white-space: nowrap;
 }
 
 .bgg-finder-count {

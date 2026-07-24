@@ -1,7 +1,11 @@
 // Client-side filtering for the library grid (/library/).
 //
-// The #game-finder form is rendered hidden; this script reveals it and filters
-// the .bgg-card grid on every input. Cards carry the data via attributes:
+// The #game-finder form sits inside a [data-finder-wrap] <details> rendered
+// hidden; this script reveals the wrap and filters the .bgg-card grid on
+// every input. The wrap starts collapsed — always, even on filtered deep
+// links — and its summary bar carries the live game count plus an
+// active-filter tally ("10 of 11 games · 2 filters") so a narrowed grid is
+// never mysterious while collapsed. Cards carry the data via attributes:
 //
 //   data-name          game name (substring match, case-insensitive)
 //   data-min-players / data-max-players
@@ -48,7 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!finder) return;
 
   const cards = Array.from(document.querySelectorAll(".bgg-collection .bgg-card"));
-  const countEl = finder.querySelector("[data-finder-count]");
+  const wrap = finder.closest("[data-finder-wrap]");
+  const countEl = document.querySelector("[data-finder-count]");
+  const activeEl = document.querySelector("[data-finder-active]");
   const emptyEl = document.querySelector("[data-finder-empty]");
   const control = name => finder.querySelector(`[data-finder="${name}"]`);
   const controls = {
@@ -213,6 +219,12 @@ document.addEventListener("DOMContentLoaded", () => {
     countEl.textContent = shown === pool
       ? `${pool} game${pool === 1 ? "" : "s"}`
       : `${shown} of ${pool} games`;
+    // Everything narrowing the grid counts as a filter; sort only reorders.
+    const active = Object.values(controls)
+      .filter(el => el !== controls.sort && el.value.trim() !== "").length
+      + multis.reduce((n, multi) => n + checkedValues(multi).length, 0);
+    activeEl.hidden = active === 0;
+    activeEl.textContent = active ? `· ${active} filter${active === 1 ? "" : "s"}` : "";
     if (emptyEl) emptyEl.hidden = shown > 0;
     updateDeadTerms(shownCards);
     sortCards();
@@ -233,6 +245,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  finder.hidden = false;
+  wrap.hidden = false;
   apply();
 });

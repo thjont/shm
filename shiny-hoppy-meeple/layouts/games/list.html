@@ -4,8 +4,15 @@
   <div class="bgg-page-content">
     {{ .Content }}
 
-    {{/* Hidden until game-finder.js takes over — without JS the full grid still renders. */}}
-    <form class="bgg-finder" id="game-finder" hidden>
+    {{/* Hidden until game-finder.js takes over — without JS the full grid still
+         renders. Collapsed by default (even on filtered deep links); the bar
+         carries the live count and an active-filter tally. */}}
+    <details class="bgg-finder-wrap" data-finder-wrap hidden>
+      <summary>Find a game
+        <span class="bgg-finder-count" data-finder-count></span>
+        <span class="bgg-finder-active" data-finder-active hidden></span>
+      </summary>
+      <form class="bgg-finder" id="game-finder">
       <label>Owned by
         <select data-finder="owner">
           <option value="">Main library</option>
@@ -100,8 +107,8 @@
         </select>
       </label>
       <button type="reset">Reset</button>
-      <span class="bgg-finder-count" data-finder-count></span>
-    </form>
+      </form>
+    </details>
 
     {{/* One card per game across the main library and every member shelf
          (shadow libraries stay out). ownersByGame: "id" → member slugs. */}}
