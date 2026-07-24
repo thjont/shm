@@ -218,6 +218,16 @@ body {
   background: var(--shm-subtle-bg);
 }
 
+/* Terms that would yield zero results under the current filters. */
+.bgg-finder-multi-menu label.bgg-finder-dead {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.bgg-finder-multi-menu label.bgg-finder-dead:hover {
+  background: none;
+}
+
 .bgg-finder button[type="reset"] {
   font-size: 0.85rem;
   padding: 0.3rem 0.75rem;

@@ -22,6 +22,10 @@
 // A card with unknown data is excluded once the corresponding filter is
 // active — better to under-promise than suggest an unplayable game.
 //
+// Category/mechanic checkboxes that would yield zero results under the
+// current filters are disabled and greyed out (checked ones never are, so
+// they can always be un-checked).
+//
 // The "Sort by" control reorders the cards in the grid ("" = the order the
 // collection was exported in); cards with an unknown sort key go last.
 //
@@ -53,6 +57,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const checkedValues = multi =>
     Array.from(multi.querySelectorAll("input:checked"), box => box.value);
 
+  // Per-card term sets, precomputed once so the dead-option sweep in apply()
+  // is just set lookups on every input event.
+  const facetKeys = { category: "categories", mechanic: "mechanics" };
+  const termSets = new Map(cards.map(card => [card, {
+    categories: new Set(card.dataset.categories.split(" ")),
+    mechanics: new Set(card.dataset.mechanics.split(" ")),
+  }]));
+
   // Seed controls from the query string. Values are validated against the
   // rendered options/checkboxes, so junk params fall back to "Any".
   const params = new URLSearchParams(location.search);
@@ -81,6 +93,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     const search = query.toString();
     history.replaceState(null, "", search ? `?${search}` : location.pathname);
+  }
+
+  // Grey out any unchecked term that would produce zero results if added to
+  // the current filters (AND semantics: adding a term can only narrow the
+  // shown set, so "some shown card carries it" is the exact liveness test).
+  function updateDeadTerms(shownCards) {
+    multis.forEach(multi => {
+      const key = facetKeys[multi.dataset.finderMulti];
+      multi.querySelectorAll("input").forEach(box => {
+        const dead = !box.checked
+          && !shownCards.some(card => termSets.get(card)[key].has(box.value));
+        box.disabled = dead;
+        box.parentElement.classList.toggle("bgg-finder-dead", dead);
+      });
+    });
   }
 
   // Descending for "bigger is better" keys, ascending for the rest. Unknown
@@ -125,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
       mechanics: checkedValues(finder.querySelector('[data-finder-multi="mechanic"]')),
     };
 
-    let shown = 0;
+    const shownCards = [];
     cards.forEach(card => {
       const d = card.dataset;
       let ok = true;
@@ -165,13 +192,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       card.classList.toggle("bgg-card-hidden", !ok);
-      if (ok) shown++;
+      if (ok) shownCards.push(card);
     });
 
+    const shown = shownCards.length;
     countEl.textContent = shown === cards.length
       ? `${cards.length} game${cards.length === 1 ? "" : "s"}`
       : `${shown} of ${cards.length} games`;
     if (emptyEl) emptyEl.hidden = shown > 0;
+    updateDeadTerms(shownCards);
     sortCards();
     multis.forEach(updateSummary);
     syncUrl();
