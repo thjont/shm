@@ -108,12 +108,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const max = Number(d.maxPlayers);
         ok = min > 0 && max > 0 && min <= players && players <= max;
       }
-      // Strict comparisons: the labels say "longer/shorter than", so mean it.
+      // Inclusive comparisons: the labels say "min/max play time", so a
+      // 30-minute game matches both "min 30" and "max 30".
       if (ok && (minTime || maxTime)) {
         const t = Number(d.time);
         ok = t > 0
-          && (!minTime || t > minTime)
-          && (!maxTime || t < maxTime);
+          && (!minTime || t >= minTime)
+          && (!maxTime || t <= maxTime);
       }
       if (ok && complexity) {
         ok = d.complexity === complexity;
