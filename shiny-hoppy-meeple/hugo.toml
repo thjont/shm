@@ -22,7 +22,7 @@ enableEmoji = true
     # Category/mechanic terms need at least this many library games before the
     # game finder lists them or game pages link them (rarer terms filter the
     # small library down to near-empty results).
-    finderTermMinGames = 3
+    finderTermMinGames = 4
 
   [params.author]
     name = "Shiny Hoppy Meeple"
