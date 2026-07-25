@@ -78,14 +78,17 @@ jobs:
                     slug=$(basename "$f" .json)
                     echo "--- library: $slug"
                     node scripts/bgg-export.js --library "$slug" \
-                      || echo "::warning::Export failed for library '$slug'"
+                      || { echo "::warning::Export failed for library '$slug'"; \
+                           echo "library $slug" >> "$RUNNER_TEMP/export-failures"; }
                   done
 
             - name: Export members (prod)
               if: inputs.target != 'stage'
               env:
                   BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
-              run: node scripts/bgg-export-members.js
+              run: |
+                  node scripts/bgg-export-members.js \
+                    || echo "members (prod)" >> "$RUNNER_TEMP/export-failures"
 
             - name: Regenerate QR-code PDF if main library changed
               if: inputs.target != 'stage'
@@ -117,7 +120,10 @@ jobs:
 
             - name: Build for prod
               if: inputs.target != 'stage' && (github.event_name == 'workflow_dispatch' || steps.commit-prod.outputs.changed_prod == 'true')
-              run: pushd shiny-hoppy-meeple && hugo --minify && popd
+              run: |
+                  pushd shiny-hoppy-meeple && hugo --minify && popd
+                  # Keep Functions off the static paths in prod — see deploy-prod.yml.
+                  cp shiny-hoppy-meeple/routes-prod.json shiny-hoppy-meeple/public/_routes.json
 
             - name: Deploy to prod
               if: inputs.target != 'stage' && (github.event_name == 'workflow_dispatch' || steps.commit-prod.outputs.changed_prod == 'true')
@@ -154,14 +160,17 @@ jobs:
                     slug=$(basename "$f" .json)
                     echo "--- library: $slug"
                     node scripts/bgg-export.js --library "$slug" \
-                      || echo "::warning::Export failed for library '$slug'"
+                      || { echo "::warning::Export failed for library '$slug'"; \
+                           echo "library $slug" >> "$RUNNER_TEMP/export-failures"; }
                   done
 
             - name: Export members (stage)
               if: inputs.target != 'prod'
               env:
                   BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
-              run: node scripts/bgg-export-members.js
+              run: |
+                  node scripts/bgg-export-members.js \
+                    || echo "members (stage)" >> "$RUNNER_TEMP/export-failures"
 
             - name: Push BGG cache (stage)
               if: inputs.target != 'prod'
@@ -179,6 +188,10 @@ jobs:
               if: inputs.target != 'prod' && (github.event_name == 'workflow_dispatch' || steps.commit-stage.outputs.changed_stage == 'true')
               run: |
                   cp shiny-hoppy-meeple/wrangler-stage.toml shiny-hoppy-meeple/wrangler.toml
+                  # Hugo leaves unrelated files in public/, so the prod _routes.json
+                  # written earlier in this job would otherwise survive into the stage
+                  # deploy and stop _middleware.js gating the preview.
+                  rm -f shiny-hoppy-meeple/public/_routes.json
                   pushd shiny-hoppy-meeple && hugo --minify --buildFuture --baseURL "https://stage-shiny-hoppy-meeple.pages.dev/" && popd
 
             - name: Deploy to stage
@@ -189,3 +202,19 @@ jobs:
                   accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
                   workingDirectory: shiny-hoppy-meeple
                   command: pages deploy --commit-hash=${{ github.sha }}
+
+            # This is the authoritative daily refresh, so a failed export must not
+            # pass silently — a wholly failed run would otherwise deploy green with
+            # stale data and nobody would know. The failures are collected rather
+            # than thrown at the point of failure so the rest of the refresh, the
+            # cache push and the deploys still happen: stale-but-complete data is
+            # the intended degradation, an invisible failure isn't.
+            - name: Report BGG export failures
+              if: always()
+              run: |
+                  if [ -s "$RUNNER_TEMP/export-failures" ]; then
+                    echo "::error::BGG export failures — deployed data is stale for:"
+                    cat "$RUNNER_TEMP/export-failures"
+                    exit 1
+                  fi
+                  echo "All BGG exports completed."

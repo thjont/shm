@@ -313,6 +313,13 @@ root, where Pages reads them.
   - Site-wide `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, and
     `Referrer-Policy: strict-origin-when-cross-origin`.
 
+Prod additionally ships a `_routes.json`, copied from `routes-prod.json` into `public/` after the
+Hugo build (same pattern as the `wrangler-*.toml` copies). Without it, `_middleware.js` puts `/*`
+into the generated routes and every image, stylesheet and HTML request pays a Function invocation
+before Pages serves it. Dev and stage deliberately ship no `_routes.json`, so their middleware keeps
+gating every path for the basic-auth preview — which is also why `update-bgg-cache.yml` deletes the
+file again before its stage build.
+
 `_headers` applies **only to assets Pages serves itself** — Function responses are untouched by it,
 so the JSON APIs build their responses through `functions/_lib/json.js`, which sets `nosniff`
 alongside the content type. Check both locally with `wrangler pages dev public` and
@@ -320,10 +327,36 @@ alongside the content type. Check both locally with `wrangler pages dev public` 
 
 ## Continuous integration
 
-`ci.yml` runs on every pull request (and pushes to `main`/`dev`): `lint:js` is a blocking check —
-a failure fails the workflow. `lint:md` runs with `continue-on-error`, so Markdown issues are
-visible in the workflow log but never block a PR or deploy (the vendored `blowfish` theme content
-fails several Markdown rules and isn't ours to fix).
+`ci.yml` runs on every pull request (and pushes to `main`/`dev`) as two jobs:
+
+- **lint** — `lint:js` is a blocking check; a failure fails the workflow. `lint:md` runs with
+  `continue-on-error`, so Markdown issues are visible in the workflow log but never block a PR or
+  deploy (the vendored `blowfish` theme content fails several Markdown rules and isn't ours to fix).
+- **build** — the same check as `just check`: pull the dev cache read-only, then
+  `hugo --renderToMemory`. eslint can't see a broken template or a changed `_content.gotmpl` data
+  contract, and before this those failed first in the deploy. The cache pull is best-effort; an
+  empty cache still builds, it just covers fewer pages.
+
+### Failure visibility in the pipeline
+
+Exports degrade rather than abort: a failed BGG batch or member leaves that entry's cached data
+untouched and the rest of the refresh continues. What changes is whether anyone hears about it.
+
+| Caller | On export failure |
+| --- | --- |
+| `bgg-export.js` | Warns per batch, then exits non-zero if any batch failed |
+| `bgg-export-members.js` | Warns per member, then exits non-zero if any member failed |
+| `deploy-prod.yml` / `deploy-stage.yml` | Log a `::warning::` and carry on — an hourly deploy shouldn't lose its cache push and deploy over one flaky fetch |
+| `update-bgg-cache.yml` | Records each failure to `$RUNNER_TEMP/export-failures`, finishes the refresh, pushes and deploys, then **fails the run** in its final step |
+
+That last row is the point: this is the authoritative daily refresh, so a wholly failed export must
+not report green with stale data.
+
+> [!NOTE]
+> GitHub disables cron workflows after 60 days without repository activity, which would silently
+> stop the hourly and daily runs. The daily `cache-push.sh` pushes to the `bgg-cache-*` branches
+> count as activity on most days, so this is unlikely to bite — but if the crons ever go quiet,
+> check the Actions tab for the "workflow disabled" notice first.
 
 ## Deployment
 

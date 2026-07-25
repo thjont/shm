@@ -346,13 +346,14 @@ async function exportGames(gameIds, client, dataDir, images, skipExisting) {
     gameIds = gameIds.filter(id => !fs.existsSync(path.join(gamesDir, `${id}.json`)));
     if (!gameIds.length) {
       console.log('  All games already cached — skipping game detail fetch.');
-      return;
+      return 0;
     }
     console.log(`  ${gameIds.length} new game(s) to fetch.`);
   }
 
   const total = gameIds.length;
   let saved = 0;
+  let failedBatches = 0;
 
   for (let start = 0; start < total; start += GAME_BATCH_SIZE) {
     const batch = gameIds.slice(start, start + GAME_BATCH_SIZE);
@@ -362,7 +363,11 @@ async function exportGames(gameIds, client, dataDir, images, skipExisting) {
     try {
       response = await client.getBggThing({ id: batch, stats: 1 });
     } catch (err) {
+      // Keep going so the rest of the collection still refreshes, but count it:
+      // main() turns any failure into a non-zero exit so callers can tell a
+      // complete refresh from a partial one.
       process.stderr.write(`  Warning: batch failed — ${err.message}\n`);
+      failedBatches++;
       continue;
     }
 
@@ -391,6 +396,7 @@ async function exportGames(gameIds, client, dataDir, images, skipExisting) {
   }
 
   console.log(`  Saved ${saved} game files → ${gamesDir}/`);
+  return failedBatches;
 }
 
 // --- Main ---
@@ -469,6 +475,7 @@ async function main() {
     imageDir, imageBase, !values['skip-images'], values['force-images']
   );
 
+  let failedBatches = 0;
   try {
     let gameIds;
     if (geeklistId) {
@@ -476,7 +483,7 @@ async function main() {
     } else {
       gameIds = await exportCollection(username, client, dataDir, images, collectionFile);
     }
-    await exportGames(gameIds, client, dataDir, images, values['skip-existing-games']);
+    failedBatches = await exportGames(gameIds, client, dataDir, images, values['skip-existing-games']);
   } catch (err) {
     if (err.response?.status === 401 || /401|Unauthorized/i.test(err.message)) {
       process.stderr.write(
@@ -489,6 +496,18 @@ async function main() {
   }
 
   images.summary();
+
+  // Partial data is still written and kept — the cache stays stale-but-complete
+  // — but the exit code has to say so, or a wholly failed export deploys green.
+  // Image failures stay warning-level: a missing hero degrades one page, a
+  // missing batch silently freezes up to 20 games' data.
+  if (failedBatches) {
+    process.stderr.write(
+      `Error: ${failedBatches} game batch(es) failed — cached data for those games is unchanged.\n`
+    );
+    process.exit(1);
+  }
+
   console.log('Done.');
 }
 

@@ -59,7 +59,13 @@ jobs:
             - name: Export members
               env:
                   BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
-              run: node scripts/bgg-export-members.js --skip-existing-games
+              # Deploys stay resilient: a flaky member export shouldn't cost this run
+              # its cache push and deploy. bgg-export-members.js now exits non-zero
+              # when a member fails, which is what update-bgg-cache.yml — the
+              # authoritative daily refresh — turns into a red run.
+              run: |
+                  node scripts/bgg-export-members.js --skip-existing-games \
+                    || echo "::warning::Some member exports failed — deploying with stale data for those members"
 
             - name: Setup Hugo
               uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1
