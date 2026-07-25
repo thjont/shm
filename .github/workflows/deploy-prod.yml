@@ -8,6 +8,20 @@ on:
     schedule:
         - cron: "0 8-23 * * *"
     workflow_dispatch:
+
+# One queue shared by every workflow that writes a cache branch or deploys the
+# site. Two prod runs (push + cron + the Apps Script dispatch button all fire
+# this one) would otherwise both run cache-push.sh — the loser hard-fails on a
+# non-fast-forward push — and race `wrangler pages deploy`, letting the older
+# build win. update-bgg-cache.yml writes all three cache branches, so it has to
+# share this group rather than have a per-environment one; the cost is that a
+# dev or stage deploy can queue behind a prod run for a few minutes.
+# Never cancel in progress: a run killed mid cache-push leaves the branch and
+# the deployed site out of step.
+concurrency:
+    group: site-deploy
+    cancel-in-progress: false
+
 jobs:
     deploy:
         runs-on: ubuntu-latest

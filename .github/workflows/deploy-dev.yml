@@ -7,6 +7,12 @@ on:
             - "shiny-hoppy-meeple/**"
     workflow_dispatch:
 
+# Shared with the other deploys and update-bgg-cache.yml, which pushes the dev
+# cache branch this workflow reads — see deploy-prod.yml.
+concurrency:
+    group: site-deploy
+    cancel-in-progress: false
+
 jobs:
     deploy:
         runs-on: ubuntu-latest

@@ -15,6 +15,12 @@ on:
                     - prod
                     - stage
 
+# Shared with all three deploy workflows: this one pushes every cache branch and
+# deploys prod and stage — see deploy-prod.yml.
+concurrency:
+    group: site-deploy
+    cancel-in-progress: false
+
 jobs:
     update-cache:
         runs-on: ubuntu-latest
