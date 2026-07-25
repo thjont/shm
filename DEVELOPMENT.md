@@ -421,13 +421,37 @@ sheets → export from BGG → `hugo --minify` → `wrangler pages deploy`.
 
 | Workflow | Trigger | Action |
 | --- | --- | --- |
-| `deploy-prod.yml` | Push to `main` touching `shiny-hoppy-meeple/**`, hourly 8 am–11 pm, or manual | Full sync + export (`--skip-existing-games`) → push cache → **production** deploy |
+| `deploy-prod.yml` | Push to `main` touching `shiny-hoppy-meeple/**`, hourly 8 am–11 pm, or manual | Full sync + export (`--skip-existing-games`) → push cache → **production** deploy. An hourly run with nothing new skips the build and deploy (see below); a push or manual run always deploys |
 | `deploy-stage.yml` | Manual dispatch only | Full sync + export against the stage sheet/calendar/cache → `--buildFuture` → **stage** deploy |
 | `deploy-dev.yml` | Push to `dev` touching `shiny-hoppy-meeple/**`, or manual | Sync only (no BGG export) → `--buildFuture` → **dev** deploy |
 | `update-bgg-cache.yml` | Daily at 4 am, or manual | **Full** BGG refresh for prod and stage → stale-cache cleanup → regenerate `qr-codes.pdf` if the main library changed → push caches (prod, dev, stage) → deploy prod + stage if anything changed |
 
 Non-GitHub maintainers can trigger the prod/stage deploys through a Google-authenticated web
 button — see [DEPLOY-BUTTON.md](DEPLOY-BUTTON.md).
+
+### Skipping hourly runs with nothing to deploy
+
+The hourly cron exists to pick up sheet and calendar edits, and most hours there aren't any, so it
+used to rebuild and redeploy an identical site ~16 times a day. `scripts/inputs-hash.sh` now
+fingerprints the synced inputs — the generated definitions, `data/calendar.json` and the event stub
+pages — into `data/bgg-cache/.inputs-hash` before the cache is pushed. Because that file rides along
+on the cache branch, "did the sheet or calendar change?" collapses into "did the cache change?",
+which `cache-push.sh` already reports as `changed_prod`. The build and deploy steps are gated on
+`github.event_name != 'schedule' || steps.push-cache.outputs.changed_prod == 'true'`, so a push or a
+manual dispatch always deploys and only a quiet cron run skips — noting the fact in the run summary.
+
+The dotfile placement is deliberate: Hugo ignores dotfiles in `data/`, but a plain `.txt` there fails
+the build with `unmarshal of format "" is not supported`.
+
+### The cache branches hold a snapshot, not a history
+
+`cache-push.sh` replaces `bgg-cache-<stage>` with a **single parentless commit** and force-pushes it.
+Appending a commit per run pinned every superseded version of every changed image in the branch's
+history forever; with a snapshot, the old blobs become unreachable and can be collected. The
+trade-off, accepted because the data is derived: there's no going back to yesterday's cache — you
+re-run the export instead. Both cache scripts fetch with `--force` and an explicit refspec, because
+after a rewrite an ordinary fetch of the tracking ref is a non-fast-forward and would otherwise look
+like the branch is missing (which would silently re-download the whole cache).
 
 Required repository secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, `BGG_API_TOKEN`,
 `GOOGLE_SERVICE_ACCOUNT_KEY`, `GOOGLE_CALENDAR_ID`, `GOOGLE_SHEETS_SPREADSHEET_ID`, and the stage

@@ -8,7 +8,10 @@ STAGE="${1:?usage: cache-pull.sh <prod|stage|dev>}"
 BRANCH="bgg-cache-$STAGE"
 cd "$(dirname "$0")/.."
 
-if git fetch origin "$BRANCH" --depth 1 2>/dev/null; then
+# Forced, explicit refspec: cache-push.sh rewrites this branch on every push, so an
+# unforced fetch could be rejected as a non-fast-forward and fall through to the
+# "no branch" path below — which would silently re-download the whole cache.
+if git fetch --force --depth 1 origin "refs/heads/$BRANCH:refs/remotes/origin/$BRANCH" 2>/dev/null; then
   for p in shiny-hoppy-meeple/data/bgg-cache shiny-hoppy-meeple/static/images/games shiny-hoppy-meeple/static/qr-codes.pdf; do
     git checkout FETCH_HEAD -- "$p" 2>/dev/null || true
   done

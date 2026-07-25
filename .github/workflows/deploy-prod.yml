@@ -58,6 +58,14 @@ jobs:
                   GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
               run: node scripts/sheets-sync.js
 
+            # Fingerprint the sheet/calendar inputs into the cache so the hourly
+            # run can tell whether it has anything to deploy — see
+            # scripts/inputs-hash.sh. Must be written before the cache is pushed.
+            - name: Fingerprint synced inputs
+              run: |
+                  mkdir -p shiny-hoppy-meeple/data/bgg-cache
+                  scripts/inputs-hash.sh > shiny-hoppy-meeple/data/bgg-cache/.inputs-hash
+
             - name: Export libraries
               env:
                   BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
@@ -81,15 +89,18 @@ jobs:
                     || echo "::warning::Some member exports failed — deploying with stale data for those members"
 
             - name: Push BGG cache
+              id: push-cache
               run: scripts/cache-push.sh prod
 
             - name: Setup Hugo
+              if: github.event_name != 'schedule' || steps.push-cache.outputs.changed_prod == 'true'
               uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1
               with:
                   hugo-version: "0.163.1"
                   extended: true
 
             - name: Build site
+              if: github.event_name != 'schedule' || steps.push-cache.outputs.changed_prod == 'true'
               run: pushd shiny-hoppy-meeple && hugo --minify && popd
 
             # functions/_middleware.js exists only for the dev/stage basic-auth
@@ -100,12 +111,21 @@ jobs:
             # middleware keeps covering everything. Same copy-after-build pattern
             # as the wrangler-*.toml files.
             - name: Limit prod Functions routes
+              if: github.event_name != 'schedule' || steps.push-cache.outputs.changed_prod == 'true'
               run: cp shiny-hoppy-meeple/routes-prod.json shiny-hoppy-meeple/public/_routes.json
 
             - name: Deploy to Cloudflare Pages
+              if: github.event_name != 'schedule' || steps.push-cache.outputs.changed_prod == 'true'
               uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
               with:
                   apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
                   accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
                   workingDirectory: shiny-hoppy-meeple
                   command: pages deploy --commit-hash=${{ github.sha }}
+
+            # A skipped hourly run should say so, rather than looking like a deploy.
+            - name: Note skipped deploy
+              if: github.event_name == 'schedule' && steps.push-cache.outputs.changed_prod != 'true'
+              run: |
+                  echo "No sheet, calendar or BGG cache changes this hour — skipped build and deploy." \
+                    >> "$GITHUB_STEP_SUMMARY"
