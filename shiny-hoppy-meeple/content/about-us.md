@@ -2,6 +2,8 @@
 date = '2026-06-07T00:00:00Z'
 draft = false
 title = 'About Us'
+showDate = false
+showPagination = false
 +++
 
 Shiny Hoppy Meeple is a board game community in East Belfast. We're a friendly bunch who love games of all kinds — from

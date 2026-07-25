@@ -61,6 +61,7 @@ or picking up your first game, you'll find a warm welcome here.
     showLikes = false
     showAuthor = false
     showReadingTime = false
+    showWordCount = false
     showTableOfContents = false
 
 [markup]
