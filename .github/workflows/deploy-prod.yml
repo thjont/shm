@@ -25,6 +25,7 @@ concurrency:
 jobs:
     deploy:
         runs-on: ubuntu-latest
+        timeout-minutes: 30
         permissions:
             contents: write
             deployments: write
@@ -34,59 +35,15 @@ jobs:
               with:
                   submodules: true
 
-            - name: Set up Node.js
-              uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+            - name: Sync and export
+              uses: ./.github/actions/sync-and-export
               with:
-                  node-version: "22"
-                  cache: "npm"
-
-            - name: Install dependencies
-              run: npm ci
-
-            - name: Restore BGG cache
-              run: scripts/cache-pull.sh prod
-
-            - name: Sync Google Calendar
-              env:
-                  GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
-                  GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID }}
-              run: node scripts/calendar-sync.js
-
-            - name: Sync definitions from Google Sheets
-              env:
-                  GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
-                  GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
-              run: node scripts/sheets-sync.js
-
-            # Fingerprint the sheet/calendar inputs into the cache so the hourly
-            # run can tell whether it has anything to deploy — see
-            # scripts/inputs-hash.sh. Must be written before the cache is pushed.
-            - name: Fingerprint synced inputs
-              run: |
-                  mkdir -p shiny-hoppy-meeple/data/bgg-cache
-                  scripts/inputs-hash.sh > shiny-hoppy-meeple/data/bgg-cache/.inputs-hash
-
-            - name: Export libraries
-              env:
-                  BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
-              run: |
-                  for f in shiny-hoppy-meeple/data/definitions/libraries/*.json; do
-                    slug=$(basename "$f" .json)
-                    echo "--- library: $slug"
-                    node scripts/bgg-export.js --library "$slug" --skip-existing-games \
-                      || echo "::warning::Export failed for library '$slug'"
-                  done
-
-            - name: Export members
-              env:
-                  BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
-              # Deploys stay resilient: a flaky member export shouldn't cost this run
-              # its cache push and deploy. bgg-export-members.js now exits non-zero
-              # when a member fails, which is what update-bgg-cache.yml — the
-              # authoritative daily refresh — turns into a red run.
-              run: |
-                  node scripts/bgg-export-members.js --skip-existing-games \
-                    || echo "::warning::Some member exports failed — deploying with stale data for those members"
+                  stage: prod
+                  google-service-account-key: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+                  google-calendar-id: ${{ secrets.GOOGLE_CALENDAR_ID }}
+                  google-sheets-spreadsheet-id: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
+                  bgg-api-token: ${{ secrets.BGG_API_TOKEN }}
+                  fingerprint-inputs: "true"
 
             - name: Push BGG cache
               id: push-cache

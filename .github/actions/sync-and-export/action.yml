@@ -1,0 +1,106 @@
+name: Sync and export
+description: >-
+  Restore one environment's BGG cache, sync Google Calendar and Google Sheets into
+  it, and export from BoardGameGeek. This is the prefix every deploy workflow shares;
+  the build and deploy tail stays in the caller because it differs per environment.
+
+# A composite action, not a reusable (workflow_call) workflow, on purpose: a called
+# workflow runs as its own job with its own runner, so it could not hand the synced
+# cache and definitions to the caller's build without shipping ~30 MB through
+# artifacts. Composite steps run inside the caller's job, sharing its filesystem.
+#
+# The caller is responsible for `actions/checkout` (with submodules) before this, and
+# for `cache-push.sh` after it if that environment publishes its cache.
+
+inputs:
+  stage:
+    description: Which environment's cache and configuration to use — prod, stage or dev.
+    required: true
+  node-version:
+    description: Node.js version. Kept in step with the pinning policy in package.json.
+    default: "22"
+  google-service-account-key:
+    description: Service-account JSON for Sheets and Calendar.
+    required: true
+  google-calendar-id:
+    description: Calendar to read events from — the stage calendar for stage.
+    required: true
+  google-sheets-spreadsheet-id:
+    description: Spreadsheet to read definitions from — the stage sheet for stage.
+    required: true
+  bgg-api-token:
+    description: BGG API token. Only needed when export is true.
+    default: ""
+  export:
+    description: Run the BGG export. Dev deploys skip it and use whatever the cache holds.
+    default: "true"
+  fingerprint-inputs:
+    description: >-
+      Record scripts/inputs-hash.sh into the cache, so a later cache-push reports
+      sheet and calendar edits as a cache change. Prod uses this to skip idle
+      hourly deploys.
+    default: "false"
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: "npm"
+
+    - name: Install dependencies
+      shell: bash
+      run: npm ci
+
+    - name: Restore BGG cache
+      shell: bash
+      run: scripts/cache-pull.sh ${{ inputs.stage }}
+
+    - name: Sync Google Calendar
+      shell: bash
+      env:
+        GOOGLE_SERVICE_ACCOUNT_KEY: ${{ inputs.google-service-account-key }}
+        GOOGLE_CALENDAR_ID: ${{ inputs.google-calendar-id }}
+      run: node scripts/calendar-sync.js
+
+    - name: Sync definitions from Google Sheets
+      shell: bash
+      env:
+        GOOGLE_SERVICE_ACCOUNT_KEY: ${{ inputs.google-service-account-key }}
+        GOOGLE_SHEETS_SPREADSHEET_ID: ${{ inputs.google-sheets-spreadsheet-id }}
+      run: node scripts/sheets-sync.js
+
+    - name: Fingerprint synced inputs
+      if: inputs.fingerprint-inputs == 'true'
+      shell: bash
+      run: |
+        mkdir -p shiny-hoppy-meeple/data/bgg-cache
+        scripts/inputs-hash.sh > shiny-hoppy-meeple/data/bgg-cache/.inputs-hash
+
+    - name: Export libraries
+      if: inputs.export == 'true'
+      shell: bash
+      env:
+        BGG_API_TOKEN: ${{ inputs.bgg-api-token }}
+      run: |
+        for f in shiny-hoppy-meeple/data/definitions/libraries/*.json; do
+          slug=$(basename "$f" .json)
+          echo "--- library: $slug"
+          node scripts/bgg-export.js --library "$slug" --skip-existing-games \
+            || echo "::warning::Export failed for library '$slug'"
+        done
+
+    # Deploys stay resilient: a flaky member export shouldn't cost this run its
+    # cache push and deploy. bgg-export-members.js exits non-zero when a member
+    # fails, which is what update-bgg-cache.yml — the authoritative daily refresh —
+    # turns into a red run.
+    - name: Export members
+      if: inputs.export == 'true'
+      shell: bash
+      env:
+        BGG_API_TOKEN: ${{ inputs.bgg-api-token }}
+      run: |
+        node scripts/bgg-export-members.js --skip-existing-games \
+          || echo "::warning::Some member exports failed — deploying with stale data for those members"

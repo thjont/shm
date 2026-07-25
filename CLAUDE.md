@@ -66,8 +66,9 @@ Workflows: `deploy-prod.yml` (push to `main` touching `shiny-hoppy-meeple/**`, h
 to pick up sheet/calendar edits, or manual dispatch), `deploy-stage.yml` (manual dispatch),
 `deploy-dev.yml` (push to `dev`), `update-bgg-cache.yml` (daily 04:00 full refresh), `ci.yml`
 (lint on PRs — `lint:js` blocking, `lint:md` non-blocking). A Google Apps Script deploy button
-(`google-apps-script/deploy-button/`, see `DEPLOY-BUTTON.md`) lets allowlisted non-GitHub
-maintainers trigger the prod/stage deploy workflows via `.github/actions/check-permission`.
+(`google-apps-script/deploy-button/`, see `DEPLOY-BUTTON.md`) lets non-GitHub maintainers trigger
+the prod/stage deploy workflows; it authorises them against its own `ALLOWED_EMAILS` script
+property and dispatches with a PAT, so GitHub-side permission checks aren't involved.
 
 ### BGG data pipeline
 

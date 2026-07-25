@@ -16,6 +16,7 @@ concurrency:
 jobs:
     deploy:
         runs-on: ubuntu-latest
+        timeout-minutes: 30
         permissions:
             contents: read
             deployments: write
@@ -25,29 +26,17 @@ jobs:
               with:
                   submodules: true
 
-            - name: Set up Node.js
-              uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+            # No BGG export here: dev renders whatever bgg-cache-dev holds (the daily
+            # refresh pushes it), so a dev preview is fast and never hits BGG. It does
+            # sync the prod sheet and calendar, so content changes are previewable.
+            - name: Sync and export
+              uses: ./.github/actions/sync-and-export
               with:
-                  node-version: "22"
-                  cache: "npm"
-
-            - name: Install dependencies
-              run: npm ci
-
-            - name: Restore BGG cache
-              run: scripts/cache-pull.sh dev
-
-            - name: Sync Google Calendar
-              env:
-                  GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
-                  GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID }}
-              run: node scripts/calendar-sync.js
-
-            - name: Sync definitions from Google Sheets
-              env:
-                  GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
-                  GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
-              run: node scripts/sheets-sync.js
+                  stage: dev
+                  google-service-account-key: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+                  google-calendar-id: ${{ secrets.GOOGLE_CALENDAR_ID }}
+                  google-sheets-spreadsheet-id: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
+                  export: "false"
 
             - name: Setup Hugo
               uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1

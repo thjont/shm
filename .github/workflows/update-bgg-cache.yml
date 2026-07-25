@@ -21,9 +21,21 @@ concurrency:
     group: site-deploy
     cancel-in-progress: false
 
+# Prod and stage are separate jobs so a prod failure can no longer skip the stage
+# refresh, which is what happened when both halves shared one job. `stage` still
+# waits for `prod` rather than running alongside it, to keep this workflow's load on
+# BGG's free API serial.
+#
+# These jobs deliberately do NOT use .github/actions/sync-and-export, which the
+# three deploy workflows share: this is the authoritative full refresh, so it
+# exports without --skip-existing-games, runs cleanup-stale-cache.js, snapshots the
+# main library to decide whether to regenerate the QR sheet, and syncs the calendar
+# only once it knows a deploy is happening. Different order, different flags.
 jobs:
-    update-cache:
+    prod:
+        if: inputs.target != 'stage'
         runs-on: ubuntu-latest
+        timeout-minutes: 60
         permissions:
             contents: write
             deployments: write
@@ -47,30 +59,23 @@ jobs:
                   hugo-version: "0.163.1"
                   extended: true
 
-            # ---------- prod ----------
-
             - name: Restore BGG cache (prod)
-              if: inputs.target != 'stage'
               run: scripts/cache-pull.sh prod
 
             - name: Snapshot main-library checksum
-              if: inputs.target != 'stage'
               id: before
               run: echo "hash=$(sha256sum shiny-hoppy-meeple/data/bgg-cache/collections/main-library.json 2>/dev/null | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
 
             - name: Sync definitions from Google Sheets (prod)
-              if: inputs.target != 'stage'
               env:
                   GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
                   GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
               run: node scripts/sheets-sync.js
 
             - name: Remove stale caches (prod)
-              if: inputs.target != 'stage'
               run: node scripts/cleanup-stale-cache.js
 
             - name: Export libraries (prod)
-              if: inputs.target != 'stage'
               env:
                   BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
               run: |
@@ -83,7 +88,6 @@ jobs:
                   done
 
             - name: Export members (prod)
-              if: inputs.target != 'stage'
               env:
                   BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
               run: |
@@ -91,7 +95,6 @@ jobs:
                     || echo "members (prod)" >> "$RUNNER_TEMP/export-failures"
 
             - name: Regenerate QR-code PDF if main library changed
-              if: inputs.target != 'stage'
               run: |
                   after=$(sha256sum shiny-hoppy-meeple/data/bgg-cache/collections/main-library.json 2>/dev/null | cut -d' ' -f1)
                   if [ -f shiny-hoppy-meeple/static/qr-codes.pdf ] && [ "$after" = "${{ steps.before.outputs.hash }}" ]; then
@@ -104,29 +107,38 @@ jobs:
                     node scripts/generate-qr-pdf.js --scan-slugs shiny-hoppy-meeple/public/scan-slugs.json
                   fi
 
-            - name: Push BGG cache (prod + dev)
-              if: inputs.target != 'stage'
-              id: commit-prod
-              run: |
-                  scripts/cache-push.sh prod
-                  scripts/cache-push.sh dev
-
+            # Ungated and ahead of the fingerprint on purpose: deploy-prod.yml hashes
+            # the calendar's output too, so if this workflow fingerprinted without
+            # syncing first, the two would disagree about identical state and the next
+            # hourly run would deploy for no reason.
             - name: Sync Google Calendar (prod)
-              if: inputs.target != 'stage' && (github.event_name == 'workflow_dispatch' || steps.commit-prod.outputs.changed_prod == 'true')
               env:
                   GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
                   GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID }}
               run: node scripts/calendar-sync.js
 
+            # Same fingerprint deploy-prod.yml writes, so a sheet or calendar edit
+            # picked up here is visible to the hourly run as a cache change.
+            - name: Fingerprint synced inputs
+              run: |
+                  mkdir -p shiny-hoppy-meeple/data/bgg-cache
+                  scripts/inputs-hash.sh > shiny-hoppy-meeple/data/bgg-cache/.inputs-hash
+
+            - name: Push BGG cache (prod + dev)
+              id: commit-prod
+              run: |
+                  scripts/cache-push.sh prod
+                  scripts/cache-push.sh dev
+
             - name: Build for prod
-              if: inputs.target != 'stage' && (github.event_name == 'workflow_dispatch' || steps.commit-prod.outputs.changed_prod == 'true')
+              if: github.event_name == 'workflow_dispatch' || steps.commit-prod.outputs.changed_prod == 'true'
               run: |
                   pushd shiny-hoppy-meeple && hugo --minify && popd
                   # Keep Functions off the static paths in prod — see deploy-prod.yml.
                   cp shiny-hoppy-meeple/routes-prod.json shiny-hoppy-meeple/public/_routes.json
 
             - name: Deploy to prod
-              if: inputs.target != 'stage' && (github.event_name == 'workflow_dispatch' || steps.commit-prod.outputs.changed_prod == 'true')
+              if: github.event_name == 'workflow_dispatch' || steps.commit-prod.outputs.changed_prod == 'true'
               uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
               with:
                   apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -134,25 +146,66 @@ jobs:
                   workingDirectory: shiny-hoppy-meeple
                   command: pages deploy --commit-hash=${{ github.sha }}
 
-            # ---------- stage (own sheet + calendar, own cache) ----------
+            # This is the authoritative daily refresh, so a failed export must not
+            # pass silently — a wholly failed run would otherwise deploy green with
+            # stale data and nobody would know. Failures are collected rather than
+            # thrown where they happen, so the rest of the refresh, the cache push
+            # and the deploy still run: stale-but-complete data is the intended
+            # degradation, an invisible failure isn't.
+            - name: Report BGG export failures (prod)
+              if: always()
+              run: |
+                  if [ -s "$RUNNER_TEMP/export-failures" ]; then
+                    echo "::error::BGG export failures — deployed prod data is stale for:"
+                    cat "$RUNNER_TEMP/export-failures"
+                    exit 1
+                  fi
+                  echo "All prod BGG exports completed."
+
+    # Stage has its own spreadsheet, calendar and cache branch. `!cancelled()` rather
+    # than `always()`: a red prod refresh must not stop stage refreshing, but a
+    # cancelled run should stop everything.
+    stage:
+        needs: prod
+        if: ${{ !cancelled() && inputs.target != 'prod' }}
+        runs-on: ubuntu-latest
+        timeout-minutes: 60
+        permissions:
+            contents: write
+            deployments: write
+        steps:
+            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  submodules: true
+
+            - name: Set up Node.js
+              uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+              with:
+                  node-version: "22"
+                  cache: "npm"
+
+            - name: Install Node dependencies
+              run: npm ci
+
+            - name: Setup Hugo
+              uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1
+              with:
+                  hugo-version: "0.163.1"
+                  extended: true
 
             - name: Restore BGG cache (stage)
-              if: inputs.target != 'prod'
               run: scripts/cache-pull.sh stage
 
             - name: Sync definitions from Google Sheets (stage)
-              if: inputs.target != 'prod'
               env:
                   GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
                   GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID_STAGE }}
               run: node scripts/sheets-sync.js
 
             - name: Remove stale caches (stage)
-              if: inputs.target != 'prod'
               run: node scripts/cleanup-stale-cache.js
 
             - name: Export libraries (stage)
-              if: inputs.target != 'prod'
               env:
                   BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
               run: |
@@ -165,7 +218,6 @@ jobs:
                   done
 
             - name: Export members (stage)
-              if: inputs.target != 'prod'
               env:
                   BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
               run: |
@@ -173,48 +225,41 @@ jobs:
                     || echo "members (stage)" >> "$RUNNER_TEMP/export-failures"
 
             - name: Push BGG cache (stage)
-              if: inputs.target != 'prod'
               id: commit-stage
               run: scripts/cache-push.sh stage
 
             - name: Sync Google Calendar (stage)
-              if: inputs.target != 'prod' && (github.event_name == 'workflow_dispatch' || steps.commit-stage.outputs.changed_stage == 'true')
+              if: github.event_name == 'workflow_dispatch' || steps.commit-stage.outputs.changed_stage == 'true'
               env:
                   GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
                   GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID_STAGE }}
               run: node scripts/calendar-sync.js
 
             - name: Build for stage
-              if: inputs.target != 'prod' && (github.event_name == 'workflow_dispatch' || steps.commit-stage.outputs.changed_stage == 'true')
+              if: github.event_name == 'workflow_dispatch' || steps.commit-stage.outputs.changed_stage == 'true'
               run: |
                   cp shiny-hoppy-meeple/wrangler-stage.toml shiny-hoppy-meeple/wrangler.toml
-                  # Hugo leaves unrelated files in public/, so the prod _routes.json
-                  # written earlier in this job would otherwise survive into the stage
-                  # deploy and stop _middleware.js gating the preview.
+                  # Stage keeps no _routes.json, so _middleware.js still gates the
+                  # whole preview behind basic auth. (This job now has its own
+                  # runner, so prod's copy can't leak in — it used to share one.)
                   rm -f shiny-hoppy-meeple/public/_routes.json
                   pushd shiny-hoppy-meeple && hugo --minify --buildFuture --baseURL "https://stage-shiny-hoppy-meeple.pages.dev/" && popd
 
             - name: Deploy to stage
-              if: inputs.target != 'prod' && (github.event_name == 'workflow_dispatch' || steps.commit-stage.outputs.changed_stage == 'true')
               uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
+              if: github.event_name == 'workflow_dispatch' || steps.commit-stage.outputs.changed_stage == 'true'
               with:
                   apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
                   accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
                   workingDirectory: shiny-hoppy-meeple
                   command: pages deploy --commit-hash=${{ github.sha }}
 
-            # This is the authoritative daily refresh, so a failed export must not
-            # pass silently — a wholly failed run would otherwise deploy green with
-            # stale data and nobody would know. The failures are collected rather
-            # than thrown at the point of failure so the rest of the refresh, the
-            # cache push and the deploys still happen: stale-but-complete data is
-            # the intended degradation, an invisible failure isn't.
-            - name: Report BGG export failures
+            - name: Report BGG export failures (stage)
               if: always()
               run: |
                   if [ -s "$RUNNER_TEMP/export-failures" ]; then
-                    echo "::error::BGG export failures — deployed data is stale for:"
+                    echo "::error::BGG export failures — deployed stage data is stale for:"
                     cat "$RUNNER_TEMP/export-failures"
                     exit 1
                   fi
-                  echo "All BGG exports completed."
+                  echo "All stage BGG exports completed."

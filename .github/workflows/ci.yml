@@ -8,6 +8,7 @@ on:
 jobs:
     lint:
         runs-on: ubuntu-latest
+        timeout-minutes: 10
         permissions:
             contents: read
         steps:
@@ -38,6 +39,7 @@ jobs:
     # first in the deploy. Same check as `just check`.
     build:
         runs-on: ubuntu-latest
+        timeout-minutes: 15
         permissions:
             contents: read
         steps:

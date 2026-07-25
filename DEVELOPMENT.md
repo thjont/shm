@@ -424,10 +424,33 @@ sheets → export from BGG → `hugo --minify` → `wrangler pages deploy`.
 | `deploy-prod.yml` | Push to `main` touching `shiny-hoppy-meeple/**`, hourly 8 am–11 pm, or manual | Full sync + export (`--skip-existing-games`) → push cache → **production** deploy. An hourly run with nothing new skips the build and deploy (see below); a push or manual run always deploys |
 | `deploy-stage.yml` | Manual dispatch only | Full sync + export against the stage sheet/calendar/cache → `--buildFuture` → **stage** deploy |
 | `deploy-dev.yml` | Push to `dev` touching `shiny-hoppy-meeple/**`, or manual | Sync only (no BGG export) → `--buildFuture` → **dev** deploy |
-| `update-bgg-cache.yml` | Daily at 4 am, or manual | **Full** BGG refresh for prod and stage → stale-cache cleanup → regenerate `qr-codes.pdf` if the main library changed → push caches (prod, dev, stage) → deploy prod + stage if anything changed |
+| `update-bgg-cache.yml` | Daily at 4 am, or manual | **Full** BGG refresh in two jobs, `prod` then `stage` → stale-cache cleanup → regenerate `qr-codes.pdf` if the main library changed → push caches (prod, dev, stage) → deploy prod + stage if anything changed |
 
 Non-GitHub maintainers can trigger the prod/stage deploys through a Google-authenticated web
 button — see [DEPLOY-BUTTON.md](DEPLOY-BUTTON.md).
+
+### Shared steps and job layout
+
+The three deploy workflows share their whole prefix — Node, `npm ci`, `cache-pull.sh`, the calendar
+and sheets syncs, and the BGG export — through the composite action
+**`.github/actions/sync-and-export`**, parameterised by `stage` plus the secrets and two flags
+(`export`, `fingerprint-inputs`). Each workflow then keeps its own build-and-deploy tail, because
+those genuinely differ: base URL, `--buildFuture`, which `wrangler-*.toml` is copied over, prod's
+`_routes.json`, and prod's change gating.
+
+> [!NOTE]
+> It's a **composite action**, not a reusable `workflow_call` workflow, because a called workflow
+> runs as its own job on its own runner — it could not hand the synced cache and definitions to the
+> caller's build without pushing ~30 MB through artifacts. Composite steps run inside the caller's
+> job and share its filesystem.
+
+`update-bgg-cache.yml` deliberately doesn't use it. That workflow is the authoritative full refresh:
+it exports *without* `--skip-existing-games`, runs `cleanup-stale-cache.js`, snapshots the main
+library to decide whether to reprint the QR sheet, and syncs the calendar at a different point.
+Different order and different flags would mean bending the action out of shape. It is now split into
+a `prod` job and a `stage` job (`needs: prod`, `if: !cancelled()`), so a failed prod refresh no
+longer skips stage — while still keeping this workflow's load on BGG's free API serial. Each job
+reports its own export failures, since `$RUNNER_TEMP` isn't shared between jobs.
 
 ### Skipping hourly runs with nothing to deploy
 
@@ -442,6 +465,9 @@ manual dispatch always deploys and only a quiet cron run skips — noting the fa
 
 The dotfile placement is deliberate: Hugo ignores dotfiles in `data/`, but a plain `.txt` there fails
 the build with `unmarshal of format "" is not supported`.
+
+`update-bgg-cache.yml` writes the same fingerprint (after its own calendar sync, so both workflows
+hash identical state — otherwise the next hourly run would deploy for no reason).
 
 ### The cache branches hold a snapshot, not a history
 
