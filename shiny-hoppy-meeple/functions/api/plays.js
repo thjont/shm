@@ -1,38 +1,24 @@
 // GET /api/plays
-// Returns play counts as JSON: { "<slug>": <count>, ... }
+// Returns QR-scan play counts as JSON: { "<slug>": <count>, ... }
 // Restricted to slugs in the build-time allowlist (/scan-slugs.json) so any stray
 // keys never surface or bloat the response. Consumed client-side by /js/plays.js.
 
 import { json } from "../_lib/json.js";
+import { cachedJson } from "../_lib/edge-cache.js";
+import { knownSlugs } from "../_lib/slugs.js";
+import { readScanCounts } from "../_lib/counts.js";
 
-// Load the set of valid slugs emitted by Hugo. Returns null if unreadable, in
-// which case we fail closed and return no counts rather than every stored key.
-async function knownSlugs(request) {
-  try {
-    const res = await fetch(new URL("/scan-slugs.json", request.url));
-    if (res.ok) return new Set(await res.json());
-  } catch {
-    // allowlist unavailable — caller fails closed and returns no counts
-  }
-  return null;
-}
+const MAX_AGE = 60;
 
 export async function onRequestGet(context) {
-  const { env, request } = context;
-  const counts = {};
+  return cachedJson(context, "/api/plays", async () => {
+    const { env } = context;
 
-  // Fail closed: without the allowlist, return no counts rather than leaking
-  // every stored key (consistent with the play-handler's write gate).
-  const allow = env.SCANS ? await knownSlugs(request) : null;
-  if (allow) {
-    const list = await env.SCANS.list();
-    const keys = list.keys.map(k => k.name).filter(name => allow.has(name));
-    const values = await Promise.all(keys.map(name => env.SCANS.get(name)));
-    keys.forEach((name, i) => {
-      counts[name] = parseInt(values[i], 10) || 0;
-    });
-  }
+    // Fail closed: without the allowlist, return no counts rather than leaking
+    // every stored key (consistent with the play-handler's write gate).
+    const allow = env.SCANS ? await knownSlugs(context) : null;
+    const counts = allow ? await readScanCounts(env.SCANS, allow) : {};
 
-  // Cache for a minute to cut KV reads and speed up the page.
-  return json(counts, { cacheControl: "public, max-age=60" });
+    return json(counts, { cacheControl: `public, max-age=${MAX_AGE}` });
+  });
 }

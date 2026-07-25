@@ -47,7 +47,8 @@ the site rebuilds, so it changes only as BGG ratings drift or games enter and le
 collections. The same rank appears as a badge on each card in the library.
 
 Play counts load a moment after the page opens — it is normal for them to briefly appear blank
-before filling in.
+before filling in. They are also cached for up to a minute, so a scan or a **+1** may take that long
+to show up on someone else's screen (your own **+1** updates immediately).
 
 ---
 

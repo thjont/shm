@@ -9,6 +9,9 @@ export default [
       'shiny-hoppy-meeple/public/**',
       'shiny-hoppy-meeple/resources/**',
       'shiny-hoppy-meeple/data/**',
+      // wrangler's generated bundles. Gitignored, so CI never sees them, but they
+      // survive a killed `wrangler pages dev` and would otherwise fail local lint.
+      '**/.wrangler/**',
     ],
   },
   js.configs.recommended,

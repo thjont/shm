@@ -260,17 +260,46 @@ Blowfish theme with overrides:
 Workers KV namespace bound as `SCANS` (see `wrangler.toml`):
 
 - QR stickers on physical games hit `/p/<slug>`, `/lets-play/<slug>`, or `/learn-to-play/<slug>` →
-  `functions/_lib/play-handler.js` increments the play count in KV (**only** for slugs present in
-  `/scan-slugs.json`, to keep junk out of KV; it fails closed if the allowlist is unreadable) and
-  302-redirects to `/games/<slug>/`.
+  `functions/_lib/play-handler.js` 302-redirects to `/games/<slug>/` and counts the scan from
+  `context.waitUntil()`, so the person scanning never waits on two KV round trips (**only** for
+  slugs present in `/scan-slugs.json`, to keep junk out of KV; it fails closed if the allowlist is
+  unreadable).
 - `api/plays.js` serves the QR-scan counts.
-- `api/member-plays.js` serves and records member-logged plays (stored under `member:<slug>` keys;
-  the POST is deliberately unauthenticated — accepted risk for a small community site).
+- `api/member-plays.js` serves and records member-logged plays (the POST is deliberately
+  unauthenticated — accepted risk for a small community site).
 - `static/js/plays.js` fetches counts client-side via `data-*-slug` attributes, so counts never
   block static rendering.
 - `_middleware.js` gates everything except the routes above behind basic auth when the
   `BASIC_AUTH_PASSWORD` environment variable is set on the Pages project (used for dev/stage
   previews; prod doesn't set it).
+
+The shared pieces live in `functions/_lib/`:
+
+| File | Responsibility |
+| --- | --- |
+| `slugs.js` | Loads the `/scan-slugs.json` allowlist through `env.ASSETS` — the deployment's own asset, so no origin round trip and no basic-auth exemption |
+| `counts.js` | The `scan:` / `member:` keyspaces, cursor-looped listings, and counts read from key metadata |
+| `edge-cache.js` | Cache API storage for the two GET endpoints |
+| `json.js` | JSON responses with `nosniff` |
+| `play-handler.js` | The shared QR-scan route |
+
+Four things about the KV layer are easy to undo by accident:
+
+1. **Counts live in key metadata as well as the value.** `put(key, value, { metadata: { count } })`
+   means `list()` alone carries every number, turning a request into one listing instead of a
+   listing plus a `get()` per game. Drop the metadata and reads still work — they just quietly go
+   back to a `get()` per key.
+2. **Every listing is cursor-looped.** `list()` returns at most 1,000 keys and both keyspaces share
+   the namespace; the previous single-page read would have reported 0 for every key past the first
+   page.
+3. **`Cache-Control` does not edge-cache a Pages Function response.** Only the Cache API does, which
+   is what `edge-cache.js` is for. The trade-off is deliberate staleness: up to 60s for scan counts,
+   30s for member plays, and caches are per-colo so a write in one location doesn't purge another's.
+4. **Scan keys are `scan:<slug>`.** Bare `<slug>` keys are the old format. Reads still honour them,
+   and `play-handler.js` adopts a bare key's total into `scan:<slug>` and deletes it the next time
+   that game is scanned — so the keyspace migrates itself and **no manual migration is required**.
+   To convert one by hand instead: `just kv-get <slug>`, `just kv-put scan:<slug> <value>`, then
+   delete the old key.
 
 Every KV-**writing** route is deliberately unauthenticated (a QR scan can't carry credentials), so
 inflated counts are an accepted risk. Quota exhaustion is not: the KV free tier allows 1,000

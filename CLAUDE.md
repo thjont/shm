@@ -137,13 +137,29 @@ field is `null` in the collection JSON. Keep this fallback in place when editing
 Workers KV namespace bound as `SCANS` (see `wrangler.toml`; `wrangler-stage.toml` /
 `wrangler-dev.toml` are copied over it when deploying those environments). QR stickers on physical
 games hit `/p/<slug>`, `/lets-play/<slug>`, or `/learn-to-play/<slug>` →
-`functions/_lib/play-handler.js` increments the play count in KV (only for slugs in
-`/scan-slugs.json`, to keep junk out of KV; fails closed if the allowlist is unreadable) and
-302-redirects to `/games/<slug>/`. `api/plays.js` serves the counts; `api/member-plays.js` stores a
-separate member-recorded counter under `member:<slug>` keys (GET counts, POST increments).
-`static/js/plays.js` fetches both client-side via `data-*-slug` attributes so counts never block
-static rendering. `_middleware.js` gates everything except those routes behind basic auth when
-`BASIC_AUTH_PASSWORD` is set (used on dev/stage previews).
+`functions/_lib/play-handler.js` 302-redirects to `/games/<slug>/` and counts the scan in KV from
+`context.waitUntil()`, so the redirect never waits on KV (only for slugs in `/scan-slugs.json`, to
+keep junk out of KV; fails closed if the allowlist is unreadable). `api/plays.js` serves those
+counts; `api/member-plays.js` serves and increments a separate member-recorded counter (GET counts,
+POST increments). `static/js/plays.js` fetches both client-side via `data-*-slug` attributes so
+counts never block static rendering. `_middleware.js` gates everything except those routes behind
+basic auth when `BASIC_AUTH_PASSWORD` is set (used on dev/stage previews).
+
+**KV conventions** (`functions/_lib/`, shared by all the routes above):
+
+- Two keyspaces in one namespace: `scan:<slug>` for QR scans, `member:<slug>` for member-logged
+  plays. Bare `<slug>` keys are the pre-prefix format — reads still honour them and
+  `play-handler.js` migrates one to `scan:<slug>` the next time that game is scanned, so no manual
+  migration step is needed.
+- Every write stores the count in the key's **metadata** as well as its value, so
+  `counts.js` answers a request from one `list()` instead of a `list()` plus a `get()` per game.
+  Keep writing metadata, or reads silently fall back to per-key `get()`s.
+- All listings are **cursor-looped** (`list()` returns at most 1,000 keys; a single-page read
+  reported 0 for everything past the first page).
+- `Cache-Control` does **not** edge-cache a Pages Function response — `edge-cache.js` uses the Cache
+  API explicitly. Counts can therefore be up to 60s stale (30s for member plays).
+- The slug allowlist is read through `env.ASSETS` (`slugs.js`), not a public-origin `fetch`, which is
+  why `_middleware.js` needs no `/scan-slugs.json` exemption.
 
 **Deploy must run from `shiny-hoppy-meeple/`** so wrangler discovers `functions/` and reads
 `wrangler.toml` (project name, output dir, KV binding). `functions/` and `wrangler.toml` sit at the

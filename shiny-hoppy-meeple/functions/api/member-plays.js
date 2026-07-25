@@ -3,39 +3,23 @@
 // Stored in SCANS KV as "member:<slug>" to avoid collision with QR-scan keys.
 
 import { json } from "../_lib/json.js";
+import { cachedJson, purgeCached } from "../_lib/edge-cache.js";
+import { knownSlugs } from "../_lib/slugs.js";
+import { MEMBER_PREFIX, countMetadata, readMemberCounts } from "../_lib/counts.js";
 
 const SLUG_RE = /^[a-z0-9-]{1,64}$/;
-const PREFIX = "member:";
-
-async function knownSlugs(request) {
-  try {
-    const res = await fetch(new URL("/scan-slugs.json", request.url));
-    if (res.ok) return new Set(await res.json());
-  } catch {
-    // allowlist unavailable
-  }
-  return null;
-}
+const PATH = "/api/member-plays";
+const MAX_AGE = 30;
 
 export async function onRequestGet(context) {
-  const { env, request } = context;
-  const counts = {};
+  return cachedJson(context, PATH, async () => {
+    const { env } = context;
 
-  const allow = env.SCANS ? await knownSlugs(request) : null;
-  if (allow) {
-    const list = await env.SCANS.list({ prefix: PREFIX });
-    const keys = list.keys
-      .map(k => k.name)
-      .filter(name => allow.has(name.slice(PREFIX.length)));
-    const values = await Promise.all(keys.map(name => env.SCANS.get(name)));
-    keys.forEach((name, i) => {
-      counts[name.slice(PREFIX.length)] = parseInt(values[i], 10) || 0;
-    });
-  }
+    const allow = env.SCANS ? await knownSlugs(context) : null;
+    const counts = allow ? await readMemberCounts(env.SCANS, allow) : {};
 
-  // Short cache to cut KV reads. The +1 UI updates from the POST response, so
-  // it never depends on this being fresh.
-  return json(counts, { cacheControl: "public, max-age=30" });
+    return json(counts, { cacheControl: `public, max-age=${MAX_AGE}` });
+  });
 }
 
 // Deliberately unauthenticated: anyone can increment, which can inflate the
@@ -60,15 +44,22 @@ export async function onRequestPost(context) {
     return json({ error: "KV unavailable" }, { status: 503 });
   }
 
-  const allow = await knownSlugs(request);
+  const allow = await knownSlugs(context);
   if (!allow || !allow.has(slug)) {
     return json({ error: "unknown slug" }, { status: 404 });
   }
 
-  const kvKey = `${PREFIX}${slug}`;
+  // KV allows roughly one write per second per key, so two members tapping +1
+  // for the same game at the same moment will lose an increment. Acceptable for
+  // a group logging plays at a table.
+  const kvKey = `${MEMBER_PREFIX}${slug}`;
   const current = parseInt(await env.SCANS.get(kvKey), 10) || 0;
   const next = current + 1;
-  await env.SCANS.put(kvKey, String(next));
+  await env.SCANS.put(kvKey, String(next), countMetadata(next));
+
+  // The caller updates its own number from this response, but drop the cached
+  // GET so anything else reading in this colo sees the new total right away.
+  context.waitUntil(purgeCached(context, PATH));
 
   return json({ slug, count: next });
 }

@@ -4,11 +4,10 @@ export async function onRequest(context) {
 
     // Play-counting routes (/p/, /lets-play/, /learn-to-play/) and API endpoints
     // must be reachable without credentials so QR code scans work on dev/stage.
-    // /scan-slugs.json is also exempt because the play functions fetch it as an
-    // internal subrequest and there are no browser credentials to forward.
+    // /scan-slugs.json needs no exemption: the functions read it through
+    // env.ASSETS (see _lib/slugs.js), which never passes through this middleware.
     const { pathname } = new URL(context.request.url);
     if (
-        pathname === "/scan-slugs.json" ||
         pathname.startsWith("/p/") ||
         pathname.startsWith("/lets-play/") ||
         pathname.startsWith("/learn-to-play/") ||
