@@ -307,24 +307,39 @@ Four things about the KV layer are easy to undo by accident:
    To convert one by hand instead: `just kv-get <slug>`, `just kv-put scan:<slug> <value>`, then
    delete the old key.
 
-Every KV-**writing** route is deliberately unauthenticated (a QR scan can't carry credentials), so
-inflated counts are an accepted risk. Quota exhaustion is not: the KV free tier allows 1,000
-writes/day and the full slug list is public at `/scan-slugs.json`, so an unthrottled loop can burn
-the day's writes in seconds and stop real scans counting. Two halves to the mitigation:
+### Abuse of the KV write routes: an accepted risk
 
-- **In the repo:** `play-handler.js` catches a failed `put`, logs it, and still redirects — a
-  scanner standing at a table gets the game page even when the counter can't be written.
-- **In the Cloudflare dashboard** (not in this repo, and not restorable from it — recreate it if the
-  project is ever rebuilt): a **rate-limiting rule** on the write routes. The free plan includes
-  one. Security → WAF → Rate limiting rules, ~5 requests/minute per IP, action *managed challenge*
-  or *block*, matching:
+Every KV-**writing** route is unauthenticated, because a QR scan can't carry credentials. Inflated
+counts have always been an accepted risk. So is quota exhaustion, deliberately, after looking at it:
+the KV free tier allows 1,000 writes/day and the full slug list is public at `/scan-slugs.json`, so
+an unthrottled loop can burn the day's writes in seconds.
 
-  ```txt
-  starts_with(http.request.uri.path, "/p/") or
-  starts_with(http.request.uri.path, "/lets-play/") or
-  starts_with(http.request.uri.path, "/learn-to-play/") or
-  http.request.uri.path eq "/api/member-plays"
-  ```
+What the site does about it:
+
+- `play-handler.js` catches a failed `put`, logs it, and still redirects — a scanner standing at a
+  table gets the game page even when the counter can't be written. The increment also runs in
+  `context.waitUntil()`, so it never delays that redirect.
+- Nothing else. The damage is bounded and self-healing: scans keep working, only counts are lost,
+  and the quota resets the next day.
+
+**Why there's no WAF rate-limiting rule.** Cloudflare's rate-limiting rules attach to a zone in your
+own account, and this site is served from `shiny-hoppy-meeple.pages.dev` — Cloudflare's zone, not
+ours. There is nowhere to put the rule, and no dashboard configuration is missing. Don't go looking
+for one.
+
+If the site ever moves to a custom domain, that changes: the domain becomes a zone in the account,
+and the free plan's single rate-limiting rule can go on it (Security → WAF → Rate limiting rules,
+~5 requests/minute per IP, action *managed challenge* or *block*):
+
+```txt
+starts_with(http.request.uri.path, "/p/") or
+starts_with(http.request.uri.path, "/lets-play/") or
+starts_with(http.request.uri.path, "/learn-to-play/") or
+http.request.uri.path eq "/api/member-plays"
+```
+
+Note that a custom domain wouldn't protect the `pages.dev` hostname, which keeps serving the site
+and can't take rules — and which is the host encoded in every printed QR sticker.
 
 > [!IMPORTANT]
 > **Deploy and `wrangler pages dev` must run from `shiny-hoppy-meeple/`** so wrangler discovers

@@ -61,7 +61,9 @@ async function countScan(context, slug) {
     // Never fail the scan over the counter. Since this runs after the response,
     // an uncaught throw would be an unhandled rejection rather than a 500 — but
     // it would still lose the log line. The KV free tier allows 1,000 writes/day
-    // on these unauthenticated routes, so an exhausted quota is realistic.
+    // on these unauthenticated routes, so an exhausted quota is realistic, and
+    // this soft failure is the whole mitigation: rate limiting isn't available on
+    // a pages.dev host. See "an accepted risk" in DEVELOPMENT.md.
     console.error(`play count write failed for ${slug}: ${err.message}`);
   }
 }
