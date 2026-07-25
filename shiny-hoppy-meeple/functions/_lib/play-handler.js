@@ -30,10 +30,18 @@ export async function onRequestGet(context) {
   const counts = allow ? allow.has(slug) : false;
 
   if (counts && env.SCANS) {
-    // KV is eventually consistent, so this read-modify-write can rarely lose a
-    // simultaneous increment. Acceptable for low-volume venue plays.
-    const current = parseInt(await env.SCANS.get(slug), 10) || 0;
-    await env.SCANS.put(slug, String(current + 1));
+    try {
+      // KV is eventually consistent, so this read-modify-write can rarely lose a
+      // simultaneous increment. Acceptable for low-volume venue plays.
+      const current = parseInt(await env.SCANS.get(slug), 10) || 0;
+      await env.SCANS.put(slug, String(current + 1));
+    } catch (err) {
+      // Never fail the scan over the counter. The KV free tier allows 1,000
+      // writes/day, and these routes are unauthenticated, so an exhausted quota
+      // is a realistic failure — someone standing at a table with a phone should
+      // still land on the game page. We lose the count, not the redirect.
+      console.error(`play count write failed for ${slug}: ${err.message}`);
+    }
   }
 
   // Only build a same-origin redirect for well-formed slugs (defence against

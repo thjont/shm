@@ -272,6 +272,25 @@ Workers KV namespace bound as `SCANS` (see `wrangler.toml`):
   `BASIC_AUTH_PASSWORD` environment variable is set on the Pages project (used for dev/stage
   previews; prod doesn't set it).
 
+Every KV-**writing** route is deliberately unauthenticated (a QR scan can't carry credentials), so
+inflated counts are an accepted risk. Quota exhaustion is not: the KV free tier allows 1,000
+writes/day and the full slug list is public at `/scan-slugs.json`, so an unthrottled loop can burn
+the day's writes in seconds and stop real scans counting. Two halves to the mitigation:
+
+- **In the repo:** `play-handler.js` catches a failed `put`, logs it, and still redirects — a
+  scanner standing at a table gets the game page even when the counter can't be written.
+- **In the Cloudflare dashboard** (not in this repo, and not restorable from it — recreate it if the
+  project is ever rebuilt): a **rate-limiting rule** on the write routes. The free plan includes
+  one. Security → WAF → Rate limiting rules, ~5 requests/minute per IP, action *managed challenge*
+  or *block*, matching:
+
+  ```txt
+  starts_with(http.request.uri.path, "/p/") or
+  starts_with(http.request.uri.path, "/lets-play/") or
+  starts_with(http.request.uri.path, "/learn-to-play/") or
+  http.request.uri.path eq "/api/member-plays"
+  ```
+
 > [!IMPORTANT]
 > **Deploy and `wrangler pages dev` must run from `shiny-hoppy-meeple/`** so wrangler discovers
 > `functions/` and reads `wrangler.toml` (project name, output dir, KV binding). `functions/` and
