@@ -171,6 +171,9 @@ body {
 .bgg-collection-compact .bgg-card-meta {
   font-size: 0.75rem;
   gap: 0.4rem;
+  /* No margin-top:auto here — tiles stretch to the row's tallest card,
+     which would open a gap between the name and this row. */
+  margin-top: 0;
   padding-top: 0.25rem;
 }
 
