@@ -227,8 +227,10 @@
          data-play-style="{{ anchorize $playStyle }}"
          data-categories="{{ delimit $categories " " }}"
          data-mechanics="{{ delimit $mechanics " " }}">
+        {{/* Decorative: the game name is already the card's heading below, so an
+             alt would just repeat it to a screen reader. */}}
         {{ with $thumb }}
-        <img class="nozoom" src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />
+        <img class="nozoom" src="{{ . }}" alt="" loading="lazy" />
         {{ end }}
         <div class="bgg-card-body">
           <h3>{{ $it.name }}</h3>
