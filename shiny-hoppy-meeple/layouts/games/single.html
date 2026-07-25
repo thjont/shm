@@ -42,7 +42,8 @@
         {{ with $img }}<img src="{{ . }}" alt="{{ $game.name }}" />{{ end }}
 
         <div class="bgg-detail-stats">
-          <div><strong>SHM Rank</strong><br><span data-rank-slug="{{ anchorize $game.name }}">…</span></div>
+          {{ $shmRanks := partialCached "shm/shm-ranks.html" . "shm-ranks" }}
+          <div><strong>SHM Rank</strong><br>{{ with index $shmRanks (print $game.id) }}#{{ . }}{{ else }}—{{ end }}</div>
           {{ if $inLibrary }}<a href="/library/"><strong>In Library</strong><br>Yes</a>{{ else }}<div><strong>In Library</strong><br>No</div>{{ end }}
           <div><strong>Members</strong><br><span data-member-play-slug="{{ anchorize $game.name }}">…</span></div>
           <div><strong>Public</strong><br><span data-play-slug="{{ anchorize $game.name }}">…</span></div>

@@ -3,20 +3,8 @@
 //
 //   data-play-slug="catan"              → boundary (QR-scan) play count, e.g. "5 plays"
 //   data-play-slug="catan" data-play-plain → plain number, e.g. "5"
-//   data-rank-slug="catan"              → SHM rank by member plays, e.g. "#3"
 //   data-member-play-slug="catan"       → member play count, e.g. "5 plays"
 //   data-member-play-slug="catan" data-play-plain → plain number
-
-function buildRanks(counts) {
-  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-  const ranks = {};
-  let rank = 1;
-  for (let i = 0; i < sorted.length; i++) {
-    if (i > 0 && sorted[i][1] < sorted[i - 1][1]) rank = i + 1;
-    ranks[sorted[i][0]] = rank;
-  }
-  return ranks;
-}
 
 // The theme sets `scroll-smooth` on <html> globally. When a bfcache page is restored
 // (e.g. via the back button), the browser's automatic scroll-position restore then
@@ -33,16 +21,14 @@ window.addEventListener("pageshow", (event) => {
 
 document.addEventListener("DOMContentLoaded", async () => {
   const playEls       = document.querySelectorAll("[data-play-slug]");
-  const rankEls       = document.querySelectorAll("[data-rank-slug]");
   const memberPlayEls = document.querySelectorAll("[data-member-play-slug]");
 
-  if (!playEls.length && !rankEls.length && !memberPlayEls.length) return;
+  if (!playEls.length && !memberPlayEls.length) return;
 
   try {
-    const needsMember = rankEls.length || memberPlayEls.length;
     const [playsRes, memberRes] = await Promise.all([
       fetch("/api/plays"),
-      needsMember ? fetch("/api/member-plays") : Promise.resolve(null),
+      memberPlayEls.length ? fetch("/api/member-plays") : Promise.resolve(null),
     ]);
 
     const counts       = playsRes.ok  ? await playsRes.json()  : {};
@@ -61,14 +47,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         ? String(n)
         : `${n} play${n === 1 ? "" : "s"}`;
     });
-
-    if (rankEls.length) {
-      const ranks = buildRanks(memberCounts);
-      rankEls.forEach(el => {
-        const r = ranks[el.dataset.rankSlug];
-        el.textContent = r != null ? `#${r}` : "—";
-      });
-    }
   } catch {
     // Network/API failure — leave placeholders as-is.
   }

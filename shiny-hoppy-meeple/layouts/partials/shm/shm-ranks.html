@@ -1,0 +1,29 @@
+{{- /* SHM Rank: game id (string) → rank, ordered by BGG rating
+      (rating_bayes_average, best first) across the main library and every
+      member collection — shadow libraries excluded. Ties share a rank
+      (1, 2, 2, 4); unrated games are unranked. Call via partialCached. */}}
+{{- $ids := slice }}
+{{- $mainLibSlug := (index hugo.Data.definitions.libraries "main-library").slug }}
+{{- range (index hugo.Data "bgg-cache" "collections" $mainLibSlug).items }}
+  {{- $ids = $ids | append (print .id) }}
+{{- end }}
+{{- range $slug, $config := hugo.Data.definitions.members }}
+  {{- with index hugo.Data "bgg-cache" "collections" $slug }}
+    {{- range .items }}{{ $ids = $ids | append (print .id) }}{{ end }}
+  {{- end }}
+{{- end }}
+{{- $rated := slice }}
+{{- range uniq $ids }}
+  {{- $g := index hugo.Data "bgg-cache" "games" . }}
+  {{- if and $g $g.rating_bayes_average }}
+    {{- $rated = $rated | append (dict "id" . "rating" $g.rating_bayes_average) }}
+  {{- end }}
+{{- end }}
+{{- $rated = sort $rated "rating" "desc" }}
+{{- $ranks := dict }}
+{{- $rank := 1 }}
+{{- range $i, $e := $rated }}
+  {{- if and (gt $i 0) (lt $e.rating (index $rated (sub $i 1)).rating) }}{{ $rank = add $i 1 }}{{ end }}
+  {{- $ranks = merge $ranks (dict $e.id $rank) }}
+{{- end }}
+{{- return $ranks }}

@@ -182,6 +182,7 @@
       {{ end }}
     {{ end }}
 
+    {{ $shmRanks := partialCached "shm/shm-ranks.html" . "shm-ranks" }}
     <div class="bgg-collection">
       {{ range $entries }}
       {{ $it := .item }}
@@ -235,7 +236,7 @@
           <span class="bgg-year">{{ $year }}</span>
           <div class="bgg-card-meta">
             {{ with $rating }}<span>★ {{ printf "%.1f" . }}</span>{{ end }}
-            <span class="shm-rank" data-rank-slug="{{ anchorize $it.name }}"></span>
+            {{ with index $shmRanks (print $it.id) }}<span class="shm-rank">#{{ . }}</span>{{ end }}
           </div>
           {{/* Extra stats, shown only by the list view's CSS. */}}
           {{ $stats := slice }}

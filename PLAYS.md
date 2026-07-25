@@ -30,9 +30,6 @@ Separately from QR scans, members can log their own plays using the **+1** butto
 game on the [stats page](https://shiny-hoppy-meeple.pages.dev/stats/). These are tracked
 independently and show up as **member plays** on the game's page.
 
-The site uses member plays — not QR scans — to calculate each game's **SHM Rank**. A game ranked
-\#1 is the one members have collectively logged the most plays of.
-
 ---
 
 ## What appears on game pages
@@ -41,12 +38,13 @@ Each game's detail page shows three play-related figures:
 
 | Field | What it counts |
 | --- | --- |
-| **SHM Rank** | The game's position in the overall member-play rankings |
+| **SHM Rank** | The game's position when every game in the main library and member collections is ordered by BGG rating (shadow libraries are not included) |
 | **Members** | Total plays logged by members |
 | **Public** | Total QR sticker scans at events and venues |
 
-Member pages also show a small rank badge on each game card, indicating how that game ranks among
-all members.
+The SHM Rank is not play-based: it is recalculated from BoardGameGeek's community rating whenever
+the site rebuilds, so it changes only as BGG ratings drift or games enter and leave the
+collections. The same rank appears as a badge on each card in the library.
 
 Play counts load a moment after the page opens — it is normal for them to briefly appear blank
 before filling in.
