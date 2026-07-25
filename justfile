@@ -32,12 +32,16 @@ dev:
 lint:
     npm run lint
 
+# Run the node:test unit tests
+test:
+    npm test
+
 # Check Hugo build without writing to disk
 check:
     cd shiny-hoppy-meeple && hugo --renderToMemory
 
-# Run lint and Hugo build check
-validate: lint check
+# Everything CI runs: lint, unit tests, Hugo build check
+validate: lint test check
 
 # ── Deployment ─────────────────────────────────────────────────────────────────
 
