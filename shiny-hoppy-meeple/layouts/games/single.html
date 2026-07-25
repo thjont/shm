@@ -37,9 +37,15 @@
     <div class="bgg-detail">
 
       <div class="bgg-detail-image">
+        {{/* width/height come from the export-time resize in bgg-export.js — unset
+             for cache entries written before it, when --skip-images kept the remote
+             URL, and for the thumbnail fallback. Emit only when both are known, so
+             a half-known pair can't distort the aspect ratio. */}}
         {{ $img := $game.image }}
-        {{ if not $img }}{{ $img = $game.thumbnail }}{{ end }}
-        {{ with $img }}<img src="{{ . }}" alt="{{ $game.name }}" />{{ end }}
+        {{ $imgW := $game.image_width }}
+        {{ $imgH := $game.image_height }}
+        {{ if not $img }}{{ $img = $game.thumbnail }}{{ $imgW = 0 }}{{ $imgH = 0 }}{{ end }}
+        {{ with $img }}<img src="{{ . }}" alt="{{ $game.name }}"{{ if and $imgW $imgH }} width="{{ $imgW }}" height="{{ $imgH }}"{{ end }} fetchpriority="high" />{{ end }}
 
         <div class="bgg-detail-stats">
           {{ $shmRanks := partialCached "shm/shm-ranks.html" . "shm-ranks" }}
