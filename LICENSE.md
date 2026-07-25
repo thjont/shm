@@ -12,7 +12,7 @@ Applies to all code in this repository, including but not limited to:
 - Hugo templates (`shiny-hoppy-meeple/layouts/`)
 - Cloudflare Pages Functions (`shiny-hoppy-meeple/functions/`)
 - GitHub Actions workflows (`.github/workflows/`)
-- CSS and JavaScript (`shiny-hoppy-meeple/static/css/`, `shiny-hoppy-meeple/static/js/`)
+- CSS and JavaScript (`shiny-hoppy-meeple/assets/css/`, `shiny-hoppy-meeple/assets/js/`)
 - Configuration files (`hugo.toml`, `wrangler.toml`, `package.json`, etc.)
 
     Copyright (C) 2026–present Shiny Hoppy Meeple contributors

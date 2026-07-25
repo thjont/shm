@@ -41,8 +41,14 @@ export default [
     },
   },
   {
-    // shiny-hoppy-meeple/static/js/**/*.js — plain browser script, loaded via <script src>
-    files: ['shiny-hoppy-meeple/static/js/**/*.js'],
+    // Plain browser scripts, loaded via <script src>. They live in assets/ and go
+    // through Hugo's minify+fingerprint pipeline; static/js is matched too so a file
+    // served verbatim from there still lints as browser code rather than falling
+    // back to the default globals (which is silently every `document` undefined).
+    files: [
+      'shiny-hoppy-meeple/assets/js/**/*.js',
+      'shiny-hoppy-meeple/static/js/**/*.js',
+    ],
     languageOptions: {
       sourceType: 'script',
       globals: globals.browser,
