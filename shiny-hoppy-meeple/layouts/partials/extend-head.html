@@ -1,2 +1,11 @@
-<link rel="stylesheet" href="/css/bgg.css" />
-<link rel="stylesheet" href="/css/calendar.css" />
+{{/* Site-wide custom CSS through Hugo's asset pipeline — minified, fingerprinted
+     and SRI-hashed, the same treatment the theme gives its own bundles. The
+     fingerprint is what makes the immutable Cache-Control rule in
+     static/_headers safe, so keep these in assets/, not static/.
+
+     The theme calls this partial as `partialCached "extend-head.html" .Site`, so
+     it has no page context and one cached result serves every page. Anything
+     page-conditional belongs in extend-head-uncached.html instead. */}}
+{{ with resources.Get "css/bgg.css" | resources.Minify | resources.Fingerprint "sha512" }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+{{ end }}

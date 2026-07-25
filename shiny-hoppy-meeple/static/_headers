@@ -4,8 +4,9 @@
 # Pages does NOT apply this file to Functions responses, so the JSON APIs set
 # their own security headers — see functions/_lib/json.js.
 
-# Hugo fingerprints the theme bundles with a sha512 content hash, so a change
-# always means a new filename: they can be cached for as long as we like.
+# Everything under /css and /js is emitted through Hugo's asset pipeline with a
+# sha512 content hash in the filename, so a change always produces a new URL and
+# these can be cached for as long as we like. The theme's bundles:
 /css/main.bundle.min.*
   Cache-Control: public, max-age=31536000, immutable
 
@@ -18,16 +19,28 @@
 /lib/zoom/zoom.min.umd.*
   Cache-Control: public, max-age=31536000, immutable
 
+# …and ours, from assets/ via partials/extend-head.html,
+# partials/extend-head-uncached.html, partials/extend-footer.html and
+# games/list.html. Anything dropped into static/css or static/js instead would be
+# unfingerprinted, so don't widen these globs to cover it — put new CSS and JS
+# through the pipeline too.
+/css/bgg.min.*
+  Cache-Control: public, max-age=31536000, immutable
+
+/css/calendar.min.*
+  Cache-Control: public, max-age=31536000, immutable
+
+/js/game-finder.min.*
+  Cache-Control: public, max-age=31536000, immutable
+
+/js/plays.min.*
+  Cache-Control: public, max-age=31536000, immutable
+
 # Game art from the BGG export. Filenames are BGG ids rather than content
 # hashes and the daily re-export can change what sits behind one, so a day is
 # the safe ceiling.
 /images/games/*
   Cache-Control: public, max-age=86400
-
-# Deliberately not listed: /css/bgg.css, /css/calendar.css, /js/game-finder.js
-# and /js/plays.js. They ship straight out of static/ with no fingerprint, so a
-# long max-age would strand visitors on a stale copy after an edit. Move them
-# into assets/ and through Hugo's fingerprint pipe to make them cacheable.
 
 /*
   X-Content-Type-Options: nosniff

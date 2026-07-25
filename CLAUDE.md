@@ -141,7 +141,7 @@ games hit `/p/<slug>`, `/lets-play/<slug>`, or `/learn-to-play/<slug>` →
 `context.waitUntil()`, so the redirect never waits on KV (only for slugs in `/scan-slugs.json`, to
 keep junk out of KV; fails closed if the allowlist is unreadable). `api/plays.js` serves those
 counts; `api/member-plays.js` serves and increments a separate member-recorded counter (GET counts,
-POST increments). `static/js/plays.js` fetches both client-side via `data-*-slug` attributes so
+POST increments). `assets/js/plays.js` fetches both client-side via `data-*-slug` attributes so
 counts never block static rendering. `_middleware.js` gates everything except those routes behind
 basic auth when `BASIC_AUTH_PASSWORD` is set (used on dev/stage previews).
 
@@ -170,9 +170,16 @@ Hugo root but Hugo ignores them.
 `static/_headers` (alongside `static/_redirects`) configures Cloudflare Pages: `immutable`
 year-long caching for Hugo's fingerprinted bundles, one day for `/images/games/*`, and site-wide
 `nosniff` / `X-Frame-Options: DENY` / `Referrer-Policy`. It covers **only** assets Pages serves
-itself, so the JSON APIs go through `functions/_lib/json.js` to set `nosniff` themselves. Don't
-add long `max-age` rules for the unfingerprinted files in `static/css/` and `static/js/` — they'd
-strand visitors on a stale copy.
+itself, so the JSON APIs go through `functions/_lib/json.js` to set `nosniff` themselves.
+
+**Custom CSS/JS lives in `assets/`, never `static/`**, and is emitted with
+`resources.Get | resources.Minify | resources.Fingerprint "sha512"` plus an SRI `integrity`
+attribute: `css/bgg.css` and `js/plays.js` site-wide (`partials/extend-head.html`,
+`partials/extend-footer.html`), `css/calendar.css` only for section `events`
+(`partials/extend-head-uncached.html`), `js/game-finder.js` only on the library page
+(`layouts/games/list.html`). Note the theme calls `extend-head.html` with `.Site` and caches it, so
+page-conditional tags must go in `extend-head-uncached.html`. New assets need a matching
+fingerprinted glob in `static/_headers`.
 
 ## Deployment
 

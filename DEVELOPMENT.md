@@ -34,7 +34,8 @@ members, libraries, events), you don't need any of this — see the
     ├── content/               # pages & posts (Markdown) + content adapters (_content.gotmpl)
     ├── layouts/               # Blowfish overrides (game/member pages, custom outputs)
     ├── data/                  # generated + source JSON (see "BGG data pipeline")
-    ├── static/                # css, JS; images/games/ and qr-codes.pdf are generated
+    ├── assets/                # custom css & JS, piped through Hugo (minify + fingerprint)
+    ├── static/                # served verbatim; images/games/ and qr-codes.pdf are generated
     ├── functions/             # Cloudflare Pages Functions (play counting, preview auth)
     ├── wrangler.toml          # Cloudflare project name, output dir, KV binding (prod)
     ├── wrangler-{stage,dev}.toml  # per-environment variants, copied over wrangler.toml at deploy
@@ -191,7 +192,10 @@ as `image_width`/`image_height` so `layouts/games/single.html` can set `width`/`
 `.webp` written before a fallback) are deleted when the new one is written, since
 `cleanup-stale-cache.js` only prunes images whose game id is no longer referenced. If `sharp`
 can't decode an image the original bytes are kept and the export continues; the next run retries.
-Thumbnails are still stored exactly as downloaded.
+
+Thumbnails get the same treatment at their own scale: `<id>-thumb.webp`, capped at 300 px wide
+(above BGG's own ~150 px, so it never upscales) at quality 65 — indistinguishable on a grid tile,
+and it takes the library grid's thumbnail payload from ~463 KB to ~250 KB.
 
 **Cache branches** — the cache is gitignored on `main`. Each environment's cache lives on an
 **orphan branch** (`bgg-cache-prod`, `bgg-cache-stage`, `bgg-cache-dev`) so daily BGG data updates
@@ -267,7 +271,7 @@ Workers KV namespace bound as `SCANS` (see `wrangler.toml`):
 - `api/plays.js` serves the QR-scan counts.
 - `api/member-plays.js` serves and records member-logged plays (the POST is deliberately
   unauthenticated — accepted risk for a small community site).
-- `static/js/plays.js` fetches counts client-side via `data-*-slug` attributes, so counts never
+- `assets/js/plays.js` fetches counts client-side via `data-*-slug` attributes, so counts never
   block static rendering.
 - `_middleware.js` gates everything except the routes above behind basic auth when the
   `BASIC_AUTH_PASSWORD` environment variable is set on the Pages project (used for dev/stage
@@ -325,7 +329,30 @@ the day's writes in seconds and stop real scans counting. Two halves to the miti
 > `functions/` and reads `wrangler.toml` (project name, output dir, KV binding). `functions/` and
 > `wrangler.toml` sit at the Hugo root, but Hugo ignores them.
 
-### 5. Static response headers and redirects
+### 5. Custom CSS and JS
+
+Everything of ours lives in `assets/`, not `static/`, and goes through Hugo's asset pipeline —
+`resources.Get | resources.Minify | resources.Fingerprint "sha512"` — so each file is minified, gets
+a content hash in its URL and carries an SRI `integrity` attribute, exactly as the theme treats its
+own bundles. The fingerprint is what makes the immutable `Cache-Control` rule safe.
+
+| Asset | Emitted by | Loaded on |
+| --- | --- | --- |
+| `assets/css/bgg.css` | `partials/extend-head.html` | every page |
+| `assets/css/calendar.css` | `partials/extend-head-uncached.html` | section `events` only (the calendar page and each event page) |
+| `assets/js/plays.js` | `partials/extend-footer.html` | every page (it exits early when a page has no count elements) |
+| `assets/js/game-finder.js` | `layouts/games/list.html` | the library page |
+
+> [!IMPORTANT]
+> The theme calls `extend-head.html` as `partialCached "extend-head.html" .Site` — no page context,
+> one cached result for the whole site. Anything page-conditional has to go in
+> `extend-head-uncached.html`, which it calls with the page. `.Section` in the cached partial fails
+> the build outright.
+
+Adding a new stylesheet or script means putting it in `assets/`, emitting it through one of those
+templates, and adding its fingerprinted glob to `static/_headers`.
+
+### 6. Static response headers and redirects
 
 Two plain-text files in `static/` configure Cloudflare Pages itself; Hugo copies them to the site
 root, where Pages reads them.
@@ -334,9 +361,9 @@ root, where Pages reads them.
 - **`static/_headers`** — response headers for static assets:
   - Hugo's sha512-fingerprinted bundles (`main.bundle.min.*`, `appearance.min.*`,
     `lib/zoom/zoom.min.umd.*`) get `max-age=31536000, immutable` — a change always produces a new
-    filename. The unfingerprinted files served straight out of `static/` (`css/bgg.css`,
-    `css/calendar.css`, `js/game-finder.js`, `js/plays.js`) are deliberately left on the default
-    revalidate-every-time behaviour; put them through Hugo's fingerprint pipe before caching them.
+    filename. Our own CSS and JS get the same rule for the same reason — they're fingerprinted too
+    (see "Custom CSS and JS" below). Anything dropped into `static/css` or `static/js` instead would
+    be unfingerprinted, so don't widen those globs to cover it.
   - `/images/games/*` gets `max-age=86400`. The filenames are BGG ids rather than content hashes,
     so a day is the ceiling that keeps the daily re-export honest.
   - Site-wide `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, and

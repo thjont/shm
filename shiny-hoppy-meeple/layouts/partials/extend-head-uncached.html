@@ -1,0 +1,11 @@
+{{/* Page-scoped <head> additions. The theme calls this one with the page and
+     without caching (unlike extend-head.html, which gets .Site).
+
+     The calendar styles are used only by the events list page (layout "events")
+     and the per-event pages — both live in section "events" — so every other page
+     skips the request entirely. */}}
+{{ if eq .Section "events" }}
+{{ with resources.Get "css/calendar.css" | resources.Minify | resources.Fingerprint "sha512" }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+{{ end }}
+{{ end }}

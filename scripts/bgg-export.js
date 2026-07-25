@@ -19,8 +19,15 @@ const USER_AGENT = 'shiny-hoppy-meeple-export/1.0 (+https://shiny-hoppy-meeple.p
 // BGG serves box art at its original size — up to 3000×4302 / 3.3 MB — while the
 // detail page never renders the hero wider than the content column. Downscale and
 // re-encode at export time so the deployed image is the one the page needs.
-const HERO_MAX_WIDTH = 900;
-const WEBP_QUALITY = 80;
+const HERO = { maxWidth: 900, quality: 80 };
+// Library thumbnails arrive as ~150px PNGs, the wrong format for photographic box
+// art. The width cap sits above BGG's own size (and never upscales), so it only
+// bites if BGG ever serves larger ones — grid tiles render at ~120–180 CSS px, so
+// 300 covers hidpi. Quality can go lower than the hero's at that size: q65 is
+// indistinguishable from the source on a 150px tile and roughly halves the bytes.
+const THUMB = { maxWidth: 300, quality: 65 };
+// Slower encode, ~3% smaller output. The export is a once-a-day batch job.
+const WEBP_EFFORT = 6;
 
 const USAGE = `\
 Export a BGG user collection or geeklist and game details to JSON, with local images.
@@ -42,8 +49,8 @@ Options:
   --force-images          Re-download images even if already present
   --help                  Show this help message
 
-Game hero images are downscaled to at most ${HERO_MAX_WIDTH}px wide and re-encoded as
-WebP (quality ${WEBP_QUALITY}); thumbnails are stored as downloaded.
+Images are re-encoded as WebP at export time: heroes to at most ${HERO.maxWidth}px wide
+(quality ${HERO.quality}), thumbnails to at most ${THUMB.maxWidth}px (quality ${THUMB.quality}). Neither is upscaled.
 `;
 
 // --- SSRF protection ---
@@ -186,9 +193,10 @@ class ImageDownloader {
     if (enabled) fs.mkdirSync(imageDir, { recursive: true });
   }
 
-  // Returns { url, width?, height? } or null. Pass maxWidth to downscale and
-  // re-encode as WebP; without it the source bytes are stored verbatim.
-  async fetch(gameId, url, variant = '', maxWidth = null) {
+  // Returns { url, width?, height? } or null. Pass an encode spec
+  // ({ maxWidth, quality }) to downscale and re-encode as WebP; without one the
+  // source bytes are stored verbatim.
+  async fetch(gameId, url, variant = '', encode = null) {
     if (!this.enabled || !url) return null;
 
     if (!isAllowedImageUrl(url)) {
@@ -198,14 +206,14 @@ class ImageDownloader {
     }
 
     // Resizing re-encodes, so the cached extension no longer follows the source URL.
-    const expectedExt = maxWidth ? '.webp' : imageExt(url);
+    const expectedExt = encode ? '.webp' : imageExt(url);
     const cached = path.join(this.imageDir, `${gameId}${variant}${expectedExt}`);
 
     if (fs.existsSync(cached) && !this.force) {
       this.skipped++;
       return {
         url: `${this.urlBase}/${path.basename(cached)}`,
-        ...(maxWidth ? await imageDimensions(cached) : {}),
+        ...(encode ? await imageDimensions(cached) : {}),
       };
     }
 
@@ -218,7 +226,7 @@ class ImageDownloader {
       return null;
     }
 
-    const { data, ext, width, height } = await this.encode(source, url, maxWidth);
+    const { data, ext, width, height } = await this.reEncode(source, url, encode);
     const filename = `${gameId}${variant}${ext}`;
     try {
       fs.writeFileSync(path.join(this.imageDir, filename), data);
@@ -250,15 +258,15 @@ class ImageDownloader {
   // Falls back to the original bytes if sharp can't handle the image — an
   // oversized hero beats a missing one. The next run retries the resize, since
   // the expected `.webp` still won't be on disk.
-  async encode(source, url, maxWidth) {
-    if (!maxWidth) return { data: source, ext: imageExt(url) };
+  async reEncode(source, url, encode) {
+    if (!encode) return { data: source, ext: imageExt(url) };
     try {
       const { data, info } = await sharp(source)
         // Bake in EXIF orientation: browsers honour it on the original, but the
         // re-encode drops the metadata, which would leave a rotated source sideways.
         .rotate()
-        .resize({ width: maxWidth, withoutEnlargement: true })
-        .webp({ quality: WEBP_QUALITY })
+        .resize({ width: encode.maxWidth, withoutEnlargement: true })
+        .webp({ quality: encode.quality, effort: WEBP_EFFORT })
         .toBuffer({ resolveWithObject: true });
       return { data, ext: '.webp', width: info.width, height: info.height };
     } catch (err) {
@@ -310,7 +318,7 @@ async function exportCollection(username, client, dataDir, images, collectionFil
   for (const raw of rawItems) {
     const mapped = mapCollectionItem(raw);
     const remoteThumbnail = mapped.thumbnail;
-    const localThumb = await images.fetch(mapped.id, remoteThumbnail, '-thumb');
+    const localThumb = await images.fetch(mapped.id, remoteThumbnail, '-thumb', THUMB);
     mapped.thumbnail = localThumb?.url ?? remoteThumbnail;
     mapped.thumbnail_source = remoteThumbnail;
     items.push(mapped);
@@ -377,8 +385,8 @@ async function exportGames(gameIds, client, dataDir, images, skipExisting) {
       const remoteImage = game.image;
       const remoteThumbnail = game.thumbnail;
 
-      const localImage = await images.fetch(game.id, remoteImage, '', HERO_MAX_WIDTH);
-      const localThumb = await images.fetch(game.id, remoteThumbnail, '-thumb');
+      const localImage = await images.fetch(game.id, remoteImage, '', HERO);
+      const localThumb = await images.fetch(game.id, remoteThumbnail, '-thumb', THUMB);
 
       game.thumbnail = localThumb?.url ?? remoteThumbnail;
       game.thumbnail_source = remoteThumbnail;

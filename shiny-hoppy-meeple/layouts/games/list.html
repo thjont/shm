@@ -255,5 +255,8 @@
     <p class="bgg-finder-empty" data-finder-empty hidden>No games match those filters &mdash; try loosening one.</p>
   </div>
 </div>
-<script src="/js/game-finder.js" defer></script>
+{{/* Minified + fingerprinted; see partials/extend-head.html. */}}
+{{ with resources.Get "js/game-finder.js" | resources.Minify | resources.Fingerprint "sha512" }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{ end }}
 {{ end }}

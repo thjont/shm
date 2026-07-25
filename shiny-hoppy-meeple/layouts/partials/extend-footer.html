@@ -1,4 +1,7 @@
-<script src="/js/plays.js" defer></script>
+{{/* Minified + fingerprinted; see extend-head.html. */}}
+{{ with resources.Get "js/plays.js" | resources.Minify | resources.Fingerprint "sha512" }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{ end }}
 <div class="powered-by-bgg">
   <a href="https://boardgamegeek.com" target="_blank" rel="noopener noreferrer"
      aria-label="Powered by BoardGameGeek">
