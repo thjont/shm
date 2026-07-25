@@ -119,7 +119,7 @@ body {
   padding-top: 0.4rem;
 }
 
-/* ── Library display-mode toggle (grid / compact / list) ───────── */
+/* ── Library display-mode toggle (grid / list) ──────────────────── */
 
 .bgg-view-toggle {
   display: flex;
@@ -150,7 +150,8 @@ body {
   color: inherit;
 }
 
-/* Compact: smaller tiles (name + rating/rank), ~2x the games per screen. */
+/* Grid: compact tiles (name + rating/rank), always on for the library —
+   there is no separate full-size grid view anymore. */
 .bgg-collection-compact {
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 0.75rem;
@@ -209,10 +210,30 @@ body {
   min-width: 0;
 }
 
+/* Grid's compact class is always present (it's the only base style now), so
+   list — layered on top of it — must undo the bits compact hides/shrinks. */
+.bgg-collection-list.bgg-collection-compact .bgg-card-body {
+  padding: 0.6rem 0.75rem 0.75rem;
+  gap: 0.2rem;
+}
+
+.bgg-collection-list.bgg-collection-compact .bgg-card-body h3 {
+  font-size: 0.95rem;
+}
+
+.bgg-collection-list.bgg-collection-compact .bgg-year {
+  display: block;
+}
+
 .bgg-collection-list .bgg-card-meta {
   margin-left: auto;
   margin-top: 0;
   padding-top: 0;
+}
+
+.bgg-collection-list.bgg-collection-compact .bgg-card-meta {
+  font-size: 0.8rem;
+  gap: 0.6rem;
 }
 
 .bgg-card-stats {

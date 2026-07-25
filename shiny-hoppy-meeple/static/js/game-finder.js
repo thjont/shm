@@ -50,12 +50,13 @@
 // The "Sort by" control reorders the cards in the grid ("" = the order the
 // collection was exported in); cards with an unknown sort key go last.
 //
-// The [data-view-toggle] buttons switch the grid between grid/compact/list
-// display modes by toggling bgg-collection-compact / bgg-collection-list on
-// the container (all modes restyle the same cards, so filtering and sorting
-// are unaffected). The choice persists in localStorage ("libraryView"),
-// following the Blowfish appearance.js convention: the default (grid)
-// clears the key instead of storing it.
+// The [data-view-toggle] buttons switch the grid between grid/list display
+// modes by toggling bgg-collection-list on the container (grid's compact
+// tile styling is always on via bgg-collection-compact in the markup; both
+// modes restyle the same cards, so filtering and sorting are unaffected).
+// The choice persists in localStorage ("libraryView"), following the
+// Blowfish appearance.js convention: the default (grid) clears the key
+// instead of storing it.
 //
 // Filter state mirrors into the URL query string (?players=4&complexity=heavy
 // &min-time=30&max-time=90&name=pan&sort=rating), so any filtered view is
@@ -327,14 +328,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ── Display-mode toggle (grid / compact / list) ──
+  // ── Display-mode toggle (grid / list) ──
   const viewToggle = document.querySelector("[data-view-toggle]");
   const collection = document.querySelector(".bgg-collection");
   const VIEW_KEY = "libraryView";
-  const VIEWS = ["grid", "compact", "list"];
+  const VIEWS = ["grid", "list"];
 
   function setView(view) {
-    collection.classList.toggle("bgg-collection-compact", view === "compact");
     collection.classList.toggle("bgg-collection-list", view === "list");
     viewToggle.querySelectorAll("[data-view]").forEach(button => {
       button.setAttribute("aria-pressed", String(button.dataset.view === view));

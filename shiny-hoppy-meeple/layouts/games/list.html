@@ -141,7 +141,6 @@
          localStorage ("libraryView"; grid is the default, stored as no key). */}}
     <div class="bgg-view-toggle" data-view-toggle hidden>
       <button type="button" data-view="grid" aria-pressed="true">Grid</button>
-      <button type="button" data-view="compact" aria-pressed="false">Compact</button>
       <button type="button" data-view="list" aria-pressed="false">List</button>
     </div>
 
@@ -183,7 +182,7 @@
     {{ end }}
 
     {{ $shmRanks := partialCached "shm/shm-ranks.html" . "shm-ranks" }}
-    <div class="bgg-collection">
+    <div class="bgg-collection bgg-collection-compact">
       {{ range $entries }}
       {{ $it := .item }}
       {{ $thumb := $it.thumbnail }}
