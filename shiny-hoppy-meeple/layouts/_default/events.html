@@ -26,7 +26,10 @@
 <div class="cal-page">
   <h1 class="cal-page-title">{{ .Title }}</h1>
   <div class="cal-page-content">
-    {{ .Content }}
+    {{/* Wrapped in prose so the intro gets the theme's typography and link
+         styling — this page's container isn't prose by default, unlike
+         games/single.html and events/single.html. */}}
+    {{ with .Content }}<div class="cal-intro prose dark:prose-invert">{{ . }}</div>{{ end }}
 
     {{ range seq $days }}
 

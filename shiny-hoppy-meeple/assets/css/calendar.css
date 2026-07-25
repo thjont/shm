@@ -15,6 +15,11 @@
   margin-top: 0.5rem;
 }
 
+/* Intro text above the calendar (content/events/_index.md). */
+.cal-intro {
+  margin-bottom: 0.5rem;
+}
+
 .cal-month {
   font-size: 1.25rem;
   font-weight: 700;
