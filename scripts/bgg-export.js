@@ -29,6 +29,14 @@ const THUMB = { maxWidth: 300, quality: 65 };
 // Slower encode, ~3% smaller output. The export is a once-a-day batch job.
 const WEBP_EFFORT = 6;
 
+// bgg-xml-api-client retries BGG's "202 queued" response and nothing else, so a
+// single 429 or 5xx used to drop a whole 20-game batch (~20 games kept their stale
+// cache entry, silently until the failure count reached the workflow). Retry those
+// with backoff, and pause between batches to stay friendly to a free public API.
+const RETRY_ATTEMPTS = 3;
+const RETRY_BASE_DELAY_MS = 2000;
+const BATCH_PAUSE_MS = 1000;
+
 const USAGE = `\
 Export a BGG user collection or geeklist and game details to JSON, with local images.
 
@@ -52,6 +60,36 @@ Options:
 Images are re-encoded as WebP at export time: heroes to at most ${HERO.maxWidth}px wide
 (quality ${HERO.quality}), thumbnails to at most ${THUMB.maxWidth}px (quality ${THUMB.quality}). Neither is upscaled.
 `;
+
+// --- Request retries ---
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Retry transient transport failures only. A 401 (bad token) or a 404 is final —
+// retrying it just delays a certain failure.
+function isRetryable(err) {
+  const status = err.response?.status;
+  if (status) return status === 429 || status >= 500;
+  return /\b(429|5\d\d)\b|too many requests|timeout|timed out|ECONNRESET|ETIMEDOUT|EAI_AGAIN|socket hang up|fetch failed/i
+    .test(err.message ?? '');
+}
+
+async function withRetry(label, fn) {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await fn();
+    } catch (err) {
+      if (attempt >= RETRY_ATTEMPTS || !isRetryable(err)) throw err;
+      const delay = RETRY_BASE_DELAY_MS * 2 ** (attempt - 1);
+      process.stderr.write(
+        `  Warning: ${label} failed (${err.message}) — retry ${attempt}/${RETRY_ATTEMPTS - 1} in ${delay / 1000}s\n`
+      );
+      await sleep(delay);
+    }
+  }
+}
 
 // --- SSRF protection ---
 
@@ -99,8 +137,10 @@ function decodeHtmlEntities(str) {
 // Descriptions are rendered by Hugo with goldmark's unsafe HTML enabled, and the
 // entity decode above can turn e.g. &lt;script&gt; into a live tag — so no markup
 // may survive the export. BGG descriptions are plain text with entities, so
-// dropping tags loses nothing. Iterate because stripping can splice new tags
-// together (e.g. "<sc<x>ript>").
+// dropping tags loses nothing. The loop is belt-and-braces against a replacement
+// splicing a fresh tag together: a greedy `[^>]*` match always runs from the first
+// `<` to the next `>`, so in practice one pass is enough (confirmed by fuzzing).
+// The property the tests pin is the one that matters — no complete `<…>` survives.
 function stripHtmlTags(str) {
   if (typeof str !== 'string') return str;
   let prev;
@@ -305,12 +345,14 @@ class ImageDownloader {
 
 async function exportCollection(username, client, dataDir, images, collectionFile) {
   console.log('Fetching BGG collection …');
-  const response = await client.getBggCollection({
-    username,
-    subtype: 'boardgame',
-    own: 1,
-    stats: 1,
-  });
+  const response = await withRetry(`collection fetch for ${username}`, () =>
+    client.getBggCollection({
+      username,
+      subtype: 'boardgame',
+      own: 1,
+      stats: 1,
+    })
+  );
 
   const rawItems = [].concat(response.item ?? []);
   const items = [];
@@ -334,7 +376,9 @@ async function exportCollection(username, client, dataDir, images, collectionFil
 
 async function exportGeeklist(geeklistId, client, dataDir, images, collectionFile) {
   console.log(`Fetching geeklist ${geeklistId} …`);
-  const response = await client.getBggGeeklist({ id: geeklistId });
+  const response = await withRetry(`geeklist ${geeklistId} fetch`, () =>
+    client.getBggGeeklist({ id: geeklistId })
+  );
   const geeklistItems = mapGeeklistItems(response);
   const items = geeklistItems.map(gi => ({ id: gi.id, name: gi.name, thumbnail: null }));
 
@@ -367,9 +411,13 @@ async function exportGames(gameIds, client, dataDir, images, skipExisting) {
     const batch = gameIds.slice(start, start + GAME_BATCH_SIZE);
     console.log(`Fetching games ${start + 1}–${start + batch.length} of ${total} …`);
 
+    if (start > 0) await sleep(BATCH_PAUSE_MS);
+
     let response;
     try {
-      response = await client.getBggThing({ id: batch, stats: 1 });
+      response = await withRetry(`batch ${start + 1}–${start + batch.length}`, () =>
+        client.getBggThing({ id: batch, stats: 1 })
+      );
     } catch (err) {
       // Keep going so the rest of the collection still refreshes, but count it:
       // main() turns any failure into a non-zero exit so callers can tell a
@@ -519,4 +567,14 @@ async function main() {
   console.log('Done.');
 }
 
-main();
+if (require.main === module) main();
+
+module.exports = {
+  decodeHtmlEntities,
+  stripHtmlTags,
+  imageExt,
+  isAllowedImageUrl,
+  isRetryable,
+  mapGame,
+  mapCollectionItem,
+};
