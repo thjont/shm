@@ -158,6 +158,7 @@ body {
 
 .bgg-collection-compact .bgg-card-body {
   padding: 0.4rem 0.5rem;
+  gap: 0;
 }
 
 .bgg-collection-compact .bgg-card-body h3 {
@@ -171,10 +172,10 @@ body {
 .bgg-collection-compact .bgg-card-meta {
   font-size: 0.75rem;
   gap: 0.4rem;
-  /* No margin-top:auto here — tiles stretch to the row's tallest card,
-     which would open a gap between the name and this row. */
+  /* Flush under the name, subtitle-style; no margin-top:auto — tiles
+     stretch to the row's tallest card, which would open a gap. */
   margin-top: 0;
-  padding-top: 0.25rem;
+  padding-top: 0;
 }
 
 /* List: one row per game with the stats line the tiles hide. */
