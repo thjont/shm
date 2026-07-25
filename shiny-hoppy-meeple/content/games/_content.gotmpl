@@ -9,6 +9,28 @@
     {{- $game = merge $game $override }}
   {{- end }}
   {{- $params := dict "game" $game }}
+
+  {{/* Per-page SEO. Without this every game page inherits the site-wide
+       description and carries no image, so sharing a game link produces a
+       text-only card. Three consumers, three different lookups:
+         - og:image / twitter:image — Hugo's internal opengraph and
+           twitter_cards templates read params.images, and absURL it, so the
+           local /images/games/ path is fine.
+         - og:description / twitter:description — the same templates read
+           .Description, which only a *top-level* AddPage key sets.
+         - <meta name="description"> — Blowfish's head.html reads
+           .Params.Description, which the top-level key does *not* set.
+       Hence the description is passed in both places; verify with a build if
+       you change it. */}}
+  {{- $description := "" }}
+  {{- with $game.description }}
+    {{- $description = . | plainify | replaceRE `\s+` " " | strings.TrimSpace | truncate 155 }}
+    {{- $params = merge $params (dict "description" $description) }}
+  {{- end }}
+  {{- with (or $game.image $game.thumbnail) }}
+    {{- $params = merge $params (dict "images" (slice .)) }}
+  {{- end }}
+
   {{- if index $mainLibIds (string $game.id) }}
     {{- $params = merge $params (dict "categories" $game.categories "mechanics" $game.mechanics) }}
     {{- $complexity := partial "shm/complexity-bucket.html" $game.rating_average_weight }}
@@ -17,8 +39,9 @@
     {{- end }}
   {{- end }}
   {{- $.AddPage (dict
-    "path"   (anchorize $game.name)
-    "title"  $game.name
-    "params" $params
+    "path"        (anchorize $game.name)
+    "title"       $game.name
+    "description" $description
+    "params"      $params
   ) }}
 {{- end }}
