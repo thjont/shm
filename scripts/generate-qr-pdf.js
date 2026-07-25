@@ -21,12 +21,20 @@ const DEFAULT_OUTPUT = path.resolve(
   __dirname, '../shiny-hoppy-meeple/static/qr-codes.pdf'
 );
 
+// Mirror of Hugo's `anchorize` (GitHub heading-ID rules), which is what produces
+// the site's /games/<slug>/ URLs. Drift here prints stickers pointing at pages
+// that don't exist, so the rules below were read back out of Hugo 0.163.1 and are
+// pinned by test/anchorize.test.js: keep unicode letters and decimal digits,
+// keep `-` and `_`, turn a space into `-`, drop everything else (punctuation,
+// symbols, emoji, combining marks, non-decimal numerals like ² or Ⅳ), after
+// trimming the ends.
+const SLUG_KEEP = /[\p{L}\p{Nd}]/u;
+
 function anchorize(name) {
   let out = '';
-  for (const ch of name.toLowerCase()) {
-    if (ch === ' ')                              out += '-';
-    else if (ch === '-' || /[a-z0-9]/.test(ch)) out += ch;
-    // all other characters dropped
+  for (const ch of name.trim().toLowerCase()) {
+    if (ch === ' ') out += '-';
+    else if (ch === '-' || ch === '_' || SLUG_KEEP.test(ch)) out += ch;
   }
   return out;
 }
@@ -51,27 +59,29 @@ function loadGames(collectionPath, baseUrl, pathPrefix) {
   return games;
 }
 
+// Fatal by design: a slug the site doesn't serve means a printed sticker that
+// 404s, and these sheets get cut up and stuck on boxes. Callers ask for this
+// check explicitly with --scan-slugs, so a missing allowlist is a failure too —
+// it means the check didn't happen, not that it passed. Runs before the PDF is
+// written, so a bad sheet never reaches disk.
 function crossCheckSlugs(games, scanSlugsPath) {
   if (!fs.existsSync(scanSlugsPath)) {
-    process.stderr.write(
-      `  Warning: scan-slugs file not found, skipping check: ${scanSlugsPath}\n`
-    );
-    return;
+    throw new Error(`scan-slugs file not found, cannot verify slugs: ${scanSlugsPath}`);
   }
   const allowed = new Set(JSON.parse(fs.readFileSync(scanSlugsPath, 'utf8')));
   const missing = games.filter(g => !allowed.has(g.slug));
   if (missing.length) {
-    process.stderr.write(
-      `  Warning: ${missing.length} slug(s) not found in ${path.basename(scanSlugsPath)}:\n`
-    );
     for (const g of missing) {
       process.stderr.write(`    '${g.name}' → ${g.slug}\n`);
     }
-  } else {
-    process.stdout.write(
-      `  Slug check: all ${games.length} slugs present in ${path.basename(scanSlugsPath)}\n`
+    throw new Error(
+      `${missing.length} slug(s) above are not in ${path.basename(scanSlugsPath)} — ` +
+      'their QR codes would 404. Rebuild the site, or finalise the game names first.'
     );
   }
+  process.stdout.write(
+    `  Slug check: all ${games.length} slugs present in ${path.basename(scanSlugsPath)}\n`
+  );
 }
 
 function fitFontSize(doc, text, maxWidth, startSize, minimum = 5.0) {
@@ -234,7 +244,11 @@ async function main() {
   process.stdout.write('Done.\n');
 }
 
-main().catch(err => {
-  process.stderr.write(`${err.message}\n`);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch(err => {
+    process.stderr.write(`${err.message}\n`);
+    process.exit(1);
+  });
+}
+
+module.exports = { anchorize, crossCheckSlugs };

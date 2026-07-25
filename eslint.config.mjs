@@ -25,6 +25,14 @@ export default [
     },
   },
   {
+    // test/**/*.test.js — node:test suites for the scripts above (CommonJS).
+    files: ['test/**/*.js'],
+    languageOptions: {
+      sourceType: 'commonjs',
+      globals: globals.node,
+    },
+  },
+  {
     // shiny-hoppy-meeple/functions/**/*.js — Cloudflare Pages Functions (ESM, Workers runtime)
     files: ['shiny-hoppy-meeple/functions/**/*.js'],
     languageOptions: {

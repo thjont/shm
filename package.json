@@ -16,7 +16,8 @@
   "scripts": {
     "lint": "npm run lint:md && npm run lint:js",
     "lint:md": "markdownlint-cli2 \"**/*.md\"",
-    "lint:js": "eslint ."
+    "lint:js": "eslint .",
+    "test": "node --test test/"
   },
   "overrides": {
     "esbuild": "0.28.1",

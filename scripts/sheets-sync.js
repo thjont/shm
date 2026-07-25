@@ -12,11 +12,6 @@ const COLLECTIONS_DIR = path.join(DATA_DIR, 'bgg-cache', 'collections');
 
 const SLUG_RE = /^[a-z0-9][a-z0-9-]*$/;
 
-if (!SPREADSHEET_ID || !KEY_JSON) {
-  console.warn('GOOGLE_SHEETS_SPREADSHEET_ID or GOOGLE_SERVICE_ACCOUNT_KEY not set — skipping sheets sync');
-  process.exit(0);
-}
-
 function parseRows(values, key = 'slug') {
   if (!values || values.length < 2) return [];
   const [headers, ...rows] = values;
@@ -46,6 +41,13 @@ function validateRow(row, context) {
 }
 
 async function main() {
+  // Inside main(), not at module scope: importing this file (the unit tests do)
+  // must not be able to exit the process.
+  if (!SPREADSHEET_ID || !KEY_JSON) {
+    console.warn('GOOGLE_SHEETS_SPREADSHEET_ID or GOOGLE_SERVICE_ACCOUNT_KEY not set — skipping sheets sync');
+    return;
+  }
+
   const auth = new google.auth.GoogleAuth({
     credentials: JSON.parse(KEY_JSON),
     scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
@@ -169,7 +171,11 @@ async function main() {
   console.log(`sheets-sync done: ${memberCount} members, ${libraryCount} shadow libraries, ${overrideCount} game overrides.`);
 }
 
-main().catch(err => {
-  console.error('sheets-sync failed:', err.message);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch(err => {
+    console.error('sheets-sync failed:', err.message);
+    process.exit(1);
+  });
+}
+
+module.exports = { parseRows, validateRow };

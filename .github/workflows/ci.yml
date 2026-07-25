@@ -26,6 +26,9 @@ jobs:
             - name: Lint JavaScript
               run: npm run lint:js
 
+            - name: Unit tests
+              run: npm test
+
             - name: Lint Markdown (non-blocking)
               continue-on-error: true
               run: npm run lint:md
