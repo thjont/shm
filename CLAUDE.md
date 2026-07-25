@@ -196,8 +196,10 @@ spreadsheet/calendar IDs.
 
 Everything is version-pinned for reproducible builds: `package.json` + `package-lock.json`
 (including `bgg-xml-api-client`), all GitHub Actions pinned to commit SHAs, Hugo to a fixed
-version, and the devcontainer Hugo feature. When bumping a tool, update it in **all** of these
-(workflows, `.devcontainer/devcontainer.json`, and `package-lock.json`).
+version, the devcontainer Hugo feature, and Node.js in `.node-version` (read by every
+`setup-node` step via `node-version-file`, and mirrored by the devcontainer Node feature). When
+bumping a tool, update it in **all** of these (workflows, `.node-version`,
+`.devcontainer/devcontainer.json`, and `package-lock.json`).
 
 ## Caveats
 

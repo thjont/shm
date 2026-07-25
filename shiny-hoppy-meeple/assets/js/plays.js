@@ -26,12 +26,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (!playEls.length && !memberPlayEls.length) return;
 
   try {
+    // Each endpoint is only asked for when something on the page needs it: the
+    // stats page and game pages carry both, but a page with only member counts
+    // was still paying for /api/plays (a KV listing behind it).
     const [playsRes, memberRes] = await Promise.all([
-      fetch("/api/plays"),
+      playEls.length ? fetch("/api/plays") : Promise.resolve(null),
       memberPlayEls.length ? fetch("/api/member-plays") : Promise.resolve(null),
     ]);
 
-    const counts       = playsRes.ok  ? await playsRes.json()  : {};
+    const counts       = playsRes?.ok  ? await playsRes.json()  : {};
     const memberCounts = memberRes?.ok ? await memberRes.json() : {};
 
     playEls.forEach(el => {

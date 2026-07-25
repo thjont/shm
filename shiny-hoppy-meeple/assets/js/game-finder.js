@@ -147,7 +147,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Debounced: apply() runs on every keystroke in the search box, and Safari
+  // throws "Attempt to use history.replaceState() more than 100 times per 30
+  // seconds" — which would abort the rest of apply(). The URL only has to be
+  // right once typing pauses, so trailing-edge is exactly the semantics we want.
+  const URL_SYNC_DELAY_MS = 250;
+  let urlSyncTimer = null;
+
   function syncUrl() {
+    clearTimeout(urlSyncTimer);
+    urlSyncTimer = setTimeout(writeUrl, URL_SYNC_DELAY_MS);
+  }
+
+  function writeUrl() {
     const query = new URLSearchParams();
     Object.values(controls).forEach(el => {
       const value = el.value.trim();

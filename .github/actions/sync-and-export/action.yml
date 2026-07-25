@@ -16,9 +16,11 @@ inputs:
   stage:
     description: Which environment's cache and configuration to use — prod, stage or dev.
     required: true
-  node-version:
-    description: Node.js version. Kept in step with the pinning policy in package.json.
-    default: "22"
+  node-version-file:
+    description: >-
+      File holding the pinned Node.js version. Defaults to the repo's
+      .node-version, which is the single place the version is declared.
+    default: ".node-version"
   google-service-account-key:
     description: Service-account JSON for Sheets and Calendar.
     required: true
@@ -47,7 +49,7 @@ runs:
     - name: Set up Node.js
       uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
       with:
-        node-version: ${{ inputs.node-version }}
+        node-version-file: ${{ inputs.node-version-file }}
         cache: "npm"
 
     - name: Install dependencies

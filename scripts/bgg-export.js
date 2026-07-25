@@ -61,6 +61,18 @@ Images are re-encoded as WebP at export time: heroes to at most ${HERO.maxWidth}
 (quality ${HERO.quality}), thumbnails to at most ${THUMB.maxWidth}px (quality ${THUMB.quality}). Neither is upscaled.
 `;
 
+// --- Atomic writes ---
+
+// Write to a sibling .tmp file and rename it into place. A killed or crashed run
+// (the export can be minutes long) could otherwise leave a half-written JSON file
+// in the cache, which cache-push.sh would happily publish and Hugo would fail to
+// parse on the next build. rename() within a directory is atomic.
+function writeFileAtomic(dest, contents) {
+  const tmp = `${dest}.tmp`;
+  fs.writeFileSync(tmp, contents);
+  fs.renameSync(tmp, dest);
+}
+
 // --- Request retries ---
 
 function sleep(ms) {
@@ -269,7 +281,7 @@ class ImageDownloader {
     const { data, ext, width, height } = await this.reEncode(source, url, encode);
     const filename = `${gameId}${variant}${ext}`;
     try {
-      fs.writeFileSync(path.join(this.imageDir, filename), data);
+      writeFileAtomic(path.join(this.imageDir, filename), data);
     } catch (err) {
       process.stderr.write(`  Warning: could not write ${filename}: ${err.message}\n`);
       this.failed++;
@@ -369,7 +381,7 @@ async function exportCollection(username, client, dataDir, images, collectionFil
   const outPath = collectionFile
     ?? path.join(dataDir, 'bgg-cache', 'collections', 'main-library.json');
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
-  fs.writeFileSync(outPath, JSON.stringify({ count: items.length, items }, null, 2));
+  writeFileAtomic(outPath, JSON.stringify({ count: items.length, items }, null, 2));
   console.log(`  Saved ${items.length} items → ${outPath}`);
   return items.map(i => i.id);
 }
@@ -385,7 +397,7 @@ async function exportGeeklist(geeklistId, client, dataDir, images, collectionFil
   const outPath = collectionFile
     ?? path.join(dataDir, 'bgg-cache', 'collections', 'main-library.json');
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
-  fs.writeFileSync(outPath, JSON.stringify({ count: items.length, items }, null, 2));
+  writeFileAtomic(outPath, JSON.stringify({ count: items.length, items }, null, 2));
   console.log(`  Saved ${items.length} items → ${outPath}`);
   return items.map(i => i.id);
 }
@@ -443,7 +455,7 @@ async function exportGames(gameIds, client, dataDir, images, skipExisting) {
       game.image_width = localImage?.width ?? null;
       game.image_height = localImage?.height ?? null;
 
-      fs.writeFileSync(
+      writeFileAtomic(
         path.join(gamesDir, `${game.id}.json`),
         JSON.stringify(game, null, 2)
       );

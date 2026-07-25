@@ -275,7 +275,9 @@ Workers KV namespace bound as `SCANS` (see `wrangler.toml`):
   block static rendering.
 - `_middleware.js` gates everything except the routes above behind basic auth when the
   `BASIC_AUTH_PASSWORD` environment variable is set on the Pages project (used for dev/stage
-  previews; prod doesn't set it).
+  previews; prod doesn't set it). Setting `BASIC_AUTH_USER` as well makes the username count too —
+  unset, any username is accepted, as before. Both are compared with
+  `crypto.subtle.timingSafeEqual`.
 
 The shared pieces live in `functions/_lib/`:
 
@@ -492,6 +494,11 @@ Everything is version-pinned for reproducible builds:
 - all GitHub Actions pinned to commit SHAs
 - Hugo pinned to a fixed version
 - the devcontainer Hugo feature
+- **Node.js in `.node-version`** — the single source. Every `setup-node` step reads it via
+  `node-version-file`, including the one inside `.github/actions/sync-and-export`, and the
+  devcontainer feature matches it. Workflows used to say `node-version: "22"`, which floated: CI
+  silently moved to 22.23.1 while local development sat on whatever was installed, and the two
+  disagreeing is what let a Node-22-only test-runner change reach CI green-locally.
 
 When bumping a tool, update it in **all** of these — workflows, `.devcontainer/devcontainer.json`,
 and `package-lock.json`. Dependabot is configured (`.github/dependabot.yml`) for version updates.

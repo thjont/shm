@@ -45,11 +45,10 @@ validate: lint test check
 
 # ── Deployment ─────────────────────────────────────────────────────────────────
 
-# Build and deploy to production Cloudflare Pages
-deploy: build
-    cd shiny-hoppy-meeple && wrangler pages deploy
-
-# Build and deploy a named preview branch
+# Build and deploy a named preview branch. There is deliberately no recipe that
+# deploys production from a laptop: prod comes from deploy-prod.yml (push, hourly
+# cron, or the Apps Script button), built from the cache branch rather than
+# whatever definitions happen to be in the working tree.
 deploy-preview branch: build
     cd shiny-hoppy-meeple && wrangler pages deploy --branch {{branch}}
 
