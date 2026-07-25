@@ -88,6 +88,9 @@ referenced by any definition. The data directory has two tiers:
   - `collections/<slug>.json` — collection summary (main library and per-member/library)
   - `games/<id>.json` — full game detail for every game in any collection
   - Images are downloaded to `static/images/games/`; JSON is rewritten to local paths (originals kept in `*_source` fields).
+  - Hero images are downscaled to ≤900 px wide and re-encoded as WebP (`<id>.webp`) at export time,
+    with `image_width`/`image_height` recorded in the game JSON for the `<img>` tag; thumbnails are
+    stored as downloaded.
   - Both directories are gitignored. Each environment has its own cache, held on an orphan branch
     (`bgg-cache-prod`, `bgg-cache-stage`, `bgg-cache-dev`) so BGG data updates never touch `main`'s
     history. `scripts/cache-pull.sh <stage>` restores a branch's cache into the working tree before

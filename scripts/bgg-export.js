@@ -5,6 +5,7 @@ const { parseArgs } = require('node:util');
 const { BggXmlApiClient } = require('bgg-xml-api-client');
 const fs = require('node:fs');
 const path = require('node:path');
+const sharp = require('sharp');
 const { URL } = require('node:url');
 
 const PROJECT_DIR = path.join(__dirname, '..', 'shiny-hoppy-meeple');
@@ -14,6 +15,12 @@ const DEFAULT_IMAGE_URL_BASE = '/images/games';
 const GAME_BATCH_SIZE = 20;
 const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.png', '.gif', '.webp']);
 const USER_AGENT = 'shiny-hoppy-meeple-export/1.0 (+https://shiny-hoppy-meeple.pages.dev)';
+
+// BGG serves box art at its original size — up to 3000×4302 / 3.3 MB — while the
+// detail page never renders the hero wider than the content column. Downscale and
+// re-encode at export time so the deployed image is the one the page needs.
+const HERO_MAX_WIDTH = 900;
+const WEBP_QUALITY = 80;
 
 const USAGE = `\
 Export a BGG user collection or geeklist and game details to JSON, with local images.
@@ -34,6 +41,9 @@ Options:
   --skip-images           Don't download images; keep remote BGG URLs
   --force-images          Re-download images even if already present
   --help                  Show this help message
+
+Game hero images are downscaled to at most ${HERO_MAX_WIDTH}px wide and re-encoded as
+WebP (quality ${WEBP_QUALITY}); thumbnails are stored as downloaded.
 `;
 
 // --- SSRF protection ---
@@ -128,6 +138,8 @@ function mapGame(thing) {
     year: thing.yearpublished?.value ?? null,
     thumbnail: thing.thumbnail ?? null,
     image:     thing.image ?? null,
+    image_width:  null,
+    image_height: null,
     description: stripHtmlTags(decodeHtmlEntities(thing.description ?? null)),
     min_players: Number(thing.minplayers?.value ?? 0),
     max_players: Number(thing.maxplayers?.value ?? 0),
@@ -150,6 +162,17 @@ function mapGeeklistItems(data) {
 
 // --- ImageDownloader ---
 
+// Dimensions of an already-cached image, so a skipped download still yields the
+// width/height the template needs. Best-effort: an unreadable file just loses them.
+async function imageDimensions(file) {
+  try {
+    const { width, height } = await sharp(file).metadata();
+    return { width, height };
+  } catch {
+    return {};
+  }
+}
+
 class ImageDownloader {
   constructor(imageDir, urlBase, enabled, force) {
     this.imageDir = imageDir;
@@ -159,10 +182,13 @@ class ImageDownloader {
     this.downloaded = 0;
     this.skipped = 0;
     this.failed = 0;
+    this.superseded = 0;
     if (enabled) fs.mkdirSync(imageDir, { recursive: true });
   }
 
-  async fetch(gameId, url, variant = '') {
+  // Returns { url, width?, height? } or null. Pass maxWidth to downscale and
+  // re-encode as WebP; without it the source bytes are stored verbatim.
+  async fetch(gameId, url, variant = '', maxWidth = null) {
     if (!this.enabled || !url) return null;
 
     if (!isAllowedImageUrl(url)) {
@@ -171,33 +197,88 @@ class ImageDownloader {
       return null;
     }
 
-    const ext = imageExt(url);
-    const filename = `${gameId}${variant}${ext}`;
-    const dest = path.join(this.imageDir, filename);
-    const publicUrl = `${this.urlBase}/${filename}`;
+    // Resizing re-encodes, so the cached extension no longer follows the source URL.
+    const expectedExt = maxWidth ? '.webp' : imageExt(url);
+    const cached = path.join(this.imageDir, `${gameId}${variant}${expectedExt}`);
 
-    if (fs.existsSync(dest) && !this.force) {
+    if (fs.existsSync(cached) && !this.force) {
       this.skipped++;
-      return publicUrl;
+      return {
+        url: `${this.urlBase}/${path.basename(cached)}`,
+        ...(maxWidth ? await imageDimensions(cached) : {}),
+      };
     }
 
+    let source;
     try {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 30000);
-      const res = await fetch(url, {
-        signal: controller.signal,
-        headers: { 'User-Agent': USER_AGENT },
-      });
-      clearTimeout(timer);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const buf = await res.arrayBuffer();
-      fs.writeFileSync(dest, Buffer.from(buf));
-      this.downloaded++;
-      return publicUrl;
+      source = await this.download(url);
     } catch (err) {
       process.stderr.write(`  Warning: image download failed (${url}): ${err.message}\n`);
       this.failed++;
       return null;
+    }
+
+    const { data, ext, width, height } = await this.encode(source, url, maxWidth);
+    const filename = `${gameId}${variant}${ext}`;
+    try {
+      fs.writeFileSync(path.join(this.imageDir, filename), data);
+    } catch (err) {
+      process.stderr.write(`  Warning: could not write ${filename}: ${err.message}\n`);
+      this.failed++;
+      return null;
+    }
+    this.removeOtherFormats(gameId, variant, filename);
+    this.downloaded++;
+    return { url: `${this.urlBase}/${filename}`, width, height };
+  }
+
+  async download(url) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 30000);
+    try {
+      const res = await fetch(url, {
+        signal: controller.signal,
+        headers: { 'User-Agent': USER_AGENT },
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return Buffer.from(await res.arrayBuffer());
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+
+  // Falls back to the original bytes if sharp can't handle the image — an
+  // oversized hero beats a missing one. The next run retries the resize, since
+  // the expected `.webp` still won't be on disk.
+  async encode(source, url, maxWidth) {
+    if (!maxWidth) return { data: source, ext: imageExt(url) };
+    try {
+      const { data, info } = await sharp(source)
+        // Bake in EXIF orientation: browsers honour it on the original, but the
+        // re-encode drops the metadata, which would leave a rotated source sideways.
+        .rotate()
+        .resize({ width: maxWidth, withoutEnlargement: true })
+        .webp({ quality: WEBP_QUALITY })
+        .toBuffer({ resolveWithObject: true });
+      return { data, ext: '.webp', width: info.width, height: info.height };
+    } catch (err) {
+      process.stderr.write(`  Warning: resize failed (${url}): ${err.message} — keeping original\n`);
+      return { data: source, ext: imageExt(url) };
+    }
+  }
+
+  // Re-encoding renames `224037.png` to `224037.webp`; the old file would
+  // otherwise sit on the cache branch forever, because cleanup-stale-cache.js
+  // only prunes images whose game id is no longer referenced at all.
+  removeOtherFormats(gameId, variant, keep) {
+    for (const ext of IMAGE_EXTS) {
+      const filename = `${gameId}${variant}${ext}`;
+      if (filename === keep) continue;
+      const stale = path.join(this.imageDir, filename);
+      if (fs.existsSync(stale)) {
+        fs.rmSync(stale);
+        this.superseded++;
+      }
     }
   }
 
@@ -205,7 +286,8 @@ class ImageDownloader {
     if (this.enabled) {
       console.log(
         `  Images: ${this.downloaded} downloaded, ` +
-        `${this.skipped} already present, ${this.failed} failed`
+        `${this.skipped} already present, ${this.failed} failed` +
+        (this.superseded ? `, ${this.superseded} superseded removed` : '')
       );
     }
   }
@@ -229,7 +311,7 @@ async function exportCollection(username, client, dataDir, images, collectionFil
     const mapped = mapCollectionItem(raw);
     const remoteThumbnail = mapped.thumbnail;
     const localThumb = await images.fetch(mapped.id, remoteThumbnail, '-thumb');
-    mapped.thumbnail = localThumb ?? remoteThumbnail;
+    mapped.thumbnail = localThumb?.url ?? remoteThumbnail;
     mapped.thumbnail_source = remoteThumbnail;
     items.push(mapped);
   }
@@ -290,13 +372,15 @@ async function exportGames(gameIds, client, dataDir, images, skipExisting) {
       const remoteImage = game.image;
       const remoteThumbnail = game.thumbnail;
 
-      const localImage = await images.fetch(game.id, remoteImage, '');
+      const localImage = await images.fetch(game.id, remoteImage, '', HERO_MAX_WIDTH);
       const localThumb = await images.fetch(game.id, remoteThumbnail, '-thumb');
 
-      game.thumbnail = localThumb ?? remoteThumbnail;
+      game.thumbnail = localThumb?.url ?? remoteThumbnail;
       game.thumbnail_source = remoteThumbnail;
-      game.image = localImage ?? remoteImage;
+      game.image = localImage?.url ?? remoteImage;
       game.image_source = remoteImage;
+      game.image_width = localImage?.width ?? null;
+      game.image_height = localImage?.height ?? null;
 
       fs.writeFileSync(
         path.join(gamesDir, `${game.id}.json`),

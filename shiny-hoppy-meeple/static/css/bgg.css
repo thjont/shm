@@ -466,6 +466,7 @@ body {
 
 .bgg-detail-image img {
   width: 100%;
+  height: auto; /* keep the intrinsic ratio when width/height attributes are set */
   border-radius: 4px;
   display: block;
 }

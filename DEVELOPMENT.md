@@ -182,6 +182,17 @@ Each definition specifies exactly one BGG source — `username` *or* `geeklist`,
 Images are downloaded to `static/images/games/`; the JSON is rewritten to local paths while
 originals are kept in `*_source` fields.
 
+BGG serves box art at full size (up to 3000×4302 / 3.3 MB), so **hero images are resized at
+export time**: `bgg-export.js` downscales them to at most 900 px wide with `sharp` and re-encodes
+them as WebP (quality 80), which takes the whole image set from ~29 MB to ~6 MB. The cached file is
+`<id>.webp` regardless of the source format, and the pixel dimensions are recorded in the game JSON
+as `image_width`/`image_height` so `layouts/games/single.html` can set `width`/`height` on the hero
+`<img>` and avoid layout shift. Files left over in another format (a pre-resize `<id>.png`, or a
+`.webp` written before a fallback) are deleted when the new one is written, since
+`cleanup-stale-cache.js` only prunes images whose game id is no longer referenced. If `sharp`
+can't decode an image the original bytes are kept and the export continues; the next run retries.
+Thumbnails are still stored exactly as downloaded.
+
 **Cache branches** — the cache is gitignored on `main`. Each environment's cache lives on an
 **orphan branch** (`bgg-cache-prod`, `bgg-cache-stage`, `bgg-cache-dev`) so daily BGG data updates
 never touch `main`'s history. `scripts/cache-pull.sh <stage>` restores a branch's cache into the
