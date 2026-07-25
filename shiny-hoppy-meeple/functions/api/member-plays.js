@@ -2,6 +2,8 @@
 // POST /api/member-plays  → { slug } increments by 1, returns { slug, count }
 // Stored in SCANS KV as "member:<slug>" to avoid collision with QR-scan keys.
 
+import { json } from "../_lib/json.js";
+
 const SLUG_RE = /^[a-z0-9-]{1,64}$/;
 const PREFIX = "member:";
 
@@ -31,14 +33,9 @@ export async function onRequestGet(context) {
     });
   }
 
-  return new Response(JSON.stringify(counts), {
-    headers: {
-      "content-type": "application/json",
-      // Short edge cache to cut KV reads. The +1 UI updates from the POST
-      // response, so it never depends on this being fresh.
-      "cache-control": "public, max-age=30",
-    },
-  });
+  // Short cache to cut KV reads. The +1 UI updates from the POST response, so
+  // it never depends on this being fresh.
+  return json(counts, { cacheControl: "public, max-age=30" });
 }
 
 // Deliberately unauthenticated: anyone can increment, which can inflate the
@@ -52,32 +49,20 @@ export async function onRequestPost(context) {
     const body = await request.json();
     slug = body?.slug;
   } catch {
-    return new Response(JSON.stringify({ error: "invalid body" }), {
-      status: 400,
-      headers: { "content-type": "application/json" },
-    });
+    return json({ error: "invalid body" }, { status: 400 });
   }
 
   if (!slug || !SLUG_RE.test(slug)) {
-    return new Response(JSON.stringify({ error: "invalid slug" }), {
-      status: 400,
-      headers: { "content-type": "application/json" },
-    });
+    return json({ error: "invalid slug" }, { status: 400 });
   }
 
   if (!env.SCANS) {
-    return new Response(JSON.stringify({ error: "KV unavailable" }), {
-      status: 503,
-      headers: { "content-type": "application/json" },
-    });
+    return json({ error: "KV unavailable" }, { status: 503 });
   }
 
   const allow = await knownSlugs(request);
   if (!allow || !allow.has(slug)) {
-    return new Response(JSON.stringify({ error: "unknown slug" }), {
-      status: 404,
-      headers: { "content-type": "application/json" },
-    });
+    return json({ error: "unknown slug" }, { status: 404 });
   }
 
   const kvKey = `${PREFIX}${slug}`;
@@ -85,7 +70,5 @@ export async function onRequestPost(context) {
   const next = current + 1;
   await env.SCANS.put(kvKey, String(next));
 
-  return new Response(JSON.stringify({ slug, count: next }), {
-    headers: { "content-type": "application/json" },
-  });
+  return json({ slug, count: next });
 }
