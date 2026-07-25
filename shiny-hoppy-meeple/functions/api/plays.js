@@ -3,6 +3,8 @@
 // Restricted to slugs in the build-time allowlist (/scan-slugs.json) so any stray
 // keys never surface or bloat the response. Consumed client-side by /js/plays.js.
 
+import { json } from "../_lib/json.js";
+
 // Load the set of valid slugs emitted by Hugo. Returns null if unreadable, in
 // which case we fail closed and return no counts rather than every stored key.
 async function knownSlugs(request) {
@@ -31,11 +33,6 @@ export async function onRequestGet(context) {
     });
   }
 
-  return new Response(JSON.stringify(counts), {
-    headers: {
-      "content-type": "application/json",
-      // Cache at the edge for a minute to cut KV reads and speed up the page.
-      "cache-control": "public, max-age=60",
-    },
-  });
+  // Cache for a minute to cut KV reads and speed up the page.
+  return json(counts, { cacheControl: "public, max-age=60" });
 }

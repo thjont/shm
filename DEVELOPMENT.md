@@ -277,6 +277,28 @@ Workers KV namespace bound as `SCANS` (see `wrangler.toml`):
 > `functions/` and reads `wrangler.toml` (project name, output dir, KV binding). `functions/` and
 > `wrangler.toml` sit at the Hugo root, but Hugo ignores them.
 
+### 5. Static response headers and redirects
+
+Two plain-text files in `static/` configure Cloudflare Pages itself; Hugo copies them to the site
+root, where Pages reads them.
+
+- **`static/_redirects`** — legacy URL redirects (`/g/*`, `/our-library/*` → `/games/`).
+- **`static/_headers`** — response headers for static assets:
+  - Hugo's sha512-fingerprinted bundles (`main.bundle.min.*`, `appearance.min.*`,
+    `lib/zoom/zoom.min.umd.*`) get `max-age=31536000, immutable` — a change always produces a new
+    filename. The unfingerprinted files served straight out of `static/` (`css/bgg.css`,
+    `css/calendar.css`, `js/game-finder.js`, `js/plays.js`) are deliberately left on the default
+    revalidate-every-time behaviour; put them through Hugo's fingerprint pipe before caching them.
+  - `/images/games/*` gets `max-age=86400`. The filenames are BGG ids rather than content hashes,
+    so a day is the ceiling that keeps the daily re-export honest.
+  - Site-wide `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, and
+    `Referrer-Policy: strict-origin-when-cross-origin`.
+
+`_headers` applies **only to assets Pages serves itself** — Function responses are untouched by it,
+so the JSON APIs build their responses through `functions/_lib/json.js`, which sets `nosniff`
+alongside the content type. Check both locally with `wrangler pages dev public` and
+`curl -I http://localhost:8788/<path>`.
+
 ## Continuous integration
 
 `ci.yml` runs on every pull request (and pushes to `main`/`dev`): `lint:js` is a blocking check —

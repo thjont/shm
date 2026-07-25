@@ -149,6 +149,15 @@ static rendering. `_middleware.js` gates everything except those routes behind b
 `wrangler.toml` (project name, output dir, KV binding). `functions/` and `wrangler.toml` sit at the
 Hugo root but Hugo ignores them.
 
+### Static response headers
+
+`static/_headers` (alongside `static/_redirects`) configures Cloudflare Pages: `immutable`
+year-long caching for Hugo's fingerprinted bundles, one day for `/images/games/*`, and site-wide
+`nosniff` / `X-Frame-Options: DENY` / `Referrer-Policy`. It covers **only** assets Pages serves
+itself, so the JSON APIs go through `functions/_lib/json.js` to set `nosniff` themselves. Don't
+add long `max-age` rules for the unfingerprinted files in `static/css/` and `static/js/` — they'd
+strand visitors on a stale copy.
+
 ## Deployment
 
 Every deploy workflow follows the same shape: pull the environment's BGG cache branch → sync
