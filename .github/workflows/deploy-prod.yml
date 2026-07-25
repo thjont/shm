@@ -72,7 +72,13 @@ jobs:
             - name: Export members
               env:
                   BGG_API_TOKEN: ${{ secrets.BGG_API_TOKEN }}
-              run: node scripts/bgg-export-members.js --skip-existing-games
+              # Deploys stay resilient: a flaky member export shouldn't cost this run
+              # its cache push and deploy. bgg-export-members.js now exits non-zero
+              # when a member fails, which is what update-bgg-cache.yml — the
+              # authoritative daily refresh — turns into a red run.
+              run: |
+                  node scripts/bgg-export-members.js --skip-existing-games \
+                    || echo "::warning::Some member exports failed — deploying with stale data for those members"
 
             - name: Push BGG cache
               run: scripts/cache-push.sh prod
@@ -85,6 +91,16 @@ jobs:
 
             - name: Build site
               run: pushd shiny-hoppy-meeple && hugo --minify && popd
+
+            # functions/_middleware.js exists only for the dev/stage basic-auth
+            # gate, but its presence puts /* into the generated routes, so every
+            # prod image, stylesheet and HTML request pays a Function invocation
+            # before Pages serves it. Restrict prod to the routes that actually
+            # need Functions; dev and stage ship no _routes.json, so their
+            # middleware keeps covering everything. Same copy-after-build pattern
+            # as the wrangler-*.toml files.
+            - name: Limit prod Functions routes
+              run: cp shiny-hoppy-meeple/routes-prod.json shiny-hoppy-meeple/public/_routes.json
 
             - name: Deploy to Cloudflare Pages
               uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0

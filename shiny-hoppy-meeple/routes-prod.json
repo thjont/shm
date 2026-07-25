@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "include": ["/p/*", "/lets-play/*", "/learn-to-play/*", "/api/*"],
+  "exclude": []
+}
