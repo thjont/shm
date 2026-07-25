@@ -42,13 +42,42 @@
     {{ end }}
   </div>
   {{ end }}
+  {{/* schema.org/Event, so an event can appear as a rich result rather than a
+       plain link. Dates prefer the raw ISO datetimes calendar-sync.js records;
+       for all-day entries it falls back to the date, using the *inclusive* end
+       ($endInclT) rather than the exclusive endDate the calendar grid needs.
+       jsonify escapes <, > and & to \uXXXX, so a stray "</script>" in a
+       calendar description can't break out. */}}
+  {{ with $firstEntry.startDate }}
+  {{ $startT   := time.AsTime $firstEntry.startDate }}
+  {{ $endInclT := (time.AsTime $firstEntry.endDate).Add (time.ParseDuration "-24h") }}
+  {{ $ld := dict
+    "@context" "https://schema.org"
+    "@type" "Event"
+    "name" $.Title
+    "url" $.Permalink
+    "startDate" ($firstEntry.startDateTime | default ($startT | dateFormat "2006-01-02"))
+    "endDate" ($firstEntry.endDateTime | default ($endInclT | dateFormat "2006-01-02"))
+    "eventStatus" "https://schema.org/EventScheduled"
+    "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
+    "organizer" (dict "@type" "Organization" "name" site.Title "url" site.BaseURL)
+  }}
+  {{ with $firstEntry.location }}
+    {{ $ld = merge $ld (dict "location" (dict "@type" "Place" "name" . "address" .)) }}
+  {{ end }}
+  {{ with $firstEntry.description }}
+    {{ $ld = merge $ld (dict "description" .) }}
+  {{ end }}
+  <script type="application/ld+json">{{ $ld | jsonify | safeJS }}</script>
+  {{ end }}
+
   <div class="bgg-page-content prose dark:prose-invert">
     {{ .Content }}
 
     {{ $remainingDates := after 1 $upcomingDates }}
     {{ with $remainingDates }}
     <div class="cal-upcoming not-prose">
-      <h3>Upcoming dates</h3>
+      <h2>Upcoming dates</h2>
       <ul>
         {{ range . }}
         <li>{{ time.AsTime . | dateFormat "Monday 2 January 2006" }}</li>

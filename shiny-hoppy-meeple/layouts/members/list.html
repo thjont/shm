@@ -9,7 +9,7 @@
       {{ $member := index hugo.Data "bgg-cache" "collections" $slug }}
       <a class="bgg-card" href="/members/{{ $slug }}/">
         <div class="bgg-card-body">
-          <h3>{{ $config.display_name }}</h3>
+          <h2>{{ $config.display_name }}</h2>
           {{ with $member }}
           <span class="bgg-year">{{ .count }} game{{ if ne .count 1 }}s{{ end }}</span>
           {{ end }}

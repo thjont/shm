@@ -7,11 +7,15 @@
       <table class="stats-table" id="stats-table">
         <thead>
           <tr>
-            <th class="stats-th stats-sortable stats-num" data-col="play-rank" aria-sort="ascending">Public #</th>
-            <th class="stats-th stats-sortable stats-num" data-col="member-rank">Member #</th>
-            <th class="stats-th stats-sortable" data-col="name">Game</th>
-            <th class="stats-th stats-sortable stats-num" data-col="plays">Public Count</th>
-            <th class="stats-th stats-sortable stats-num" data-col="member-plays">Member Count</th>
+            {{/* The sort control is a real <button>, so the table is sortable by
+                 keyboard and announced as actionable; the click handler below
+                 still delegates from the <th>, which the button's click bubbles
+                 to. aria-sort stays on the <th>, where it belongs. */}}
+            <th class="stats-th stats-sortable stats-num" data-col="play-rank" aria-sort="ascending"><button type="button">Public #</button></th>
+            <th class="stats-th stats-sortable stats-num" data-col="member-rank"><button type="button">Member #</button></th>
+            <th class="stats-th stats-sortable" data-col="name"><button type="button">Game</button></th>
+            <th class="stats-th stats-sortable stats-num" data-col="plays"><button type="button">Public Count</button></th>
+            <th class="stats-th stats-sortable stats-num" data-col="member-plays"><button type="button">Member Count</button></th>
           </tr>
         </thead>
         <tbody>

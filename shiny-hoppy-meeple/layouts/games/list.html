@@ -13,12 +13,17 @@
         <span class="bgg-finder-active" data-finder-active hidden></span>
       </summary>
       <form class="bgg-finder" id="game-finder">
+      {{/* Each filter's <summary> is named from its field label plus its own
+           text (aria-labelledby, including its own id), so it announces as
+           "Players, Any" and keeps announcing the live value as
+           game-finder.js rewrites the summary. Without this a screen-reader
+           user tabs through nine buttons all called "Any". */}}
       {{/* Union semantics: checked owners' shelves combine; nothing checked
            defaults to the main library. Members only — shadow libraries stay
            out of the grid entirely. */}}
-      <div class="bgg-finder-field">Owned by
+      <div class="bgg-finder-field"><span id="finder-owner-label">Owned by</span>
         <details class="bgg-finder-multi" data-finder-multi="owner" data-summary-empty="Main library">
-          <summary>Main library</summary>
+          <summary id="finder-owner-value" aria-labelledby="finder-owner-label finder-owner-value">Main library</summary>
           <div class="bgg-finder-multi-menu">
             <label><input type="checkbox" value="main-library">Main library</label>
             {{ range $slug, $config := hugo.Data.definitions.members }}
@@ -33,9 +38,9 @@
            look) as the category/mechanic multi-selects, so they behave well
            on mobile and join the dead-option grey-out. The empty-value "Any"
            radio is the default the Reset button reverts to. */}}
-      <div class="bgg-finder-field">Players
+      <div class="bgg-finder-field"><span id="finder-players-label">Players</span>
         <details class="bgg-finder-multi" data-finder-single="players">
-          <summary>Any</summary>
+          <summary id="finder-players-value" aria-labelledby="finder-players-label finder-players-value">Any</summary>
           <div class="bgg-finder-multi-menu">
             <label><input type="radio" name="players" value="" checked>Any</label>
             {{ range seq 1 7 }}<label><input type="radio" name="players" value="{{ . }}">{{ . }}</label>{{ end }}
@@ -43,27 +48,27 @@
           </div>
         </details>
       </div>
-      <div class="bgg-finder-field">Min play time
+      <div class="bgg-finder-field"><span id="finder-min-time-label">Min play time</span>
         <details class="bgg-finder-multi" data-finder-single="min-time">
-          <summary>Any</summary>
+          <summary id="finder-min-time-value" aria-labelledby="finder-min-time-label finder-min-time-value">Any</summary>
           <div class="bgg-finder-multi-menu">
             <label><input type="radio" name="min-time" value="" checked>Any</label>
             {{ range seq 15 15 120 }}<label><input type="radio" name="min-time" value="{{ . }}">{{ . }} min</label>{{ end }}
           </div>
         </details>
       </div>
-      <div class="bgg-finder-field">Max play time
+      <div class="bgg-finder-field"><span id="finder-max-time-label">Max play time</span>
         <details class="bgg-finder-multi" data-finder-single="max-time">
-          <summary>Any</summary>
+          <summary id="finder-max-time-value" aria-labelledby="finder-max-time-label finder-max-time-value">Any</summary>
           <div class="bgg-finder-multi-menu">
             <label><input type="radio" name="max-time" value="" checked>Any</label>
             {{ range seq 15 15 120 }}<label><input type="radio" name="max-time" value="{{ . }}">{{ . }} min</label>{{ end }}
           </div>
         </details>
       </div>
-      <div class="bgg-finder-field">Complexity
+      <div class="bgg-finder-field"><span id="finder-complexity-label">Complexity</span>
         <details class="bgg-finder-multi" data-finder-single="complexity">
-          <summary>Any</summary>
+          <summary id="finder-complexity-value" aria-labelledby="finder-complexity-label finder-complexity-value">Any</summary>
           <div class="bgg-finder-multi-menu">
             <label><input type="radio" name="complexity" value="" checked>Any</label>
             <label><input type="radio" name="complexity" value="light">Light</label>
@@ -72,9 +77,9 @@
           </div>
         </details>
       </div>
-      <div class="bgg-finder-field">Play style
+      <div class="bgg-finder-field"><span id="finder-play-style-label">Play style</span>
         <details class="bgg-finder-multi" data-finder-single="play-style">
-          <summary>Any</summary>
+          <summary id="finder-play-style-value" aria-labelledby="finder-play-style-label finder-play-style-value">Any</summary>
           <div class="bgg-finder-multi-menu">
             <label><input type="radio" name="play-style" value="" checked>Any</label>
             <label><input type="radio" name="play-style" value="competitive">Competitive</label>
@@ -84,9 +89,9 @@
           </div>
         </details>
       </div>
-      <div class="bgg-finder-field">Youngest player
+      <div class="bgg-finder-field"><span id="finder-age-label">Youngest player</span>
         <details class="bgg-finder-multi" data-finder-single="age">
-          <summary>Any</summary>
+          <summary id="finder-age-value" aria-labelledby="finder-age-label finder-age-value">Any</summary>
           <div class="bgg-finder-multi-menu">
             <label><input type="radio" name="age" value="" checked>Any</label>
             {{ range seq 6 14 }}<label><input type="radio" name="age" value="{{ . }}">{{ . }}</label>{{ end }}
@@ -96,9 +101,9 @@
       {{/* Terms below the threshold are pruned; deep links to them are
            ignored by game-finder.js (no matching checkbox to seed). */}}
       {{ $minGames := site.Params.shm.finderTermMinGames }}
-      <div class="bgg-finder-field">Categories
+      <div class="bgg-finder-field"><span id="finder-category-label">Categories</span>
         <details class="bgg-finder-multi" data-finder-multi="category">
-          <summary>Any</summary>
+          <summary id="finder-category-value" aria-labelledby="finder-category-label finder-category-value">Any</summary>
           <div class="bgg-finder-multi-menu">
             {{ range site.Taxonomies.categories.Alphabetical }}
             {{ if ge .Count $minGames }}
@@ -108,9 +113,9 @@
           </div>
         </details>
       </div>
-      <div class="bgg-finder-field">Mechanics
+      <div class="bgg-finder-field"><span id="finder-mechanic-label">Mechanics</span>
         <details class="bgg-finder-multi" data-finder-multi="mechanic">
-          <summary>Any</summary>
+          <summary id="finder-mechanic-value" aria-labelledby="finder-mechanic-label finder-mechanic-value">Any</summary>
           <div class="bgg-finder-multi-menu">
             {{ range site.Taxonomies.mechanics.Alphabetical }}
             {{ if ge .Count $minGames }}
@@ -233,7 +238,7 @@
         <img class="nozoom" src="{{ . }}" alt="" loading="lazy" />
         {{ end }}
         <div class="bgg-card-body">
-          <h3>{{ $it.name }}</h3>
+          <h2>{{ $it.name }}</h2>
           <span class="bgg-year">{{ $year }}</span>
           <div class="bgg-card-meta">
             {{ with $rating }}<span>★ {{ printf "%.1f" . }}</span>{{ end }}

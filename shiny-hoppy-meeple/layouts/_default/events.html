@@ -34,7 +34,7 @@
       {{ $isSaturday := eq $currentDate.Weekday.String "Saturday" }}
 
       {{ if ne $currentDate.Month $lastMonth }}
-        {{ if gt $lastMonth 0 }}{{ if not $skipMonth }}</table></div>{{ end }}{{ end }}
+        {{ if gt $lastMonth 0 }}{{ if not $skipMonth }}</tbody></table></div>{{ end }}{{ end }}
         {{ $lastMonth = $currentDate.Month }}
 
         {{ $currentMonthStr := $currentDate | dateFormat "2006-01" }}
@@ -42,10 +42,23 @@
           {{ $skipMonth = false }}
           <h2 class="cal-month">{{ $currentDate | dateFormat "January 2006" }}</h2>
           <div class="cal-grid-wrap">
+          {{/* One table per month, so each needs its own caption to be
+               identifiable out of context; the heading above is visual only.
+               scope="col" ties each date cell to its weekday. */}}
           <table class="cal-grid">
-            <tr class="cal-header">
-              <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
-            </tr>
+            <caption class="sr-only">Events in {{ $currentDate | dateFormat "January 2006" }}</caption>
+            <thead>
+              <tr class="cal-header">
+                <th scope="col"><abbr title="Sunday">Sun</abbr></th>
+                <th scope="col"><abbr title="Monday">Mon</abbr></th>
+                <th scope="col"><abbr title="Tuesday">Tue</abbr></th>
+                <th scope="col"><abbr title="Wednesday">Wed</abbr></th>
+                <th scope="col"><abbr title="Thursday">Thu</abbr></th>
+                <th scope="col"><abbr title="Friday">Fri</abbr></th>
+                <th scope="col"><abbr title="Saturday">Sat</abbr></th>
+              </tr>
+            </thead>
+            <tbody>
             <tr>
               {{ $refSunday = time.AsTime "2024-12-01" }}
               {{ $monthStart := time.AsTime (print ($currentDate | dateFormat "2006-01") "-01") }}
@@ -72,10 +85,14 @@
                 {{ $evPage := site.GetPage (print "events/" .slug) }}
                 {{ $pastClass := "" }}
                 {{ if le $evEnd $today }}{{ $pastClass = " cal-event-past" }}{{ end }}
+                {{/* "(past)" is text, not just the greyed-out styling, so the
+                     distinction survives without colour perception. */}}
+                {{ $pastNote := "" }}
+                {{ if $pastClass }}{{ $pastNote = "<span class=\"sr-only\"> (past)</span>" }}{{ end }}
                 {{ if $evPage }}
-                  <a class="cal-event{{ $pastClass }}" href="{{ $evPage.Permalink }}">{{ .summary }}</a>
+                  <a class="cal-event{{ $pastClass }}" href="{{ $evPage.Permalink }}">{{ .summary }}{{ $pastNote | safeHTML }}</a>
                 {{ else }}
-                  <div class="cal-event{{ $pastClass }}">{{ .summary }}</div>
+                  <div class="cal-event{{ $pastClass }}">{{ .summary }}{{ $pastNote | safeHTML }}</div>
                 {{ end }}
               {{ end }}
             {{ end }}
@@ -87,7 +104,7 @@
       {{ $currentDate = $currentDate.Add $oneDay }}
 
     {{ end }}
-    {{ if gt $lastMonth 0 }}{{ if not $skipMonth }}</table></div>{{ end }}{{ end }}
+    {{ if gt $lastMonth 0 }}{{ if not $skipMonth }}</tbody></table></div>{{ end }}{{ end }}
 
   </div>
 </div>

@@ -106,6 +106,11 @@ async function main() {
       endDate,
       startTime: formatTime(e.start.dateTime),
       endTime: formatTime(e.end.dateTime),
+      // Raw ISO 8601 (with offset) alongside the display strings above, for the
+      // schema.org/Event JSON-LD in layouts/events/single.html. Null for all-day
+      // events, which have a date but no dateTime.
+      startDateTime: e.start.dateTime || null,
+      endDateTime: e.end.dateTime || null,
       location: e.location || null,
       description: stripHtml(e.description),
     };

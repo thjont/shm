@@ -79,9 +79,21 @@ or picking up your first game, you'll find a warm welcome here.
 # dropdowns) and the term labels on game pages (.GetTerms) — the finder's
 # query-param deep links replaced the static /categories/, /mechanics/ and
 # /complexity/ pages, so don't render them. tags (blog posts) still renders.
+# Not rendering them left ~137 term entries (44 categories, 89 mechanics, 4
+# complexity) in the search index with an EMPTY permalink, so a search hit on
+# "Abstract Strategy" led nowhere. excludeFromSearch keeps them out of the index
+# and — because the theme's sitemap template checks the same param — out of the
+# sitemap too.
+#
+# Do NOT add `list = "never"` here: it empties site.Taxonomies.*.Alphabetical,
+# which is what populates the finder's Categories and Mechanics dropdowns. It was
+# tried, and it silently removed all 44 category and 89 mechanic checkboxes while
+# the build stayed green.
 [[cascade]]
   [cascade.build]
     render = "never"
+  [cascade.params]
+    excludeFromSearch = true
   [cascade.target]
     path = "{/categories,/categories/**,/mechanics,/mechanics/**,/complexity,/complexity/**}"
 

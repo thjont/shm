@@ -51,8 +51,11 @@
           {{ $shmRanks := partialCached "shm/shm-ranks.html" . "shm-ranks" }}
           <div><strong>SHM Rank</strong><br>{{ with index $shmRanks (print $game.id) }}#{{ . }}{{ else }}—{{ end }}</div>
           {{ if $inLibrary }}<a href="/library/"><strong>In Library</strong><br>Yes</a>{{ else }}<div><strong>In Library</strong><br>No</div>{{ end }}
-          <div><strong>Members</strong><br><span data-member-play-slug="{{ anchorize $game.name }}">…</span></div>
-          <div><strong>Public</strong><br><span data-play-slug="{{ anchorize $game.name }}">…</span></div>
+          {{/* An em dash, not "…": plays.js replaces it within a moment, but
+               without JavaScript the old ellipsis was a loading state that never
+               resolved. A dash reads as "no figure available", which is true. */}}
+          <div><strong>Members</strong><br><span data-member-play-slug="{{ anchorize $game.name }}">—</span></div>
+          <div><strong>Public</strong><br><span data-play-slug="{{ anchorize $game.name }}">—</span></div>
           <div><strong>BGG Rating</strong><br>{{ with $game.rating_bayes_average }}{{ printf "%.2f" . }} / 10{{ else }}—{{ end }}</div>
           <div><strong>Complexity</strong><br>{{ with partial "shm/complexity-bucket.html" $game.rating_average_weight }}{{ . }}{{ else }}—{{ end }}</div>
         </div>
