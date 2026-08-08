@@ -1,0 +1,32 @@
+{
+  "id": 204583,
+  "name": "Kingdomino",
+  "year": 2016,
+  "thumbnail": "/images/games/204583-thumb.webp",
+  "image": "/images/games/204583.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Kingdomino is a tile-laying game in which players take the role of monarchs expanding their kingdoms by claiming and arranging lands. Over the course of the game, players build a compact kingdom from forests, lakes, wheat fields, grasslands, swamps, and mines, carefully connecting matching terrain types while planning for valuable crown symbols that increase the prestige of their territories.\n\nEach round, players place the domino they selected on the previous turn, following placement rules that require at least one matching terrain connection (or connection to the starting castle tile). After placing a domino, they choose a new one from the available row for a future turn. The order in which dominoes are chosen also determines the turn order for the next round, creating a balance between claiming the most desirable tiles and securing an earlier turn.\n\nAt the end of the game, players score each connected territory by multiplying its number of squares by the number of crowns within that territory. Territories without crowns score no points. The player with the highest total score wins, with ties broken first by the size of the largest territory, then by the total number of crowns.\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 25,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Abstract Strategy",
+    "Medieval",
+    "Puzzle",
+    "Territory Building"
+  ],
+  "mechanics": [
+    "Enclosure",
+    "Open Drafting",
+    "Tile Placement",
+    "Turn Order: Claim Action"
+  ],
+  "rating_bayes_average": 7.169,
+  "rating_average_weight": 1.2393,
+  "thumbnail_source": "https://cf.geekdo-images.com/c0m3gwZTcfKoLI63ASio8g__small/img/4p4Xydg0tze9UFcd6oUbCnVyxCw=/fit-in/200x150/filters:strip_icc()/pic8443569.png",
+  "image_source": "https://cf.geekdo-images.com/c0m3gwZTcfKoLI63ASio8g__original/img/HT6NQPT0cSFcZXjSewtjTO_NBAE=/0x0/filters:format(png)/pic8443569.png"
+}
