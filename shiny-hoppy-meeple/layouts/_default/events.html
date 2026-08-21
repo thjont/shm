@@ -31,6 +31,15 @@
          games/single.html and events/single.html. */}}
     {{ with .Content }}<div class="cal-intro prose dark:prose-invert">{{ . }}</div>{{ end }}
 
+    {{/* Display-mode toggle — revealed by events-view.js, persisted in
+         localStorage ("eventsView"; calendar is the default, stored as no key).
+         Same pattern as the library's grid/list toggle (game-finder.js). */}}
+    <div class="cal-view-toggle" data-view-toggle hidden>
+      <button type="button" data-view="calendar" aria-pressed="true">Calendar</button>
+      <button type="button" data-view="list" aria-pressed="false">List</button>
+    </div>
+
+    <div class="cal-calendar-view" data-cal-calendar>
     {{ range seq $days }}
 
       {{ $isSunday := eq $currentDate.Weekday.String "Sunday" }}
@@ -108,7 +117,67 @@
 
     {{ end }}
     {{ if gt $lastMonth 0 }}{{ if not $skipMonth }}</tbody></table></div>{{ end }}{{ end }}
+    </div>
+
+    {{/* List view: one row per calendar entry, in the same visual language as
+         the library's list view (games/list.html, bgg-collection-list) — a
+         compact date badge stands in for the game thumbnail. One row per
+         entry is correct as-is: calendar-sync.js calls the Calendar API with
+         singleEvents:true, so recurring events already arrive expanded into
+         individual occurrences — no per-day fan-out to undo, unlike the grid
+         above, which repeats a multi-day event's link into every day it spans. */}}
+    <div class="cal-list" data-cal-list hidden>
+      {{ with site.Data.calendar }}
+        {{ range sort . "startDate" }}
+          {{ $ev := . }}
+          {{ $evPage := site.GetPage (print "events/" $ev.slug) }}
+          {{ $evEnd := time.AsTime $ev.endDate }}
+          {{ $pastClass := "" }}
+          {{ if le $evEnd $today }}{{ $pastClass = " cal-list-item-past" }}{{ end }}
+          {{ $pastNote := "" }}
+          {{ if $pastClass }}{{ $pastNote = "<span class=\"sr-only\"> (past)</span>" }}{{ end }}
+          {{ $startT := time.AsTime $ev.startDate }}
+          {{ $endInclT := $evEnd.Add (time.ParseDuration "-24h") }}
+          {{ $multiDay := not (eq ($startT | dateFormat "2006-01-02") ($endInclT | dateFormat "2006-01-02")) }}
+          {{ $dateLabel := $startT | dateFormat "Monday 2 January" }}
+          {{ if $multiDay }}{{ $dateLabel = print ($startT | dateFormat "Mon 2 Jan") " – " ($endInclT | dateFormat "Mon 2 Jan") }}{{ end }}
+          {{ $timeLabel := "" }}
+          {{ if not $multiDay }}
+            {{ with $ev.startTime }}{{ $timeLabel = . }}{{ with $ev.endTime }}{{ $timeLabel = print $timeLabel "–" . }}{{ end }}{{ end }}
+          {{ end }}
+          {{ if $evPage }}
+          <a class="cal-list-item{{ $pastClass }}" href="{{ $evPage.Permalink }}">
+            <div class="cal-list-date">
+              <span class="cal-list-month">{{ $startT | dateFormat "Jan" }}</span>
+              <span class="cal-list-day">{{ $startT.Day }}</span>
+            </div>
+            <div class="cal-list-body">
+              <span class="cal-list-summary">{{ $ev.summary }}{{ $pastNote | safeHTML }}</span>
+              <span class="cal-list-meta">{{ $dateLabel }}{{ with $timeLabel }} · {{ . }}{{ end }}{{ with $ev.location }} · {{ . }}{{ end }}</span>
+            </div>
+          </a>
+          {{ else }}
+          <div class="cal-list-item{{ $pastClass }}">
+            <div class="cal-list-date">
+              <span class="cal-list-month">{{ $startT | dateFormat "Jan" }}</span>
+              <span class="cal-list-day">{{ $startT.Day }}</span>
+            </div>
+            <div class="cal-list-body">
+              <span class="cal-list-summary">{{ $ev.summary }}{{ $pastNote | safeHTML }}</span>
+              <span class="cal-list-meta">{{ $dateLabel }}{{ with $timeLabel }} · {{ . }}{{ end }}{{ with $ev.location }} · {{ . }}{{ end }}</span>
+            </div>
+          </div>
+          {{ end }}
+        {{ end }}
+      {{ else }}
+      <p class="cal-list-empty">No upcoming events.</p>
+      {{ end }}
+    </div>
 
   </div>
 </div>
+{{/* Minified + fingerprinted; see partials/extend-head.html. */}}
+{{ with resources.Get "js/events-view.js" | resources.Minify | resources.Fingerprint "sha512" }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{ end }}
 {{ end }}
