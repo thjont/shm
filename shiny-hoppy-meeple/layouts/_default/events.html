@@ -10,14 +10,21 @@
 {{ $lastMonth := 0 }}
 {{ $refSunday := time.AsTime "2024-12-01" }}
 
+{{/* Past events (endDate, exclusive, on or before today) are dropped from
+     the page entirely, not just greyed out — filter once, use everywhere. */}}
+{{ $futureEvents := slice }}
+{{ range site.Data.calendar }}
+  {{ if gt (time.AsTime .endDate) $today }}
+    {{ $futureEvents = $futureEvents | append . }}
+  {{ end }}
+{{ end }}
+
 {{/* Pre-compute which months have at least one event */}}
 {{ $monthsWithEvents := slice }}
-{{ with site.Data.calendar }}
-  {{ range . }}
-    {{ $evMonth := time.AsTime .startDate | dateFormat "2006-01" }}
-    {{ if not (in $monthsWithEvents $evMonth) }}
-      {{ $monthsWithEvents = $monthsWithEvents | append $evMonth }}
-    {{ end }}
+{{ range $futureEvents }}
+  {{ $evMonth := time.AsTime .startDate | dateFormat "2006-01" }}
+  {{ if not (in $monthsWithEvents $evMonth) }}
+    {{ $monthsWithEvents = $monthsWithEvents | append $evMonth }}
   {{ end }}
 {{ end }}
 
@@ -89,23 +96,15 @@
       {{ if not $skipMonth }}
         <td class="cal-day{{ if eq ($currentDate | dateFormat "2006-01-02") (now | dateFormat "2006-01-02") }} cal-today{{ end }}">
           <span class="cal-day-num">{{ $currentDate.Day }}</span>
-          {{ with site.Data.calendar }}
-            {{ range . }}
-              {{ $evStart := time.AsTime .startDate }}
-              {{ $evEnd := time.AsTime .endDate }}
-              {{ if and (ge $currentDate $evStart) (lt $currentDate $evEnd) }}
-                {{ $evPage := site.GetPage (print "events/" .slug) }}
-                {{ $pastClass := "" }}
-                {{ if le $evEnd $today }}{{ $pastClass = " cal-event-past" }}{{ end }}
-                {{/* "(past)" is text, not just the greyed-out styling, so the
-                     distinction survives without colour perception. */}}
-                {{ $pastNote := "" }}
-                {{ if $pastClass }}{{ $pastNote = "<span class=\"sr-only\"> (past)</span>" }}{{ end }}
-                {{ if $evPage }}
-                  <a class="cal-event{{ $pastClass }}" href="{{ $evPage.Permalink }}">{{ .summary }}{{ $pastNote | safeHTML }}</a>
-                {{ else }}
-                  <div class="cal-event{{ $pastClass }}">{{ .summary }}{{ $pastNote | safeHTML }}</div>
-                {{ end }}
+          {{ range $futureEvents }}
+            {{ $evStart := time.AsTime .startDate }}
+            {{ $evEnd := time.AsTime .endDate }}
+            {{ if and (ge $currentDate $evStart) (lt $currentDate $evEnd) }}
+              {{ $evPage := site.GetPage (print "events/" .slug) }}
+              {{ if $evPage }}
+                <a class="cal-event" href="{{ $evPage.Permalink }}">{{ .summary }}</a>
+              {{ else }}
+                <div class="cal-event">{{ .summary }}</div>
               {{ end }}
             {{ end }}
           {{ end }}
@@ -127,15 +126,11 @@
          individual occurrences — no per-day fan-out to undo, unlike the grid
          above, which repeats a multi-day event's link into every day it spans. */}}
     <div class="cal-list" data-cal-list hidden>
-      {{ with site.Data.calendar }}
+      {{ with $futureEvents }}
         {{ range sort . "startDate" }}
           {{ $ev := . }}
           {{ $evPage := site.GetPage (print "events/" $ev.slug) }}
           {{ $evEnd := time.AsTime $ev.endDate }}
-          {{ $pastClass := "" }}
-          {{ if le $evEnd $today }}{{ $pastClass = " cal-list-item-past" }}{{ end }}
-          {{ $pastNote := "" }}
-          {{ if $pastClass }}{{ $pastNote = "<span class=\"sr-only\"> (past)</span>" }}{{ end }}
           {{ $startT := time.AsTime $ev.startDate }}
           {{ $endInclT := $evEnd.Add (time.ParseDuration "-24h") }}
           {{ $multiDay := not (eq ($startT | dateFormat "2006-01-02") ($endInclT | dateFormat "2006-01-02")) }}
@@ -146,24 +141,24 @@
             {{ with $ev.startTime }}{{ $timeLabel = . }}{{ with $ev.endTime }}{{ $timeLabel = print $timeLabel "–" . }}{{ end }}{{ end }}
           {{ end }}
           {{ if $evPage }}
-          <a class="cal-list-item{{ $pastClass }}" href="{{ $evPage.Permalink }}">
+          <a class="cal-list-item" href="{{ $evPage.Permalink }}">
             <div class="cal-list-date">
               <span class="cal-list-month">{{ $startT | dateFormat "Jan" }}</span>
               <span class="cal-list-day">{{ $startT.Day }}</span>
             </div>
             <div class="cal-list-body">
-              <span class="cal-list-summary">{{ $ev.summary }}{{ $pastNote | safeHTML }}</span>
+              <span class="cal-list-summary">{{ $ev.summary }}</span>
               <span class="cal-list-meta">{{ $dateLabel }}{{ with $timeLabel }} · {{ . }}{{ end }}{{ with $ev.location }} · {{ . }}{{ end }}</span>
             </div>
           </a>
           {{ else }}
-          <div class="cal-list-item{{ $pastClass }}">
+          <div class="cal-list-item">
             <div class="cal-list-date">
               <span class="cal-list-month">{{ $startT | dateFormat "Jan" }}</span>
               <span class="cal-list-day">{{ $startT.Day }}</span>
             </div>
             <div class="cal-list-body">
-              <span class="cal-list-summary">{{ $ev.summary }}{{ $pastNote | safeHTML }}</span>
+              <span class="cal-list-summary">{{ $ev.summary }}</span>
               <span class="cal-list-meta">{{ $dateLabel }}{{ with $timeLabel }} · {{ . }}{{ end }}{{ with $ev.location }} · {{ . }}{{ end }}</span>
             </div>
           </div>
