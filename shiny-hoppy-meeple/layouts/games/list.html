@@ -190,6 +190,13 @@
     <div class="bgg-collection bgg-collection-compact">
       {{ range $entries }}
       {{ $it := .item }}
+      {{/* The collection item's name is whatever BGG had on record when the
+           game was added — sometimes an alternate/original-language title
+           (e.g. "ナナ" for a game later reprinted as "Trio"). The single-game
+           page is always built from the cached game's primary name
+           (content/games/_content.gotmpl), so the card must link and label
+           itself with that same name or it 404s. */}}
+      {{ $name := $it.name }}
       {{ $thumb := $it.thumbnail }}
       {{ $year := $it.year }}
       {{/* Always the BGG bayes average — member items carry a personal rating
@@ -204,6 +211,7 @@
       {{ $mechanics := slice }}
       {{ $playStyle := "" }}
       {{ with index hugo.Data "bgg-cache" "games" (print $it.id) }}
+        {{ $name = .name }}
         {{ if not $thumb }}{{ $thumb = .thumbnail }}{{ end }}
         {{ if not $year }}{{ $year = .year }}{{ end }}
         {{ $rating = .rating_bayes_average }}
@@ -218,8 +226,8 @@
       {{ end }}
       {{/* Member-only cards render pre-hidden so the no-JS view stays the main
            library, matching the finder's default "Owned by" state. */}}
-      <a class="bgg-card{{ if .memberOnly }} bgg-card-hidden{{ end }}" href="/games/{{ anchorize $it.name }}/"
-         data-name="{{ $it.name }}"
+      <a class="bgg-card{{ if .memberOnly }} bgg-card-hidden{{ end }}" href="/games/{{ anchorize $name }}/"
+         data-name="{{ $name }}"
          data-owners="{{ delimit .owners " " }}"
          data-min-players="{{ $minPlayers }}"
          data-max-players="{{ $maxPlayers }}"
@@ -238,7 +246,7 @@
         <img class="nozoom" src="{{ . }}" alt="" loading="lazy" />
         {{ end }}
         <div class="bgg-card-body">
-          <h2>{{ $it.name }}</h2>
+          <h2>{{ $name }}</h2>
           <span class="bgg-year">{{ $year }}</span>
           <div class="bgg-card-meta">
             {{ with $rating }}<span>★ {{ printf "%.1f" . }}</span>{{ end }}
