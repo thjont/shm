@@ -359,6 +359,7 @@ own bundles. The fingerprint is what makes the immutable `Cache-Control` rule sa
 | `assets/css/calendar.css` | `partials/extend-head-uncached.html` | section `events` only (the calendar page and each event page) |
 | `assets/js/plays.js` | `partials/extend-footer.html` | every page (it exits early when a page has no count elements) |
 | `assets/js/game-finder.js` | `layouts/games/list.html` | the library page |
+| `assets/js/events-view.js` | `layouts/_default/events.html` | the events page (calendar/list toggle) |
 
 > [!IMPORTANT]
 > The theme calls `extend-head.html` as `partialCached "extend-head.html" .Site` — no page context,
