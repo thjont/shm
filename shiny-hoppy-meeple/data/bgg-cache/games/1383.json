@@ -1,0 +1,28 @@
+{
+  "id": 1383,
+  "name": "Pool Party",
+  "year": 1999,
+  "thumbnail": "/images/games/1383-thumb.webp",
+  "image": "/images/games/1383.webp",
+  "image_width": 653,
+  "image_height": 871,
+  "description": "In Pool Party (Splash Party), players will need to knock all of their opponent’s pieces into the pool while attempting to keep theirs safe and dry!\n\nPlayers are secretly assigned a color at the beginning of the game that corresponds to three of the pieces around the board. On their turn, they will select a piece (it can be their own color or not), look at the number written on the bottom (1, 2, or 3), and move the piece by that many spaces to the right or the left around the board. If there is another piece in the space the piece ends up in, that piece is knocked into the pool and eliminated! Once all the pieces of a given color are eliminated, the corresponding player is out.\n\nThere is another method for eliminating players in this game - correctly guessing another player’s assigned color! When a player moves a piece past the diving board space, they are allowed to guess another player’s color. If correct, all of that player’s pieces fall into the pool and they are eliminated. If incorrect, the guessing player’s pieces all fall into the pool instead! Guessing a player’s color is a big gamble, so there are times where it may not make sense to attempt it.\n\nPool Party (Splash Party) is a quick and easy-to-learn game with a clever tin that allows for play on-the-go!\n\n- Description from the publisher",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 10,
+  "min_age": 6,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Party Game"
+  ],
+  "mechanics": [
+    "Memory",
+    "Player Elimination",
+    "Take That"
+  ],
+  "rating_bayes_average": 5.6339,
+  "rating_average_weight": 1,
+  "thumbnail_source": "https://cf.geekdo-images.com/kD3mjGxkxNAsvZdwZDUK3w__small/img/R6y0yz5MbKFA8K8JkXTSkMAGbZo=/fit-in/200x150/filters:strip_icc()/pic6548436.jpg",
+  "image_source": "https://cf.geekdo-images.com/kD3mjGxkxNAsvZdwZDUK3w__original/img/wYc4KnryCUZ-H0HcSZJQkMmn414=/0x0/filters:format(jpeg)/pic6548436.jpg"
+}

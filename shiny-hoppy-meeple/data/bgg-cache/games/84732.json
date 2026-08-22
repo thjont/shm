@@ -1,0 +1,28 @@
+{
+  "id": 84732,
+  "name": "Kariba",
+  "year": 2010,
+  "thumbnail": "/images/games/84732-thumb.webp",
+  "image": "/images/games/84732.webp",
+  "image_width": 352,
+  "image_height": 606,
+  "description": "All animals are thirsty after an adventurous day in the savannah, so they've all trekked to the drinking grounds. Every animal wants to be the first to drink, but watch out! The elephant scares the rhino, the rhino scares the ostrich, and the ostrich scares the zebra. Anything can happen... The mice might even scare the elephant! The player who scares away the most animals wins.\n\nTo set up Kariba, shuffle the cards and deal five to each player, placing the remainder face down as a deck. Place the game board in the center of the table.\nDuring a round, a player lays down one or more cards of the same animal, placing the cards in the corresponding position (1-9) around the lake.\nIf at least 3 cards of the same animal are placed in front of the lake, then these animals scare weaker animal(s) (closest lower number) while they are drinking. The player picks all the cards from the weaker animal off the board and puts them face down in front of her/him. Each card is worth 1 point, and whoever has the most points wins.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 15,
+  "min_age": 6,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Children's Game"
+  ],
+  "mechanics": [
+    "Hand Management",
+    "Rock-Paper-Scissors"
+  ],
+  "rating_bayes_average": 6.29604,
+  "rating_average_weight": 1.0562,
+  "thumbnail_source": "https://cf.geekdo-images.com/K92SFm86Thp6flcFmAX0wQ__small/img/BZsJT2pOJcDMUmDa3sKtTvcNKmM=/fit-in/200x150/filters:strip_icc()/pic8624565.png",
+  "image_source": "https://cf.geekdo-images.com/K92SFm86Thp6flcFmAX0wQ__original/img/J5fE5LGjekRyEzLfAJo3fSHmw6A=/0x0/filters:format(png)/pic8624565.png"
+}

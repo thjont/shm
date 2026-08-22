@@ -1,0 +1,28 @@
+{
+  "id": 311322,
+  "name": "Herd Mentality",
+  "year": 2020,
+  "thumbnail": "/images/games/311322-thumb.webp",
+  "image": "/images/games/311322.webp",
+  "image_width": 900,
+  "image_height": 1183,
+  "description": "This is a party game for families, friends and cow rustlers. The aim of the game is simple: think like the herd and write down the same answers as your friends.\n\nIf your answer is part of the majority, you all win cows. Yeehaw! If everyone else writes an answer that is matched by at least one other person, but yours is the odd one out, then you land the angry Pink Cow, and your herd of cows is worthless until you can offload it onto someone else.\n\nThe first player to collect eight cows wins.",
+  "min_players": 4,
+  "max_players": 20,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Hot Potato",
+    "Voting"
+  ],
+  "rating_bayes_average": 6.14651,
+  "rating_average_weight": 1,
+  "thumbnail_source": "https://cf.geekdo-images.com/85hYrpSl9Aoh2TgMf4CiDA__small/img/b4cbnSNGps3koFIZKsh2ThZwV8E=/fit-in/200x150/filters:strip_icc()/pic5509026.png",
+  "image_source": "https://cf.geekdo-images.com/85hYrpSl9Aoh2TgMf4CiDA__original/img/QPcr2EfpZjJzvNGjfQZwRbs-kMo=/0x0/filters:format(png)/pic5509026.png"
+}

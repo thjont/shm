@@ -1,0 +1,30 @@
+{
+  "id": 1867,
+  "name": "Curse of the Idol",
+  "year": 1990,
+  "thumbnail": "/images/games/1867-thumb.webp",
+  "image": "/images/games/1867.webp",
+  "image_width": 900,
+  "image_height": 675,
+  "description": "The game target is to fetch the sword in the stone, then go to the temple and there chose the right hole in the idol. If you manage to get the blood stone, then you should hurry back to the camp with it. The others may try, to steal it from you, of course.\n\nYou can either move your own pawn or the black adventurer to block other players. To enter into the centre of the board with the \"blood stone statue\", you need to walk over movable cog-wheels, which turn every time you land on certain squares.\n\nThis game plays like an advanced \"Ludo\". It is difficult to put together the 3D game board if you don't mark up the corner support the first time you succeed to assemble it.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 60,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Adventure",
+    "Children's Game",
+    "Dice",
+    "Exploration"
+  ],
+  "mechanics": [
+    "Pick-up and Deliver",
+    "Roll / Spin and Move"
+  ],
+  "rating_bayes_average": 5.46205,
+  "rating_average_weight": 1.1915,
+  "thumbnail_source": "https://cf.geekdo-images.com/_OPSFwnvl8G-hwJMJPIa4w__small/img/M2Lk4q1g1SyDSxgqzFJXwP79jgg=/fit-in/200x150/filters:strip_icc()/pic567678.jpg",
+  "image_source": "https://cf.geekdo-images.com/_OPSFwnvl8G-hwJMJPIa4w__original/img/m2NLjJqMRFCrq84fEeAT-xynN5o=/0x0/filters:format(jpeg)/pic567678.jpg"
+}

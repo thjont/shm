@@ -1,0 +1,28 @@
+{
+  "id": 264239,
+  "name": "Patchwork Doodle",
+  "year": 2019,
+  "thumbnail": "/images/games/264239-thumb.webp",
+  "image": "/images/games/264239.webp",
+  "image_width": 900,
+  "image_height": 1255,
+  "description": "Patchwork Doodle is a roll-and-write version of Patchwork, with each player having their own 9x9 grid to fill in over the course of the game. Each player sets up by drawing a unique polyomino card from the starting deck, then drawing that on their sheet.\n\nIn each round, players lay out a number of polyomino cards in a circle, then place the rabbit between two cards. On a turn, someone rolls the die, moves the rabbit forward, then removes the card indicated by the rabbit. Each player must draw the polyomino indicated on this card in their grid. Once a certain number of cards have been played, the round ends, players score points, then you lay out more cards for the next round.\n\nEach player has four special actions available to them during the game: You can choose to draw the card before or after the chosen card, you can cut a polyomino into two pieces before adding one piece to your grid, you can fill in a 1x1 space in your grid, and you can do one of the above actions a second time. When you take one of these actions, you mark it off as each can be used only once (except for the one you use a second time, if you know what I mean).\n\nYou lose a point for each space that you don't cover, so try to pack everything in as tightly as possible!",
+  "min_players": 1,
+  "max_players": 6,
+  "playing_time": 20,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Puzzle"
+  ],
+  "mechanics": [
+    "Bingo",
+    "Dice Rolling",
+    "Paper-and-Pencil"
+  ],
+  "rating_bayes_average": 6.01122,
+  "rating_average_weight": 1.2564,
+  "thumbnail_source": "https://cf.geekdo-images.com/8nSMDhVg9QsyesfLBwIxCA__small/img/scutbWwsWG69Ba-T5Rllyr-Xp3o=/fit-in/200x150/filters:strip_icc()/pic4682702.jpg",
+  "image_source": "https://cf.geekdo-images.com/8nSMDhVg9QsyesfLBwIxCA__original/img/SLn-yrpjoQXEgzAE8HamdJ0YSvg=/0x0/filters:format(jpeg)/pic4682702.jpg"
+}

@@ -1,0 +1,28 @@
+{
+  "id": 420242,
+  "name": "VIVO",
+  "year": 2024,
+  "thumbnail": "/images/games/420242-thumb.webp",
+  "image": "/images/games/420242.webp",
+  "image_width": 768,
+  "image_height": 1299,
+  "description": "In Vivo, each round starts by revealing a harmony type (Solo, Duet, Trio, Quartet). The harmony determines how many suits must be played in the trick—not being able to is considered playing “off-harmony,” making that player ineligible for points.\n\nAt the end of the trick, the player who played the highest on-harmony card scores two points, and the lowest on-harmony card scores for the value of that card (those bass notes are so important!).",
+  "min_players": 3,
+  "max_players": 4,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Card Game",
+    "Music"
+  ],
+  "mechanics": [
+    "Trick-taking"
+  ],
+  "rating_bayes_average": 5.91805,
+  "rating_average_weight": 1.4167,
+  "thumbnail_source": "https://cf.geekdo-images.com/a4fv53JLtFlpo7XjDsItPQ__small/img/urtarfT1n-8LsDXd22wkGLrkc0o=/fit-in/200x150/filters:strip_icc()/pic8896480.jpg",
+  "image_source": "https://cf.geekdo-images.com/a4fv53JLtFlpo7XjDsItPQ__original/img/CoApWVrOOb8WYv-RzLlIjmtnCtM=/0x0/filters:format(jpeg)/pic8896480.jpg"
+}

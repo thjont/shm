@@ -1,0 +1,38 @@
+{
+  "id": 244521,
+  "name": "Quacks",
+  "year": 2018,
+  "thumbnail": "/images/games/244521-thumb.webp",
+  "image": "/images/games/244521.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "In Quacks, which was first released as The Quacks of Quedlinburg, players are charlatans — or quack doctors — each making their own secret brew by adding ingredients one at a time. Take care with what you add, though, for a pinch too much of this or that will spoil the whole mixture!\n\nEach player has their own bag of ingredient chips. During each round, they simultaneously draw chips from their bags and add them to their pots. The higher the face value of the drawn chip, the further it is placed in the pot's swirling pattern, increasing how much the potion will be worth. Push your luck as far as you can, but if you add too many cherry bombs, your pot will explode!\n\nAt the end of each round, players gain victory points and coins to spend on new ingredients, depending on how well they managed to fill up their pots. But players whose pots have exploded must choose points or coins — not both! The player with the most victory points at the end of nine rounds wins the game.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 45,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Fantasy",
+    "Medieval"
+  ],
+  "mechanics": [
+    "Catch the Leader",
+    "Deck, Bag, and Pool Building",
+    "Delayed Purchase",
+    "Dice Rolling",
+    "Die Icon Resolution",
+    "Events",
+    "Neighbor Scope",
+    "Push Your Luck",
+    "Score-and-Reset Game",
+    "Simultaneous Action Selection",
+    "Track Movement",
+    "Variable Set-up"
+  ],
+  "rating_bayes_average": 7.66511,
+  "rating_average_weight": 1.9414,
+  "thumbnail_source": "https://cf.geekdo-images.com/B1bLRWzTASZ-xx9NoAE79A__small/img/deG3pr-ORZ3JrGvQA-oQNrwh0l0=/fit-in/200x150/filters:strip_icc()/pic8780293.png",
+  "image_source": "https://cf.geekdo-images.com/B1bLRWzTASZ-xx9NoAE79A__original/img/HulJk6gFzp_bxl0wzc2XEMq8NLM=/0x0/filters:format(png)/pic8780293.png"
+}

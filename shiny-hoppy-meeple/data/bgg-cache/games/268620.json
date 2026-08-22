@@ -1,0 +1,35 @@
+{
+  "id": 268620,
+  "name": "Similo",
+  "year": 2019,
+  "thumbnail": "/images/games/268620-thumb.webp",
+  "image": "/images/games/268620.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Similo  is a co-operative deduction game, and each version of the game — e.g., Fables, History, Myths — comes with a deck of thirty cards, beautifully illustrated by Na&iuml;ade, showing the portrait and the name of a series of characters with a common theme.\n\nYour goal is to make the other players guess one secret character (out of the twelve characters on display in the middle of the table) by playing other character cards from your hand as clues, stating whether they are similar to or different from the secret character. After each turn, the other players must remove one or more characters from the table until only the right one remains and you win — or it is removed and you lose!\n\nYou can play with one of the Similo sets on its own, using the cards from, say, Fables both for the characters being laid out and for the clues being given to the guessers, or you can use the cards from one set for the twelve characters on display and the cards from another set as the clues. The game is far trickier this way!",
+  "min_players": 2,
+  "max_players": 8,
+  "playing_time": 15,
+  "min_age": 7,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Card Game",
+    "Children's Game",
+    "Deduction",
+    "Fantasy",
+    "Mythology"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Cooperative Game",
+    "Deduction",
+    "Score-and-Reset Game",
+    "Voting"
+  ],
+  "rating_bayes_average": 6.46924,
+  "rating_average_weight": 1.0492,
+  "thumbnail_source": "https://cf.geekdo-images.com/fl0hNCmltu2hpcmXaVnmLg__small/img/Nwxz6SRTlKky0ynhYUEk2ooRZc4=/fit-in/200x150/filters:strip_icc()/pic6417388.png",
+  "image_source": "https://cf.geekdo-images.com/fl0hNCmltu2hpcmXaVnmLg__original/img/1kS0DQYV4y8HQdAmSlNhOW01Lhg=/0x0/filters:format(png)/pic6417388.png"
+}

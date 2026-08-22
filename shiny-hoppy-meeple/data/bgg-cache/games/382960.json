@@ -1,0 +1,29 @@
+{
+  "id": 382960,
+  "name": "Line-it",
+  "year": 2023,
+  "thumbnail": "/images/games/382960-thumb.webp",
+  "image": "/images/games/382960.webp",
+  "image_width": 900,
+  "image_height": 1176,
+  "description": "In Line-it, you build an ascending or descending line of numbered cards to score points. Will you play safe and bank the points to start a new line, or will you keep trying to add to the line to claim a jackpot?\n\nThe deck consists of cards in four colors numbered 1-100 and six \"Bet\" cards numbered 3-5. Shuffle the deck, then lay out cards in the market equal to two more than the number of players. Starting with the first player, each player must pick a card, then either start a line/add it to their line or place it in their hand. Your maximum hand size is two, and if you can't add the card to your hand or to your line (because it would break the ascending/descending pattern), you must score your line, then play that card to start a new line. You can add one Bet card to your line without regard for its ascending/descending status or the value of your end card.\n\nAfter drafting a card, you may choose to play one card from your hand into your line, then you may choose to score your line. When you score, if you have a Bet card in the line, see whether you've added a number of cards to your line after the bet that at least equals the value of the Bet; if so, take a positive number token equal to the Bet card, and if not, flip that token to its negative side instead. Next, discard three cards from the line, then flip all the remaining cards face down and place them in your scoring pile.\n\nAfter everyone one has drafted (and optionally played and scored), discard unchosen Bet cards, then place unchosen number cards under the jackpot token that matches their color: yellow under the star, green under the leaf, etc. If during your turn, you add the third card of a color to your line, you immediately claim the cards under the matching jackpot token and place them in your scoring pile.\n\nWhen you can't lay out enough cards, each player in turn plays one card from their hand, then scores their line and tallies their points. You earn 1 point for each scored card, then gain/lose points from the Bet tokens you collected. Whoever has the highest score wins.",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 20,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Closed Drafting",
+    "Contracts",
+    "Ordering"
+  ],
+  "rating_bayes_average": 5.5562,
+  "rating_average_weight": 1,
+  "thumbnail_source": "https://cf.geekdo-images.com/p2dw7oi8hfGVK57nQMoJgg__small/img/ltjbvisjcTFhSFhbpP-KJQXG6SM=/fit-in/200x150/filters:strip_icc()/pic7427524.jpg",
+  "image_source": "https://cf.geekdo-images.com/p2dw7oi8hfGVK57nQMoJgg__original/img/zS90BWfYhu_QHSA2qoNCdc_V-z0=/0x0/filters:format(jpeg)/pic7427524.jpg"
+}

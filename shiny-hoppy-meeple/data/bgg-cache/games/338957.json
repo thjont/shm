@@ -1,0 +1,31 @@
+{
+  "id": 338957,
+  "name": "Caesar!: Seize Rome in 20 Minutes!",
+  "year": 2021,
+  "thumbnail": "/images/games/338957-thumb.webp",
+  "image": "/images/games/338957.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "The Roman Republic is coming to an end, but not before a power struggle between Caesar and Pompey. Players will command their legions, strategically deploying them to key battlegrounds to try and seize control of the provinces and become ruler of the republic.\n\nPlayers draw tokens from a bag to determine their starting forces and to replenish their losses. Players allocate their resources to each province, gaining tactical advantages and vying for control of the republic.\n\nThree modules to expand the game are included: poison your opponent, deploy powerful Centurions and use underhanded tactics to gain advantages in the Expansions of Rome.",
+  "min_players": 1,
+  "max_players": 2,
+  "playing_time": 20,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Ancient",
+    "Civil War",
+    "Wargame"
+  ],
+  "mechanics": [
+    "Area Majority / Influence",
+    "Chit-Pull System",
+    "Simulation",
+    "Solo / Solitaire Game"
+  ],
+  "rating_bayes_average": 6.76547,
+  "rating_average_weight": 1.944,
+  "thumbnail_source": "https://cf.geekdo-images.com/Mw_WmNeSTRgEgiQG87YPgQ__small/img/vq3rQ-SOu-77cD61UeJq58dcZZQ=/fit-in/200x150/filters:strip_icc()/pic6228356.png",
+  "image_source": "https://cf.geekdo-images.com/Mw_WmNeSTRgEgiQG87YPgQ__original/img/fgw5B0oFNDZlNj6Yig97m4625lI=/0x0/filters:format(png)/pic6228356.png"
+}

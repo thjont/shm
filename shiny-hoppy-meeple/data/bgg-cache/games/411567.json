@@ -1,0 +1,30 @@
+{
+  "id": 411567,
+  "name": "The Gang",
+  "year": 2024,
+  "thumbnail": "/images/games/411567-thumb.webp",
+  "image": "/images/games/411567.webp",
+  "image_width": 900,
+  "image_height": 1248,
+  "description": "Round up your gang and get ready to pull off a series of bank heists using the power of poker!\n\nIn The Gang, a co-operative version of Texas Hold'em, players bet on how good they think their hand of cards will be relative to the other players, then try to make their predictions a reality.\n\nEarly in a round, without talking to each other, each player chooses a chip indicating how good they think their hand is. Then they begin dealing cards into the middle of the table and have a chance to reassess their hands as more cards are revealed. At the end of the round, players see whether they correctly evaluated their hand. If all players did, you get to open one of the bank vaults! If not, you trip the alarm! If you manage to open three vaults before you trip the alarm three times, your gang wins!\n\n—description from the publisher",
+  "min_players": 3,
+  "max_players": 6,
+  "playing_time": 20,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Cooperative Game",
+    "Deduction",
+    "Predictive Bid"
+  ],
+  "rating_bayes_average": 7.13516,
+  "rating_average_weight": 1.5967,
+  "thumbnail_source": "https://cf.geekdo-images.com/ydwU0FMlRVa6wt8tOu1tgg__small/img/9hYAUB4S9PHAVvUoPEcaRm7jHIg=/fit-in/200x150/filters:strip_icc()/pic7962719.jpg",
+  "image_source": "https://cf.geekdo-images.com/ydwU0FMlRVa6wt8tOu1tgg__original/img/RT9ajRhK-eHlBJgsksL9rJQHIuk=/0x0/filters:format(jpeg)/pic7962719.jpg"
+}

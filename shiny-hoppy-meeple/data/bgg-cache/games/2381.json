@@ -1,0 +1,29 @@
+{
+  "id": 2381,
+  "name": "Scattergories",
+  "year": 1988,
+  "thumbnail": "/images/games/2381-thumb.webp",
+  "image": "/images/games/2381.webp",
+  "image_width": 779,
+  "image_height": 634,
+  "description": "In Scattergories, published in 1988 by Milton Bradley, each player fills out a category list with answers that begin with the same letter. If no other player matches your answers, you score points. The game is played in rounds. After 3 rounds a winner is declared, and a new game can be begun.\n\nScattergories is a commercial version of an old parlor game known as Categories or Guggenheim.\n\nSimilar to:\n\n    Facts in Five",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 30,
+  "min_age": 12,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Party Game",
+    "Real-time",
+    "Word Game"
+  ],
+  "mechanics": [
+    "Dice Rolling",
+    "Paper-and-Pencil"
+  ],
+  "rating_bayes_average": 6.08483,
+  "rating_average_weight": 1.3567,
+  "thumbnail_source": "https://cf.geekdo-images.com/eIL4hvMb7ZPgizc7BZOh-g__small/img/sx0XxYqv0FtsIp-RoW-5C42sLOc=/fit-in/200x150/filters:strip_icc()/pic4994410.jpg",
+  "image_source": "https://cf.geekdo-images.com/eIL4hvMb7ZPgizc7BZOh-g__original/img/ZjWZidMJYVPML2OXLGfvQqR8Hyw=/0x0/filters:format(jpeg)/pic4994410.jpg"
+}

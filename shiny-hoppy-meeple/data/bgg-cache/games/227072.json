@@ -1,0 +1,34 @@
+{
+  "id": 227072,
+  "name": "The Chameleon",
+  "year": 2017,
+  "thumbnail": "/images/games/227072-thumb.webp",
+  "image": "/images/games/227072.webp",
+  "image_width": 851,
+  "image_height": 484,
+  "description": "A bluffing deduction game for everyone.\n\nEach round involves two missions, depending on whether you’re the Chameleon or not.\n\nMission 1: You are the Chameleon. No one knows your identity except you. Your mission is to blend in, not get caught and to work out the Secret Word.\n\nMission 2: You are not the Chameleon. Try to work out who the Chameleon is without giving away the Secret Word.\n\nAt the beginning of the round each player receives a card that tells them if they are the Chameleon or hunting the Chameleon. Two dice are rolled and this gives everyone (except the Chameleon) the coordinates to a specific word on a Topic Card – this is the Secret Word for the round. Each Topic Card features 16 related words (e.g. countries, books, food, etc.)\n\nEach player must now say a word relating to the Secret Word. The Chameleon can only make an educated guess based on the 16 words in front of them.",
+  "min_players": 3,
+  "max_players": 8,
+  "playing_time": 15,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Bluffing",
+    "Card Game",
+    "Deduction",
+    "Humor",
+    "Party Game",
+    "Word Game"
+  ],
+  "mechanics": [
+    "Hidden Roles",
+    "Targeted Clues",
+    "Team-Based Game",
+    "Voting"
+  ],
+  "rating_bayes_average": 6.16715,
+  "rating_average_weight": 1.0485,
+  "thumbnail_source": "https://cf.geekdo-images.com/-uBkiypUVyRKxNuOI_-ZpQ__small/img/qv_sRsagG0xQzNxg4Ol_AgiR2SY=/fit-in/200x150/filters:strip_icc()/pic3552344.png",
+  "image_source": "https://cf.geekdo-images.com/-uBkiypUVyRKxNuOI_-ZpQ__original/img/Y_12y74FIaAXMfiQ0tFhpfkrN1U=/0x0/filters:format(png)/pic3552344.png"
+}

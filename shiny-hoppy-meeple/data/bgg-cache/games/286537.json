@@ -1,0 +1,35 @@
+{
+  "id": 286537,
+  "name": "Burgle Bros 2: The Casino Capers",
+  "year": 2021,
+  "thumbnail": "/images/games/286537-thumb.webp",
+  "image": "/images/games/286537.webp",
+  "image_width": 900,
+  "image_height": 1312,
+  "description": "The Burgle Bros are back at it. Never one to turn down a challenging heist, they have decided to take down a string of casinos. But this is no office job—tougher safes, tightened security, and, perhaps worst of all, you'll be working during the day!\n\nSo what's new in Burgle Bros 2?\n\nGear - Each player now has a kit of unique tools that can be used during ANY player's turn. This leads to coordinated plays and amazing saves, but your gear must be prepped first before you can use it.\n\nNew Tiles - You'll still be exploring different floors and flipping over tiles, but Burgle Bros 2 is full of new tiles and new dangers. Clear the security tapes in the Surveillance room, try your luck at the Table Games, or stop by the eventful Pool and Lounge tiles to see what happens.\n\nBouncers - Bouncers are like guards from the original Burgle Bros, but with streamlined rules. If they ever run out of cards in their patrol deck, look out! At that point they hunt for the nearest player every turn.\n\nChips - Because you're infiltrating the casino in broad daylight, you're going to have to deal with more than just bouncers. Unrevealed chips are scattered throughout each floor, representing people in the casino. A Mole might give you info you need to crack the safe, and a Crowd might hide you from the bouncer. But look out for a Saleswoman who will talk your ear off, trapping you in that tile!\n\nFinales - Once the safe is open, things get crazy. Finales add a game-changing twist in order to make it out of the casino with your hard-earned loot.\n\nCampaign Mode - Beat each finale in succession and get rewards! The game adapts its difficulty according to whether you win or lose.",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 70,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Exploration",
+    "Maze",
+    "Spies / Secret Agents"
+  ],
+  "mechanics": [
+    "Action Points",
+    "Cooperative Game",
+    "Dice Rolling",
+    "Grid Movement",
+    "Modular Board",
+    "Solo / Solitaire Game",
+    "Three Dimensional Movement",
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 6.31182,
+  "rating_average_weight": 2.5385,
+  "thumbnail_source": "https://cf.geekdo-images.com/YNcSJhDM_g-2av0pzNs4wQ__small/img/_3QhL_-pkBScdNFqOKxwj0zY-OA=/fit-in/200x150/filters:strip_icc()/pic6087472.png",
+  "image_source": "https://cf.geekdo-images.com/YNcSJhDM_g-2av0pzNs4wQ__original/img/G87808ARUrKMTSecrfiZRUYNtyU=/0x0/filters:format(png)/pic6087472.png"
+}

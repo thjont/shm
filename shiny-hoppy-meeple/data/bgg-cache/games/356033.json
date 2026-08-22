@@ -1,0 +1,34 @@
+{
+  "id": 356033,
+  "name": "Libertalia: Winds of Galecrest",
+  "year": 2022,
+  "thumbnail": "/images/games/356033-thumb.webp",
+  "image": "/images/games/356033.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "In the world of Galecrest, sky pirates set sail on the winds in search of adventure, treasure, and glory. As an admiral, you command a vast and varied crew...but so do your rivals sailing other ships in the pirate fleet. Each day the fleet lands on a different island where you'll send a crew member to collect your share of the loot, hoping they'll return to boost your growing group of characters.\n\nLibertalia was originally released in 2012. Ten years later, Libertalia: Winds of Galecrest celebrates the foundations of the original design with a revised and expanded edition that includes all-new art, 40 characters per player, a reputation system to resolve ties, deluxe loot tokens, a robust solo mode, and much more.\n\n—description from the publisher",
+  "min_players": 1,
+  "max_players": 6,
+  "playing_time": 60,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Fantasy",
+    "Pirates"
+  ],
+  "mechanics": [
+    "Action Queue",
+    "Hand Management",
+    "Selection Order Bid",
+    "Set Collection",
+    "Simultaneous Action Selection",
+    "Take That",
+    "Turn Order: Role Order",
+    "Variable Phase Order"
+  ],
+  "rating_bayes_average": 6.98877,
+  "rating_average_weight": 2.186,
+  "thumbnail_source": "https://cf.geekdo-images.com/6e-V_Xb2IsAsMNXU18Fi6A__small/img/KJIHXXkkIU7R-oK5i9byIyGdfm4=/fit-in/200x150/filters:strip_icc()/pic6669033.jpg",
+  "image_source": "https://cf.geekdo-images.com/6e-V_Xb2IsAsMNXU18Fi6A__original/img/gLDo-RR_9RvU_Hrs9DnHWy_TWpk=/0x0/filters:format(jpeg)/pic6669033.jpg"
+}

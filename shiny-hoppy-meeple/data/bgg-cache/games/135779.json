@@ -1,0 +1,30 @@
+{
+  "id": 135779,
+  "name": "A Fake Artist Goes to New York",
+  "year": 2011,
+  "thumbnail": "/images/games/135779-thumb.webp",
+  "image": "/images/games/135779.webp",
+  "image_width": 640,
+  "image_height": 1128,
+  "description": "Fake Artist Goes to New York – is a party game for 5-10 players. Players take turns being the Question Master, whose role is to set a category, write a word within that category on dry erase cards, and hand those out to other players as artists. At the same time, one player will have only an \"X\" written on his card: they are the fake artist!\n\nPlayers will then go around the table twice, drawing one contiguous stroke each on a paper to draw the word established by the Question Master, then guess who the fake artist is. If the fake artist is not caught, both the fake artist and the Question Master earn points; if the fake artist is caught and cannot guess what the word is, the artists earn points.",
+  "min_players": 5,
+  "max_players": 10,
+  "playing_time": 20,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Bluffing",
+    "Deduction",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Hidden Roles",
+    "Line Drawing",
+    "Targeted Clues"
+  ],
+  "rating_bayes_average": 6.79649,
+  "rating_average_weight": 1.0957,
+  "thumbnail_source": "https://cf.geekdo-images.com/5Q5YHxJeVp6PAhfv5Ct0-g__small/img/nqo8xhGEWnqXYDEvYcVpBpABBI4=/fit-in/200x150/filters:strip_icc()/pic3678404.png",
+  "image_source": "https://cf.geekdo-images.com/5Q5YHxJeVp6PAhfv5Ct0-g__original/img/yRNioltDOtjrTRXa0HHoTTCWNf8=/0x0/filters:format(png)/pic3678404.png"
+}

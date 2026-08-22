@@ -1,0 +1,27 @@
+{
+  "id": 25669,
+  "name": "Qwirkle",
+  "year": 2006,
+  "thumbnail": "/images/games/25669-thumb.webp",
+  "image": "/images/games/25669.webp",
+  "image_width": 900,
+  "image_height": 873,
+  "description": "The abstract game of Qwirkle consists of 108 wooden blocks with six different shapes in six different colors. There is no board, players simply use an available flat surface.\n\nPlayers begin the game with six blocks. The start player places blocks of a single matching attribute (color or shape but not both) on the table. Thereafter, a player adds blocks adjacent to at least one previously played block. The blocks must all be played in a line and match, without duplicates, either the color or shape of the previous block.\n\nPlayers score one point for each block played plus all blocks adjacent. It is possible for a block to score in more than one direction. If a player completes a line containing all six shapes or colors, an additional six points are scored. The player then refills his hand to six blocks.\n\nThe game ends when the draw bag is depleted and one player plays all of his remaining blocks, earning a six point bonus. The player with the high score wins.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 45,
+  "min_age": 6,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [],
+  "mechanics": [
+    "Hand Management",
+    "Pattern Building",
+    "Square Grid",
+    "Tile Placement"
+  ],
+  "rating_bayes_average": 6.6127,
+  "rating_average_weight": 1.5776,
+  "thumbnail_source": "https://cf.geekdo-images.com/k7zHj8j_a6uUAtXUt5Fvuw__small/img/APPui4zwBuwAIHXSTW6UxYcY6Ow=/fit-in/200x150/filters:strip_icc()/pic309353.jpg",
+  "image_source": "https://cf.geekdo-images.com/k7zHj8j_a6uUAtXUt5Fvuw__original/img/FNi6yap-UmVKX8X6rj0A_YW2q8Y=/0x0/filters:format(jpeg)/pic309353.jpg"
+}

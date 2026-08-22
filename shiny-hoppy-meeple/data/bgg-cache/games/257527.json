@@ -1,0 +1,31 @@
+{
+  "id": 257527,
+  "name": "Trapwords",
+  "year": 2018,
+  "thumbnail": "/images/games/257527-thumb.webp",
+  "image": "/images/games/257527.webp",
+  "image_width": 900,
+  "image_height": 1291,
+  "description": "The game is for 2 teams, divided into two approximately equivalent number of players and takes about 30 minutes to play.\n\nIt could remind you of the classic word game known as Taboo, but this one has an interesting twist on gameplay – the opposing team is the one who chooses the words you cannot use. With you having no idea which words are \"traps\", it’s like dancing on a minefield, when you’re trying to describe your assigned word to the rest of the team.\n\nYou take the role of a group of adventurers crawling through a fantasy dungeon full of traps and curses, with a Boss waiting for you at the end.\nYou have to successfully guess a word that one of your teammates is trying to describe to you. Sounds simple, but it is made fiendishly difficult by not knowing which words you can't say. Because both teams are simultaneously preparing secret traps for each other, words that you can't use. And further you get, the more trapwords you might expect.\n\nLet's see the example of one possible turn when you are trying to give clues for the word \"Axe\":\n\nYou: \"It is a thing that a dwarf can…\"\nOpponents team: \"A-ha, dwarf! Gotcha!\"\nYou: \"How did you know that? Was it obvious I will use that?\"\n\nOr when you would try another approach it could look like this, the successful turn of your team:\n\nYou: \"This thing is used by a man with a beard, in a checkered shirt....\"\nOne of your teammates: \"A coffee maker?\"\n[Everyone laughs]\nYou: \"He uses it for work in nature.\"\nAnother teammate: \"A chainsaw!\"\nYou: \"He makes smaller pieces from a big plant with it.\"\nAny of your teammate: \"An axe!\"\nYou: \"Yes! Very good!\"\n\nCould you avoid your opponent's trapwords when you don't know what you can't say?",
+  "min_players": 4,
+  "max_players": 8,
+  "playing_time": 45,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Exploration",
+    "Fantasy",
+    "Party Game",
+    "Word Game"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Modular Board",
+    "Team-Based Game"
+  ],
+  "rating_bayes_average": 6.38919,
+  "rating_average_weight": 1.4194,
+  "thumbnail_source": "https://cf.geekdo-images.com/aU1dLvPuTgGY0NsFajD9HQ__small/img/LKC4wxSMYreK8hbG82sNjUFdDiY=/fit-in/200x150/filters:strip_icc()/pic4327157.jpg",
+  "image_source": "https://cf.geekdo-images.com/aU1dLvPuTgGY0NsFajD9HQ__original/img/Ca6SXTVgQ7PFf0mHrorNI8iZOxc=/0x0/filters:format(jpeg)/pic4327157.jpg"
+}
