@@ -11,7 +11,7 @@
     "eslint": "10.8.1",
     "globals": "17.10.0",
     "markdownlint-cli2": "0.23.2",
-    "wrangler": "4.121.0"
+    "wrangler": "4.124.0"
   },
   "scripts": {
     "lint": "npm run lint:md && npm run lint:js",
