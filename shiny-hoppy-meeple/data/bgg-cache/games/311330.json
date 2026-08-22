@@ -1,0 +1,27 @@
+{
+  "id": 311330,
+  "name": "P for Pizza",
+  "year": 2020,
+  "thumbnail": "/images/games/311330-thumb.webp",
+  "image": "/images/games/311330.webp",
+  "image_width": 900,
+  "image_height": 1152,
+  "description": "This is a quick-thinking category game.\n\nThe aim of the game is to build your giant slice of pizza by winning small triangles of pizza. To win a triangle you must be the first player to shout out a word that links the category and the letter on the cards. So if the letter is B and the category is TV Shows, you could shout “Baywatch!”. If you’re first to shout a correct answer, you win the card. Now flip a new card and go again. Each round there are three letters and three categories on the table, so you can link any letter to any category. You just need to be super quick!\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 20,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Word Game"
+  ],
+  "mechanics": [
+    "Real-Time",
+    "Speed Matching"
+  ],
+  "rating_bayes_average": 5.64527,
+  "rating_average_weight": 1,
+  "thumbnail_source": "https://cf.geekdo-images.com/6KnxeefQyxQlAaaarWSSmw__small/img/uyK1ZKZm0ud6QtDgqvjQmUasAYc=/fit-in/200x150/filters:strip_icc()/pic5509028.png",
+  "image_source": "https://cf.geekdo-images.com/6KnxeefQyxQlAaaarWSSmw__original/img/op2otqCP9id0JogK96eFW_tzxBY=/0x0/filters:format(png)/pic5509028.png"
+}

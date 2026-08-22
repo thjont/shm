@@ -1,0 +1,30 @@
+{
+  "id": 329845,
+  "name": "Stella: Dixit Universe",
+  "year": 2021,
+  "thumbnail": "/images/games/329845-thumb.webp",
+  "image": "/images/games/329845.webp",
+  "image_width": 785,
+  "image_height": 785,
+  "description": "Starseekers! Explore the sky and bring some light back to your world.\n\nStella is a competitive game in the Dixit universe. In each round, players interpret Dixit cards on a board after receiving a common clue word. Each player observes the Dixit cards and secretly associates these cards with the clue word, marking on their erasable personal slates the cards that they choose. Selecting the same cards as the other players allows you to score more points. Conversely, selecting a card that no one else chooses may cost you dearly.\n\nAt the end of the fourth round, each player calculates their total score. Whoever has the most points — which is possibly more than one person — wins.\n\nTake calculated risks, but beware of the fall.\n\n—description from publisher",
+  "min_players": 3,
+  "max_players": 6,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Deduction",
+    "Push Your Luck",
+    "Race",
+    "Targeted Clues"
+  ],
+  "rating_bayes_average": 6.66163,
+  "rating_average_weight": 1.165,
+  "thumbnail_source": "https://cf.geekdo-images.com/j3vn68o2ovUim3zh-JiWIA__small/img/J-AoVapdE_5tkdmPRe39ltN0FwU=/fit-in/200x150/filters:strip_icc()/pic6738101.jpg",
+  "image_source": "https://cf.geekdo-images.com/j3vn68o2ovUim3zh-JiWIA__original/img/hQyaMSdfLsbyghE-mZ6T5HI3M_s=/0x0/filters:format(jpeg)/pic6738101.jpg"
+}

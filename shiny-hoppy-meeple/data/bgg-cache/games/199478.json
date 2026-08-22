@@ -1,0 +1,34 @@
+{
+  "id": 199478,
+  "name": "Flamme Rouge",
+  "year": 2016,
+  "thumbnail": "/images/games/199478-thumb.webp",
+  "image": "/images/games/199478.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "The excitement in the air is electric as the leaders round the last corner and head for the finish line. Each team has used cunning and skill to position their sprinter for this moment, but only one has done enough to pull off the win!\n\nWill your team lead from the front and risk exhaustion? Should you play it safe in the middle of the pack? Could you surprise everyone by striking from the back? Can you time your move perfectly?\n\nAnyone can race, few become champions!\n\nFlamme Rouge is a fast-paced, tactical bicycle racing game where each player controls a team of two riders: a Rouleur and a Sprinteur. The players’ goal is to be the first to cross the finish line with one of their riders. Players move their riders forward by drawing and playing cards from that riders specific deck, depleting it as they go. Use slipstreams to avoid exhaustion and position your team for a well timed sprint for the win.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 45,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Racing",
+    "Sports"
+  ],
+  "mechanics": [
+    "Catch the Leader",
+    "Hand Management",
+    "Modular Board",
+    "Programmed Movement",
+    "Race",
+    "Simulation",
+    "Simultaneous Action Selection",
+    "Track Movement"
+  ],
+  "rating_bayes_average": 7.21384,
+  "rating_average_weight": 1.7021,
+  "thumbnail_source": "https://cf.geekdo-images.com/sUrK5CCscls-tTc2hJWDPg__small/img/tBSMuRSHRl4M8-dVxcThAC1yXbs=/fit-in/200x150/filters:strip_icc()/pic3482521.jpg",
+  "image_source": "https://cf.geekdo-images.com/sUrK5CCscls-tTc2hJWDPg__original/img/hQOFypZgCn4CQrJnXiNaQc_hjCw=/0x0/filters:format(jpeg)/pic3482521.jpg"
+}

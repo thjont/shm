@@ -1,0 +1,38 @@
+{
+  "id": 54043,
+  "name": "Jaipur",
+  "year": 2009,
+  "thumbnail": "/images/games/54043-thumb.webp",
+  "image": "/images/games/54043.webp",
+  "image_width": 598,
+  "image_height": 833,
+  "description": "You are one of the two most powerful traders in the city of Jaipur, the capital of Rajasthan, but that's not enough for you because only the merchant with two \"seals of excellence\" will have the privilege of being invited to the Maharaja's court. You are therefore going to have to do better than your direct competitor by buying, exchanging, and selling at better prices, all while keeping an eye on both your camel herds.\n\nJaipur is a fast-paced card game, a blend of tactics, risk and luck. On your turn, you can either take or sell cards. If you take cards, you have to choose between taking all the camels, taking one card from the market, or swapping 2-5 cards between the market and your cards.\n\nIf you sell cards, you get to sell only one type of good, and you receive as many chips for that good as the number of cards you sold. The chips' values decrease as the game progresses, so you'd better hurry! On the other hand, you receive increasingly high rewards for selling three, four, or five cards of the same good at a time, so you'd better wait!\n\nYou can't sell camels, but they're paramount for trading and they're also worth a little something at the end of the round, enough sometimes to secure the win, so you have to use them smartly.",
+  "min_players": 2,
+  "max_players": 2,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Arabian",
+    "Card Game",
+    "Economic"
+  ],
+  "mechanics": [
+    "End Game Bonuses",
+    "Hand Management",
+    "Hidden Victory Points",
+    "Market",
+    "Open Drafting",
+    "Race",
+    "Score-and-Reset Game",
+    "Set Collection",
+    "Sudden Death Ending",
+    "Turn Order: Progressive",
+    "Variable Set-up"
+  ],
+  "rating_bayes_average": 7.36102,
+  "rating_average_weight": 1.4627,
+  "thumbnail_source": "https://cf.geekdo-images.com/_LTujSe_o16nvjDC-J0seA__small/img/82vhODfpxIT03BzW4NkisJ5Unzs=/fit-in/200x150/filters:strip_icc()/pic5100947.jpg",
+  "image_source": "https://cf.geekdo-images.com/_LTujSe_o16nvjDC-J0seA__original/img/zUnAdsgt4dCxvtoRDc_9DHbic0M=/0x0/filters:format(jpeg)/pic5100947.jpg"
+}

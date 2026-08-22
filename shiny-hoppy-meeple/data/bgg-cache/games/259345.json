@@ -1,0 +1,27 @@
+{
+  "id": 259345,
+  "name": "Snail Sprint!",
+  "year": 2018,
+  "thumbnail": "/images/games/259345-thumb.webp",
+  "image": "/images/games/259345.webp",
+  "image_width": 900,
+  "image_height": 965,
+  "description": "During the slippery snail race in Mrs. Meyer's vegetable garden in Schneck-di-wupp!, Sebastian Schneck, Gloria Glibber, and friends move forward at a snail's pace, but that doesn't prevent them from creeping over each other or slipping past one another. Lucky dice rolls and skillful moves will get your snails to the winner's podium to receive the most points and win!",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 15,
+  "min_age": 5,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Children's Game",
+    "Dice"
+  ],
+  "mechanics": [
+    "Dice Rolling"
+  ],
+  "rating_bayes_average": 5.67289,
+  "rating_average_weight": 1.2308,
+  "thumbnail_source": "https://cf.geekdo-images.com/6r0IOJ6aZFWsuqtGQ_jAxQ__small/img/G1ECUWSsM9dgXilRA0JWxKB4CRk=/fit-in/200x150/filters:strip_icc()/pic4533104.jpg",
+  "image_source": "https://cf.geekdo-images.com/6r0IOJ6aZFWsuqtGQ_jAxQ__original/img/B88hSRrwD_N4TTgarZVTlsN_o0o=/0x0/filters:format(jpeg)/pic4533104.jpg"
+}

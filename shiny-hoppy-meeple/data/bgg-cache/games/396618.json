@@ -1,0 +1,34 @@
+{
+  "id": 396618,
+  "name": "Waterfall Park",
+  "year": 2023,
+  "thumbnail": "/images/games/396618-thumb.webp",
+  "image": "/images/games/396618.webp",
+  "image_width": 850,
+  "image_height": 850,
+  "description": "Welcome to Waterfall Park. The goal of the game is to trade and exchange attractions to build the biggest amusement park in the world. The particularity of this park is that it is built vertically on huge towers in the middle of the ocean.\n\n—description from the publisher",
+  "min_players": 3,
+  "max_players": 5,
+  "playing_time": 45,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Negotiation"
+  ],
+  "mechanics": [
+    "Enclosure",
+    "Hidden Victory Points",
+    "Income",
+    "Investment",
+    "Negotiation",
+    "Set Collection",
+    "Tile Placement",
+    "Trading",
+    "Victory Points as a Resource"
+  ],
+  "rating_bayes_average": 6.01535,
+  "rating_average_weight": 1.913,
+  "thumbnail_source": "https://cf.geekdo-images.com/0G5vWPEOSVl8ZmXh-Ledcw__small/img/fw6p1steZe86c4UppgGaKh16CVY=/fit-in/200x150/filters:strip_icc()/pic7687140.jpg",
+  "image_source": "https://cf.geekdo-images.com/0G5vWPEOSVl8ZmXh-Ledcw__original/img/2wG0R_Xj32dik1AD8m6PjbwFTuI=/0x0/filters:format(jpeg)/pic7687140.jpg"
+}

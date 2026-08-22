@@ -1,0 +1,38 @@
+{
+  "id": 2653,
+  "name": "Survive: Escape from Atlantis!",
+  "year": 1982,
+  "thumbnail": "/images/games/2653-thumb.webp",
+  "image": "/images/games/2653.webp",
+  "image_width": 900,
+  "image_height": 830,
+  "description": "Survive is a cutthroat game where players seek to evacuate their pieces from an island that is breaking up, while remembering where their highest-valued pieces are located to maximize their score.\n\nAn island made up of 40 hex-tiles is slowly sinking into the ocean (as the tiles are removed from the board). Each player controls ten people (valued from 1 to 6) that they try and move towards the safety of the surrounding islands before the main island finally blows up. Players can either swim or use boats to travel but must avoid sea serpents, whales and sharks on their way to safety.\n\nSurvive is very similar to Escape from Atlantis with some key differences.\n\nSurvive was reprinted as \"Survive: Escape from Atlantis!\" by publisher Stronghold Games and hit store shelves in February, 2011.   The reprint contains the game Survive, as well as all the extra pieces needed in order to play the game as \"Escape from Atlantis\" and is actually found here: Survive: Escape from Atlantis! because it came with the dolphins and dive dice which were removed from the anniversary edition which was released a couple of years later (though they were later made available by themselves for owners of that version).\n\n\"Survive: Escape from Atlantis!\" is game #2 in the Stronghold Games \"Survive Line\".",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 60,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Adventure",
+    "Animals",
+    "Bluffing",
+    "Nautical"
+  ],
+  "mechanics": [
+    "Area Majority / Influence",
+    "Dice Rolling",
+    "Grid Movement",
+    "Hexagon Grid",
+    "Map Reduction",
+    "Memory",
+    "Modular Board",
+    "Movement Points",
+    "Secret Unit Deployment",
+    "Take That"
+  ],
+  "rating_bayes_average": 7.1083,
+  "rating_average_weight": 1.693,
+  "thumbnail_source": "https://cf.geekdo-images.com/0M2ck50-GanxBWfOHUZ64A__small/img/6ffKBS6bTCKgCmH7zdHJIxcU8ZA=/fit-in/200x150/filters:strip_icc()/pic1300182.png",
+  "image_source": "https://cf.geekdo-images.com/0M2ck50-GanxBWfOHUZ64A__original/img/5VKS6zuDQlHBQcTcDNRNFYu-7Bg=/0x0/filters:format(png)/pic1300182.png"
+}

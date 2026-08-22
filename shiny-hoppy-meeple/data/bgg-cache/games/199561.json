@@ -1,0 +1,37 @@
+{
+  "id": 199561,
+  "name": "Sagrada",
+  "year": 2017,
+  "thumbnail": "/images/games/199561-thumb.webp",
+  "image": "/images/games/199561.webp",
+  "image_width": 900,
+  "image_height": 1176,
+  "description": "Draft dice and use the tools-of-the-trade in Sagrada to carefully construct your stained glass window masterpiece.\n\nIn more detail, each player builds a stained glass window by building up a grid of dice on their player board. Each board has some restrictions on which color or shade (value) of die can be placed there. Dice of the same shade or color may never be placed next to each other. Dice are drafted in player order, with the start player rotating each round, snaking back around after the last player drafts two dice. Scoring is variable per game based on achieving various patterns and varieties of placement...as well as bonus points for dark shades of a particular hidden goal color.\n\nSpecial tools can be used to help you break the rules by spending skill tokens; once a tool is used, it then requires more skill tokens for the other players to use them.\n\nThe highest scoring window artisan wins!",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 45,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Abstract Strategy",
+    "Dice",
+    "Puzzle"
+  ],
+  "mechanics": [
+    "Contracts",
+    "Dice Rolling",
+    "End Game Bonuses",
+    "Grid Coverage",
+    "Open Drafting",
+    "Pattern Building",
+    "Set Collection",
+    "Solo / Solitaire Game",
+    "Turn Order: Progressive",
+    "Variable Set-up"
+  ],
+  "rating_bayes_average": 7.32501,
+  "rating_average_weight": 1.9203,
+  "thumbnail_source": "https://cf.geekdo-images.com/77OxPP4ckbOgK9sPg-6KDw__small/img/zCe7i6vc7LoJZDDnVUQQlU-uw4w=/fit-in/200x150/filters:strip_icc()/pic9374520.png",
+  "image_source": "https://cf.geekdo-images.com/77OxPP4ckbOgK9sPg-6KDw__original/img/oh6s7_lx_jMP0zvHK7RttbhQd5I=/0x0/filters:format(png)/pic9374520.png"
+}

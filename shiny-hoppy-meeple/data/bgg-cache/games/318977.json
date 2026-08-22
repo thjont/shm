@@ -1,0 +1,30 @@
+{
+  "id": 318977,
+  "name": "MicroMacro: Crime City",
+  "year": 2020,
+  "thumbnail": "/images/games/318977-thumb.webp",
+  "image": "/images/games/318977.webp",
+  "image_width": 900,
+  "image_height": 1310,
+  "description": "Crimes have taken place all over the city, and you want to figure out exactly what's happened, so you'll need to look closely at the giant city map (75 x 110 cm / 29.5 x 43 inches) to find all the hidden information and trace the trails of those who had it in for their foes.\n\nMicroMacro: Crime City includes 16 cases for you to solve. Each case includes a number of cards that ask you to find something on the map or uncover where someone has gone or otherwise reveal information relevant to a case. The city map serves as a map in time as well as space, so you'll typically find people in multiple locations throughout the streets and buildings, and you need to piece together what happened, whether by going through the case card by card or by reading only the starting card in the case and trying to figure out everything that happened for yourself. Will you be able to answer all questions about the case without fail?\n\nThe second edition of MicroMacro: Crime City now marks each case with symbols so that parents can decide which cases the youngest investigators are cleared to research.",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 45,
+  "min_age": 12,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Deduction",
+    "Murder / Mystery"
+  ],
+  "mechanics": [
+    "Cooperative Game",
+    "Deduction",
+    "Scenario / Mission / Campaign Game",
+    "Solo / Solitaire Game"
+  ],
+  "rating_bayes_average": 7.20988,
+  "rating_average_weight": 1.1038,
+  "thumbnail_source": "https://cf.geekdo-images.com/bLL3P-G25nIUkFjHxfJfnw__small/img/XY_Z5rRJe3IPLRfOvWp70OM2B68=/fit-in/200x150/filters:strip_icc()/pic7632081.jpg",
+  "image_source": "https://cf.geekdo-images.com/bLL3P-G25nIUkFjHxfJfnw__original/img/HBEhgjfb0QcF9pFrdJ8VYhBapoU=/0x0/filters:format(jpeg)/pic7632081.jpg"
+}

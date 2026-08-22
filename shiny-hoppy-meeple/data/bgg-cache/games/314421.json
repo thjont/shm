@@ -1,0 +1,29 @@
+{
+  "id": 314421,
+  "name": "The Fuzzies",
+  "year": 2021,
+  "thumbnail": "/images/games/314421-thumb.webp",
+  "image": "/images/games/314421.webp",
+  "image_width": 900,
+  "image_height": 1564,
+  "description": "The Fuzzies is a game about creating gravity-defying towers out of fuzzy little balls.\n\nDraw a card a remove that color of fuzzy using either tweezers or your fingers but you can not get out of your seat. Stick it anywhere higher on the tower.\n\nIf you are successful then the next player goes but if any balls drop, you must draw cards equal to the number of balls dropped and do the challenge on your next turn (e.g. remove a Fuzzy while covering your eye)\n\nThe game ends when someone oafishly knocks over the tower. That player is the loser, everyone else wins!\n\nComponents:\n95x Fuzzies\n30x circular cards\n1x circular rulebook \n1x plastic container with dual purpose lid/platform  \n1x tweezers\n\n-description from designer",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 15,
+  "min_age": 6,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Action / Dexterity",
+    "Children's Game"
+  ],
+  "mechanics": [
+    "Physical Removal",
+    "Single Loser Game",
+    "Stacking and Balancing"
+  ],
+  "rating_bayes_average": 5.87126,
+  "rating_average_weight": 1,
+  "thumbnail_source": "https://cf.geekdo-images.com/X1l-aRaElR6j6GKYkCEYlg__small/img/IO3bkjf-9taW2mA3eEmSB1W5wmY=/fit-in/200x150/filters:strip_icc()/pic5649906.png",
+  "image_source": "https://cf.geekdo-images.com/X1l-aRaElR6j6GKYkCEYlg__original/img/G7nmq75tHriX-48DsrCxI6m3Fn8=/0x0/filters:format(png)/pic5649906.png"
+}

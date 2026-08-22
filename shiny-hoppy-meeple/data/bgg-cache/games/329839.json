@@ -1,0 +1,28 @@
+{
+  "id": 329839,
+  "name": "So Clover!",
+  "year": 2021,
+  "thumbnail": "/images/games/329839-thumb.webp",
+  "image": "/images/games/329839.webp",
+  "image_width": 900,
+  "image_height": 1292,
+  "description": "So Clover! is a cooperative word-association game. Play as a team to get the highest score. Get Keywords and secretly write their common features on your Clover board; these are your Clues. Then work together to try to figure out each player’s Keywords. At the end of the game, add up your score according to how many Keywords you found and write it in the Record of Legends. Try to beat your high score each game!\n\n-description from the publisher",
+  "min_players": 3,
+  "max_players": 6,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Party Game",
+    "Word Game"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Cooperative Game"
+  ],
+  "rating_bayes_average": 7.24984,
+  "rating_average_weight": 1.1221,
+  "thumbnail_source": "https://cf.geekdo-images.com/8oipK9-ivkn53h7L5U2Yfg__small/img/cBKt41XFKkdphyqZItit4EIC45k=/fit-in/200x150/filters:strip_icc()/pic6588069.png",
+  "image_source": "https://cf.geekdo-images.com/8oipK9-ivkn53h7L5U2Yfg__original/img/KtvdQ2mT4ShhUaJekT9IvuOCvv8=/0x0/filters:format(png)/pic6588069.png"
+}

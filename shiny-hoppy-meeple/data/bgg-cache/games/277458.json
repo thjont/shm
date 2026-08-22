@@ -1,0 +1,28 @@
+{
+  "id": 277458,
+  "name": "Kluster",
+  "year": 2018,
+  "thumbnail": "/images/games/277458-thumb.webp",
+  "image": "/images/games/277458.webp",
+  "image_width": 900,
+  "image_height": 1230,
+  "description": "Kluster is a dexterity game for 1 to 4 players, very short, easy to transport, incredibly fun, really simple, accessible to everyone and still full of strategy!\n\nKluster’s rules can be explain in no time: Magnetic stones are equally shared between players, who must, in turn, place one stone inside the area delimited by the cord. The first player to get rid of his or her magnets wins. But beware, when stones kluster together during one player’s turn, he or she collects them!\n\nThat’s all you need to know to play Kluster!\n\n—description from the publisher\n\n________________________________\nVERSION FOR 1-8 PLAYERS, LOOK HERE : Kluster XL",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 20,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Abstract Strategy",
+    "Action / Dexterity",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Area Majority / Influence"
+  ],
+  "rating_bayes_average": 6.15644,
+  "rating_average_weight": 1.0403,
+  "thumbnail_source": "https://cf.geekdo-images.com/emWxjnD9LSb6NSkX2h2p0w__small/img/xiyD7bFM4vDD4yynKyZlW0lnEhc=/fit-in/200x150/filters:strip_icc()/pic9151948.jpg",
+  "image_source": "https://cf.geekdo-images.com/emWxjnD9LSb6NSkX2h2p0w__original/img/ZBvmBJnIRLjFdLtmcga0nHnA_dg=/0x0/filters:format(jpeg)/pic9151948.jpg"
+}

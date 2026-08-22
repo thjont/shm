@@ -1,0 +1,32 @@
+{
+  "id": 360880,
+  "name": "Diamant: Caution and Betrayal",
+  "year": 2023,
+  "thumbnail": "/images/games/360880-thumb.webp",
+  "image": "/images/games/360880.webp",
+  "image_width": 900,
+  "image_height": 1191,
+  "description": "This expansion for Diamond contains 8 Warning tiles and 8 Betrayal cards. This expansion is definitely full of surprises! Steal your opponent's rubies with the Betrayal Module and deploy the Warning Module to taste the real danger with each new round!",
+  "min_players": 3,
+  "max_players": 8,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgameexpansion",
+  "expansion": true,
+  "categories": [
+    "Expansion for Base-game",
+    "Adventure",
+    "Bluffing",
+    "Exploration"
+  ],
+  "mechanics": [
+    "Events",
+    "Move Through Deck",
+    "Push Your Luck",
+    "Simultaneous Action Selection"
+  ],
+  "rating_bayes_average": 5.5704,
+  "rating_average_weight": 1.3333,
+  "thumbnail_source": "https://cf.geekdo-images.com/T0GHaQvjB0GkCWr287QmIg__small/img/6xv_UdjYJ_kipT37vWgO-zHDuGs=/fit-in/200x150/filters:strip_icc()/pic9373215.png",
+  "image_source": "https://cf.geekdo-images.com/T0GHaQvjB0GkCWr287QmIg__original/img/cuCD3LtGR5sDkOXe9lvRQQ-C5E0=/0x0/filters:format(png)/pic9373215.png"
+}

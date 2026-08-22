@@ -1,0 +1,30 @@
+{
+  "id": 327778,
+  "name": "ito",
+  "year": 2019,
+  "thumbnail": "/images/games/327778-thumb.webp",
+  "image": "/images/games/327778.webp",
+  "image_width": 900,
+  "image_height": 1260,
+  "description": "ito is a cooperative game where you and your friends will each get your own secret number you then have to try to put in order as a group based on the clues you give related to the chosen theme.\n\nAt the start of the game, each player gets a secret number card that can have a value between 1 and 100. Remember, it’s a SECRET, so of course the other players can’t tell you directly what number they have, and neither can you!\n\nThe trick is for everyone to understand their intentions just by hearing theme-based clues. Do you and your friends see eye to eye in how you view the world? Have fun finding out in this exciting party game!",
+  "min_players": 2,
+  "max_players": 10,
+  "playing_time": 10,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Number"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Cooperative Game",
+    "Deduction",
+    "Ordering"
+  ],
+  "rating_bayes_average": 6.63484,
+  "rating_average_weight": 1.0122,
+  "thumbnail_source": "https://cf.geekdo-images.com/CaGsrg17dVTXSP_7sjbm9w__small/img/8ETGKUTLt4EU-wmmPZwoIcNmPxk=/fit-in/200x150/filters:strip_icc()/pic8381709.png",
+  "image_source": "https://cf.geekdo-images.com/CaGsrg17dVTXSP_7sjbm9w__original/img/ihUpUOGP4Pms1ukM5GitbCeFni8=/0x0/filters:format(png)/pic8381709.png"
+}

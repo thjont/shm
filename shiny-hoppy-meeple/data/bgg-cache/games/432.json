@@ -1,0 +1,32 @@
+{
+  "id": 432,
+  "name": "Take 5",
+  "year": 1994,
+  "thumbnail": "/images/games/432-thumb.webp",
+  "image": "/images/games/432.webp",
+  "image_width": 497,
+  "image_height": 704,
+  "description": "In Take 5, a.k.a. 6 nimmt!, Category 5 and many other names, you want to score as few points as possible.\n\nTo play the game, you shuffle the 104 number cards, lay out four cards face-up to start the four rows, then deal ten cards to each player. Each turn, players simultaneously choose and reveal a card from their hand, then add the cards to the rows, with cards being placed in ascending order based on their number; specifically, each card is placed in the row that ends with the highest number that's below the card's number. When the sixth card is placed in a row, the owner of that card claims the other five cards and the sixth card becomes the first card in its row.\n\nIn addition to a number from 1 to 104, each card has a point value. After finishing ten rounds, players tally their score and see whether the game ends. (Category 5 ends when a player has a score greater than 74, for example, while 6 nimmt! ends when someone tops 66.) When this happens, the player with the fewest points wins!\n\n6 nimmt! works with 2-10 players, and the dynamics of gameplay change the more players that you have. One variant for the game has you use only the lowest 34 cards, 44 cards, 54 cards, etc. (instead of all 104 cards) when you have three, four, five, etc. players. This change allows you to know exactly which cards are in play, thereby allowing you to track which cards have been played and know what to expect so that you can (theoretically) make better choices as to which card to play when.",
+  "min_players": 2,
+  "max_players": 10,
+  "playing_time": 45,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Number",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Hand Management",
+    "Ordering",
+    "Push Your Luck",
+    "Score-and-Reset Game",
+    "Simultaneous Action Selection"
+  ],
+  "rating_bayes_average": 6.85912,
+  "rating_average_weight": 1.1889,
+  "thumbnail_source": "https://cf.geekdo-images.com/WuOY1XAIJQ-RGAmT_apW_w__small/img/dhNHd8Ztln_lUFAdti6WkPnGTGg=/fit-in/200x150/filters:strip_icc()/pic8632998.jpg",
+  "image_source": "https://cf.geekdo-images.com/WuOY1XAIJQ-RGAmT_apW_w__original/img/06TSBC2s-cwbxfPmy_pf7n5p-jM=/0x0/filters:format(jpeg)/pic8632998.jpg"
+}

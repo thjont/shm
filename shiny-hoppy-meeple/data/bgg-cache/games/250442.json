@@ -1,0 +1,41 @@
+{
+  "id": 250442,
+  "name": "Crypt",
+  "year": 2018,
+  "thumbnail": "/images/games/250442-thumb.webp",
+  "image": "/images/games/250442.webp",
+  "image_width": 900,
+  "image_height": 1783,
+  "description": "Crypt is a small-box set collection game with a unique dice placement mechanic for 1 to 4 players.\n\nPlace your servant dice on treasure cards, choosing any value on each die. Choosing a higher value can ward off your opponents, but it also increases the odds that your servant will become exhausted. After everyone has placed their servant dice, everyone rolls. If you roll less than your chosen value, you lose the die.\n\nSets of treasure can be pawned off to collectors that offer bonus coins and special abilities. The player with the most valuable collection wins!\n\n—description from the designer",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 35,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Dice",
+    "Medieval",
+    "Renaissance"
+  ],
+  "mechanics": [
+    "Area Majority / Influence",
+    "Auction / Bidding",
+    "Contracts",
+    "Dice Rolling",
+    "End Game Bonuses",
+    "Open Drafting",
+    "Push Your Luck",
+    "Set Collection",
+    "Solo / Solitaire Game",
+    "Tags",
+    "Turn Order: Progressive",
+    "Variable Set-up",
+    "Worker Placement with Dice Workers"
+  ],
+  "rating_bayes_average": 6.04528,
+  "rating_average_weight": 1.4954,
+  "thumbnail_source": "https://cf.geekdo-images.com/Wkr5PpxPAdwM93cbkMSzpA__small/img/J8QNQ7af8TkHBwuhiNpMxEivWXA=/fit-in/200x150/filters:strip_icc()/pic4551004.jpg",
+  "image_source": "https://cf.geekdo-images.com/Wkr5PpxPAdwM93cbkMSzpA__original/img/HZZoqXBNhjcaym7p5Udvc0Jtzhk=/0x0/filters:format(jpeg)/pic4551004.jpg"
+}
