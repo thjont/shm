@@ -1,0 +1,33 @@
+{
+  "id": 218603,
+  "name": "Photosynthesis",
+  "year": 2017,
+  "thumbnail": "/images/games/218603-thumb.webp",
+  "image": "/images/games/218603.webp",
+  "image_width": 900,
+  "image_height": 898,
+  "description": "The sun shines brightly on the canopy of the forest, and the trees use this wonderful energy to grow and develop their beautiful foliage. Sow your crops wisely and the shadows of your growing trees could slow your opponents down, but don't forget that the sun revolves around the forest. Welcome to the world of Photosynthesis, the green strategy board game!",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 60,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Abstract Strategy",
+    "Economic"
+  ],
+  "mechanics": [
+    "Action Points",
+    "Area Majority / Influence",
+    "Bias",
+    "End Game Bonuses",
+    "Hexagon Grid",
+    "Income",
+    "Turn Order: Progressive"
+  ],
+  "rating_bayes_average": 6.75851,
+  "rating_average_weight": 2.2659,
+  "thumbnail_source": "https://cf.geekdo-images.com/HhkYuVxMy-XrRCBWmZ78Eg__small/img/eVdvmMALg8vjPr6eDoj-mqvDbUc=/fit-in/200x150/filters:strip_icc()/pic3364832.jpg",
+  "image_source": "https://cf.geekdo-images.com/HhkYuVxMy-XrRCBWmZ78Eg__original/img/V6bgfuxV2jfmRbz9pJVyK01x6dI=/0x0/filters:format(jpeg)/pic3364832.jpg"
+}

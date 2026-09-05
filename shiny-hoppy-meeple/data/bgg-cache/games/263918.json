@@ -1,0 +1,37 @@
+{
+  "id": 263918,
+  "name": "Cartographers",
+  "year": 2019,
+  "thumbnail": "/images/games/263918-thumb.webp",
+  "image": "/images/games/263918.webp",
+  "image_width": 900,
+  "image_height": 1247,
+  "description": "Queen Gimnax has ordered the reclamation of the northern lands. As a cartographer in her service, you are sent to map this territory, claiming it for the Kingdom of Nalos. Through official edicts, the queen announces which lands she prizes most, and you will increase your reputation by meeting her demands. But you are not alone in this wilderness. The Dragul contest your claims with their outposts, so you must draw your lines carefully to reduce their influence. Reclaim the greatest share of the queen’s desired lands and you will be declared the greatest cartographer in the kingdom.\n\nIn Cartographers: A Roll Player Tale, players compete to earn the most reputation stars by the time four seasons have passed. Each season, players draw on their map sheets and earn reputation by carrying out the queen's edicts before the season is over. The player with the most reputation stars at the end of winter wins!\n\n—description from the publisher",
+  "min_players": 1,
+  "max_players": 100,
+  "playing_time": 45,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Fantasy",
+    "Territory Building"
+  ],
+  "mechanics": [
+    "Bingo",
+    "Enclosure",
+    "End Game Bonuses",
+    "Grid Coverage",
+    "Paper-and-Pencil",
+    "Pattern Building",
+    "Simultaneous Action Selection",
+    "Solo / Solitaire Game",
+    "Square Grid",
+    "Take That",
+    "Variable Set-up"
+  ],
+  "rating_bayes_average": 7.38541,
+  "rating_average_weight": 1.8925,
+  "thumbnail_source": "https://cf.geekdo-images.com/GifbnAmsA4lfEcDkeaC9VA__small/img/TTxZzwbna07hMcPQ0xaFtT10egE=/fit-in/200x150/filters:strip_icc()/pic4397932.png",
+  "image_source": "https://cf.geekdo-images.com/GifbnAmsA4lfEcDkeaC9VA__original/img/YzJORdIDNza8kmrY6KEU_h2p2Wo=/0x0/filters:format(png)/pic4397932.png"
+}

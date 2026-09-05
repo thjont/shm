@@ -1,0 +1,30 @@
+{
+  "id": 381790,
+  "name": "Deadly Dowagers",
+  "year": 2023,
+  "thumbnail": "/images/games/381790-thumb.webp",
+  "image": "/images/games/381790.webp",
+  "image_width": 900,
+  "image_height": 1437,
+  "description": "Deadly Dowagers is a game of marriage, murder, and money. You compete with the other lovely ladies in your town by strategically growing your dowry, while being careful not to gain too much infamy, or the duke may pass you over for another bride!\n\nYou play as a middle-class Victorian woman who would kill to be a duchess. Since you were not lucky enough to be born into the aristocracy, the only way to attract a noble is to have a large enough dowry. Fortunately, when your parents died, they left you with a small dowry and some land. You must build wealth through investments and strategic serial marriages.\n\nGameplay is divided into rounds; each round consists of four separate phases: drafting, investment, husband, and housekeeping. In each round, each player drafts a hand of cards, pick-and-pass style. Certain cards are played into players' tableaus. Instant cards are used and discarded. Players using death cards partially reset their tableau and get income. Players discard down to eight cards in hand, then draft four new cards.\n\nThe game ends when one player has no current husband, no more than 9 infamy, spends 120 crowns, and plays a remarry card to marry the Duke. That player wins.\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 90,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Humor",
+    "Murder / Mystery"
+  ],
+  "mechanics": [
+    "Closed Drafting",
+    "Hand Management",
+    "Race"
+  ],
+  "rating_bayes_average": 5.74823,
+  "rating_average_weight": 1.8889,
+  "thumbnail_source": "https://cf.geekdo-images.com/di-yPwoaX6xL2uFD5pg8lg__small/img/etIEaMQ5GdOYokpcnxS143nGZG4=/fit-in/200x150/filters:strip_icc()/pic8028023.jpg",
+  "image_source": "https://cf.geekdo-images.com/di-yPwoaX6xL2uFD5pg8lg__original/img/yfcXolCa8ft-ddVVE2bkA4CkQIM=/0x0/filters:format(jpeg)/pic8028023.jpg"
+}

@@ -1,0 +1,31 @@
+{
+  "id": 425549,
+  "name": "Moon Colony Bloodbath",
+  "year": 2025,
+  "thumbnail": "/images/games/425549-thumb.webp",
+  "image": "/images/games/425549.webp",
+  "image_width": 900,
+  "image_height": 910,
+  "description": "Cities on the moon! This will be humanity's crowning achievement. At last, no longer bound to the Earth — the moon, a stepping stone to the stars. The rockets are loaded with supplies and colonists; the robots are programmed and ready. Everything has been planned down to the tiniest detail, and there is no chance whatsoever of failure. To the moon!\n\nMoon Colony Bloodbath is an engine-building, engine-losing tableau game, with a shared deck the players build that makes things happen, many of them bad things that kill people in your moon colony, but some positive, and some that let you build up.\n\nMore specifically, each turn one card is revealed from the shared deck, which starts with four work cards, two trouble cards, and two twists. For work, each player takes an action of their choice simultaneously: mining for money, farming for food, research for cards, build a new building, or restock boxes on buildings. Twists vary from one game to the next. Trouble adds a new event card to the deck: hunger, paperwork, glitches, accidents, leaks, power failure — whatever can go wrong will go wrong, then whenever the deck is shuffled, you can prepare for all those events once again.\n\nPlayers can add cards to the shared deck, too, whether perks that are only for you or developments that affect all players.\n\nThe game lasts until one player's moon colony has no people remaining, or until the players reach the bottom of the event deck. At that point, the player with the most survivors wins.",
+  "min_players": 1,
+  "max_players": 5,
+  "playing_time": 90,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Science Fiction"
+  ],
+  "mechanics": [
+    "Deck, Bag, and Pool Building",
+    "Delayed Purchase",
+    "Events",
+    "Simultaneous Action Selection",
+    "Variable Phase Order"
+  ],
+  "rating_bayes_average": 7.04649,
+  "rating_average_weight": 2.1575,
+  "thumbnail_source": "https://cf.geekdo-images.com/KDrRxEKQMmHyM0QQ2ONX4Q__small/img/EusjojuWYxwkxaP7eAnaBn1QzLg=/fit-in/200x150/filters:strip_icc()/pic8638247.jpg",
+  "image_source": "https://cf.geekdo-images.com/KDrRxEKQMmHyM0QQ2ONX4Q__original/img/XD-aeaMShk-TN_n0n6O9kbczxNY=/0x0/filters:format(jpeg)/pic8638247.jpg"
+}

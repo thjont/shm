@@ -1,0 +1,29 @@
+{
+  "id": 205774,
+  "name": "Steel Arena: Friday Night Robot Fight",
+  "year": 2016,
+  "thumbnail": "/images/games/205774-thumb.webp",
+  "image": "/images/games/205774.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Welcome to the post-apocalyptic battles of tireless robots! You're watching \"Steel Arena: Friday Night Robot Fight Show\"; more precisely, all that remains of it because the world is in ruins, but they keep on fighting! Arm your robot directly while fighting and conquer your enemies!\n\nIn Steel Arena: Friday Night Robot Fight, you can make a cruel duel and gather up to four robots in a team battle or in a crazy war against everyone. Each player takes control of a robot and tries to eliminate the other players in the modular arena; the arena consists of hexes that are \"spaces\" to move and also modules that can be picked up during the fight and used to upgrade your robot to make it more deadly.\n\nEach turn, a player activates their robot's modules in different combos that allow it to turn, move, fight and defend. There are a lot of weapons working in various ways: melee, direct fire, plunging fire, explosives, acoustic, etc. Causing damage to an opponent's robot destroys its modules and lets you take it as a trophy (victory points). The game ends when any of the robots are completely eliminated or when the stack of the modules runs out, then the player with the most trophies wins.\n\nThey were created for the show, so even after the apocalypse, the show must go on!",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 60,
+  "min_age": 12,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Fighting",
+    "Science Fiction"
+  ],
+  "mechanics": [
+    "Hexagon Grid",
+    "Modular Board",
+    "Team-Based Game"
+  ],
+  "rating_bayes_average": 5.59586,
+  "rating_average_weight": 2.4444,
+  "thumbnail_source": "https://cf.geekdo-images.com/lZZ52Wqnja72GWDMyetaFA__small/img/f2DwYEo3cTg03_Y_RSRitaZ4Z1I=/fit-in/200x150/filters:strip_icc()/pic3160828.jpg",
+  "image_source": "https://cf.geekdo-images.com/lZZ52Wqnja72GWDMyetaFA__original/img/zaKn2APJEyQyVICGvNBzgQZ6IGk=/0x0/filters:format(jpeg)/pic3160828.jpg"
+}

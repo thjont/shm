@@ -1,0 +1,33 @@
+{
+  "id": 434906,
+  "name": "Tag Team",
+  "year": 2025,
+  "thumbnail": "/images/games/434906-thumb.webp",
+  "image": "/images/games/434906.webp",
+  "image_width": 900,
+  "image_height": 1296,
+  "description": "Inspired by classic arcade-fighting games, Tag Team is an auto battler combined with a deck-building game. Make your team of two fighters from the twelve available — each with their own techniques and special moves — and build an unbeatable synergy by combining their two unique decks!\n\nIn more detail, you start with a deck of only two cards, and the fight unfolds automatically: Flip your cards one at a time and apply their effects. At the end of each round, you get to turn up the heat on the opposing team by strategically adding new cards to program your deck — but without reordering the cards already present. Determine what makes your tag team tick, play devastating combos, and dominate your opponent by deftly blocking their attacks. Timing is everything if you want to emerge victorious and knock out your foe!\n\nAWARDS -\n2026 - Dice Tower - Best 2-Player Game\n2025 - Best of Gen Con 2025",
+  "min_players": 2,
+  "max_players": 2,
+  "playing_time": 15,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Fantasy",
+    "Fighting"
+  ],
+  "mechanics": [
+    "Action Queue",
+    "Card Play Conflict Resolution",
+    "Deck, Bag, and Pool Building",
+    "Programmed Movement",
+    "Simultaneous Action Selection",
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 6.84148,
+  "rating_average_weight": 2.0952,
+  "thumbnail_source": "https://cf.geekdo-images.com/sLSlzWRe8Ixnksqawkzb3Q__small/img/O9Kg90i8kSi8N2ndrOKXaTTrQXE=/fit-in/200x150/filters:strip_icc()/pic8805857.jpg",
+  "image_source": "https://cf.geekdo-images.com/sLSlzWRe8Ixnksqawkzb3Q__original/img/EylfRGx2qLzoQ3scqz19GPQYxo0=/0x0/filters:format(jpeg)/pic8805857.jpg"
+}

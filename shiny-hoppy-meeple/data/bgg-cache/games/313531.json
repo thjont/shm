@@ -1,0 +1,32 @@
+{
+  "id": 313531,
+  "name": "Rustling Leaves",
+  "year": 2020,
+  "thumbnail": "/images/games/313531-thumb.webp",
+  "image": "/images/games/313531.webp",
+  "image_width": 900,
+  "image_height": 1250,
+  "description": "Bl&auml;tterrauschen (\"Rustling Leaves\") is a roll-and-write game, and for every season — spring, summer, autumn, and winter — there is a themed game sheet with different rules. The numbers on the dice reveal the side lengths of the area marked on the game sheet. In this area, a forest symbol is selected that is included in the scoring. Whoever collects the most points wins.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 20,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Dice",
+    "Environmental"
+  ],
+  "mechanics": [
+    "Dice Rolling",
+    "Grid Coverage",
+    "Line Drawing",
+    "Paper-and-Pencil",
+    "Push Your Luck",
+    "Set Collection"
+  ],
+  "rating_bayes_average": 6.04321,
+  "rating_average_weight": 1.6271,
+  "thumbnail_source": "https://cf.geekdo-images.com/Dc0ZrRsdPXvji7SX2xkH8g__small/img/3HjDZ9kMPZ_dAiN1VDe4vKhuNzQ=/fit-in/200x150/filters:strip_icc()/pic6664078.jpg",
+  "image_source": "https://cf.geekdo-images.com/Dc0ZrRsdPXvji7SX2xkH8g__original/img/9VqrPmScuk87UOQOXTWv9SW5c_c=/0x0/filters:format(jpeg)/pic6664078.jpg"
+}

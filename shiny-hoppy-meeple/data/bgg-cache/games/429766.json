@@ -1,0 +1,42 @@
+{
+  "id": 429766,
+  "name": "EGO",
+  "year": 2025,
+  "thumbnail": "/images/games/429766-thumb.webp",
+  "image": "/images/games/429766.webp",
+  "image_width": 900,
+  "image_height": 1258,
+  "description": "We are not alone! It is the 23rd century, and proof of alien life has finally been discovered beyond our solar system. In fact, recent developments in technology have triggered a cascade of discoveries throughout the galaxy; intelligent life and advanced civilizations are now known across many planets, moons, and asteroids in the Milky Way. Now the race is on to establish interstellar relations with the aliens. The only chance we have of reaching alien life is by pooling our resources to build the required Super Ship. In an unprecedented, albeit uneasy, co-operation between the planetary governments, the peoples of our solar system have finally built the first of these Super Ships. Now, the coalition known as the Extraterrestrial Greeting Organization — EGO — is now ready to launch our first mission.\n\nIn EGO, players proceed through a sequence of major and minor events including auctions, drafts, risks, and more. Risks and egos are the lifeblood of this game as players will frequently find themselves in a game of chicken with their rival ambassadors as they try to impress various alien civilizations and earn political power.  At the end of the game, players earn significant bonus points or suffer serious penalty points depending on how offensive the aliens find them to be. Ultimately, the ambassador with the most prestige and respect will earn a seat in the Galactic Senate and be crowned the winner of the game.\n\nEGO is a drastic reimagining of the strategic, push-your-luck auction game, Beowulf: The Legend and introduces many innovations by:\n\n\n     Revamping the polarizing risk mechanism while preserving its excitement and drama\n     Increasing the set-up variety with a randomized sequence of interchangeable civilization boards\n     Streamlining the endgame push-your-luck token system in which players can score big or suffer immensely\n     Introducing exciting new features such as currency cards and transmission events\n     Balancing the bidding tie-breaker system with the simple solution of ranked cards\n     Speeding up the playtime with a condensed and focused sequence of events\n     Doubling the number of unique special cards that can be drafted as rewards\n     Spicing up the risk events with varying rewards and penalties\n     Sharpening the endgame hand management decisions with tempting rewards following a climactic final auction\n     Broadening the appeal of the theme and presentation with vivid galactic artwork by Marie Bergeron\n\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 80,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Political",
+    "Science Fiction",
+    "Space Exploration"
+  ],
+  "mechanics": [
+    "Auction / Bidding",
+    "Auction: Sealed Bid",
+    "Auction: Turn Order Until Pass",
+    "Constrained Bidding",
+    "End Game Bonuses",
+    "Events",
+    "Hand Management",
+    "Modular Board",
+    "Multi-Use Cards",
+    "Once-Per-Game Abilities",
+    "Open Drafting",
+    "Push Your Luck",
+    "Selection Order Bid",
+    "Variable Set-up",
+    "Victory Points as a Resource"
+  ],
+  "rating_bayes_average": 5.85984,
+  "rating_average_weight": 2.4,
+  "thumbnail_source": "https://cf.geekdo-images.com/qXaOwJYEiT2A9Tk1w4gl4w__small/img/UJx0De8ClaieB5j1z8NhOBUqcRY=/fit-in/200x150/filters:strip_icc()/pic8478398.png",
+  "image_source": "https://cf.geekdo-images.com/qXaOwJYEiT2A9Tk1w4gl4w__original/img/y7jIRC5WX0XpJfdb7vhXLaBJTI0=/0x0/filters:format(png)/pic8478398.png"
+}

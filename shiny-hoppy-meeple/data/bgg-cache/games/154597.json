@@ -1,0 +1,34 @@
+{
+  "id": 154597,
+  "name": "Hive Pocket",
+  "year": 2010,
+  "thumbnail": "/images/games/154597-thumb.webp",
+  "image": "/images/games/154597.webp",
+  "image_width": 900,
+  "image_height": 844,
+  "description": "Hive is a strategic game for two players that is not restricted by a board and can be played anywhere on any flat surface. The base game of Hive is made up of twenty two pieces, eleven black and eleven white, resembling a variety of creatures each with a unique way of moving. Hive Carbon and Hive Pocket include the Mosquito and Ladybug expansions, for a total of 26 pieces.\n\nWith no setting up to do, the game begins when the first piece is placed down. As the subsequent pieces are placed this forms a pattern that becomes the playing surface. (The pieces themselves become the board.) Unlike other such games, the pieces are never eliminated and not all have to be played. The object of the game is to totally surround your opponent's queen, while at the same time trying to block your opponent from doing likewise to your queen. The first player to totally surround the opponent's queen wins the game.",
+  "min_players": 2,
+  "max_players": 2,
+  "playing_time": 20,
+  "min_age": 9,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Abstract Strategy",
+    "Animals"
+  ],
+  "mechanics": [
+    "Enclosure",
+    "Grid Movement",
+    "Hexagon Grid",
+    "Pattern Movement",
+    "Pieces as Map",
+    "Slide / Push",
+    "Three Dimensional Movement",
+    "Tile Placement"
+  ],
+  "rating_bayes_average": 7.33841,
+  "rating_average_weight": 2.2044,
+  "thumbnail_source": "https://cf.geekdo-images.com/qxB2LU0536eKeByvNl3vcA__small/img/u-Mm0YOkr4MkmQqHLkh0uHTxHDI=/fit-in/200x150/filters:strip_icc()/pic8229329.jpg",
+  "image_source": "https://cf.geekdo-images.com/qxB2LU0536eKeByvNl3vcA__original/img/HxR4sVxK_YUaOSz89J_Y-o4qBcM=/0x0/filters:format(jpeg)/pic8229329.jpg"
+}

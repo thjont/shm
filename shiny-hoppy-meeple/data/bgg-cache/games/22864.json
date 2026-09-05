@@ -1,0 +1,29 @@
+{
+  "id": 22864,
+  "name": "Zeus on the Loose",
+  "year": 2006,
+  "thumbnail": "/images/games/22864-thumb.webp",
+  "image": "/images/games/22864.webp",
+  "image_width": 900,
+  "image_height": 1093,
+  "description": "From Happy Camper website:\n\nCatch Zeus if you can! The great Greek god has bolted from Mount Olympus and it’s up to you to nab this dashing deity. Play cards strategically, adding numbers as you climb up the mythic mountain. Grab Zeus when the total reaches a multiple of 10. Better yet, summon the strength of Apollo, Poseidon, or all-powerful Hera to bring Zeus within your grasp. Reach the top of Mount Olympus with Zeus in hand and you’re a mortal among the gods. To play is human. To win, divine!\n\nDid you know that, in addition to their supreme powers, the Greek gods were endowed with the special ability to change the course of card games? Well, at least that’s the case in Zeus on the Loose! As you figure out how to harness the strengths of the various gods within, you’ll sharpen strategic thinking along with valuable addition and subtraction skills. A quick warning about Hera: Though she may be the most powerful goddess in the game, don’t get on her bad side or else she might wind up helping an opponent steal Zeus and win!\n\nAges 8 and up.\n\nBased on the traditional card game Ninety-Nine.",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 15,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Math",
+    "Mythology",
+    "Number"
+  ],
+  "mechanics": [
+    "King of the Hill"
+  ],
+  "rating_bayes_average": 5.67511,
+  "rating_average_weight": 1.1149,
+  "thumbnail_source": "https://cf.geekdo-images.com/DHN9OkVEMTIomnJZXMT3Kw__small/img/RUn6Mp-fa2nBvPpfc6DrbDg49LU=/fit-in/200x150/filters:strip_icc()/pic9551830.png",
+  "image_source": "https://cf.geekdo-images.com/DHN9OkVEMTIomnJZXMT3Kw__original/img/n-7Z9r7uUK0Y56DEBJWJ0lhzX8Q=/0x0/filters:format(png)/pic9551830.png"
+}

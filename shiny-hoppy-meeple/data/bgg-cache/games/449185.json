@@ -1,0 +1,33 @@
+{
+  "id": 449185,
+  "name": "FlipToons",
+  "year": 2025,
+  "thumbnail": "/images/games/449185-thumb.webp",
+  "image": "/images/games/449185.webp",
+  "image_width": 900,
+  "image_height": 1298,
+  "description": "It’s time to cast the next great animated show! A top talent agent like you knows a star when you see one, and the director needs you to fill six roles for the big production. Search Flip Valley for the perfect toon characters, and make sure they’re ready to work together on the silver screen!\n\nFlipToons is a quick deck-building game. You’ll begin with a deck of hopeful toon actors. Each round, flip six of these toons out from your deck into your screen grid to audition together.\n\nEach toon card in your 3-by-2 grid has different talent effects. Some are resolved as soon as they are flipped. Many will interact with one another and (hopefully) earn Fame for your studio. But they won’t all have that special on-screen chemistry you’re looking for. Some won’t work well together at all!\n\nAfter each Flip, tally up your current grid of toons’ Fame points, then spend them to hire more stars for your cast. Purchase these new toon cards from the market and add them to your deck. Or, spend some of your Fame to dismiss a card, and get that bad actor off the stage. Sorry kid, you just don’t have what it takes to be a star in this show.\n\nIf your Flip is the first to generate 30+ Fame, you’ll earn the Critic’s Choice award (worth extra Fame points) and trigger the end of the game. After that turn’s market phase, it’s time for one Final Flip. The player who earns the most Fame during the Final Flip is declared the winner. Applause!\n\n2026 American Tabletop Awards - Casual Games: RECOMMENDED",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Card Game",
+    "Movies / TV / Radio theme"
+  ],
+  "mechanics": [
+    "Deck, Bag, and Pool Building",
+    "Market",
+    "Open Drafting",
+    "Race",
+    "Score-and-Reset Game",
+    "Victory Points as a Resource"
+  ],
+  "rating_bayes_average": 6.57408,
+  "rating_average_weight": 1.6833,
+  "thumbnail_source": "https://cf.geekdo-images.com/EEcBICSVGbH0Epy_LKpiVw__small/img/5pAE-HkT5IxtknnDq1oD5SRLJeQ=/fit-in/200x150/filters:strip_icc()/pic8964384.jpg",
+  "image_source": "https://cf.geekdo-images.com/EEcBICSVGbH0Epy_LKpiVw__original/img/oC3sW6J1iWaZfr1mOEjVy7dF1IY=/0x0/filters:format(jpeg)/pic8964384.jpg"
+}

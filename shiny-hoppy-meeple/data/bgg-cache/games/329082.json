@@ -1,0 +1,33 @@
+{
+  "id": 329082,
+  "name": "Radlands",
+  "year": 2021,
+  "thumbnail": "/images/games/329082-thumb.webp",
+  "image": "/images/games/329082.webp",
+  "image_width": 511,
+  "image_height": 285,
+  "description": "Radlands is a competitive, dueling card game about identifying fiercely powerful card synergies.\n\nAct as the leader of your post apocalyptic group of survivors in a tooth-and-nail fight to protect your three camps from a vicious rival tribe. If all of them are destroyed, you lose the game.\n\nThe main resource in the game is water. You will spend it to play people and events, and to use the abilities of cards you already have on the table. People protect your camps and provide useful abilities, while events are powerful effects that take time to pay off.\n\nBoth players draw cards from the same deck. All cards can either be played to the table or discarded for quick “junk” effects. To win, you will need to manage your cards and water wisely.",
+  "min_players": 2,
+  "max_players": 2,
+  "playing_time": 40,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Fighting",
+    "Science Fiction"
+  ],
+  "mechanics": [
+    "Action Points",
+    "Action Queue",
+    "Hand Management",
+    "Multi-Use Cards",
+    "Take That",
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 7.34997,
+  "rating_average_weight": 2.2744,
+  "thumbnail_source": "https://cf.geekdo-images.com/YpQUtpxNtDHBF5eVcwzBtQ__small/img/tN06HL-O6O-ayKHxEio9xYoJym0=/fit-in/200x150/filters:strip_icc()/pic6478338.png",
+  "image_source": "https://cf.geekdo-images.com/YpQUtpxNtDHBF5eVcwzBtQ__original/img/br-kw0KuyBfH1mrxZ0kgVrF9UMc=/0x0/filters:format(png)/pic6478338.png"
+}

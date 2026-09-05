@@ -1,0 +1,27 @@
+{
+  "id": 331571,
+  "name": "My Gold Mine",
+  "year": 2021,
+  "thumbnail": "/images/games/331571-thumb.webp",
+  "image": "/images/games/331571.webp",
+  "image_width": 900,
+  "image_height": 1283,
+  "description": "Diamonds, precious stones, and gold — an immeasurable treasure is hidden deep in the cave in My Gold Mine, and each dwarven player wants to dig for gold nuggets. The keeper of the mountain, a fire-breathing dragon, will chase after you, though, so who can leave the gold mine with the most nuggets, and who will be too greedy and get caught by the dragon?",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 25,
+  "min_age": 7,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Fantasy"
+  ],
+  "mechanics": [
+    "Push Your Luck"
+  ],
+  "rating_bayes_average": 6.09563,
+  "rating_average_weight": 1.0833,
+  "thumbnail_source": "https://cf.geekdo-images.com/BHLjzl2saSCs497dgIkUYA__small/img/vVo7uwc3ZMYe8thONzRiTCi8XDE=/fit-in/200x150/filters:strip_icc()/pic5986895.jpg",
+  "image_source": "https://cf.geekdo-images.com/BHLjzl2saSCs497dgIkUYA__original/img/ET0XuqgooOCFy3MhVIcfxG12AWY=/0x0/filters:format(jpeg)/pic5986895.jpg"
+}

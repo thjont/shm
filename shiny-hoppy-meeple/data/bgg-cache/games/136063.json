@@ -1,0 +1,39 @@
+{
+  "id": 136063,
+  "name": "Forbidden Desert",
+  "year": 2013,
+  "thumbnail": "/images/games/136063-thumb.webp",
+  "image": "/images/games/136063.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Gear up for a thrilling adventure to recover a legendary flying machine buried deep in the ruins of an ancient desert city. You'll need to coordinate with your teammates and use every available resource if you hope to survive the scorching heat and relentless sandstorm. Find the flying machine and escape before you all become permanent artifacts of the forbidden desert!\n\nIn Forbidden Desert, a thematic sequel to Forbidden Island, players take on the roles of brave adventurers who must throw caution to the wind and survive both blistering heat and blustering sand in order to recover a legendary flying machine buried under an ancient desert city. While featuring co-operative gameplay similar to Forbidden Island, Forbidden Desert is a fresh, new game based around an innovative set of mechanisms such as an ever-shifting board, individual resource management, and a unique method for locating the flying machine parts.",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 45,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Adventure",
+    "Fantasy",
+    "Science Fiction"
+  ],
+  "mechanics": [
+    "Action Points",
+    "Bias",
+    "Cooperative Game",
+    "Grid Movement",
+    "Hand Management",
+    "Map Deformation",
+    "Modular Board",
+    "Pick-up and Deliver",
+    "Solo / Solitaire Game",
+    "Square Grid",
+    "Tile Placement",
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 6.90677,
+  "rating_average_weight": 2.04,
+  "thumbnail_source": "https://cf.geekdo-images.com/OU26qQZoHJodxSFKiR5IzA__small/img/eDUA8LpBqRjlzJWJYIsIenpF_rA=/fit-in/200x150/filters:strip_icc()/pic1528722.jpg",
+  "image_source": "https://cf.geekdo-images.com/OU26qQZoHJodxSFKiR5IzA__original/img/8smpJMuHROyrbu8FP-EOLXjEi0w=/0x0/filters:format(jpeg)/pic1528722.jpg"
+}

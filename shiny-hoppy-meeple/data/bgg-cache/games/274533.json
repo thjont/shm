@@ -1,0 +1,30 @@
+{
+  "id": 274533,
+  "name": "Throw Throw Burrito",
+  "year": 2019,
+  "thumbnail": "/images/games/274533-thumb.webp",
+  "image": "/images/games/274533.webp",
+  "image_width": 607,
+  "image_height": 537,
+  "description": "The world's first dodgeball card game. Collect cards. Play your hand. Throw things at your friends.\n\nThrow Throw Burrito is what you get when you cross a card game with dodgeball. Try to collect matching sets of cards faster than your opponents while simultaneously ducking, dodging, and throwing squishy airborne burritos. The cards you collect earn points, but getting hit by flying burritos loses them. So clear some space and put away the antiques, because you’ve never played a card game quite like this before.\n\nHow it works: Place a pair of burritos on a table and draw cards. Keep your cards a secret. Rack up points by finding sets of three in the deck. Find matches before anyone else does. If someone plays Burrito Cards, a Battle ensues. Steal points from your opponents by hitting them with squishy toy burritos. Declare war on your friends. Some battles only involve a handful of players. Others force the entire table to engage in a Burrito War. Duel to determine the winner. During a Burrito Duel, two players must stand back to back, walk three paces, and FIRE.\n\n—description from the designer",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 15,
+  "min_age": 7,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Action / Dexterity",
+    "Card Game",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Real-Time",
+    "Set Collection",
+    "Take That"
+  ],
+  "rating_bayes_average": 5.90371,
+  "rating_average_weight": 1.093,
+  "thumbnail_source": "https://cf.geekdo-images.com/5ClVKrQcLkzRdBGiEfjevQ__small/img/FJa46kpICy-6AF4n7W-v9ICP_yo=/fit-in/200x150/filters:strip_icc()/pic7073068.jpg",
+  "image_source": "https://cf.geekdo-images.com/5ClVKrQcLkzRdBGiEfjevQ__original/img/NDGN_eKZmO7uJD0l5JIKJkAX24o=/0x0/filters:format(jpeg)/pic7073068.jpg"
+}

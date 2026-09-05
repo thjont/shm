@@ -1,0 +1,33 @@
+{
+  "id": 359394,
+  "name": "My Island",
+  "year": 2023,
+  "thumbnail": "/images/games/359394-thumb.webp",
+  "image": "/images/games/359394.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Modeled after 2020's My City, My Island is a competitive legacy game in which you develop your own unique island from connected hexagons.\n\nOver 24 games, you will experience the history of your island and discover its secrets, with each of the individual games featuring new rules and game materials with which you will permanently change your island.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "City Building"
+  ],
+  "mechanics": [
+    "Bingo",
+    "Catch the Leader",
+    "Enclosure",
+    "Grid Coverage",
+    "Legacy Game",
+    "Scenario / Mission / Campaign Game",
+    "Tile Placement",
+    "Victory Points as a Resource"
+  ],
+  "rating_bayes_average": 6.30671,
+  "rating_average_weight": 2.2759,
+  "thumbnail_source": "https://cf.geekdo-images.com/tUlwVQpgO85F-3QJnRJlzw__small/img/V8nVxXfwhjwclZ-KCiFrmS4-Uq8=/fit-in/200x150/filters:strip_icc()/pic7233506.jpg",
+  "image_source": "https://cf.geekdo-images.com/tUlwVQpgO85F-3QJnRJlzw__original/img/tbvwF2Clwp8VRFt_P7YMpY47jNM=/0x0/filters:format(jpeg)/pic7233506.jpg"
+}

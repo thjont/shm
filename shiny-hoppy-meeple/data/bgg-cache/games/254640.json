@@ -1,0 +1,32 @@
+{
+  "id": 254640,
+  "name": "Just One",
+  "year": 2018,
+  "thumbnail": "/images/games/254640-thumb.webp",
+  "image": "/images/games/254640.webp",
+  "image_width": 900,
+  "image_height": 1296,
+  "description": "Just One is a co-operative party game in which you all play together to get the best score! Your goal each round is to get one player — the active player — to guess a mystery word based on the clues given by teammates. Can you achieve a perfect score by guessing all the mystery words?\n\nIn more detail, everyone who is not the active player sees the mystery word, then each player independently writes a clue on their personal easel. Once everyone has finished, you reveal the clues to one another. All identical clues are removed from play, so try to be original!\n\nAfter eliminating duplicate clues, reveal the remaining clues to the active player. If they correctly guess the mystery word, your team scores a point. If they decline to guess, you don't score the current card. If they guess wrong, you don't score the current card and you lose one of the points you had already scored. Thus, be original, but not so original that you don't help the active player guess correctly!",
+  "min_players": 3,
+  "max_players": 7,
+  "playing_time": 60,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Deduction",
+    "Party Game",
+    "Word Game"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Cooperative Game",
+    "Deduction",
+    "Paper-and-Pencil",
+    "Score-and-Reset Game"
+  ],
+  "rating_bayes_average": 7.43556,
+  "rating_average_weight": 1.0326,
+  "thumbnail_source": "https://cf.geekdo-images.com/74haNunMBn85beBi-yIKwA__small/img/feIV-gqMeza43ycvxh6PGx4lA_w=/fit-in/200x150/filters:strip_icc()/pic8669313.png",
+  "image_source": "https://cf.geekdo-images.com/74haNunMBn85beBi-yIKwA__original/img/hA22qL6nZxchA8FMTIfhLMcI53I=/0x0/filters:format(png)/pic8669313.png"
+}

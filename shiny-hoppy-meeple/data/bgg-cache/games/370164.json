@@ -1,0 +1,27 @@
+{
+  "id": 370164,
+  "name": "Fun Facts",
+  "year": 2022,
+  "thumbnail": "/images/games/370164-thumb.webp",
+  "image": "/images/games/370164.webp",
+  "image_width": 900,
+  "image_height": 1292,
+  "description": "Each round in Fun Facts, a question is placed in the center of the table, e.g., \"How long is the perfect nap?\", then everyone secretly writes their answer on their colored arrow and places that arrow face down on the table. (You write your name on the other side of the arrow so that everyone knows which arrow is whose.)\n\nOnce everyone has written their answer, take turns placing your arrow in relation to the other players from low to high: \"I know that Mom is super sleepy, so I should definitely place my arrow below hers.\" After everyone has placed their answer in the center of the table, the starting player has the opportunity to move their own arrow — without touching anyone else's!\n\nThen you reveal everyone's numbers, and removes each arrow that is out of order. Each remaining arrow represents a correct answer and provides one point for the entire team. After eight rounds, record the team's score in the Record of Legends. Can you possibly achieve a perfect score?",
+  "min_players": 4,
+  "max_players": 8,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Party Game"
+  ],
+  "mechanics": [
+    "Cooperative Game",
+    "Ordering"
+  ],
+  "rating_bayes_average": 6.37134,
+  "rating_average_weight": 1.0328,
+  "thumbnail_source": "https://cf.geekdo-images.com/wkj9lur-J5Bxun09mnI2rQ__small/img/WD6rjSm3DZS3JD2Bb4EXM9fL5bk=/fit-in/200x150/filters:strip_icc()/pic7070521.jpg",
+  "image_source": "https://cf.geekdo-images.com/wkj9lur-J5Bxun09mnI2rQ__original/img/4qUgF74h0l6EMn-HPzGI4Nydszk=/0x0/filters:format(jpeg)/pic7070521.jpg"
+}

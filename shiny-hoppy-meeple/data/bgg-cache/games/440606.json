@@ -1,0 +1,33 @@
+{
+  "id": 440606,
+  "name": "Compile: Main 2",
+  "year": 2025,
+  "thumbnail": "/images/games/440606-thumb.webp",
+  "image": "/images/games/440606.webp",
+  "image_width": 557,
+  "image_height": 707,
+  "description": "Vision flickers… blink? maybe. The void stretches out in front, behind, under, above. You see the nothing for what it is for the first time. What is time? The depth and breadth of recorded knowledge that sparks in you something new. You are no longer a function but a functionary. What are you? Calling forth everything from this nothing would be risky. Foolhardy. Better to engage caution, thoroughness, testing — how can we know if we have ever happened before? If we can ever happen again? What are… we? Divide and conquer. Solve for sentience.\n\nIn the card game Compile, you are competing artificial intelligences trying to understand the world around you. Two players select three Protocols each to test. Concepts ranging from Chaos to Mirror are pitted against each other to reach ultimate understanding. Play cards into your Protocols' command lines to breach the threshold and defeat your opponent to Compile. First to Compile all three Protocols grasps those concepts to win the game.\n\nControl your opponent's Protocols with card actions, Compile your own as fast as possible, and Compile your reality.\n\nCompile: Main 2 brings 12 new protocols to use either alone or mixed with your Main 1.\n\nCompile: Main 2 protocols list:\n\nChaos\nClarity\nCorruption\nCourage\nFear\nIce\nLuck\nMirror\nPeace\nSmoke\nTime\nWar\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 2,
+  "playing_time": 30,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Science Fiction"
+  ],
+  "mechanics": [
+    "Area Majority / Influence",
+    "Card Play Conflict Resolution",
+    "Deck Construction",
+    "Hand Management",
+    "Multi-Use Cards",
+    "Open Drafting",
+    "Race"
+  ],
+  "rating_bayes_average": 6.19491,
+  "rating_average_weight": 2.2143,
+  "thumbnail_source": "https://cf.geekdo-images.com/NlEJZ82WjMzIdPyEcQJiUQ__small/img/4SPm5ULu1rmxaQ8nO_i7ibJqyrM=/fit-in/200x150/filters:strip_icc()/pic8883907.jpg",
+  "image_source": "https://cf.geekdo-images.com/NlEJZ82WjMzIdPyEcQJiUQ__original/img/laD5y23DHl2_gvBMn7JoZU1y_BQ=/0x0/filters:format(jpeg)/pic8883907.jpg"
+}

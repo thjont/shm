@@ -1,0 +1,29 @@
+{
+  "id": 383109,
+  "name": "Dragonkeepers",
+  "year": 2023,
+  "thumbnail": "/images/games/383109-thumb.webp",
+  "image": "/images/games/383109.webp",
+  "image_width": 900,
+  "image_height": 1296,
+  "description": "Anyone can herd sheep, but have you ever herded dragons?\n\nIn Dragonkeepers, you compete against each other as magicians. Two stacks of cards form the \"Magic Book\", which indicates which and how many dragons can be herded. With each card taken, this information changes, but luckily you can cast spells and return your cards to the Magic Book to change it in your favor and score! But which of your dragons can you spare to cast spells?",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 20,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Fantasy"
+  ],
+  "mechanics": [
+    "Hand Management",
+    "Open Drafting",
+    "Set Collection"
+  ],
+  "rating_bayes_average": 6.2153,
+  "rating_average_weight": 1.9804,
+  "thumbnail_source": "https://cf.geekdo-images.com/FvGvU-Tp3gXDdX-FBkRceA__small/img/CHjciSKLrj6XRWXsdwwnJBMVymk=/fit-in/200x150/filters:strip_icc()/pic7646092.jpg",
+  "image_source": "https://cf.geekdo-images.com/FvGvU-Tp3gXDdX-FBkRceA__original/img/B-Sx4UUUCcqC6IoAbNHkajKwqPw=/0x0/filters:format(jpeg)/pic7646092.jpg"
+}

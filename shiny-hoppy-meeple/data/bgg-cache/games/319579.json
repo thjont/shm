@@ -1,0 +1,32 @@
+{
+  "id": 319579,
+  "name": "Crash Octopus",
+  "year": 2021,
+  "thumbnail": "/images/games/319579-thumb.webp",
+  "image": "/images/games/319579.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "\"We lost our way and sailed into a nightmare. All our cargo was thrown overboard, and now we must save that precious cargo — as well as our captain! — and escape from the raging gigantic octopus from the deep.\"\n\nIn Crash Octopus, players race to collect cargo that's floating in the ocean, while surrounded by a horrifically giant octopus. The first player who collects all five types of cargo on their ship wins.\n\nThe game is played by using the table as the landscape, with a string perimeter around the playing area. To set up, place the octopus head at the center of the playing area, surrounded by the tentacles spread out at an equal distance, then the player ships and anchors outside of the tentacles near the perimeter. Finally, you drop all the cargo onto the playing area by bouncing it off the octopus' head.\n\nOn a turn, a player uses their flag to either navigate — by flicking the anchor next to their ship, then moving their ship to touch the anchor — or flick cargo. Cargo comes in five types — goblet, chest, gem, gold, and captain (yes, really!) — and you can flick any type of cargo that's not on your ship toward your ship. The only exception is that you can't flick the single cargo item closest to your ship. If the flicked cargo misses your ship, your turn ends; if it hits your ship, you load that cargo, then advance the cargo tracker, which is a string of beads on the perimeter.\n\nIf you advance a black bead on the cargo tracker, the octopus attacks! Each player takes a turn dropping a die and bouncing it off the octopus' head, possibly moving the head or a tentacle to get in the way of others picking up cargo and possibly knocking cargo off a ship. What a setback!",
+  "min_players": 1,
+  "max_players": 5,
+  "playing_time": 30,
+  "min_age": 7,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Action / Dexterity",
+    "Animals",
+    "Fantasy",
+    "Nautical",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Dice Rolling",
+    "Flicking",
+    "Push Your Luck"
+  ],
+  "rating_bayes_average": 6.00797,
+  "rating_average_weight": 1.3667,
+  "thumbnail_source": "https://cf.geekdo-images.com/2nix8SKlJngZREZvW3D9WQ__small/img/6-Koxy3YHPZIREI5QkLWWZgyzlU=/fit-in/200x150/filters:strip_icc()/pic5673787.png",
+  "image_source": "https://cf.geekdo-images.com/2nix8SKlJngZREZvW3D9WQ__original/img/DxWfv5wloboiBP2gUc8rNmC_zXo=/0x0/filters:format(png)/pic5673787.png"
+}

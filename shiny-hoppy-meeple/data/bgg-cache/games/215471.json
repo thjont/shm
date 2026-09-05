@@ -1,0 +1,30 @@
+{
+  "id": 215471,
+  "name": "Photograph",
+  "year": 2016,
+  "thumbnail": "/images/games/215471-thumb.webp",
+  "image": "/images/games/215471.webp",
+  "image_width": 900,
+  "image_height": 1158,
+  "description": "Time to walk about town and take some pictures! It's the 1960s in Japan, and you have a half-size camera that lets you take half-size vertical pictures. Let's see whether you can put together good shots...\n\nIn Wind the Film!, you're trying to organize pictures on your roll so that they appear in the right order. Each player has a hand of cards, and on a turn, you'll add 1-3 cards to the front of your hand (without changing their order), move one card in your hand closer to the front, then discard as many cards from the back of your hand as the number of cards that you added. When the sunset card comes out, you can take no more pictures, and everyone scores for what's on their camera.\n\nThe cards all have numbers and colors on them, and you try to line them up in hand to score the most points possible.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 20,
+  "min_age": 12,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Number"
+  ],
+  "mechanics": [
+    "Hand Management",
+    "Open Drafting",
+    "Ordering",
+    "Set Collection"
+  ],
+  "rating_bayes_average": 6.39395,
+  "rating_average_weight": 2.087,
+  "thumbnail_source": "https://cf.geekdo-images.com/hZxtHIrpYhtkrkx5etMBBQ__small/img/m3WxHxBnv4JaP3NU5UmR3Ano20Y=/fit-in/200x150/filters:strip_icc()/pic7245179.jpg",
+  "image_source": "https://cf.geekdo-images.com/hZxtHIrpYhtkrkx5etMBBQ__original/img/hLQGMWB-ReiXVrz5cbzE6crA7Xo=/0x0/filters:format(jpeg)/pic7245179.jpg"
+}

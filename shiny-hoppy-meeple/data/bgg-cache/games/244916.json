@@ -1,0 +1,24 @@
+{
+  "id": 244916,
+  "name": "Drop It",
+  "year": 2018,
+  "thumbnail": "/images/games/244916-thumb.webp",
+  "image": "/images/games/244916.webp",
+  "image_width": 900,
+  "image_height": 899,
+  "description": "Circles, triangles, squares and diamonds: Drop It is about letting go, with the pieces you drop landing somewhere in the vertical game board, ideally where they'll score the most points, but the tiles bounce around and don't always land where you expect them to!\n\nIn more detail, each turn the active player drops one of their pieces into the slot of the game board. The player scores points for the highest level that the piece touches and for any special locations that it touches, but if the piece touches anything of the same shape or color, then you score nothing! What's more, certain pieces are forbidden at certain spots on the edge of the playing area.\n\nThe Drop It rulebook includes variant rules for simpler play or more variety from game to game.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Action / Dexterity"
+  ],
+  "mechanics": [],
+  "rating_bayes_average": 6.29256,
+  "rating_average_weight": 1.0847,
+  "thumbnail_source": "https://cf.geekdo-images.com/CwlOEAEzD-O09vdbvyD2Gw__small/img/MlBFEI8Stn8fmmHhF9Wgym9PHVU=/fit-in/200x150/filters:strip_icc()/pic7988716.jpg",
+  "image_source": "https://cf.geekdo-images.com/CwlOEAEzD-O09vdbvyD2Gw__original/img/C9b_1Wjp5-1m8AnaKlYrWmnB6NA=/0x0/filters:format(jpeg)/pic7988716.jpg"
+}

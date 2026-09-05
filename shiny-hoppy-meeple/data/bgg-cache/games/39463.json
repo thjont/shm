@@ -1,0 +1,39 @@
+{
+  "id": 39463,
+  "name": "Cosmic Encounter",
+  "year": 2008,
+  "thumbnail": "/images/games/39463-thumb.webp",
+  "image": "/images/games/39463.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Build a galactic empire...\n\nIn the depths of space, the alien races of the Cosmos vie with each other for control of the universe. Alliances form and shift from moment to moment, while cataclysmic battles send starships screaming into the warp.\n\nThis classic game of alien politics returns from the warp once more!\n\nIn Cosmic Encounter, each player becomes the leader of one of dozens of alien races, each with its own unique power. On a player's turn, he or she becomes the offense. The offense encounters another player on a planet by moving a group of his or her ships through the hyperspace gate to that planet. Both sides can invite allies and play cards to try and tip the encounter in their favor.\n\nThe object of the game is for players to establish colonies in other players' planetary systems by landing their ships on the other players' planets. The winner(s) are the first player(s) to have five colonies on planets outside his or her home system. The players must use force, cunning, and diplomacy to ensure their victory. And, because alliances are a key part of the game, multiple players can win together!",
+  "min_players": 3,
+  "max_players": 5,
+  "playing_time": 120,
+  "min_age": 12,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Bluffing",
+    "Negotiation",
+    "Science Fiction",
+    "Space Exploration"
+  ],
+  "mechanics": [
+    "Alliances",
+    "Card Play Conflict Resolution",
+    "Hand Management",
+    "Interrupts",
+    "Negotiation",
+    "Prisoner's Dilemma",
+    "Race",
+    "Simultaneous Action Selection",
+    "Take That",
+    "Trading",
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 7.31132,
+  "rating_average_weight": 2.5831,
+  "thumbnail_source": "https://cf.geekdo-images.com/S8cE-Ld7XP5sVz-upKJ-Bg__small/img/gE--xqnuor4bft2J361zxJJGCjM=/fit-in/200x150/filters:strip_icc()/pic1521633.jpg",
+  "image_source": "https://cf.geekdo-images.com/S8cE-Ld7XP5sVz-upKJ-Bg__original/img/c4ZrfOtpp6tDHLyMsKecc2ne370=/0x0/filters:format(jpeg)/pic1521633.jpg"
+}

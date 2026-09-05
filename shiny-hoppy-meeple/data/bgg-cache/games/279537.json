@@ -1,0 +1,34 @@
+{
+  "id": 279537,
+  "name": "The Search for Planet X",
+  "year": 2020,
+  "thumbnail": "/images/games/279537-thumb.webp",
+  "image": "/images/games/279537.webp",
+  "image_width": 800,
+  "image_height": 800,
+  "description": "At the edge of our solar system, a dark planet may lurk. In 2015, astronomers estimated a large distant planet could explain the unique orbits of dwarf planets and other objects. Since then, astronomers have been scanning the sky, hoping to find this planet.\n\nIn The Search for Planet X, players take on the role of astronomers who use observations and logical deductions to search for this hypothetical planet. Each game, the companion app randomly selects an arrangement of objects and a location for Planet X following predefined logic rules.\n\nEach round, as the earth travels around the sun, players use the app to perform scans and attend conferences. As they gain information about the location of the objects, they mark that information on their deduction sheets. As players learn the locations of the various objects, they can start publishing theories, which is how players score points.\n\nAs more and more objects are found, players narrow down the possible locations for Planet X. Once a player believes they know its location and the objects on either side of it, they use the app to conduct a search. The game ends when a player successfully locates Planet X, and all players have a final chance to score some additional points.\n\nThe Search for Planet X captures the thrill of discovery, the puzzle-y nature of astronomical investigation, and the competition inherent in the scientific process. Can you be the first to find Planet X?\n\n—description from the publisher",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 75,
+  "min_age": 13,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Deduction",
+    "Puzzle",
+    "Space Exploration"
+  ],
+  "mechanics": [
+    "Action Points",
+    "Deduction",
+    "End Game Bonuses",
+    "Paper-and-Pencil",
+    "Rondel",
+    "Solo / Solitaire Game",
+    "Turn Order: Time Track"
+  ],
+  "rating_bayes_average": 7.54708,
+  "rating_average_weight": 2.4258,
+  "thumbnail_source": "https://cf.geekdo-images.com/NItjtztEUAKOpaTWZddu9A__small/img/x8YD4cAVOAbSDsZbmKgU0-WQ9wI=/fit-in/200x150/filters:strip_icc()/pic5744928.jpg",
+  "image_source": "https://cf.geekdo-images.com/NItjtztEUAKOpaTWZddu9A__original/img/fr-JmerGdiEj6r9UM7F6laogGF0=/0x0/filters:format(jpeg)/pic5744928.jpg"
+}

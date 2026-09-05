@@ -1,0 +1,30 @@
+{
+  "id": 424975,
+  "name": "Wilmot's Warehouse",
+  "year": 2024,
+  "thumbnail": "/images/games/424975-thumb.webp",
+  "image": "/images/games/424975.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "In Wilmot's Warehouse, your team will work co-operatively to organize the warehouse, using memory, imagination, and silly stories you make up.\n\nDraw product tiles from the stack, discuss what they look like, and place them somewhere you'll remember. After you place each tile, you flip it over and can't look at it again until the end of the game, so your team has to remember where you've placed previous tiles as you decide where to place new ones.\n\nAt the end of the game, in a five-minute rush, your team has to match all 35 face-down tiles with customer cards. Consult your performance review to see how well you did!\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Memory",
+    "Video Game Theme"
+  ],
+  "mechanics": [
+    "Cooperative Game",
+    "Memory",
+    "Real-Time",
+    "Storytelling"
+  ],
+  "rating_bayes_average": 6.31241,
+  "rating_average_weight": 1.1613,
+  "thumbnail_source": "https://cf.geekdo-images.com/me8N7vrfzBRD83d0VcRM-g__small/img/9pTYnER8A_J83WcRJHvAB8TeVlI=/fit-in/200x150/filters:strip_icc()/pic8327408.png",
+  "image_source": "https://cf.geekdo-images.com/me8N7vrfzBRD83d0VcRM-g__original/img/4LHTwSEhk4OPd5ZHExPvfHXNOJs=/0x0/filters:format(png)/pic8327408.png"
+}

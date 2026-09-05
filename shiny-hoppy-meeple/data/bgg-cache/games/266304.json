@@ -1,0 +1,33 @@
+{
+  "id": 266304,
+  "name": "MegaCity: Oceania",
+  "year": 2019,
+  "thumbnail": "/images/games/266304-thumb.webp",
+  "image": "/images/games/266304.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "WELCOME TO THE FUTURE OF CITY BUILDING!\n\nGOLD COAST, AUSTRALIA, 2100. Construction of the first oceanic MegaCity begins. Tackling overpopulation and rising sea levels has become the planet’s number one priority.\n\nAdvances in technology enable us to build towering superstructures on immense floating platforms. You are the next generation of architects called upon to design and build these marvels of structural engineering.\n\nRace to collect contracts, construct beautiful buildings and vie for awards as a unique MegaCity emerges each time you play. It’s a competitive business where prestige points are everything!\n\nA combination of dexterity and light strategy, MegaCity: Oceania is the city building game in which you actually build a unique city every time.\n\n\nPlayers create a brand new MegaCity by collecting Building Tiles, Building Pieces and Contracts. However, this is not a co-operative game - you are battling to score Prestige points based upon the contracts you complete. Players can also gain bonus Prestige points by creating tallest buildings, using a single material, and placing monuments in Parks. At the end of the game, Awards are handed out that contribute to the final score, and points are lost if players have any pieces left over in their personal supplies. Whoever has the highest total is declared the winner, and the finest architect in your new MegaCity.\n\nPlayers build when it's not their turn, meaning this is a game with little downtime. A combination of dexterity, light strategy and creativity make MegaCity a truly unique experience - a city building game where you actually build a brand new city every time you play!",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 60,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Action / Dexterity",
+    "City Building",
+    "Science Fiction"
+  ],
+  "mechanics": [
+    "Area Majority / Influence",
+    "Modular Board",
+    "Real-Time",
+    "Set Collection",
+    "Stacking and Balancing",
+    "Tile Placement"
+  ],
+  "rating_bayes_average": 5.81772,
+  "rating_average_weight": 1.8462,
+  "thumbnail_source": "https://cf.geekdo-images.com/cZCahfLC3nxVbFirEnrD5A__small/img/60nCy2D4pJsY1RnilzYhfPUDy_c=/fit-in/200x150/filters:strip_icc()/pic4563288.png",
+  "image_source": "https://cf.geekdo-images.com/cZCahfLC3nxVbFirEnrD5A__original/img/AVaxeVyCc0CEgHOCOF8oV7AghVc=/0x0/filters:format(png)/pic4563288.png"
+}

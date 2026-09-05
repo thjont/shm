@@ -1,0 +1,31 @@
+{
+  "id": 198773,
+  "name": "Codenames: Pictures",
+  "year": 2016,
+  "thumbnail": "/images/games/198773-thumb.webp",
+  "image": "/images/games/198773.webp",
+  "image_width": 900,
+  "image_height": 1296,
+  "description": "What are these strange symbols on the map? They are code for locations where spies must contact secret agents!\n\nTwo rival spymasters know the agent in each location. They deliver coded messages telling their field operatives where to go for clandestine meetings. Operatives must be clever. A decoding mistake could lead to an unpleasant encounter with an enemy agent – or worse, with the assassin! Both teams race to contact all their agents, but only one team can win.\n\nCodenames: Pictures differs from the original Codenames in that the agents are no longer represented by a single word, but by an image that contains multiple elements.",
+  "min_players": 2,
+  "max_players": 8,
+  "playing_time": 15,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Deduction",
+    "Party Game",
+    "Spies / Secret Agents"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Memory",
+    "Team-Based Game"
+  ],
+  "rating_bayes_average": 6.9955,
+  "rating_average_weight": 1.2351,
+  "thumbnail_source": "https://cf.geekdo-images.com/TGHPcdYEnD3_QzMohEIrNw__small/img/0bZIFaJEW-3FquBb8jY-SqrrUx8=/fit-in/200x150/filters:strip_icc()/pic9206059.png",
+  "image_source": "https://cf.geekdo-images.com/TGHPcdYEnD3_QzMohEIrNw__original/img/BjCphUnm_GLYJ2I1VAkxqNiNTWk=/0x0/filters:format(png)/pic9206059.png"
+}

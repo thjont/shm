@@ -1,0 +1,32 @@
+{
+  "id": 169654,
+  "name": "Deep Sea Adventure",
+  "year": 2014,
+  "thumbnail": "/images/games/169654-thumb.webp",
+  "image": "/images/games/169654.webp",
+  "image_width": 696,
+  "image_height": 1226,
+  "description": "A group of poor explorers hoping to get rich quickly heads out to recover treasures from some undersea ruins. They're all rivals, but their budgets force them all to share a single rented submarine. In the rented submarine, they all have to share a single tank of air, as well. If they don't get back to the sub before they run out of air, they'll drop all their treasure. Now it's time to see who can bring home the greatest riches.\n\nGame Objective\nThe game takes place over 3 rounds, and the player to gain the most points over the 3 rounds is the winner. In order to gain points, you must bring the most ruins chips back to the submarine. You can only return to the submarine once per round, and you cannot progress more after returning. You cannot return to the submarine without bringing any ruins chips.\n\nTurn Progression\nOn their turns, players conduct steps 1-4 listed below. Players take turns, going clockwise around the board, and the round ends when all players have returned to the submarine, or if the air runs out at the beginning of someone's turn.\n\n1) Declare if you will turn back or not.\n2) Reduce air.\n3) Roll the dice and advance your game piece.\n4) Search. (When you have stopped moving, select one of A-C below)\n     A) Do nothing.\n     B) Pick up ruins chip.\n     C) Place a ruins chip.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Dice",
+    "Exploration",
+    "Nautical",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Pick-up and Deliver",
+    "Push Your Luck",
+    "Roll / Spin and Move",
+    "Track Movement"
+  ],
+  "rating_bayes_average": 6.68294,
+  "rating_average_weight": 1.1844,
+  "thumbnail_source": "https://cf.geekdo-images.com/owyKXaa5SPB2HG9F_MueNQ__small/img/poEY0PMTpz4X_SOUaPjs6G7qr7o=/fit-in/200x150/filters:strip_icc()/pic3169827.png",
+  "image_source": "https://cf.geekdo-images.com/owyKXaa5SPB2HG9F_MueNQ__original/img/gOmpUB3hM7Ap9o-kDsV8ZVBVYXA=/0x0/filters:format(png)/pic3169827.png"
+}

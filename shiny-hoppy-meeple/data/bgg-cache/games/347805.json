@@ -1,0 +1,27 @@
+{
+  "id": 347805,
+  "name": "Green Team Wins",
+  "year": 2022,
+  "thumbnail": "/images/games/347805-thumb.webp",
+  "image": "/images/games/347805.webp",
+  "image_width": 607,
+  "image_height": 803,
+  "description": "The game is played over 15 rounds, where players will simultaneously answer one question at a time.\n\nThere are three types of questions: Fill in the Blank, This or That, and Multiple Choice. To set up the game, randomly choose 5 cards from each type and shuffle them.\n\nEveryone will be asked the same question, then writes down their responses at the same time. All players with the winning answer join the Green Team and score points. If your answer is not the most popular among the other players, then you join the Orange Team and score zero points for that round. Players joining the Green Team from the Orange Team will score one point. Players who are on the Green Team and stay on it will earn two points.\n\nBut it's not about having the best answer, or the smartest answer, or the funniest answer. Only the most popular answer wins - the one that the most players at the table wrote down.\n\nTo win, get on the Green Team, stay on the Green Team, and win - because that's what the Green Team does. They win.",
+  "min_players": 3,
+  "max_players": 12,
+  "playing_time": 15,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Party Game"
+  ],
+  "mechanics": [
+    "Paper-and-Pencil",
+    "Team-Based Game"
+  ],
+  "rating_bayes_average": 6.31404,
+  "rating_average_weight": 1.0426,
+  "thumbnail_source": "https://cf.geekdo-images.com/CnbTdFLjxjuvX_HXgIDYGw__small/img/Xo93w8kwKWbYS-NwE_4XGD6XhQE=/fit-in/200x150/filters:strip_icc()/pic6691185.png",
+  "image_source": "https://cf.geekdo-images.com/CnbTdFLjxjuvX_HXgIDYGw__original/img/LGP4yQrZC_67Z2cerjV1ph7ggwQ=/0x0/filters:format(png)/pic6691185.png"
+}

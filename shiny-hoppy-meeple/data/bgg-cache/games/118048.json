@@ -1,0 +1,34 @@
+{
+  "id": 118048,
+  "name": "Targi",
+  "year": 2012,
+  "thumbnail": "/images/games/118048-thumb.webp",
+  "image": "/images/games/118048.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Unlike in other cultures, the desert Tuareg men, known as Targi, cover their faces, whereas women of the tribe do not wear veils. They run the household and have the last word at home in the tents. Different families are divided into tribes, headed by the ‘Imascheren’ (or nobles). As leader of a Tuareg tribe, players trade goods from near (such as dates and salt) and far (like pepper) in order to obtain gold and other benefits, and enlarge their family. In each round their new offerings are made. Cards are a means to an end in order to obtain the popular tribe cards.\n\nThe board consists of a 5x5 grid: a border of 16 squares with printed action symbols and then 9 blank squares in the centre onto which cards are dealt. Meeples are placed one at a time on the spaces at the edges of the board (not including corner squares). You cannot place a meeple on a square the opponent has a meeple on already, nor on a square facing an opponent's meeple. Once all meeples are placed, players then execute the actions on the border squares the meeples are on and also take the cards from the centre that match the row and column of the border meeples.\n\nThe game is predominantly scored and won by playing tribal cards to your display. These give advantages during the game and victory points at the end. Usually cards are played (or discarded) immediately once drawn. A single card can be kept in hand, but then requires a special action to play it (or to discard it to free the hand spot for another card). Each card has a cost in goods to play. Goods are obtained either from border spaces or from goods cards.\n\nThe display (for scoring) consists of three rows of four cards that are filled from left to right and cannot be moved once placed (barring some special cards). There is also a balance to be found between the victory point score on the cards themselves (1-3 VP per tribal card) and the combinations per row (a full row of four identical card types gets you an additional 4 VP, and a full row of four distinct card types gets you 2 VP).\n\nThe winner at the end of the game is the player with the most victory points.",
+  "min_players": 2,
+  "max_players": 2,
+  "playing_time": 60,
+  "min_age": 12,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Arabian",
+    "Card Game"
+  ],
+  "mechanics": [
+    "End Game Bonuses",
+    "Modular Board",
+    "Open Drafting",
+    "Pattern Building",
+    "Set Collection",
+    "Square Grid",
+    "Turn Order: Progressive",
+    "Worker Placement"
+  ],
+  "rating_bayes_average": 7.3986,
+  "rating_average_weight": 2.3423,
+  "thumbnail_source": "https://cf.geekdo-images.com/wHg4fOf48cs1kw1PDOk1tQ__small/img/6l-jqYlfECK1SVSsUs7FXUheKzQ=/fit-in/200x150/filters:strip_icc()/pic3958793.jpg",
+  "image_source": "https://cf.geekdo-images.com/wHg4fOf48cs1kw1PDOk1tQ__original/img/St4ABQhpauYiq4Mt6-f38JtLOjM=/0x0/filters:format(jpeg)/pic3958793.jpg"
+}

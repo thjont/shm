@@ -1,0 +1,38 @@
+{
+  "id": 157969,
+  "name": "Sheriff of Nottingham",
+  "year": 2014,
+  "thumbnail": "/images/games/157969-thumb.webp",
+  "image": "/images/games/157969.webp",
+  "image_width": 900,
+  "image_height": 880,
+  "description": "Prince John is coming to Nottingham! Players, in the role of merchants, see this as an opportunity to make quick profits by selling goods in the bustling city during the Prince's visit. However, players must first get their goods through the city gate, which is under the watch of the Sheriff of Nottingham. Should you play it safe with legal goods and make a profit, or risk it all by sneaking in illicit goods? Be mindful, though, as the Sheriff always has his eyes out for liars and tricksters and if he catches one, he very well may confiscate those goods for himself!\n\nIn Sheriff of Nottingham, players will not only be able to experience Nottingham as a merchant of the city, but each turn one player will step into the shoes of the Sheriff himself. Players declare goods they wish to bring into the city, goods that are secretly stored in their burlap sack. The Sheriff must then determine who gets into the city with their goods, who gets inspected, and who may have their goods confiscated!\n\nThe game ends after all players have had two chances (three chances in a three-player game) to play as the Sheriff. At the end of the last round, all players discard any cards they have in hand—those cards are not worth any points! Then, reveal their Contraband cards and count up your score. The player with the highest score wins.\n\nDo you have what it takes to be seen as an honest merchant? Will you make a deal with the Sheriff to let you in? Or will you persuade the Sheriff to target another player while you quietly slip by the gate? Declare your goods, negotiate deals, and be on the lookout for the Sheriff of Nottingham!",
+  "min_players": 3,
+  "max_players": 5,
+  "playing_time": 60,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Bluffing",
+    "Card Game",
+    "Humor",
+    "Medieval",
+    "Negotiation",
+    "Novel-based",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Betting and Bluffing",
+    "Bribery",
+    "Hand Management",
+    "Negotiation",
+    "Open Drafting",
+    "Role Playing",
+    "Set Collection"
+  ],
+  "rating_bayes_average": 6.90276,
+  "rating_average_weight": 1.6589,
+  "thumbnail_source": "https://cf.geekdo-images.com/BBgLFKUzr6tcKtlIM2JSFw__small/img/JD5L_XrtkaKINUj8ILZqFMGcTsE=/fit-in/200x150/filters:strip_icc()/pic2075830.jpg",
+  "image_source": "https://cf.geekdo-images.com/BBgLFKUzr6tcKtlIM2JSFw__original/img/fll2MuTBPVKb7fyBJ8D-4_c1XHM=/0x0/filters:format(jpeg)/pic2075830.jpg"
+}

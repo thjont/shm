@@ -1,0 +1,35 @@
+{
+  "id": 220877,
+  "name": "Rajas of the Ganges",
+  "year": 2017,
+  "thumbnail": "/images/games/220877-thumb.webp",
+  "image": "/images/games/220877.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Through tactics and karma to wealth and fame. In 16th century India, the powerful empire of the Great Moguls rises between the Indus and the Ganges rivers. Taking on the role of rajas and ranis – the country's influential nobles – players in Rajas of the Ganges race against each other in support of the empire by developing their estates into wealthy and magnificent provinces. Players must use their dice wisely and carefully plot where to place their workers, while never underestimating the benefits of good karma. Success will bring them great riches and fame in their quest to become legendary rulers.\n\nYour task is to develop your province with the help of your workers, money, and dice. In the end, you must win the race with a combination of wealth and fame. The fame track and the money track run parallel to each other in opposite directions around the gameboard. The fame markers are moved clockwise, the money markers, counter-clockwise. As you build and expand, you attempt to increase both your fame and wealth so that\nyour fame marker and your money marker intersect.\n\nAs soon as one player manages to have his fame marker and his money marker converge or pass each other, the end of the game is triggered. The\ncurrent stage will still be completed – i.e., all players who are sitting between the player who has triggered the end of the game and the current starting player still have a chance to win and may place one more worker (if they have one) and carry out the applicable action. All plyers whose markers pass each others counts his fame points.  The player with the most fame points wins.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 75,
+  "min_age": 12,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Dice",
+    "Economic",
+    "Renaissance",
+    "Territory Building"
+  ],
+  "mechanics": [
+    "Connections",
+    "Dice Rolling",
+    "Race",
+    "Tile Placement",
+    "Track Movement",
+    "Worker Placement",
+    "Worker Placement with Dice Workers"
+  ],
+  "rating_bayes_average": 7.41172,
+  "rating_average_weight": 2.9027,
+  "thumbnail_source": "https://cf.geekdo-images.com/hR5sxxqNY3gjvLwifaqRww__small/img/dPZ7zqlIVCt4xiWfISkpujiwKwk=/fit-in/200x150/filters:strip_icc()/pic3646165.jpg",
+  "image_source": "https://cf.geekdo-images.com/hR5sxxqNY3gjvLwifaqRww__original/img/kaXHOjBJX-URkjTjhQUhFl7E8Ng=/0x0/filters:format(jpeg)/pic3646165.jpg"
+}

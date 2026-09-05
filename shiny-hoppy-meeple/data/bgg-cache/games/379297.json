@@ -1,0 +1,28 @@
+{
+  "id": 379297,
+  "name": "Good Face Bad Face",
+  "year": 2023,
+  "thumbnail": "/images/games/379297-thumb.webp",
+  "image": "/images/games/379297.webp",
+  "image_width": 900,
+  "image_height": 1211,
+  "description": "Good Face Bad Face is a deceptively simple card game. It’s all about pushing your luck and fooling your opponents.\n\nEach turn someone creates a mystery pile of cards from the ones in their hand and passes it round. When it comes to you, you can turn over the top one, or pass it on.\n\nThe aim is to lay four Good Faces in front of you, by turning over cards from the top of the pile — but beware! Turn over a Bad Face and it’ll chase all the Good Faces you were collecting away. So think again: do you turn over the top card, or pass the pile on?\n\nGood Face Bad Face is a high-stakes, bluffing game where you’ll have to watch the cards, push your luck and get into people’s heads in order to win.\n\n—description from the designer",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Bluffing",
+    "Card Game",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Push Your Luck"
+  ],
+  "rating_bayes_average": 5.61015,
+  "rating_average_weight": 1.0909,
+  "thumbnail_source": "https://cf.geekdo-images.com/nnU4pSrTrOVP_vApt-8Q_g__small/img/H2j2u5N9dXtVlgqWXrJeiHzR7wU=/fit-in/200x150/filters:strip_icc()/pic7321927.png",
+  "image_source": "https://cf.geekdo-images.com/nnU4pSrTrOVP_vApt-8Q_g__original/img/4aCTNec28BFT_sHBR3brCB0sO3E=/0x0/filters:format(png)/pic7321927.png"
+}

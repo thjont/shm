@@ -1,0 +1,26 @@
+{
+  "id": 386937,
+  "name": "Lacuna",
+  "year": 2023,
+  "thumbnail": "/images/games/386937-thumb.webp",
+  "image": "/images/games/386937.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Lacuna is a game for 2 players about collecting flowers on a pond at night. It takes seconds to set up and plays entirely on a cloth mat.\n\nThe rules are simple: draw an imaginary line between 2 flowers, place a pawn, and collect both flowers.\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 2,
+  "playing_time": 15,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Abstract Strategy"
+  ],
+  "mechanics": [
+    "Zone of Control"
+  ],
+  "rating_bayes_average": 6.44385,
+  "rating_average_weight": 1.0943,
+  "thumbnail_source": "https://cf.geekdo-images.com/kYZoWRZUfVD_g4TefiBu-Q__small/img/u1WZAzQstXpCSvXCbQA87R0xeTM=/fit-in/200x150/filters:strip_icc()/pic7488897.png",
+  "image_source": "https://cf.geekdo-images.com/kYZoWRZUfVD_g4TefiBu-Q__original/img/0S_hY9a3JRwwJPLNONiLjDLCTcI=/0x0/filters:format(png)/pic7488897.png"
+}

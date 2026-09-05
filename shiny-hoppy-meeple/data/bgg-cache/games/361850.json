@@ -1,0 +1,32 @@
+{
+  "id": 361850,
+  "name": "Nimalia",
+  "year": 2023,
+  "thumbnail": "/images/games/361850-thumb.webp",
+  "image": "/images/games/361850.webp",
+  "image_width": 900,
+  "image_height": 902,
+  "description": "Design the best Animal Sanctuary while playing 5 rounds.\n\nEach round, players will draw 3 cards, place one, and pass the rest (simple drafting phase). Each card is composed of 4 biomes, each containing an animal. When you place a card, you must cover AT LEAST one biome. The whole Sanctuary must not exceed 6 x 6.\n\nEach game will have a different pool of scoring objectives. Each round will only count some of the objectives chosen for the game, so you'll have to modify your sanctuary throughout the game in order to score the most points.\n\nAt the end of the 5 rounds, the player who earned the most points becomes the winner!\n\n-description from publisher",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Environmental",
+    "Territory Building"
+  ],
+  "mechanics": [
+    "Closed Drafting",
+    "Grid Coverage",
+    "Layering",
+    "Simultaneous Action Selection",
+    "Tile Placement"
+  ],
+  "rating_bayes_average": 6.19901,
+  "rating_average_weight": 1.7241,
+  "thumbnail_source": "https://cf.geekdo-images.com/tnq1wgSH40Iwu1TGkuUUmA__small/img/PDqD4nV0iQqA8z45OLaRCAjg1aM=/fit-in/200x150/filters:strip_icc()/pic7184172.png",
+  "image_source": "https://cf.geekdo-images.com/tnq1wgSH40Iwu1TGkuUUmA__original/img/wbJA-oFtKoPqTGp364YhUirmZBg=/0x0/filters:format(png)/pic7184172.png"
+}

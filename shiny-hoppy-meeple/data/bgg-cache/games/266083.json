@@ -1,0 +1,30 @@
+{
+  "id": 266083,
+  "name": "L.L.A.M.A.",
+  "year": 2019,
+  "thumbnail": "/images/games/266083-thumb.webp",
+  "image": "/images/games/266083.webp",
+  "image_width": 900,
+  "image_height": 1155,
+  "description": "In LLAMA, you want to dump cards from your hand as quickly as you can, but you might not be able to play what you want, so do you quit and freeze your hand or draw and hope to keep playing?\n\nEach player starts a round with six cards in hand; the deck consists of llama cards and cards numbered 1-6, with eight copies of each. On a turn, the active player can play a card, draw a card, or quit. To play a card, you must play the same number as the top card of the discard pile or one number higher. If a 6 is on the discard pile, you can play a 6 or a llama, and if a llama is on top, you can play another llama or a 1. If you quit, you place your remaining cards face down and take no further actions in the round. If all players have quit but one, that player can continue to play, but cannot draw more cards.\n\nThe round ends when one player empties their hand or all players have quit. In either case, players collect tokens based on the cards in their hand. Each different number card in hand gets you white tokens (each worth 1 point) equal to the value of the card while one or more llamas gets you a black token (worth 10 points). (You can exchange ten white tokens for one black token at any time.) If you played all your cards, you can return one token (white or black) that you previously collected to the supply. You then shuffle all the cards and begin a new round, in which the first player to play will be the one who emptied their hand or was the last one to quit in the previous round.\n\nThe game ends at the end of the round where at least one player has forty or more total points. Whoever has the fewest points wins!\n\nThe original title of this game is a German acronym and stands for Lege alle Minuspunkte ab, that is, \"discard all minus points\", with \"Lama\" also being the German spelling of \"llama\".\n\nThe Polish game Lato z Komarami features gameplay nearly identical to LLAMA except that the game has one less \"llama\" card, and the penalty for llama cards in hand is 10 points per card, instead of being 10 points for one or more llama cards.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 20,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Number"
+  ],
+  "mechanics": [
+    "Hand Management",
+    "Ladder Climbing",
+    "Matching",
+    "Push Your Luck"
+  ],
+  "rating_bayes_average": 6.27431,
+  "rating_average_weight": 1.0519,
+  "thumbnail_source": "https://cf.geekdo-images.com/_K4k5XqtcHc947wtMcwafA__small/img/-mlnpzGwxTicMllpaSHu6Py8ZjQ=/fit-in/200x150/filters:strip_icc()/pic4961695.jpg",
+  "image_source": "https://cf.geekdo-images.com/_K4k5XqtcHc947wtMcwafA__original/img/KeuyubABzu81Tc40hHAUGTDqNuA=/0x0/filters:format(jpeg)/pic4961695.jpg"
+}

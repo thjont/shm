@@ -1,0 +1,32 @@
+{
+  "id": 184346,
+  "name": "Go Nuts for Donuts",
+  "year": 2017,
+  "thumbnail": "/images/games/184346-thumb.webp",
+  "image": "/images/games/184346.webp",
+  "image_width": 900,
+  "image_height": 1114,
+  "description": "Go Nuts for Donuts is a fast-paced card game for the whole family with just a sprinkle of strategy. Outsmart your opponents and collect donuts hot out of the oven for points. But beware, if two players go after the same donut, then no one gets it!\n\nIn Go Nuts for Donuts, players lay out donuts from the deck equal to the amount of players plus one. Each player has a number card for each donut that is out. Players all pick a donut they want by placing one of their number cards face down on the table. Players simultaneously reveal their number. If two or more players have matching numbers, that donut is discarded and no one gets it. If you're the only player that bid for the donut, than you take it and place it face up in front of you. Collect sets, unique and powerful donuts, and pairs of donuts to maximize points.\n\nContents\n70 donut cards (full-size cards with brown backs)\n\n    Teal\n\n\n\n        Chocolate Frosted (3)\n        Donut Holes (6)\n        Eclair (3)\n        Glazed (5)\n        Jelly Filled (6)\n        Maple Bar (2)\n        Plain (7) Note that there was a misprint in the 2017 rules incorrectly stating the total of Plain donuts to be only 6.\n        Powdered (4)\n        French Cruller (1 teal)\n\n\n\n    Pink\n\n\n\n        Boston Cream (6)\n        Double Chocolate (2)\n        Red Velvet (2)\n        Sprinkled (2)\n        French Cruller (1 pink)\n\n\n\n    Purple\n\n\n\n        Bear Claw (2)\n        Cinnamon Twist (2)\n        Coffee (2)\n        Day Old Donuts (1)\n        Milk (1)\n        Old Fashioned (2)\n        French Cruller (1 purple)\n\n\n\n    Blue\n\n\n\n        Maple Frosted (2)\n        Mucho Matcha (2)\n        Raspberry Frosted (2)\n        Strawberry Glazed (2)\n        French Cruller (1 blue)\n\n\n42 selection cards\n\n    six sets of miniature cards with white backs. Fronts display the numerals 1 through 7\n\n\n7 donut row indicators\n\n    cardboard chits with numerals 1 through 7",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 20,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Bluffing",
+    "Card Game",
+    "Deduction"
+  ],
+  "mechanics": [
+    "Open Drafting",
+    "Push Your Luck",
+    "Set Collection",
+    "Simultaneous Action Selection",
+    "Take That"
+  ],
+  "rating_bayes_average": 6.00118,
+  "rating_average_weight": 1.12,
+  "thumbnail_source": "https://cf.geekdo-images.com/VcbGYVCOnQI5IhDPv9DFUg__small/img/juOUDVkJkHAcrlRUqXU9yFAlbSI=/fit-in/200x150/filters:strip_icc()/pic3595157.jpg",
+  "image_source": "https://cf.geekdo-images.com/VcbGYVCOnQI5IhDPv9DFUg__original/img/WV8VsEU9JZIAPYg8YGFrqJvNk9c=/0x0/filters:format(jpeg)/pic3595157.jpg"
+}

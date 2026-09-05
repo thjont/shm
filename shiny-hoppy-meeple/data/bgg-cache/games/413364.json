@@ -1,0 +1,30 @@
+{
+  "id": 413364,
+  "name": "Bottle Imp",
+  "year": 2024,
+  "thumbnail": "/images/games/413364-thumb.webp",
+  "image": "/images/games/413364.webp",
+  "image_width": 900,
+  "image_height": 1150,
+  "description": "A classic of the trick taking-games makes its return! Bottle Imp is back in a new edition, adding team modes and a 5 to 6 player variant to the usual 2 to 4 players configuration of the title.\n\nIn this game inspired by the eponymous novel by Robert Louis Stevenson, all players around the table want to acquire the cursed bottle that can grant all wishes... However, they need to get rid of it before the end! Score points by trying to take as many tricks as possible, but make sure to not finish the game with the bottle, or the Bottle Imp will take your points!\n\nThis new edition features 54 foil effect cards and two bottles, with art by Maxime Morin (Faraway, Codex Naturalis, Next station Tokyo, Next station London...)\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Novel-based"
+  ],
+  "mechanics": [
+    "Hot Potato",
+    "Score-and-Reset Game",
+    "Team-Based Game",
+    "Trick-taking"
+  ],
+  "rating_bayes_average": 5.92872,
+  "rating_average_weight": 2.1176,
+  "thumbnail_source": "https://cf.geekdo-images.com/hEll3mBsXMTBdtDxRyhwVw__small/img/L5T-9t0YLV3EmJb0c-3DmhK5HhA=/fit-in/200x150/filters:strip_icc()/pic8013038.jpg",
+  "image_source": "https://cf.geekdo-images.com/hEll3mBsXMTBdtDxRyhwVw__original/img/dCnpR8Ous6Dlp8pvqWHmEizjM8U=/0x0/filters:format(jpeg)/pic8013038.jpg"
+}

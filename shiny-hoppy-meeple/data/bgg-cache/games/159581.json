@@ -1,0 +1,28 @@
+{
+  "id": 159581,
+  "name": "Maskmen",
+  "year": 2014,
+  "thumbnail": "/images/games/159581-thumb.webp",
+  "image": "/images/games/159581.webp",
+  "image_width": 687,
+  "image_height": 1210,
+  "description": "Welcome to the world of Pro Wrestling! You must win at any cost or face the wrath of your sponsors. This year there are six new wrestlers debuting, so go out and win some matches!\n\nOver the four seasons of maskmen, whoever has won the most points is the winner.  In a round, players can play cards or pass on their turn. Players play 1-3 cards on their turn of the same type of wrestler (that hasn't already been played), to help resolve the strength of the wrestler. The faster you get rid of your cards, the better your chances of winning. As soon as you rid your cards you get to take the highest point token available, then the next player to go out gets the next token. Once there is only one player remaining, the round ends and that player gets the -1 token.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 20,
+  "min_age": 9,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Sports"
+  ],
+  "mechanics": [
+    "Ladder Climbing",
+    "Score-and-Reset Game"
+  ],
+  "rating_bayes_average": 6.23107,
+  "rating_average_weight": 1.7778,
+  "thumbnail_source": "https://cf.geekdo-images.com/-wnV7DO4fH-xTnHucSvF0g__small/img/yTCn34kVw6BHYHYn9PclScwLt9A=/fit-in/200x150/filters:strip_icc()/pic3678408.png",
+  "image_source": "https://cf.geekdo-images.com/-wnV7DO4fH-xTnHucSvF0g__original/img/RFbaeJA-SA4OceW3Vk_dj6bv43w=/0x0/filters:format(png)/pic3678408.png"
+}

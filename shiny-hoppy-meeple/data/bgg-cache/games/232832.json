@@ -1,0 +1,35 @@
+{
+  "id": 232832,
+  "name": "Century: Golem Edition",
+  "year": 2017,
+  "thumbnail": "/images/games/232832-thumb.webp",
+  "image": "/images/games/232832.webp",
+  "image_width": 900,
+  "image_height": 1300,
+  "description": "Century: Golem Edition is a re-themed version of Century: Spice Road set in the world of Caravania. In Century: Golem Edition, players are caravan leaders who travel the famed golem road to deliver crystals to the far reaches of the world. Each turn, players perform one of four actions:\n\n\n    Establish a trade route (by taking a market card)\n    Make a trade or harvest crystals (by playing a card from hand)\n    Fulfill a demand (by meeting a victory point card's requirements and claiming it)\n    Rest (by taking back into your hand all of the cards you've played)\n\n\nThe last round is triggered once a player has claimed their fifth victory point card, then whoever has the most victory points wins.",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 45,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Economic",
+    "Fantasy"
+  ],
+  "mechanics": [
+    "Action Retrieval",
+    "Auction: Dutch",
+    "Contracts",
+    "Deck, Bag, and Pool Building",
+    "Hand Management",
+    "Increase Value of Unchosen Resources",
+    "Open Drafting",
+    "Set Collection"
+  ],
+  "rating_bayes_average": 7.23126,
+  "rating_average_weight": 1.7167,
+  "thumbnail_source": "https://cf.geekdo-images.com/1bihoShOuqaCuZJXB3Q2gQ__small/img/dvGQkdnwtcwAmcxHR_7J17OsLjQ=/fit-in/200x150/filters:strip_icc()/pic3936124.jpg",
+  "image_source": "https://cf.geekdo-images.com/1bihoShOuqaCuZJXB3Q2gQ__original/img/fvGzpqyud6Oz1BWOe4gItWWb8P0=/0x0/filters:format(jpeg)/pic3936124.jpg"
+}

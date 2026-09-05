@@ -1,0 +1,37 @@
+{
+  "id": 362986,
+  "name": "Tribes of the Wind",
+  "year": 2022,
+  "thumbnail": "/images/games/362986-thumb.webp",
+  "image": "/images/games/362986.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "In a post-apocalyptic world, the tribes of the wind are going to rebuild the world on the polluted ruins from the past.\n\nPlayers will have to plant forests, build new villages and temples, and decontaminate surrounding areas.\n\nThey will be able to play cards from their hand. But be careful! The effect or even the possibility of playing the card may vary depending on... the back of your surrounding opponents' cards.\n\nPlayers may also send their wind riders to explore the area, plant forests, or build villages and temples using all the gathered resources.\n\nAs the game progresses, you strive to complete objectives that will allow you to unlock your guide's special abilities, and to improve your tribe's powers.\n\nWhen someone builds their 5th village, the end of the game is triggered. The player with the most points, depending on pollution, villages, temples, layout of their forests, and other various objectives, wins!\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 90,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Civilization",
+    "Environmental"
+  ],
+  "mechanics": [
+    "Closed Drafting",
+    "Contracts",
+    "End Game Bonuses",
+    "Grid Coverage",
+    "Hand Management",
+    "Movement Points",
+    "Neighbor Scope",
+    "Race",
+    "Set Collection",
+    "Tile Placement"
+  ],
+  "rating_bayes_average": 6.55425,
+  "rating_average_weight": 2.6593,
+  "thumbnail_source": "https://cf.geekdo-images.com/G_moxnKfgJ4w_NGmr9T6Lg__small/img/YBNaQ6O-D_ej8czfA3okABmfQjg=/fit-in/200x150/filters:strip_icc()/pic6871609.jpg",
+  "image_source": "https://cf.geekdo-images.com/G_moxnKfgJ4w_NGmr9T6Lg__original/img/SFbumPuv8QNYm2UT5ZiHye0Zv-k=/0x0/filters:format(jpeg)/pic6871609.jpg"
+}

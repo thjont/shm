@@ -1,0 +1,37 @@
+{
+  "id": 181304,
+  "name": "Mysterium",
+  "year": 2015,
+  "thumbnail": "/images/games/181304-thumb.webp",
+  "image": "/images/games/181304.webp",
+  "image_width": 900,
+  "image_height": 904,
+  "description": "In the 1920s, Mr. MacDowell, a gifted astrologer, immediately detected a supernatural being upon entering his new house in Scotland. He gathered eminent mediums of his time for an extraordinary s&eacute;ance, and they have seven hours to make contact with the ghost and investigate any clues that it can provide to unlock an old mystery. Unable to talk, the amnesiac ghost communicates with the mediums through visions, which are represented in the game by illustrated cards. The mediums must decipher the images to help the ghost remember how he was murdered: Who did the crime? Where did it take place? Which weapon caused the death? The more the mediums cooperate and guess well, the easier it is to catch the right culprit.\n\nIn Mysterium, a reworking of the game system present in Tajemnicze Domostwo, one player takes the role of ghost while everyone else represents a medium. To solve the crime, the ghost must first recall (with the aid of the mediums) all of the suspects present on the night of the murder. A number of suspect, location and murder weapon cards are placed on the table, and the ghost randomly assigns one of each of these in secret to a medium.\n\nEach hour (i.e., game turn), the ghost hands one or more vision cards face up to each medium, refilling their hand to seven each time they share vision cards. These vision cards present dreamlike images to the mediums. Once the ghost has handed cards to the final medium, players have two minutes to place their token on a suspect. They may also place clairvoyancy tokens on the guesses made by other mediums to show whether they agree or disagree with those guesses.\n\nOnce a medium has correctly guessed the suspect, location and weapon, they move their token to the epilogue board. If one or more mediums fail to identify their proper suspect, location and weapon before the end of the seventh hour, then the ghost has failed and dissipates, leaving the mystery unsolved. If, however, they have all succeeded, then the ghost has recovered enough of its memory to identify the culprit.",
+  "min_players": 2,
+  "max_players": 7,
+  "playing_time": 42,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Deduction",
+    "Murder / Mystery",
+    "Party Game",
+    "Real-time"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Cooperative Game",
+    "Deduction",
+    "Finale Ending",
+    "Hand Management",
+    "Pattern Recognition",
+    "Real-Time",
+    "Storytelling",
+    "Voting"
+  ],
+  "rating_bayes_average": 7.04583,
+  "rating_average_weight": 1.8913,
+  "thumbnail_source": "https://cf.geekdo-images.com/1nQ3ZKudtDeAP7IiKE-kNg__small/img/sW38512N2r1ZuuPE2TUD2LNfoxM=/fit-in/200x150/filters:strip_icc()/pic8625343.jpg",
+  "image_source": "https://cf.geekdo-images.com/1nQ3ZKudtDeAP7IiKE-kNg__original/img/6igmXolQesapNU9yEnexip6m9B8=/0x0/filters:format(jpeg)/pic8625343.jpg"
+}

@@ -1,0 +1,42 @@
+{
+  "id": 226320,
+  "name": "My Little Scythe",
+  "year": 2018,
+  "thumbnail": "/images/games/226320-thumb.webp",
+  "image": "/images/games/226320.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "My Little Scythe is a competitive, family-friendly game in which each player controls 2 animal miniatures embarking upon an adventure in the Kingdom of Pomme.\n\nIn an effort to be the first to earn 4 trophies from 8 possible categories, players take turns choosing to Move, Seek, or Make. These actions will allow players to increase their friendship and pies, power up their actions, complete quests, learn magic spells, deliver gems and apples to Castle Everfree, and perhaps even engage in a pie fight.\n\nSome of My Little Scythe’s mechanisms are inspired by the bestselling game, Scythe. It caught the eye of Stonemaier Games as a fan-created print-and-play game in 2017 (it went on to win the BoardGameGeek 2017 award for best print-and-play game).\n\n—description from the publisher",
+  "min_players": 1,
+  "max_players": 6,
+  "playing_time": 60,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Children's Game",
+    "Exploration",
+    "Fantasy",
+    "Fighting"
+  ],
+  "mechanics": [
+    "Area Majority / Influence",
+    "Card Play Conflict Resolution",
+    "Dice Rolling",
+    "Force Commitment",
+    "Grid Movement",
+    "Hexagon Grid",
+    "Movement Points",
+    "Narrative Choice / Paragraph",
+    "Pick-up and Deliver",
+    "Set Collection",
+    "Solo / Solitaire Game",
+    "Take That",
+    "Tech Trees / Tech Tracks",
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 6.69955,
+  "rating_average_weight": 2.0146,
+  "thumbnail_source": "https://cf.geekdo-images.com/EhXCpSR6ambdYuKbrej3UQ__small/img/3znFvjc6uN6rossizk5I5eOr4Rk=/fit-in/200x150/filters:strip_icc()/pic4134810.jpg",
+  "image_source": "https://cf.geekdo-images.com/EhXCpSR6ambdYuKbrej3UQ__original/img/M1WeUiGRTGOeiB9prqpy07OIKGM=/0x0/filters:format(jpeg)/pic4134810.jpg"
+}

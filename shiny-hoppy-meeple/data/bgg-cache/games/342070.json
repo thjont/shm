@@ -1,0 +1,36 @@
+{
+  "id": 342070,
+  "name": "Thunder Road: Vendetta",
+  "year": 2023,
+  "thumbnail": "/images/games/342070-thumb.webp",
+  "image": "/images/games/342070.webp",
+  "image_width": 900,
+  "image_height": 695,
+  "description": "Thunder Road: Vendetta is a revved-up restoration of the classic 1986 game of mayhem on the asphalt. Grab your crew, roll your dice, race your cars, shoot your guns, and try not to get wrecked.\n\nThis new version features exciting new additions, including random hazard tokens, such as wrecks, oil slicks, and more. Damage isn't merely one and done. Now, you'll draw damage tokens with exciting effects that can send your car careening across the board. You'll also have more choices on your turn, assigning one of your dice to your command board to repair damage, nitro boost, or send out your attack copter to fire away.\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 75,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Dice",
+    "Fighting",
+    "Miniatures",
+    "Racing"
+  ],
+  "mechanics": [
+    "Dice Rolling",
+    "Die Icon Resolution",
+    "Grid Movement",
+    "Hexagon Grid",
+    "Player Elimination",
+    "Resource to Move",
+    "Roll / Spin and Move",
+    "Take That"
+  ],
+  "rating_bayes_average": 7.32961,
+  "rating_average_weight": 1.9581,
+  "thumbnail_source": "https://cf.geekdo-images.com/l0bFsrGy_cfKRK6YW_dG-g__small/img/tyIDtVr0dF6mOs84awJ2rLGX8xQ=/fit-in/200x150/filters:strip_icc()/pic8586892.png",
+  "image_source": "https://cf.geekdo-images.com/l0bFsrGy_cfKRK6YW_dG-g__original/img/XsxovE47zCq8N2VSIybKgiEh9dg=/0x0/filters:format(png)/pic8586892.png"
+}

@@ -1,0 +1,31 @@
+{
+  "id": 242213,
+  "name": "Downforce: Danger Circuit",
+  "year": 2018,
+  "thumbnail": "/images/games/242213-thumb.webp",
+  "image": "/images/games/242213.webp",
+  "image_width": 900,
+  "image_height": 901,
+  "description": "Downforce: Danger Circuit, an expansion for Downforce, consists of two new tracks on a double-sided game board as well as six new racer powers to shuffle with those in the base game.\n\nSwitchback Pass presents dangerous spaces. Cars may move through such spaces only to pass other cars and may not end their turn on one. Crosstown Speedway features two crossover loops, where cars in the rear can block cars ahead of them, and split areas of the track, where players must choose between the shorter single-lane section or the longer, more wide open section.\n\nNew powers are:\n\n     Tough - On any player's turn, move 2 additional spaces when your car ends its movement next to a rumble strip (red-and-white).\n     Bold - On your turn, if your car would move 1 or 2 spaces, move it 3 spaces instead.\n     Defensive - If none of your cars move on your turn, move one of your cars 3 spaces.\n     Reckless - On your turn, if your car moves diagonally between two adjacent cars, move it 2 additional spaces.\n     Experienced - If any car starts its movement directly ahead of your car, move your car into the space they moved out of.\n     Ambitious - On any player's turn, if your car crosses a betting line, move it 2 additional spaces.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 40,
+  "min_age": 8,
+  "type": "boardgameexpansion",
+  "expansion": true,
+  "categories": [
+    "Expansion for Base-game",
+    "Racing",
+    "Sports"
+  ],
+  "mechanics": [
+    "Auction / Bidding",
+    "Betting and Bluffing",
+    "Hand Management",
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 6.43587,
+  "rating_average_weight": 1.8462,
+  "thumbnail_source": "https://cf.geekdo-images.com/_NvV4AeKxuG9_Aky8FTUig__small/img/2GItjUSqj33EGn1iM6VcE-5RUUE=/fit-in/200x150/filters:strip_icc()/pic3884623.jpg",
+  "image_source": "https://cf.geekdo-images.com/_NvV4AeKxuG9_Aky8FTUig__original/img/5Veoo3Rl75nf_AZ7LWg5gK8_1og=/0x0/filters:format(jpeg)/pic3884623.jpg"
+}

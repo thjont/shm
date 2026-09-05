@@ -1,0 +1,31 @@
+{
+  "id": 287084,
+  "name": "Oriflamme",
+  "year": 2019,
+  "thumbnail": "/images/games/287084-thumb.webp",
+  "image": "/images/games/287084.webp",
+  "image_width": 372,
+  "image_height": 513,
+  "description": "In Oriflamme, the players find themselves in the middle of a medieval feud over the French royal crown. The King is dead! Long live the King! As heads of influential families, players strive to come to power with cunning and malice, power and strength, virtue and infamy. Their goal: the king's throne!\n\nIn this tactical card game, hidden cards are played in turn. By tactically uncovering and activating their effects, players can outdo or get them out of the way, because all players have the same goal in mind — to collect the most influence points for their family and thus win the game.",
+  "min_players": 3,
+  "max_players": 5,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Political"
+  ],
+  "mechanics": [
+    "Action Queue",
+    "Betting and Bluffing",
+    "Hand Management",
+    "Take That",
+    "Turn Order: Progressive"
+  ],
+  "rating_bayes_average": 6.54853,
+  "rating_average_weight": 1.6855,
+  "thumbnail_source": "https://cf.geekdo-images.com/8MpTeqlzyIupMpSSxP3PAw__small/img/NACmpm6Pzd2IrmAq9teXwLlmKqA=/fit-in/200x150/filters:strip_icc()/pic4949335.jpg",
+  "image_source": "https://cf.geekdo-images.com/8MpTeqlzyIupMpSSxP3PAw__original/img/XoqLo4dQlXvFHZBAcKbZheA8NHA=/0x0/filters:format(jpeg)/pic4949335.jpg"
+}

@@ -1,0 +1,27 @@
+{
+  "id": 460571,
+  "name": "Catte",
+  "year": 2025,
+  "thumbnail": "/images/games/460571-thumb.webp",
+  "image": "/images/games/460571.webp",
+  "image_width": 900,
+  "image_height": 626,
+  "description": "This is Catte, a cafe where pretty cats work.\nThey serve incredibly delicious coffee, so be careful not to order too much.  It's a must-follow trick-taking game where you aim to collect cards without exceeding your limit.\n\nThe Japanese listing explains further:\n\nGameplay\n\nMust-follow trick-taking with three card colors (black, white, brown) and sets combining to form other colors.\n\nEach trick awards a coffee card for points.\n\nExceeding a set score limit (“burst”) ends the round with no points for the bursting player.\n\nChanges to trick rules come from special cards that can alter whether you must follow, must not follow, etc.",
+  "min_players": 3,
+  "max_players": 4,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Card Game"
+  ],
+  "mechanics": [
+    "Trick-taking"
+  ],
+  "rating_bayes_average": 5.52702,
+  "rating_average_weight": 0,
+  "thumbnail_source": "https://cf.geekdo-images.com/RwG0EwXjRVDCpex55TEQOg__small/img/UNBetMryxr8GzQ4wakJf5FG5ISw=/fit-in/200x150/filters:strip_icc()/pic9304491.png",
+  "image_source": "https://cf.geekdo-images.com/RwG0EwXjRVDCpex55TEQOg__original/img/t-M9eqOT0pR3MWYMWOiZxeRuqg0=/0x0/filters:format(png)/pic9304491.png"
+}

@@ -1,0 +1,29 @@
+{
+  "id": 302260,
+  "name": "Abandon All Artichokes",
+  "year": 2020,
+  "thumbnail": "/images/games/302260-thumb.webp",
+  "image": "/images/games/302260.webp",
+  "image_width": 900,
+  "image_height": 883,
+  "description": "Abandon All Artichokes isn't your garden-variety card game!\n\nA bumper-crop of prickly produce has overtaken your patch, and there's only one choice: abandon all artichokes!  Prune your deck by harvesting fresh vegetables, each with a special power that lets you swap, discard, or compost cards. You need luck, strategy, and a green thumb to grow a winning hand!\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 20,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Farming"
+  ],
+  "mechanics": [
+    "Deck, Bag, and Pool Building",
+    "Open Drafting",
+    "Race"
+  ],
+  "rating_bayes_average": 6.26473,
+  "rating_average_weight": 1.239,
+  "thumbnail_source": "https://cf.geekdo-images.com/qwFz_zhMjIxRjgAIx__8WQ__small/img/PPRNQrHRGq48IhY6PlOXg95aYUw=/fit-in/200x150/filters:strip_icc()/pic5335069.png",
+  "image_source": "https://cf.geekdo-images.com/qwFz_zhMjIxRjgAIx__8WQ__original/img/pxX6W95d3V38ZuynABAtorApTc8=/0x0/filters:format(png)/pic5335069.png"
+}

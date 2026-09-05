@@ -1,0 +1,30 @@
+{
+  "id": 264241,
+  "name": "Mandala",
+  "year": 2019,
+  "thumbnail": "/images/games/264241-thumb.webp",
+  "image": "/images/games/264241.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "The Mandala: the symbol of an ancient and sacred ritual. Colored sand is laid to create a symbolic map of the world before the pattern is ceremonially destroyed and the sand cast into the river.\n\nIn the two-player game Mandala, you are trying to score more than your opponent by collecting valuable cards — but you won't know which cards are valuable until well into the game! Over the course of the game, players play their colored cards into the two mandalas, building the central shared mountains and laying cards into their own fields. As soon as a mandala has all six colors, the players take turns choosing the colors in the mountain and adding those cards to their \"river\" and \"cup\". At the end of the game, the cards in your cup are worth points based on the position of their colors in that player's river. The player whose cup is worth more points wins.\n\nThe linen playmat shows two circular mandalas, with each being divided by a horizontal space (the mountain) to create one \"field\" for each player. The playmat has seven spaces in front of each player to hold their river of single face-up cards and their cup: the stack of face-down cards which they score at the end of the game.\n\nTo begin, each player receives a hand of six cards. Each player receives two random cards face down in their cup, then two random cards are dealt face up into the central mountain strip of each mandala.\n\nOn your turn, you may play either a single card into one of the mountains, or one or more matching cards into one of your fields. All cards played into a mandala must follow the \"Rule of Color\": Once a color has been played into one of the three areas of a mandala, then later cards of the same color can be played only into that same area. Thus, once your opponent has played red cards into their field, then you can't play red cards in your field, and neither you nor your opponent can play red cards into the central mountain. If you played a card into a mountain, draw three new cards from the deck at the end of your turn; if you played cards into one of your fields, do not draw new cards.\n\nA mandala is completed once it contains all six colors of cards. When this happens, the players \"destroy\" the mandala, taking turns to choose a color present in the mountain and claim all cards of that color. Whoever played more cards in their field chooses first; if tied, the player who did not complete the mandala chooses first. The first time you claim cards of a specific color, lay one of these cards in the lowest-valued empty space in your river, then place the rest into your cup. The spaces in your river are valued 1-6 in order, so cards of the first color you claim will be worth 1 point each, cards of the second color you claim are worth 2 points each, and so on.\n\nOnce a mandala has been destroyed and all the colors in the mountain claimed, cards played in the fields are discarded, two new cards are dealt face up into the mountain, and the game continues.\n\nThe end of the game is triggered either when the deck is exhausted or when one player adds a sixth color to their river. Both players then tally the value of all the cards in their cup, based on the position of the colors in their river, and whoever has the higher score wins!\n\nContents:\n\n     1 linen playmat\n     108 mandala cards (18 in each of 6 colours)\n     2 reference cards",
+  "min_players": 2,
+  "max_players": 2,
+  "playing_time": 20,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Abstract Strategy",
+    "Card Game"
+  ],
+  "mechanics": [
+    "Area Majority / Influence",
+    "Hand Management",
+    "Selection Order Bid",
+    "Set Collection"
+  ],
+  "rating_bayes_average": 6.94205,
+  "rating_average_weight": 1.7843,
+  "thumbnail_source": "https://cf.geekdo-images.com/FZUJ_Ieaw83mpz1eL-dY_g__small/img/o8B080rjfGtNloX7wMa_IRthuXo=/fit-in/200x150/filters:strip_icc()/pic5056121.jpg",
+  "image_source": "https://cf.geekdo-images.com/FZUJ_Ieaw83mpz1eL-dY_g__original/img/FvjnGQH9SpkJ9_FB4frouPOe064=/0x0/filters:format(jpeg)/pic5056121.jpg"
+}

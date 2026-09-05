@@ -1,0 +1,37 @@
+{
+  "id": 298069,
+  "name": "Cubitos",
+  "year": 2021,
+  "thumbnail": "/images/games/298069-thumb.webp",
+  "image": "/images/games/298069.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Be fast or be last!\n\nIn Cubitos, players take on the role of participants in the annual Cube Cup, a race of strategy and luck to determine the Cubitos Champion. Each player has a runner on the racetrack and a support team, which is represented by all the dice you roll. Each turn, you roll dice and use their results to move along the racetrack, buy new dice, and use abilities — but you must be careful not to push your luck rolling too much or you could bust!\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 60,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Dice",
+    "Racing"
+  ],
+  "mechanics": [
+    "Catch the Leader",
+    "Deck, Bag, and Pool Building",
+    "Delayed Purchase",
+    "Dice Rolling",
+    "Grid Movement",
+    "Market",
+    "Movement Points",
+    "Push Your Luck",
+    "Race",
+    "Re-rolling and Locking",
+    "Variable Set-up"
+  ],
+  "rating_bayes_average": 6.98997,
+  "rating_average_weight": 2.1667,
+  "thumbnail_source": "https://cf.geekdo-images.com/_WY_JrQQRrSUlVof11hMpQ__small/img/YBgLAPTM5xOW3fDj_if3-r3oDs0=/fit-in/200x150/filters:strip_icc()/pic5226311.png",
+  "image_source": "https://cf.geekdo-images.com/_WY_JrQQRrSUlVof11hMpQ__original/img/x5IICp6q86ozlyzJjTcoNkMELnI=/0x0/filters:format(png)/pic5226311.png"
+}

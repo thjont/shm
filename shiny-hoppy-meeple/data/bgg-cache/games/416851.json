@@ -1,0 +1,32 @@
+{
+  "id": 416851,
+  "name": "Castle Combo",
+  "year": 2024,
+  "thumbnail": "/images/games/416851-thumb.webp",
+  "image": "/images/games/416851.webp",
+  "image_width": 900,
+  "image_height": 1245,
+  "description": "Castle Combo is a tableau-building game that combines simplicity with deep, engaging gameplay, offering highly satisfying experiences.\n\nEach player will spend coins to draft 9 cards from 2 open markets on the table (the lower and upper city), creating along the game a 3x3 square of people interacting with each other to trigger instant effects and end-of-game bonuses.\n\nEach turn, you add a character to your tableau — a seemingly straightforward action that packs a punch regarding strategic decisions. You'll need to carefully manage your Keys to influence the Messenger pawn at critical moments, as it controls which characters are available for recruitment from two different areas – peasants and nobles.\n\nBalancing your Gold reserves is equally important, ensuring you can afford the characters that best suit your strategy throughout the game. Selecting the right characters is crucial to maximising their immediate effects and the points they will contribute at the game's end. Finally, carefully arranging these characters on your 3x3 board is key to unlocking their full potential.\n\nAfter everyone has played 9 turns (i.e., everyone has 9 characters in front of them), the player with the most points in their tableau wins the game.",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 25,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Medieval"
+  ],
+  "mechanics": [
+    "End Game Bonuses",
+    "Multi-Use Cards",
+    "Open Drafting",
+    "Set Collection",
+    "Tags",
+    "Tile Placement"
+  ],
+  "rating_bayes_average": 7.35503,
+  "rating_average_weight": 1.7359,
+  "thumbnail_source": "https://cf.geekdo-images.com/rGomBfj0FGrZM-w3h5HFWQ__small/img/DnptKBxT6l_W2B3jGXdnEDEkDM0=/fit-in/200x150/filters:strip_icc()/pic8250341.png",
+  "image_source": "https://cf.geekdo-images.com/rGomBfj0FGrZM-w3h5HFWQ__original/img/XtVFdYXLAxdGOjQOGCkrms-hLUU=/0x0/filters:format(png)/pic8250341.png"
+}

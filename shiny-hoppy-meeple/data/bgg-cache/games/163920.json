@@ -1,0 +1,32 @@
+{
+  "id": 163920,
+  "name": "Gaïa",
+  "year": 2014,
+  "thumbnail": "/images/games/163920-thumb.webp",
+  "image": "/images/games/163920.webp",
+  "image_width": 547,
+  "image_height": 796,
+  "description": "Ga&iuml;a is a 2-5 player game in which you create a world, instill life in it, build cities, try to satisfy their needs, and use godly powers to shape the world to your benefit.\n\nIn game terms, Ga&iuml;a involves tile placement, area control and influence with a twist of power cards. Each player has five wooden figures, and if you're the first to place all five of your figures on the board, you win!\n\nGa&iuml;a includes two levels of rules, with the basic rules allowing for play with those as young as eight thanks to the game's simple mechanisms and non-attacking nature. The advanced rules give you the opportunity to use godly powers — lightning, volcanoes, rain, sun, earthquakes, etc. — to shape the world after it has been created. You can even steal an opponent's cities, making it a more aggressive game with a higher level of strategy.",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Territory Building"
+  ],
+  "mechanics": [
+    "Area Majority / Influence",
+    "Hand Management",
+    "Memory",
+    "Modular Board",
+    "Open Drafting",
+    "Set Collection",
+    "Tile Placement"
+  ],
+  "rating_bayes_average": 5.77847,
+  "rating_average_weight": 1.9344,
+  "thumbnail_source": "https://cf.geekdo-images.com/BbsL05PXMaS_1BGNzxJ42A__small/img/-TRmNJrG6m2sfuRCKmgwkSJ3Xng=/fit-in/200x150/filters:strip_icc()/pic2238245.jpg",
+  "image_source": "https://cf.geekdo-images.com/BbsL05PXMaS_1BGNzxJ42A__original/img/19SjxiU2PUdAy3wvKUD8GB1xxiY=/0x0/filters:format(jpeg)/pic2238245.jpg"
+}

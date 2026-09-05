@@ -1,0 +1,37 @@
+{
+  "id": 180593,
+  "name": "The Bloody Inn",
+  "year": 2015,
+  "thumbnail": "/images/games/180593-thumb.webp",
+  "image": "/images/games/180593.webp",
+  "image_width": 900,
+  "image_height": 1132,
+  "description": "France 1831: In a remote corner of Ard&egrave;che, the little village of Peyrebeille sees numerous travelers pass through. A family of greedy rural farmers is determined to make its fortune and has devised a diabolical stratagem to achieve this goal: Invest in an inn so they can rob traveling guests, getting rich without arousing the suspicions of the police! Whether or not their plan will work out, one thing is certain: Not every guest will leave this inn alive.\n\nThe Bloody Inn is a card game in which you play one member of a family of greedy, murderous innkeepers. At the start of each round, cards are placed face up to fill the inn with guests. Each card carries a cost representing how many cards a player must discard from her hand in order to take an action related to that card. Certain guests have an affinity for particular actions, so those cards return to a player's hand after being discarded. Cards also show how much money, in francs, each guest possesses. A round has two phases in which players take one action each, in turn order. Players choose one of the following actions:\n\n     bribe a guest into becoming an accomplice (take a card from the inn to their hand)\n     build an annex (move a card from their hand to their player area; it now represents a structure under which a victim may be buried)\n     kill a guest (move a card from the inn to their player area, awaiting burial)\n     bury a victim (place an unburied victim card under an annex card and take the money from the victim's pockets)\n     launder money (players may only have a certain amount of cash on hand; excess must be converted to 10F checks by the local notary)\n\n\nAt the end of the round, if any room of the inn contains one of the police, then they conduct an investigation; if a player has any unburied victims, then he must pay 10F per victim to the local gravedigger to hurredly — and quietly — bury the bodies! Lastly in the round, any cards (accomplices) in each player's hand must be paid 1F each. After the guest deck has been depleted the second time, players take a final round, then tally their francs. The player with the most money wins!",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 60,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Economic",
+    "Horror",
+    "Post-Napoleonic"
+  ],
+  "mechanics": [
+    "End Game Bonuses",
+    "Hand Management",
+    "Income",
+    "Move Through Deck",
+    "Multi-Use Cards",
+    "Open Drafting",
+    "Ownership",
+    "Simulation",
+    "Solo / Solitaire Game"
+  ],
+  "rating_bayes_average": 6.78332,
+  "rating_average_weight": 2.3445,
+  "thumbnail_source": "https://cf.geekdo-images.com/GTUmt2ViVzJOT4ZKXbq2Zg__small/img/h-GMHsoeG4S6wRVjzlMGmP0UmQE=/fit-in/200x150/filters:strip_icc()/pic2618699.jpg",
+  "image_source": "https://cf.geekdo-images.com/GTUmt2ViVzJOT4ZKXbq2Zg__original/img/8dJoI4olAHxnPu7n4PiXTmyGJ20=/0x0/filters:format(jpeg)/pic2618699.jpg"
+}

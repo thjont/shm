@@ -1,0 +1,32 @@
+{
+  "id": 295293,
+  "name": "The Thing: The Boardgame",
+  "year": 2022,
+  "thumbnail": "/images/games/295293-thumb.webp",
+  "image": "/images/games/295293.webp",
+  "image_width": 500,
+  "image_height": 500,
+  "description": "The Thing is a game that mixes different mechanisms to create an experience that is as faithful as possible to that of the original film. It is a \"hidden role\" game, in which one player is initially the Thing and the others players are humans. The purpose of the Thing is to infect others, to prevent the survivors from escaping from the base (which can happen three different ways), or to try to escape with them by behaving as a human.\n\nIn addition to these elements, players also have to manage Outpost 31. On the map are the same rooms as seen in the film, and each of these rooms allows players to perform a different action. Human players have to feed themselves and keep the boiler and the generator on to avoid being in the cold and dark. The Thing will try to sabotage these places to make life difficult for humans...or not, trying to camouflage itself among the humans and infect them when the perfect opportunity presents itself.\n\nThe goal of the game designers was to bring the same personal emotions and paranoia that the protagonists of the film experienced to the gaming table.",
+  "min_players": 1,
+  "max_players": 8,
+  "playing_time": 90,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Deduction",
+    "Horror",
+    "Movies / TV / Radio theme",
+    "Science Fiction"
+  ],
+  "mechanics": [
+    "Hidden Roles",
+    "Semi-Cooperative Game",
+    "Traitor Game",
+    "Voting"
+  ],
+  "rating_bayes_average": 6.63762,
+  "rating_average_weight": 2.9576,
+  "thumbnail_source": "https://cf.geekdo-images.com/dJCtZr6_dFDIg4o8tMYqCA__small/img/Pp3ikjTGmVjlkcJqS98WZY8ECSQ=/fit-in/200x150/filters:strip_icc()/pic5089905.jpg",
+  "image_source": "https://cf.geekdo-images.com/dJCtZr6_dFDIg4o8tMYqCA__original/img/rdMH8ojR4tNxJzLo7zKOktOyEmk=/0x0/filters:format(jpeg)/pic5089905.jpg"
+}

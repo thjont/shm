@@ -1,0 +1,32 @@
+{
+  "id": 225694,
+  "name": "Decrypto",
+  "year": 2018,
+  "thumbnail": "/images/games/225694-thumb.webp",
+  "image": "/images/games/225694.webp",
+  "image_width": 558,
+  "image_height": 800,
+  "description": "Players compete in two teams in Decrypto, with each trying to correctly interpret the coded messages presented to them by their teammates while cracking the codes they intercept from the opposing team.\n\nIn more detail, each team has its own screen, and in this screen they tuck four cards in pockets numbered 1-4, letting everyone on the same team see the words on these cards while hiding the words from the opposing team. In the first round, each team does the following: one team member takes a code card that shows three of the digits 1-4 in some order, e.g., 4-2-1. They then give a coded message that their teammates must use to guess this code. For example, if the team's four words are \"pig\", \"candy\", \"tent\", and \"son\", then I might say \"Sam-striped-pink\" and hope that my teammates can correctly map those words to 4-2-1. If they guess correctly, great; if not, we receive a black mark of failure.\n\nStarting in the second round, a member of each team must again give a clue about their words to match a numbered code. If I get 2-4-3, I might now say \"sucker-prince-stake\". The other team then attempts to guess our numbered code. If they're correct, they receive a white mark of success; if not, then my team must guess the number correctly or take a black mark of failure. (Guessing correctly does nothing except avoid failure and give the opposing team information about what our hidden words might be.)\n\nThe rounds continue until a team collects either its second white mark (winning the game) or its second black mark (losing the game). Games typically last between four and seven rounds. If neither team has won after eight rounds, each team must attempt to guess the other team's words; whichever team guesses more words correctly wins.",
+  "min_players": 3,
+  "max_players": 8,
+  "playing_time": 45,
+  "min_age": 12,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Deduction",
+    "Party Game",
+    "Spies / Secret Agents",
+    "Word Game"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Paper-and-Pencil",
+    "Targeted Clues",
+    "Team-Based Game"
+  ],
+  "rating_bayes_average": 7.54655,
+  "rating_average_weight": 1.8263,
+  "thumbnail_source": "https://cf.geekdo-images.com/hHZWXnUTMYDd_KTAM6Jwlw__small/img/O5XHaPOALYquS058qcXWVm5b_k4=/fit-in/200x150/filters:strip_icc()/pic3759421.jpg",
+  "image_source": "https://cf.geekdo-images.com/hHZWXnUTMYDd_KTAM6Jwlw__original/img/lL6QJ69UmZT7CeljUcjyA47b-e0=/0x0/filters:format(jpeg)/pic3759421.jpg"
+}

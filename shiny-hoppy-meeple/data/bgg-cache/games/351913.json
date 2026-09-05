@@ -1,0 +1,33 @@
+{
+  "id": 351913,
+  "name": "Tiletum",
+  "year": 2022,
+  "thumbnail": "/images/games/351913-thumb.webp",
+  "image": "/images/games/351913.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "In Tiletum, you and fellow players take on the roles of rich merchants traveling throughout Europe, from Flanders to Venice, during the Golden Age of the Renaissance.\n\nYou will travel to various cities to acquire trade contracts for wool and iron, as well as a collection of their coats of arms. You must collect the required resources to fulfill contracts, invest in the construction of monumental cathedrals, gain the favor of noble families, and participate in important fairs where your main business occurs. You will also use the services of notable people who will be welcomed into your houses. You will thus gain prestige that will make you the most famous merchant of the Renaissance.\n\nTiletum is a dice management game in which dice have a dual function: gaining resources and performing actions. A certain number of dice will be rolled each round. On your turn, choose a die to gain the number of corresponding resources equal to the value of the die, then perform the associated action. The power of the action is inversely proportional to the value of the die, so the fewer resources you gain, the more powerful the actions you take and vice versa.",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 100,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Renaissance"
+  ],
+  "mechanics": [
+    "Action Drafting",
+    "Action Points",
+    "Contracts",
+    "Dice Rolling",
+    "End Game Bonuses",
+    "Point to Point Movement",
+    "Set Collection",
+    "Variable Set-up"
+  ],
+  "rating_bayes_average": 7.22681,
+  "rating_average_weight": 3.3879,
+  "thumbnail_source": "https://cf.geekdo-images.com/DvvSoTrB3-UMEgz2rBraHg__small/img/TnJONz9KNXPJBQ42sorXuoUTlew=/fit-in/200x150/filters:strip_icc()/pic7533289.jpg",
+  "image_source": "https://cf.geekdo-images.com/DvvSoTrB3-UMEgz2rBraHg__original/img/a70U9DGHGxiyo8WWMOb9Zd4hrxc=/0x0/filters:format(jpeg)/pic7533289.jpg"
+}

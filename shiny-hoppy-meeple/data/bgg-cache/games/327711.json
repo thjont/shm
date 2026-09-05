@@ -1,0 +1,32 @@
+{
+  "id": 327711,
+  "name": "It's a Wonderful Kingdom",
+  "year": 2021,
+  "thumbnail": "/images/games/327711-thumb.webp",
+  "image": "/images/games/327711.webp",
+  "image_width": 900,
+  "image_height": 901,
+  "description": "It's a Wonderful Kingdom is a standalone solo or 2-player game in a Low-Fantasy universe. Inspired by the core mechanics of its predecessor \"It's a Wonderful World\", this new game offers more interaction, a bluff mechanism and new challenges.\n\nThe game is played using modules, each different and offering mechanical twists. Each game, players will choose one of the different modules to compete against each other. The game is divided into 4 rounds. Each round having 3 phases.\n\nSplit & Trap\nPlayers take turns offering their cards to one another in two areas in the center of the table.\n\nOne player picks 2 cards from their hand and either places them in the same area or splits them between the two areas. The other player chooses an area and claims the card(s) in it. The players take turns repeating this step until both players have offered all of their cards. Each player has 2 Trap tokens which can be used to place cards face down, otherwise all cards are played face up.\n\nPlanification\nEach player chooses which of the cards they have collected to build and which ones to recycle for immediate resources.\n\nSequential Production\nEach player produces their Kingdom's resources sequentially. Since resources are produced in a specific order, it is important to plan ahead to optimize your production and development.\n\nAt the end of the fourth round, the player with the most victory points wins the game.\n\n—description from the publisher",
+  "min_players": 1,
+  "max_players": 2,
+  "playing_time": 45,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Fantasy",
+    "Medieval"
+  ],
+  "mechanics": [
+    "Betting and Bluffing",
+    "I Cut, You Choose",
+    "Open Drafting",
+    "Set Collection",
+    "Solo / Solitaire Game"
+  ],
+  "rating_bayes_average": 6.43447,
+  "rating_average_weight": 2.5882,
+  "thumbnail_source": "https://cf.geekdo-images.com/YMJnUYqIXrOEiqVOqfhWQw__small/img/C5ASZG8YcdMK0PRFLTXRDAwn3s4=/fit-in/200x150/filters:strip_icc()/pic6929415.jpg",
+  "image_source": "https://cf.geekdo-images.com/YMJnUYqIXrOEiqVOqfhWQw__original/img/z6F_iWd82nXhxOkJGVr94qnzaxo=/0x0/filters:format(jpeg)/pic6929415.jpg"
+}

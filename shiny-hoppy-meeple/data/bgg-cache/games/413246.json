@@ -1,0 +1,33 @@
+{
+  "id": 413246,
+  "name": "Bomb Busters",
+  "year": 2024,
+  "thumbnail": "/images/games/413246-thumb.webp",
+  "image": "/images/games/413246.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "There is a bomb full of wires and the countdown has started... Who are you gonna call? YOU! To clear the bomb, you need to collaborate with your team of bomb disposal experts! Using the wires on the tile holder in front of you, try and figure out your teammates’ wires. Find and cut identical wires, but watch out, if you cut a red wire: BOOM! Use your equipment wisely to meet the varied challenges which get harder and harder. Tick tock tick tock... Will you figure it out before it’s too late?\n\nIn Bomb Busters, there is a set of 48 normal wire cards numbered 1-12 (4 of each value) with some yellow and red wire cards. These are dealt out. Each mission is different, but your goal is always the same: go through all 12 numbers without blowing up!\n\nPlayers place the tiles on their stands and then take turns pointing at each others’ wires and guessing their values. If the guess is correct, the wires are cut. If not — the detonator advances! If you manage to cut all wires without blowing up — good job, the mission is completed! But if the bomb goes off - Try again!\n\nWith 66 missions, there will be:\n=> 66 different ways to play depending on your moods (in order, by level of difficulty, favorite configuration)\n=> 66 challenges to play over and over (even if you already blew your top!)\n=> Plenty of tricky bombs which become more and more dangerous (but don’t get cut up about it!)",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Deduction"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Cooperative Game",
+    "Deduction",
+    "Memory",
+    "Once-Per-Game Abilities",
+    "Real-Time",
+    "Scenario / Mission / Campaign Game",
+    "Sudden Death Ending"
+  ],
+  "rating_bayes_average": 7.64879,
+  "rating_average_weight": 2.0078,
+  "thumbnail_source": "https://cf.geekdo-images.com/HpGXIlt5i6T-0jbiQRReOg__small/img/8wfQelnNsbXCykJWMjD8UAjhleU=/fit-in/200x150/filters:strip_icc()/pic8303080.png",
+  "image_source": "https://cf.geekdo-images.com/HpGXIlt5i6T-0jbiQRReOg__original/img/2uApg8IOYjNVSzbUIwJUa-Z8eL8=/0x0/filters:format(png)/pic8303080.png"
+}

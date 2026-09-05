@@ -1,0 +1,34 @@
+{
+  "id": 373106,
+  "name": "Sky Team",
+  "year": 2023,
+  "thumbnail": "/images/games/373106-thumb.webp",
+  "image": "/images/games/373106.webp",
+  "image_width": 900,
+  "image_height": 1242,
+  "description": "Sky Team is a co-operative game, exclusively for two players, in which you play a pilot and co-pilot at the controls of an airliner. Your goal is to work together as a team to land your airplane in different airports around the world.\n\nTo land your plane, you need to silently assign your dice to the correct spaces in your cockpit to balance the axis of your plane, control its speed, deploy the flaps, extend the landing gear, contact the control tower to clear your path, and even have a little coffee to improve your concentration enough to change the value of your dice.\n\nIf the aircraft tilts too much and stalls, overshoots the airport, or collides with another aircraft, you lose the game...and your pilot's license...and probably your life.\n\nFrom Montreal to Tokyo, each airport offers its own set of challenges. Watch out for the turbulence as this could end up being a bumpy ride!\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 2,
+  "playing_time": 20,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Aviation / Flight",
+    "Dice"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Cooperative Game",
+    "Dice Rolling",
+    "Scenario / Mission / Campaign Game",
+    "Turn Order: Progressive",
+    "Variable Player Powers",
+    "Variable Set-up",
+    "Worker Placement with Dice Workers"
+  ],
+  "rating_bayes_average": 7.89082,
+  "rating_average_weight": 2.0425,
+  "thumbnail_source": "https://cf.geekdo-images.com/uXMeQzNenHb3zK7Hoa6b2w__small/img/WyPClajMWU9lV5BdCXiZnqdZgmU=/fit-in/200x150/filters:strip_icc()/pic7398904.jpg",
+  "image_source": "https://cf.geekdo-images.com/uXMeQzNenHb3zK7Hoa6b2w__original/img/mWOQnkpyYBorh_Y1-0Y2o-ew17k=/0x0/filters:format(jpeg)/pic7398904.jpg"
+}

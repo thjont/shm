@@ -1,0 +1,34 @@
+{
+  "id": 118,
+  "name": "Modern Art",
+  "year": 1992,
+  "thumbnail": "/images/games/118-thumb.webp",
+  "image": "/images/games/118.webp",
+  "image_width": 719,
+  "image_height": 718,
+  "description": "Buying and selling paintings can be a very lucrative business.  Five different artists have produced a bunch of paintings, and it's the player's task to be both the buyer and the seller, hopefully making a profit in both roles.  He does this by putting a painting from his hand up for auction each turn.  He gets the money if some other player buys it, but must pay the bank if he buys it for himself.  After each round, paintings are valued by the number of paintings of that type that were sold.  The broker with the most cash after four rounds is the winner.\n\nPart of the Knizia auction trilogy.",
+  "min_players": 3,
+  "max_players": 5,
+  "playing_time": 45,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Economic"
+  ],
+  "mechanics": [
+    "Auction / Bidding",
+    "Auction: English",
+    "Auction: Once Around",
+    "Auction: Sealed Bid",
+    "Auction: Turn Order Until Pass",
+    "Commodity Speculation",
+    "Hand Management",
+    "Victory Points as a Resource"
+  ],
+  "rating_bayes_average": 7.33091,
+  "rating_average_weight": 2.2765,
+  "thumbnail_source": "https://cf.geekdo-images.com/wLto-xaabHwKQe_Bc4iD1Q__small/img/AUqMholGVlwXLjMcxwiziE_7Ffw=/fit-in/200x150/filters:strip_icc()/pic3458036.png",
+  "image_source": "https://cf.geekdo-images.com/wLto-xaabHwKQe_Bc4iD1Q__original/img/s3Gai8XBTVfWFFlYpL4XF3kIlWU=/0x0/filters:format(png)/pic3458036.png"
+}

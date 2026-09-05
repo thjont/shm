@@ -1,0 +1,43 @@
+{
+  "id": 229853,
+  "name": "Teotihuacan: City of Gods",
+  "year": 2018,
+  "thumbnail": "/images/games/229853-thumb.webp",
+  "image": "/images/games/229853.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Travel back in time to the greatest city in Mesoamerica. Witness the glory and the twilight of the powerful pre-Columbian civilization. Strategize, accrue wealth, gain the favour of the gods, and become the builder of the magnificent Pyramid of the Sun.\n\nIn Teotihuacan: City of Gods, each player commands a force of worker dice, which grow in strength with every move. On your turn, you move a worker around a modular board, always choosing one of two areas of the location tile you land on: one offering you an action (and a worker upgrade), the other providing you with a powerful bonus (but without an upgrade).\n\nWhile managing their workforce and resources, players develop new technologies, climb the steps of the three great temples, build houses for the inhabitants of the city, and raise the legendary and breath-taking Pyramid of the Sun in the center of the city.\n\nEach game is played in three eras. As the dawn of the Aztecs comes closer, player efforts (and their ability to feed their workforce) are evaluated a total of three times. The player with the most fame is the winner.",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 120,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Ancient",
+    "City Building",
+    "Economic"
+  ],
+  "mechanics": [
+    "Area Movement",
+    "End Game Bonuses",
+    "Events",
+    "Grid Coverage",
+    "Layering",
+    "Ownership",
+    "Rondel",
+    "Score-and-Reset Game",
+    "Set Collection",
+    "Solo / Solitaire Game",
+    "Square Grid",
+    "Tile Placement",
+    "Track Movement",
+    "Variable Set-up",
+    "Victory Points as a Resource",
+    "Worker Placement with Dice Workers"
+  ],
+  "rating_bayes_average": 7.55926,
+  "rating_average_weight": 3.783,
+  "thumbnail_source": "https://cf.geekdo-images.com/wW5xjgBJcFyLaEWZwrYuKA__small/img/MppmP7GtDAfKiB5LiAl-ZtPxOPE=/fit-in/200x150/filters:strip_icc()/pic4583626.jpg",
+  "image_source": "https://cf.geekdo-images.com/wW5xjgBJcFyLaEWZwrYuKA__original/img/72kzn6t41ZxLEr3GFd8ir6hDdH4=/0x0/filters:format(jpeg)/pic4583626.jpg"
+}

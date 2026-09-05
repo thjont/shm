@@ -1,0 +1,33 @@
+{
+  "id": 220774,
+  "name": "Codenames: Marvel",
+  "year": 2017,
+  "thumbnail": "/images/games/220774-thumb.webp",
+  "image": "/images/games/220774.webp",
+  "image_width": 900,
+  "image_height": 1300,
+  "description": "Codenames: Marvel combines the hit social word game Codenames, while featuring characters and locations from the Marvel Universe including, Spider Man, Guardians of the Galaxy, The Avengers and Doctor Strange.\n\nIn Codenames, two teams — S.H.I.E.L.D. and Hydra in this case — compete to see who can guess all of their field agents (identified by either a word or picture) correctly first — but those field agents are hiding in plain sight in a 5x5 grid that includes the agents of the other team, neutral words, and an assassin that will cause you to lose the game immediately if you guess it. One person on each team is a spymaster and only these two know which agents belong to each team. Spymasters take turns giving one-word clues that can help their teammates identify multiple agents on the board. Their teammates try to guess agents of the right color while avoiding those that belong to the opposing team — and everyone wants to avoid the assassin.",
+  "min_players": 2,
+  "max_players": 8,
+  "playing_time": 15,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Comic Book / Strip",
+    "Deduction",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Memory",
+    "Pattern Recognition",
+    "Push Your Luck",
+    "Team-Based Game"
+  ],
+  "rating_bayes_average": 5.70356,
+  "rating_average_weight": 1.2143,
+  "thumbnail_source": "https://cf.geekdo-images.com/l2rKyxmlUN6r_ZAkP3ZS_g__small/img/nSBqI6ZYd_Jp7Vtsa9SSvz0bAsU=/fit-in/200x150/filters:strip_icc()/pic3626219.jpg",
+  "image_source": "https://cf.geekdo-images.com/l2rKyxmlUN6r_ZAkP3ZS_g__original/img/8zPqRp-T10GznL7jhgQCMtqpVbA=/0x0/filters:format(jpeg)/pic3626219.jpg"
+}

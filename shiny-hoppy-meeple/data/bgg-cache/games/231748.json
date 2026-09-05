@@ -1,0 +1,30 @@
+{
+  "id": 231748,
+  "name": "Time Bomb Evolution",
+  "year": 2016,
+  "thumbnail": "/images/games/231748-thumb.webp",
+  "image": "/images/games/231748.webp",
+  "image_width": 900,
+  "image_height": 1335,
+  "description": "タイムボムエボリューション (TimeBomb Evolution) is a game derived from TimeBomb.\n\nIn the game, players are secretly assigned a role which is either a terrorist or a SWAT officer. Then cards are dealt to each player. They look at their cards and randomly place the cards face-down in front of them. SWATs win together if they deactivate the time bomb by revealing all of the SUCCESS cards.\n\nEach turn, a player chooses a card in front of another player and reveal it. If it is a SUCCESS card, SWATs get closer to winning. Otherwise it is a threat card, and its threat effect is activated according to its color. Terrorists win together if four threats of the same color are revealed.\n\nPlayers may discuss whose card should be revealed, but they should be noted that terrorists may be misleading SWATs.\n\n•••\n\nスワットとテロリストが時限爆弾を解除する正体隠匿ゲームです。\n前作タイムボムのシステムで、より複雑な時限爆弾の解除に挑みます。\n地ガン爆弾を解除できたらスワットチームの勝利、爆発したらテロリストチームの勝利となります。",
+  "min_players": 4,
+  "max_players": 6,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Spies / Secret Agents"
+  ],
+  "mechanics": [
+    "Betting and Bluffing",
+    "Deduction",
+    "Team-Based Game",
+    "Traitor Game"
+  ],
+  "rating_bayes_average": 5.81544,
+  "rating_average_weight": 1.6875,
+  "thumbnail_source": "https://cf.geekdo-images.com/yU8CtWKysxxZ62nFT2uqPA__small/img/MwFdoRo42gwOmC5bdlx2PptSca8=/fit-in/200x150/filters:strip_icc()/pic5397704.jpg",
+  "image_source": "https://cf.geekdo-images.com/yU8CtWKysxxZ62nFT2uqPA__original/img/Rd0cVf7QGedurfnoVNuHZFPn634=/0x0/filters:format(jpeg)/pic5397704.jpg"
+}

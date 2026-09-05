@@ -1,0 +1,30 @@
+{
+  "id": 404233,
+  "name": "Forks: 2nd Edition",
+  "year": 2024,
+  "thumbnail": "/images/games/404233-thumb.webp",
+  "image": "/images/games/404233.webp",
+  "image_width": 900,
+  "image_height": 1384,
+  "description": "It's tourist season, and you have to choose which destinations to invest in, and which to market. Cleverly pass cards to manipulate your neighbours into marketing the ones you've invested in, and avoid marketing theirs.\n\nForks 2nd Edition has the simple rules and quick gameplay of Forks, but with some significant changes. The most obvious change is the theme and artwork, basing the look and style of art-deco tourism posters. The main gameplay change is to now have simultaneous play as standard, removing the swap rule and only including merge as a variant. This speeds up the game significantly, meaning it now plays well with up to 6 players. To enable this each suit now has an additional 3 cards, in place of the bonus cards from the first edition.\n\n-description from designer",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 15,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game"
+  ],
+  "mechanics": [
+    "Closed Drafting",
+    "Increase Value of Unchosen Resources",
+    "Investment",
+    "Set Collection",
+    "Simultaneous Action Selection"
+  ],
+  "rating_bayes_average": 5.58052,
+  "rating_average_weight": 1.3333,
+  "thumbnail_source": "https://cf.geekdo-images.com/jy-iUuVwNPdOs9kBy_CrvQ__small/img/nEoMHzA-6IvHDYrakzv_Ed9x1vg=/fit-in/200x150/filters:strip_icc()/pic7828513.png",
+  "image_source": "https://cf.geekdo-images.com/jy-iUuVwNPdOs9kBy_CrvQ__original/img/-FdWwkqydZ1jyLMsRumqf_OhFiM=/0x0/filters:format(png)/pic7828513.png"
+}

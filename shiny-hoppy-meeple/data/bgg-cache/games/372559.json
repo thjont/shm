@@ -1,0 +1,36 @@
+{
+  "id": 372559,
+  "name": "Spots",
+  "year": 2022,
+  "thumbnail": "/images/games/372559-thumb.webp",
+  "image": "/images/games/372559.webp",
+  "image_width": 900,
+  "image_height": 629,
+  "description": "Spots is a casual push your luck game from CMYK. On your turn, you'll be rolling and placing dice onto dog cards. Dice you can't place get buried in your yard. Bury too many dice and you bust. Complete 6 dogs and you win!\n\n-description from designer",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Card Game",
+    "Dice"
+  ],
+  "mechanics": [
+    "Action Drafting",
+    "Contracts",
+    "Dice Rolling",
+    "Increase Value of Unchosen Resources",
+    "Push Your Luck",
+    "Race",
+    "Re-rolling and Locking",
+    "Set Collection",
+    "Variable Set-up"
+  ],
+  "rating_bayes_average": 6.72167,
+  "rating_average_weight": 1.2642,
+  "thumbnail_source": "https://cf.geekdo-images.com/_vpGz_tMPCU6Cw2DLTR0gA__small/img/68cCtiiTykY7BcqNUVe1eq10sSA=/fit-in/200x150/filters:strip_icc()/pic9730092.png",
+  "image_source": "https://cf.geekdo-images.com/_vpGz_tMPCU6Cw2DLTR0gA__original/img/ihTidF_iEJdhdz9MonqmpqT4udo=/0x0/filters:format(png)/pic9730092.png"
+}

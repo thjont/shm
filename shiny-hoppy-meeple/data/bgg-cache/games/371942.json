@@ -1,0 +1,43 @@
+{
+  "id": 371942,
+  "name": "The White Castle",
+  "year": 2023,
+  "thumbnail": "/images/games/371942-thumb.webp",
+  "image": "/images/games/371942.webp",
+  "image_width": 848,
+  "image_height": 1078,
+  "description": "The heron flies over the Himeji sky while the Daimyo, from the top of the castle, watches his servants move. Gardeners tend the pond, where the koi carp live, warriors stand guard on the walls, and courtiers crowd the gates, pining for an audience that brings them closer to the innermost circles of the court. When night falls, the lanterns are lit and the workers return to their clan.\n\nIn The White Castle, players will control one of these clans in order to score more victory points than the rest. To do so, they must amass influence in the court, manage resources boldly, and place their workers in the right place at the right time. The authors are Sheila Santos and Israel Cendrero, the duo known as Llama Dice who also designed the successful The Red Cathedral with Devir. In this case, we leave the Moscow of Ivan the Terrible behind to explore the most imposing fortress in modern Japan, Himeji Castle, where the banner of the Sakai clan flies under the orders of Daimyo Sakai Tadakiyo.\n\nThe White Castle is a Euro type game with mechanics of resource management, worker placement and dice placement to carry out actions. During the game, over three rounds, players will send members of their clan to tend the gardens, defend the castle or progress up the social ladder of the nobility. At the end of the match, these will award players victory points in a variety of ways.\n\nThe central panel shows Himeji Castle in all its splendor, divided into several zones. The largest is inside the castle, with the Room of the Thousand Carpets, where the courtiers must ascend socially until they reach the circle closest to the Daimyo to enjoy his favor. There is also the pond and the gardens, patiently tended by the gardeners where everyone can relax and contemplate its beauty without restriction. Another important area is the wall and the outside of the castle, where the warriors patrol and stand guard. Finally, we find the area of the three bridges, where the three types of dice that can be used to carry out actions are accumulated, and the personal domain of each player, where they will keep track of their resources and where they will have the reserve of workers.\n\nWith accessible rules and a very careful setting, The White Castle is a very versatile title that will fit in with different gaming groups. As is tradition with Llama Dice titles, its sleek and simple design belies a great deal of strategic depth within the grasp of players.\n\n—description from the publisher",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 80,
+  "min_age": 12,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Dice",
+    "Economic",
+    "Medieval"
+  ],
+  "mechanics": [
+    "Action Drafting",
+    "Area Movement",
+    "Dice Rolling",
+    "End Game Bonuses",
+    "Income",
+    "Melding and Splaying",
+    "Multi-Use Cards",
+    "Open Drafting",
+    "Race",
+    "Resource Queue",
+    "Solo / Solitaire Game",
+    "Tech Trees / Tech Tracks",
+    "Turn Order: Stat-Based",
+    "Variable Set-up",
+    "Worker Placement",
+    "Worker Placement with Dice Workers"
+  ],
+  "rating_bayes_average": 7.69623,
+  "rating_average_weight": 3.0702,
+  "thumbnail_source": "https://cf.geekdo-images.com/qXT1U-nFh9PE8ujfdmI7dA__small/img/ru1l95gdKNXSsByDglE9Xxgu0kE=/fit-in/200x150/filters:strip_icc()/pic7754663.jpg",
+  "image_source": "https://cf.geekdo-images.com/qXT1U-nFh9PE8ujfdmI7dA__original/img/jzmifZJ0Sg2Js7hmQjzX7bEHVBY=/0x0/filters:format(jpeg)/pic7754663.jpg"
+}

@@ -1,0 +1,32 @@
+{
+  "id": 36218,
+  "name": "Dominion",
+  "year": 2008,
+  "thumbnail": "/images/games/36218-thumb.webp",
+  "image": "/images/games/36218.webp",
+  "image_width": 900,
+  "image_height": 901,
+  "description": "\"You are a monarch, like your parents before you, a ruler of a small pleasant kingdom of rivers and evergreens. Unlike your parents, however, you have hopes and dreams! You want a bigger and more pleasant kingdom, with more rivers and a wider variety of trees. You want a Dominion! In all directions lie fiefs, freeholds, and feodums. All are small bits of land, controlled by petty lords and verging on anarchy. You will bring civilization to these people, uniting them under your banner.\n\nBut wait! It must be something in the air; several other monarchs have had the exact same idea. You must race to get as much of the unclaimed land as possible, fending them off along the way. To do this you will hire minions, construct buildings, spruce up your castle, and fill the coffers of your treasury. Your parents wouldn't be proud, but your grandparents, on your mother's side, would be delighted.\"\n\n—description from the back of the box\n\nIn Dominion, each player starts with an identical, very small deck of cards.  In the center of the table is a selection of other cards the players can \"buy\" as they can afford them.  Through their selection of cards to buy, and how they play their hands as they draw them, the players construct their deck on the fly, striving for the most efficient path to the precious victory points by game end.\n\nDominion is not a Collectible Card Game (CCG), but the play of the game is similar to the construction and play of a CCG deck. The game comes with 500 cards. You select 10 of the 25 Kingdom card types to include in any given play—leading to immense variety.\n\n—user summary\n\nPart of the Dominion series.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 30,
+  "min_age": 13,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Medieval"
+  ],
+  "mechanics": [
+    "Deck, Bag, and Pool Building",
+    "Delayed Purchase",
+    "Hand Management",
+    "Open Drafting",
+    "Take That",
+    "Variable Set-up"
+  ],
+  "rating_bayes_average": 7.47319,
+  "rating_average_weight": 2.3443,
+  "thumbnail_source": "https://cf.geekdo-images.com/j6iQpZ4XkemZP07HNCODBA__small/img/B2u2ghwlmI_qsUtCwuvcbnBcIqU=/fit-in/200x150/filters:strip_icc()/pic394356.jpg",
+  "image_source": "https://cf.geekdo-images.com/j6iQpZ4XkemZP07HNCODBA__original/img/96COuakNiLRrjDLc1sM4Zxsw4WE=/0x0/filters:format(jpeg)/pic394356.jpg"
+}

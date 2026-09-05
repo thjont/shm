@@ -1,0 +1,35 @@
+{
+  "id": 40692,
+  "name": "Small World",
+  "year": 2009,
+  "thumbnail": "/images/games/40692-thumb.webp",
+  "image": "/images/games/40692.webp",
+  "image_width": 600,
+  "image_height": 600,
+  "description": "In Small World, players vie for conquest and control of a world that is simply too small to accommodate them all.\n\nDesigned by Philippe Keyaerts as a fantasy follow-up to his award-winning Vinci, Small World is inhabited by a zany cast of characters such as dwarves, wizards, amazons, giants, orcs, and even humans, who use their troops to occupy territory and conquer adjacent lands in order to push the other races off the face of the earth.\n\nPicking the right combination from the 14 different fantasy races and 20 unique special powers, players rush to expand their empires - often at the expense of weaker neighbors. Yet they must also know when to push their own over-extended civilization into decline and ride a new one to victory!\n\nOn each turn, you either use the multiple tiles of your chosen race (type of creatures) to occupy adjacent (normally) territories - possibly defeating weaker enemy races along the way, or you give up on your race letting it go \"into decline\". A race in decline is designated by flipping the tiles over to their black-and-white side.\n\nAt the end of your turn, you score one point (coin) for each territory your races occupy. You may have one active race and one race in decline on the board at the same time. Your occupation total can vary depending on the special abilities of your race and the territories they occupy. After the final round, the player with the most coins wins.\n\nClarifications: available in a pinned forum post.",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 80,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Fantasy",
+    "Fighting",
+    "Territory Building"
+  ],
+  "mechanics": [
+    "Area Majority / Influence",
+    "Area Movement",
+    "Dice Rolling",
+    "Hidden Victory Points",
+    "Increase Value of Unchosen Resources",
+    "Variable Player Powers",
+    "Variable Set-up",
+    "Victory Points as a Resource"
+  ],
+  "rating_bayes_average": 7.08219,
+  "rating_average_weight": 2.3457,
+  "thumbnail_source": "https://cf.geekdo-images.com/aoPM07XzoceB-RydLh08zA__small/img/o3Bw9heVDJRgPYlI_PksCvLAgnM=/fit-in/200x150/filters:strip_icc()/pic428828.jpg",
+  "image_source": "https://cf.geekdo-images.com/aoPM07XzoceB-RydLh08zA__original/img/bYLzrwZO9u-3h2wyU-PHc8aTOY4=/0x0/filters:format(jpeg)/pic428828.jpg"
+}
