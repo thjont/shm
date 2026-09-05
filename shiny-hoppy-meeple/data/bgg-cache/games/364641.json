@@ -1,0 +1,27 @@
+{
+  "id": 364641,
+  "name": "Joan of Arc: Orléans Draw & Write",
+  "year": 2022,
+  "thumbnail": "/images/games/364641-thumb.webp",
+  "image": "/images/games/364641.webp",
+  "image_width": 900,
+  "image_height": 1268,
+  "description": "In Joan of Arc: Orl&eacute;ans Draw & Write, 1-5 players draft followers that will help them move about France, gather goods, build buildings, establish trading stations, make money, and contribute to beneficial deeds. The player who can best utilize the followers they choose will score the most points and win.\n\nIn slightly more detail, each round, a number of follower tiles are pulled from a bag. Players take turns drafting the followers and taking actions that correspond to the follower they've chosen. After all the followers have been drafted, the bag resets until you've exhausted one bag per player.\n\nIn the solo mode, you compete directly against Joan of Arc at one of three difficulty levels.\n\n—description from the designer",
+  "min_players": 1,
+  "max_players": 5,
+  "playing_time": 45,
+  "min_age": 12,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Medieval"
+  ],
+  "mechanics": [
+    "Action Drafting",
+    "Paper-and-Pencil"
+  ],
+  "rating_bayes_average": 6.2017,
+  "rating_average_weight": 2.413,
+  "thumbnail_source": "https://cf.geekdo-images.com/eflfeDSSSBlbPe0JFKJ0Pg__small/img/bMorCtDW6eFBeh7szmdiFXWZ570=/fit-in/200x150/filters:strip_icc()/pic6910522.jpg",
+  "image_source": "https://cf.geekdo-images.com/eflfeDSSSBlbPe0JFKJ0Pg__original/img/CjCl_VOPgf_4Jhd8VizzO0FJn1M=/0x0/filters:format(jpeg)/pic6910522.jpg"
+}

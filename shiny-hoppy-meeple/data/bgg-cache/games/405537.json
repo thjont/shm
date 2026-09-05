@@ -1,0 +1,27 @@
+{
+  "id": 405537,
+  "name": "DroPolter",
+  "year": 2023,
+  "thumbnail": "/images/games/405537-thumb.webp",
+  "image": "/images/games/405537.webp",
+  "image_width": 900,
+  "image_height": 1583,
+  "description": "Your hand is always full in DroPolter, which makes it a challenge to drop only the correct items that the ghosts want to see.\n\nTo start the game, each player has a hand of five items: a red plastic cube, a blue wooden key, and so on. Each round, someone flips the top card of the deck, then players race to drop only the correct items from their hand. If you drop something you shouldn't, you're out for the round. If you're the first player who drops everything correctly, congratulations! You're rewarded with a tiny bell...that is placed in your hand and cannot be dropped in the future.\n\nThe first player who collects five bells wins.",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 20,
+  "min_age": 6,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Action / Dexterity"
+  ],
+  "mechanics": [
+    "Pattern Recognition",
+    "Real-Time"
+  ],
+  "rating_bayes_average": 6.39784,
+  "rating_average_weight": 1.0169,
+  "thumbnail_source": "https://cf.geekdo-images.com/dK0nQKDFg5VDpKmvkAkIHg__small/img/7_IFcl8DCZ22KjFTjp_CLjrgOlM=/fit-in/200x150/filters:strip_icc()/pic8803328.png",
+  "image_source": "https://cf.geekdo-images.com/dK0nQKDFg5VDpKmvkAkIHg__original/img/AkxW8w56y9Ow4G9jd25Ry6TgcZo=/0x0/filters:format(png)/pic8803328.png"
+}

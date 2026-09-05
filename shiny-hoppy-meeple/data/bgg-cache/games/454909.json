@@ -1,0 +1,29 @@
+{
+  "id": 454909,
+  "name": "Origin Story",
+  "year": 2025,
+  "thumbnail": "/images/games/454909-thumb.webp",
+  "image": "/images/games/454909.webp",
+  "image_width": 900,
+  "image_height": 1225,
+  "description": "Your inner superhero is ready to emerge, one chapter at a time. Reveal your backstory, gather gadgets and allies, develop a grudge against your archenemy, and unleash an ultimate ability as you transform. Use a combination of brains, love, speed, and strength to craft your origin story.\n\nOrigin Story is a 1-5 player competitive tableau-building, trick-taking game played over 5 rounds. Each round represents a chapter in your development and grants a new card to add to your player mat. Charge your cards and use their abilities to score more points than your opponents.\n\n—description from the publisher",
+  "min_players": 1,
+  "max_players": 5,
+  "playing_time": 45,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Comic Book / Strip"
+  ],
+  "mechanics": [
+    "Events",
+    "Trick-taking",
+    "Variable Player Powers",
+    "Variable Set-up"
+  ],
+  "rating_bayes_average": 6.30727,
+  "rating_average_weight": 2.0727,
+  "thumbnail_source": "https://cf.geekdo-images.com/aY8Kt9viVZgpkdO0Vdww-w__small/img/yciKwqg9AdhckrlcowJm9-efuv0=/fit-in/200x150/filters:strip_icc()/pic9135406.jpg",
+  "image_source": "https://cf.geekdo-images.com/aY8Kt9viVZgpkdO0Vdww-w__original/img/sMye0DBzFApTEa4ms1bDjNSxYCs=/0x0/filters:format(jpeg)/pic9135406.jpg"
+}

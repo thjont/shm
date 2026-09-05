@@ -1,0 +1,36 @@
+{
+  "id": 431998,
+  "name": "Point Galaxy",
+  "year": 2025,
+  "thumbnail": "/images/games/431998-thumb.webp",
+  "image": "/images/games/431998.webp",
+  "image_width": 853,
+  "image_height": 1148,
+  "description": "From the team that brought you the card games Point Salad and Point City, Point Galaxy is a fast card-drafting, sequence-building game for the whole family!\n\nPoint Galaxy takes the same simple concept of drafting cards and building the best combinations, and adds new layers of sequence building, set collection, and racing towards objectives to the mix - making the game easy to learn, but challenging for everyone!\n\nRules are simple: Take any two cards from the dynamic market and add them to your expanding galaxy. As you place cards, create solar systems by arranging planets in numeric order and earn bonuses by collecting suns, asteroids, moons, rockets, and research projects to score the most points!\n\nThere are over 140 unique double-sided planet/space cards, so you can create a completely different galaxy each and every time you play!\n\n—description from the publisher",
+  "min_players": 1,
+  "max_players": 5,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Print & Play",
+    "Puzzle",
+    "Space Exploration"
+  ],
+  "mechanics": [
+    "End Game Bonuses",
+    "Market",
+    "Open Drafting",
+    "Pattern Building",
+    "Set Collection",
+    "Solo / Solitaire Game",
+    "Square Grid",
+    "Variable Set-up"
+  ],
+  "rating_bayes_average": 6.08225,
+  "rating_average_weight": 1.9286,
+  "thumbnail_source": "https://cf.geekdo-images.com/J7_O8J6IU38a-NS9WMD_2A__small/img/cjMFqmB0fuofRIcQMynj1r5jKZs=/fit-in/200x150/filters:strip_icc()/pic8514367.png",
+  "image_source": "https://cf.geekdo-images.com/J7_O8J6IU38a-NS9WMD_2A__original/img/SivLr1q8QsSx2hW1b3W34xIZt0Q=/0x0/filters:format(png)/pic8514367.png"
+}

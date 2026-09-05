@@ -1,0 +1,28 @@
+{
+  "id": 341530,
+  "name": "Super Mega Lucky Box",
+  "year": 2021,
+  "thumbnail": "/images/games/341530-thumb.webp",
+  "image": "/images/games/341530.webp",
+  "image_width": 900,
+  "image_height": 1107,
+  "description": "Your goal in Super Mega Lucky Box is to score as many points as possible, and you'll do that mostly by crossing off the nine numbers printed in a 3x3 grid on the cards in front of you.\n\nDuring each of the four rounds, you shuffle 18 cards (numbered 1-9 twice), then reveal nine of those cards one by one. For each number revealed, you cross off a matching number on one of your cards, with you starting the game by choosing three out of five cards. Each time you complete a row or column, you receive the printed bonus next to it:\n\n\n     A lightning bolt, which you can spend to raise or lower the number that you're crossing off on a turn; spend three lightning bolts, for example, and you can change a 7 into either a 4 or a 1 (because the numbers \"wrap\")\n     A moon, with the player who has the most moons scoring 6 points at game's end, while the player with the fewest loses 6 points (except in a two-player game)\n     A star, with you scoring 1, 4, or 9 points for collecting 1, 2, or 3 stars in a single round\n     A number, which you immediately cross off on one of your cards; if doing so completes another row or column, you score that bonus, too!\n     A question mark, which allows you to cross off any number.\n\n\nAt the end of a round, you score points for each card that you've completely marked off, with the points diminishing each round from 15 in round one to 8 in round four. Each player then draws three new cards and keeps one of them.\n\nAfter four rounds, you score 1 point for each two spaces Xed on unfinished cards, then tally your points from completed cards, stars, and moons to see who has the highest score and wins.",
+  "min_players": 1,
+  "max_players": 6,
+  "playing_time": 20,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Number"
+  ],
+  "mechanics": [
+    "Bingo",
+    "Paper-and-Pencil",
+    "Pattern Building"
+  ],
+  "rating_bayes_average": 6.48425,
+  "rating_average_weight": 1.25,
+  "thumbnail_source": "https://cf.geekdo-images.com/grnvMmEKa_jRg4ZBX5Fadw__small/img/Fs2vCJ0dkPZxMHm4A_vEkl0yiT0=/fit-in/200x150/filters:strip_icc()/pic6254861.png",
+  "image_source": "https://cf.geekdo-images.com/grnvMmEKa_jRg4ZBX5Fadw__original/img/2jFwR_GdPUCUv6QjDxsgw3DQCkQ=/0x0/filters:format(png)/pic6254861.png"
+}

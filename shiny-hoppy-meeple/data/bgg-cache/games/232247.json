@@ -1,0 +1,33 @@
+{
+  "id": 232247,
+  "name": "Flash Point: Fire Rescue – Tragic Events",
+  "year": 2017,
+  "thumbnail": "/images/games/232247-thumb.webp",
+  "image": "/images/games/232247.webp",
+  "image_width": 900,
+  "image_height": 1131,
+  "description": "Flash Point: Fire Rescue - Tragic Events is an expansion for Flash Point: Fire Rescue, a cooperative game for 1-6 players that plays in 45 minutes.\n\nTragic Events includes the Fire & Event decks that are designed to replace the Hot Spot mechanic in the Experienced game rules and add exciting new \"events\" to make each game of Flash Point even more unique. This expansion also includes three specialists, each with their own mini: Strategist, Suppression Specialist, and Fire Prevention Specialist.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 0,
+  "min_age": 10,
+  "type": "boardgameexpansion",
+  "expansion": true,
+  "categories": [
+    "Expansion for Base-game",
+    "Adventure"
+  ],
+  "mechanics": [
+    "Action Points",
+    "Cooperative Game",
+    "Dice Rolling",
+    "Grid Movement",
+    "Pick-up and Deliver",
+    "Simulation",
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 5.95329,
+  "rating_average_weight": 2.2,
+  "thumbnail_source": "https://cf.geekdo-images.com/kueIlp5P4NWbBgTcVa4q8A__small/img/ZBstCwo642fEiK9qR8oNuf7_Wxc=/fit-in/200x150/filters:strip_icc()/pic3674905.jpg",
+  "image_source": "https://cf.geekdo-images.com/kueIlp5P4NWbBgTcVa4q8A__original/img/dX1WQ1ndSRs_SQsJt1aiaRxHKmw=/0x0/filters:format(jpeg)/pic3674905.jpg"
+}

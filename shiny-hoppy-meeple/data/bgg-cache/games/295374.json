@@ -1,0 +1,35 @@
+{
+  "id": 295374,
+  "name": "Long Shot: The Dice Game",
+  "year": 2022,
+  "thumbnail": "/images/games/295374-thumb.webp",
+  "image": "/images/games/295374.webp",
+  "image_width": 900,
+  "image_height": 1531,
+  "description": "This is your ticket to the track!\n\nIn Long Shot: The Dice Game, you and up to seven other players will strategize and push your luck as the action unfolds in a tense race of eight horses. During the game you buy horses, place bets, influence race movement, and utilize special abilities. The roll of the dice determines which horses move and the options available each turn, so be ready to adapt your plans. Once three horses cross the finish line, earnings are totaled. While there are many ways to earn money during a horse race, only the player that makes the most money will be declared the winner. Will you play it safe, or risk it big on a long shot?\n\n—description from the publisher",
+  "min_players": 1,
+  "max_players": 8,
+  "playing_time": 25,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Dice",
+    "Racing",
+    "Sports"
+  ],
+  "mechanics": [
+    "Betting and Bluffing",
+    "Bids As Wagers",
+    "Bingo",
+    "Dice Rolling",
+    "End Game Bonuses",
+    "Paper-and-Pencil",
+    "Solo / Solitaire Game",
+    "Victory Points as a Resource"
+  ],
+  "rating_bayes_average": 7.12031,
+  "rating_average_weight": 1.9561,
+  "thumbnail_source": "https://cf.geekdo-images.com/j9RO81ihYw0_oPj6iqV_bA__small/img/iRomFjZ0oELmm1pBVtJrNwyl4nc=/fit-in/200x150/filters:strip_icc()/pic6682376.jpg",
+  "image_source": "https://cf.geekdo-images.com/j9RO81ihYw0_oPj6iqV_bA__original/img/-jPNsFg5d9uA7D4WGDIP3TNLHX4=/0x0/filters:format(jpeg)/pic6682376.jpg"
+}

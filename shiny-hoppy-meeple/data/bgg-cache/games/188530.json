@@ -1,0 +1,29 @@
+{
+  "id": 188530,
+  "name": "My Favourite Things",
+  "year": 2015,
+  "thumbnail": "/images/games/188530-thumb.webp",
+  "image": "/images/games/188530.webp",
+  "image_width": 900,
+  "image_height": 1349,
+  "description": "My Favourite Things, first released as 曖昧フェイバリットシングス (Eye My Favorite Things), is a trick-taking party game in which you don't know the value of your cards, and instead, you get to know your fellow players.\n\nIn the game, you present your neighbors with a category and ask them to write their five favorite things (and one least favorite thing) in that category on their cards. You then use these cards to play a trick-taking game with all other players, with none of you knowing the true value of any card played until the end of each trick. Your neighbor's preference rank is the card's strength. Card 1 is highest and 0 is lowest, but if 1 and 0 appear in the same trick, 0 wins.\n\nBecause you are playing with someone else's favorite things, each trick provokes unique insights into your fellow players and sparks interesting conversations. Does Paul like Power Rangers more than Anthony likes Banana Milkshake or Archie likes Italian Disco? These are the deductions and judgement calls you'll need to make in My Favourite Things.",
+  "min_players": 3,
+  "max_players": 6,
+  "playing_time": 30,
+  "min_age": 12,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Deduction",
+    "Humor",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Trick-taking"
+  ],
+  "rating_bayes_average": 6.02353,
+  "rating_average_weight": 1.2857,
+  "thumbnail_source": "https://cf.geekdo-images.com/4VXbo4Ni9ZbgvVxc419teA__small/img/k7tHM3wJYdHsU_tLNe-yQi9SD3c=/fit-in/200x150/filters:strip_icc()/pic7825569.png",
+  "image_source": "https://cf.geekdo-images.com/4VXbo4Ni9ZbgvVxc419teA__original/img/u6lg9wm2oUUmooteJUQMkvefkcc=/0x0/filters:format(png)/pic7825569.png"
+}

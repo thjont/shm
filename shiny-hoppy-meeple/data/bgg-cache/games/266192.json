@@ -1,0 +1,37 @@
+{
+  "id": 266192,
+  "name": "Wingspan",
+  "year": 2019,
+  "thumbnail": "/images/games/266192-thumb.webp",
+  "image": "/images/games/266192.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Wingspan is a competitive, medium-weight, card-driven, engine-building board game from Stonemaier Games. It's designed by Elizabeth Hargrave and features 180 birds illustrated by Natalia Rojas and Ana Maria Martinez.\n\nYou are bird enthusiasts—researchers, bird watchers, ornithologists, and collectors—seeking to discover and attract the best birds to your network of wildlife preserves. Each bird extends a chain of powerful combinations in one of your habitats (actions). These habitats  focus on several key aspects of growth:\n\n\n     Gain food tokens via custom dice in a birdfeeder dice tower\n     Lay eggs using egg miniatures in a variety of colors\n     Draw from hundreds of unique bird cards and play them\n\n\nThe winner is the player with the most points after 4 rounds.\n\n—description from the publisher\n\nFrom the 7th printing on, the base game box includes Wingspan: Swift-Start Promo Pack.",
+  "min_players": 1,
+  "max_players": 5,
+  "playing_time": 70,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Card Game",
+    "Educational",
+    "Environmental"
+  ],
+  "mechanics": [
+    "Action Queue",
+    "Dice Rolling",
+    "End Game Bonuses",
+    "Hand Management",
+    "Once-Per-Game Abilities",
+    "Open Drafting",
+    "Set Collection",
+    "Solo / Solitaire Game",
+    "Turn Order: Progressive"
+  ],
+  "rating_bayes_average": 7.84078,
+  "rating_average_weight": 2.4811,
+  "thumbnail_source": "https://cf.geekdo-images.com/yLZJCVLlIx4c7eJEWUNJ7w__small/img/VNToqgS2-pOGU6MuvIkMPKn_y-s=/fit-in/200x150/filters:strip_icc()/pic4458123.jpg",
+  "image_source": "https://cf.geekdo-images.com/yLZJCVLlIx4c7eJEWUNJ7w__original/img/cI782Zis9cT66j2MjSHKJGnFPNw=/0x0/filters:format(jpeg)/pic4458123.jpg"
+}

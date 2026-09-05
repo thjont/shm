@@ -1,0 +1,32 @@
+{
+  "id": 352515,
+  "name": "Trio",
+  "year": 2021,
+  "thumbnail": "/images/games/352515-thumb.webp",
+  "image": "/images/games/352515.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "nana, which was later reprinted as Trio, is a card game in which players are looking for three of a kind.\n\nThe deck consists of 36 cards, numbered 1-12 three times. Players receive some cards in hand, which they are required to sort from low to high, and the remaining cards are placed face down on the table.\n\nOn your turn, choose any single card to reveal, either the low or high card from a player's hand (including your own) or any face-down card from the table. Then, do this again. If the two cards show the same number, continue your turn; if they do not, return the cards to where they came from and end your turn.\n\nIf you reveal three cards showing the same number, take these cards as a set in front of you. If you are the first player to collect three sets, you win — except that a player wins immediately if they collect the set of 7s or two sets that add or subtract to 7, e.g., 4s and 11s.\n\nNote that nana and Trio contain identical components, but nana is labeled for 2-5 players, while Trio is labeled for 3-6 players. Trio has slight changes to the rules, with players using all cards no matter the player count. Additionally, you play in normal mode — winning with three sets or the 7s — or \"spicy\" mode, winning with two linked sets or the 7s. Finally, Trio includes rules for playing in teams with four or six players.",
+  "min_players": 3,
+  "max_players": 6,
+  "playing_time": 15,
+  "min_age": 6,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Card Game",
+    "Memory"
+  ],
+  "mechanics": [
+    "Matching",
+    "Memory",
+    "Questions and Answers",
+    "Set Collection",
+    "Team-Based Game"
+  ],
+  "rating_bayes_average": 7.02608,
+  "rating_average_weight": 1.0749,
+  "thumbnail_source": "https://cf.geekdo-images.com/d9F0ZDqcN3J7J92WckyraQ__small/img/8d663Cj-RQy8pA8gZOcO80xYI5I=/fit-in/200x150/filters:strip_icc()/pic7605785.jpg",
+  "image_source": "https://cf.geekdo-images.com/d9F0ZDqcN3J7J92WckyraQ__original/img/3OAIArHm3Z_j5bAJeJlU5LKQie0=/0x0/filters:format(jpeg)/pic7605785.jpg"
+}

@@ -1,0 +1,29 @@
+{
+  "id": 181796,
+  "name": "The Prodigals Club",
+  "year": 2015,
+  "thumbnail": "/images/games/181796-thumb.webp",
+  "image": "/images/games/181796.webp",
+  "image_width": 900,
+  "image_height": 1254,
+  "description": "Welcome to The Prodigals Club! You and your fellows are proper Victorian gentlemen who have realized that the lower classes have more fun. Now you are in a friendly competition to see which of you can destroy his own social standing most thoroughly.\n\nIn The Prodigals Club, you compete in three separate competitions: trying to lose an election, trying to get rid of all your possessions, or trying to offend the most influential people in high society. You can play any two competitions in combination or play all three simultaneously. Each competition interacts with the other two. To win, you need to balance your strategy and play all the competitions well.\n\nThe Prodigals Club is thematically related to Vladim&iacute;r Such&yacute;'s Last Will. You do not need Last Will to play as Prodigals stands alone; that said, the rulebook also explains how to combine the two games together should you desire to do so.",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 100,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Economic"
+  ],
+  "mechanics": [
+    "Hand Management",
+    "Highest-Lowest Scoring",
+    "Worker Placement"
+  ],
+  "rating_bayes_average": 6.52191,
+  "rating_average_weight": 3.2685,
+  "thumbnail_source": "https://cf.geekdo-images.com/JiTIOiIvvpMHIO1NIlcBmA__small/img/0PTZyjpJRmSA29IO1nRtHPS1ejE=/fit-in/200x150/filters:strip_icc()/pic2684453.jpg",
+  "image_source": "https://cf.geekdo-images.com/JiTIOiIvvpMHIO1NIlcBmA__original/img/4IyzMADM1DO7EqGYvTpghvmlHYs=/0x0/filters:format(jpeg)/pic2684453.jpg"
+}

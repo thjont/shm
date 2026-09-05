@@ -1,0 +1,31 @@
+{
+  "id": 463441,
+  "name": "Flip 7: With A Vengeance",
+  "year": 2026,
+  "thumbnail": "/images/games/463441-thumb.webp",
+  "image": "/images/games/463441.webp",
+  "image_width": 629,
+  "image_height": 800,
+  "description": "Flip 7 is back - With a Vengeance! All of the fun of the original game, plus new player interactions and special take-that cards!\n\nFlip over cards one by one without flipping the same number twice. Sound easy? Think again! This isn't just any deck of cards… In Flip 7: With A Vengeance, there's only one 1 card, two 2's, three 3’s, etc., plus a bunch of special cards that can cut your points in half, steal any card, or force an opponent to draw four cards! Are you the type of player to play it safe and bank points before you bust, or are you going to risk it all and go for the bonus points by flipping over seven in a row? Press your luck meets strategy in this addictive card game where no one is ever really safe. The hard-boiled sequel to the award-winning, instant classic, Flip 7.",
+  "min_players": 3,
+  "max_players": 28,
+  "playing_time": 20,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Number",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Interrupts",
+    "Push Your Luck",
+    "Score-and-Reset Game",
+    "Take That"
+  ],
+  "rating_bayes_average": 6.2234,
+  "rating_average_weight": 1.0571,
+  "thumbnail_source": "https://cf.geekdo-images.com/ZW3pPCcG069GkXkk7HSHlg__small/img/2JKP8UaEY08sUHO5oLC4hvClSXU=/fit-in/200x150/filters:strip_icc()/pic9385115.jpg",
+  "image_source": "https://cf.geekdo-images.com/ZW3pPCcG069GkXkk7HSHlg__original/img/A-MS4ZUWEhiaDBSKChOq50Qcdnw=/0x0/filters:format(jpeg)/pic9385115.jpg"
+}

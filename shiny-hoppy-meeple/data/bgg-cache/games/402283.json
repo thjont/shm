@@ -1,0 +1,29 @@
+{
+  "id": 402283,
+  "name": "Courtisans",
+  "year": 2024,
+  "thumbnail": "/images/games/402283-thumb.webp",
+  "image": "/images/games/402283.webp",
+  "image_width": 900,
+  "image_height": 1694,
+  "description": "Tonight, the queen holds a banquet that everyone will attend. Will they leave a good impression? Backstabbing is fair game, and no trick is too dirty if it allows you to place your favorite families in the spotlight.\n\nIn Courtisans, you receive and play three cards on each of your turns. One is played at the Queen's table to sway a family's influence, whether in a positive or negative manner. The two other cards are played in your domain and in an opponent's domain, and they can be worth positive or negative points, depending on their family's status at the end of the game. Choose where best to place your three cards if you want to end up with the most points and win.\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Medieval"
+  ],
+  "mechanics": [
+    "End Game Bonuses",
+    "Set Collection",
+    "Take That"
+  ],
+  "rating_bayes_average": 6.65012,
+  "rating_average_weight": 1.3048,
+  "thumbnail_source": "https://cf.geekdo-images.com/JK1HbIGtiVfsIbnw3Q543w__small/img/aLX0aSFbj4WBlK69h0x7j_8bItc=/fit-in/200x150/filters:strip_icc()/pic8004908.jpg",
+  "image_source": "https://cf.geekdo-images.com/JK1HbIGtiVfsIbnw3Q543w__original/img/kPNCItrb8GwoIwV9R-vjczIkJR4=/0x0/filters:format(jpeg)/pic8004908.jpg"
+}

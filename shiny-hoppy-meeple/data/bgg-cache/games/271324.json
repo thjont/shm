@@ -1,0 +1,36 @@
+{
+  "id": 271324,
+  "name": "It's a Wonderful World",
+  "year": 2019,
+  "thumbnail": "/images/games/271324-thumb.webp",
+  "image": "/images/games/271324.webp",
+  "image_width": 900,
+  "image_height": 899,
+  "description": "In It’s a Wonderful World, you are an expanding Empire and must choose your path to your future. You must develop faster and better than your competitors. You’ll carefully plan your expansion to develop your production power and rule over this new world.\n\nIt’s a Wonderful World is a cards drafting and engine building game from 1 to 5 players. Each round, players will draft 7 cards and then choose which ones will be recycled to immediately acquire Resources, and which ones will be kept for construction to produce Resources each round and/or gain victory points.\n\nWhen a card is fully built, it’s added to the player’s Empire to increase the player’s production capacity for each round. The mechanical twist being that the production phase works in a specific order. You'll have to plan your constructions carefully!\n\nFor a deeper insight of the gameplay, please follow this link : It's a Wonderful World - First steps\n\nIn addition to the base game, players can also enjoy expansions boxes introducing an innovative Campaign mode. Each Campaign offers a storyline to follow and many gameplay twists. At the end of each campaign, players will open a reward booster to unlock new cards, enhance their base game and keep a memory of what happened during the campaign. All the campaigns can be replayed and don’t imply game components destruction.\n\nMore info on the Campaign mode : It's a Wonderful World - Campaign Mode \n\n—description from the publisher",
+  "min_players": 1,
+  "max_players": 5,
+  "playing_time": 45,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Civilization",
+    "Economic",
+    "Science Fiction"
+  ],
+  "mechanics": [
+    "Closed Drafting",
+    "End Game Bonuses",
+    "Hand Management",
+    "Income",
+    "Set Collection",
+    "Simultaneous Action Selection",
+    "Solo / Solitaire Game",
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 7.38143,
+  "rating_average_weight": 2.3233,
+  "thumbnail_source": "https://cf.geekdo-images.com/od4vDTdXGPSVc-kjLqM11w__small/img/T2ukKoCUNv2LMxg5GOlOb8WTzNI=/fit-in/200x150/filters:strip_icc()/pic4651175.jpg",
+  "image_source": "https://cf.geekdo-images.com/od4vDTdXGPSVc-kjLqM11w__original/img/sN8TnSkFGCzNM01b_drFxwYnqlM=/0x0/filters:format(jpeg)/pic4651175.jpg"
+}

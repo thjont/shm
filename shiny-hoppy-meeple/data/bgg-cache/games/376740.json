@@ -1,0 +1,38 @@
+{
+  "id": 376740,
+  "name": "Undergrove",
+  "year": 2024,
+  "thumbnail": "/images/games/376740-thumb.webp",
+  "image": "/images/games/376740.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "For over 300 million years, trees have traded nutrients with fungi in a vast underground network. Scientists continue to make new discoveries about this hidden world.\n\nIn Undergrove, you are a towering evergreen with an ancient symbiotic connection to the fungi in your forest. As new mushrooms appear, your options expand for converting nutrients and helping your seedlings. Using cube conversion, tile placement, area control, and a tiny bit of engine building, you’ll need to claim the most advantageous locations and optimize your actions to leave the best legacy in the forest.\n● Build a shared forest containing mushrooms with diverse abilities.\n● Trade with the mushrooms to get resources based on the partnerships you’ve made.\n● Place your seedings in the most advantageous positions to score the most points.\n\nInspired by real mycorrhizal trading networks. Shape the destiny of your forest with every decision!\n\n-description from publisher",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 75,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Educational",
+    "Environmental"
+  ],
+  "mechanics": [
+    "Action Retrieval",
+    "Area Majority / Influence",
+    "Bias",
+    "Connections",
+    "End Game Bonuses",
+    "Hand Management",
+    "Map Addition",
+    "Open Drafting",
+    "Set Collection",
+    "Square Grid",
+    "Tile Placement",
+    "Track Movement"
+  ],
+  "rating_bayes_average": 6.06064,
+  "rating_average_weight": 2.9,
+  "thumbnail_source": "https://cf.geekdo-images.com/Q40r25w4jvEE03yqhTyGBA__small/img/GlvWbyLx7a2vPcxwL7XLDFHaotQ=/fit-in/200x150/filters:strip_icc()/pic7774167.png",
+  "image_source": "https://cf.geekdo-images.com/Q40r25w4jvEE03yqhTyGBA__original/img/VkrPBfik5v5GkUICxj3l7rmxAYU=/0x0/filters:format(png)/pic7774167.png"
+}

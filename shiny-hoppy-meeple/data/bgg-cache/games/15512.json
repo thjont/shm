@@ -1,0 +1,30 @@
+{
+  "id": 15512,
+  "name": "Diamant",
+  "year": 2005,
+  "thumbnail": "/images/games/15512-thumb.webp",
+  "image": "/images/games/15512.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Diamant — also published as Incan Gold — is a quick, fun, press-your-luck game. Players venture down mine shafts or explore paths in the jungle by turning up cards from a deck and evenly sharing the gems they find on the way, with any leftover gems being placed on the card. Before the next card is revealed, you have the chance to leave the mine and stash your holdings, including any gems you get on the way out.\n\nWhy would you leave? Because the deck also contains hazards: scorpions, snakes, poison gas, explosions and rockfalls. When a particular hazard is revealed for the second time (e.g., a second scorpion), anyone still in the shaft or on the path has to drop all the gems they've collected that round and flee for safety. The trick is that as more players leave each turn, your share of the pie grows larger, which will perhaps inspire you to explore deeper — but at the risk of ending up with nothing.\n\nAll editions of Incan Gold and later editions of Diamant include five artifact cards that are shuffled into the deck of gem and hazard cards, either one per round or all at once. When an artifact card is revealed, no one can take this card and it's placed on the path. If exactly one player leaves at the end of a turn, they collect not only all gems that remain on the path, but the artifact as well, which is worth extra points at the end of the game.",
+  "min_players": 3,
+  "max_players": 8,
+  "playing_time": 40,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Bluffing",
+    "Card Game",
+    "Exploration"
+  ],
+  "mechanics": [
+    "Move Through Deck",
+    "Push Your Luck",
+    "Simultaneous Action Selection"
+  ],
+  "rating_bayes_average": 6.71038,
+  "rating_average_weight": 1.1133,
+  "thumbnail_source": "https://cf.geekdo-images.com/G7gR2mJRPosZmGahXFKFXA__small/img/4qe4Eo9pvyKtw4W0E-iv7TV6aa8=/fit-in/200x150/filters:strip_icc()/pic7924444.jpg",
+  "image_source": "https://cf.geekdo-images.com/G7gR2mJRPosZmGahXFKFXA__original/img/mwD68OdF-9k-Jkd9dRY87Nt__qo=/0x0/filters:format(jpeg)/pic7924444.jpg"
+}

@@ -1,0 +1,35 @@
+{
+  "id": 172931,
+  "name": "Outfoxed!",
+  "year": 2014,
+  "thumbnail": "/images/games/172931-thumb.webp",
+  "image": "/images/games/172931.webp",
+  "image_width": 900,
+  "image_height": 901,
+  "description": "Game description from the publisher:\n\nMrs. Plumpert's prized pot pie has gone missing, and now it's a chicken chase to crack the case!\n\nIn Outfoxed, you move around the board to gather clues, then use the special evidence scanner to rule out suspects. You have to work together quickly because the guilty fox is high-tailing it towards the exit! Will you halt the hungry hooligan before it flies the coop — or will you be outfoxed?",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 20,
+  "min_age": 5,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Children's Game",
+    "Deduction",
+    "Dice"
+  ],
+  "mechanics": [
+    "Cooperative Game",
+    "Deduction",
+    "Dice Rolling",
+    "Die Icon Resolution",
+    "Grid Movement",
+    "Memory",
+    "Square Grid"
+  ],
+  "rating_bayes_average": 6.61003,
+  "rating_average_weight": 1.0974,
+  "thumbnail_source": "https://cf.geekdo-images.com/v0FCI-wY8YlPn39XKd3F8w__small/img/lgy2HBtB0l2m-XknC9fGn-qakXc=/fit-in/200x150/filters:strip_icc()/pic2401324.jpg",
+  "image_source": "https://cf.geekdo-images.com/v0FCI-wY8YlPn39XKd3F8w__original/img/vppUmOYk1ZFqprmgN_1-htcXa-s=/0x0/filters:format(jpeg)/pic2401324.jpg"
+}

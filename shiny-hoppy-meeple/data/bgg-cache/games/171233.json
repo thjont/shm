@@ -1,0 +1,31 @@
+{
+  "id": 171233,
+  "name": "The Big Book of Madness",
+  "year": 2015,
+  "thumbnail": "/images/games/171233-thumb.webp",
+  "image": "/images/games/171233.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "So far your first year at the Elementary College has been slightly disappointing. They taught you to light a flickering flame at the tip of your finger, but other than that you've spent much more time reading books than learning powerful spells as future great wizards like you should.\n\nSo when you heard about the Big Book of Madness hidden in the great school library, you couldn't help but to sneak in and peek in this intriguing tome in spite of your professors' warnings. When you slowly lift the cover of the terrible book, dozens of dreadful creatures rush out, threatening to destroy the world itself! This was your mistake, and only you can fix it now! Learn from the library to fight back against the monsters, and try not to sink into insanity...\n\nThe Big Book of Madness is a challenging co-operative game in which the players are magic students who must act as a team to turn all the pages of the book, then shut it by defeating the terrible monsters they've just freed.\n\nEach player has their own element deck that they build during the game and use for several purposes, such as learning or casting a spell, adding a new element to their deck, destroy or healing a curse. Spells allow you to support your playmates, improve your deck, draw cards, etc. — but the monsters from the book fight back. Each comes with terrible curses that are triggered every turn unless you dispel them in time. They will make you discard elements, add madness cards to your deck, or lose spells...\n\nIf you manage to turn six pages and defeat all of the monsters, you win the game!",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 90,
+  "min_age": 12,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Fantasy"
+  ],
+  "mechanics": [
+    "Cooperative Game",
+    "Deck, Bag, and Pool Building",
+    "Hand Management",
+    "Player Elimination",
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 6.48859,
+  "rating_average_weight": 2.699,
+  "thumbnail_source": "https://cf.geekdo-images.com/-LL30JqMelQiFx51xjzIVg__small/img/1zS0iG4Y_mY8RNwJqTZm6o5YztI=/fit-in/200x150/filters:strip_icc()/pic2750172.jpg",
+  "image_source": "https://cf.geekdo-images.com/-LL30JqMelQiFx51xjzIVg__original/img/xxc0HZxHgBnPPe5GNJ3kQ1Xyd4Q=/0x0/filters:format(jpeg)/pic2750172.jpg"
+}

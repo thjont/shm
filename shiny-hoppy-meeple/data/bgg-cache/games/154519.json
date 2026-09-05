@@ -1,0 +1,28 @@
+{
+  "id": 154519,
+  "name": "Time Barons",
+  "year": 2014,
+  "thumbnail": "/images/games/154519-thumb.webp",
+  "image": "/images/games/154519.webp",
+  "image_width": 900,
+  "image_height": 1354,
+  "description": "The second edition, published by WizKids in November 2017, adds 50 brand new expansion cards and now supports up to 4 players.\n\n\nIn this game of tactical card combat, you play as one of the time barons, shadowy figures who have shaped mankind's destiny since the dawn of time. People are simply pawns in your quest to defeat the other barons and become the ruler of a unified human race. War, religion, technology - all will be used in this ultimate battle.\n\nOnly you can decide the best way to exploit your loyal followers and make the most of the many powerful cards you are dealt. Will you upgrade as rapidly as possible, hoping to obtain that technological edge, or punish such folly with primitive weapons and fanatical attacks? Will you be relentless in your aggression or build an economic advantage? A variety of tactics are available to you at every turn, and you may find yourself putting bubonic plague on your opponent's robotics lab to slowly kill off the workers there, or attaching a computer network to a medieval church to automate the conversion of new followers. In this brutal struggle, many will die... but good planning, quick thinking, and a little luck will carry the day!",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game"
+  ],
+  "mechanics": [
+    "Action Points",
+    "Hand Management",
+    "Worker Placement"
+  ],
+  "rating_bayes_average": 5.75552,
+  "rating_average_weight": 2.3636,
+  "thumbnail_source": "https://cf.geekdo-images.com/ufCw_2IKFls-8FuhTGm-Kw__small/img/Ahh0DvJdNf9CPdNKRtzsJU0oZ5c=/fit-in/200x150/filters:strip_icc()/pic3623201.jpg",
+  "image_source": "https://cf.geekdo-images.com/ufCw_2IKFls-8FuhTGm-Kw__original/img/ADsj1oqq6_qmZxrgQ4qbMf72SnI=/0x0/filters:format(jpeg)/pic3623201.jpg"
+}

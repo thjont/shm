@@ -1,0 +1,32 @@
+{
+  "id": 129622,
+  "name": "Love Letter",
+  "year": 2012,
+  "thumbnail": "/images/games/129622-thumb.webp",
+  "image": "/images/games/129622.webp",
+  "image_width": 900,
+  "image_height": 1213,
+  "description": "All of the eligible young men (and many of the not-so-young) seek to woo the princess of Tempest. Unfortunately, she has locked herself in the palace, and you must rely on others to take your romantic letters to her. Will yours reach her first?\n\nLove Letter is a game of risk, deduction, and luck for 2–4 players. Your goal is to get your love letter into Princess Annette's hands while deflecting the letters from competing suitors. From a deck with only sixteen cards, each player starts with only one card in hand; one card is removed from play. On a turn, you draw one card, and play one card, trying to expose others and knock them from the game. Powerful cards lead to early gains, but make you a target. Rely on weaker cards for too long, however, and your letter may be tossed in the fire!\n\nNumber 4 in the Setting: Tempest Shared World Game Series",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 20,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Deduction",
+    "Renaissance"
+  ],
+  "mechanics": [
+    "Deduction",
+    "Hand Management",
+    "Player Elimination",
+    "Score-and-Reset Game",
+    "Take That"
+  ],
+  "rating_bayes_average": 7.12183,
+  "rating_average_weight": 1.1843,
+  "thumbnail_source": "https://cf.geekdo-images.com/T1ltXwapFUtghS9A7_tf4g__small/img/GtNX7gCmGpw39Tr6JApWC3Aga5U=/fit-in/200x150/filters:strip_icc()/pic1401448.jpg",
+  "image_source": "https://cf.geekdo-images.com/T1ltXwapFUtghS9A7_tf4g__original/img/xIAzJY7rl-mtPStRZSqnTVsAr8Y=/0x0/filters:format(jpeg)/pic1401448.jpg"
+}

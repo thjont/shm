@@ -1,0 +1,31 @@
+{
+  "id": 234260,
+  "name": "Prey Another Day",
+  "year": 2023,
+  "thumbnail": "/images/games/234260-thumb.webp",
+  "image": "/images/games/234260.webp",
+  "image_width": 900,
+  "image_height": 1253,
+  "description": "The large predators hunt the smaller ones, but they are nimble and can easily escape. Use your animal instincts to outwit the other players and deduce which animals they are sending on the hunt. The first player to capture 5 food markers will be crowned the munch king!\n\nThe game takes place over multiple rounds. Each round the players can choose from their 5 animals. The stronger animals can hunt early, but the weaker ones will give more points.\n\n— description from the publisher",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 20,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Bluffing",
+    "Card Game",
+    "Print & Play"
+  ],
+  "mechanics": [
+    "Player Elimination",
+    "Score-and-Reset Game",
+    "Simultaneous Action Selection"
+  ],
+  "rating_bayes_average": 6.21915,
+  "rating_average_weight": 1.0989,
+  "thumbnail_source": "https://cf.geekdo-images.com/pfEw73TNwLWHNKwssoI4mg__small/img/uMR-GcpC7W6uJHQW3XZtU0w5Y7U=/fit-in/200x150/filters:strip_icc()/pic7615075.jpg",
+  "image_source": "https://cf.geekdo-images.com/pfEw73TNwLWHNKwssoI4mg__original/img/8I-KwzsUfrqwN3MA4hTn49m4QHc=/0x0/filters:format(jpeg)/pic7615075.jpg"
+}

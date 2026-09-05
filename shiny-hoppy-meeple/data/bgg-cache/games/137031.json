@@ -1,0 +1,33 @@
+{
+  "id": 137031,
+  "name": "Ancient Terrible Things",
+  "year": 2014,
+  "thumbnail": "/images/games/137031-thumb.webp",
+  "image": "/images/games/137031.webp",
+  "image_width": 665,
+  "image_height": 930,
+  "description": "In Ancient Terrible Things, a pulp horror adventure game for 2-4 players, you play the role of an intrepid adventurer, exploring a dark jungle river. Each turn you must travel to a Fateful Location, face an Ominous Encounter, and attempt to unlock its Ancient Secrets. If you succeed (using a combination of dice, tokens and cards), you add the Secrets to your score; if you fail, you unleash a Terrible Thing, which counts against your score at the end of the game. The object of the game is to be the player with the most Ancient Secrets when the game ends at the Unspeakable Event.\n\nGame play involves rolling dice to achieve combinations: runs, pairs, three or more of a kind, and single die showing a particular number or higher. Dice combos are used to overcome Encounter cards that are worth points at the end of the game, and/or to acquire the four resource tokens in the game: Focus, Courage, Treasure and Feat.\n\n\n    Focus tokens are used to re-roll individual dice. \n    Courage tokens are spent to overcome an Encounter, before rolling your dice. \n    Treasure tokens are spent to purchase Swag cards from the Trading Post, which give you a permanent game effect.\n    Feat tokens are spent to play Feat cards from your hand, which activate one-shot effects.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 60,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Dice",
+    "Horror",
+    "Mythology"
+  ],
+  "mechanics": [
+    "Dice Rolling",
+    "Hand Management",
+    "Push Your Luck",
+    "Re-rolling and Locking",
+    "Set Collection",
+    "Worker Placement"
+  ],
+  "rating_bayes_average": 6.04755,
+  "rating_average_weight": 2.0674,
+  "thumbnail_source": "https://cf.geekdo-images.com/ZJu3bJo1rreNIo1QzVhg1Q__small/img/CEuxWIte2ST_CusV5VnDfSW2_Hc=/fit-in/200x150/filters:strip_icc()/pic2038435.png",
+  "image_source": "https://cf.geekdo-images.com/ZJu3bJo1rreNIo1QzVhg1Q__original/img/PzCX2o-K_DLo6XgPPO4LRT1mddE=/0x0/filters:format(png)/pic2038435.png"
+}

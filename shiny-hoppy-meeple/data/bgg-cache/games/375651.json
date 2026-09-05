@@ -1,0 +1,29 @@
+{
+  "id": 375651,
+  "name": "That's Not a Hat",
+  "year": 2023,
+  "thumbnail": "/images/games/375651-thumb.webp",
+  "image": "/images/games/375651.webp",
+  "image_width": 900,
+  "image_height": 1145,
+  "description": "Can you remember a few items? Sounds easy?\nIt's a challenge in \"That's not a Hat\"!\nPlayers give gifts to each other while trying to remember who gave what and which gift they have in front of them.\nIf they can't remember, they have to bluff to avoid a penalty point.\nAn unforgettable game!",
+  "min_players": 3,
+  "max_players": 8,
+  "playing_time": 15,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Bluffing",
+    "Card Game",
+    "Memory",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Memory"
+  ],
+  "rating_bayes_average": 6.57839,
+  "rating_average_weight": 1.058,
+  "thumbnail_source": "https://cf.geekdo-images.com/y_8E6IhpFg5z-_9KHdQYYQ__small/img/8FaQmPggNpG2i2zIXe5-X8bGt30=/fit-in/200x150/filters:strip_icc()/pic7386321.jpg",
+  "image_source": "https://cf.geekdo-images.com/y_8E6IhpFg5z-_9KHdQYYQ__original/img/nDlt2BB6wA2avRDDO8MKgP0bjW4=/0x0/filters:format(jpeg)/pic7386321.jpg"
+}

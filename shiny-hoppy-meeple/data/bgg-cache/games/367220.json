@@ -1,0 +1,34 @@
+{
+  "id": 367220,
+  "name": "Sea Salt & Paper",
+  "year": 2022,
+  "thumbnail": "/images/games/367220-thumb.webp",
+  "image": "/images/games/367220.webp",
+  "image_width": 595,
+  "image_height": 794,
+  "description": "During your turn, you assemble your hand, maybe place cards for their effect, and decide if you want to end the round. But do you think you are the one with the most points in hand?\nYou will have to choose: stop the round immediately or give the others an extra turn to try to extend the gap? Is it worth taking the risk? \nThe game ends when you reach 30/35/40 points (4/3/2 players).",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 45,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Card Game"
+  ],
+  "mechanics": [
+    "Hand Management",
+    "Melding and Splaying",
+    "Open Drafting",
+    "Push Your Luck",
+    "Score-and-Reset Game",
+    "Set Collection",
+    "Sudden Death Ending",
+    "Take That"
+  ],
+  "rating_bayes_average": 7.27629,
+  "rating_average_weight": 1.4934,
+  "thumbnail_source": "https://cf.geekdo-images.com/CIh_rXKoRw9z8K0PJxT8nQ__small/img/Jh6NjibuHeYrZtSsAUXq82B1fTQ=/fit-in/200x150/filters:strip_icc()/pic6973911.jpg",
+  "image_source": "https://cf.geekdo-images.com/CIh_rXKoRw9z8K0PJxT8nQ__original/img/AX2wyHhWFgVh5OArXAjVHY-nFZg=/0x0/filters:format(jpeg)/pic6973911.jpg"
+}

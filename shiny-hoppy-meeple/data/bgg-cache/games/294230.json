@@ -1,0 +1,33 @@
+{
+  "id": 294230,
+  "name": "Remember Our Trip",
+  "year": 2019,
+  "thumbnail": "/images/games/294230-thumb.webp",
+  "image": "/images/games/294230.webp",
+  "image_width": 670,
+  "image_height": 680,
+  "description": "Remember Our Trip is a board game in which players recreate a map of a city they visited together. After returning to your own country, you and the other players have gotten together to try to recall the map of either Kyoto or Singapore (depending on the game board you choose). You need to piece together the scenery of the map using fragments of your memories, with you earning bonus points if your memory matches that of the main board and other players.\n\nIn the game, each player has an individual image board, while everyone shares a common map board. Each of the twelve rounds of the game starts with the revelation of a \"memory card\", which shows one of six patterns that players can build on their image board with image tokens that they draft. Over multiple rounds, you'll compile image tokens next to one another, and if you have the right tokens in the right shape, you suddenly \"remember\" the building that matches the shape and image, placing that building on the shared common map and scoring points for it. You can additionally score points for completing buildings with image tokens that match buildings remembered by others, i.e., that they placed on the common board earlier. You've now remembered that building, too!\n\nEach player also has objective cards and photo memory cards, and you can score points for satisfying them. If you can't fit all of your image fragments into play, you lose points for scattered thoughts. For more difficult play, you can use the 7x6 area on the Kyoto or Singapore game board instead of the regular 7x7 area.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Abstract Strategy",
+    "Travel"
+  ],
+  "mechanics": [
+    "End Game Bonuses",
+    "Grid Coverage",
+    "Open Drafting",
+    "Pattern Building",
+    "Square Grid",
+    "Tile Placement",
+    "Turn Order: Progressive"
+  ],
+  "rating_bayes_average": 6.09402,
+  "rating_average_weight": 2.129,
+  "thumbnail_source": "https://cf.geekdo-images.com/G6nCghq_RVkNuoVQM_2sEQ__small/img/va3ksfY4H9BMOWgAZZraX8LVILE=/fit-in/200x150/filters:strip_icc()/pic5051879.png",
+  "image_source": "https://cf.geekdo-images.com/G6nCghq_RVkNuoVQM_2sEQ__original/img/s58TXu8o8I8ANYmKxWrg-3Z4aMU=/0x0/filters:format(png)/pic5051879.png"
+}

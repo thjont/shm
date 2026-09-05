@@ -1,0 +1,30 @@
+{
+  "id": 345972,
+  "name": "Cat in the Box: Deluxe Edition",
+  "year": 2022,
+  "thumbnail": "/images/games/345972-thumb.webp",
+  "image": "/images/games/345972.webp",
+  "image_width": 900,
+  "image_height": 667,
+  "description": "Cat in the Box: Deluxe Edition is the quintessential quantum trick-taking card game for 2 - 5 cool cats, where your card’s color isn’t defined until you play it! Hypothesize how many tricks you will win, and record your bid. Place tokens on the community research board as you play your hand, and connect large groups of tokens to score even more points. Plan your tricks carefully as you cannot claim the color of a card with the same number that has already been declared. Doing so would be pawsitively catastrophic as you have just created a paradox!\n\nNew Deluxe Edition features:\n\n    Supports 2-5 players\n    High quality geekbits-style plastic tokens\n    Recessed player boards\n    Recessed Center Research board\n    Score pad\n    And a custom plastic insert to keep Cat in the Box: Deluxe Edition tidy!\n\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 40,
+  "min_age": 13,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Card Game"
+  ],
+  "mechanics": [
+    "Enclosure",
+    "Hand Management",
+    "Predictive Bid",
+    "Trick-taking"
+  ],
+  "rating_bayes_average": 7.1151,
+  "rating_average_weight": 2.0455,
+  "thumbnail_source": "https://cf.geekdo-images.com/M1gT_9LjNqUzAx3RAqdGRQ__small/img/3I1JU_hP5YtIg6RzcJePmmNOWAQ=/fit-in/200x150/filters:strip_icc()/pic6731829.jpg",
+  "image_source": "https://cf.geekdo-images.com/M1gT_9LjNqUzAx3RAqdGRQ__original/img/euRCLPNg4Zpqqtvwdcjvbrna9JQ=/0x0/filters:format(jpeg)/pic6731829.jpg"
+}

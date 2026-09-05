@@ -1,0 +1,33 @@
+{
+  "id": 221194,
+  "name": "Dinosaur Island",
+  "year": 2017,
+  "thumbnail": "/images/games/221194-thumb.webp",
+  "image": "/images/games/221194.webp",
+  "image_width": 900,
+  "image_height": 906,
+  "description": "In Dinosaur Island, players will have to collect DNA, research the DNA sequences of extinct dinosaur species, and then combine the ancient DNA in the correct sequence to bring these prehistoric creatures back to life. Dino cooking! All players will compete to build the most thrilling park each season, and then work to attract (and keep alive!) the most visitors each season that the park opens.\n\nDinosaur Island is a worker placement game where players build attractions and add dinosaurs to gain victory points. At the beginning of every game two Plot-Twist cards will be dealt out that will break the rules of the game in myriad ways.  These rule-changes will drastically alter your strategy and decision making throughout the game.   In addition to the Plot Twists, the goal cards in each game will be unique.\n\nThe game ends when a round finishes with one 1 Objective card left. Players total their points and the player with the most victory points wins.",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 120,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Economic",
+    "Science Fiction"
+  ],
+  "mechanics": [
+    "Action Points",
+    "Dice Rolling",
+    "Income",
+    "Set Collection",
+    "Tile Placement",
+    "Worker Placement"
+  ],
+  "rating_bayes_average": 7.21903,
+  "rating_average_weight": 3.0467,
+  "thumbnail_source": "https://cf.geekdo-images.com/hLJv1A1TwrMrLLIJhVpKVA__small/img/cHgvJgF-Gr6mgDKj51uPoqbjHQk=/fit-in/200x150/filters:strip_icc()/pic3429338.png",
+  "image_source": "https://cf.geekdo-images.com/hLJv1A1TwrMrLLIJhVpKVA__original/img/LXqkRZSyg3hRMJlUMm2m83gmi_s=/0x0/filters:format(png)/pic3429338.png"
+}

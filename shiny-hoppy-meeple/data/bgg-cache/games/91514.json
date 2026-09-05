@@ -1,0 +1,34 @@
+{
+  "id": 91514,
+  "name": "Rhino Hero",
+  "year": 2011,
+  "thumbnail": "/images/games/91514-thumb.webp",
+  "image": "/images/games/91514.webp",
+  "image_width": 900,
+  "image_height": 1427,
+  "description": "Super Rhino! presents players with an incredibly heroic – and regrettably heavy – rhinoceros who is eager to climb a tall building and leap other tall buildings in a single bound. First, though, you need to construct that building.\n\nPlayers each start the game with five roof cards, and they take turns adding walls and roofs to a single building. On a turn, you first place walls on the highest floor, then you choose a roof card in your hand and place it on the wall. Each roof card bears markings that indicate where the next player must place walls on the card. In addition, some roof cards force a player to perform special actions, such as placing a second roof, changing the direction of play, or moving Super Rhino to a new location on the tower. Keep your hands steady!\n\nThe first player to build all of their roof cards wins the game. Alternatively, if the building collapses, the player who caused the collapse automatically loses, and the player with the fewest roof cards in hand wins.\n\nSimilar to Turmbau zu Babel",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 15,
+  "min_age": 5,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Action / Dexterity",
+    "Animals",
+    "Card Game",
+    "Children's Game",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Hand Management",
+    "Lose a Turn",
+    "Score-and-Reset Game",
+    "Stacking and Balancing",
+    "Three Dimensional Movement"
+  ],
+  "rating_bayes_average": 6.62553,
+  "rating_average_weight": 1.0201,
+  "thumbnail_source": "https://cf.geekdo-images.com/UO37-aWZkmCl_Aj2M53OtA__small/img/kdCesz-uN0RlLI5KoVY8Xa6MZZA=/fit-in/200x150/filters:strip_icc()/pic9267030.png",
+  "image_source": "https://cf.geekdo-images.com/UO37-aWZkmCl_Aj2M53OtA__original/img/NMW_gUgcOpug3W6_7Zpqm60Xhzo=/0x0/filters:format(png)/pic9267030.png"
+}

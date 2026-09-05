@@ -1,0 +1,33 @@
+{
+  "id": 180974,
+  "name": "Potion Explosion",
+  "year": 2015,
+  "thumbnail": "/images/games/180974-thumb.webp",
+  "image": "/images/games/180974.webp",
+  "image_width": 900,
+  "image_height": 920,
+  "description": "Potion Explosion is a game for 2 to 4 players by Horrible Guild.\nIt was designed by Lorenzo Silva, Andrea Crespi and Stefano Castelli.\n\nDear students, it's time for the final exams of the Potions class! The rules are always the same: Take an ingredient marble from the dispenser and watch the others fall. If you connect marbles of the same color, they explode and you can take them, too! Complete your potions using the marbles you collect, and drink them to unleash their magical power. Remember, though, that to win the Student of the Year award, being quick won't be enough: you'll also need to brew the most valuable potions in Potion Explosion!",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 45,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Fantasy",
+    "Puzzle"
+  ],
+  "mechanics": [
+    "Contracts",
+    "Open Drafting",
+    "Pattern Recognition",
+    "Physical Removal",
+    "Set Collection",
+    "Take That",
+    "Variable Set-up"
+  ],
+  "rating_bayes_average": 6.92418,
+  "rating_average_weight": 1.7768,
+  "thumbnail_source": "https://cf.geekdo-images.com/vwjYMFporFhvAU48k73MIw__small/img/uNBrY-gqZLq7aiv1E_pDsc3vmyE=/fit-in/200x150/filters:strip_icc()/pic7298696.jpg",
+  "image_source": "https://cf.geekdo-images.com/vwjYMFporFhvAU48k73MIw__original/img/6sAfG89R42SJRv2wjiItRTMmcoQ=/0x0/filters:format(jpeg)/pic7298696.jpg"
+}

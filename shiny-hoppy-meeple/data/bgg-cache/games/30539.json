@@ -1,0 +1,33 @@
+{
+  "id": 30539,
+  "name": "Get Bit!",
+  "year": 2007,
+  "thumbnail": "/images/games/30539-thumb.webp",
+  "image": "/images/games/30539.webp",
+  "image_width": 454,
+  "image_height": 906,
+  "description": "\"You don't have to be faster than the shark, just faster than your friends!\"\n\nGet Bit! is a card game where players are competing to stay alive as the others are being eaten by the shark.\n\nThe order of the swimmers is determined by simultaneously playing cards face-down then revealing the values. The number on each player's card determines position in line (higher numbers in front, lower numbers in back), however ties don't move.  The swimmer at the back loses a limb to the shark and is flung to the front of the line! The process is repeated until only two swimmers remain on the table. When this happens, the swimmer at the front of the line wins the game!",
+  "min_players": 2,
+  "max_players": 7,
+  "playing_time": 20,
+  "min_age": 7,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Bluffing",
+    "Party Game",
+    "Pirates"
+  ],
+  "mechanics": [
+    "Hand Management",
+    "Player Elimination",
+    "Race",
+    "Relative Movement",
+    "Simultaneous Action Selection"
+  ],
+  "rating_bayes_average": 5.95615,
+  "rating_average_weight": 1.1171,
+  "thumbnail_source": "https://cf.geekdo-images.com/km1bBsWSyml95EFxcx5JWw__small/img/O_LMwf86Ybtc-ThsPXMPJ0kDfkA=/fit-in/200x150/filters:strip_icc()/pic8104136.png",
+  "image_source": "https://cf.geekdo-images.com/km1bBsWSyml95EFxcx5JWw__original/img/gd4oxx55xzh2vy5cDCcokTONNLA=/0x0/filters:format(png)/pic8104136.png"
+}

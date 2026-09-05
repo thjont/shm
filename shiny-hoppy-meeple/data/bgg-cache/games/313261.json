@@ -1,0 +1,31 @@
+{
+  "id": 313261,
+  "name": "Oriflamme: Ablaze",
+  "year": 2020,
+  "thumbnail": "/images/games/313261-thumb.webp",
+  "image": "/images/games/313261.webp",
+  "image_width": 900,
+  "image_height": 1239,
+  "description": "In Oriflamme and Oriflamme Embrasement, the players find themselves in the middle of a medieval feud over the French royal crown. The King is dead! Long live the King! As heads of influential families, the players strive to come to power with cunning and malice, power and strength, virtue and infamy. Their goal: the king's throne!\n\nIn the tactical card game, hidden cards are played in turn. By tactically uncovering and activating their effects, players can outdo or get them out of the way, because all players have the same goal in mind — to collect the most influence points for their family and thus win the game.\n\nIn Oriflamme Embrasement (second installment of the award winning game Oriflamme), the incendiary war threatens to bring the kingdom to the ground. But nothing will stop your house to conquer the throne by putting forward every inch of your famous lust for power and vengeance.\n\nOriflamme Embrasement offers 11 new action cards that can be mixed with Oriflamme or be used as a standalone.\n\n—description from the publisher (translated)",
+  "min_players": 3,
+  "max_players": 5,
+  "playing_time": 20,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Medieval",
+    "Political"
+  ],
+  "mechanics": [
+    "Action Queue",
+    "Betting and Bluffing",
+    "Hand Management",
+    "Take That"
+  ],
+  "rating_bayes_average": 5.91853,
+  "rating_average_weight": 2.2174,
+  "thumbnail_source": "https://cf.geekdo-images.com/9hF_9xzBnPZqqdLOsp-fkA__small/img/ZNomdhNV8IyxkpaZhGXKnJrLiXY=/fit-in/200x150/filters:strip_icc()/pic6276029.png",
+  "image_source": "https://cf.geekdo-images.com/9hF_9xzBnPZqqdLOsp-fkA__original/img/hq1n8--D3DjWKo4h05ZfBv3S-Vk=/0x0/filters:format(png)/pic6276029.png"
+}

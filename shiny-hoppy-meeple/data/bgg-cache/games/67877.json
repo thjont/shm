@@ -1,0 +1,30 @@
+{
+  "id": 67877,
+  "name": "Anomia",
+  "year": 2010,
+  "thumbnail": "/images/games/67877-thumb.webp",
+  "image": "/images/games/67877.webp",
+  "image_width": 900,
+  "image_height": 641,
+  "description": "Anomia plays off the fact that our minds are positively brimming with all sorts of random information: things to eat, pop songs, websites, etc... Sure, under normal circumstances, it's easy to give an example of a frozen food or a dog breed, but you'll find that your brain works a little differently under pressure!\n\nTo play, draw and reveal a card from the center pile. Does the symbol on your card match one on another player's card? If so, you must quickly face-off with the other player by giving an example of the person, place, or thing on their card before they can do the same for yours. If you blurt out a correct answer first, you win their card and the drawing continues.\n\nSounds simple, right? Wrong! Wild cards allow non-matching symbols to match, increasing the number of things to which you must pay attention. Cascading face-offs can occur when you hand over a lost card, thereby revealing a new top card on your play pile.",
+  "min_players": 3,
+  "max_players": 6,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Party Game",
+    "Real-time",
+    "Trivia",
+    "Word Game"
+  ],
+  "mechanics": [
+    "Pattern Recognition",
+    "Speed Matching"
+  ],
+  "rating_bayes_average": 6.29681,
+  "rating_average_weight": 1.0468,
+  "thumbnail_source": "https://cf.geekdo-images.com/1gZRgquVpNQkykUEXjNwUA__small/img/xYJe-N2unyfI1aTNMx3M9sh-_ro=/fit-in/200x150/filters:strip_icc()/pic9642079.jpg",
+  "image_source": "https://cf.geekdo-images.com/1gZRgquVpNQkykUEXjNwUA__original/img/XcL-2ib7xAcwVXdOgQADtc5rhBo=/0x0/filters:format(jpeg)/pic9642079.jpg"
+}

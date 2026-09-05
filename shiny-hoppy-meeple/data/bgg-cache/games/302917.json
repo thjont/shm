@@ -1,0 +1,31 @@
+{
+  "id": 302917,
+  "name": "King of 12",
+  "year": 2020,
+  "thumbnail": "/images/games/302917-thumb.webp",
+  "image": "/images/games/302917.webp",
+  "image_width": 900,
+  "image_height": 1286,
+  "description": "You want to become the new ruler of the Kingdom of 12. To do so, you use your magical orb. But to channel its power you will need the help of different characters throughout the kingdom.\n\nIn King of 12, each player uses the same set of seven character cards. Each round, players choose one of these and reveal them simultaneously.\n\nIf two or more players chose the same card, these cards cancel. Otherwise the card effects are resolved. They affect each players magical orb - a d12.\n\nAfter all cards are resolved, the values of the dice are compared. If two players have the same value on their die, they cancel. The remaining player with the highest value on their die wins the round and gets two points. The second most also gets one point. But in some cases the smallest value may win...\n\nWhen only one card is left, players compare their points. Players with the same amount of points cancel each other, then the player with the most points wins the round. This player puts one of their cards aside and another round is played until one player wins a second round. This player wins the game.\n\nA nice and highly interactive game of bluffing, mind reading and tactics. Easy to learn and fun to play.\n\nUp to four games can be combined to play with up to 16 players.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 40,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Bluffing",
+    "Card Game",
+    "Fantasy"
+  ],
+  "mechanics": [
+    "Auction: Sealed Bid",
+    "Dice Rolling",
+    "Score-and-Reset Game",
+    "Simultaneous Action Selection"
+  ],
+  "rating_bayes_average": 5.91899,
+  "rating_average_weight": 1.4043,
+  "thumbnail_source": "https://cf.geekdo-images.com/scEKDr-EcEK5a70OydyDKg__small/img/YXX83vnJqw1j6jSjEDXV5gqw2xA=/fit-in/200x150/filters:strip_icc()/pic5399079.jpg",
+  "image_source": "https://cf.geekdo-images.com/scEKDr-EcEK5a70OydyDKg__original/img/9C0W-es1uo1xybjru9N1bUlxjVw=/0x0/filters:format(jpeg)/pic5399079.jpg"
+}

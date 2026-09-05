@@ -1,0 +1,29 @@
+{
+  "id": 328565,
+  "name": "Caper: Europe",
+  "year": 2022,
+  "thumbnail": "/images/games/328565-thumb.webp",
+  "image": "/images/games/328565.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Your role as criminal mastermind is to recruit a crew of thieves, send them to locations across Europe, and provide them with gear. It's your job to utilize your resources efficiently to steal goods, but being a great mastermind is about more than the things you walk away with. It's the thrill of a well-thought-out plan coming together: the set-up, the sting. Properly deploy your thieves and gear to dominate locations, outmaneuver your opponent's plans, and win the night. You've got six rounds to plan and play your cards. Nothing like a tight timeline to up the stakes!\n\nCaper: Europe is a two-player drafting game. You take turns sending thieves to famous locations across Europe, vying for control through special card powers. These thieves have tricks up their sleeves, which you can enhance by adding gear to them. And controlling the locations isn't everything, because priceless stolen goods await the thief who's clever enough to snatch them first.\n\nYour goal is to score the most points by winning locations, collecting stolen goods, and equipping thieves with their preferred gear. The mastermind with the most points, tallied at the end of six rounds, wins.",
+  "min_players": 2,
+  "max_players": 2,
+  "playing_time": 35,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game"
+  ],
+  "mechanics": [
+    "Area Majority / Influence",
+    "Closed Drafting",
+    "Set Collection",
+    "Tug of War"
+  ],
+  "rating_bayes_average": 6.98848,
+  "rating_average_weight": 2.1127,
+  "thumbnail_source": "https://cf.geekdo-images.com/XaAM-6aENSUYDAIsc_y1JA__small/img/WwAo1NiJEkT0RDmRMhflvP3g53c=/fit-in/200x150/filters:strip_icc()/pic6767666.jpg",
+  "image_source": "https://cf.geekdo-images.com/XaAM-6aENSUYDAIsc_y1JA__original/img/M62vMZ5RtmnPVywik4VLg3wMWlg=/0x0/filters:format(jpeg)/pic6767666.jpg"
+}

@@ -1,0 +1,34 @@
+{
+  "id": 253664,
+  "name": "Taco Cat Goat Cheese Pizza",
+  "year": 2018,
+  "thumbnail": "/images/games/253664-thumb.webp",
+  "image": "/images/games/253664.webp",
+  "image_width": 393,
+  "image_height": 624,
+  "description": "Taco Cat Goat Cheese Pizza is filled to the brim with hand-slapping mayhem! As in Snap and Dobble, each player places a card from their hand face up into a community pile while saying taco/cat/goat/cheese/pizza in player sequence. When the card matches the mantra — boom! — everyone slaps their hand on the deck, with the last one to slap picking up the cards. Whoever rids themselves of cards first wins!\n\nFor extra fun, special action cards – the gorilla, narwhal, and groundhog — force players to make certain gestures before racing to slap the deck!",
+  "min_players": 2,
+  "max_players": 8,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Action / Dexterity",
+    "Card Game",
+    "Children's Game",
+    "Party Game",
+    "Real-time"
+  ],
+  "mechanics": [
+    "Interrupts",
+    "Pattern Recognition",
+    "Race",
+    "Real-Time",
+    "Speed Matching"
+  ],
+  "rating_bayes_average": 6.15939,
+  "rating_average_weight": 1.0327,
+  "thumbnail_source": "https://cf.geekdo-images.com/GHrnr-Khb0LvBU_QkrC_qA__small/img/pFt03CkI8uo3rOi4E7_ZrZfSmIM=/fit-in/200x150/filters:strip_icc()/pic7192024.png",
+  "image_source": "https://cf.geekdo-images.com/GHrnr-Khb0LvBU_QkrC_qA__original/img/1BR5aHWIz_v4ki-YB2IiMuS-uIs=/0x0/filters:format(png)/pic7192024.png"
+}

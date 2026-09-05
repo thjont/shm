@@ -1,0 +1,33 @@
+{
+  "id": 98778,
+  "name": "Hanabi",
+  "year": 2010,
+  "thumbnail": "/images/games/98778-thumb.webp",
+  "image": "/images/games/98778.webp",
+  "image_width": 900,
+  "image_height": 720,
+  "description": "Hanabi—named for the Japanese word for \"fireworks\"—is a cooperative game in which players try to create the perfect fireworks show by placing the cards on the table in the right order. (In Japanese, hanabi is written as 花火; these are the ideograms flower and fire, respectively.)\n\nThe card deck consists of five different colors of cards, numbered 1–5 in each color. For each color, the players try to place a row in the correct order from 1–5. Sounds easy, right? Well, not quite, as in this game you hold your cards so that they're visible only to other players. To assist other players in playing a card, you must give them hints regarding the numbers or the colors of their cards. Players must act as a team to avoid errors and to finish the fireworks display before they run out of cards.\n\nAn extra suit of cards, rainbow colored, is also provided for advanced or variant play.\n\nHanabi was originally published as part of Hanabi & Ikebana.",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 25,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Deduction",
+    "Memory"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Cooperative Game",
+    "Hand Management",
+    "Memory",
+    "Ordering",
+    "Set Collection"
+  ],
+  "rating_bayes_average": 6.91917,
+  "rating_average_weight": 1.6922,
+  "thumbnail_source": "https://cf.geekdo-images.com/JDVksMwfcqoem1k_xtZrOA__small/img/amCeCcEKhYGbVtDvpvIMnu3qTg0=/fit-in/200x150/filters:strip_icc()/pic2007286.jpg",
+  "image_source": "https://cf.geekdo-images.com/JDVksMwfcqoem1k_xtZrOA__original/img/5vNHZiTEhK4aRDuGXv5KImp9cmQ=/0x0/filters:format(jpeg)/pic2007286.jpg"
+}

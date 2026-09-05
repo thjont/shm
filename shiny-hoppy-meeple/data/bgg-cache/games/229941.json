@@ -1,0 +1,31 @@
+{
+  "id": 229941,
+  "name": "Flamme Rouge: Peloton",
+  "year": 2017,
+  "thumbnail": "/images/games/229941-thumb.webp",
+  "image": "/images/games/229941.webp",
+  "image_width": 403,
+  "image_height": 800,
+  "description": "Flamme Rouge: Peloton, the first expansion for Flamme Rouge, offers a chase group of four riders (pink and white rouleurs and sprinters) that allows the base game to be played with up to six players. All 5-6 player games are played with a breakaway tile and 1-3 supply zone tiles. These can also be added to your games at lower player counts.\n\nThe box cover shows the iconic cobblestone races that are represented with new tiles in the game; these tiles are mostly one space wide, occasionally two, and don't allow slip streaming.\n\nFlamme Rouge: Peloton includes variants for solo play and for games with up to twelve players, each controlling only one rider.",
+  "min_players": 1,
+  "max_players": 12,
+  "playing_time": 45,
+  "min_age": 8,
+  "type": "boardgameexpansion",
+  "expansion": true,
+  "categories": [
+    "Expansion for Base-game",
+    "Racing",
+    "Sports"
+  ],
+  "mechanics": [
+    "Hand Management",
+    "Modular Board",
+    "Simulation",
+    "Simultaneous Action Selection"
+  ],
+  "rating_bayes_average": 6.9597,
+  "rating_average_weight": 1.8235,
+  "thumbnail_source": "https://cf.geekdo-images.com/l_KTuhbVjS33ilTohiL_Jw__small/img/23KfdzuL-Z1gy8sUAJy4vKQ-TMk=/fit-in/200x150/filters:strip_icc()/pic3767149.jpg",
+  "image_source": "https://cf.geekdo-images.com/l_KTuhbVjS33ilTohiL_Jw__original/img/X7O-vL_yhIgNliXhOImBQ_4NRck=/0x0/filters:format(jpeg)/pic3767149.jpg"
+}

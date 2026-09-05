@@ -1,0 +1,32 @@
+{
+  "id": 350458,
+  "name": "Terracotta Army",
+  "year": 2022,
+  "thumbnail": "/images/games/350458-thumb.webp",
+  "image": "/images/games/350458.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Emperor Qin Shi Huang has passed away. To protect him in the afterlife, a great army in the form of statues of faithful warriors must be assembled to stand guard in the Emperor's tomb. You will be among those tasked with building this magnificent army.\n\nIn Terracotta Army, you represent talented craftsmen and artists laboring to build the wondrous assembly of statues. During the game, you collect resources, upgrade your workers, and seek favor with the Emperor's advisors. Your goal is to play a crucial role in the process of creating the terracotta army, and your success is measured in victory points (VPs). During the game, you and your fellow players build the army together, but after the fifth round of the game is over, only one of you — the one with the most points — will stand as the winner.\n\nDuring the game, you place warrior miniatures within the mausoleum, forming groups.  A group's miniatures may belong to multiple players as denoted by the player bases on those miniatures. Multiple separate groups consisting of the same type of miniature may exist within the mausoleum.\n\nYou will have many opportunities to score points based on domination and presence. To achieve domination, you must be the only player with the most of the specific resource or type of statue currently being scored. (If you are the only player, you have domination.) To have presence, you must have at least one of the specific resource or type of statue currently being scored.\n\nAt the end of the fifth round, the player with the most VPs wins.",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 120,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Ancient",
+    "Miniatures"
+  ],
+  "mechanics": [
+    "Area Majority / Influence",
+    "Income",
+    "Rondel",
+    "Variable Set-up",
+    "Worker Placement",
+    "Worker Placement, Different Worker Types"
+  ],
+  "rating_bayes_average": 6.36047,
+  "rating_average_weight": 3.3981,
+  "thumbnail_source": "https://cf.geekdo-images.com/5tjbJJ21hE-ScRlV3DvjPQ__small/img/eDTauDf9jGKJ99l8P6v2h3htrds=/fit-in/200x150/filters:strip_icc()/pic6949932.jpg",
+  "image_source": "https://cf.geekdo-images.com/5tjbJJ21hE-ScRlV3DvjPQ__original/img/oFVZWHX2exjGnior8uy6UQ--kB0=/0x0/filters:format(jpeg)/pic6949932.jpg"
+}

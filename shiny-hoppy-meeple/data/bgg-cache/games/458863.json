@@ -1,0 +1,26 @@
+{
+  "id": 458863,
+  "name": "Dodicitre",
+  "year": 2025,
+  "thumbnail": "/images/games/458863-thumb.webp",
+  "image": "/images/games/458863.webp",
+  "image_width": 681,
+  "image_height": 959,
+  "description": "In a lively contest of wits and timing, players compete to shed their cards by cleverly connecting numbers and forming powerful combinations. The game’s tension builds as every move can change the flow of play, with players watching each other’s hands and waiting for the perfect chance to link, outplay, and climb to victory in this playful battle of numbers.\n\nDodicitre is a climbing and shedding game where players aim to play out their cards by either beating the previous set or attaching a card to the one on the table to form a stronger combination. The twist lies in the flexibility of the numbers—cards like 11 and 12 can link or form pairs in unique ways, opening creative paths to victory.",
+  "min_players": 3,
+  "max_players": 4,
+  "playing_time": 40,
+  "min_age": 7,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game"
+  ],
+  "mechanics": [
+    "Ladder Climbing"
+  ],
+  "rating_bayes_average": 5.51619,
+  "rating_average_weight": 0,
+  "thumbnail_source": "https://cf.geekdo-images.com/l3VW4xOI_XuycHiX0DBnXw__small/img/DooH9Nx0LGj7g77A7dDUZGM51ng=/fit-in/200x150/filters:strip_icc()/pic9243801.jpg",
+  "image_source": "https://cf.geekdo-images.com/l3VW4xOI_XuycHiX0DBnXw__original/img/uR689wQrCMWsJJbaHMb7-ipObVs=/0x0/filters:format(jpeg)/pic9243801.jpg"
+}

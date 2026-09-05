@@ -1,0 +1,34 @@
+{
+  "id": 306881,
+  "name": "Railroad Ink Challenge: Lush Green Edition",
+  "year": 2021,
+  "thumbnail": "/images/games/306881-thumb.webp",
+  "image": "/images/games/306881.webp",
+  "image_width": 900,
+  "image_height": 887,
+  "description": "Railroad Ink Challenge is a quick-playing roll-and-write game for 1 to 4 players. Grab a board and a dry-erase marker, and get ready to reach networking nirvana! Roll the dice and draw the routes to connect the exits around your board. Expand your network with railways, highways and stations to collect points, but you will be penalized for any open connections, so plan carefully!\n\nRailroad Ink Challenge has everything you love from the original Railroad Ink games and a lot more, with an all-new focus on player interaction thanks to in-game goals! Only those who achieve them first get the reward, so you have to keep an eye on what your opponents are doing and try to complete the goals before they do! A different set of goals is available each time, so no two games will be the same!\n\nBut wait, there's more! Draw unprecedented, mind-bending route configurations thanks to the new dice! Connect special structures to your network to trigger new effects: factories allow you to duplicate a die, villages give bonus points if they are close to a station, universities unlock extra special routes — use these effects wisely and you'll score big!\n\nRailroad Ink Challenge comes in two versions, each one including one expansion with an additional dice set that adds new special rules to your games. Create placid forest landscapes and build into a beautiful arboreal paradise with the Lush Green Edition!\n\n—description from publisher",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Dice",
+    "Trains"
+  ],
+  "mechanics": [
+    "Bingo",
+    "Connections",
+    "Dice Rolling",
+    "Line Drawing",
+    "Network and Route Building",
+    "Paper-and-Pencil",
+    "Simultaneous Action Selection",
+    "Solo / Solitaire Game"
+  ],
+  "rating_bayes_average": 6.77636,
+  "rating_average_weight": 2.1081,
+  "thumbnail_source": "https://cf.geekdo-images.com/SOSOn5ningJ66cE1CBJlyQ__small/img/tUtJ8AG1lN3NzLrHl0FGS4Cymek=/fit-in/200x150/filters:strip_icc()/pic5350593.jpg",
+  "image_source": "https://cf.geekdo-images.com/SOSOn5ningJ66cE1CBJlyQ__original/img/OfkxR1fw4gYu-Sn-i7T_UCPr1II=/0x0/filters:format(jpeg)/pic5350593.jpg"
+}

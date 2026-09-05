@@ -1,0 +1,29 @@
+{
+  "id": 110139,
+  "name": "Flash Point: Fire Rescue – Urban Structures",
+  "year": 2011,
+  "thumbnail": "/images/games/110139-thumb.webp",
+  "image": "/images/games/110139.webp",
+  "image_width": 889,
+  "image_height": 1200,
+  "description": "Urban Structures is an expansion pack for Flash Point: Fire Rescue. It was initially printed in low quantities in 2011 for supporters of the Kickstarter project for the base game.  It is now available commercially.  It comes with 2 additional maps as well as a \"Structural Engineer\" role card.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 45,
+  "min_age": 10,
+  "type": "boardgameexpansion",
+  "expansion": true,
+  "categories": [
+    "Expansion for Base-game"
+  ],
+  "mechanics": [
+    "Action Points",
+    "Cooperative Game",
+    "Dice Rolling",
+    "Simulation"
+  ],
+  "rating_bayes_average": 6.28922,
+  "rating_average_weight": 2.2258,
+  "thumbnail_source": "https://cf.geekdo-images.com/xkMv0ooLogDhlVU-hOQIig__small/img/VRi5kiSfcel2EiINjsdQZb2HX2w=/fit-in/200x150/filters:strip_icc()/pic1121985.jpg",
+  "image_source": "https://cf.geekdo-images.com/xkMv0ooLogDhlVU-hOQIig__original/img/HW6zQZTKqn_YnXT7vgyAJun7JbA=/0x0/filters:format(jpeg)/pic1121985.jpg"
+}

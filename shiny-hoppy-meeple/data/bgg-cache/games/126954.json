@@ -1,0 +1,29 @@
+{
+  "id": 126954,
+  "name": "Flash Point: Fire Rescue – 2nd Story",
+  "year": 2012,
+  "thumbnail": "/images/games/126954-thumb.webp",
+  "image": "/images/games/126954.webp",
+  "image_width": 900,
+  "image_height": 1231,
+  "description": "Flash Point: Fire Rescue - 2nd Story, an expansion pack for Flash Point: Fire Rescue, contains two double-sided mounted game boards and a counter sheet that contains ladders, windows, an explosion marker, and more. Each game board represents one floor of a building, and the player firefighters will need to cover more area in this expansion to keep things under control. Ladders and stairs provide access to the upper building level, and windows let firefighters enter and leave the building without causing structural damage.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 45,
+  "min_age": 10,
+  "type": "boardgameexpansion",
+  "expansion": true,
+  "categories": [
+    "Expansion for Base-game"
+  ],
+  "mechanics": [
+    "Action Points",
+    "Cooperative Game",
+    "Dice Rolling",
+    "Simulation"
+  ],
+  "rating_bayes_average": 6.30363,
+  "rating_average_weight": 2.2321,
+  "thumbnail_source": "https://cf.geekdo-images.com/yxQch6XzOT4RKlX5aXXAXg__small/img/QA8DF744JbHa4LsZRXzb75VDqq8=/fit-in/200x150/filters:strip_icc()/pic2625250.jpg",
+  "image_source": "https://cf.geekdo-images.com/yxQch6XzOT4RKlX5aXXAXg__original/img/MqzjSPMjbiw1iWNNN3_Sx2Mudb4=/0x0/filters:format(jpeg)/pic2625250.jpg"
+}

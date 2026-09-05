@@ -1,0 +1,35 @@
+{
+  "id": 161882,
+  "name": "Irish Gauge",
+  "year": 2014,
+  "thumbnail": "/images/games/161882-thumb.webp",
+  "image": "/images/games/161882.webp",
+  "image_width": 900,
+  "image_height": 1262,
+  "description": "Irish Gauge — one of three titles in Winsome Games 2014 Essen Set — is played on a map of Ireland and is similar in style to many of the stock-based, cube-rail games released by Winsome Games since 2007.\n\nOn each player's turn, they can either place a share of one of five companies up for auction, build track (represented by cubes) in one of these five companies, upgrade a town to a city, or call for dividends. The dividends are paid out to shareholders of certain railroads based on how many cities/towns they connect to and how many shares of this company have been issued. The upgrade and dividend actions also affect game length and the likelihood of further dividends for each company. The game ends when a certain condition is met at the end of a player's turn, and the player with the highest sum of money and stock value at the end of this turn wins.\n\nIrish Gauge is the first title in the Iron Rail series by Capstone Games.",
+  "min_players": 3,
+  "max_players": 5,
+  "playing_time": 60,
+  "min_age": 12,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Economic",
+    "Post-Napoleonic",
+    "Trains"
+  ],
+  "mechanics": [
+    "Auction / Bidding",
+    "Hexagon Grid",
+    "Income",
+    "Investment",
+    "Network and Route Building",
+    "Random Production",
+    "Stock Holding",
+    "Victory Points as a Resource"
+  ],
+  "rating_bayes_average": 6.5367,
+  "rating_average_weight": 2.3301,
+  "thumbnail_source": "https://cf.geekdo-images.com/BZW9WTKwGMfb3R4EELel3w__small/img/FowoMM52tGgX2JSUsKFaeuTsM2s=/fit-in/200x150/filters:strip_icc()/pic7628587.jpg",
+  "image_source": "https://cf.geekdo-images.com/BZW9WTKwGMfb3R4EELel3w__original/img/K3rGKFzRT3m1MAgyAUQaDXdnFMM=/0x0/filters:format(jpeg)/pic7628587.jpg"
+}

@@ -1,0 +1,32 @@
+{
+  "id": 247367,
+  "name": "Air, Land, & Sea",
+  "year": 2019,
+  "thumbnail": "/images/games/247367-thumb.webp",
+  "image": "/images/games/247367.webp",
+  "image_width": 900,
+  "image_height": 1252,
+  "description": "As Supreme Commander of your country's military forces in Air, Land, & Sea, you must carefully deploy your forces across three theaters of war: air, land, and sea. At the start of each battle, you're dealt a hand of six cards. Players take turns playing cards one at a time, until all cards have been played — or one player decides to withdraw. The order in which you play your cards is critical, as is whether you play them face up or face down. Playing a card face up triggers its tactical ability, but the card must be played in its corresponding theater. Face-down cards can be played to any theater, but have a strength of only 2 and do not grant tactical abilities.\n\nSometimes, it may be best to withdraw in order to deny your opponent complete victory as points are awarded at the end of each battle based on the results. The first player to 12 points wins!\n\nAir, Land, & Sea: Critters at War features the same gameplay as in Air, Land, & Sea, but with 100% critters and more vibrant colors.",
+  "min_players": 2,
+  "max_players": 2,
+  "playing_time": 20,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Card Game",
+    "Print & Play",
+    "World War II"
+  ],
+  "mechanics": [
+    "Area Majority / Influence",
+    "Card Play Conflict Resolution",
+    "Hand Management",
+    "Lane Battler"
+  ],
+  "rating_bayes_average": 7.06938,
+  "rating_average_weight": 1.7363,
+  "thumbnail_source": "https://cf.geekdo-images.com/3wpYeNwO7k_yjpIN7IQwaw__small/img/kfzWQvTxwcVx_ljICqhu5Coq53Q=/fit-in/200x150/filters:strip_icc()/pic4387681.jpg",
+  "image_source": "https://cf.geekdo-images.com/3wpYeNwO7k_yjpIN7IQwaw__original/img/_qQC98hufgmPn_fwMrP4I0sYKO8=/0x0/filters:format(jpeg)/pic4387681.jpg"
+}

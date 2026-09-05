@@ -1,0 +1,40 @@
+{
+  "id": 421606,
+  "name": "Knitting Circle",
+  "year": 2025,
+  "thumbnail": "/images/games/421606-thumb.webp",
+  "image": "/images/games/421606.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Knitting Circle is a stand-alone follow up to the puzzle game Calico! In this tile-laying game for the whole family, players are knitters competing to create the coziest, most beautiful assortment of garments.\n\nRounds are simple - collect yarn from the central basket and knit it into garments while trying to get your color combinations and patterns just right!  Earn victory points by completing garments, adding buttons, and fulfilling bonus scoring goals. Along the way, your furry feline friend can help you out by reaching their grabby paws into the bag to secure you the best yarn!\n\nWith variable scoring goals, and dozens of unique template cards, each game of Knitting Circle brings a new spatial puzzle to your table!\n\n—description from the publisher",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 45,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Abstract Strategy",
+    "Animals",
+    "Puzzle"
+  ],
+  "mechanics": [
+    "Chaining",
+    "Contracts",
+    "End Game Bonuses",
+    "Market",
+    "Matching",
+    "Open Drafting",
+    "Pattern Building",
+    "Rondel",
+    "Scenario / Mission / Campaign Game",
+    "Set Collection",
+    "Solo / Solitaire Game",
+    "Tile Placement",
+    "Variable Set-up"
+  ],
+  "rating_bayes_average": 6.03457,
+  "rating_average_weight": 2.0882,
+  "thumbnail_source": "https://cf.geekdo-images.com/fJglCnZK6DH1w_14FMCWjg__small/img/vVbEtLNvTq9wWDshhlA6IPlPdA4=/fit-in/200x150/filters:strip_icc()/pic8426961.jpg",
+  "image_source": "https://cf.geekdo-images.com/fJglCnZK6DH1w_14FMCWjg__original/img/UJ3VoM1xDR2gqCOzQUw0mTnuOkQ=/0x0/filters:format(jpeg)/pic8426961.jpg"
+}

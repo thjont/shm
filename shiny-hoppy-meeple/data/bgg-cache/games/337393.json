@@ -1,0 +1,27 @@
+{
+  "id": 337393,
+  "name": "Three Wise Words",
+  "year": 2021,
+  "thumbnail": "/images/games/337393-thumb.webp",
+  "image": "/images/games/337393.webp",
+  "image_width": 641,
+  "image_height": 865,
+  "description": "In this simple party game, your partner has to guess the Secret Word that is nesting in your head.\n\nTo help them, you write down three different words as clues. But watch out! If the other teams guess any of your Clue Words, they’ll swoop down and steal your points, so don’t make them too obvious. But don’t make them too obscure either, or your bird-brained partner will never guess the Secret Word.\n\n—description from the designer",
+  "min_players": 4,
+  "max_players": 99,
+  "playing_time": 20,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Party Game"
+  ],
+  "mechanics": [
+    "Targeted Clues",
+    "Team-Based Game"
+  ],
+  "rating_bayes_average": 5.52182,
+  "rating_average_weight": 1.5,
+  "thumbnail_source": "https://cf.geekdo-images.com/hYnubG5CmPke4yV5fN3iug__small/img/LyKg44_Bl4E50iHwkOGYYcEdRUw=/fit-in/200x150/filters:strip_icc()/pic7381096.jpg",
+  "image_source": "https://cf.geekdo-images.com/hYnubG5CmPke4yV5fN3iug__original/img/cbBS2DHQscuI76vJbu51BVB1gTc=/0x0/filters:format(jpeg)/pic7381096.jpg"
+}

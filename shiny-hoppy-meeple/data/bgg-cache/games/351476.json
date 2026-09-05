@@ -1,0 +1,34 @@
+{
+  "id": 351476,
+  "name": "My City: Roll & Build",
+  "year": 2022,
+  "thumbnail": "/images/games/351476-thumb.webp",
+  "image": "/images/games/351476.webp",
+  "image_width": 900,
+  "image_height": 1250,
+  "description": "My City: Roll & Build is a dice game in which over four chapters, each with three episodes, you create a unique city. The roll of the dice shows everyone which building to draw on their game pad, and from episode to episode, you have to face new challenges. First the land is developed and later gold is found. This brings bandits into your city who must be surrounded and taken into custody.\n\nYou can play through the campaign or pick your favorite individual episodes or chapters to play over and over again.",
+  "min_players": 1,
+  "max_players": 6,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "City Building",
+    "Dice"
+  ],
+  "mechanics": [
+    "Bingo",
+    "Dice Rolling",
+    "Grid Coverage",
+    "Line Drawing",
+    "Paper-and-Pencil",
+    "Scenario / Mission / Campaign Game",
+    "Simultaneous Action Selection",
+    "Solo / Solitaire Game"
+  ],
+  "rating_bayes_average": 6.33817,
+  "rating_average_weight": 1.4915,
+  "thumbnail_source": "https://cf.geekdo-images.com/U6Pg643_JE-D1vkxl4GF2Q__small/img/Uv1lWrTAcBMKGDbGDmqH9aYlbE0=/fit-in/200x150/filters:strip_icc()/pic7233521.jpg",
+  "image_source": "https://cf.geekdo-images.com/U6Pg643_JE-D1vkxl4GF2Q__original/img/1SkjRuNeQdnUP_JIJsbG2vhFjtU=/0x0/filters:format(jpeg)/pic7233521.jpg"
+}

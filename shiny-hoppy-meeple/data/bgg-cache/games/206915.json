@@ -1,0 +1,32 @@
+{
+  "id": 206915,
+  "name": "Tempel des Schreckens",
+  "year": 2016,
+  "thumbnail": "/images/games/206915-thumb.webp",
+  "image": "/images/games/206915.webp",
+  "image_width": 718,
+  "image_height": 915,
+  "description": "You've finally reached the Temple of Secrets with its immense treasure of gold — but what awaits you here? Fabulous wealth or total destruction? The proud and mysterious temple guards who are hiding amongst the adventurers are trying to lure them onto the wrong track in order to protect their gold. Skillfully and with a deceitful tongue, they try to convince you to open the grave chambers behind which lies a dangerous fire trap. Can you trust anyone in the group when you don't know whether they're friend or foe?\n\nTempel des Schreckens is a quick-playing bluffing game that reimplements the gameplay of TimeBomb in a new setting and for a larger group of players.",
+  "min_players": 3,
+  "max_players": 10,
+  "playing_time": 15,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Bluffing",
+    "Card Game",
+    "Deduction",
+    "Negotiation",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Hidden Roles",
+    "Team-Based Game",
+    "Traitor Game"
+  ],
+  "rating_bayes_average": 6.55213,
+  "rating_average_weight": 1.1402,
+  "thumbnail_source": "https://cf.geekdo-images.com/ClTSck2VjriYWdVDv4FKNQ__small/img/PrC07RyIVgF1Rqi9-MMiCnbck08=/fit-in/200x150/filters:strip_icc()/pic3141267.png",
+  "image_source": "https://cf.geekdo-images.com/ClTSck2VjriYWdVDv4FKNQ__original/img/R9-cKEvUx2ED6DKwN_MqPwBmQYU=/0x0/filters:format(png)/pic3141267.png"
+}

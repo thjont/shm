@@ -1,0 +1,35 @@
+{
+  "id": 376683,
+  "name": "In the Footsteps of Darwin",
+  "year": 2023,
+  "thumbnail": "/images/games/376683-thumb.webp",
+  "image": "/images/games/376683.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Twenty years after his expedition around the world, Charles Darwin is writing On the Origin of Species. He wants to gather new information about animal life, particularly about continents he hardly explored. Who other than young naturalists, eager for discovery, could help the renowned scholar finish writing his most famous work?\n\nIn In the Footsteps of Darwin, players are junior naturalists who have just arrived aboard the Beagle to help Charles Darwin finish his book On the Origin of Species. During this journey, you will study animals, carry out cartographic surveys, publish your findings, and develop theories. Starting with the naturalist controlling the Darwin token, naturalists take turns in clockwise order, performing these two steps in order:\n\n\n     Study an animal or take inspiration from a character: Choose one of the three tiles facing the Beagle and place it onto your naturalist's notebook. It may be either an animal to study or a character from the Beagle's previous journey who will inspire you. Gain the bonuses depicted or any additional scoring bonuses triggered by the tile's placement.\n\n\n\n     Voyage of the Beagle: After placing a tile on your notebook, move the Beagle as many spaces forward as the distance between the Beagle and the tile you just selected (1-3 spaces), then draw a new tile to replace the empty space on the journey board.\n\n\nYour goal is to score more points than your opponents to determine who contributed the most to On the Origin of Species.\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Educational",
+    "Nautical"
+  ],
+  "mechanics": [
+    "End Game Bonuses",
+    "Grid Coverage",
+    "Layering",
+    "Open Drafting",
+    "Pattern Building",
+    "Rondel",
+    "Square Grid",
+    "Tile Placement"
+  ],
+  "rating_bayes_average": 6.55088,
+  "rating_average_weight": 1.6866,
+  "thumbnail_source": "https://cf.geekdo-images.com/1KPQC8pVuTXL32RdbTxDjw__small/img/5-diW-kjrYWpfEsAHjBoKyyIL5g=/fit-in/200x150/filters:strip_icc()/pic7234392.jpg",
+  "image_source": "https://cf.geekdo-images.com/1KPQC8pVuTXL32RdbTxDjw__original/img/EQC8y33vySGjfyaZ8hhE9fcOj5I=/0x0/filters:format(jpeg)/pic7234392.jpg"
+}

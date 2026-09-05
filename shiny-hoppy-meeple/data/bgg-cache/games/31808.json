@@ -1,0 +1,30 @@
+{
+  "id": 31808,
+  "name": "GUBS: A Game of Wit and Luck",
+  "year": 2007,
+  "thumbnail": "/images/games/31808-thumb.webp",
+  "image": "/images/games/31808.webp",
+  "image_width": 827,
+  "image_height": 1175,
+  "description": "GUBS: A Game of Wit and Luck invites you to partake in the secret struggle of the Gubs. Each player competes to build the largest, strongest colony by the time the three dreaded Letter Cards emerge from the deck and end the game. Their world is a place filled with danger; from giant Omen Beetles who consume the delicate Gub Cities to Flash Floods to deadly Wasps, your gubs hardly stand a chance on their own... but arm them with Spears, let ride the valiant Toad Riders, build Mushroom Barricades and lead your colony through the forest underbrush and to victory.\n\nWit and Luck. You'll need them both. The gubs are counting on you.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 20,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Fantasy",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Hand Management",
+    "Set Collection",
+    "Take That"
+  ],
+  "rating_bayes_average": 5.69071,
+  "rating_average_weight": 1.3617,
+  "thumbnail_source": "https://cf.geekdo-images.com/r7_EAUM0YAibRuC2NCNalA__small/img/rHer42EHla0S8HBU46MNmCEfTPo=/fit-in/200x150/filters:strip_icc()/pic917461.jpg",
+  "image_source": "https://cf.geekdo-images.com/r7_EAUM0YAibRuC2NCNalA__original/img/AiVh0rd8c-xXjG6w8JYtlTyPrSw=/0x0/filters:format(jpeg)/pic917461.jpg"
+}

@@ -1,0 +1,33 @@
+{
+  "id": 215311,
+  "name": "Downforce",
+  "year": 2017,
+  "thumbnail": "/images/games/215311-thumb.webp",
+  "image": "/images/games/215311.webp",
+  "image_width": 900,
+  "image_height": 899,
+  "description": "High-stakes bidding on million-dollar race cars. Frantic bets placed in secret even as the cars race around the track. And to the victor, the biggest purse of all. But in the world of motor racing, the margin between victory and defeat can be a single moment: a steep banked turn, tires screaming and spitting out smoke, and the downforce, pressing you down in your seat and keeping you on the track as you make your move inside to pull ahead.\n\nDownforce is a card-driven bidding, racing, and betting game for 2-6 players based on Top Race, the award-winning design by the legendary Wolfgang Kramer. Players first bid to own the six cars in the race, then they play cards from their hand to speed them around the track. However, most cards will also move their opponents' cars. So figuring out just the right time to play a card is the key to victory. Along the way, players make secret bets on who they think will win the race. Whoever has the most money from their prize money, winning bets, and remaining bank wins.\n\nThis is a game whose design needed no attention. Years of play and multiple versions have honed it to near perfection. On the contrary, one of the design challenges was figuring which of the many rules modules to incorporate to create the most fun version. Downforce also adds variable player powers to improve replayability. But mostly, it improves the look of the game to make it gorgeous and easy to play. Special attention was paid to the colors, the layout of the cards, the design of the cars, the details on the board, and more.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 40,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Racing",
+    "Sports"
+  ],
+  "mechanics": [
+    "Auction / Bidding",
+    "Betting and Bluffing",
+    "Hand Management",
+    "Moving Multiple Units",
+    "Predictive Bid",
+    "Track Movement",
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 6.98649,
+  "rating_average_weight": 1.7317,
+  "thumbnail_source": "https://cf.geekdo-images.com/c74C-NVJHuMVxt6A_j2TsA__small/img/OUdT3uFyqBBzN7q9ZDFN6WBiecU=/fit-in/200x150/filters:strip_icc()/pic3432548.png",
+  "image_source": "https://cf.geekdo-images.com/c74C-NVJHuMVxt6A_j2TsA__original/img/FHgW4u5dIooEJnNjm2RXcO_yJWs=/0x0/filters:format(png)/pic3432548.png"
+}

@@ -1,0 +1,38 @@
+{
+  "id": 368173,
+  "name": "Let's Go! To Japan",
+  "year": 2024,
+  "thumbnail": "/images/games/368173-thumb.webp",
+  "image": "/images/games/368173.webp",
+  "image_width": 900,
+  "image_height": 899,
+  "description": "In Let's Go! To Japan, you are a traveler planning, then experiencing your own dream vacation to Japan.\n\nThe game consists of thirteen rounds in which players draw activity cards illustrated by Japan-based artists and strategically place them in different days in their week-long itinerary. These can't-miss tourist attractions will have you bouncing between Tokyo and Kyoto as you try to puzzle out the optimal activities to maximize your experience while balancing your resources. The game ends with a final round in which you ultimately go on your planned trip, activating each of your cards in order along the way.\n\nThe player who collects the most points by the end of their trip wins!\n\n-description from designer",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 60,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Transportation",
+    "Travel"
+  ],
+  "mechanics": [
+    "Closed Drafting",
+    "Contracts",
+    "End Game Bonuses",
+    "Hand Management",
+    "Melding and Splaying",
+    "Multi-Use Cards",
+    "Set Collection",
+    "Simultaneous Action Selection",
+    "Solo / Solitaire Game",
+    "Storytelling",
+    "Tags"
+  ],
+  "rating_bayes_average": 7.06945,
+  "rating_average_weight": 2.2621,
+  "thumbnail_source": "https://cf.geekdo-images.com/OvhEUaF43CIjSFz8aF_yzQ__small/img/KxAyjZ09Q1HjFhjBCTMuSz3Zus4=/fit-in/200x150/filters:strip_icc()/pic6996891.jpg",
+  "image_source": "https://cf.geekdo-images.com/OvhEUaF43CIjSFz8aF_yzQ__original/img/HoWWP2Q0rLOyInX0KZqObNkT8SM=/0x0/filters:format(jpeg)/pic6996891.jpg"
+}

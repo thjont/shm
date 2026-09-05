@@ -1,0 +1,37 @@
+{
+  "id": 442250,
+  "name": "Sea Salt & Paper: Extra Pepper",
+  "year": 2025,
+  "thumbnail": "/images/games/442250-thumb.webp",
+  "image": "/images/games/442250.webp",
+  "image_width": 756,
+  "image_height": 1657,
+  "description": "Each round, new cards add a new game condition.\nAt the end of each round, this condition (bonus or malus) will be kept by the player with the highest or lowest score.\n\n—description from the designer",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 45,
+  "min_age": 8,
+  "type": "boardgameexpansion",
+  "expansion": true,
+  "categories": [
+    "Expansion for Base-game",
+    "Animals",
+    "Card Game"
+  ],
+  "mechanics": [
+    "Catch the Leader",
+    "Events",
+    "Hand Management",
+    "Melding and Splaying",
+    "Open Drafting",
+    "Push Your Luck",
+    "Score-and-Reset Game",
+    "Set Collection",
+    "Sudden Death Ending",
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 6.35917,
+  "rating_average_weight": 1.4545,
+  "thumbnail_source": "https://cf.geekdo-images.com/cJNYlNxgzUOj59rYOKUC8g__small/img/uQwYaaNlYpC51BLyuL95u5FhYKo=/fit-in/200x150/filters:strip_icc()/pic8822830.png",
+  "image_source": "https://cf.geekdo-images.com/cJNYlNxgzUOj59rYOKUC8g__original/img/MOVm4qZbZrkQN7_AqBfGm-BMsEQ=/0x0/filters:format(png)/pic8822830.png"
+}

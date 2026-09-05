@@ -1,0 +1,34 @@
+{
+  "id": 334065,
+  "name": "Verdant",
+  "year": 2022,
+  "thumbnail": "/images/games/334065-thumb.webp",
+  "image": "/images/games/334065.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Verdant is a puzzly spatial card game for 1 to 5 players. You take on the role of a houseplant enthusiast trying to create the coziest interior space by collecting and arranging houseplants and other objects within your home. You must position your plants so that they are provided the most suitable light conditions and take care of them to create the most verdant collection.\n\nEach turn, you select an adjacent pair of a card and token, then use those items to build an ever-expanding tableau of cards that represents your home. You need to keep various objectives in mind as you attempt to increase plant verdancy by making spatial matches and using item tokens to take various nurture actions. You can also build your \"green thumb\" skills, which allows you to take additional actions to care for your plants and create the coziest space!\n\n—description from the designer",
+  "min_players": 1,
+  "max_players": 5,
+  "playing_time": 60,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Environmental",
+    "Puzzle"
+  ],
+  "mechanics": [
+    "Increase Value of Unchosen Resources",
+    "Open Drafting",
+    "Pattern Building",
+    "Set Collection",
+    "Solo / Solitaire Game",
+    "Tile Placement",
+    "Variable Set-up"
+  ],
+  "rating_bayes_average": 6.79739,
+  "rating_average_weight": 2.0642,
+  "thumbnail_source": "https://cf.geekdo-images.com/c1XGn5ryzbqgMOHzObZpQw__small/img/QJq-vJsWq6D0DMrDFVno-0Lu00o=/fit-in/200x150/filters:strip_icc()/pic6094080.png",
+  "image_source": "https://cf.geekdo-images.com/c1XGn5ryzbqgMOHzObZpQw__original/img/RWppBKjLU5v6Pl-uW6IIxkCD4U4=/0x0/filters:format(png)/pic6094080.png"
+}

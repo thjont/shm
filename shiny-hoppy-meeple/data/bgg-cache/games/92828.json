@@ -1,0 +1,30 @@
+{
+  "id": 92828,
+  "name": "Dixit: Odyssey",
+  "year": 2011,
+  "thumbnail": "/images/games/92828-thumb.webp",
+  "image": "/images/games/92828.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Dixit Odyssey is both a standalone game and an expansion (Dixit: Odyssey (expansion)) for Jean-Louis Roubira's Dixit, which won Germany's Spiel des Jahres award in 2010.\n\nGame play in Dixit Odyssey matches that of Dixit: Each turn one player is the storyteller. This player secretly chooses one card in his hand, then gives a word or sentence to describe this card—but not too obviously. Each other player chooses a card in hand that matches this word/sentence and gives it to the storyteller. The storyteller then lays out the cards, and all other players vote on which card belongs to the storyteller. If no one or everyone guesses the storyteller's card, the storyteller receives no points and all players receive two; otherwise the storyteller and the correct guesser(s) each receive three points. Players score one point for each vote their image receives. Players refill their hands, and the next player becomes the storyteller. When the deck runs out, the player with the most points wins.\n\nDixit Odyssey contains 84 new cards, each with a unique image drawn by Pier&ocirc; and colored by Marie Cardouat, artist of Dixit and Dixit 2. The stand alone version also includes a folding game board, 6 new rabbit scoring tokens (12 total), and a box large enough to hold all the Dixit cards released to date. The stand alone version of Dixit Odyssey includes enough components for up to twelve players and also has variant rules for team play and for new ways to play with the cards.\n\nExpansion versus standalone versions of the game.\n\n     Standalone version is in a square box (released in 2011 but may still be available).\n     Expansion version is in a rectangular box (available from 2013 onwards): Dixit: Odyssey (expansion)",
+  "min_players": 3,
+  "max_players": 12,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Humor",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Storytelling",
+    "Targeted Clues",
+    "Voting"
+  ],
+  "rating_bayes_average": 7.14004,
+  "rating_average_weight": 1.1594,
+  "thumbnail_source": "https://cf.geekdo-images.com/7b75ZZJQ4EEbDsKLi6kYSw__small/img/N0ZKQJsEo6_hk2UxH2rvqKorh2g=/fit-in/200x150/filters:strip_icc()/pic918568.jpg",
+  "image_source": "https://cf.geekdo-images.com/7b75ZZJQ4EEbDsKLi6kYSw__original/img/Oep0CGYNB5HiLBBOMmEo2qKgXaM=/0x0/filters:format(jpeg)/pic918568.jpg"
+}

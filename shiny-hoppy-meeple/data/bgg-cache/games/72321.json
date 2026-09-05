@@ -1,0 +1,33 @@
+{
+  "id": 72321,
+  "name": "The Networks: Primetime",
+  "year": 2016,
+  "thumbnail": "/images/games/72321-thumb.webp",
+  "image": "/images/games/72321.webp",
+  "image_width": 900,
+  "image_height": 1426,
+  "description": "In The Networks, you and your opponents are new television networks, and you need new programming. For this, you’ll need Shows, Stars, and Ads.\n\nShows need Stars and Ads. Stars give you bonus viewers (points), and Ads give you extra money. You’ll need everything you can get; you'll have a small amount of resources and time, and you must grab the latest hot show before your opponents.\n\nAnd some Stars will give their best effort only if you put them on in the proper conditions. For example, some Stars only want to be put on dramas. Other Stars want to be the only Star on the show. And your Ads will give you the most money only if you put them on in the correct time slot.\n\nFinally, Shows age and viewers lose interest, so you have to keep your line-up fresh by canceling shows and sending them into reruns. Fortunately, you can get viewers from your reruns, and you'll get bonuses if you get a lot of shows of the same genre throughout the game.\n\nIf you need a special push, Network Cards can give you special powers — but will a Network Card be better than another action? You'll have to make that call.\n\nThe player with the most viewers after five seasons wins!",
+  "min_players": 1,
+  "max_players": 5,
+  "playing_time": 90,
+  "min_age": 13,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Economic",
+    "Humor",
+    "Movies / TV / Radio theme"
+  ],
+  "mechanics": [
+    "End Game Bonuses",
+    "Income",
+    "Open Drafting",
+    "Set Collection",
+    "Solo / Solitaire Game",
+    "Turn Order: Stat-Based"
+  ],
+  "rating_bayes_average": 6.70353,
+  "rating_average_weight": 2.5985,
+  "thumbnail_source": "https://cf.geekdo-images.com/xPHK8C_sFDPC3krIuIJR5w__small/img/C5QCyEpjADbC-8JgtE3Ia3z0xDk=/fit-in/200x150/filters:strip_icc()/pic9204771.jpg",
+  "image_source": "https://cf.geekdo-images.com/xPHK8C_sFDPC3krIuIJR5w__original/img/ptjeMLSarjFdTL-JYi59fD4II6s=/0x0/filters:format(jpeg)/pic9204771.jpg"
+}

@@ -1,0 +1,34 @@
+{
+  "id": 253759,
+  "name": "Paint the Roses",
+  "year": 2022,
+  "thumbnail": "/images/games/253759-thumb.webp",
+  "image": "/images/games/253759.webp",
+  "image_width": 900,
+  "image_height": 1242,
+  "description": "Paint the Roses is a 2-5 player cooperative logic deduction game that automatically adapts to your skill during play.\n\nSet in the puzzling world of Alice in Wonderland, you and your friends are the newly appointed Royal Gardeners. You are working together to finish the palace grounds according to the whims of the Queen of Hearts. Use strategy, logic, and teamwork to finish the garden whilst staying one step ahead of the Queen, otherwise, the last thing you hear will be, \"Off With Their Heads!\".\n\nThe Queen's whims are shared via cards, secret instructions each player is given into how the garden should be arranged. Her whims are always changing, so as soon as you solve one, a new one is in your hand.\n\nEvery turn, together as a team you must guess at least one of these secret whim cards. You can't say what your card shows, but by carefully placing a new shrub tile into the garden (taken from those available in the Greenhouse) you are able to reveal clues, tokens that will show any matches between the arrangement in the garden and the secret whims each player holds in their hands.\n\nAlthough you can't discuss your own secret whim card, you can openly discuss other players'. Share your theories at the table and then make a guess. Correctly guessing a whim will move you forward on the score track, but the Queen is always following and her speed automatically adjusts based on your current score. Guess incorrectly and the Queen moves twice as fast, her axe ever closer to your neck.\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 70,
+  "min_age": 11,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Deduction",
+    "Fantasy",
+    "Novel-based",
+    "Puzzle"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Cooperative Game",
+    "Deduction",
+    "Hexagon Grid",
+    "Pattern Recognition",
+    "Tile Placement"
+  ],
+  "rating_bayes_average": 6.39488,
+  "rating_average_weight": 2.4426,
+  "thumbnail_source": "https://cf.geekdo-images.com/anxQnfP-yVMJ8sqmHsq-oA__small/img/3pWOBTqXK9QK2We5mzQzKN4HyxU=/fit-in/200x150/filters:strip_icc()/pic6741146.jpg",
+  "image_source": "https://cf.geekdo-images.com/anxQnfP-yVMJ8sqmHsq-oA__original/img/ST12j2K7YMwzm0EGn8xLTLsePd4=/0x0/filters:format(jpeg)/pic6741146.jpg"
+}

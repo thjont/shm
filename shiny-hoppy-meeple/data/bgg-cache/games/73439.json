@@ -1,0 +1,41 @@
+{
+  "id": 73439,
+  "name": "Troyes",
+  "year": 2010,
+  "thumbnail": "/images/games/73439-thumb.webp",
+  "image": "/images/games/73439.webp",
+  "image_width": 638,
+  "image_height": 894,
+  "description": "In Troyes (pronounced like the word 'trois'), players recreate four centuries of history of this famous city of the Champagne region of France. Each player manages their segment of the population (represented by a horde of dice) and their hand of cards, which represent the three primary domains of the city:  religious, military, and civil. Players can also offer cash to their opponents' populace in order to get a little moonlighting out of them — anything for more fame!\n\nMake your underlings:\n\n\n     work on the cathedral\n     combat misfortune\n     bustle about the city\n     and other such tasks that are below your family's stature\n\n\n•••\n\nMany editions of Troyes released in 2016 or later include rules for a solo variant as well as four bonus cards originally released in 2011 as a promotional item. Versions released prior to this date contain rules only for games with 2-4 players.",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 90,
+  "min_age": 12,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Dice",
+    "Economic",
+    "Medieval"
+  ],
+  "mechanics": [
+    "Area Majority / Influence",
+    "Dice Rolling",
+    "End Game Bonuses",
+    "Events",
+    "Hidden Victory Points",
+    "Income",
+    "Ownership",
+    "Set Collection",
+    "Slide / Push",
+    "Solo / Solitaire Game",
+    "Turn Order: Progressive",
+    "Variable Set-up",
+    "Worker Placement with Dice Workers",
+    "Worker Placement, Different Worker Types"
+  ],
+  "rating_bayes_average": 7.48583,
+  "rating_average_weight": 3.3728,
+  "thumbnail_source": "https://cf.geekdo-images.com/fBIe-aEPtJKC-ceNlspK6A__small/img/Npv5mrWBkjnlKjl_8hGLNk9CCwc=/fit-in/200x150/filters:strip_icc()/pic750583.jpg",
+  "image_source": "https://cf.geekdo-images.com/fBIe-aEPtJKC-ceNlspK6A__original/img/otcIVdG4ebZmK1SjUtzma18JtJ4=/0x0/filters:format(jpeg)/pic750583.jpg"
+}

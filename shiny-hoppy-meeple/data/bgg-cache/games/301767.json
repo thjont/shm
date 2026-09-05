@@ -1,0 +1,32 @@
+{
+  "id": 301767,
+  "name": "Mysterium Park",
+  "year": 2020,
+  "thumbnail": "/images/games/301767-thumb.webp",
+  "image": "/images/games/301767.webp",
+  "image_width": 900,
+  "image_height": 1329,
+  "description": "Welcome to Mysterium Park!  The park’s former director has disappeared, but the investigation came to nothing. Since that night, weird things are happening on the fairground. As psychics, you’re convinced that a ghost haunts this carnival. You’re now intent on giving it a chance to reveal the truth.\n\nIn this cooperative stand-alone game, the ghost sends visions with illustrated cards. The psychics try to interpret them in order to rule out certain suspects and locations. Then, they’ll seize their only chance to piece together what happened to the director. You have only six nights before the carnival leaves town. Open your minds and find the truth!\n\nSet in the lights of a 1950's US fairground, Mysterium Park shares the same core mechanism of Mysterium, though it is smaller and faster. Turns are quicker as players only have to guess who and where and they games ends after 6 rounds. Detectives can cooperate to make sure everyone is guessing correctly.\n\nThe detectives discuss what they think the clues point to and once they all agree they tell the cluemaster which column (I, II or III) shows the culprit and crime scene. If they are right everyone wins. If not, everyone loses.\n\n— description from the publisher",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 45,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Deduction",
+    "Murder / Mystery",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Cooperative Game",
+    "Pattern Recognition",
+    "Roles with Asymmetric Information",
+    "Storytelling"
+  ],
+  "rating_bayes_average": 6.51062,
+  "rating_average_weight": 1.4286,
+  "thumbnail_source": "https://cf.geekdo-images.com/U2CYPYgIEC1cLF45Rh0UGw__small/img/bTRB0-Qnb-tvrYxN3vJJZRBEZ1s=/fit-in/200x150/filters:strip_icc()/pic5581038.jpg",
+  "image_source": "https://cf.geekdo-images.com/U2CYPYgIEC1cLF45Rh0UGw__original/img/472oJ1mqGHWxFxuOsnXFiZBshUc=/0x0/filters:format(jpeg)/pic5581038.jpg"
+}

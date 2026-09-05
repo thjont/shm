@@ -1,0 +1,40 @@
+{
+  "id": 217372,
+  "name": "The Quest for El Dorado",
+  "year": 2017,
+  "thumbnail": "/images/games/217372-thumb.webp",
+  "image": "/images/games/217372.webp",
+  "image_width": 700,
+  "image_height": 700,
+  "description": "In The Quest for El Dorado, players take the roles of expedition leaders who have embarked on a search for the legendary land of gold in the dense jungles of South America.\n\nEach player assembles and equips their own team, hiring various helpers from the scout to the scientist to the aborigine. All of them have one goal in mind: Reaching the golden border first and winning all of the riches for themselves. Whoever chooses the best tactics will be rewarded!\n\nEach player starts with a face-down deck of 8 cards— his or her expedition —to draw from. You start each turn with 4 cards in your hand. Use expedition cards to move through the jungle or hire more people for your expedition. Each card in your hand can only be used once per turn - to  move or to buy 1 new card.\n\nWhen a player reaches one of the 3 finishing spaces, he moves to El Dorado and this triggers the final round. The other players will now play their final turn. Once the round is completed, the game is over. If the final round ends up with multiple players reaching El Dorado, the player who has collected the most blockades wins the game.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 60,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Adventure",
+    "Exploration",
+    "Racing"
+  ],
+  "mechanics": [
+    "Deck, Bag, and Pool Building",
+    "Delayed Purchase",
+    "Grid Movement",
+    "Hand Management",
+    "Hexagon Grid",
+    "Modular Board",
+    "Multi-Use Cards",
+    "Once-Per-Game Abilities",
+    "Open Drafting",
+    "Race",
+    "Resource to Move",
+    "Variable Set-up",
+    "Zone of Control"
+  ],
+  "rating_bayes_average": 7.54102,
+  "rating_average_weight": 1.9442,
+  "thumbnail_source": "https://cf.geekdo-images.com/b5VyYjNfAxJ4Z-Dx2UWlqg__small/img/TB_X7b0PIfykfnI12rm3bt6rnGY=/fit-in/200x150/filters:strip_icc()/pic7945692.jpg",
+  "image_source": "https://cf.geekdo-images.com/b5VyYjNfAxJ4Z-Dx2UWlqg__original/img/-GqQ0EOfg9e3yFVpKgJbPdlunso=/0x0/filters:format(jpeg)/pic7945692.jpg"
+}

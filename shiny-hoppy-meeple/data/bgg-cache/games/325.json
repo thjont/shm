@@ -1,0 +1,34 @@
+{
+  "id": 325,
+  "name": "Catan: Seafarers",
+  "year": 1997,
+  "thumbnail": "/images/games/325-thumb.webp",
+  "image": "/images/games/325.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "This is an expansion for CATAN. Players can build shipping lanes, which are very similar to roads. Additionally, the game comes with many different water-hex-heavy variant setups. The English version (CATAN Studio) should only be used with the English base game, instead of the German one (Kosmos), because of matching components. The Kosmos German version should only be used with the German base game. Additionally, several different editions exist; 5th edition is the most recent. Editions should only be used with same edition, otherwise the purchase of adapter kit is required.\n\nPart of the Catan Series.\n\nThis game requires CATAN.  Ideally, using the same publisher and edition of the game.",
+  "min_players": 3,
+  "max_players": 4,
+  "playing_time": 90,
+  "min_age": 10,
+  "type": "boardgameexpansion",
+  "expansion": true,
+  "categories": [
+    "Expansion for Base-game",
+    "Exploration",
+    "Nautical",
+    "Negotiation"
+  ],
+  "mechanics": [
+    "Dice Rolling",
+    "Hand Management",
+    "Memory",
+    "Modular Board",
+    "Network and Route Building",
+    "Trading"
+  ],
+  "rating_bayes_average": 6.91027,
+  "rating_average_weight": 2.374,
+  "thumbnail_source": "https://cf.geekdo-images.com/v8ll_1CxVGP-KN-NqkoQsg__small/img/1Kuh2BgF2fqDNHijFUZHBqjKwOA=/fit-in/200x150/filters:strip_icc()/pic8828019.jpg",
+  "image_source": "https://cf.geekdo-images.com/v8ll_1CxVGP-KN-NqkoQsg__original/img/HQqjNMRHo7Nxuoa72J5yyIq-NCY=/0x0/filters:format(jpeg)/pic8828019.jpg"
+}

@@ -1,0 +1,36 @@
+{
+  "id": 339789,
+  "name": "Welcome to the Moon",
+  "year": 2021,
+  "thumbnail": "/images/games/339789-thumb.webp",
+  "image": "/images/games/339789.webp",
+  "image_width": 900,
+  "image_height": 901,
+  "description": "You've built housing for humanity in neighborhoods and New Las Vegas. Now you need to save humanity through space colonization...\n\nWelcome to the Moon uses the same flip-and-write game mechanisms as the earlier title Welcome To..., but now you can play in a campaign across eight adventure sheets. On a turn, you flip cards from three stacks to create three different combinations of a starship number and a corresponding action, then all players choose one of these three combinations. You use the number to fill a space in a zone on your adventure sheet in numerical order, and everyone is racing to be the first to complete common missions.\n\nThe eight adventure sheets feature very different mechanisms from the classic Welcome To... concept, and when you play in campaign mode, you'll make choices that change the next adventure, which means that each campaign will differ from the previous one.",
+  "min_players": 1,
+  "max_players": 6,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "City Building",
+    "Science Fiction",
+    "Space Exploration"
+  ],
+  "mechanics": [
+    "Area Majority / Influence",
+    "Bingo",
+    "Narrative Choice / Paragraph",
+    "Paper-and-Pencil",
+    "Pattern Building",
+    "Race",
+    "Scenario / Mission / Campaign Game",
+    "Simultaneous Action Selection",
+    "Solo / Solitaire Game"
+  ],
+  "rating_bayes_average": 7.35146,
+  "rating_average_weight": 2.4554,
+  "thumbnail_source": "https://cf.geekdo-images.com/eCdiHCB9OobumwaGl4dbOQ__small/img/dyaAIesMyeQWUoLRA25Dj9MhruI=/fit-in/200x150/filters:strip_icc()/pic6204967.png",
+  "image_source": "https://cf.geekdo-images.com/eCdiHCB9OobumwaGl4dbOQ__original/img/U4DY7_OUE1XI1m1Fi0iubbf2sEI=/0x0/filters:format(png)/pic6204967.png"
+}

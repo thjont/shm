@@ -1,0 +1,28 @@
+{
+  "id": 634,
+  "name": "River Dragons",
+  "year": 2000,
+  "thumbnail": "/images/games/634-thumb.webp",
+  "image": "/images/games/634.webp",
+  "image_width": 900,
+  "image_height": 616,
+  "description": "In Dragon Delta, you want to move your pawn over a system of bridge-like planks to the other side of the board. An easy task! Or at least it would be if everyone were working together, but alas you're not. Instead you're all working on your own right next to one another, each convinced that your way is best.\n\nIn game terms, players simultaneously select five action cards to be performed from the nine actions available and lay them down in order they are to be played. The turn is then resolved one card at a time. The actions allow players to place plank foundations, place planks, move their pawns, cancel other players' actions, or remove planks or foundation stones. As can be expected for a design with simultaneous action selection, the game is rather chaotic.\n\nThe 2012 edition of the game, River Dragons, includes a double-sided game board not present in earlier editions, with one side of the board featuring rock piles on which you place stones (as in the original Dragon Delta), while the other side has a featureless river on which players can place stones in any location.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Abstract Strategy"
+  ],
+  "mechanics": [
+    "Action Queue",
+    "Point to Point Movement",
+    "Simultaneous Action Selection"
+  ],
+  "rating_bayes_average": 6.08753,
+  "rating_average_weight": 1.7137,
+  "thumbnail_source": "https://cf.geekdo-images.com/DXA__BmtPAOfEyH9m_dvKQ__small/img/zrna46xuYgI5ASAbyLeopPX5EK4=/fit-in/200x150/filters:strip_icc()/pic1374907.jpg",
+  "image_source": "https://cf.geekdo-images.com/DXA__BmtPAOfEyH9m_dvKQ__original/img/13wt6O81Gq09wo2DS8_Mn1FkV_s=/0x0/filters:format(jpeg)/pic1374907.jpg"
+}

@@ -1,0 +1,34 @@
+{
+  "id": 397931,
+  "name": "Deep Regrets",
+  "year": 2025,
+  "thumbnail": "/images/games/397931-thumb.webp",
+  "image": "/images/games/397931.webp",
+  "image_width": 900,
+  "image_height": 1305,
+  "description": "Deep Regrets is an unfortunate fishing game about pulling progressively more horrifying things out of the ocean. Decide what to eat, what to sell, what to mount, and how many regrets you're willing to carry, as you push yourself too far and spiral towards a conclusion in this strategic horror fishing game.\n\nYou'll roll bespoke tackle dice at the start of each turn to determine your strength for that round and then decide whether you'll stay at sea or return to port to sell fish, buy provisions, and recharge your energy. Survey the sizes of shadows on the backs of 9 different fish shoals at three depths, determining what you think you can afford to catch and if you want to risk it for a potentially better reward. Flip fish, spend dice, add them to your collection - but beware of reveal and catch abilities that can have various effects on the game! As your eyes spy more and more horrifying things, you'll collect Regrets cards - which drive up your madness but also give you access to more dice and increase the value of weirder fish. It's a risk/reward scenario as you balance your madness, knowing that at the end of the game the player with the highest value of Regrets will have to discard their most valuable mounted fish.\n\nManage your resources, make strategic decisions, leverage madness to your benefit and suppress your Regrets as you try to catch the most valuable haul of weirder and weirder fish in this weird week at sea.\n\nSOLO MODE:\nIn the solo mode (which you can also co-op), you'll act as an ichthyologist on a mission to catch and catalog every fish in the sea. Over a campaign of dozens of games, you'll try to reel in every last fish and document their attributes on provided catalog sheet. At the end of each game, you'll have to discard an equal value of fish to the regrets you've collected and may have to let some fish go to return to another day. At the end of the campaign, you'll have a catalog of all fish names, depths, values and difficulties that can be used by players in the multiplayer game to help identify what they might fish up!\n\n—description from the designer",
+  "min_players": 1,
+  "max_players": 5,
+  "playing_time": 150,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Dice",
+    "Horror",
+    "Nautical"
+  ],
+  "mechanics": [
+    "Cooperative Game",
+    "Dice Rolling",
+    "Market",
+    "Push Your Luck",
+    "Re-rolling and Locking",
+    "Set Collection",
+    "Solo / Solitaire Game"
+  ],
+  "rating_bayes_average": 6.59512,
+  "rating_average_weight": 2.3571,
+  "thumbnail_source": "https://cf.geekdo-images.com/WUvpRzsNSZgq1gyvjiQcWw__small/img/XJyLMXaTHUGyAv7n-G0DpR1W1SU=/fit-in/200x150/filters:strip_icc()/pic8156363.jpg",
+  "image_source": "https://cf.geekdo-images.com/WUvpRzsNSZgq1gyvjiQcWw__original/img/wXnREOcKLkysXorXqRQXKslz-iI=/0x0/filters:format(jpeg)/pic8156363.jpg"
+}

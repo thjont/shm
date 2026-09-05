@@ -1,0 +1,43 @@
+{
+  "id": 150376,
+  "name": "Dead of Winter: A Crossroads Game",
+  "year": 2014,
+  "thumbnail": "/images/games/150376-thumb.webp",
+  "image": "/images/games/150376.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "\"Crossroads\" is a game series from Plaid Hat Games that tests a group of survivors' ability to work together and stay alive while facing crises and challenges from both outside and inside. Dead of Winter: A Crossroads Game, the first title in this series, puts 2-5 players in a small, weakened colony of survivors in a world in which most of humanity is either dead or diseased, flesh-craving monsters. Each player leads a faction of survivors, with dozens of different characters in the game.\n\nDead of Winter is a meta-cooperative psychological survival game. This means players are working together toward one common victory condition, but for each individual player to achieve victory, they must also complete their personal secret objective, which could relate to a psychological tick that's fairly harmless to most others in the colony, a dangerous obsession that could put the main objective at risk, a desire for sabotage of the main mission, or (worst of all) vengeance against the colony! Games could end with all players winning, some winning and some losing, or all players losing. Work toward the group's goal, but don't get walked all over by a loudmouth who's looking out only for their own interests!\n\nDead of Winter is an experience that can be accomplished only through the medium of tabletop games, a story-centric game about surviving through a harsh winter in an apocalyptic world. The survivors are all dealing with their own psychological imperatives, but must still find a way to work together to fight off outside threats, resolve crises, find food and supplies, and keep the colony's morale up.\n\nDead of Winter has players making frequent, difficult, heavily-thematic, wildly-varying decisions that often have them deciding between what's best for the colony and what's best for themselves. The rulebook also includes a fully co-operative variant in which all players work toward the group objective with no personal goals.",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 120,
+  "min_age": 13,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Bluffing",
+    "Deduction",
+    "Horror",
+    "Science Fiction",
+    "Zombies"
+  ],
+  "mechanics": [
+    "Action Points",
+    "Area Movement",
+    "Dice Rolling",
+    "Hand Management",
+    "Narrative Choice / Paragraph",
+    "Push Your Luck",
+    "Scenario / Mission / Campaign Game",
+    "Semi-Cooperative Game",
+    "Storytelling",
+    "Trading",
+    "Traitor Game",
+    "Turn Order: Progressive",
+    "Variable Player Powers",
+    "Voting"
+  ],
+  "rating_bayes_average": 7.2681,
+  "rating_average_weight": 3.0137,
+  "thumbnail_source": "https://cf.geekdo-images.com/g4mV4BH-ZrhMUVgil-yV1A__small/img/foFGN8KwmN8BaYNpolq0HcMba4M=/fit-in/200x150/filters:strip_icc()/pic3016500.jpg",
+  "image_source": "https://cf.geekdo-images.com/g4mV4BH-ZrhMUVgil-yV1A__original/img/NjrnSg1aeia8I4eETDU3I1Br7a8=/0x0/filters:format(jpeg)/pic3016500.jpg"
+}

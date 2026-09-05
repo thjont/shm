@@ -1,0 +1,30 @@
+{
+  "id": 231819,
+  "name": "Sonar",
+  "year": 2017,
+  "thumbnail": "/images/games/231819-thumb.webp",
+  "image": "/images/games/231819.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Time for an underwater game of cat-and-mouse, with each of the two teams in Sonar competing to be the first to deal two points of damage to the other. Do that, and you win the game instantly.\n\nIn detail, Sonar includes four pairs of maps, and each team takes the same maps in their color. A team can be one or two players, and with two players on a team, each player takes a different role: Captain or Radio Operator. (A one-person team handles both roles.) A divider separates the teams, and each Captain marks their starting location on the map.\n\nOn a turn, the Captain calls out an action, typically moving their sub one space north, south, east, or west. When they do this, they call out a direction, mark their new location, and add one energy to their ship's register. The Radio Operator on the other team notes the movement of this sub on a plastic sheet, and through deduction and trial-and-error tries to determine exactly where the opposing sub might be on the map.\n\nInstead of moving, a Captain can also:\n\n\n    Use sonar: Erase two energy from your register; the opposing team must reveal their row or column.\n    Go silent: Erase three energy from your register; move your sub, but don't gain energy and don't tell the opponents which direction you're moving.\n    Fire a torpedo: Erase four energy from your register; call out coordinates in your quadrant (e.g., F6); if the opponents are on that space, they take a point of damage.\n    Surface: Announce your location to the opposing team, then erase your previous path on your map; you can't cross your own path during the game, so sometimes you need to surface in order not to box yourself in.\n\n\nYou can have at most four energy in reserve, so you need to manage movement and the other actions carefully so that you'll be able to fire at the opponents once you know where they are — ideally without being torpedoed in response!",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Deduction",
+    "Fighting",
+    "Nautical"
+  ],
+  "mechanics": [
+    "Line Drawing",
+    "Secret Unit Deployment",
+    "Team-Based Game"
+  ],
+  "rating_bayes_average": 6.01351,
+  "rating_average_weight": 1.9375,
+  "thumbnail_source": "https://cf.geekdo-images.com/GJIebwr7f57nohwY6idxDg__small/img/8zwRcb13GAEmTY-WBkVu7QMDu0Y=/fit-in/200x150/filters:strip_icc()/pic3662558.jpg",
+  "image_source": "https://cf.geekdo-images.com/GJIebwr7f57nohwY6idxDg__original/img/g-548yFfWrQzOawN0UL4cAvMdu4=/0x0/filters:format(jpeg)/pic3662558.jpg"
+}

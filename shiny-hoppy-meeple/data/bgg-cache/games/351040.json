@@ -1,0 +1,33 @@
+{
+  "id": 351040,
+  "name": "Ready Set Bet",
+  "year": 2022,
+  "thumbnail": "/images/games/351040-thumb.webp",
+  "image": "/images/games/351040.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "In Ready Set Bet, you and your friends head to the races for a day of cheering, jeering, and betting on your favorite horses, whose fates hang on every roll of the dice.\n\nReady Set Bet is played over four rounds. Each round consists of a race followed by bet resolution. During each race, players freely place their bet tokens on the board while the race is going on. After each race, players win or lose money for each of their placed bet tokens, then receive a VIP Club Card to help them win more money in the following races. After four rounds, the player with the most money wins!\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 9,
+  "playing_time": 60,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Party Game",
+    "Racing",
+    "Real-time",
+    "Sports"
+  ],
+  "mechanics": [
+    "Betting and Bluffing",
+    "Dice Rolling",
+    "Real-Time",
+    "Track Movement"
+  ],
+  "rating_bayes_average": 7.05562,
+  "rating_average_weight": 1.35,
+  "thumbnail_source": "https://cf.geekdo-images.com/4ZCV2o_OiGha0bknXDTfdA__small/img/S3t6BJifjuZMOwfnUQ6lcdUx9RA=/fit-in/200x150/filters:strip_icc()/pic6678381.jpg",
+  "image_source": "https://cf.geekdo-images.com/4ZCV2o_OiGha0bknXDTfdA__original/img/3ITIxi3iZsBvjnYWAn2KWRBAO-M=/0x0/filters:format(jpeg)/pic6678381.jpg"
+}

@@ -1,0 +1,33 @@
+{
+  "id": 41916,
+  "name": "The Magic Labyrinth",
+  "year": 2009,
+  "thumbnail": "/images/games/41916-thumb.webp",
+  "image": "/images/games/41916.webp",
+  "image_width": 900,
+  "image_height": 891,
+  "description": "The little magician apprentices have lost some magic objects inside of the master’s maze. Now they try to collect them before the Master notices anything. However, in the maze there are invisible walls and only one of the missing objects is revealed at a time. So they have to make their way through the maze by means of a good memory and lots of skill.\n\nEach player moves their magician over the board while trying not to bump the labyrinth below. Each magician is joined with a magnetic ball so if you hit a wall the ball drops and you have to start all over again.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 30,
+  "min_age": 6,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Children's Game",
+    "Fantasy",
+    "Maze",
+    "Memory"
+  ],
+  "mechanics": [
+    "Dice Rolling",
+    "Grid Movement",
+    "Memory",
+    "Network and Route Building",
+    "Roll / Spin and Move"
+  ],
+  "rating_bayes_average": 6.42348,
+  "rating_average_weight": 1.2108,
+  "thumbnail_source": "https://cf.geekdo-images.com/XdRFJ8oqpUnDSN4AnIO5KA__small/img/Aop_DugN6rEE_v0PKOsm0fxEC6w=/fit-in/200x150/filters:strip_icc()/pic6961974.jpg",
+  "image_source": "https://cf.geekdo-images.com/XdRFJ8oqpUnDSN4AnIO5KA__original/img/eVitrOg_vW3GVRI5vHxmDCy4H3s=/0x0/filters:format(jpeg)/pic6961974.jpg"
+}

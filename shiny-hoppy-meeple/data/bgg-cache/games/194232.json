@@ -1,0 +1,33 @@
+{
+  "id": 194232,
+  "name": "Rick and Morty: Total Rickall Card Game",
+  "year": 2016,
+  "thumbnail": "/images/games/194232-thumb.webp",
+  "image": "/images/games/194232.webp",
+  "image_width": 900,
+  "image_height": 656,
+  "description": "Rick and Morty: Total Rickall Card Game is based on the Rick and Morty episode of the same name. If you haven't seen it, don't worry. You can still play this wild and wacky game and have plenty of fun — but you really should see it at some point. Seriously. Don't be a Jerry.\n\nRick has locked the family inside their house. Why? Because the family has grown. Parasites masquerading as family and close friends have infiltrated and have inserted pleasant memories into everyone's minds to make them think they're real — and more keep coming! You must figure out which of these new, zany characters are real and which ones are parasites that need to be exterminated.  Think you've got what it takes to save the world?\n\nThe game features a basic fully cooperative mode and an advanced mode, where there are two teams.\nIn the advanced mode, players will be dealt a hidden role as either Real or a Parasite. The Parasite players must try to keep at least one parasite alive in the end (keeping yourself alive is the easiest way to do this). The Real players must root out the Parasites to win.\nNow you can shoot the other players! But if you accidentally shoot a Real player, there are consequences...\nThere is no player elimination, however. A player's secret identity might change, though.",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 30,
+  "min_age": 15,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Deduction",
+    "Humor",
+    "Movies / TV / Radio theme"
+  ],
+  "mechanics": [
+    "Cooperative Game",
+    "Hand Management",
+    "Hidden Roles",
+    "Memory",
+    "Traitor Game"
+  ],
+  "rating_bayes_average": 5.74827,
+  "rating_average_weight": 1.5135,
+  "thumbnail_source": "https://cf.geekdo-images.com/Gtprfq3orl77NS5FotVbkA__small/img/0LFxTuGU6cPdPqjh5GSN24pRhAs=/fit-in/200x150/filters:strip_icc()/pic3979905.jpg",
+  "image_source": "https://cf.geekdo-images.com/Gtprfq3orl77NS5FotVbkA__original/img/bZcqkX0RjWhh3Y7uGAnu_kJFKsc=/0x0/filters:format(jpeg)/pic3979905.jpg"
+}

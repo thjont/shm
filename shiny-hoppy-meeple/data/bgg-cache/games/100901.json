@@ -1,0 +1,34 @@
+{
+  "id": 100901,
+  "name": "Flash Point: Fire Rescue",
+  "year": 2011,
+  "thumbnail": "/images/games/100901-thumb.webp",
+  "image": "/images/games/100901.webp",
+  "image_width": 880,
+  "image_height": 1200,
+  "description": "The call comes in... \"911, what is your emergency?\"  On the other end is a panicked response of \"FIRE!\" Moments later you don the protective suits that will keep you alive, gather your equipment and rush to the scene of a blazing inferno. The team has only seconds to assess the situation and devise a plan of attack – then you spring into action like the trained professionals that you are. You must face your fears, never give up, and above all else work as a team because the fire is raging, the building is threatening to collapse, and lives are in danger.\n\nYou must succeed. You are the brave men and women of fire rescue; people are depending on you. This is what you do every day.\n\nFlash Point: Fire Rescue is a cooperative game of fire rescue.\n\nThere are two versions of game play in Flash Point, a basic game and expert game.\nIn both variants, players are attempting to rescue 7 of 10 victims from a raging building fire.\nAs the players attempt to rescue the victims, the fire spreads to other parts of the building, causing structural damage and possibly blocking off pathways through the building.  Each turn a player may spend action points to try to extinguish fires, move through the building, move victims out of the building or perform various special actions such as moving emergency vehicles.  If 4 victims perish in the blaze or the building collapses from taking too much structural damage, the players lose.  Otherwise, the players win instantly when they rescue a 7th victim.\n\nThe expert variant included in the game adds thematic elements such as flash over, combustible materials, random setup, and variations on game difficulty from novice to heroic.  The game includes a double sided board with two different building plans and several expansion maps are available.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 45,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Adventure"
+  ],
+  "mechanics": [
+    "Action Points",
+    "Cooperative Game",
+    "Dice Rolling",
+    "Grid Movement",
+    "Pick-up and Deliver",
+    "Simulation",
+    "Solo / Solitaire Game",
+    "Square Grid",
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 6.96065,
+  "rating_average_weight": 2.1976,
+  "thumbnail_source": "https://cf.geekdo-images.com/v6bTbxeprDFj1nN4AenvjA__small/img/7AyBFA8JfZHKxC5ntwOjJTbIgWE=/fit-in/200x150/filters:strip_icc()/pic1129370.jpg",
+  "image_source": "https://cf.geekdo-images.com/v6bTbxeprDFj1nN4AenvjA__original/img/ri91i22ujLCZqxXKhFIdVDPGe8Y=/0x0/filters:format(jpeg)/pic1129370.jpg"
+}

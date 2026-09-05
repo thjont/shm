@@ -1,0 +1,27 @@
+{
+  "id": 348096,
+  "name": "Kites",
+  "year": 2022,
+  "thumbnail": "/images/games/348096-thumb.webp",
+  "image": "/images/games/348096.webp",
+  "image_width": 900,
+  "image_height": 1202,
+  "description": "The sun is shining, the wind is blowing, and you know just what to do — gather your friends to fly some kites!\n\nIn Kites, everyone works together to keep all their kites — represented by colorful sand timers — in the air. Take turns playing cards, flipping the sand timers, and coordinating with other players to ensure none of the timers run out. If it does, a kite has crashed! Add complication cards for additional challenges.\n\nPlay all of the kite cards in the deck, and everybody wins!",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 10,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Real-time"
+  ],
+  "mechanics": [
+    "Cooperative Game"
+  ],
+  "rating_bayes_average": 6.34256,
+  "rating_average_weight": 1.0822,
+  "thumbnail_source": "https://cf.geekdo-images.com/TIEYwnIRV6kvAEnFkYe2OA__small/img/ysbEGf4Z0tNnYPSnGOH8tw5sa8Y=/fit-in/200x150/filters:strip_icc()/pic6858706.png",
+  "image_source": "https://cf.geekdo-images.com/TIEYwnIRV6kvAEnFkYe2OA__original/img/F_I7FrEWXrTcl-3fYOgC4OZcryQ=/0x0/filters:format(png)/pic6858706.png"
+}

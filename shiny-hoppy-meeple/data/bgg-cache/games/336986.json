@@ -1,0 +1,37 @@
+{
+  "id": 336986,
+  "name": "Flamecraft",
+  "year": 2022,
+  "thumbnail": "/images/games/336986-thumb.webp",
+  "image": "/images/games/336986.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Artisan dragons, the smaller and magically talented versions of their larger (and destructive) cousins, are sought by shopkeepers so that they may delight customers with their flamecraft. You are a Flamekeeper, skilled in the art of conversing with dragons, placing them in their ideal home and using enchantments to entice them to produce wondrous things. Your reputation will grow as you aid the dragons and shopkeepers, and the Flamekeeper with the most reputation will be known as the Master of Flamecraft.\n\nIn Flamecraft, 1-5 players take on the role of Flamekeepers, gathering items, placing dragons and casting enchantments to enhance the shops of the town. Dragons are specialized (bread, meat, iron, crystal, plant and potion) and the Flamekeepers know which shops are the best home for each. Visit a shop to gain items and a favor from one of the dragons there.  Gathered items can be used to enchant a shop, gaining reputation and the favors of all the dragons in the shop. If you are fortunate enough to attract fancy dragons then you will have opportunities to secure even more reputation.\n\n—description from the publisher",
+  "min_players": 1,
+  "max_players": 5,
+  "playing_time": 60,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Card Game",
+    "City Building",
+    "Fantasy"
+  ],
+  "mechanics": [
+    "Contracts",
+    "End Game Bonuses",
+    "Hand Management",
+    "Modular Board",
+    "Multi-Use Cards",
+    "Set Collection",
+    "Solo / Solitaire Game",
+    "Tags",
+    "Worker Placement"
+  ],
+  "rating_bayes_average": 7.08711,
+  "rating_average_weight": 2.1892,
+  "thumbnail_source": "https://cf.geekdo-images.com/EvGtnsBDcfnKiqSiXHothQ__small/img/bQcyvzYRdMFFvcdQkFVnIRiCPjE=/fit-in/200x150/filters:strip_icc()/pic6605448.jpg",
+  "image_source": "https://cf.geekdo-images.com/EvGtnsBDcfnKiqSiXHothQ__original/img/7yj8nA0ObuZ1w5AYCThEOK6meWA=/0x0/filters:format(jpeg)/pic6605448.jpg"
+}

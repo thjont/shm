@@ -1,0 +1,33 @@
+{
+  "id": 453584,
+  "name": "Pili Pili",
+  "year": 2025,
+  "thumbnail": "/images/games/453584-thumb.webp",
+  "image": "/images/games/453584.webp",
+  "image_width": 717,
+  "image_height": 1024,
+  "description": "Pili Pili is a trick-taking card game with variable missions. At the beginning of each round, players bet on how many tricks they expect to win. Special mission cards alter the rules from round to round, forcing players to adjust their strategy.\n\nPlayers score if they meet their bet, but mistakes give them “pili” penalty tokens. Too many pilis, and the game is lost. The mix of betting, variable rules, and trick-taking creates a light and dynamic game suitable for families and larger groups.",
+  "min_players": 2,
+  "max_players": 8,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Betting and Bluffing",
+    "Constrained Bidding",
+    "Hand Management",
+    "Memory",
+    "Predictive Bid",
+    "Real-Time",
+    "Trick-taking"
+  ],
+  "rating_bayes_average": 5.7893,
+  "rating_average_weight": 1.125,
+  "thumbnail_source": "https://cf.geekdo-images.com/6-zP899RfG38NtabuFPLxA__small/img/Wrajabcikz78Chy1DeFwY3zZR1k=/fit-in/200x150/filters:strip_icc()/pic9414140.jpg",
+  "image_source": "https://cf.geekdo-images.com/6-zP899RfG38NtabuFPLxA__original/img/PCKxK1gMAXu2JFS6gc7HsDAZKZg=/0x0/filters:format(jpeg)/pic9414140.jpg"
+}

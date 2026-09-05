@@ -1,0 +1,32 @@
+{
+  "id": 245934,
+  "name": "Carpe Diem",
+  "year": 2018,
+  "thumbnail": "/images/games/245934-thumb.webp",
+  "image": "/images/games/245934.webp",
+  "image_width": 900,
+  "image_height": 1283,
+  "description": "In Carpe Diem, players slip into the role of rich patricians in ancient Rome. Everyone is trying to build a lucrative city district to score as many prestige points as possible. The novel way to get to the individual buildings of a district combined with a large variety of score cards make for an unusual game with a large number of strategies.\n\nPlayers are wealthy builders in ancient Rome. Each turn, players get more and more building tiles that they have to integrate into their district. After each phase there is a scoring period\n\nThe game consists of four phases of seven rounds each. Each round, all players moves their meeples onto one of the opposite semi-circular spaces. They pick one of the building tiles located on the adjacent blueprint space and immediately integrate it into their district. After exactly 7 rounds, all 28 building tiles have been picked and the phase ends. After each phase there is a scoring period.\n\nAfter the fourth scoring period, there is a final scoring period. This ends the game, and the player with the most victory points is the winner.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 75,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Ancient"
+  ],
+  "mechanics": [
+    "Area Movement",
+    "Contracts",
+    "End Game Bonuses",
+    "Open Drafting",
+    "Tile Placement",
+    "Turn Order: Progressive",
+    "Variable Set-up"
+  ],
+  "rating_bayes_average": 7.04495,
+  "rating_average_weight": 2.5351,
+  "thumbnail_source": "https://cf.geekdo-images.com/fsjopscDFCVArzU7fzhVxA__small/img/6Yu-lVdkDTrICD1y5ZqNmzHZEsc=/fit-in/200x150/filters:strip_icc()/pic6183704.jpg",
+  "image_source": "https://cf.geekdo-images.com/fsjopscDFCVArzU7fzhVxA__original/img/JJXwLsCeWj_8FOurLToKpdQuvpc=/0x0/filters:format(jpeg)/pic6183704.jpg"
+}
