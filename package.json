@@ -4,7 +4,7 @@
     "googleapis": "176.0.0",
     "pdfkit": "0.20.1",
     "qrcode": "1.5.4",
-    "sharp": "0.35.3"
+    "sharp": "0.35.4"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
