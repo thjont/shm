@@ -6,7 +6,7 @@ on:
         paths:
             - "shiny-hoppy-meeple/**"
     schedule:
-        - cron: "0 8-23 * * *"
+        - cron: "0 7 * * *"
     workflow_dispatch:
 
 # One queue shared by every workflow that writes a cache branch or deploys the
