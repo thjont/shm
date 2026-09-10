@@ -14,6 +14,7 @@ const {
   imageExt,
   isAllowedImageUrl,
   isRetryable,
+  mergeGeeklists,
 } = require('../scripts/bgg-export.js');
 
 test('decodeHtmlEntities handles named, decimal and hex references', () => {
@@ -107,4 +108,24 @@ test('isRetryable retries throttling and server faults, not client errors', () =
   assert.equal(isRetryable({ message: '401 Unauthorized' }), false);
   assert.equal(isRetryable({ message: 'something else entirely' }), false);
   assert.equal(isRetryable({}), false);
+});
+
+test('mergeGeeklists dedupes by id, first list wins on overlap', () => {
+  const listA = [{ id: 1, name: 'Catan' }, { id: 2, name: 'Carcassonne' }];
+  const listB = [{ id: 2, name: 'Carcassonne (dup)' }, { id: 3, name: 'Azul' }];
+  assert.deepEqual(mergeGeeklists([listA, listB]), [
+    { id: 1, name: 'Catan' },
+    { id: 2, name: 'Carcassonne' },
+    { id: 3, name: 'Azul' },
+  ]);
+});
+
+test('mergeGeeklists passes a single list through unchanged', () => {
+  const list = [{ id: 1, name: 'Catan' }];
+  assert.deepEqual(mergeGeeklists([list]), list);
+});
+
+test('mergeGeeklists returns an empty array for no lists or empty lists', () => {
+  assert.deepEqual(mergeGeeklists([]), []);
+  assert.deepEqual(mergeGeeklists([[], []]), []);
 });
