@@ -81,7 +81,10 @@ referenced by any definition. The data directory has two tiers:
   by `scripts/sheets-sync.js` from the Google Sheets spreadsheet (not committed to repo, except
   `libraries/main-library.json`):
   - `members/<slug>.json` — `{ slug, display_name, description?, geeklist|username }`
-  - `libraries/main-library.json` — main library definition (static, committed)
+  - `libraries/main-library.json` — main library definition (static, committed). Its `geeklist`
+    field may be a single ID or an array of IDs — one per curator, since a BGG geeklist can't be
+    shared-edited — which `bgg-export.js` fetches and merges/dedupes by game id (first list wins
+    on overlap).
   - `libraries/<slug>.json` — shadow/supplementary library definitions
   - `games-bgg-override/<id>.json` — editorial overrides (`description`, `learn_to_play_video`)
   - Member/library definitions use `username` (BGG username) or `geeklist` (integer ID), never both.

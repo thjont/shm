@@ -47,6 +47,9 @@ Usage:
 
 Options:
   --library SLUG          Read geeklist/username from definitions/libraries/<slug>.json
+                          (a library's "geeklist" field may be one ID or an array of IDs —
+                          multiple geeklists are fetched and merged/deduped by game id, first
+                          list wins on overlap)
   --geeklist ID           Import a BGG geeklist by ID instead of a user collection
   --data-dir PATH         Root data directory (default: shiny-hoppy-meeple/data)
   --image-dir PATH        Directory to download images into
@@ -219,6 +222,20 @@ function mapGeeklistItems(data) {
     .map(i => ({ id: Number(i.objectid), name: i.objectname ?? '' }));
 }
 
+// Merges multiple geeklists' items into one, deduped by game id. A library's
+// geeklist field may be several IDs (e.g. one per curator, since BGG geeklists
+// can't be shared-edited) — list order is a priority order: the first list an id
+// appears in wins, later duplicates are dropped.
+function mergeGeeklists(itemLists) {
+  const merged = new Map();
+  for (const items of itemLists) {
+    for (const item of items) {
+      if (!merged.has(item.id)) merged.set(item.id, item);
+    }
+  }
+  return Array.from(merged.values());
+}
+
 // --- ImageDownloader ---
 
 // Dimensions of an already-cached image, so a skipped download still yields the
@@ -386,13 +403,26 @@ async function exportCollection(username, client, dataDir, images, collectionFil
   return items.map(i => i.id);
 }
 
-async function exportGeeklist(geeklistId, client, dataDir, images, collectionFile) {
-  console.log(`Fetching geeklist ${geeklistId} …`);
-  const response = await withRetry(`geeklist ${geeklistId} fetch`, () =>
-    client.getBggGeeklist({ id: geeklistId })
-  );
-  const geeklistItems = mapGeeklistItems(response);
-  const items = geeklistItems.map(gi => ({ id: gi.id, name: gi.name, thumbnail: null }));
+async function exportGeeklist(geeklistIds, client, dataDir, images, collectionFile) {
+  const itemLists = [];
+  for (let i = 0; i < geeklistIds.length; i++) {
+    const geeklistId = geeklistIds[i];
+    console.log(`Fetching geeklist ${geeklistId} …`);
+    if (i > 0) await sleep(BATCH_PAUSE_MS);
+    const response = await withRetry(`geeklist ${geeklistId} fetch`, () =>
+      client.getBggGeeklist({ id: geeklistId })
+    );
+    const geeklistItems = mapGeeklistItems(response);
+    console.log(`  list ${geeklistId}: ${geeklistItems.length} item(s)`);
+    itemLists.push(geeklistItems);
+  }
+
+  const merged = geeklistIds.length > 1 ? mergeGeeklists(itemLists) : itemLists[0];
+  if (geeklistIds.length > 1) {
+    const total = itemLists.reduce((sum, l) => sum + l.length, 0);
+    console.log(`  merged: ${merged.length} item(s) (${total - merged.length} duplicate(s))`);
+  }
+  const items = merged.map(gi => ({ id: gi.id, name: gi.name, thumbnail: null }));
 
   const outPath = collectionFile
     ?? path.join(dataDir, 'bgg-cache', 'collections', 'main-library.json');
@@ -495,7 +525,7 @@ async function main() {
   const imageDir  = values['image-dir']      ?? DEFAULT_IMAGE_DIR;
   const imageBase = values['image-url-base'] ?? DEFAULT_IMAGE_URL_BASE;
   let collectionFile = values['collection-file'] ?? null;
-  let geeklistId = values.geeklist ? Number(values.geeklist) : null;
+  let geeklistIds = values.geeklist ? [Number(values.geeklist)] : null;
 
   if (values.library && values.geeklist) {
     process.stderr.write('Error: --library and --geeklist are mutually exclusive.\n');
@@ -513,7 +543,9 @@ async function main() {
     }
     const defn = JSON.parse(fs.readFileSync(defPath, 'utf8'));
     if ('geeklist' in defn) {
-      geeklistId = Number(defn.geeklist);
+      // geeklist may be a single ID or an array of IDs (one per curator, since a
+      // BGG geeklist can't be shared-edited) — exportGeeklist() merges them.
+      geeklistIds = [].concat(defn.geeklist).map(Number);
     } else if ('username' in defn) {
       username = defn.username;
     } else {
@@ -525,7 +557,7 @@ async function main() {
     }
   }
 
-  if (!geeklistId && !username) {
+  if (!geeklistIds?.length && !username) {
     process.stderr.write(
       'Error: BGG_USERNAME environment variable not set (required for collection mode)\n'
     );
@@ -546,8 +578,8 @@ async function main() {
   let failedBatches = 0;
   try {
     let gameIds;
-    if (geeklistId) {
-      gameIds = await exportGeeklist(geeklistId, client, dataDir, images, collectionFile);
+    if (geeklistIds?.length) {
+      gameIds = await exportGeeklist(geeklistIds, client, dataDir, images, collectionFile);
     } else {
       gameIds = await exportCollection(username, client, dataDir, images, collectionFile);
     }
@@ -589,4 +621,6 @@ module.exports = {
   isRetryable,
   mapGame,
   mapCollectionItem,
+  mapGeeklistItems,
+  mergeGeeklists,
 };

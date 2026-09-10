@@ -171,7 +171,10 @@ repo (except `libraries/main-library.json`, which is static).
 | `libraries/<slug>.json` | Shadow / supplementary library definition (generated from sheet) |
 | `games-bgg-override/<id>.json` | Override `description` and/or `learn_to_play_video` for a game |
 
-Each definition specifies exactly one BGG source — `username` *or* `geeklist`, never both.
+Each definition specifies exactly one BGG source — `username` *or* `geeklist`, never both. The main
+library is the one exception: its `geeklist` field may be a single ID or an array of IDs (one per
+curator, since a BGG geeklist can't be shared-edited) — `bgg-export.js` fetches and merges them,
+deduped by game id, first list wins on overlap.
 
 **Cache — `data/bgg-cache/`** — large generated outputs produced by running `bgg-export.js`.
 
