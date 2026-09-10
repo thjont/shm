@@ -47,8 +47,10 @@
 // against the cards passing every *other* filter, since picking a new value
 // replaces the old one. "Any" and the current selection never grey out.
 //
-// The "Sort by" control reorders the cards in the grid ("" = the order the
-// collection was exported in); cards with an unknown sort key go last.
+// The "Sort by" control reorders the cards in the grid, defaulting to
+// Name (A-Z) — collection export order isn't a meaningful sort once the main
+// library merges more than one geeklist, so there's no "unsorted" option.
+// Cards with an unknown sort key go last.
 //
 // The [data-view-toggle] buttons switch the grid between grid/list display
 // modes by toggling bgg-collection-list on the container (grid's compact
@@ -163,6 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const query = new URLSearchParams();
     Object.values(controls).forEach(el => {
       const value = el.value.trim();
+      // The default sort stays out of the URL, same as leaving it unset.
+      if (el === controls.sort && value === DEFAULT_SORT) return;
       if (value) query.set(el.dataset.finder, value);
     });
     singles.forEach(s => {
@@ -196,12 +200,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Descending for "bigger is better" keys, ascending for the rest. Unknown
   // (empty/zero) keys sort last either way; ties fall back to name order.
   const sortDirection = { rating: -1, year: -1, time: 1, weight: 1 };
+  const DEFAULT_SORT = "name";
 
   function sortCards() {
     const key = controls.sort.value;
     const byName = (a, b) => a.dataset.name.localeCompare(b.dataset.name);
-    const ordered = !key ? cards
-      : key === "name" ? cards.slice().sort(byName)
+    const ordered = key === "name" ? cards.slice().sort(byName)
       : cards.slice().sort((a, b) => {
           const av = Number(a.dataset[key]) || 0;
           const bv = Number(b.dataset[key]) || 0;
