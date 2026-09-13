@@ -1,0 +1,28 @@
+{
+  "id": 212310,
+  "name": "Pick Your Poison",
+  "year": 2016,
+  "thumbnail": "/images/games/212310-thumb.webp",
+  "image": "/images/games/212310.webp",
+  "image_width": 250,
+  "image_height": 388,
+  "description": "Everything good comes at a cost. What are you willing to live with? Win by playing your best perk and poisoning your neighbors.\n\nEach round of play starts by choosing a judge. The remaining players will play a perk face-down(a white card that contains \"good stuff\") that they think the judge will like. After every player plays a perk, the players continue to play poisons face-down (a green card that conversely contains \"bad stuff\") on their neighbor's perks.\n\nAfter everyone has played their cards, it's time for the judge to read all the choices aloud and pick his poison! The winning perk gets a point and play continues by rotating the role of the judge.",
+  "min_players": 3,
+  "max_players": 10,
+  "playing_time": 60,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Humor",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Voting"
+  ],
+  "rating_bayes_average": 5.48385,
+  "rating_average_weight": 1,
+  "thumbnail_source": "https://cf.geekdo-images.com/FXIet46DAmFX-9E57DCgNg__small/img/mn0aqeyLOeKZwepVdfFyG_ocNZ0=/fit-in/200x150/filters:strip_icc()/pic3689948.png",
+  "image_source": "https://cf.geekdo-images.com/FXIet46DAmFX-9E57DCgNg__original/img/0KMU4h72zBDcYtKv5-ZUKAgg13s=/0x0/filters:format(png)/pic3689948.png"
+}

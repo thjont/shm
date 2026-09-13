@@ -1,0 +1,28 @@
+{
+  "id": 87904,
+  "name": "Trivial Pursuit: Master Edition",
+  "year": 2009,
+  "thumbnail": "/images/games/87904-thumb.webp",
+  "image": "/images/games/87904.webp",
+  "image_width": 500,
+  "image_height": 482,
+  "description": "The new 2010 Master Edition is the successor of the Genus edition. It includes 3,000 all-new questions that will challenge even the savviest Trivial Pursuit player.\n\nIt comes with the well known game play of the old editions and with a electronic timer to keep up the pace.\n\nThe contained questions are up-to-date so it will be easier to play with people of the new generations.\n\nThe goal of the game is to collect wedges of each color by answering the questions and to answer the so called master question at the end of the game to be the MASTER.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 60,
+  "min_age": 16,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Party Game",
+    "Trivia"
+  ],
+  "mechanics": [
+    "Dice Rolling",
+    "Roll / Spin and Move"
+  ],
+  "rating_bayes_average": 5.61023,
+  "rating_average_weight": 1.52,
+  "thumbnail_source": "https://cf.geekdo-images.com/D2PAA3KSCkAVo8yRRG_VVA__small/img/ibn9l-7FiNCo3KLfPylGQqhzcfc=/fit-in/200x150/filters:strip_icc()/pic872666.jpg",
+  "image_source": "https://cf.geekdo-images.com/D2PAA3KSCkAVo8yRRG_VVA__original/img/cubM6kN8ZSEBoAva0QRY5K64CP8=/0x0/filters:format(jpeg)/pic872666.jpg"
+}

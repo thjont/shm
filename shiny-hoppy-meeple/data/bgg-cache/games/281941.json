@@ -1,0 +1,30 @@
+{
+  "id": 281941,
+  "name": "Downforce: Wild Ride",
+  "year": 2020,
+  "thumbnail": "/images/games/281941-thumb.webp",
+  "image": "/images/games/281941.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Downforce: Wild Ride, an expansion for Downforce, consists of two new tracks on a double-sided game board, along with 3D ramps and wild animals to be used on the new tracks:\n\n• Aloha Sands features water jumps. Cars can use the ramps if they are moving fast enough. Using the ramps lets you pass other cars and move more efficiently, so managing your hand of speed cards to take advantage of them is crucial.\n\n• Savanna Stretch features wild animals that traverse the track, blocking the way. They move ahead after a car passes them, making the track more difficult to navigate for the lead car, and opening up for the trailing cars, so it can pay to hang back a bit before making your move.\n\nThese new tracks add a little more strategy to the game, offering Downforce veterans a whole new play experience.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 40,
+  "min_age": 8,
+  "type": "boardgameexpansion",
+  "expansion": true,
+  "categories": [
+    "Expansion for Base-game",
+    "Racing",
+    "Sports"
+  ],
+  "mechanics": [
+    "Auction / Bidding",
+    "Betting and Bluffing",
+    "Hand Management"
+  ],
+  "rating_bayes_average": 6.1552,
+  "rating_average_weight": 2,
+  "thumbnail_source": "https://cf.geekdo-images.com/vgwPcnGZo9Sfd_71U08BnQ__small/img/UgHRqNDaeXPCQox6TahtuOWVtic=/fit-in/200x150/filters:strip_icc()/pic4781101.jpg",
+  "image_source": "https://cf.geekdo-images.com/vgwPcnGZo9Sfd_71U08BnQ__original/img/H0P66OzGItBetmt8Qv6RZZluYzo=/0x0/filters:format(jpeg)/pic4781101.jpg"
+}

@@ -1,0 +1,29 @@
+{
+  "id": 226588,
+  "name": "Untold: Adventures Await",
+  "year": 2017,
+  "thumbnail": "/images/games/226588-thumb.webp",
+  "image": "/images/games/226588.webp",
+  "image_width": 786,
+  "image_height": 786,
+  "description": "Untold: Adventures Await is the customizable storytelling game powered by Rory's Story Cubes. Players become the heroes of a thrilling tale that unfolds in under 60 minutes. Think of Untold as your favorite TV series, except rather than just sitting back and watching, you're right in the middle of the action!\n\nEvery game of Untold is an episode of five distinct scenes, each featuring intriguing locales, dangerous threats and shocking plot twists that propel the action toward an epic showdown. Scene Cards and StoryCubes provide the elements of the adventure, while Reaction Cards reveal what happens when the players take action.\n\nUntold takes collaborative storytelling in a whole new direction, allowing players of all ages to unleash their creativity thanks to a unique game engine that's extremely accessible, always unpredictable, and rooted in inspiration. Players can also craft multiple-episode story arcs that will see their characters and their world grow as new challenges arise.\n\nWhatever genres of story you enjoy, Untold lets one to four players experience endless and unforgettable tales. What amazing adventures will you have? They await you in Untold!\n\n\n         Winner of the 2018 People's Choice and Judges Award for Best Family Game at UK Games Expo **",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 60,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Dice"
+  ],
+  "mechanics": [
+    "Cooperative Game",
+    "Dice Rolling",
+    "Role Playing",
+    "Storytelling"
+  ],
+  "rating_bayes_average": 5.7089,
+  "rating_average_weight": 1.6667,
+  "thumbnail_source": "https://cf.geekdo-images.com/7vFGcVyOUF2BRLdyS5gldA__small/img/1Pq3o5LS8bd4ictNA3uijFpW9c4=/fit-in/200x150/filters:strip_icc()/pic9051244.jpg",
+  "image_source": "https://cf.geekdo-images.com/7vFGcVyOUF2BRLdyS5gldA__original/img/3p7pg1uVRi6HvEDfT4p1-rS4DFw=/0x0/filters:format(jpeg)/pic9051244.jpg"
+}

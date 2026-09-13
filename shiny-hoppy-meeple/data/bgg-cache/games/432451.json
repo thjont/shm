@@ -1,0 +1,31 @@
+{
+  "id": 432451,
+  "name": "Symbiosis",
+  "year": 2025,
+  "thumbnail": "/images/games/432451-thumb.webp",
+  "image": "/images/games/432451.webp",
+  "image_width": 900,
+  "image_height": 1284,
+  "description": "Symbiose is a fast-paced, strategic card game where you must join forces with your neighbors to compete with your aquatic counterparts. The goal? Create the most prosperous pond in the region!\n\nIn this turn-based game, your goal is to strategically place your cards to maximize your overall score. But be aware, each card score depending of its placement: on the left, you score depending on your left neighbor ; on the right, depending of your right neighbor and in the center depending of your own cards. Choose wisely!\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 20,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Card Game",
+    "Environmental"
+  ],
+  "mechanics": [
+    "Neighbor Scope",
+    "Open Drafting",
+    "Set Collection",
+    "Square Grid"
+  ],
+  "rating_bayes_average": 5.90816,
+  "rating_average_weight": 1.0909,
+  "thumbnail_source": "https://cf.geekdo-images.com/iusdUDYDLwzbcqnauBOGBw__small/img/5fD4-HrS1K5Ld7QIS658UHOHGLM=/fit-in/200x150/filters:strip_icc()/pic9581741.png",
+  "image_source": "https://cf.geekdo-images.com/iusdUDYDLwzbcqnauBOGBw__original/img/bZcNxnKXVyaFBs7MiolUyJGuCro=/0x0/filters:format(png)/pic9581741.png"
+}

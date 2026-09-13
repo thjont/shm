@@ -1,0 +1,40 @@
+{
+  "id": 128271,
+  "name": "Ginkgopolis",
+  "year": 2012,
+  "thumbnail": "/images/games/128271-thumb.webp",
+  "image": "/images/games/128271.webp",
+  "image_width": 900,
+  "image_height": 1253,
+  "description": "2212: Ginkgo Biloba, the oldest and strongest tree in the world, has become the symbol of a new method for building cities in symbiosis with nature. Humans have exhausted the resources that the Earth offered them, and humanity must now develop cities that maintain a delicate balance between resource production and consumption. Habitable space is scarce, however, and mankind must now face the challenge of building ever upwards. To develop this new type of city, you will gather a team of experts around you, and try to become the best urban planner for Ginkgopolis.\n\nIn  Ginkgopolis, the city tiles come in three colors: yellow, which provides victory points; red, which provides resources; and blue, which provides new city tiles. Some tiles start in play, and they're surrounded by letter markers that show where new tiles can be placed.\n\nBegin with three Character cards which grant you starting resources and bonuses to power your game actions. On a turn, each player chooses a Construction or Urbanization card from his hand simultaneously. Players reveal these cards, adding new tiles to the border of the city in the appropriate location or placing tiles on top of existing tiles. Each card in your hand that you don't play is passed on to your left-hand neighbor, so keep in mind how your play might set up theirs!\n\nWhen you build over a tile, you add its “power\" card to your tableau, which provides you additional abilities during the game, allowing you to scale up your building and point-scoring efforts.",
+  "min_players": 1,
+  "max_players": 5,
+  "playing_time": 45,
+  "min_age": 13,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "City Building",
+    "Environmental",
+    "Science Fiction",
+    "Territory Building"
+  ],
+  "mechanics": [
+    "Area Majority / Influence",
+    "Closed Drafting",
+    "End Game Bonuses",
+    "Hand Management",
+    "Income",
+    "Layering",
+    "Modular Board",
+    "Simultaneous Action Selection",
+    "Solo / Solitaire Game",
+    "Square Grid",
+    "Tile Placement",
+    "Turn Order: Progressive"
+  ],
+  "rating_bayes_average": 7.05861,
+  "rating_average_weight": 2.9002,
+  "thumbnail_source": "https://cf.geekdo-images.com/2y2A4qcoGamLcYNLv8wb5A__small/img/U27Rs0NzKCs5s6V5CeA-fw5e4Lc=/fit-in/200x150/filters:strip_icc()/pic5975231.jpg",
+  "image_source": "https://cf.geekdo-images.com/2y2A4qcoGamLcYNLv8wb5A__original/img/tC1u-idEJeuZui-n806S9nw3oPI=/0x0/filters:format(jpeg)/pic5975231.jpg"
+}

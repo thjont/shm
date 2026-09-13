@@ -1,0 +1,32 @@
+{
+  "id": 140863,
+  "name": "Council of Verona",
+  "year": 2013,
+  "thumbnail": "/images/games/140863-thumb.webp",
+  "image": "/images/games/140863.webp",
+  "image_width": 640,
+  "image_height": 480,
+  "description": "The citizens of Verona have grown tired of the constant quarrel between the houses of Capulet and Montague. As ruler of the region, Prince Escalus has formed a council to help mediate the conflict and bring lasting peace to Verona.\n\nIn Council of Verona, players take on the role of influential citizens of Verona and act to use their influence to either add characters to the council or cast them into exile. Through thoughtful hand management of their cards and clever placement of influence tokens, players gain victory points based upon the agendas of the characters at the end of the game. The player with the most victory points wins!\n\nWe've all heard the story of Romeo and Juliet – now is your chance to steer the story and determine who will rule Verona once and for all!",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 20,
+  "min_age": 13,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Bluffing",
+    "Card Game",
+    "Deduction",
+    "Novel-based",
+    "Renaissance"
+  ],
+  "mechanics": [
+    "Auction / Bidding",
+    "Hand Management",
+    "Open Drafting"
+  ],
+  "rating_bayes_average": 5.83702,
+  "rating_average_weight": 1.3714,
+  "thumbnail_source": "https://cf.geekdo-images.com/veF92mGEcTaB88DNqRaL_w__small/img/zrGXNh-p5qpkqn8lRLCpGbI9bRo=/fit-in/200x150/filters:strip_icc()/pic1673162.jpg",
+  "image_source": "https://cf.geekdo-images.com/veF92mGEcTaB88DNqRaL_w__original/img/C-x-EFQfxKo5Kfb3iNlrvqlK6hg=/0x0/filters:format(jpeg)/pic1673162.jpg"
+}

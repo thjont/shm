@@ -1,0 +1,28 @@
+{
+  "id": 3360,
+  "name": "Lexicon",
+  "year": 1932,
+  "thumbnail": "/images/games/3360-thumb.webp",
+  "image": "/images/games/3360.webp",
+  "image_width": 380,
+  "image_height": 275,
+  "description": "There are several game variations in the rule book, Crossword Lexicon, Lexicon, and Lexicon Solitaire.\n\nQuoted from the Rules for Crossword Lexicon, Copyright 1937, Parker Brothers, Inc. ... \"Each player, by playing his cards to the Crossword layout in the center of the table, tries to play out their whole hand before any other player succeeds in doing so. Cards left in players' hands at the end of play in each deal are counted against them and the low score wins the game. As soon as one player reaches 100 points, the game ends and the player with the lowest score wins.\n\nThe player at the left of the dealer starts by placing any word of not less than two or more than four letters in the center of the table, naming the words as they play it. After the first player, all following must play to the words already formed on the table. If the first player (or any subsequent player) cannot form a complete word, they discard one card from their hand and take in exchange either the exposed card, or the top Blind card, from one of the piles on the table. Before taking from the Blind pile, the player must always discard first.\"\n\nThere are several game variations in the rule book, Crossword Lexicon, Lexicon, Lexicon Solitaire and several different options for these card games that can be played with this deck.\n\nAlso, at the bottom of one of the pages is, ...\n\n\"A double set of Crossword LEXICON is made containing two complete packs with Red and Blue backs respectively. Price $1.00\"\n\n(Remember the year, 1937, a buck was a lot of money back then, at least I have been told.)\n\nThe newer deck has 54 cards: Ax4 Bx1 Cx2 Dx1 Ex5 Fx1 Gx2 Hx2 Ix3 Jx1 Kx1 Lx3 Mx2 Nx2 Ox3 Px1 Qx1 Rx3 Sx3 Tx3 Ux2 Vx1 Wx2 Xx1 Yx1 Zx1 Masterx2\n\nThe older deck has 52 cards: Ax4 Bx1 Cx1 Dx1 Ex4 Fx1 Gx1 Hx3 Ix4 Jx1 Kx1 Lx3 Mx1 Nx1 Ox3 Px1 Qx1 Rx3 Sx3 Tx3 Ux3 Vx1 Wx3 Xx1 Yx1 Zx1 Masterx1\n\ni.e. the deck of 54 has:\nC+1, E+1, G+1, M+1, N+1, Master+1, H-1, I-1, U-1, W-1 \ncompared to the deck of 52",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Game System",
+    "Word Game"
+  ],
+  "mechanics": [
+    "Spelling"
+  ],
+  "rating_bayes_average": 5.50722,
+  "rating_average_weight": 1.4545,
+  "thumbnail_source": "https://cf.geekdo-images.com/bM4oLKXoVNWNyiuruzGOSA__small/img/JuVeK_X8UY92I6IVdASVWfA42fA=/fit-in/200x150/filters:strip_icc()/pic2002656.jpg",
+  "image_source": "https://cf.geekdo-images.com/bM4oLKXoVNWNyiuruzGOSA__original/img/T7ESjR_TGDfgyTVL9texAKh4Bz4=/0x0/filters:format(jpeg)/pic2002656.jpg"
+}
