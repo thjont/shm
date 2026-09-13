@@ -1,0 +1,33 @@
+{
+  "id": 1219,
+  "name": "Labyrinth",
+  "year": 1986,
+  "thumbnail": "/images/games/1219-thumb.webp",
+  "image": "/images/games/1219.webp",
+  "image_width": 898,
+  "image_height": 655,
+  "description": "Labyrinth (formerly The aMAZEing Labyrinth) has spawned a whole line of Labyrinth games. The game board has a set of tiles fixed solidly onto it; the remaining tiles that make up the labyrinth slide in and out of the rows created by the tiles that are locked in place. One tile always remains outside the labyrinth, and players take turns taking this extra tile and sliding it into a row of the labyrinth, moving all those tiles and pushing one out the other side of the board; this newly removed tile becomes the piece for the next player to add to the maze.\n\nPlayers move around the shifting paths of the labyrinth in a race to collect various treasures. Whoever collects all of his treasures first and returns to his home space wins!\n\nLabyrinth is simple at first glance and an excellent puzzle-solving game for children; it can also be played by adults using more strategy and more of a cutthroat approach.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 20,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Children's Game",
+    "Maze",
+    "Puzzle"
+  ],
+  "mechanics": [
+    "Map Deformation",
+    "Modular Board",
+    "Network and Route Building",
+    "Point to Point Movement",
+    "Slide / Push",
+    "Square Grid"
+  ],
+  "rating_bayes_average": 6.23329,
+  "rating_average_weight": 1.3471,
+  "thumbnail_source": "https://cf.geekdo-images.com/qpL225YNN5iKRPotB7Q7MA__small/img/JZR5MVC8xYrboBrYMsZmWtjJTu0=/fit-in/200x150/filters:strip_icc()/pic6173371.jpg",
+  "image_source": "https://cf.geekdo-images.com/qpL225YNN5iKRPotB7Q7MA__original/img/5ZGo501PquASeGxpQLBIglcVSYs=/0x0/filters:format(jpeg)/pic6173371.jpg"
+}

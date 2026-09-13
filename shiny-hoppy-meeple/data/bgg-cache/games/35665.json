@@ -1,0 +1,29 @@
+{
+  "id": 35665,
+  "name": "Eye Know",
+  "year": 2007,
+  "thumbnail": "/images/games/35665-thumb.webp",
+  "image": "/images/games/35665.webp",
+  "image_width": 863,
+  "image_height": 862,
+  "description": "Eye Know is a visual trivia betting game. At the start of the game, a number of cards are laid out on the game board. On a turn, you choose one of the cards and identify the image on it. (This isn't the hard part, but rather a precursor of what's to come.) If you correctly identify the image, you can then bid some amount of poker chips to answer a trivia question relating to the object named on the card, or you can auction off the right to answer a trivia question. Questions come in three varieties — true/false, multiple choice, and open ended — and the payouts are higher for the tougher questions: 1:1, 2:1 and 3:1. Answer correctly, and you collect more chips as well as the card; collecting sets of cards gives you bonus points, and the player with the most points wins.",
+  "min_players": 2,
+  "max_players": 8,
+  "playing_time": 60,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Party Game",
+    "Trivia"
+  ],
+  "mechanics": [
+    "Auction / Bidding",
+    "Betting and Bluffing",
+    "Set Collection"
+  ],
+  "rating_bayes_average": 5.53736,
+  "rating_average_weight": 1.6,
+  "thumbnail_source": "https://cf.geekdo-images.com/ME0cDlHq9CFIM1HuGxRvtQ__small/img/DRSptXfZs8InozXMouU6FmP8uOY=/fit-in/200x150/filters:strip_icc()/pic1892471.jpg",
+  "image_source": "https://cf.geekdo-images.com/ME0cDlHq9CFIM1HuGxRvtQ__original/img/Nws3_QCuPUFXbJ_YPcNZnVh5TZY=/0x0/filters:format(jpeg)/pic1892471.jpg"
+}

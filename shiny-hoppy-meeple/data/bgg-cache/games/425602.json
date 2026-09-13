@@ -1,0 +1,31 @@
+{
+  "id": 425602,
+  "name": "YUBIBO",
+  "year": 2024,
+  "thumbnail": "/images/games/425602-thumb.webp",
+  "image": "/images/games/425602.webp",
+  "image_width": 900,
+  "image_height": 1588,
+  "description": "YUBIBO is a cooperative dexterity game involving hands, sticks, and spongey balls.  (Fun fact: Yubi means finger in Japanese, and bo means stick - \"Fingersticks\"!)\n\nPlayers take turns drawing cards that indicates which finger to use to support a stick.\n\nIf the color of the revealed card is not the active player’s color, the matching player color player is nominated. \nNominated player: Connects the stick using the finger indicated on the revealed card.\nActive player: Connects the stick using any finger of their choice.\n\nIf the color of the revealed card is identical to the active player’s color, the active player nominates a player of their choice. \nNominated player: Connects the stick using any finger of their choice.\nActive player: Connects the stick using the finger indicated on the revealed card.\n\nCan you hold up all sticks without dropping them on the table and defeat gravity itself?\n\nYou can spice up the challenge by trying to place balls atop the sticks, but be warned! Each pair of sticks can only support one ball, and the balls can't touch any other balls or fingers!\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 8,
+  "playing_time": 10,
+  "min_age": 6,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Action / Dexterity",
+    "Party Game",
+    "Real-time"
+  ],
+  "mechanics": [
+    "Cooperative Game",
+    "Real-Time",
+    "Score-and-Reset Game",
+    "Stacking and Balancing"
+  ],
+  "rating_bayes_average": 5.70188,
+  "rating_average_weight": 1.1111,
+  "thumbnail_source": "https://cf.geekdo-images.com/VmcYNOUlo5gS-XUa1tTKPA__small/img/P5z6SdJKz0HYj_VleXUSSxLW-Jo=/fit-in/200x150/filters:strip_icc()/pic8338650.png",
+  "image_source": "https://cf.geekdo-images.com/VmcYNOUlo5gS-XUa1tTKPA__original/img/2pDGn6txicBLkHemJZD5yWFLle8=/0x0/filters:format(png)/pic8338650.png"
+}
