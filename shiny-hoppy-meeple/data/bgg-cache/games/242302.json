@@ -1,0 +1,30 @@
+{
+  "id": 242302,
+  "name": "Space Base",
+  "year": 2018,
+  "thumbnail": "/images/games/242302-thumb.webp",
+  "image": "/images/games/242302.webp",
+  "image_width": 900,
+  "image_height": 904,
+  "description": "In Space Base, players assume the roles of Commodores of a small fleet of ships. Ships begin docked at their stations and are then deployed to sectors as new ships are commissioned under your command. Use cargo vessels to engage in trade and commerce; mining vessels to build reoccurring base income; and carriers to spread your influence. Establish new colonies for a new Commodore in a sector to gain even more influence. Gain enough influence and you can be promoted to Admiral!\n\nSpace Base is a quick-to-learn, quick-to-play dice game using the core \"I roll, everyone gets stuff\" mechanism seen in other games. It's also a strategic engine builder using a player board (your space base) and tableaus of ship cards you can buy and add to your board. The cards you buy and the order you buy them in have interesting implications on your engine beyond just the ability on the card you buy, making for a different type of engine construction than seen in similar games. Players can take their engine in a number of directions: long odds and explosive gains, low luck and steady income, big end-game combos to launch from last to first, or a mix-and-match approach. Ultimately, Space Base is a game you can just start playing and teach everyone how to play in the first round or two and has a satisfying blend of dice-chucking luck and challenging strategic choices.",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 60,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Dice",
+    "Science Fiction",
+    "Space Exploration"
+  ],
+  "mechanics": [
+    "Dice Rolling",
+    "Open Drafting",
+    "Random Production"
+  ],
+  "rating_bayes_average": 7.32472,
+  "rating_average_weight": 2.1363,
+  "thumbnail_source": "https://cf.geekdo-images.com/MHhQxXVjiaa6C-04nGiIWw__small/img/rgETRyeuYs_wiZ5y-9Zj5H8kyFo=/fit-in/200x150/filters:strip_icc()/pic6640638.jpg",
+  "image_source": "https://cf.geekdo-images.com/MHhQxXVjiaa6C-04nGiIWw__original/img/QyWen0FVOKD_4wf7Na7fdsMTjis=/0x0/filters:format(jpeg)/pic6640638.jpg"
+}

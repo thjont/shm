@@ -1,0 +1,26 @@
+{
+  "id": 455421,
+  "name": "What's My Jam?",
+  "year": 2025,
+  "thumbnail": "/images/games/455421-thumb.webp",
+  "image": "/images/games/455421.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Does your best pal love pineapple on a pizza, or loathe it?!\n\nIn What’s My Jam?, you’ll guess each other’s favourites and least favourites – from dream holidays and karaoke songs to fairground rides and ways to cook eggs!\n\nEach round, one player takes the spotlight and picks a category. Everyone else tries to guess what they love and what they loathe! The guesses are read out anonymously, and the spotlight player chooses their top answer from the shortlist. Score points for every correct match – and laugh a lot along the way.\n\n—description from the publisher",
+  "min_players": 2,
+  "max_players": 8,
+  "playing_time": 40,
+  "min_age": 7,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Party Game"
+  ],
+  "mechanics": [
+    "Voting"
+  ],
+  "rating_bayes_average": 0,
+  "rating_average_weight": 0,
+  "thumbnail_source": "https://cf.geekdo-images.com/rOzFOzl604DAbzu6heT85Q__small/img/PUEghirBu58TQb1VXFyMD-ZKBfg=/fit-in/200x150/filters:strip_icc()/pic9137716.jpg",
+  "image_source": "https://cf.geekdo-images.com/rOzFOzl604DAbzu6heT85Q__original/img/UjXGEpcrZ24MWFZtfGrx00XyClw=/0x0/filters:format(jpeg)/pic9137716.jpg"
+}

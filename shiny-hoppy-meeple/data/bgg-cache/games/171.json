@@ -1,0 +1,31 @@
+{
+  "id": 171,
+  "name": "Chess",
+  "year": 1475,
+  "thumbnail": "/images/games/171-thumb.webp",
+  "image": "/images/games/171.webp",
+  "image_width": 900,
+  "image_height": 649,
+  "description": "Chess is a two-player, abstract strategy board game that represents medieval warfare on an 8x8 board with alternating light and dark squares. Opposing pieces, traditionally designated White and Black, are initially lined up on either side of the board. Each type of piece has a unique form of movement and capturing occurs when a piece, via its movement, occupies the square of an opposing piece. Players take turns moving one of their pieces in an attempt to capture, attack, defend, or develop their positions. Chess games can end in checkmate (when the king cannot escape from the opponent's pieces), resignation (when one player recognizes that defeat is inevitable and ends the game), or one of several types of draws.\n\nChess is one of the most popular games in the world, played by millions of people worldwide at home, in clubs, online, by correspondence, and in tournaments. Between two highly skilled players, chess can be a beautiful thing to watch, and a game can provide great entertainment even for novices. The 2020 Netflix series, The Queen's Gambit was enjoyed by both chess players and non-players alike. There is also a large literature of books and periodicals about chess, typically featuring games and commentary by chess masters. Chess is so well known and highly regarded that it is often used as a metaphor in journalism, poetry, fiction, and film.\n\nChess evolved from the ancient Indian game Chaturanga, which became Shatranj when introduced to the Persians. The current form of the game emerged in the second half of the 15th century when the Persians brought Shatranj to Southern Europe. The tradition of organized competitive chess began in the 16th century. The first official World Chess Champion, Wilhelm Steinitz, claimed his title in 1886. Chess is also a recognized sport of the International Olympic Committee.",
+  "min_players": 2,
+  "max_players": 2,
+  "playing_time": 0,
+  "min_age": 6,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Abstract Strategy"
+  ],
+  "mechanics": [
+    "Grid Movement",
+    "Once-Per-Game Abilities",
+    "Pattern Movement",
+    "Square Grid",
+    "Static Capture",
+    "Sudden Death Ending"
+  ],
+  "rating_bayes_average": 7.04188,
+  "rating_average_weight": 3.6418,
+  "thumbnail_source": "https://cf.geekdo-images.com/0_RWFMNapgr5yCrdhvGi_Q__small/img/Ag-pVSHp3iBail0FsibR_iUMmQc=/fit-in/200x150/filters:strip_icc()/pic8785991.jpg",
+  "image_source": "https://cf.geekdo-images.com/0_RWFMNapgr5yCrdhvGi_Q__original/img/c4SiusUQuh7uc0k6HDwIXYsEc8M=/0x0/filters:format(jpeg)/pic8785991.jpg"
+}

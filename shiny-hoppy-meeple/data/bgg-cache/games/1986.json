@@ -1,0 +1,30 @@
+{
+  "id": 1986,
+  "name": "Spy Alley",
+  "year": 1992,
+  "thumbnail": "/images/games/1986-thumb.webp",
+  "image": "/images/games/1986.webp",
+  "image_width": 900,
+  "image_height": 1165,
+  "description": "Each player assumes a secret identity (nationality) at the start of the game. The object is for each player to collect all the necessary items of their nationality and land on the winners square. (players need to get a codebook, disguise, key, and password) However, if an opponent guesses your identity before you win, you are out. If they incorrectly guess, then THEY are out. Players bluff by purchasing items of nationalities that they do NOT need to win.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 45,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Bluffing",
+    "Spies / Secret Agents"
+  ],
+  "mechanics": [
+    "Deduction",
+    "Player Elimination",
+    "Roll / Spin and Move",
+    "Set Collection"
+  ],
+  "rating_bayes_average": 5.54786,
+  "rating_average_weight": 1.5,
+  "thumbnail_source": "https://cf.geekdo-images.com/Xd4oi8RxW9p5xPYiRxQl0w__small/img/YN80YdQIxoiNXrqb3Yq1DIH02co=/fit-in/200x150/filters:strip_icc()/pic5151907.jpg",
+  "image_source": "https://cf.geekdo-images.com/Xd4oi8RxW9p5xPYiRxQl0w__original/img/cyn80SWyEdvTlGV_w-005d7xTRU=/0x0/filters:format(jpeg)/pic5151907.jpg"
+}

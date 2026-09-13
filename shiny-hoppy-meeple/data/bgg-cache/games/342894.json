@@ -1,0 +1,30 @@
+{
+  "id": 342894,
+  "name": "Mythic Mischief",
+  "year": 2022,
+  "thumbnail": "/images/games/342894-thumb.webp",
+  "image": "/images/games/342894.webp",
+  "image_width": 492,
+  "image_height": 620,
+  "description": "In Mythic Mischief, you play as a faction of Mythic Manor students competing to get as many of the other students caught by the Tomekeeper as you can without getting caught yourself.\nEach Faction has its own unique set of abilities to move around the board, move the other factions into the path of the Tomekeeper, and even alter the course of the Tomekeeper by moving bookshelves.\nPlayers are able to upgrade their Faction’s abilities throughout the game by collecting powerful Tomes from around the library.\nThe winner is the first Team to score 10 Mischief Points or the Team with the most points when the Tomekeeper finishes returning all of the Tomes after lunch!\n\n—description from the publisher",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 90,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Abstract Strategy",
+    "Fantasy",
+    "Miniatures"
+  ],
+  "mechanics": [
+    "Action Points",
+    "Grid Movement",
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 6.30976,
+  "rating_average_weight": 2.5385,
+  "thumbnail_source": "https://cf.geekdo-images.com/B1h4rA9VVLB6-3NxDucMLw__small/img/mP1VC2vQ6H9x-8dRGJtB7a_OGlQ=/fit-in/200x150/filters:strip_icc()/pic6294970.png",
+  "image_source": "https://cf.geekdo-images.com/B1h4rA9VVLB6-3NxDucMLw__original/img/jJI5CVB2dBH-5kzkiG0Q0dOuFi8=/0x0/filters:format(png)/pic6294970.png"
+}

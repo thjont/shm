@@ -1,0 +1,29 @@
+{
+  "id": 2952,
+  "name": "Trivial Pursuit: Genus Edition",
+  "year": 1981,
+  "thumbnail": "/images/games/2952-thumb.webp",
+  "image": "/images/games/2952.webp",
+  "image_width": 900,
+  "image_height": 823,
+  "description": "Trivial Pursuit is the original trivia game that started it all.\n\nEach player has a circular playing piece with six pie-shaped holes. The goal of the game is to collect a pie in each color. The colors correspond to different question categories.\n\nThe board consists of a circular track with spaces in seven different colors. Six of the colors correspond to question categories while the last color gives a new dice roll. Six spaces along the track are \"pie spaces\", and from these there are \"spokes\" of track leading to the middle of the board.\n\nPlayers roll a die and move along the track in any direction they like. When a player stops on a color they get a question of the appropriate category. If the player answers a question correctly while on a pie space, they get a pie of that color (assuming they don't already have it). A correct answer on another square allows the player to roll again.\n\nOnce the player has one pie in each color, she can move along the spokes to the middle of the board to win the game.",
+  "min_players": 2,
+  "max_players": 24,
+  "playing_time": 90,
+  "min_age": 12,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Party Game",
+    "Trivia"
+  ],
+  "mechanics": [
+    "Questions and Answers",
+    "Roll / Spin and Move",
+    "Set Collection"
+  ],
+  "rating_bayes_average": 5.24166,
+  "rating_average_weight": 1.6368,
+  "thumbnail_source": "https://cf.geekdo-images.com/CSILODNknzqhsDxeP8jmgw__small/img/y7sMTmQw3P-tX8MvFQImbf4pUFs=/fit-in/200x150/filters:strip_icc()/pic6912883.jpg",
+  "image_source": "https://cf.geekdo-images.com/CSILODNknzqhsDxeP8jmgw__original/img/ipoGqNe4Dt7hAF3pzd5bxWnKoEQ=/0x0/filters:format(jpeg)/pic6912883.jpg"
+}

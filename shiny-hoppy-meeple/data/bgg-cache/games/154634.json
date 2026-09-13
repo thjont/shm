@@ -1,0 +1,32 @@
+{
+  "id": 154634,
+  "name": "Yardmaster",
+  "year": 2014,
+  "thumbnail": "/images/games/154634-thumb.webp",
+  "image": "/images/games/154634.webp",
+  "image_width": 900,
+  "image_height": 493,
+  "description": "The freight is rolling into the yard and it's up to you, the Yardmaster, to organize and manage it making sure everything is where it's supposed to be and readying the trains for departure.\n\nIn Yardmaster, 2-5 players compete to build trains comprised of railcars of different goods and values. However, players are restricted in connecting railcars of only the same value or good type, so if you grab a railcar you can't use, it needs to wait in your sorting yard until it can legitimately hook up to your train.\n\nPlayers start with five cargo cards in hand, and four railcar cards are laid out into the Arrival Yard. Each player has one exchange token, representing one of the five cargo types, and whoever is to the right of the start player has the Yardmaster Token. On a turn, a player takes two actions, repeating an action if desired; whoever holds the Yardmaster Token takes a third action on his or her turn, then passes this token to the right. Players can:\n\n    Draw a cargo card from the deck or from the top of the discard pile.\n    Buy a railcar by discarding 1-4 cargo cards of the same color as the railcar, with the number determined by that railcar's value.\n    Swap your exchange token for another one; you can discard two cargo cards matching the color of your token to represent one cargo card of the proper color when buying a railcar.\n\n\nFive cargo cards provide bonus actions during play, such as paying less for new railcars or drawing free cargo cards. The first player to reach 16 points in a 2-3 player game or 18 points in a 4-5 player game wins.",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 20,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Print & Play",
+    "Trains",
+    "Transportation"
+  ],
+  "mechanics": [
+    "Advantage Token",
+    "Hand Management",
+    "Open Drafting",
+    "Set Collection"
+  ],
+  "rating_bayes_average": 5.80806,
+  "rating_average_weight": 1.2222,
+  "thumbnail_source": "https://cf.geekdo-images.com/1q-4pTVVAhxQ5FSJuFb8PA__small/img/VEJC_ovE0D-Z_-_xoXLjw_UB7KI=/fit-in/200x150/filters:strip_icc()/pic1976676.jpg",
+  "image_source": "https://cf.geekdo-images.com/1q-4pTVVAhxQ5FSJuFb8PA__original/img/z_D0X9hMG4QVXUepxaEaPVx6lY4=/0x0/filters:format(jpeg)/pic1976676.jpg"
+}

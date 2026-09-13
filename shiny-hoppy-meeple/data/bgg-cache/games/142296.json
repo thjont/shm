@@ -1,0 +1,34 @@
+{
+  "id": 142296,
+  "name": "Funemployed",
+  "year": 2013,
+  "thumbnail": "/images/games/142296-thumb.webp",
+  "image": "/images/games/142296.webp",
+  "image_width": 678,
+  "image_height": 1304,
+  "description": "Funemployed is a card-based party game in which everyone's trying to become employed. Apply for real jobs, like astronaut, lawyer or priest, with unreal qualifications, such as a dragon, the ability to speak panda, or a DeLorean. In the game, each player uses their qualifications to convince the other players that they're the best qualified for a job. To do this, players tell the story of why their qualifications make them the best fit for a job by role-playing and acting like they are on an interview. Find innovative ways to use your qualifications and become the most \"funemployed\" player at the table!",
+  "min_players": 3,
+  "max_players": 20,
+  "playing_time": 30,
+  "min_age": 13,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Educational",
+    "Humor",
+    "Party Game",
+    "Word Game"
+  ],
+  "mechanics": [
+    "Acting",
+    "Open Drafting",
+    "Player Judge",
+    "Role Playing",
+    "Storytelling"
+  ],
+  "rating_bayes_average": 5.9844,
+  "rating_average_weight": 1.1481,
+  "thumbnail_source": "https://cf.geekdo-images.com/o-fsLzEaCHcoAv3oxzOI_w__small/img/c40hqqP80E7K0mg7ysCBeW7K7gA=/fit-in/200x150/filters:strip_icc()/pic3558503.jpg",
+  "image_source": "https://cf.geekdo-images.com/o-fsLzEaCHcoAv3oxzOI_w__original/img/MaLhTg5Sa0jwAIKP8MYMvxTn_TA=/0x0/filters:format(jpeg)/pic3558503.jpg"
+}

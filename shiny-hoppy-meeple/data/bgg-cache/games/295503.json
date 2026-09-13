@@ -1,0 +1,35 @@
+{
+  "id": 295503,
+  "name": "The Champion of the Wild (Second Edition)",
+  "year": 2019,
+  "thumbnail": "/images/games/295503-thumb.webp",
+  "image": "/images/games/295503.webp",
+  "image_width": 900,
+  "image_height": 600,
+  "description": "An hilarious social card game for 3-8 players.\n\nFor as long as you can remember, you've been able to communicate with animals. Now you're an animal coach, training athletes for competition and today is the big one...\n\nChoosing one animal from a hand of cards to compete in 3 events against the animals chosen by the other coaches, you'll present your strategy and play out the events by discussion. Using a vote system, coaches earn points -- the coach with the most points is then crowned... The Champion Of The Wild.\n\n—description from the publisher",
+  "min_players": 3,
+  "max_players": 8,
+  "playing_time": 90,
+  "min_age": 6,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Card Game",
+    "Humor",
+    "Party Game",
+    "Sports"
+  ],
+  "mechanics": [
+    "Hidden Victory Points",
+    "Open Drafting",
+    "Player Judge",
+    "Role Playing",
+    "Storytelling",
+    "Voting"
+  ],
+  "rating_bayes_average": 5.60711,
+  "rating_average_weight": 1.2,
+  "thumbnail_source": "https://cf.geekdo-images.com/9VfaNNy5S2r9fLi5R0beBA__small/img/yoNhEEAUDVR9rVTdPpae88QOGAs=/fit-in/200x150/filters:strip_icc()/pic5088681.jpg",
+  "image_source": "https://cf.geekdo-images.com/9VfaNNy5S2r9fLi5R0beBA__original/img/aWIvwhpIcaCpIddMNBWIgoTRwTk=/0x0/filters:format(jpeg)/pic5088681.jpg"
+}

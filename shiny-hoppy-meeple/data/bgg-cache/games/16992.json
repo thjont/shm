@@ -1,0 +1,29 @@
+{
+  "id": 16992,
+  "name": "Tsuro",
+  "year": 2005,
+  "thumbnail": "/images/games/16992-thumb.webp",
+  "image": "/images/games/16992.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Tsuro is a beautifully simple game of laying a tile before your own token to continue its path on each turn.  The goal is to keep your token on the board longer than anyone else's, but as the board fills up this becomes harder because there are fewer empty spaces left and another player's tile may also extend your own path in a direction you'd rather not go.  Easy to introduce to new players,  lasts a mere 15 minutes.\n\nTsuro has an Asian spiritual theme - the lines representing the \"many roads that lead to divine wisdom\", and the game as a whole representing \"the classic quest for enlightenment\". This theme is very light and the game essentially plays as an abstract strategy game.\n\nThe game consists of tiles with twisting lines on them, a 6x6 grid on which to lay these tiles and a token for each player. Each player has a hand of tiles. On your turn you do two things: place a tile from your hand onto the board next to your token and move your token as far as it can go along the line it is currently on, until it is stopped by an empty space with no tile in (yet), the edge of the board or colliding with another player's token. If your token reaches the edge of the board or collides with another player's token, you are out of the game. The aim of the game is to be the last player left with a token on the board. Strategy therefore consists of trying to drive your opponents either into each other or off the board whilst extending your own route in directions that will make it difficult for your opponents to do the same.\n\n--description from publisher",
+  "min_players": 2,
+  "max_players": 8,
+  "playing_time": 20,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Fantasy"
+  ],
+  "mechanics": [
+    "Hand Management",
+    "Network and Route Building",
+    "Player Elimination",
+    "Tile Placement"
+  ],
+  "rating_bayes_average": 6.53266,
+  "rating_average_weight": 1.2168,
+  "thumbnail_source": "https://cf.geekdo-images.com/2V3d4ryhxkS3RoPtDrvpUw__small/img/NWgNhoxUIF7Lmj1apRkZQhFL6NU=/fit-in/200x150/filters:strip_icc()/pic875761.jpg",
+  "image_source": "https://cf.geekdo-images.com/2V3d4ryhxkS3RoPtDrvpUw__original/img/TP5U-O2eujPBK9IVmmifdfkWwdQ=/0x0/filters:format(jpeg)/pic875761.jpg"
+}

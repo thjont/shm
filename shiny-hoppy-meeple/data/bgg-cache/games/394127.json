@@ -1,0 +1,31 @@
+{
+  "id": 394127,
+  "name": "Yokai Pagoda",
+  "year": 2023,
+  "thumbnail": "/images/games/394127-thumb.webp",
+  "image": "/images/games/394127.webp",
+  "image_width": 900,
+  "image_height": 1138,
+  "description": "A mysterious building rise over the hill, bathed with a crepuscular light. Astonished by the strange aura of the Pagoda, you decide to investigate it. Suddenly, a laugh, a shadow which is not yours and an eye with ominous pretensions turns alive. You have broken the peace of ten powerful Japanese spirits (called Yokai) who rested there! Will you find a way to calm their wrath?\n\nA game of Yokai Pagoda is played through 3 rounds, playing always one card per turn, until someone ends the current round. To play a game, you shuffle the 100 number cards (divided by 10 kinds of Yokai, numbered from 1 to 10), lay out two cards face-up to start the two discard piles, then deal seven cards to each player.  Place the rest as the Pagoda deck, between the discard piles.\n\nWhen you play card, deal with one of the following effects:\n\n     Playing the same Yokai or the same number allows you to give someone one card from your hand.\n     With a different Yokai and a higher number you can take one random card from the deck -or- the first face-up card from the opposite dicard pile.\n     With a different Yokai and a lower number you can go on with the round as nothing happened -or- end the current round, but only if you have a total amount of three or less points in your hands. But... you must take only into account the lowest card of each kind of Yokai you have!\n\n\nAt that moment, everyone keeps the cards from their hand into a personal reserve. After 3 rounds, the one with less points in their reserve wins but... again you must take only into account the lowest card of each kind of Yokai you have.\n\nTry to match the balance between lose cards or keep the exact amount you need to reduce your score when other player ends the round. In Yokai Pagoda, knowing when to give a card, keep playing or end the round makes the difference!",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 15,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Abstract Strategy",
+    "Bluffing",
+    "Card Game",
+    "Fantasy",
+    "Mythology"
+  ],
+  "mechanics": [
+    "Hand Management",
+    "Hot Potato"
+  ],
+  "rating_bayes_average": 6.11605,
+  "rating_average_weight": 1.5172,
+  "thumbnail_source": "https://cf.geekdo-images.com/2Q-A-b38dDH9W3g62qUXLA__small/img/ToCdF1q9CrjKwig_oSdjFF5UL18=/fit-in/200x150/filters:strip_icc()/pic7645416.png",
+  "image_source": "https://cf.geekdo-images.com/2Q-A-b38dDH9W3g62qUXLA__original/img/F3W5dmVhL8Qg1XIvQ8IVMYlyNKo=/0x0/filters:format(png)/pic7645416.png"
+}

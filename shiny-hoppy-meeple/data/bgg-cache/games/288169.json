@@ -1,0 +1,34 @@
+{
+  "id": 288169,
+  "name": "The Fox in the Forest Duet",
+  "year": 2020,
+  "thumbnail": "/images/games/288169-thumb.webp",
+  "image": "/images/games/288169.webp",
+  "image_width": 428,
+  "image_height": 612,
+  "description": "In the two-player, co-operative trick-taking game The Fox in the Forest Duet, players team up, helping each other move through the forest. Collect all the gems before the end of three rounds of play, and you win!\n\nTo set up the game, place gem tokens on the designated spaces of the game board and the team tracker token in the center of the movement path. At the start of each round, shuffle the deck of thirty cards — which contains three suits, each numbered 1-10 — and deal each player a hand of eleven cards. Reveal one card as the \"decree\" card to determine the trump suit. For each trick, one player leads a card, and the other must follow suit, if possible. The winner of the trick moves the team tracker toward them a number of spaces equal to the number of fox footprints on the cards played. If the tracker lands on a space next to a gem, the players collect one gem. If the tracker would move off the end of the path, return the tracker to the center of the path, then add a forest token to one end of the path, reducing the number of spaces upon which you can move (with you sliding gems next to this covered space next to the new end of the path).\n\nThe odd-numbered character cards have special abilities when played, allowing the trick winner to move the tracker in the direction of their choice or to ignore the footprints on one of the played cards so that you can land on just the right spot. One character allows players to exchange one card with each other, while another allows a player to change the decree card.\n\nAt the end of a round, you add five gems to designated spaces, add a forest space to shorten the path, then receive a new hand of eleven cards from a freshly shuffled deck. Collect all 22 gem tokens, and you win. Run out of time or head off the end of the path with no forest spaces in reserve, then you can just keep running in defeat or shuffle the cards and start the game anew.",
+  "min_players": 2,
+  "max_players": 2,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Card Game",
+    "Fantasy"
+  ],
+  "mechanics": [
+    "Communication Limits",
+    "Cooperative Game",
+    "Hand Management",
+    "Map Reduction",
+    "Sudden Death Ending",
+    "Trick-taking",
+    "Variable Set-up"
+  ],
+  "rating_bayes_average": 6.43093,
+  "rating_average_weight": 1.7742,
+  "thumbnail_source": "https://cf.geekdo-images.com/1uTAJoAdG3UC6N0G7UMeTA__small/img/SzaN4ejLFyjTbElgZPGGjUtlf6o=/fit-in/200x150/filters:strip_icc()/pic4942502.jpg",
+  "image_source": "https://cf.geekdo-images.com/1uTAJoAdG3UC6N0G7UMeTA__original/img/Xo0bcffWDmM8g3iLRqFZs3rhWRw=/0x0/filters:format(jpeg)/pic4942502.jpg"
+}

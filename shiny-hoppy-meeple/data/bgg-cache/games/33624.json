@@ -1,0 +1,29 @@
+{
+  "id": 33624,
+  "name": "Trivial Pursuit: Deluxe",
+  "year": 2007,
+  "thumbnail": "/images/games/33624-thumb.webp",
+  "image": "/images/games/33624.webp",
+  "image_width": 574,
+  "image_height": 600,
+  "description": "Every card contains two easy, two medium and two hard questions. Your die roll decides, what difficulty level question you will get! If you answer correctly, you may throw the die again, but you also get to advance on a bonus track, where you get to steal points from your opponents, you get easier questions ect. The die roll resolves your destiny ... but your own knowledge seals it!\n\nIn Finnish: Jokainen kortti sis&auml;lt&auml;&auml; kaksi helppoa, kaksi keskivaikeaa ja kaksi vaikeaa kysymyst&auml;. Nopanheittosi ratkaisee, mink&auml; tasoisen kysymyksen saat! Jos vastaat oikein, saat heitt&auml;&auml; noppaa uudelleen, mutta p&auml;&auml;set my&ouml;s etenem&auml;&auml;n bonusradalle, jolla p&auml;&auml;set varastamaan pisteit&auml; vastapelaajilta, saat helpompia kysymyksi&auml; jne. Nopanheitto ratkaisee kohtalosi ... mutta oma tiet&auml;myksesi sinet&ouml;i sen!",
+  "min_players": 2,
+  "max_players": 36,
+  "playing_time": 120,
+  "min_age": 0,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Dice",
+    "Party Game",
+    "Trivia"
+  ],
+  "mechanics": [
+    "Dice Rolling",
+    "Roll / Spin and Move"
+  ],
+  "rating_bayes_average": 5.52313,
+  "rating_average_weight": 2.2727,
+  "thumbnail_source": "https://cf.geekdo-images.com/ckqMhz84oUzTfJCrR-gEjA__small/img/mmqw4I7wWWWo-1YajWVsjzzd5kU=/fit-in/200x150/filters:strip_icc()/pic443609.jpg",
+  "image_source": "https://cf.geekdo-images.com/ckqMhz84oUzTfJCrR-gEjA__original/img/9xJNZCin7ZM0KEbCYerPLSHad2Y=/0x0/filters:format(jpeg)/pic443609.jpg"
+}

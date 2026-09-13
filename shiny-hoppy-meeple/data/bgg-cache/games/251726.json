@@ -1,0 +1,30 @@
+{
+  "id": 251726,
+  "name": "Confident?",
+  "year": 2018,
+  "thumbnail": "/images/games/251726-thumb.webp",
+  "image": "/images/games/251726.webp",
+  "image_width": 641,
+  "image_height": 487,
+  "description": "CONFIDENT? is a highly entertaining family party game where you answer questions like \"how many slices are there in a loaf of bread?\". But, instead of giving exact answers, you guess with a RANGE! You only need to get the right answer in your range to win points so everyone can have a go, but the smaller your range compared to everyone else, the more you score! Are you CONFIDENT enough to win?",
+  "min_players": 3,
+  "max_players": 99,
+  "playing_time": 40,
+  "min_age": 11,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Educational",
+    "Number",
+    "Party Game",
+    "Print & Play",
+    "Trivia"
+  ],
+  "mechanics": [
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 5.67065,
+  "rating_average_weight": 1,
+  "thumbnail_source": "https://cf.geekdo-images.com/6wrAKv3t9PXEw3OJDJXAHA__small/img/HcE5RWx0o9vevI9TMZqvMmJGWas=/fit-in/200x150/filters:strip_icc()/pic5690370.png",
+  "image_source": "https://cf.geekdo-images.com/6wrAKv3t9PXEw3OJDJXAHA__original/img/f1Mvtv9R2FEDI8uZpNUOcWRjaQ8=/0x0/filters:format(png)/pic5690370.png"
+}

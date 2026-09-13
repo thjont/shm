@@ -1,0 +1,33 @@
+{
+  "id": 342492,
+  "name": "A game about WEE WHIMSICAL CREATURES and trying to identify them after someone makes noises.",
+  "year": 2021,
+  "thumbnail": "/images/games/342492-thumb.webp",
+  "image": "/images/games/342492.webp",
+  "image_width": 900,
+  "image_height": 1277,
+  "description": "80 wonderfully weird beasties that ask you to ponder, \"What noises would these creatures makes?\"\n\nOne person randomly picks a target creature, ponders what noise it might make, then makes that noise, trying to keep it distinct from the other 4 monsters that are visible on the table.\n\nThe noise-maker gets a point if the majority of players guess correctly. Guessers get a point if guessing correctly OR if guessing with the majority.\n\nThis is the first 'Bezzy Budget Bag' game. It was sold in a resealable plastic bag for &pound;5 GBP at UKGE 2021 (selling out after a day). A reprint will come by the end of 2021.\n\n—description from the designer",
+  "min_players": 4,
+  "max_players": 10,
+  "playing_time": 50,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Card Game",
+    "Children's Game",
+    "Music",
+    "Party Game",
+    "Print & Play"
+  ],
+  "mechanics": [
+    "Acting",
+    "Singing",
+    "Voting"
+  ],
+  "rating_bayes_average": 5.60024,
+  "rating_average_weight": 1,
+  "thumbnail_source": "https://cf.geekdo-images.com/lZAm6CifraTGKATmeNvFGA__small/img/WI_xm3F5NWny5hGe_2tbcgocr-U=/fit-in/200x150/filters:strip_icc()/pic6543541.jpg",
+  "image_source": "https://cf.geekdo-images.com/lZAm6CifraTGKATmeNvFGA__original/img/Z3Gfy5zpPu4eXsdGYXWYGhbupf8=/0x0/filters:format(jpeg)/pic6543541.jpg"
+}

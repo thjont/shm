@@ -1,0 +1,30 @@
+{
+  "id": 407233,
+  "name": "Tenby",
+  "year": 2025,
+  "thumbnail": "/images/games/407233-thumb.webp",
+  "image": "/images/games/407233.webp",
+  "image_width": 900,
+  "image_height": 1238,
+  "description": "Tenby is one of the most beautiful towns in Wales. Wander our colourful streets, walk along our piers with some scrumptious fish and chips, and relax on our stunning beaches with a nice cold ice cream and a warm feeling in your heart.\n\nThe aim of Tenby is to create the best town you can using the available cards. On your turn, you will draft and place cards to add terraces, piers, and Tenby town’s landmarks into your streets. If you can persuade a hard working local resident to help, you might just pick up some extra points! Whoever has the most points at the end of the game is the winner!\n\nEach round consists of 3 phases: Day, Night, and Cleanup.  The Day cards and Night Cards are closely connected to each other. The Night Cards provide the order in which players will select Day Cards. The Day Cards provide the order in which players will take their actions that round, and will also set the Night Card player order for the next round. The game ends immediately after the last player has taken their last available action at the end of the tenth round.\n\n—description from the publisher",
+  "min_players": 1,
+  "max_players": 5,
+  "playing_time": 60,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "City Building"
+  ],
+  "mechanics": [
+    "Action Drafting",
+    "Open Drafting",
+    "Pattern Building",
+    "Solo / Solitaire Game"
+  ],
+  "rating_bayes_average": 6.33385,
+  "rating_average_weight": 2.1395,
+  "thumbnail_source": "https://cf.geekdo-images.com/8L5T9-_xGX5lFF-VlU77lA__small/img/Ko_vq3IV2pLJpheMWpRfydTwNhk=/fit-in/200x150/filters:strip_icc()/pic7880987.jpg",
+  "image_source": "https://cf.geekdo-images.com/8L5T9-_xGX5lFF-VlU77lA__original/img/8NfeHNjIQB5cTciEeZr28wA25W8=/0x0/filters:format(jpeg)/pic7880987.jpg"
+}
