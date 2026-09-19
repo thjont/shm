@@ -1,0 +1,34 @@
+{
+  "id": 410342,
+  "name": "The Traitors Card Game",
+  "year": 2023,
+  "thumbnail": "/images/games/410342-thumb.webp",
+  "image": "/images/games/410342.webp",
+  "image_width": 486,
+  "image_height": 700,
+  "description": "Trust no one in this darkly dramatic family game. Players work together to collect a hoard of golden treasure, but danger is lurking. Among you are Traitors - and every time Night falls there's a good chance someone will attempt to commit a murder under the cover of darkness.\n\nPlayers start the game as either a Faithful or Traitor. Throughout, the Traitors murder people and the Faithful can try to banish the Traitors. Players draw cards into their hand and play them. Gold is added to the central prize pool which is split between the winners, but only if those winners are Faithful; Traitors will take it all for themselves. Banishments and murders can be carried out with the cards or with a web app provided by the developer.",
+  "min_players": 4,
+  "max_players": 8,
+  "playing_time": 45,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Bluffing",
+    "Card Game",
+    "Deduction",
+    "Movies / TV / Radio theme",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Deduction",
+    "Drawing",
+    "Hand Management",
+    "Hidden Roles",
+    "Voting"
+  ],
+  "rating_bayes_average": 5.5028,
+  "rating_average_weight": 1,
+  "thumbnail_source": "https://cf.geekdo-images.com/RB9JuszRurM1Jm4-Z7cKrw__small/img/_jPEEezh465CRJ_xkA39Mx_5Vlw=/fit-in/200x150/filters:strip_icc()/pic8368544.jpg",
+  "image_source": "https://cf.geekdo-images.com/RB9JuszRurM1Jm4-Z7cKrw__original/img/q1jbC0xagwxmjjOaGVUw-Twth5k=/0x0/filters:format(jpeg)/pic8368544.jpg"
+}

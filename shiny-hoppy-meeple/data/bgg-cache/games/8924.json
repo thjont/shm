@@ -1,0 +1,30 @@
+{
+  "id": 8924,
+  "name": "Dancing Eggs",
+  "year": 2003,
+  "thumbnail": "/images/games/8924-thumb.webp",
+  "image": "/images/games/8924.webp",
+  "image_width": 900,
+  "image_height": 416,
+  "description": "This is a game that comes in a real egg-box. There are nine yellow plastic eggs and one yellow wooden egg (worth 2 points, the others are worth 1 point) and two dice, one red and one white. Although it is, in fact, a children's game, it is great fun when played by adults as well.\n\nThe object of the game is to accumulate the most points. First a player rolls the red die. Depending on the result of the die roll, players can:  attempt to be the first to take an egg from the box (or steal from someone else if there are none left in the box); drop an egg on the table and then compete to catch it; or even get up and run around the table to try to be the first back to their seat. When a player successfully wins an egg, he or she then rolls the white die, which indicates the location of the egg; between your cheek and your shoulder, your chin and the breast, between your knees, etc. When the first person drops an egg, the game ends and the one having the most points wins the game.\n\nAges 5 and up",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 10,
+  "min_age": 5,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Action / Dexterity",
+    "Children's Game",
+    "Dice",
+    "Humor",
+    "Party Game"
+  ],
+  "mechanics": [
+    "Dice Rolling"
+  ],
+  "rating_bayes_average": 5.89529,
+  "rating_average_weight": 1.0536,
+  "thumbnail_source": "https://cf.geekdo-images.com/lJK9Ww9NoRCFEc6xSRIMNQ__small/img/vOYTcitsn3Nm2K7cd5oThXh-8qE=/fit-in/200x150/filters:strip_icc()/pic8660465.png",
+  "image_source": "https://cf.geekdo-images.com/lJK9Ww9NoRCFEc6xSRIMNQ__original/img/HG8jm5LIVQz1Lm4Xr0a_ntogiSA=/0x0/filters:format(png)/pic8660465.png"
+}
