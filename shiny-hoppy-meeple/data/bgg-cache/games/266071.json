@@ -1,0 +1,29 @@
+{
+  "id": 266071,
+  "name": "Obama Llama 2",
+  "year": 2018,
+  "thumbnail": "/images/games/266071-thumb.webp",
+  "image": "/images/games/266071.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "With all new content, the second edition of Obama Llama isn't just a party game about famous people anymore. Now it's crammed with all sorts of weird stuff, making it a much more suitable family game for young kids, teenagers and adults alike. From \"Severus Snape choking on a grape\" to \"Uranium playing Cranium\" to \"A T-Rex mixing on the decks\", the party game will get the family shouting out ridiculous rhymes in no time.\n\nPlayers must try their best to describe rhymes to their team by either acting them out, reading a riddle, or attempting to explain them in their own words with your team shouting out as many as they can in 30 seconds time.",
+  "min_players": 4,
+  "max_players": 20,
+  "playing_time": 30,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Party Game",
+    "Real-time"
+  ],
+  "mechanics": [
+    "Acting",
+    "Memory",
+    "Team-Based Game"
+  ],
+  "rating_bayes_average": 5.52937,
+  "rating_average_weight": 1,
+  "thumbnail_source": "https://cf.geekdo-images.com/WS5fVFWKdnkp_sSa_RWUNg__small/img/6yu0RZM8zyNiN-2Hkt1_pwnMAKY=/fit-in/200x150/filters:strip_icc()/pic4435365.jpg",
+  "image_source": "https://cf.geekdo-images.com/WS5fVFWKdnkp_sSa_RWUNg__original/img/ABGBPw4fyb__F-ekbHty1IGgAlk=/0x0/filters:format(jpeg)/pic4435365.jpg"
+}

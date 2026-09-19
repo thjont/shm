@@ -1,0 +1,30 @@
+{
+  "id": 9441,
+  "name": "Ribbit",
+  "year": 2004,
+  "thumbnail": "/images/games/9441-thumb.webp",
+  "image": "/images/games/9441.webp",
+  "image_width": 900,
+  "image_height": 886,
+  "description": "\"Turtles are not always in a hurry, but even they get to be in a race to try and become the first turtle to get to the tasty salad at the other end of the field. But since turtles don’t have a lot of endurance, they like to rest once in a while – preferably on the back of another turtle so that they can get carried for a little while.\"\n\nBefore starting the game, each player secretly draws a color to know which turtles they are with. Turtles' movement is controlled by cards drawn from a common pool (always chosen from 5 cards in hand). These cards depict colored (one-color or rainbow) turtles and movement (1 or 2 steps forward, 1 step backwards; also, in case of some rainbow-colored turtle cards, moving the last turtle forward). When a turtle moves on a space where another turle is waiting, it is placed on the top of that turtle. When a turtle with other turtles on its back is moved, all the other turtles on top of it are carried with this turtle. The first turtle to reach the last field wins.\n\n—description from Spielbox\n\n\"Ribbit\", SimplyFun's 2007 reprint, has frogs instead of turtles.\n\nSchildkrötenrennen FAQ\n\n5 and up",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 20,
+  "min_age": 5,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Bluffing",
+    "Card Game",
+    "Children's Game"
+  ],
+  "mechanics": [
+    "Hand Management",
+    "Race"
+  ],
+  "rating_bayes_average": 6.16757,
+  "rating_average_weight": 1.0926,
+  "thumbnail_source": "https://cf.geekdo-images.com/xiUrbSAVIi3qqpmSB8Lrhw__small/img/Z1OY5zdAOuCF2idL2fm1pEzTLQU=/fit-in/200x150/filters:strip_icc()/pic6389814.png",
+  "image_source": "https://cf.geekdo-images.com/xiUrbSAVIi3qqpmSB8Lrhw__original/img/58X6FFVxxypuNS32T4bNtKJeVJ4=/0x0/filters:format(png)/pic6389814.png"
+}
