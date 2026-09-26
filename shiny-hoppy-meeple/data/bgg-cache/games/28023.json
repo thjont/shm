@@ -1,0 +1,37 @@
+{
+  "id": 28023,
+  "name": "Jamaica",
+  "year": 2007,
+  "thumbnail": "/images/games/28023-thumb.webp",
+  "image": "/images/games/28023.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "After a long career in piracy, Captain Henry Morgan skillfully gets appointed to be Governor of Jamaica. He invites all of his former \"colleagues\" to join him in his retirement, to enjoy the fruits of their looting with impunity. Each year, in remembrance  of the \"good old days,\" Morgan organizes the Great Challenge, a race around the island, and at its end, the Captain with the most gold is declared Grand Winner.\n\nThe game is played in rounds. Each player always has a hand of three cards, and a personal board depicting the five \"holds\" of their ship, into which goods can be loaded during the game. Each round, one player is designated as \"captain,\" with the next clockwise player being captain in the following round, and so on. The captain rolls two standard D6 dice, examines her cards, then announces which die will correspond to the \"day\" and which to the \"night.\" Each player then simultaneously selects a card from their hand and places it face down in front of them. Each card has two symbols on it, one on the left - corresponding to \"day\" - and one on the right (\"night\"). The symbols indicate either ship movement (forward or backward) or the loading of a type of good. After every player has selected a card, all cards are revealed simultaneously and then resolved clockwise one by one, starting with the captain's.\n\nWhen it is a player's turn to resolve her card, for first the left symbol on her card and then for the right symbol, the player will load a number of goods or move a number of spaces equal to the number of pips showing on the corresponding day or night die for that round. Thus the main decision each player makes during the game is which of their current three cards would best serve them on a particular turn, given the values of the day and night dice.  When a player lands on a spot already occupied by another player, there is a battle. Battles are mainly resolved by rolling a \"combat\" die, but players may improve their chances by using \"gunpowder\" tokens from their holds, if they loaded any on previous turns. The winner of a battle may steal some goods or treasure from the loser.\n\nThe game ends on the turn when at least one player's ship reaches the finish line, completing one circuit around the island of Jamaica. At that point, players are awarded different amounts of gold in accordance with how far away from the finish line they were when the race concluded. This gold is added to any gold a player gathered along the way by detouring from the race to search for valuable treasure, by stealing gold or treasure from other players, or just by loading gold as directed by the cards the player played during the race.\n\nThe player with the most total gold acquired through all these means is then declared the winner.",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 60,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Nautical",
+    "Pirates",
+    "Racing"
+  ],
+  "mechanics": [
+    "Dice Rolling",
+    "Hand Management",
+    "Hidden Victory Points",
+    "Race",
+    "Roll / Spin and Move",
+    "Simultaneous Action Selection",
+    "Take That",
+    "Track Movement",
+    "Turn Order: Progressive",
+    "Victory Points as a Resource"
+  ],
+  "rating_bayes_average": 6.87348,
+  "rating_average_weight": 1.6609,
+  "thumbnail_source": "https://cf.geekdo-images.com/jZRfv3isrBG5waCzEx60Cw__small/img/6q5nirF5yn1d0qtjm2UEI5HV874=/fit-in/200x150/filters:strip_icc()/pic6434838.png",
+  "image_source": "https://cf.geekdo-images.com/jZRfv3isrBG5waCzEx60Cw__original/img/aLqKSqw-RWyR4wyfFUywWMQXUTc=/0x0/filters:format(png)/pic6434838.png"
+}

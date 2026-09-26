@@ -1,0 +1,29 @@
+{
+  "id": 134150,
+  "name": "Mini Curling Game",
+  "year": 2012,
+  "thumbnail": "/images/games/134150-thumb.webp",
+  "image": "/images/games/134150.webp",
+  "image_width": 900,
+  "image_height": 175,
+  "description": "Compact Curling is a board game version of curling for two players (or for more players if playing in teams). Each player/team has four stones. At one of the edges of the board is a starting zone where players drop their stones, trying to make them glide on the board to the other side where the house is. The goal is to come closest to the center of the house with as many stones as possible.",
+  "min_players": 2,
+  "max_players": 8,
+  "playing_time": 30,
+  "min_age": 7,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Action / Dexterity",
+    "Party Game",
+    "Sports"
+  ],
+  "mechanics": [
+    "Simulation",
+    "Team-Based Game"
+  ],
+  "rating_bayes_average": 5.68733,
+  "rating_average_weight": 1.087,
+  "thumbnail_source": "https://cf.geekdo-images.com/Tp1jnKdGYl50A-eiUNSpvw__small/img/XcbrwBu21buiON9-5Q1HgikOhxY=/fit-in/200x150/filters:strip_icc()/pic1508779.jpg",
+  "image_source": "https://cf.geekdo-images.com/Tp1jnKdGYl50A-eiUNSpvw__original/img/LNH4jLb8hgoJoLzJxoQQQ-8Vbno=/0x0/filters:format(jpeg)/pic1508779.jpg"
+}

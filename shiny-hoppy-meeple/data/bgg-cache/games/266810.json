@@ -1,0 +1,31 @@
+{
+  "id": 266810,
+  "name": "Paladins of the West Kingdom",
+  "year": 2019,
+  "thumbnail": "/images/games/266810-thumb.webp",
+  "image": "/images/games/266810.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Paladins of the West Kingdom is set at a turbulent time of West Francia's story, circa 900 AD. Despite recent efforts to develop the city, outlying townships are still under threat from outsiders. Saracens scout the borders, while Vikings plunder wealth and livestock. Even the Byzantines from the east have shown their darker side. As noble men and women, players must gather workers from the city to defend against enemies, build fortifications and spread faith throughout the land. Fortunately you are not alone. In his great wisdom, the King has sent his finest knights to help aid in our efforts. So ready the horses and sharpen the swords. The Paladins are approaching.\n\nThe aim of Paladins of the West Kingdom is to be the player with the most victory points (VP) at game's end. Points are gained by building outposts and fortifications, commissioning monks and confronting outsiders. Each round, players will enlist the help of a specific Paladin and gather workers to carry out tasks. As the game progresses, players will slowly increase their faith, strength and influence. Not only will these affect their final score, but they will also determine the significance of their actions. The game is concluded at the end of the seventh round.\n\n—description from the publisher",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 120,
+  "min_age": 12,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Medieval"
+  ],
+  "mechanics": [
+    "End Game Bonuses",
+    "Market",
+    "Open Drafting",
+    "Solo / Solitaire Game",
+    "Worker Placement",
+    "Worker Placement, Different Worker Types"
+  ],
+  "rating_bayes_average": 7.65663,
+  "rating_average_weight": 3.7037,
+  "thumbnail_source": "https://cf.geekdo-images.com/4nhokcLdYoo6ulbZ1rmGgA__small/img/1gEbke_bKTA6D2jjpPm1HowGGHM=/fit-in/200x150/filters:strip_icc()/pic4462987.png",
+  "image_source": "https://cf.geekdo-images.com/4nhokcLdYoo6ulbZ1rmGgA__original/img/9ktZDu003VVVTw0RxD-ufLYV1HQ=/0x0/filters:format(png)/pic4462987.png"
+}

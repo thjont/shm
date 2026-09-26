@@ -1,0 +1,30 @@
+{
+  "id": 472329,
+  "name": "Last Lemming",
+  "year": 2026,
+  "thumbnail": "/images/games/472329-thumb.webp",
+  "image": "/images/games/472329.webp",
+  "image_width": 625,
+  "image_height": 839,
+  "description": "The lemmings are on the loose! On their way to the cliff, they push and shove because everyone wants to be at the front. In this funny trick-taking game, every card played is crucial. Whoever wins tricks moves toward the cliff. However, if you run too fast, you risk falling down and experiencing a real trick-taking tragedy.\n Over the course of four rounds, the rules governing the lemmings' movements change several times. Sometimes the aim is to win tricks, other times to avoid them. Depending on the cards played, several lemmings may follow suit. This makes the game particularly varied and ensures long-lasting fun. There is also room for a little schadenfreude, because pushing other players' lemmings off the cliff always causes a lot of excitement at the table. Thanks to its simple rules and great variety, Last Lemming is perfect for families, trick-taking enthusiasts, and those who want to become one.\n\n—description from the publisher",
+  "min_players": 3,
+  "max_players": 6,
+  "playing_time": 40,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Ancient",
+    "Animals",
+    "Humor"
+  ],
+  "mechanics": [
+    "Action / Event",
+    "Slide / Push",
+    "Trick-taking"
+  ],
+  "rating_bayes_average": 0,
+  "rating_average_weight": 2,
+  "thumbnail_source": "https://cf.geekdo-images.com/0mDyKo2GlmqMvDgD94gwgg__small/img/WcGh_SjC3rBVF1sIvqxo2YoaWAo=/fit-in/200x150/filters:strip_icc()/pic9754038.jpg",
+  "image_source": "https://cf.geekdo-images.com/0mDyKo2GlmqMvDgD94gwgg__original/img/ZmA_F5uAMItJ6kri-5MJSLuD3xE=/0x0/filters:format(jpeg)/pic9754038.jpg"
+}

@@ -1,0 +1,31 @@
+{
+  "id": 311542,
+  "name": "Football Fortunes",
+  "year": 2019,
+  "thumbnail": "/images/games/311542-thumb.webp",
+  "image": "/images/games/311542.webp",
+  "image_width": 750,
+  "image_height": 736,
+  "description": "A unique concept in football manager gaming, Football Fortunes is a board game that allows you to manage your club, playing squad, finances and tactics against your friends and also computer controlled teams while the companion apps take care of the fixtures, league tables, points earned, chance cards and more.\n\nIn the game you'll encounter all of the ups and downs of football management. React to various crises. Stave off bankruptcy. Sign the best players from the current Premier League crop of superstars. Out-think your opponents tactically. Improve your coach and youth team to become world beaters.\n\nThe skillset required to succeed will be varied and the hurdles challenging, just like they are in the real world! Can you conquer the Football Fortunes league and cups before storming the giants of European football?\n\nThe game includes:\n\n176 Premier League player cards\nA Classic 1980s player card pack featuring players from the original Brian Clough's Football Fortunes game\nThe game board\nThe free Football Fortunes companion app\nUpgrade and bung tokens\nPointers for use on the game's deluxe Player Mats\nIn the game managers must:\n\nSign players to build a world class squad of players\nManage your clubs finances, avoiding bankruptcy!\nSurvive crises that will inevitably hit your club at some point through the game\nImprove your Coach and bring through Youth Players from your Academy\nBuild up your staff so that you can go on Scouting Trips and more\nEmploy winning tactics in multiple competitions against different opponents. Are you a park the bus manager or an all out attacker? Do you adapt?\nThe manager who wins will be the one to have filled their cabinet with silverware. Go for glory!\n\n—description from the designer",
+  "min_players": 2,
+  "max_players": 6,
+  "playing_time": 90,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Sports"
+  ],
+  "mechanics": [
+    "Action / Event",
+    "Auction: Sealed Bid",
+    "Closed Economy Auction",
+    "Dice Rolling",
+    "Roll / Spin and Move",
+    "Simulation"
+  ],
+  "rating_bayes_average": 0,
+  "rating_average_weight": 0,
+  "thumbnail_source": "https://cf.geekdo-images.com/o-Av8lJA5dbzZPsoisJCVg__small/img/3aWzOHhIY1HUMWfZgIU7pcwMPEc=/fit-in/200x150/filters:strip_icc()/pic5714149.jpg",
+  "image_source": "https://cf.geekdo-images.com/o-Av8lJA5dbzZPsoisJCVg__original/img/pmUGbhZmZ-ZMx6qFHhUt9KXmkp0=/0x0/filters:format(jpeg)/pic5714149.jpg"
+}
