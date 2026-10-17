@@ -1,0 +1,26 @@
+{
+  "id": 401244,
+  "name": "Six Second Scribbles 2",
+  "year": 2023,
+  "thumbnail": "/images/games/401244-thumb.webp",
+  "image": "/images/games/401244.webp",
+  "image_width": 900,
+  "image_height": 699,
+  "description": "Draw ten pictures in just one minute but can anyone guess what you drew? Played over three rounds this contains 108 brand new category cards, 8 pencils and a pad of drawing paper.\n\nCategory cards come in three difficulties - easy, tricky and almost impossible - and  they may be combined with those from the original Six Second Scribbles.",
+  "min_players": 2,
+  "max_players": 8,
+  "playing_time": 15,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Party Game"
+  ],
+  "mechanics": [
+    "Line Drawing"
+  ],
+  "rating_bayes_average": 0,
+  "rating_average_weight": 0,
+  "thumbnail_source": "https://cf.geekdo-images.com/4QOeAMKmJujSBb0ZYUydKw__small/img/Lvf6hVHfkeuH2LkbRxtR25XKcIs=/fit-in/200x150/filters:strip_icc()/pic8934046.jpg",
+  "image_source": "https://cf.geekdo-images.com/4QOeAMKmJujSBb0ZYUydKw__original/img/z6T-Ys3xdH0dVNcH5StjnIX3BmI=/0x0/filters:format(jpeg)/pic8934046.jpg"
+}
