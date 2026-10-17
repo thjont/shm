@@ -1,0 +1,31 @@
+{
+  "id": 329828,
+  "name": "Deep Dive",
+  "year": 2021,
+  "thumbnail": "/images/games/329828-thumb.webp",
+  "image": "/images/games/329828.webp",
+  "image_width": 566,
+  "image_height": 794,
+  "description": "Take a deep breath and dive into the depths of the sea. Collect the seashells that hide white shiny pearls. The longer you stay underwater, the more seashells you can collect. But beware! If you see a shark, you will have to drop all your seashells and swim for your life.\n\nOn their turn, each player does the following:\n• Rolls the color dice\n• Dives into the water of the same color as the rolled out color\nof the dice, i.e. the player puts his/her diver into the section of water that has the same color as the rolled out color.\n• Takes as many seashells as depicted on the water section he/she has just dived in, and places the tokens in front of him/her shell side up (leave closed, no peeking inside the shell!).\n\nOnce all the players have dived into the water and collected their seashells, it’s the starting player’s turn again. This time, the starting player rolls the shark dice. All the players keep an eye out for the shark. The shark swims into the water section of the same color as the rolled out color on the shark dice, and scares away all the divers from that section. The players who had their divers in the water section to which the shark came lose all the seashells they had collected (which are closed).The game ends when four seashells with black pearls are found and opened.\n\n-description from publisher",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 15,
+  "min_age": 5,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Children's Game",
+    "Dice",
+    "Educational",
+    "Exploration"
+  ],
+  "mechanics": [
+    "Dice Rolling",
+    "Push Your Luck"
+  ],
+  "rating_bayes_average": 0,
+  "rating_average_weight": 0,
+  "thumbnail_source": "https://cf.geekdo-images.com/hnWjeppRrDfCiVLo0fIgAw__small/img/cFPwao0ZMsE8wRC7cxXhjAJ3akE=/fit-in/200x150/filters:strip_icc()/pic6622852.png",
+  "image_source": "https://cf.geekdo-images.com/hnWjeppRrDfCiVLo0fIgAw__original/img/4fqU4vlsL04hlMnuO5duh4Z4TZc=/0x0/filters:format(png)/pic6622852.png"
+}

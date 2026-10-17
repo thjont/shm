@@ -1,0 +1,26 @@
+{
+  "id": 158267,
+  "name": "Double Feature",
+  "year": 2015,
+  "thumbnail": "/images/games/158267-thumb.webp",
+  "image": "/images/games/158267.webp",
+  "image_width": 610,
+  "image_height": 456,
+  "description": "Game description from the publisher:\n\nIn the cinematic card game Double Feature, players earn points by naming a movie that links elements from two \"Double Feature\" cards, with categories including Character, Genre, Location, Production, Prop, Scene, Setting, and Theme. For example, if the cards are \"Black and White\" (Production) and \"New York\" (Setting), correct answers could include anything from \"King Kong\" to \"Manhattan\"!",
+  "min_players": 3,
+  "max_players": 10,
+  "playing_time": 35,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Movies / TV / Radio theme",
+    "Party Game",
+    "Trivia"
+  ],
+  "mechanics": [],
+  "rating_bayes_average": 5.51604,
+  "rating_average_weight": 1,
+  "thumbnail_source": "https://cf.geekdo-images.com/wUJsG8YHx8oY-6-ngc0PbQ__small/img/dah4zGEfSY_LcMJSB4JEtMbwd7o=/fit-in/200x150/filters:strip_icc()/pic2360691.jpg",
+  "image_source": "https://cf.geekdo-images.com/wUJsG8YHx8oY-6-ngc0PbQ__original/img/rGS-2o69Ss34ebRuEG3DkM6RiEM=/0x0/filters:format(jpeg)/pic2360691.jpg"
+}

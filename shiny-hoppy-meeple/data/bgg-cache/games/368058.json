@@ -1,0 +1,32 @@
+{
+  "id": 368058,
+  "name": "The Wolves",
+  "year": 2022,
+  "thumbnail": "/images/games/368058-thumb.webp",
+  "image": "/images/games/368058.webp",
+  "image_width": 839,
+  "image_height": 835,
+  "description": "The Wolves is a pack-building strategy game for 2-5 players. It's survival of the fittest as you compete to build the largest, most dominant pack by claiming territory, recruiting lone wolves, and hunting prey. But be careful not to expand too recklessly into terrain where your rivals thrive – they may lure members of your pack away.\n\nA clever action-selection mechanism drives your choices. Each action requires you to flip terrain tiles matching the terrain where you wish to take your action. These double-sided tiles mean the actions you take this round will set up which terrain types you can act on in the next round. As you take actions to expand your pack's control of each region, you also upgrade your pack's attributes, allowing you to take more aggressive actions as the game goes on.\n\nIn three mid-game scoring phases, power is calculated in each region. At the end of the game, players tally points based on VP tokens earned in these scoring phases and the highest VP number revealed in each of the six tracks on your player board. The player with the most VP wins!\n\n—description from publisher",
+  "min_players": 2,
+  "max_players": 5,
+  "playing_time": 75,
+  "min_age": 14,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Animals",
+    "Territory Building"
+  ],
+  "mechanics": [
+    "Area Majority / Influence",
+    "Grid Movement",
+    "Hexagon Grid",
+    "Modular Board",
+    "Take That",
+    "Variable Set-up"
+  ],
+  "rating_bayes_average": 6.62526,
+  "rating_average_weight": 2.8212,
+  "thumbnail_source": "https://cf.geekdo-images.com/6irYLjUf_o0rK7E_4qI-gw__small/img/adKpLZnYvPO9SiZ6p-1RzgIk-98=/fit-in/200x150/filters:strip_icc()/pic6990829.png",
+  "image_source": "https://cf.geekdo-images.com/6irYLjUf_o0rK7E_4qI-gw__original/img/Cyll_t91vZxuxt_fBbSb0z70vPA=/0x0/filters:format(png)/pic6990829.png"
+}
