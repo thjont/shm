@@ -1,0 +1,33 @@
+{
+  "id": 63268,
+  "name": "Spot it!",
+  "year": 2009,
+  "thumbnail": "/images/games/63268-thumb.webp",
+  "image": "/images/games/63268.webp",
+  "image_width": 900,
+  "image_height": 899,
+  "description": "Spot it!, a.k.a. Dobble, is a simple pattern recognition game in which players try to find an image shown on two cards.\n\nEach card in original Spot it! features eight different symbols, with the symbols varying in size from one card to the next. Any two cards have exactly one symbol in common. For the basic Spot it! game, reveal one card, then another. Whoever spots the symbol in common on both cards claims the first card, then another card is revealed for players to search, and so on. Whoever has collected the most cards when the 55-card deck runs out wins!\n\nRules for different games – each an observation game with a speed element – are included with Spot it!, with the first player to find a match either gaining or getting rid of a card. Multiple versions of Spot it! have been published, with images in each version ranging from Halloween to hockey to baseball to San Francisco.\n\nThe game is sold as Spot it! in the USA and Dobble in Europe, with slight differences between the two editions.\n\nNote: some versions have fewer cards and fewer symbols per card. (E.g. 30 cards with 6 symbols each.): Spot it! 1,2,3",
+  "min_players": 2,
+  "max_players": 8,
+  "playing_time": 15,
+  "min_age": 6,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Card Game",
+    "Children's Game",
+    "Educational",
+    "Party Game",
+    "Real-time",
+    "Sports"
+  ],
+  "mechanics": [
+    "Hot Potato",
+    "Pattern Recognition",
+    "Speed Matching"
+  ],
+  "rating_bayes_average": 6.35423,
+  "rating_average_weight": 1.0369,
+  "thumbnail_source": "https://cf.geekdo-images.com/hqDT4HbEb2eNCyMOeiGj-g__small/img/ZNgW2QhLjYpVltWHy3LyJqstnow=/fit-in/200x150/filters:strip_icc()/pic6477003.png",
+  "image_source": "https://cf.geekdo-images.com/hqDT4HbEb2eNCyMOeiGj-g__original/img/6w3wjI3YZOWa8XLxoKQqg3XnbN0=/0x0/filters:format(png)/pic6477003.png"
+}
