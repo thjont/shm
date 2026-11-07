@@ -1,0 +1,29 @@
+{
+  "id": 310632,
+  "name": "Dice Miner",
+  "year": 2021,
+  "thumbnail": "/images/games/310632-thumb.webp",
+  "image": "/images/games/310632.webp",
+  "image_width": 900,
+  "image_height": 1127,
+  "description": "The Dwarves once lived beneath three mighty mountains. After centuries of war they defeated their age-old enemies the Dragons. Moving to the surface, the Dwarves built magnificent cities and won renown for their heartening beer.\n\nBut the Dragons have returned. Now, the Dwarves must remember their roots, clear old tunnels, and return to ancient caverns while fighting their primeval foes.\n\nIn each of three rounds, custom dice are rolled onto the mountain. You are a Dwarf hero, drafting dice for your hoard. Scores are tallied after each round before you re-roll your dice and the mountain is refilled.\n\nUltimately, Dice Miner is a game about drafting the dice you covet, adding them to your hoard, and pushing your luck to build massive combos and score as many points as you can.",
+  "min_players": 1,
+  "max_players": 4,
+  "playing_time": 30,
+  "min_age": 10,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Dice",
+    "Fantasy"
+  ],
+  "mechanics": [
+    "Dice Rolling",
+    "Open Drafting",
+    "Variable Player Powers"
+  ],
+  "rating_bayes_average": 6.49604,
+  "rating_average_weight": 1.6286,
+  "thumbnail_source": "https://cf.geekdo-images.com/K03e7G5PaII4S5ILIWPNfw__small/img/qfEKfhMLEFqXYQAtcbOTEcfhSGo=/fit-in/200x150/filters:strip_icc()/pic5440150.jpg",
+  "image_source": "https://cf.geekdo-images.com/K03e7G5PaII4S5ILIWPNfw__original/img/kXFUOkYDQFfay31uUBmwSPe6y6E=/0x0/filters:format(jpeg)/pic5440150.jpg"
+}
