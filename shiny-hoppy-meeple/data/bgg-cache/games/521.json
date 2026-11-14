@@ -1,0 +1,27 @@
+{
+  "id": 521,
+  "name": "Crokinole",
+  "year": 1876,
+  "thumbnail": "/images/games/521-thumb.webp",
+  "image": "/images/games/521.webp",
+  "image_width": 900,
+  "image_height": 900,
+  "description": "Crokinole is a traditional two- or four-player dexterity game, played on a circular wooden board, with 3 rings and an inner recessed 'bullseye'. A ring of posts is set around the inner circle, which functions as an obstacle to reach this area. Playing pieces are wooden circular disks similar to checkers pieces.  Players take turns shooting disks across the board by flicking them with their fingers in an effort to land them in the highest scoring ring on the board, the highest score (20 points) achieved by shooting a disk into the centre, recessed hole. From the outside in, rings are worth 5, 10, 15 points.\n\nAs a traditional game, there are often many variations played, but the following method is based on the National Crokinole Association's rules which also govern the World Crokinole Championship.\n\nEach disk to be shot must be placed on the outer boundary and within the shooting player's quadrant. If there are no opponent's disks on the board, the shot disk must land in the inner ring or it is removed. If there is an opponent's disk on the board, the shot disk must hit an opponent's piece, either directly, or by bumping another disk into it.  Disks landing in the centre hole are removed and scored at the end of the round. Disks that lie outside--or are touching--the outer boundary after each shot are removed from play for the round.\n\nThe player to score the most points wins the round and scores 2 points, and if a tie, each player scores 1 point. A \"game\" is usually played to four rounds. The number of \"games\" in a match is set by the tournament.\n\nAlternatively, play is to a set score, usually the first player or team to 100, and each round is scored by cancellation. For example if Player One scores 250, and Player Two scores 225, then Player One will add 25 to his/her game score.",
+  "min_players": 2,
+  "max_players": 4,
+  "playing_time": 30,
+  "min_age": 8,
+  "type": "boardgame",
+  "expansion": false,
+  "categories": [
+    "Action / Dexterity"
+  ],
+  "mechanics": [
+    "Flicking",
+    "Team-Based Game"
+  ],
+  "rating_bayes_average": 7.80403,
+  "rating_average_weight": 1.2281,
+  "thumbnail_source": "https://cf.geekdo-images.com/DOwZ7_Q1w68iBhARcDAxig__small/img/nkY1mEj6fItSXJHctfzFcRIcDT0=/fit-in/200x150/filters:strip_icc()/pic8549797.jpg",
+  "image_source": "https://cf.geekdo-images.com/DOwZ7_Q1w68iBhARcDAxig__original/img/0E7UQ_sXErRusbZVixlIiN8MIJQ=/0x0/filters:format(jpeg)/pic8549797.jpg"
+}
