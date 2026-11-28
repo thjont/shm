@@ -2,7 +2,7 @@
   "dependencies": {
     "bgg-xml-api-client": "0.3.4",
     "googleapis": "190.0.0",
-    "pdfkit": "0.20.2",
+    "pdfkit": "0.21.0",
     "qrcode": "1.5.4",
     "sharp": "0.35.5"
   },
